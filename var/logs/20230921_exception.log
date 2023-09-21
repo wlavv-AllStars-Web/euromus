@@ -1,0 +1,2 @@
+*ERROR* 	v8.1.1	2023/09/21 - 14:30:46: SQLSTATE[42S02]: Base table or view not found: 1146 Table &#039;euromus.eu_shop_url&#039; doesn&#039;t exist at line 151 in file classes/db/DbPDO.php
+*ERROR* 	v8.1.1	2023/09/21 - 14:30:46: SQLSTATE[42S02]: Base table or view not found: 1146 Table &#039;euromus.eu_shop_url&#039; doesn&#039;t exist at line 151 in file classes/db/DbPDO.php
