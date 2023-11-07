@@ -27,7 +27,7 @@
     <span id="language-selector-label" class="hidden-md-up">{l s='Language:' d='Shop.Theme.Global'}</span>
     <div class="language-selector dropdown js-dropdown">
       <button data-toggle="dropdown" class="hidden-sm-down btn-unstyle" aria-haspopup="true" aria-expanded="false" aria-label="{l s='Language dropdown' d='Shop.Theme.Global'}">
-        <span class="expand-more">{$current_language.name_simple}</span>
+        <span class="expand-more"><img style="margin-right:10px;" src="/img/tmp/lang_mini_{$current_language.id_lang}_1.jpg?time=1699293531" title="{$current_language.name_simple}">{$current_language.name_simple}</span>
         <i class="material-icons expand-more">&#xE5C5;</i>
       </button>
       <ul class="dropdown-menu hidden-sm-down" aria-labelledby="language-selector-label">
