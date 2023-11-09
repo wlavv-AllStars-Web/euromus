@@ -23,22 +23,22 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
-<div id="block_myaccount_infos" class="col-md-3 links wrapper">
-  <p class="h3 myaccount-title hidden-sm-down">
-    <a class="text-uppercase" href="{$urls.pages.my_account}" rel="nofollow">
+<div  id="block_myaccount_infos" class="col-md-3 links wrapper">
+  <p style="border-bottom: 2px solid rgba(128, 128, 128, 0.5);"  class="h3 myaccount-title hidden-sm-down">
+    <a  class="text-uppercase color" href="{$urls.pages.my_account}" rel="nofollow">
       {l s='Your account' d='Shop.Theme.Customeraccount'}
     </a>
   </p>
-  <div class="title clearfix hidden-md-up" data-target="#footer_account_list" data-toggle="collapse">
-    <span class="h3">{l s='Your account' d='Shop.Theme.Customeraccount'}</span>
+  <div  class="title clearfix hidden-md-up" data-target="#footer_account_list" data-toggle="collapse">
+    <span class="h3 color">{l s='Your account' d='Shop.Theme.Customeraccount'}</span>
     <span class="float-xs-right">
       <span class="navbar-toggler collapse-icons">
-        <i class="material-icons add">&#xE313;</i>
-        <i class="material-icons remove">&#xE316;</i>
+        <i class="material-icons add color">&#xE313;</i>
+        <i class="material-icons remove color">&#xE316;</i>
       </span>
     </span>
   </div>
-  <ul class="account-list collapse" id="footer_account_list">
+  <ul  class="account-list collapse" id="footer_account_list">
     {if $customer.is_logged}
         <li><a href="{$urls.pages.identity}" title="{l s='Information' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Information' d='Shop.Theme.Customeraccount'}</a></li>
         {if $customer.addresses|count}
@@ -61,9 +61,9 @@
         {hook h='displayMyAccountBlock'}
         <li><a href="{$urls.actions.logout}" title="{l s='Log me out' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Sign out' d='Shop.Theme.Actions'}</a></li>
       {else}
-        <li><a href="{$urls.pages.guest_tracking}" title="{l s='Order tracking' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Order tracking' d='Shop.Theme.Customeraccount'}</a></li>
-        <li><a href="{$urls.pages.my_account}" title="{l s='Log in to your customer account' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Sign in' d='Shop.Theme.Actions'}</a></li>
-        <li><a href="{$urls.pages.register}" title="{l s='Create account' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Create account' d='Shop.Theme.Customeraccount'}</a></li>
+        <li class="colorli"><a class="color" href="{$urls.pages.guest_tracking}" title="{l s='Order tracking' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Order tracking' d='Shop.Theme.Customeraccount'}</a></li>
+        <li class="colorli"><a class="color" href="{$urls.pages.my_account}" title="{l s='Log in to your customer account' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Sign in' d='Shop.Theme.Actions'}</a></li>
+        <li class="colorli"><a class="color" href="{$urls.pages.register}" title="{l s='Create account' d='Shop.Theme.Customeraccount'}" rel="nofollow">{l s='Create account' d='Shop.Theme.Customeraccount'}</a></li>
         {hook h='displayMyAccountBlock'}
       {/if} 
 	</ul>

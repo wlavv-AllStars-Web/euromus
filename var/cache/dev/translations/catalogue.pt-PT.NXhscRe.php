@@ -8968,6 +8968,101 @@ According to the Rec.30;Art.7(1)(c)' => 'Devido a outras obrigações legais, as
     'Try to search our catalog, you may find what you are looking for!' => 'Tente pesquisar no nosso catálogo, poderá encontrar o que procura!',
     'You cannot access this store from your country. We apologize for the inconvenience.' => 'Não é possível aceder à nossa loja a partir do seu país. Pedimos desculpa pelo incómodo.',
   ),
+  'ModulesMboAddons' => 
+  array (
+    'Connect to Addons marketplace' => 'Ligar com o Addons Marketplace',
+    'Remember me' => 'Lembrar-me',
+    'Let\'s go!' => 'Continuar!',
+    'Confirm logout' => 'Confirmar encerramento de sessão',
+    'You are about to log out your Addons account. You might miss important updates of Addons you\'ve bought.' => 'Está prestes a encerrar sessão na sua conta Addons. Pode perder atualizações importantes de Addons que comprou.',
+  ),
+  'ModulesMboErrors' => 
+  array (
+    'PrestaShop was unable to log in to Addons. Please check your credentials and your Internet connection.' => 'PrestaShop não conseguiu autenticar-se nos Addons. Por favor verifique as suas credenciais e se está ligado à internet.',
+    'It looks like we have trouble connecting to Addons. Please refresh the page or check your firewall configuration.' => 'Parece que nós temos problemas em ligar aos «Extars». Por favor, atualzie a página ou verifique a configuração da sua firewall.',
+  ),
+  'ModulesMboGlobal' => 
+  array (
+    'For even more security on your website forms, consult our Security & Access modules category on the' => 'Para ainda maior segurança nos formulários do seu sítio, consulte a nossa categoria de módulos de Segurança & Acesso no',
+    'PrestaShop Addons Marketplace' => 'Mercado de extensões do Prestashop',
+    'Discover more modules to improve your shop on' => 'Descubra mais módulos para melhorar a sua loja em',
+    'Oh no.. something went wrong' => 'Oh não... algo correu mal',
+    'There has been a problem on our side. Refresh your page and if the problem persists, try again later.' => 'Houve um problema em nosso lado. Atualize sua página e, se o problema persistir, tente novamente mais tarde.',
+    'Refresh page' => 'Atualizar página',
+  ),
+  'ModulesMboLinks' => 
+  array (
+    'https://authv2.prestashop.com/register' => 'https://authv2.prestashop.com/register',
+    'https://authv2.prestashop.com/password/request ' => 'https://authv2.prestashop.com/password/request ',
+    'https://addons.prestashop.com/en/429-website-security-access?utm_source=back-office&utm_medium=native-contactform&utm_campaign=back-office-EN&utm_content=security' => 'https://addons.prestashop.com/pt/429-seguranca-acesso?utm_source=back-office&utm_medium=native-contactform&utm_campaign=back-office-PT&utm_content=security',
+    'https://addons.prestashop.com/en/517-blocks-tabs-banners?utm_source=back-office&utm_medium=modules&utm_campaign=back-office-EN' => 'https://addons.prestashop.com/pt/517-blocos-guias-banners?utm_source=back-office&utm_medium=modules&utm_campaign=back-office-PT',
+    'https://addons.prestashop.com/?utm_source=back-office&utm_medium=modules&utm_campaign=back-office-EN' => 'https://addons.prestashop.com/?utm_source=back-office&utm_medium=modules&utm_campaign=back-office-PT',
+  ),
+  'ModulesMboModulescatalog' => 
+  array (
+    'Synchronized with Addons marketplace!' => 'Sincronizado com o Addons Marketplace!',
+    'Connected' => 'Ligado',
+    'Connected as' => 'Ligado como',
+    'Module %module% successfully upgraded.' => 'Módulo %module% actualizado com sucesso.',
+    'Upgrade of module %module% failed. %error%' => 'Actualização do módulo %module% falhou. %error%',
+    'Module %module% is already up to date' => 'Módulo %module% já está actualizado',
+    'Marketplace' => 'Marketplace',
+    'Check for updates' => 'Verificar atualizações',
+    'Discover' => 'Descobrir',
+    'Toggle Dropdown' => 'Alternar o menu pendente',
+    'Link your shop to your Addons account to automatically receive important updates for the modules you purchased. Don\'t have an account yet?' => 'Ligue a sua loja à sua conta Addons para receber automaticamente actualizações importantes para os módulos que adquiriu. Ainda não tem uma conta?',
+    'Sign up now' => 'Inscreva-se agora',
+    'If you created your account using Google, please follow the forgotten password procedure of Addons Marketplace to create your password : ' => 'Se criou a sua conta utilizando o Google, por favor siga o procedimento de esquecimento de palavra-passe do Addons Marketplace para criar a sua palavra-passe : ',
+    'Reset your password' => 'Redefinir a sua palavra-passe',
+    'Yes, log out' => 'Sim, encerrar sessão',
+    'Upload a module' => 'Enviar um módulo',
+    'Drop your module archive here or [1]select file[/1]' => 'Arraste o arquivo do seu módulo para aqui ou [1]selecione um ficheiro[/1]',
+    'Please upload one file at a time, .zip or tarball format (.tar, .tar.gz or .tgz).' => 'Carregue um ficheiro de cada vez, formato .zip ou tarball (.tar, .tar.gz ou .tgz).',
+    'Your module will be installed right after that.' => 'O seu módulo será instalado logo depois.',
+    'Installing module...' => 'A instalar módulo...',
+    'It will close as soon as the module is installed. It won\'t be long!' => 'Fechar-se-á assim que o módulo seja instalado. Falta pouco!',
+    'Module installed!' => 'Módulo instalado!',
+    'Oops... Upload failed.' => 'Oops... a atualização falhou.',
+    'What happened?' => 'O que aconteceu?',
+    'Read More' => 'Obter mais informações',
+    'Discover the best-selling modules of this category in the %link% page.' => 'Descubra os módulos mais vendidos desta categoria na página %link%.',
+  ),
+  'ModulesMboModulesselection' => 
+  array (
+    'Modules in the spotlight' => 'Módulos em destaque',
+  ),
+  'ModulesMboRecommendedmodulesandservices' => 
+  array (
+    'Automate emails' => 'Automatizar e-mails',
+    'Boost sales' => 'Aumentar as vendas',
+    'Create a discount strategy' => 'Criar uma estratégia de desconto',
+    'Customize pages' => 'Personalizar páginas',
+    'Improve customer experience' => 'Melhorar a experiência do cliente',
+    'Improve customer targeting' => 'Melhorar a segmentação dos clientes',
+    'Improve data strategy' => 'Melhorar a estratégia de dados',
+    'Improve SEO' => 'Melhorar o SEO',
+    'Improve shipping' => 'Melhorar a expedição',
+    'Improve the checkout experience' => 'Melhorar a experiência de checkout',
+    'Improve visuals' => 'Melhorar os visuais',
+    'Make shipping easier' => 'Facilitar a expedição',
+    'Make your deliveries easier' => 'Facilitar as suas entregas',
+    'Optimize order management' => 'Otimizar a gestão de encomendas',
+    'Optimize product catalog' => 'Optimizar o catálogo de produtos',
+    'Optimize product creation' => 'Otimizar a criação de produtos',
+    'Promote brands' => 'Promover as marcas',
+    'Simplify accounting' => 'Simplificar a contabilidade',
+    'Simplify store management' => 'Simplificar a gestão da loja',
+    'Recommended modules' => 'Módulos recomendados',
+  ),
+  'ModulesMboSearch' => 
+  array (
+    'Search addons.prestashop.com' => 'Pesquisar em addons.prestashop.com',
+    'Go to Addons' => 'Ver os «Addons»',
+  ),
+  'ModulesMboThemescatalog' => 
+  array (
+    'Themes Catalog' => 'Catálogo de Temas Gráficos',
+  ),
 ));
 
 $cataloguePt = new MessageCatalogue('pt', array (
