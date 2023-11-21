@@ -94,7 +94,7 @@ services:
       - '@=service("prestashop.adapter.legacy.context").getContext().language.date_format_lite'
       - "@prestashop.core.localization.locale.repository"
       - '@=service("prestashop.adapter.legacy.context").getContext().language'
-      - '@=service("prestashop.adapter.legacy.context").getContext().currency'
+      - ''
 
   prestashop.bundle.twig.extension.number_extension:
     class: 'PrestaShopBundle\Twig\Extension\NumberExtension'

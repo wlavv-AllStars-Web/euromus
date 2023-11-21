@@ -49,9 +49,15 @@
     {/block}
   </div>
 </div>
+<<<<<<< Updated upstream
 <div class="footer-container border back">
   <div style="width: 90%;" class="container ">
     <div class="row ">
+=======
+<div class="footer-container1" style="background-color: darkgreen;">
+  <div class="container">
+    <div class="row">
+>>>>>>> Stashed changes
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
