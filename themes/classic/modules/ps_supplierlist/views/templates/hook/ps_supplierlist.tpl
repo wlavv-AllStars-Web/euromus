@@ -23,14 +23,14 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
-<div id="search_filters_suppliers">
+<div style="padding:0 ;margin-top: 25px; margin-bottom: 25px; text-align: center;" id="search_filters_suppliers">
   <section class="facet">
     {if $display_link_supplier}
       <a href="{$page_link}" class="h6 text-uppercase facet-label" title="{l s='Suppliers' d='Shop.Theme.Catalog'}">
         {l s='Suppliers' d='Shop.Theme.Catalog'}
       </a>
     {else}
-      <p class="h6 text-uppercase facet-label">
+      <p style="border: 2px solid #041E42; border-top: 0px; border-right: 0px; border-left: 0px "  class="h6 text-uppercase facet-label">
         {l s='Suppliers' d='Shop.Theme.Catalog'}
       </p>
     {/if}

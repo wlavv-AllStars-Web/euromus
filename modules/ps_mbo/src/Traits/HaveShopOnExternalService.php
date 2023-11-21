@@ -109,6 +109,7 @@ trait HaveShopOnExternalService
             }
         } catch (Exception $exception) {
             // Create the lock file
+
             if (!file_exists($lockFile)) {
                 if (!is_dir($this->moduleCacheDir)) {
                     mkdir($this->moduleCacheDir);

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 ec6299,192.168.1.64,GET,http://192.168.1.64:82/admineuromus1/index.php/improve/modules/manage/action/configure/autoupgrade?_token=QX7iX_vV-YHHaUYcMm3PQLd5LjZo0WiWUCbuYLZ9efU,1700042763,,302
 8f624a,192.168.1.64,GET,http://192.168.1.64:82/admineuromus1/index.php/modules/pseditionbasic/setup-guide/api/index,1700042801,,302
 39b55b,192.168.1.64,GET,http://192.168.1.64:82/admineuromus1/index.php/security/compromised?_token=QX7iX_vV-YHHaUYcMm3PQLd5LjZo0WiWUCbuYLZ9efU&uri=http%253A%252F%252F192.168.1.64%253A82%252Fadmineuromus1%252Findex.php%252Fmodules%252Fpseditionbasic%252Fsetup-guide%252Fapi%252Findex,1700042803,,200
@@ -4209,3 +4210,42 @@ bdd221,192.168.1.64,POST,http://192.168.1.64:82/admineuromus1/index.php/common/n
 b58044,192.168.1.64,POST,http://192.168.1.64:82/admineuromus1/index.php/common/notifications?_token=S83x91bs0hCm8bbJdvo8GihRVdMih3973pwl2f7WrzU,1700212564,,200
 d52060,192.168.1.64,POST,http://192.168.1.64:82/admineuromus1/index.php/common/notifications?_token=S83x91bs0hCm8bbJdvo8GihRVdMih3973pwl2f7WrzU,1700212685,,200
 9e118b,192.168.1.64,POST,http://192.168.1.64:82/admineuromus1/index.php/common/notifications?_token=S83x91bs0hCm8bbJdvo8GihRVdMih3973pwl2f7WrzU,1700212685,,200
+=======
+694270,127.0.0.1,GET,http://euromus.local/admineuromus1/index.php/?controller=HOME&token=e8b5e2836a1292c6bd18c289842daf9d,1699545653,ce2dc5,500
+825d00,127.0.0.1,GET,http://euromus.local/admineuromus1/index.php/?controller=HOME&token=e8b5e2836a1292c6bd18c289842daf9d,1699545653,9dc437,500
+ce2dc5,127.0.0.1,GET,http://euromus.local/admineuromus1/index.php/?controller=HOME&token=e8b5e2836a1292c6bd18c289842daf9d,1699545653,,500
+9dc437,127.0.0.1,GET,http://euromus.local/admineuromus1/index.php/?controller=HOME&token=e8b5e2836a1292c6bd18c289842daf9d,1699545653,,500
+070f98,127.0.0.1,GET,http://euromus.local/admineuromus1/index.php/improve/modules/alerts?_token=NbCfXgznhh98Xbz5xuVPum-y0aDymF49TIp3EQ2L1mo,1699545723,394725,500
+394725,127.0.0.1,GET,http://euromus.local/admineuromus1/index.php/improve/modules/alerts?_token=NbCfXgznhh98Xbz5xuVPum-y0aDymF49TIp3EQ2L1mo,1699545723,,500
+da5496,127.0.0.1,GET,http://euromus.local/admineuromus1/index.php/_wdt/394725?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545725,ddd852,500
+ddd852,127.0.0.1,GET,http://euromus.local/admineuromus1/index.php/_wdt/394725?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545725,,500
+ded8f9,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545751,b662a2,500
+b662a2,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545751,,500
+1db490,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/b662a2?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545753,87bb66,500
+87bb66,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/b662a2?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545753,,500
+05f259,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545810,c11407,500
+c11407,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545810,,500
+3b70dc,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/c11407?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545811,c5eb6b,500
+c5eb6b,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/c11407?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545811,,500
+68829f,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545822,eacd11,500
+eacd11,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545822,,500
+7b10e9,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/eacd11?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545823,8cd99c,500
+8cd99c,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/eacd11?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545823,,500
+632e89,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545840,8d913e,500
+8d913e,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545840,,500
+d5cc77,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/8d913e?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545841,bf6314,500
+bf6314,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/8d913e?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545841,,500
+450f5a,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545904,c60c2d,500
+c60c2d,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545904,,500
+9880eb,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/c60c2d?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545906,f25dbb,500
+f25dbb,127.0.0.1,GET,http://euromus.local/admineuromus1/_wdt/c60c2d?_token=5oRuPq8eOEq7P1yK4VcY2X1gn3swzApIiMiCiH5Bjc8,1699545906,,500
+e90828,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545952,,404
+313772,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699545997,,404
+bd430c,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699546014,,404
+656cd5,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699546101,,404
+7951bb,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699546102,db9e99,500
+db9e99,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699546102,,500
+f943c5,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699967751,,404
+dac614,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699967756,6ca966,500
+6ca966,127.0.0.1,GET,http://euromus.local/admineuromus1/,1699967756,,500
+>>>>>>> 5503602146efb937b9201ec72490670067d2df0a

@@ -97,6 +97,8 @@ class SearchProvider implements FacetsRendererInterface, ProductSearchProviderIn
         $sortPriceDesc = new SortOrder('product', 'price', 'desc');
         $sortDateAsc = new SortOrder('product', 'date_add', 'asc');
         $sortDateDesc = new SortOrder('product', 'date_add', 'desc');
+        $sortRefAsc = new SortOrder('product', 'reference', 'asc');
+        $sortRefDesc = new SortOrder('product', 'reference', 'desc');
         $translator = $this->module->getTranslator();
 
         $sortOrders = [
@@ -117,6 +119,12 @@ class SearchProvider implements FacetsRendererInterface, ProductSearchProviderIn
             ),
             $sortPriceDesc->setLabel(
                 $translator->trans('Price, high to low', [], 'Shop.Theme.Catalog')
+            ),
+            $sortRefAsc->setLabel(
+                $translator->trans('Reference, A to Z', [], 'Shop.Theme.Catalog')
+            ),
+            $sortRefDesc->setLabel(
+                $translator->trans('Reference, Z to A', [], 'Shop.Theme.Catalog')
             ),
         ];
 
@@ -506,7 +514,8 @@ class SearchProvider implements FacetsRendererInterface, ProductSearchProviderIn
 
     /**
      * Remove the facet when there's only 1 result.
-     * Keep facet status when it's a slider
+     * Keep facet status when it's a slider.
+     * Keep facet status if it's a availability or extras facet.
      *
      * @param array $facets
      * @param int $totalProducts
@@ -522,12 +531,6 @@ class SearchProvider implements FacetsRendererInterface, ProductSearchProviderIn
                 continue;
             }
 
-            // We won't apply this to availability facet, let's keep the value displayed
-            // Don't worry, the facet will be hidden if there are no values with products
-            if ($facet->getType() == 'availability') {
-                continue;
-            }
-
             // Now the rest of facets - we apply this logic
             $totalFacetProducts = 0;
             $usefulFiltersCount = 0;
@@ -538,21 +541,22 @@ class SearchProvider implements FacetsRendererInterface, ProductSearchProviderIn
                 }
             }
 
+            // We display the facet in several cases
             $facet->setDisplayed(
-                // There are two filters displayed
+                // If there are two filters available
                 $usefulFiltersCount > 1
                 ||
-                /*
-                 * There is only one fitler and the
-                 * magnitude is different than the
-                 * total products
-                 */
+                // There is only one filter available, but it furhter reduces the product selection
                 (
                     count($facet->getFilters()) === 1
                     && $totalFacetProducts < $totalProducts
                     && $usefulFiltersCount > 0
                 )
+                ||
+                // If there is only one filter, but it's availability or extras filter - we want this one to be displayed all the time
+                ($usefulFiltersCount === 1 && ($facet->getType() == 'availability' || $facet->getType() == 'extras'))
             );
+            // Other cases - hidden by default
         }
     }
 

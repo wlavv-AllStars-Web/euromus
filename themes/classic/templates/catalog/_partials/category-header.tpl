@@ -22,9 +22,15 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+<style>
+.delminh{
+    min-height: auto;
+}
+</style>
+
 <div id="js-product-list-header">
     {if $listing.pagination.items_shown_from == 1}
-        <div class="block-category card card-block">
+        <div class="block-category card card-block delminh">
             <h1 class="h1">{$category.name}</h1>
             <div class="block-category-inner">
                 {if $category.description}

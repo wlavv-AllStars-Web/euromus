@@ -23,14 +23,23 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
-<div id="search_filters_brands">
-  <section class="facet">
+
+<div style="display: flex; flex-direction: column; padding:0 ; text-align: center;" id="search_filters_brands">
+  <section style="display: flex; flex-direction:column" class="facet">
     {if $display_link_brand}
-      <a href="{$page_link}" class="h6 text-uppercase facet-label" title="{l s='brands' d='Shop.Theme.Catalog'}">
+      <a style="
+    width: -webkit-fill-available;
+    align-self: center;
+    border: 2px solid #041E42;
+    border-top: 0px;
+    border-right: 0px;
+    border-left: 0px;" href="{$page_link}" class="h6 text-uppercase facet-label"
+        title="{l s='brands' d='Shop.Theme.Catalog'}">
         {l s='Brands' d='Shop.Theme.Catalog'}
       </a>
     {else}
-      <p class="h6 text-uppercase facet-label">
+      <p style="border: 2px solid #041E42; border-top: 0px; border-right: 0px; border-left: 0px "
+        class="h6 text-uppercase facet-label">
         {l s='Brands' d='Shop.Theme.Catalog'}
       </p>
     {/if}

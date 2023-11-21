@@ -22,11 +22,19 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-
+<style>
+.selsizer{
+  padding-top: 5px !important;
+  padding-bottom: 5px !important;
+  text-align: center;
+  line-height: normal;
+}
+</style>
 <span class="col-sm-3 col-md-5 hidden-sm-down sort-by">{l s='Sort by:' d='Shop.Theme.Global'}</span>
 <div class="{if !empty($listing.rendered_facets)}col-xs-8 col-sm-7{else}col-xs-12 col-sm-12{/if} col-md-9 products-sort-order dropdown">
   <button
-    class="btn-unstyle select-title"
+  
+    class="btn-unstyle select-title form-control selsizer"
     rel="nofollow"
     data-toggle="dropdown"
     aria-label="{l s='Sort by selection' d='Shop.Theme.Global'}"

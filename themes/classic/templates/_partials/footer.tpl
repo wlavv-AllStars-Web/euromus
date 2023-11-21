@@ -33,18 +33,31 @@
     outline: 2px solid #041E42;
     outline-offset: 2px;
   }
+
+  @media (max-width: 576px){
+    .text-sm-center{
+      text-align: center;
+  }
+  };
+
 </style>
 
 <div class="container-fluid ">
-  <div class="row ">
+  <div class="row">
     {block name='hook_footer_before'}
       {hook h='displayFooterBefore'}
     {/block}
   </div>
 </div>
+<<<<<<< Updated upstream
 <div class="footer-container border back">
-  <div class="container ">
+  <div style="width: 90%;" class="container ">
     <div class="row ">
+=======
+<div class="footer-container1" style="background-color: darkgreen;">
+  <div class="container">
+    <div class="row">
+>>>>>>> Stashed changes
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
@@ -55,7 +68,7 @@
       {/block}
     </div>
   </div>
-  <div style="border-top: 2px solid rgba(128, 128, 128, 0.2); background-color: #041E42;" class="row pt-1">
+  <div style="border-top: 2px solid rgba(128, 128, 128, 0.2); background-color: #041E42;" class="row pt-1 ">
     <p class="text-sm-center">
       {block name='copyright_link'}
         <a href="https://www.prestashop-project.org/" target="_blank" rel="noopener noreferrer nofollow">
