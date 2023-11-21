@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 13:24:43
+/* Smarty version 4.3.1, created on 2023-11-21 17:54:57
   from 'module:ps_contactinfonav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655caf9be08f66_06997341',
+  'unifunc' => 'content_655ceef11ec3e5_20782024',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0eb2119957cbc13b240126b3ccd8fac8f109f1e2' => 
     array (
       0 => 'module:ps_contactinfonav.tpl',
-      1 => 1699545400,
+      1 => 1695306180,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655caf9be08f66_06997341 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655ceef11ec3e5_20782024 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\euromus\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.replace.php','function'=>'smarty_modifier_replace',),));
 ?>
 <!-- begin C:\xampp\htdocs\euromus/themes/classic/modules/ps_contactinfo/nav.tpl --><div id="_desktop_contact_link">

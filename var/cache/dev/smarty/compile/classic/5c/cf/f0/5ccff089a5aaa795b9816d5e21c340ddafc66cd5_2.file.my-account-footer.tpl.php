@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 13:24:45
+/* Smarty version 4.3.1, created on 2023-11-21 17:54:58
   from 'C:\xampp\htdocs\euromus\themes\classic\modules\ps_emailalerts\views\templates\hook\my-account-footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655caf9d1c6417_77579083',
+  'unifunc' => 'content_655ceef2de5d41_98532524',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '5ccff089a5aaa795b9816d5e21c340ddafc66cd5' => 
     array (
       0 => 'C:\\xampp\\htdocs\\euromus\\themes\\classic\\modules\\ps_emailalerts\\views\\templates\\hook\\my-account-footer.tpl',
-      1 => 1700041519,
+      1 => 1700566890,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655caf9d1c6417_77579083 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655ceef2de5d41_98532524 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <li class="colorli">

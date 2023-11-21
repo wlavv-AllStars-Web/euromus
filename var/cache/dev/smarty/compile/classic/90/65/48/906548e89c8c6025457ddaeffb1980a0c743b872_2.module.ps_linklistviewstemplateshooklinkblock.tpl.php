@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 13:24:44
+/* Smarty version 4.3.1, created on 2023-11-21 17:54:58
   from 'module:ps_linklistviewstemplateshooklinkblock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655caf9cbf4a86_81628455',
+  'unifunc' => 'content_655ceef27183d1_68259314',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '906548e89c8c6025457ddaeffb1980a0c743b872' => 
     array (
       0 => 'module:ps_linklistviewstemplateshooklinkblock.tpl',
-      1 => 1700041519,
+      1 => 1700566890,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655caf9cbf4a86_81628455 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655ceef27183d1_68259314 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/themes/classic/modules/ps_linklist/views/templates/hook/linkblock.tpl --> <style>
  .color {
   color: #FFFFFF !important;  

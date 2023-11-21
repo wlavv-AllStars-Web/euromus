@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 13:24:42
+/* Smarty version 4.3.1, created on 2023-11-21 17:54:55
   from 'C:\xampp\htdocs\euromus\modules\ps_checkout\views\templates\hook\header.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655caf9a45a731_38840581',
+  'unifunc' => 'content_655ceeef9361d3_53443947',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '0171d33243e1e66fe891f67d51916a9c2d0411ac' => 
     array (
       0 => 'C:\\xampp\\htdocs\\euromus\\modules\\ps_checkout\\views\\templates\\hook\\header.tpl',
-      1 => 1699545393,
+      1 => 1695306170,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655caf9a45a731_38840581 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655ceeef9361d3_53443947 (Smarty_Internal_Template $_smarty_tpl) {
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['contentToPrefetch']->value, 'content');
 $_smarty_tpl->tpl_vars['content']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['content']->value) {

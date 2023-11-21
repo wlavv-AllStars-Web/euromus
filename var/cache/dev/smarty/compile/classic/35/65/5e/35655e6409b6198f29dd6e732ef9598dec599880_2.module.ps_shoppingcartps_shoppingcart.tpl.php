@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 13:24:44
+/* Smarty version 4.3.1, created on 2023-11-21 17:54:57
   from 'module:ps_shoppingcartps_shoppingcart.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655caf9c447265_05305438',
+  'unifunc' => 'content_655ceef1a88fb8_76572475',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '35655e6409b6198f29dd6e732ef9598dec599880' => 
     array (
       0 => 'module:ps_shoppingcartps_shoppingcart.tpl',
-      1 => 1700567341,
+      1 => 1700566890,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655caf9c447265_05305438 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655ceef1a88fb8_76572475 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/themes/classic/modules/ps_shoppingcart/ps_shoppingcart.tpl --><style>
 .whitespace{
   margin-left: auto; 
