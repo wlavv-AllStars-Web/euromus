@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {extends file=$layout}
-
+</style>
 {block name='head' append}
   <meta property="og:type" content="product">
   {if $product.cover}
@@ -229,7 +229,7 @@
       {if $accessories}
         <section class="product-accessories clearfix">
           <p class="h5 text-uppercase">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
-          <div class="products row">
+          <div class="products row" >
             {foreach from=$accessories item="product_accessory" key="position"}
               {block name='product_miniature'}
                 {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position productClasses="col-xs-12 col-sm-6 col-lg-4 col-xl-3"}

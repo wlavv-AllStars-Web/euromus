@@ -22,10 +22,18 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+<style>
+.flagbg{
+    background-color:  rgb(10, 49, 97) !important;
+    border: 1px solid black;
+    border-radius: 25%;
+}
+</style>
+
 {block name='product_flags'}
-    <ul class="product-flags js-product-flags">
+    <ul style="padding-left: 25px" class="product-flags  js-product-flags">
         {foreach from=$product.flags item=flag}
-            <li class="product-flag {$flag.type}">{$flag.label}</li>
+            <li class="flagbg product-flag {$flag.type}">{$flag.label}</li>
         {/foreach}
     </ul>
 {/block}
