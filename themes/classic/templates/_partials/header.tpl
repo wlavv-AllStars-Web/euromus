@@ -66,6 +66,7 @@
             {else}
               {renderLogo}
             {/if}
+          {/if}
           </div>
           <div style="padding: 0; padding-left: 25px; margin-top: 10px; margin-bottom: 10px"
             class="header-top transp col-md-10 col-sm-12 vanish"
