@@ -10,7 +10,11 @@ if (in_array(PHP_SAPI, ['cli', 'phpdbg'], true)) {
 }
 
 require dirname(__DIR__, 3).''.\DIRECTORY_SEPARATOR.'vendor/autoload.php';
+<<<<<<< HEAD
 require __DIR__.'/ContainerEEKUdii/appAppKernelDevDebugContainer.php';
+=======
+require __DIR__.'/ContainerC2cG1VC/appAppKernelDevDebugContainer.php';
+>>>>>>> 18b6231d41890bd0c45eba5f4e6d67dbf23febde
 
 $classes = [];
 $classes[] = 'Symfony\Bundle\FrameworkBundle\FrameworkBundle';
@@ -197,10 +201,6 @@ $classes[] = 'PrestaShopBundle\Security\OAuth2\Repository\AccessTokenRepository'
 $classes[] = 'PrestaShopBundle\Utils\FloatParser';
 $classes[] = 'PrestaShop\Module\BlockWishList\Controller\WishlistConfigurationAdminController';
 $classes[] = 'PrestaShop\Module\LinkList\Form\Type\TranslateCustomUrlType';
-$classes[] = 'PrestaShop\Module\Mbo\Api\Config\Env';
-$classes[] = 'PrestaShop\Module\Mbo\Api\Repository\ModuleRepository';
-$classes[] = 'PrestaShop\Module\Mbo\Api\Security\AuthorizationChecker';
-$classes[] = 'PrestaShop\Module\Mbo\Handler\ErrorHandler\ErrorHandler';
 $classes[] = 'PrestaShop\Module\PrestashopFacebook\API\Client\FacebookCategoryClient';
 $classes[] = 'PrestaShop\Module\PrestashopFacebook\API\Client\FacebookClient';
 $classes[] = 'PrestaShop\Module\PrestashopFacebook\API\EventSubscriber\AccountSuspendedSubscriber';
@@ -1230,51 +1230,6 @@ $classes[] = 'KlaviyoPs\Classes\UtilServices\EnvService';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleAwareListener';
 $classes[] = 'Symfony\Component\HttpKernel\EventListener\LocaleListener';
 $classes[] = 'PrestaShopBundle\Cache\CacheWarmer';
-$classes[] = 'PrestaShop\Module\Mbo\Accounts\Provider\AccountsDataProvider';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\ApiClient';
-$classes[] = 'GuzzleHttp\Client';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\Provider\AddonsDataProvider';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\Listener\AddonsCredentialsEncryptionListener';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\Subscriber\ModuleManagementEventSubscriber';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\Provider\LinksProvider';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\Toolbar';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\User\AddonsUser';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\User\CredentialsEncryptor';
-$classes[] = 'PrestaShop\Module\Mbo\Addons\User\AddonsUserProvider';
-$classes[] = 'PrestaShop\Module\Mbo\Api\Service\ConfigApplyExecutor';
-$classes[] = 'PrestaShop\Module\Mbo\Api\Service\ModuleTransitionExecutor';
-$classes[] = 'PrestaShop\Module\Mbo\Api\Service\Factory';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\ConnectedClient';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\Client';
-$classes[] = 'PrestaShop\Module\Mbo\Service\View\ContextBuilder';
-$classes[] = 'PrestaShop\Module\Mbo\Controller\Admin\AddonsController';
-$classes[] = 'PrestaShop\Module\Mbo\Controller\Admin\ModuleCatalogController';
-$classes[] = 'PrestaShop\Module\Mbo\Controller\Admin\ModuleRecommendedController';
-$classes[] = 'PrestaShop\Module\Mbo\Controller\Admin\ModuleSelectionController';
-$classes[] = 'PrestaShop\Module\Mbo\Controller\Admin\ThemeCatalogController';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\Config\CommandHandler\ConfigChangeCommandHandler';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\Config\CommandHandler\VersionChangeApplyConfigCommandHandler';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\Config\Applier';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\Config\Appliers\Factory';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\Config\Factory';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\Config\Appliers\ModuleSelectionMenuConfigApplier';
-$classes[] = 'PrestaShop\Module\Mbo\Distribution\Config\Appliers\ThemeCatalogMenuConfigApplier';
-$classes[] = 'PrestaShop\Module\Mbo\Service\ExternalContentProvider\ExternalContentProvider';
-$classes[] = 'PrestaShop\Module\Mbo\Module\ActionsManager';
-$classes[] = 'PrestaShop\Module\Mbo\Module\ModuleBuilder';
-$classes[] = 'PrestaShop\Module\Mbo\Module\CollectionFactory';
-$classes[] = 'PrestaShop\Module\Mbo\Module\FilesManager';
-$classes[] = 'PrestaShop\Module\Mbo\Module\FiltersFactory';
-$classes[] = 'PrestaShop\Module\Mbo\Module\Repository';
-$classes[] = 'PrestaShop\Module\Mbo\Module\Workflow\ModuleStateMachine';
-$classes[] = 'PrestaShop\Module\Mbo\Module\Workflow\Event\TransitionEventSubscriber';
-$classes[] = 'PrestaShop\Module\Mbo\Module\CommandHandler\ModuleStatusTransitionCommandHandler';
-$classes[] = 'PrestaShop\Module\Mbo\Module\SourceRetriever\UrlSourceRetriever';
-$classes[] = 'PrestaShop\Module\Mbo\Module\Workflow\TransitionsManager';
-$classes[] = 'PrestaShop\Module\Mbo\Api\Security\AdminAuthenticationProvider';
-$classes[] = 'PrestaShop\Module\Mbo\Security\PermissionChecker';
-$classes[] = 'PrestaShop\Module\Mbo\Tab\TabCollectionFactory';
-$classes[] = 'PrestaShop\Module\Mbo\Tab\TabCollectionProvider';
 $classes[] = 'Symfony\Component\Mime\MimeTypes';
 $classes[] = 'Symfony\Bridge\Monolog\Command\ServerLogCommand';
 $classes[] = 'Symfony\Bridge\Monolog\Handler\ConsoleHandler';
@@ -2611,7 +2566,6 @@ $classes[] = 'Smarty';
 $classes[] = 'Ps_facebook';
 $classes[] = 'PrestaShop\Module\PrestashopFacebook\Factory\CacheFactory';
 $classes[] = 'PrestaShop\Module\PrestashopFacebook\Factory\ContextFactory';
-$classes[] = 'ps_mbo';
 $classes[] = 'PrestaShop\Module\Ps_metrics\Adapter\LoggerAdapter';
 $classes[] = 'PrestaShop\Module\Ps_metrics\Api\AnalyticsApi';
 $classes[] = 'PrestaShop\Module\Ps_metrics\Api\Client\AnalyticsClient';
