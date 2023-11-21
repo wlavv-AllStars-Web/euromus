@@ -1,7 +1,0 @@
-<?php //%5BC%5DSymfony%255CBundle%255CWebProfilerBundle%255CController%255CProfilerController%2523toolbarAction
-
-<<<<<<< HEAD
-return [PHP_INT_MAX, 1700561379];
-=======
-return [PHP_INT_MAX, 1699984631];
->>>>>>> 18b6231d41890bd0c45eba5f4e6d67dbf23febde

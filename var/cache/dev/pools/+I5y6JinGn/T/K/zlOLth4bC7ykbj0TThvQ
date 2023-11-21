@@ -1,7 +1,0 @@
-<?php //%5BC%5DPrestaShop%255CModule%255CPsEditionBasic%255CController%255CAdminPsEditionBasicSetupGuideController%2523fetchInitialDatas
-
-<<<<<<< HEAD
-return [PHP_INT_MAX, 1700561379];
-=======
-return [PHP_INT_MAX, 1699984630];
->>>>>>> 18b6231d41890bd0c45eba5f4e6d67dbf23febde

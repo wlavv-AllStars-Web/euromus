@@ -1,7 +1,0 @@
-<?php //%5BC%5DPrestaShopBundle%255CController%255CAdmin%255CCommonController
-
-<<<<<<< HEAD
-return [PHP_INT_MAX, 1700561365];
-=======
-return [PHP_INT_MAX, 1699984630];
->>>>>>> 18b6231d41890bd0c45eba5f4e6d67dbf23febde
