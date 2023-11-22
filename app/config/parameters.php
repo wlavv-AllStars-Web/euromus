@@ -2,7 +2,7 @@
   'parameters' => 
   array (
     'database_host' => 'localhost',
-    'database_port' => '3305',
+    'database_port' => '3306',
     'database_name' => 'euromus',
     'database_user' => 'root',
     'database_password' => '',
