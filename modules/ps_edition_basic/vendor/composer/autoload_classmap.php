@@ -6,10 +6,8 @@ $vendorDir = dirname(__DIR__);
 $baseDir = dirname($vendorDir);
 
 return array(
-    'Attribute' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
     'Composer\\InstalledVersions' => $vendorDir . '/composer/InstalledVersions.php',
     'Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
-    'PhpToken' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
     'PrestaShop\\ModuleLibCacheDirectoryProvider\\Cache\\CacheDirectoryProvider' => $vendorDir . '/prestashop/module-lib-cache-directory-provider/src/Cache/CacheDirectoryProvider.php',
     'PrestaShop\\ModuleLibServiceContainer\\DependencyInjection\\ContainerProvider' => $vendorDir . '/prestashop/module-lib-service-container/src/DependencyInjection/ContainerProvider.php',
     'PrestaShop\\ModuleLibServiceContainer\\DependencyInjection\\ServiceContainer' => $vendorDir . '/prestashop/module-lib-service-container/src/DependencyInjection/ServiceContainer.php',
@@ -28,13 +26,12 @@ return array(
     'PrestaShop\\Module\\PsEditionBasic\\Service\\ConfigurationService' => $baseDir . '/src/Service/ConfigurationService.php',
     'PrestaShop\\Module\\PsEditionBasic\\Traits\\HaveConfigurationPage' => $baseDir . '/src/Traits/HaveConfigurationPage.php',
     'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminBreadcrumbModifier' => $baseDir . '/src/Traits/Hooks/UseActionAdminBreadcrumbModifier.php',
+    'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminControllerInitBefore' => $baseDir . '/src/Traits/Hooks/UseActionAdminControllerInitBefore.php',
     'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminControllerSetMedia' => $baseDir . '/src/Traits/Hooks/UseActionAdminControllerSetMedia.php',
-    'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminLoginControllerSetMedia' => $baseDir . '/src/Traits/Hooks/UseActionAdminLoginControllerSetMedia.php',
     'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminMenuTabsModifier' => $baseDir . '/src/Traits/Hooks/UseActionAdminMenuTabsModifier.php',
     'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionObjectLanguageAddAfter' => $baseDir . '/src/Traits/Hooks/UseActionObjectLanguageAddAfter.php',
     'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseDisplayBackOfficeHeader' => $baseDir . '/src/Traits/Hooks/UseDisplayBackOfficeHeader.php',
     'PrestaShop\\Module\\PsEditionBasic\\Traits\\UseHooks' => $baseDir . '/src/Traits/UseHooks.php',
-    'Stringable' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
     'Symfony\\Component\\String\\AbstractString' => $vendorDir . '/symfony/string/AbstractString.php',
     'Symfony\\Component\\String\\AbstractUnicodeString' => $vendorDir . '/symfony/string/AbstractUnicodeString.php',
     'Symfony\\Component\\String\\ByteString' => $vendorDir . '/symfony/string/ByteString.php',
@@ -53,9 +50,5 @@ return array(
     'Symfony\\Polyfill\\Intl\\Grapheme\\Grapheme' => $vendorDir . '/symfony/polyfill-intl-grapheme/Grapheme.php',
     'Symfony\\Polyfill\\Intl\\Normalizer\\Normalizer' => $vendorDir . '/symfony/polyfill-intl-normalizer/Normalizer.php',
     'Symfony\\Polyfill\\Mbstring\\Mbstring' => $vendorDir . '/symfony/polyfill-mbstring/Mbstring.php',
-    'Symfony\\Polyfill\\Php80\\Php80' => $vendorDir . '/symfony/polyfill-php80/Php80.php',
-    'Symfony\\Polyfill\\Php80\\PhpToken' => $vendorDir . '/symfony/polyfill-php80/PhpToken.php',
-    'UnhandledMatchError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-    'ValueError' => $vendorDir . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
     'ps_edition_basic' => $baseDir . '/ps_edition_basic.php',
 );

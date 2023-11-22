@@ -67,8 +67,6 @@ use PSRLoggerAdapter;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Yaml\Yaml;
 
-$tool = new Tools();
-
 class Install extends AbstractInstall
 {
     public const SETTINGS_FILE = 'config/settings.inc.php';
@@ -192,16 +190,13 @@ class Install extends AbstractInstall
         }
 
         $key = PhpEncryption::createNewRandomKey();
-        // $privateKey = openssl_pkey_new([
-        //     'private_key_bits' => 2048,
-        //     'private_key_type' => OPENSSL_KEYTYPE_RSA,
-        // ]);
-        $privateKey = openssl_pkey_new([ 'config' => 'C:/xampp/apache/conf/openssl.cnf', 'private_key_bits' => 2048, 'private_key_type' => OPENSSL_KEYTYPE_RSA, ]);
+        $privateKey = openssl_pkey_new([
+            'private_key_bits' => 2048,
+            'private_key_type' => OPENSSL_KEYTYPE_RSA,
+        ]);
         openssl_pkey_export($privateKey, $apiPrivateKey);
         $apiPublicKey = openssl_pkey_get_details($privateKey)['key'];
-        
-    
-    
+
         $parameters = [
             'parameters' => [
                 'database_host' => $database_host,
@@ -639,7 +634,7 @@ class Install extends AbstractInstall
             ];
 
             if (file_exists(_PS_TRANSLATIONS_DIR_ . (string) $iso . '.gzip') == false) {
-                $language = EntityLanguage::downloadAndInstallLanguagePack($iso, _PS_INSTALL_VERSION_);
+                $language = EntityLanguage::downloadLanguagePack($iso, _PS_INSTALL_VERSION_);
 
                 if ($language == false) {
                     throw new PrestashopInstallerException($this->translator->trans('Cannot download language pack "%iso%"', ['%iso%' => $iso], 'Install'));

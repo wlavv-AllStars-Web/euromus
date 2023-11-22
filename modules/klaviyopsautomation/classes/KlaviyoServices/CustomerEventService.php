@@ -25,7 +25,7 @@ if (!defined('_PS_VERSION_')) {
 }
 
 use ArrayObject;
-use Klaviyo\Exception\KlaviyoException;
+use KlaviyoV3Sdk\Exception\KlaviyoException;
 use KlaviyoPs\Classes\PrestashopServices\CustomerService;
 
 class CustomerEventService

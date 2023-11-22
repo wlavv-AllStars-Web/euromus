@@ -4,11 +4,12 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
+class ComposerStaticInita9152809377f20d6316d47f59938a0ab
 {
     public static $files = array (
         '9c67151ae59aff4788964ce8eb2a0f43' => __DIR__ . '/..' . '/clue/stream-filter/src/functions_include.php',
         '7b11c4dc42b3b3023073cb14e519683c' => __DIR__ . '/..' . '/ralouphie/getallheaders/src/getallheaders.php',
+        'a0edc8309cc5e1d60e3047b5df6b7052' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/functions_include.php',
         '8cff32064859f4559445b89279f3199c' => __DIR__ . '/..' . '/php-http/message/src/filters.php',
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '2a9afd012ba84c341672875ae49cd5cd' => __DIR__ . '/..' . '/segmentio/analytics-php/lib/Segment.php',
@@ -22,7 +23,7 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
         'P' => 
         array (
             'Psr\\Http\\Message\\' => 17,
-            'Psr\\Http\\Client\\' => 16,
+            'Prestashop\\ModuleLibMboInstaller\\' => 33,
             'Prestashop\\ModuleLibGuzzleAdapter\\' => 34,
             'PrestaShop\\PsAccountsInstaller\\' => 31,
             'PrestaShop\\Module\\Ps_metrics\\' => 29,
@@ -57,12 +58,11 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
         ),
         'Psr\\Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-factory/src',
-            1 => __DIR__ . '/..' . '/psr/http-message/src',
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
         ),
-        'Psr\\Http\\Client\\' => 
+        'Prestashop\\ModuleLibMboInstaller\\' => 
         array (
-            0 => __DIR__ . '/..' . '/psr/http-client/src',
+            0 => __DIR__ . '/..' . '/prestashop/module-lib-mbo-installer/src',
         ),
         'Prestashop\\ModuleLibGuzzleAdapter\\' => 
         array (
@@ -95,7 +95,6 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
         'Http\\Message\\' => 
         array (
             0 => __DIR__ . '/..' . '/php-http/message/src',
-            1 => __DIR__ . '/..' . '/php-http/message-factory/src',
         ),
         'Http\\Client\\' => 
         array (
@@ -146,10 +145,8 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
         'GuzzleHttp\\Psr7\\BufferStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/BufferStream.php',
         'GuzzleHttp\\Psr7\\CachingStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/CachingStream.php',
         'GuzzleHttp\\Psr7\\DroppingStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/DroppingStream.php',
-        'GuzzleHttp\\Psr7\\Exception\\MalformedUriException' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Exception/MalformedUriException.php',
         'GuzzleHttp\\Psr7\\FnStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/FnStream.php',
         'GuzzleHttp\\Psr7\\Header' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/Header.php',
-        'GuzzleHttp\\Psr7\\HttpFactory' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/HttpFactory.php',
         'GuzzleHttp\\Psr7\\InflateStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/InflateStream.php',
         'GuzzleHttp\\Psr7\\LazyOpenStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/LazyOpenStream.php',
         'GuzzleHttp\\Psr7\\LimitStream' => __DIR__ . '/..' . '/guzzlehttp/psr7/src/LimitStream.php',
@@ -176,7 +173,6 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
         'Http\\Client\\Exception' => __DIR__ . '/..' . '/php-http/httplug/src/Exception.php',
         'Http\\Client\\Exception\\HttpException' => __DIR__ . '/..' . '/php-http/httplug/src/Exception/HttpException.php',
         'Http\\Client\\Exception\\NetworkException' => __DIR__ . '/..' . '/php-http/httplug/src/Exception/NetworkException.php',
-        'Http\\Client\\Exception\\RequestAwareTrait' => __DIR__ . '/..' . '/php-http/httplug/src/Exception/RequestAwareTrait.php',
         'Http\\Client\\Exception\\RequestException' => __DIR__ . '/..' . '/php-http/httplug/src/Exception/RequestException.php',
         'Http\\Client\\Exception\\TransferException' => __DIR__ . '/..' . '/php-http/httplug/src/Exception/TransferException.php',
         'Http\\Client\\HttpAsyncClient' => __DIR__ . '/..' . '/php-http/httplug/src/HttpAsyncClient.php',
@@ -217,22 +213,17 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
         'Http\\Message\\Formatter\\CurlCommandFormatter' => __DIR__ . '/..' . '/php-http/message/src/Formatter/CurlCommandFormatter.php',
         'Http\\Message\\Formatter\\FullHttpMessageFormatter' => __DIR__ . '/..' . '/php-http/message/src/Formatter/FullHttpMessageFormatter.php',
         'Http\\Message\\Formatter\\SimpleFormatter' => __DIR__ . '/..' . '/php-http/message/src/Formatter/SimpleFormatter.php',
-        'Http\\Message\\MessageFactory' => __DIR__ . '/..' . '/php-http/message-factory/src/MessageFactory.php',
         'Http\\Message\\MessageFactory\\DiactorosMessageFactory' => __DIR__ . '/..' . '/php-http/message/src/MessageFactory/DiactorosMessageFactory.php',
         'Http\\Message\\MessageFactory\\GuzzleMessageFactory' => __DIR__ . '/..' . '/php-http/message/src/MessageFactory/GuzzleMessageFactory.php',
         'Http\\Message\\MessageFactory\\SlimMessageFactory' => __DIR__ . '/..' . '/php-http/message/src/MessageFactory/SlimMessageFactory.php',
-        'Http\\Message\\RequestFactory' => __DIR__ . '/..' . '/php-http/message-factory/src/RequestFactory.php',
         'Http\\Message\\RequestMatcher' => __DIR__ . '/..' . '/php-http/message/src/RequestMatcher.php',
         'Http\\Message\\RequestMatcher\\CallbackRequestMatcher' => __DIR__ . '/..' . '/php-http/message/src/RequestMatcher/CallbackRequestMatcher.php',
         'Http\\Message\\RequestMatcher\\RegexRequestMatcher' => __DIR__ . '/..' . '/php-http/message/src/RequestMatcher/RegexRequestMatcher.php',
         'Http\\Message\\RequestMatcher\\RequestMatcher' => __DIR__ . '/..' . '/php-http/message/src/RequestMatcher/RequestMatcher.php',
-        'Http\\Message\\ResponseFactory' => __DIR__ . '/..' . '/php-http/message-factory/src/ResponseFactory.php',
-        'Http\\Message\\StreamFactory' => __DIR__ . '/..' . '/php-http/message-factory/src/StreamFactory.php',
         'Http\\Message\\StreamFactory\\DiactorosStreamFactory' => __DIR__ . '/..' . '/php-http/message/src/StreamFactory/DiactorosStreamFactory.php',
         'Http\\Message\\StreamFactory\\GuzzleStreamFactory' => __DIR__ . '/..' . '/php-http/message/src/StreamFactory/GuzzleStreamFactory.php',
         'Http\\Message\\StreamFactory\\SlimStreamFactory' => __DIR__ . '/..' . '/php-http/message/src/StreamFactory/SlimStreamFactory.php',
         'Http\\Message\\Stream\\BufferedStream' => __DIR__ . '/..' . '/php-http/message/src/Stream/BufferedStream.php',
-        'Http\\Message\\UriFactory' => __DIR__ . '/..' . '/php-http/message-factory/src/UriFactory.php',
         'Http\\Message\\UriFactory\\DiactorosUriFactory' => __DIR__ . '/..' . '/php-http/message/src/UriFactory/DiactorosUriFactory.php',
         'Http\\Message\\UriFactory\\GuzzleUriFactory' => __DIR__ . '/..' . '/php-http/message/src/UriFactory/GuzzleUriFactory.php',
         'Http\\Message\\UriFactory\\SlimUriFactory' => __DIR__ . '/..' . '/php-http/message/src/UriFactory/SlimUriFactory.php',
@@ -285,7 +276,6 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
         'PrestaShop\\Module\\Ps_metrics\\Provider\\AnalyticsAccountsListProvider' => __DIR__ . '/../..' . '/src/Provider/AnalyticsAccountsListProvider.php',
         'PrestaShop\\Module\\Ps_metrics\\Repository\\ConfigurationRepository' => __DIR__ . '/../..' . '/src/Repository/ConfigurationRepository.php',
         'PrestaShop\\Module\\Ps_metrics\\Repository\\HookModuleRepository' => __DIR__ . '/../..' . '/src/Repository/HookModuleRepository.php',
-        'PrestaShop\\Module\\Ps_metrics\\Repository\\OrderRepository' => __DIR__ . '/../..' . '/src/Repository/OrderRepository.php',
         'PrestaShop\\Module\\Ps_metrics\\StatsTabManager' => __DIR__ . '/../..' . '/src/StatsTabManager.php',
         'PrestaShop\\Module\\Ps_metrics\\Tracker\\Segment' => __DIR__ . '/../..' . '/src/Tracker/Segment.php',
         'PrestaShop\\Module\\Ps_metrics\\Tracker\\TrackerInterface' => __DIR__ . '/../..' . '/src/Tracker/TrackerInterface.php',
@@ -297,31 +287,25 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
         'PrestaShop\\PsAccountsInstaller\\Installer\\Installer' => __DIR__ . '/..' . '/prestashop/prestashop-accounts-installer/src/Installer/Installer.php',
         'PrestaShop\\PsAccountsInstaller\\Installer\\Presenter\\InstallerPresenter' => __DIR__ . '/..' . '/prestashop/prestashop-accounts-installer/src/Installer/Presenter/InstallerPresenter.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\ClientFactory' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/ClientFactory.php',
-        'Prestashop\\ModuleLibGuzzleAdapter\\ConfigInterface' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/ConfigInterface.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\Guzzle5\\Client' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Guzzle5/Client.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\Guzzle5\\Config' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Guzzle5/Config.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\Guzzle7\\Client' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Guzzle7/Client.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\Guzzle7\\Config' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Guzzle7/Config.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\Guzzle7\\Exception\\UnexpectedValueException' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Guzzle7/Exception/UnexpectedValueException.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\Guzzle7\\Promise' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Guzzle7/Promise.php',
+        'Prestashop\\ModuleLibGuzzleAdapter\\Interfaces\\ClientExceptionInterface' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Interfaces/ClientExceptionInterface.php',
+        'Prestashop\\ModuleLibGuzzleAdapter\\Interfaces\\ConfigInterface' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Interfaces/ConfigInterface.php',
+        'Prestashop\\ModuleLibGuzzleAdapter\\Interfaces\\HttpClientInterface' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/Interfaces/HttpClientInterface.php',
         'Prestashop\\ModuleLibGuzzleAdapter\\VersionDetection' => __DIR__ . '/..' . '/prestashop/module-lib-guzzle-adapter/src/VersionDetection.php',
+        'Prestashop\\ModuleLibMboInstaller\\Installer' => __DIR__ . '/..' . '/prestashop/module-lib-mbo-installer/src/Installer.php',
+        'Prestashop\\ModuleLibMboInstaller\\Presenter' => __DIR__ . '/..' . '/prestashop/module-lib-mbo-installer/src/Presenter.php',
         'Ps_metrics' => __DIR__ . '/../..' . '/ps_metrics.php',
-        'Psr\\Http\\Client\\ClientExceptionInterface' => __DIR__ . '/..' . '/psr/http-client/src/ClientExceptionInterface.php',
-        'Psr\\Http\\Client\\ClientInterface' => __DIR__ . '/..' . '/psr/http-client/src/ClientInterface.php',
-        'Psr\\Http\\Client\\NetworkExceptionInterface' => __DIR__ . '/..' . '/psr/http-client/src/NetworkExceptionInterface.php',
-        'Psr\\Http\\Client\\RequestExceptionInterface' => __DIR__ . '/..' . '/psr/http-client/src/RequestExceptionInterface.php',
         'Psr\\Http\\Message\\MessageInterface' => __DIR__ . '/..' . '/psr/http-message/src/MessageInterface.php',
-        'Psr\\Http\\Message\\RequestFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/RequestFactoryInterface.php',
         'Psr\\Http\\Message\\RequestInterface' => __DIR__ . '/..' . '/psr/http-message/src/RequestInterface.php',
-        'Psr\\Http\\Message\\ResponseFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/ResponseFactoryInterface.php',
         'Psr\\Http\\Message\\ResponseInterface' => __DIR__ . '/..' . '/psr/http-message/src/ResponseInterface.php',
-        'Psr\\Http\\Message\\ServerRequestFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/ServerRequestFactoryInterface.php',
         'Psr\\Http\\Message\\ServerRequestInterface' => __DIR__ . '/..' . '/psr/http-message/src/ServerRequestInterface.php',
-        'Psr\\Http\\Message\\StreamFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/StreamFactoryInterface.php',
         'Psr\\Http\\Message\\StreamInterface' => __DIR__ . '/..' . '/psr/http-message/src/StreamInterface.php',
-        'Psr\\Http\\Message\\UploadedFileFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/UploadedFileFactoryInterface.php',
         'Psr\\Http\\Message\\UploadedFileInterface' => __DIR__ . '/..' . '/psr/http-message/src/UploadedFileInterface.php',
-        'Psr\\Http\\Message\\UriFactoryInterface' => __DIR__ . '/..' . '/psr/http-factory/src/UriFactoryInterface.php',
         'Psr\\Http\\Message\\UriInterface' => __DIR__ . '/..' . '/psr/http-message/src/UriInterface.php',
         'Symfony\\Polyfill\\Ctype\\Ctype' => __DIR__ . '/..' . '/symfony/polyfill-ctype/Ctype.php',
     );
@@ -329,9 +313,9 @@ class ComposerStaticInit334b1d9421703618d9169c9fd49c0619
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit334b1d9421703618d9169c9fd49c0619::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit334b1d9421703618d9169c9fd49c0619::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit334b1d9421703618d9169c9fd49c0619::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInita9152809377f20d6316d47f59938a0ab::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInita9152809377f20d6316d47f59938a0ab::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInita9152809377f20d6316d47f59938a0ab::$classMap;
 
         }, null, ClassLoader::class);
     }

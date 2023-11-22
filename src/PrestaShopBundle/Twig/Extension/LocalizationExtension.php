@@ -72,13 +72,14 @@ class LocalizationExtension extends AbstractExtension
         string $contextDateFormatFull,
         string $contextDateFormatLight,
         Repository $localeRepository,
-        $contextLanguage
+        $contextLanguage,
+        ?Currency $contextCurrency
     ) {
         $this->dateFormatFull = $contextDateFormatFull;
         $this->dateFormatLight = $contextDateFormatLight;
         $this->localeRepository = $localeRepository;
         $this->contextLanguage = $contextLanguage;
-        $this->contextCurrency = null;
+        $this->contextCurrency = $contextCurrency;
     }
 
     public function getFilters(): array
@@ -99,7 +100,6 @@ class LocalizationExtension extends AbstractExtension
      */
     public function priceFormat(float $price, string $currencyCode = null, string $locale = null): string
     {
-
         // If no locale is specified and the context language is not accessible we can't format, so we return the input
         // unchanged, same thing for the currency (use getLocale getter, it is smarter ^^)
         if ((null === $locale && (null === $this->contextLanguage || empty($this->contextLanguage->getLocale()))) ||

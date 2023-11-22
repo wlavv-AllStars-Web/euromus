@@ -45,13 +45,13 @@
 <script>
     const onMbeRegistrationIframeLoad = () => {
         console.log('MBE > registration iframe loaded')
-        let endpoint = '{$registration_iframe_url|escape:'html':'UTF-8'}'
+        let endpoint = '{$registration_iframe_url nofilter}'
         if (typeof endpoint !== 'undefined') {
             const $iframe = $('iframe#mbe_registration')
             if ($iframe) {
                 $iframe[0].contentWindow.postMessage({
-                    'urlLogin': '{$registration_iframe_login_url|escape:'html':'UTF-8'}',
-                    'language': '{$registration_iframe_lang|escape:'html':'UTF-8'}'
+                    'urlLogin': '{$registration_iframe_login_url nofilter}',
+                    'language': '{$registration_iframe_lang nofilter}'
                 }, endpoint)
             }
         }

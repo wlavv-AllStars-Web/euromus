@@ -7,8 +7,8 @@ $baseDir = dirname($vendorDir);
 
 return array(
     'Symfony\\Polyfill\\Ctype\\' => array($vendorDir . '/symfony/polyfill-ctype'),
-    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-factory/src', $vendorDir . '/psr/http-message/src'),
-    'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
+    'Psr\\Http\\Message\\' => array($vendorDir . '/psr/http-message/src'),
+    'Prestashop\\ModuleLibMboInstaller\\' => array($vendorDir . '/prestashop/module-lib-mbo-installer/src'),
     'Prestashop\\ModuleLibGuzzleAdapter\\' => array($vendorDir . '/prestashop/module-lib-guzzle-adapter/src'),
     'PrestaShop\\PsAccountsInstaller\\' => array($vendorDir . '/prestashop/prestashop-accounts-installer/src'),
     'PrestaShop\\Module\\Ps_metrics\\' => array($baseDir . '/src'),
@@ -16,7 +16,7 @@ return array(
     'PrestaShop\\ModuleLibCacheDirectoryProvider\\' => array($vendorDir . '/prestashop/module-lib-cache-directory-provider/src'),
     'PhpOption\\' => array($vendorDir . '/phpoption/phpoption/src/PhpOption'),
     'Http\\Promise\\' => array($vendorDir . '/php-http/promise/src'),
-    'Http\\Message\\' => array($vendorDir . '/php-http/message/src', $vendorDir . '/php-http/message-factory/src'),
+    'Http\\Message\\' => array($vendorDir . '/php-http/message/src'),
     'Http\\Client\\' => array($vendorDir . '/php-http/httplug/src'),
     'GuzzleHttp\\Psr7\\' => array($vendorDir . '/guzzlehttp/psr7/src'),
     'Dotenv\\' => array($vendorDir . '/vlucas/phpdotenv/src'),

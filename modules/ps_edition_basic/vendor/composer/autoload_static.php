@@ -4,21 +4,19 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInitfb42ff5e6e5bb44fd128d35eb625991e
+class ComposerStaticInit78c017c95bc818dd70d2a77c463e32e1
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        'a4a119a56e50fbb293281d9a48007e0e' => __DIR__ . '/..' . '/symfony/polyfill-php80/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
     );
 
     public static $prefixLengthsPsr4 = array (
         'S' => 
         array (
-            'Symfony\\Polyfill\\Php80\\' => 23,
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Intl\\Normalizer\\' => 33,
             'Symfony\\Polyfill\\Intl\\Grapheme\\' => 31,
@@ -34,10 +32,6 @@ class ComposerStaticInitfb42ff5e6e5bb44fd128d35eb625991e
     );
 
     public static $prefixDirsPsr4 = array (
-        'Symfony\\Polyfill\\Php80\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/symfony/polyfill-php80',
-        ),
         'Symfony\\Polyfill\\Mbstring\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/polyfill-mbstring',
@@ -73,10 +67,8 @@ class ComposerStaticInitfb42ff5e6e5bb44fd128d35eb625991e
     );
 
     public static $classMap = array (
-        'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Resources/stubs/Normalizer.php',
-        'PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/PhpToken.php',
         'PrestaShop\\ModuleLibCacheDirectoryProvider\\Cache\\CacheDirectoryProvider' => __DIR__ . '/..' . '/prestashop/module-lib-cache-directory-provider/src/Cache/CacheDirectoryProvider.php',
         'PrestaShop\\ModuleLibServiceContainer\\DependencyInjection\\ContainerProvider' => __DIR__ . '/..' . '/prestashop/module-lib-service-container/src/DependencyInjection/ContainerProvider.php',
         'PrestaShop\\ModuleLibServiceContainer\\DependencyInjection\\ServiceContainer' => __DIR__ . '/..' . '/prestashop/module-lib-service-container/src/DependencyInjection/ServiceContainer.php',
@@ -95,13 +87,12 @@ class ComposerStaticInitfb42ff5e6e5bb44fd128d35eb625991e
         'PrestaShop\\Module\\PsEditionBasic\\Service\\ConfigurationService' => __DIR__ . '/../..' . '/src/Service/ConfigurationService.php',
         'PrestaShop\\Module\\PsEditionBasic\\Traits\\HaveConfigurationPage' => __DIR__ . '/../..' . '/src/Traits/HaveConfigurationPage.php',
         'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminBreadcrumbModifier' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionAdminBreadcrumbModifier.php',
+        'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminControllerInitBefore' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionAdminControllerInitBefore.php',
         'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminControllerSetMedia' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionAdminControllerSetMedia.php',
-        'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminLoginControllerSetMedia' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionAdminLoginControllerSetMedia.php',
         'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionAdminMenuTabsModifier' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionAdminMenuTabsModifier.php',
         'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseActionObjectLanguageAddAfter' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseActionObjectLanguageAddAfter.php',
         'PrestaShop\\Module\\PsEditionBasic\\Traits\\Hooks\\UseDisplayBackOfficeHeader' => __DIR__ . '/../..' . '/src/Traits/Hooks/UseDisplayBackOfficeHeader.php',
         'PrestaShop\\Module\\PsEditionBasic\\Traits\\UseHooks' => __DIR__ . '/../..' . '/src/Traits/UseHooks.php',
-        'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Component\\String\\AbstractString' => __DIR__ . '/..' . '/symfony/string/AbstractString.php',
         'Symfony\\Component\\String\\AbstractUnicodeString' => __DIR__ . '/..' . '/symfony/string/AbstractUnicodeString.php',
         'Symfony\\Component\\String\\ByteString' => __DIR__ . '/..' . '/symfony/string/ByteString.php',
@@ -120,19 +111,15 @@ class ComposerStaticInitfb42ff5e6e5bb44fd128d35eb625991e
         'Symfony\\Polyfill\\Intl\\Grapheme\\Grapheme' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/Grapheme.php',
         'Symfony\\Polyfill\\Intl\\Normalizer\\Normalizer' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/Normalizer.php',
         'Symfony\\Polyfill\\Mbstring\\Mbstring' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/Mbstring.php',
-        'Symfony\\Polyfill\\Php80\\Php80' => __DIR__ . '/..' . '/symfony/polyfill-php80/Php80.php',
-        'Symfony\\Polyfill\\Php80\\PhpToken' => __DIR__ . '/..' . '/symfony/polyfill-php80/PhpToken.php',
-        'UnhandledMatchError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/UnhandledMatchError.php',
-        'ValueError' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/ValueError.php',
         'ps_edition_basic' => __DIR__ . '/../..' . '/ps_edition_basic.php',
     );
 
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInitfb42ff5e6e5bb44fd128d35eb625991e::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInitfb42ff5e6e5bb44fd128d35eb625991e::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInitfb42ff5e6e5bb44fd128d35eb625991e::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit78c017c95bc818dd70d2a77c463e32e1::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit78c017c95bc818dd70d2a77c463e32e1::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInit78c017c95bc818dd70d2a77c463e32e1::$classMap;
 
         }, null, ClassLoader::class);
     }

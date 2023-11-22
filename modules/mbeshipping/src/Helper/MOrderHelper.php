@@ -26,6 +26,10 @@
 
 namespace PrestaShop\Module\Mbeshipping\Helper;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class MOrderHelper
 {
     protected $_morder_table_name = 'mbe_shipping_order';
@@ -91,7 +95,7 @@ class MOrderHelper
             [
                 'is_download_available' => (int)$is_download_available
             ],
-            'id_order = ' . (int)$id_order,
+            'id_order = ' . (int)$id_order
         );
     }
 
@@ -106,7 +110,7 @@ class MOrderHelper
             [
                 'is_pickup_mode' => (int)$is_pickup_mode
             ],
-            'id_order = ' . (int)$id_order,
+            'id_order = ' . (int)$id_order
         );
     }
 

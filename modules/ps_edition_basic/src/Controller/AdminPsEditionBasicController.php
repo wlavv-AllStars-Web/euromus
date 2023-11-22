@@ -107,6 +107,15 @@ class AdminPsEditionBasicController extends FrameworkBundleAdminController
         $employeeAccount = $psAccountService->getEmployeeAccount();
         $psAccountID = ($employeeAccount ? $employeeAccount->getUid() : $psAccountService->getUserUuid());
 
+        /**
+         * @var string|string[]
+         */
+        $shopCountry = $this->getContext()->country->iso_code;
+        if (is_array($shopCountry)) { // Country might be an array
+            $shopCountry = $shopCountry[array_key_first($shopCountry)] ?? '';
+        }
+        $shopCountry = strtolower($shopCountry);
+
         return $this->render('@Modules/ps_edition_basic/views/templates/admin/homepage.html.twig', [
             'layoutTitle' => $this->layoutTitle(),
             'enableSidebar' => true,
@@ -127,6 +136,7 @@ class AdminPsEditionBasicController extends FrameworkBundleAdminController
                 ],
                 'tabs' => $this->filter_settings_tabs_recursive($tabs, PS_EDITION_BASIC_SETTINGS_WHITE_LIST),
                 'locale' => $this->getContext()->language->iso_code,
+                'shopCountry' => $shopCountry,
                 'modulesTabs' => $this->filter_modules_tabs_recursive($tabs, array_merge(PS_EDITION_BASIC_SETTINGS_WHITE_LIST, PS_EDITION_BASIC_MENU_WHITE_LIST)),
             ]),
         ]);

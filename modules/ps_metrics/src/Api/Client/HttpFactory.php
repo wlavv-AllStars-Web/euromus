@@ -21,6 +21,7 @@
 
 namespace PrestaShop\Module\Ps_metrics\Api\Client;
 
+use Exception;
 use GuzzleHttp\Psr7\Request;
 use PrestaShop\Module\Ps_metrics\Handler\GuzzleApiResponseExceptionHandler;
 use PrestaShop\Module\Ps_metrics\Middleware\CheckResponseMiddleware;
@@ -29,7 +30,6 @@ use PrestaShop\Module\Ps_metrics\Middleware\Middleware;
 use PrestaShop\Module\Ps_metrics\Middleware\ResponseMiddleware;
 use PrestaShop\Module\Ps_metrics\Middleware\SentryMiddleware;
 use Prestashop\ModuleLibGuzzleAdapter\ClientFactory;
-use Psr\Http\Client\ClientExceptionInterface;
 
 class HttpFactory
 {
@@ -121,7 +121,7 @@ class HttpFactory
             $response = $client->sendRequest(
                 new Request('GET', $this->getRoute())
             );
-        } catch (ClientExceptionInterface $e) {
+        } catch (Exception $e) {
             $response = $this->guzzleApiResponseExceptionHandler->get($e->getMessage());
         }
 
@@ -155,7 +155,7 @@ class HttpFactory
             $response = $client->sendRequest(
                 new Request('POST', $this->getRoute(), [], (string) json_encode($postBody))
             );
-        } catch (ClientExceptionInterface $e) {
+        } catch (Exception $e) {
             $response = $this->guzzleApiResponseExceptionHandler->get($e->getMessage());
         }
 

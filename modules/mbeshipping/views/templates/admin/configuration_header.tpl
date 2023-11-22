@@ -30,21 +30,39 @@
                 <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/logo_eship_for_prestashop.png" height="50px" alt="Logo">
             </div>
             <div id="header_right">
-                {if !$is_direct_channel_user} {* If not a Direct Channel User *}
-                <a title="{l s='Informations' mod='mbeshipping'}" class="header-link" href="{$link_info|escape:'htmlall':'UTF-8'}"
-                   target="_blank">
-                    <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/info.png" alt=""/><span>{l s='Informations' mod='mbeshipping'}</span>
-                </a>
-                {/if}
-                <a title="{l s='Guide' mod='mbeshipping'}" class="header-link" href="{$link_guide|escape:'htmlall':'UTF-8'}"
-                   target="_blank">
-                    <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/book.png" alt=""/><span>{l s='Guide' mod='mbeshipping'}</span>
-                </a>
-                {if !$is_direct_channel_user} {* If not a Direct Channel User *}
-                <a title="{l s='Contact us' mod='mbeshipping'}" class="header-link" href="{$link_contact|escape:'htmlall':'UTF-8'}"
-                   target="_blank">
-                    <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/mail.png" alt=""/><span>{l s='Contact us' mod='mbeshipping'}</span>
-                </a>
+                {if !isset($customer_id)} {* Not Logged *}
+                    <a title="{l s='Contact us' mod='mbeshipping'}" class="header-link" href="{$link_contact|escape:'htmlall':'UTF-8'}"
+                       target="_blank">
+                        <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/mail.png" alt=""/><span>{l s='Contact us' mod='mbeshipping'}</span>
+                    </a>
+                {else}
+                    {if !$is_direct_channel_user}
+                        <a title="{l s='Informations' mod='mbeshipping'}" class="header-link" href="{$link_info|escape:'htmlall':'UTF-8'}"
+                           target="_blank">
+                            <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/info.png" alt=""/><span>{l s='Informations' mod='mbeshipping'}</span>
+                        </a>
+                        <a title="{l s='Guide' mod='mbeshipping'}" class="header-link" href="{$link_guide|escape:'htmlall':'UTF-8'}"
+                           target="_blank">
+                            <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/book.png" alt=""/><span>{l s='Guide' mod='mbeshipping'}</span>
+                        </a>
+                        <a title="{l s='Contact us' mod='mbeshipping'}" class="header-link" href="{$link_contact|escape:'htmlall':'UTF-8'}"
+                           target="_blank">
+                            <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/mail.png" alt=""/><span>{l s='Contact us' mod='mbeshipping'}</span>
+                        </a>
+                    {else}
+                        <a title="{l s='Guide' mod='mbeshipping'}" class="header-link" href="{$link_guide|escape:'htmlall':'UTF-8'}"
+                           target="_blank">
+                            <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/book.png" alt=""/><span>{l s='Guide' mod='mbeshipping'}</span>
+                        </a>
+                        <a title="{l s='Call us' mod='mbeshipping'}" class="header-link" href="{$link_phone|escape:'htmlall':'UTF-8'}"
+                           target="_blank">
+                            <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/phone.png" alt=""/><span>{l s='Call us' mod='mbeshipping'}</span>
+                        </a>
+                        <a title="{l s='Write us' mod='mbeshipping'}" class="header-link" href="{$link_contact|escape:'htmlall':'UTF-8'}"
+                           target="_blank">
+                            <img src="{$module_dir|escape:'htmlall':'UTF-8'}/views/img/icons/mail.png" alt=""/><span>{l s='Write us' mod='mbeshipping'}</span>
+                        </a>
+                    {/if}
                 {/if}
             </div>
         </div>

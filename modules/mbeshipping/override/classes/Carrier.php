@@ -28,6 +28,10 @@ use PrestaShop\Module\Mbeshipping\Lib\MbeWs;
 use PrestaShop\Module\Mbeshipping\Helper\DataHelper;
 use PrestaShop\Module\Mbeshipping\Helper\RatesHelper;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class Carrier extends CarrierCore
 {
     const TESTTEST = 'Dont remove';
@@ -37,6 +41,10 @@ class Carrier extends CarrierCore
     public static function getCarriers($id_lang, $active = false, $delete = false, $id_zone = false, $ids_group = null,
                                        $modules_filters = self::PS_CARRIERS_ONLY, $cart_par = null)
     {
+        if (!Module::isEnabled('mbeshipping')) {
+            return parent::getCarriers($id_lang, $active, $delete, $id_zone, $ids_group, $modules_filters);
+        }
+
         $ratesHelper = new RatesHelper();
         $dataHelper = new DataHelper();
         if ($ids_group && (!is_array($ids_group) || !count($ids_group))) {

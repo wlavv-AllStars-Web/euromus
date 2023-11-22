@@ -29,6 +29,10 @@ namespace PrestaShop\Module\Mbeshipping\Helper;
 use PrestaShop\Module\Mbeshipping\Ws;
 use Dompdf\Dompdf;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class DataHelper #extends Mage_Core_Helper_Abstract
 {
     const MBE_SHIPPING_PREFIX = "mbe_shipping_";

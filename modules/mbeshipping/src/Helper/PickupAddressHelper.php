@@ -26,6 +26,10 @@
 
 namespace PrestaShop\Module\Mbeshipping\Helper;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class PickupAddressHelper
 {
     protected $_table_name  = 'mbe_shipping_pickup_address';

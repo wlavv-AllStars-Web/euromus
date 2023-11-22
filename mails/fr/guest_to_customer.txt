@@ -2,18 +2,18 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Bonjour {firstname} {lastname},
 
-Your guest account has been turned into a customer account
+Votre compte invité a été transformé en compte client
 
-Congratulations, your guest account for {shop_name} has been turned into a customer account!
+Félicitations, votre compte invité sur {shop_name} a bien été transformé en compte client !
 
-Email address: {email}
+Adresse e-mail : {email}
 
-Click on the following link to set up your password:
+Cliquez sur le lien suivant pour créer votre mot de passe :
 {url}
 
-You can access your customer account on our store: [{shop_name}]({shop_url})
+Vous pouvez accéder à votre compte client sur notre boutique : [{shop_name}]({shop_url})
 
 [{shop_name}]({shop_url})
 

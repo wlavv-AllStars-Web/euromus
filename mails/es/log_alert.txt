@@ -2,13 +2,13 @@
 
 {shop_url}
 
-Hi,
+Hola,
 
-New alert message saved
+Nuevo mensaje de aviso guardado
 
-WARNING: you have received a new log alert in your back office.
+Warning: has recibido un nuevo aviso en el Back Office de tu tienda.
 
-You can check for it in the Advanced Parameters > Logs section of your back office.
+Puede verificarlo en la sección Parámetros avanzados > Registros de su back office.
 
 [{shop_name}]({shop_url})
 

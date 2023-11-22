@@ -28,54 +28,48 @@
 <!doctype html>
 <html lang="{$language.locale}">
 
-<head>
-  {block name='head'}
-    {include file='_partials/head.tpl'}
-  {/block}
-</head>
+  <head>
+    {block name='head'}
+      {include file='_partials/head.tpl'}
+    {/block}
+  </head>
 
-<body id="{$page.page_name}" class="{$page.body_classes|classnames}">
+  <body id="{$page.page_name}" class="{$page.body_classes|classnames}">
 
-
-  {block name='hook_after_body_opening_tag'}
-    {hook h='displayAfterBodyOpeningTag'}
-  {/block}
-
-  <main>
-    {block name='product_activation'}
-      {include file='catalog/_partials/product-activation.tpl'}
+    {block name='hook_after_body_opening_tag'}
+      {hook h='displayAfterBodyOpeningTag'}
     {/block}
 
-    <header id="header">
-      {block name='header'}
-        {include file='_partials/header.tpl'}
+    <main>
+      {block name='product_activation'}
+        {include file='catalog/_partials/product-activation.tpl'}
       {/block}
-    </header>
-    <div class="col-md-12">
-      <section   id="wrapper" >
+
+      <header id="header">
+        {block name='header'}
+          {include file='_partials/header.tpl'}
+        {/block}
+      </header>
+
+      <section id="wrapper">
         {block name='notifications'}
           {include file='_partials/notifications.tpl'}
         {/block}
 
         {hook h="displayWrapperTop"}
-        <div style="margin-left: 0; margin-right:0; width:100%" class="container ">
+        <div class="container">
           {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}
           {/block}
 
-          <div style="display: flex; min-width:100%" class="row">
+          <div class="row">
             {block name="left_column"}
-              
-              <div id="left-column" class=" col-xs-4 col-md-2 ">
-                <div style="" class="boxoutrd">
-                  <div style="margin: 2px;" class="boxout">
-                    {if $page.page_name == 'product'}
-                      {hook h='displayLeftColumnProduct' product=$product category=$category}
-                    {else}
-                      {hook h="displayLeftColumn"}
-                    {/if}
-                  </div>
-                </div>
+              <div id="left-column" class="col-xs-12 col-md-4 col-lg-3">
+                {if $page.page_name == 'product'}
+                  {hook h='displayLeftColumnProduct' product=$product category=$category}
+                {else}
+                  {hook h="displayLeftColumn"}
+                {/if}
               </div>
             {/block}
 
@@ -102,23 +96,23 @@
         </div>
         {hook h="displayWrapperBottom"}
       </section>
-    </div>
-    <footer id="footer" class="js-footer">
-      {block name="footer"}
-        {include file="_partials/footer.tpl"}
-      {/block}
-    </footer>
 
-  </main>
+      <footer id="footer" class="js-footer">
+        {block name="footer"}
+          {include file="_partials/footer.tpl"}
+        {/block}
+      </footer>
 
-  {block name='javascript_bottom'}
-    {include file="_partials/password-policy-template.tpl"}
-    {include file="_partials/javascript.tpl" javascript=$javascript.bottom}
-  {/block}
+    </main>
 
-  {block name='hook_before_body_closing_tag'}
-    {hook h='displayBeforeBodyClosingTag'}
-  {/block}
-</body>
+    {block name='javascript_bottom'}
+      {include file="_partials/password-policy-template.tpl"}
+      {include file="_partials/javascript.tpl" javascript=$javascript.bottom}
+    {/block}
+
+    {block name='hook_before_body_closing_tag'}
+      {hook h='displayBeforeBodyClosingTag'}
+    {/block}
+  </body>
 
 </html>

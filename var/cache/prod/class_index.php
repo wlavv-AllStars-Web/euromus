@@ -706,7 +706,7 @@
   ),
   'Carrier' => 
   array (
-    'path' => 'override\\classes\\Carrier.php',
+    'path' => NULL,
     'type' => 'class',
   ),
   'CarrierCore' => 

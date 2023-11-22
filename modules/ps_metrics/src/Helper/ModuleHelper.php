@@ -80,6 +80,13 @@ class ModuleHelper
         /** @var Router $router * */
         $router = $this->module->getService('router');
 
+        if ($moduleName === 'ps_mbo') {
+            return substr(\Tools::getShopDomainSsl(true) . __PS_BASE_URI__, 0, -1) .
+            $router->generate('metrics_api_resolver', [
+                'query' => 'installPsMbo',
+            ]);
+        }
+
         return substr(\Tools::getShopDomainSsl(true) . __PS_BASE_URI__, 0, -1) .
             $router->generate('admin_module_manage_action', [
                 'action' => 'install',

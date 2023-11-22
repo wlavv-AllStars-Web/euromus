@@ -21,7 +21,6 @@
 
 namespace PrestaShop\Module\Ps_metrics\Presenter;
 
-use PrestaShop\Module\Ps_metrics\Api\HttpApi;
 use PrestaShop\Module\Ps_metrics\Helper\MultishopHelper;
 use PrestaShop\Module\Ps_metrics\Helper\PrestaShopHelper;
 use PrestaShop\Module\Ps_metrics\Helper\ShopHelper;
@@ -29,7 +28,6 @@ use PrestaShop\Module\Ps_metrics\Helper\ToolsHelper;
 use PrestaShop\Module\Ps_metrics\Module\GAInstaller;
 use PrestaShop\Module\Ps_metrics\Provider\AnalyticsAccountsListProvider;
 use PrestaShop\Module\Ps_metrics\Repository\ConfigurationRepository;
-use PrestaShop\Module\Ps_metrics\Repository\OrderRepository;
 use PrestaShop\PsAccountsInstaller\Installer\Exception\InstallerException;
 use PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
 use Ps_metrics;
@@ -67,11 +65,6 @@ class ShopDataPresenter
     private $gaInstaller;
 
     /**
-     * @var HttpApi
-     */
-    private $httpApi;
-
-    /**
      * @var PsAccounts
      */
     private $psAccountsFacade;
@@ -87,11 +80,6 @@ class ShopDataPresenter
     private $multishopHelper;
 
     /**
-     * @var OrderRepository
-     */
-    private $orderRepository;
-
-    /**
      * Presenter constructor.
      *
      * @param Ps_metrics $module
@@ -100,11 +88,9 @@ class ShopDataPresenter
      * @param ShopHelper $shopHelper
      * @param AnalyticsAccountsListProvider $analyticsAccountsListProvider
      * @param GAInstaller $gaInstaller
-     * @param HttpApi $httpApi
      * @param PsAccounts $psAccountsFacade
      * @param ToolsHelper $toolsHelper
      * @param MultishopHelper $multishopHelper
-     * @param OrderRepository $orderRepository
      *
      * @return void
      */
@@ -115,11 +101,9 @@ class ShopDataPresenter
         ShopHelper $shopHelper,
         AnalyticsAccountsListProvider $analyticsAccountsListProvider,
         GAInstaller $gaInstaller,
-        HttpApi $httpApi,
         PsAccounts $psAccountsFacade,
         ToolsHelper $toolsHelper,
-        MultishopHelper $multishopHelper,
-        OrderRepository $orderRepository
+        MultishopHelper $multishopHelper
     ) {
         $this->module = $module;
         $this->prestashopHelper = $prestashopHelper;
@@ -127,11 +111,9 @@ class ShopDataPresenter
         $this->shopHelper = $shopHelper;
         $this->analyticsAccountsListProvider = $analyticsAccountsListProvider;
         $this->gaInstaller = $gaInstaller;
-        $this->httpApi = $httpApi;
         $this->psAccountsFacade = $psAccountsFacade;
         $this->toolsHelper = $toolsHelper;
         $this->multishopHelper = $multishopHelper;
-        $this->orderRepository = $orderRepository;
     }
 
     /**
@@ -185,11 +167,6 @@ class ShopDataPresenter
             'from' => 'PS',
         ]);
 
-        $caForPlan = $this->httpApi->convertToCurrency(
-            $this->orderRepository->getCaForPlans(),
-            $this->prestashopHelper->getCurrencyIsoCode()
-        );
-
         $response = [
             'modules' => [
                 'psMetrics' => [
@@ -224,9 +201,6 @@ class ShopDataPresenter
                     'enableLink' => $this->gaInstaller->getEnableLink(),
                     'configLink' => $this->gaInstaller->getConfigLink(),
                 ],
-            ],
-            'billing' => [
-                'caForPlan' => $caForPlan < 1 ? 1 : $caForPlan,
             ],
             'links' => [
                 'api' => [

@@ -26,7 +26,7 @@ if (!defined('_PS_VERSION_')) {
 
 use ArrayObject;
 use Customer;
-use Klaviyo\Exception\KlaviyoException;
+use KlaviyoV3Sdk\Exception\KlaviyoException;
 use Validate;
 
 class CustomerService

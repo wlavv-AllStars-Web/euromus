@@ -26,6 +26,10 @@
 
 namespace PrestaShop\Module\Mbeshipping\Helper;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class UpsUapHelper {
 
 	const MBE_UPS_ACCESS_LICENSE_NUMBER = "6CB804D87F868625";

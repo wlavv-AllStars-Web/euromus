@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7773eac5738196a430fe2a45170d4c64
+class ComposerStaticInitb0b8ee4085e308b35857723aa224de00
 {
     public static $prefixLengthsPsr4 = array (
         'P' => 
@@ -15,7 +15,7 @@ class ComposerStaticInit7773eac5738196a430fe2a45170d4c64
         ),
         'K' => 
         array (
-            'Klaviyo\\' => 8,
+            'KlaviyoV3Sdk\\' => 13,
             'KlaviyoPs\\Classes\\' => 18,
         ),
     );
@@ -33,9 +33,9 @@ class ComposerStaticInit7773eac5738196a430fe2a45170d4c64
         array (
             0 => __DIR__ . '/..' . '/prestashop/module-lib-cache-directory-provider/src',
         ),
-        'Klaviyo\\' => 
+        'KlaviyoV3Sdk\\' => 
         array (
-            0 => __DIR__ . '/../..' . '/klaviyo-sdk',
+            0 => __DIR__ . '/../..' . '/klaviyo-v3-sdk',
         ),
         'KlaviyoPs\\Classes\\' => 
         array (
@@ -53,9 +53,9 @@ class ComposerStaticInit7773eac5738196a430fe2a45170d4c64
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7773eac5738196a430fe2a45170d4c64::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7773eac5738196a430fe2a45170d4c64::$prefixDirsPsr4;
-            $loader->classMap = ComposerStaticInit7773eac5738196a430fe2a45170d4c64::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInitb0b8ee4085e308b35857723aa224de00::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInitb0b8ee4085e308b35857723aa224de00::$prefixDirsPsr4;
+            $loader->classMap = ComposerStaticInitb0b8ee4085e308b35857723aa224de00::$classMap;
 
         }, null, ClassLoader::class);
     }

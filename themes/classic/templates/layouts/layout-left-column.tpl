@@ -22,32 +22,16 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-
-
-
-
 {extends file='layouts/layout-both-columns.tpl'}
 
 {block name='right_column'}{/block}
 
 {block name='content_wrapper'}
-  <style>
-  .prodbg{
-    width: -webkit-fill-available;
-    background-color: white;
-   
-    border: 1px solid #041E42;
-    border-radius: 10px !important;
-
-  }
-  </style>
-<div style="padding: 0 !important;" class="boxoutrd col-md-11">
-  <div style="margin: 2px; padding: 20px;" id="content-wrapper" class="js-content-wrapper boxout left-column ">
+  <div id="content-wrapper" class="js-content-wrapper left-column col-xs-12 col-md-8 col-lg-9">
     {hook h="displayContentWrapperTop"}
     {block name='content'}
       <p>Hello world! This is HTML5 Boilerplate.</p>
     {/block}
     {hook h="displayContentWrapperBottom"}
   </div>
-</div>
 {/block}

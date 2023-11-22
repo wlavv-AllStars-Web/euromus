@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 <div id="_desktop_user_info">
-  <div style="margin-left: 15px;" class="user-info">
+  <div class="user-info">
     {if $logged}
       <a
         class="logout hidden-sm-down"
@@ -48,7 +48,7 @@
         title="{l s='Log in to your customer account' d='Shop.Theme.Customeraccount'}"
         rel="nofollow"
       >
-        <i class="material-icons iconwhite">&#xE7FF;</i>
+        <i class="material-icons">&#xE7FF;</i>
         <span class="hidden-sm-down">{l s='Sign in' d='Shop.Theme.Actions'}</span>
       </a>
     {/if}

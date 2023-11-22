@@ -59,14 +59,16 @@ class CheckResponseMiddleware extends Middleware
             'error' => '',
         ];
 
+        $content = '';
+
         if (
             200 != $response->getStatusCode() &&
             201 != $response->getStatusCode()
         ) {
             $responseFormatted['error'] = 'There was an error with the request. Code: ' . $response->getStatusCode();
+        } else {
+            $content = $response->getBody()->getContents();
         }
-
-        $content = $response->getBody()->getContents();
 
         if (!empty($content) && $this->jsonHelper->isJson($content)) {
             $responseFormatted['body'] = $this->jsonHelper->jsonDecode($content, true);

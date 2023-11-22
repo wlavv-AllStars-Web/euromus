@@ -25,13 +25,6 @@ services:
     class: 'PrestaShop\Module\Ps_metrics\Repository\HookModuleRepository'
     public: true
 
-  ps_metrics.repository.orders:
-    class: 'PrestaShop\Module\Ps_metrics\Repository\OrderRepository'
-    public: true
-    arguments:
-      - "@ps_metrics.helper.db"
-      - "@ps_metrics.helper.shop"
-
   ps_metrics.api.client.factory:
     class: 'PrestaShop\Module\Ps_metrics\Api\Client\ClientManager'
     public: true
@@ -79,4 +72,3 @@ services:
     public: true
     arguments:
       - "@ps_metrics.api.client.http"
-      - "@ps_metrics.helper.config"

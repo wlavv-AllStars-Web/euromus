@@ -59,16 +59,16 @@
         {if Context::getContext()->isMobile()}
             <div class="row-of-button-mb">
                 <div class="col col-12">
-                    <button class="btn btn-primary" onclick="loginMbeUser()">{l s='Login' mod='mbeshipping'}</button>
+                    <button class="btn btn-primary" onclick="loginMbeUser()" id="btn_login_mbe_user">{l s='Login' mod='mbeshipping'}</button>
                 </div>
                 <div class="col col-12">
-                    <button class="btn btn-secondary" onclick="registerMbeUser()">{l s='Register' mod='mbeshipping'}</button>
+                    <button class="btn btn-secondary" onclick="registerMbeUser()" id="btn_register_mbe_user">{l s='Register' mod='mbeshipping'}</button>
                 </div>
             </div>
         {else}
             <div class="row buttons my-2    ">
-                <button class="btn btn-primary" onclick="loginMbeUser()">{l s='Login' mod='mbeshipping'}</button>
-                <button class="btn btn-secondary" onclick="registerMbeUser()">{l s='Register' mod='mbeshipping'}</button>
+                <button class="btn btn-primary" onclick="loginMbeUser()" id="btn_login_mbe_user">{l s='Login' mod='mbeshipping'}</button>
+                <button class="btn btn-secondary" onclick="registerMbeUser()" id="btn_register_mbe_user">{l s='Register' mod='mbeshipping'}</button>
             </div>
         {/if}
 
@@ -118,7 +118,7 @@
 
                     <div class="row mt-2 text-align-left">
                         <button class="btn btn-primary"
-                                onclick="registerMbeUser()">{l s='Start your experience now' mod='mbeshipping'}</button>
+                                onclick="registerMbeUser()" id="btn_start_your_experience_now">{l s='Start your experience now' mod='mbeshipping'}</button>
                     </div>
                 </div>
             </div>
@@ -168,7 +168,7 @@
                 </h4>
                 <div class="row mt-2 text-align-left">
                     <button class="btn btn-primary"
-                            onclick="registerMbeUser()">{l s='Start your experience now' mod='mbeshipping'}</button>
+                            onclick="registerMbeUser()" id="btn_start_your_experience_now">{l s='Start your experience now' mod='mbeshipping'}</button>
                 </div>
             </div>
         {/if}

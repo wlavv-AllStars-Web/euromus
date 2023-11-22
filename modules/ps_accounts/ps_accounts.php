@@ -29,7 +29,7 @@ class Ps_accounts extends Module
 
     // Needed in order to retrieve the module version easier (in api call headers) than instanciate
     // the module each time to get the version
-    const VERSION = '6.2.6';
+    const VERSION = '6.3.2';
 
     const HOOK_ACTION_SHOP_ACCOUNT_LINK_AFTER = 'actionShopAccountLinkAfter';
     const HOOK_ACTION_SHOP_ACCOUNT_UNLINK_AFTER = 'actionShopAccountUnlinkAfter';
@@ -56,6 +56,7 @@ class Ps_accounts extends Module
         'displayDashboardTop',
         'actionAdminLoginControllerLoginAfter',
         'actionAdminControllerInitBefore',
+        'actionModuleInstallAfter',
         self::HOOK_DISPLAY_ACCOUNT_UPDATE_WARNING,
         self::HOOK_ACTION_SHOP_ACCOUNT_LINK_AFTER,
         self::HOOK_ACTION_SHOP_ACCOUNT_UNLINK_AFTER,
@@ -106,7 +107,7 @@ class Ps_accounts extends Module
 
         // We cannot use the const VERSION because the const is not computed by addons marketplace
         // when the zip is uploaded
-        $this->version = '6.2.6';
+        $this->version = '6.3.2';
 
         $this->module_key = 'abf2cd758b4d629b2944d3922ef9db73';
 
@@ -157,6 +158,7 @@ class Ps_accounts extends Module
      *
      * @throws PrestaShopDatabaseException
      * @throws PrestaShopException
+     * @throws Exception
      */
     public function install()
     {
@@ -712,6 +714,18 @@ class Ps_accounts extends Module
     }
 
     /**
+     * @param mixed $module
+     *
+     * @return void
+     *
+     * @throws Exception
+     */
+    public function hookActionModuleInstallAfter($module)
+    {
+        $this->resetCircuitBreaker();
+    }
+
+    /**
      * @return string
      */
     public function getModuleEnvVar()
@@ -863,5 +877,23 @@ class Ps_accounts extends Module
     protected function getOauth2Session(): PrestaShop\Module\PsAccounts\Provider\OAuth2\PrestaShopSession
     {
         return $this->getService(\PrestaShop\Module\PsAccounts\Provider\OAuth2\PrestaShopSession::class);
+    }
+
+    /**
+     * @return void
+     *
+     * @throws Exception
+     */
+    private function resetCircuitBreaker(): void
+    {
+        $this->getLogger()->info(__METHOD__);
+
+        /** @var \PrestaShop\Module\PsAccounts\Api\Client\AccountsClient $accountsClient */
+        $accountsClient = $this->getService(\PrestaShop\Module\PsAccounts\Api\Client\AccountsClient::class);
+        $accountsClient->getCircuitBreaker()->reset();
+
+        /** @var \PrestaShop\Module\PsAccounts\Api\Client\SsoClient $ssoClient */
+        $ssoClient = $this->getService(\PrestaShop\Module\PsAccounts\Api\Client\SsoClient::class);
+        $ssoClient->getCircuitBreaker()->reset();
     }
 }

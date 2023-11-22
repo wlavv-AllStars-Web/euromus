@@ -39,7 +39,17 @@ const MBESHIPPING_DEBUG_MODE = false;
 const MBESHIPPING_TEST_MODE = false;
 const MBESHIPPING_TEST_ENDPOINT = 'https://api.dev.mbehub.cloud.mbeglobal.io';
 
+
 const MBESHIPPING_USER_ROLES = ['DIRECT_CHANNEL_USER', 'ONLINEMBE_USER'];
+const STANDARD_TAX_RATES = [
+    'IT' => 22.000,
+    'ES' => 21.000,
+    'DE' => 19.000,
+    'FR' => 20.000,
+    'AT' => 20.000,
+    'PL' => 23.000,
+    'HR' => 25.000,
+];
 
 class AuthAPI
 {
@@ -126,26 +136,26 @@ class AuthAPI
 
     public function retrieveAPIKeys()
     {
-        //self::doLog('Processing STEP 1...');
+        self::doLog(__METHOD__ . ' - Processing STEP 1...');
         if (empty($bearer_token = $this->step1())) {
-            self::doLog('Error on step 1');
+            self::doLog(__METHOD__ . ' - Error on step 1');
             return false;
         }
-        self::doLog('Step 1 OK');
+        self::doLog(__METHOD__ . ' - Step 1 OK');
 
-        //self::doLog('Processing STEP 2...');
+        self::doLog(__METHOD__ . ' - Processing STEP 2...');
         if (empty($customer_data = $this->step2($bearer_token))) {
-            self::doLog('Error on step 2');
+            self::doLog(__METHOD__ . ' - Error on step 2');
             return false;
         }
-        self::doLog('Step 2 OK');
+        self::doLog(__METHOD__ . ' - Step 2 OK');
 
-        //self::doLog('Processing STEP 3...');
+        self::doLog(__METHOD__ . ' - Processing STEP 3...');
         if (empty($final_token = $this->step3($bearer_token, $customer_data))) {
-            self::doLog('Error on step 3');
+            self::doLog(__METHOD__ . ' - Error on step 3');
             return false;
         }
-        self::doLog('Step 3 OK');
+        self::doLog(__METHOD__ . ' - Step 3 OK');
 
         $id_entity = json_decode($customer_data)->idEntity;
         if (empty($id_entity)) {
@@ -157,11 +167,12 @@ class AuthAPI
             return false;
         }
 
-        //self::doLog('Processing STEP 4...');
+        self::doLog(__METHOD__ . ' - Processing STEP 4...');
         if (empty($api_keys = $this->step4($final_token, $id_entity, $user_role))) {
-            //self::doLog('STEP 4 failed!');
+            self::doLog(__METHOD__ . ' - STEP 4 failed!');
             return false;
         }
+        self::doLog(__METHOD__ . ' - Step 4 OK');
 
         if (empty($api_keys->apiKey) || empty($api_keys->apiSecret)) {
             if ($api_keys->code !== 'APIKEY_ROLE_LEGAL_ENTITY_ALREADY_EXISTS') {
@@ -184,6 +195,7 @@ class AuthAPI
         Configuration::updateValue('username', $api_keys->apiKey);
         Configuration::updateValue('password', $api_keys->apiSecret);
         Configuration::updateValue('mbecountry', $this->mbe_country);
+        (new Ws())->getCustomer(true);
 
         return true;
     }
@@ -375,13 +387,18 @@ class AuthAPI
     public static function doLog($message)
     {
         if(!MBESHIPPING_DEBUG_MODE) {
-            return false;
+            return;
         }
 
-        $logDir = __DIR__ . '/';
+        $module = Module::getInstanceByName('mbeshipping');
+        if (!$module) {
+            return;
+        }
+
+        $logDir = $module->getLocalPath() . 'log';
         if (!file_exists($logDir)) mkdir($logDir);
-        $logger = new \FileLogger(\FileLogger::DEBUG);
-        $logger->setFilename($logDir . 'debug.log');
+        $logger = new FileLogger(FileLogger::DEBUG);
+        $logger->setFilename($logDir . DIRECTORY_SEPARATOR . 'auth.log');
         $logger->logDebug($message);
     }
 
@@ -623,6 +640,68 @@ class AuthAPI
         }
     }
 
+    public static function presetDirectChannelUserServices() {
+        $available_services = (new Ws())->getAllowedShipmentServices();
+
+        self::doLog(__METHOD__ . ' - Available services: ' . print_r($available_services, true));
+
+        if (empty($available_services)) {
+            return;
+        }
+
+        $preset_services = [];
+        foreach ($available_services as $service) {
+            if (!in_array($service['value'], ['MDP', 'SEE', 'SSE'])) {
+                continue;
+            }
+
+            $preset_services[] = $service['value'];
+        }
+
+        self::doLog(__METHOD__ . ' - Preset services: ' . print_r($preset_services, true));
+
+        if (empty($preset_services)) {
+            return;
+        }
+
+        Configuration::updateValue(DataHelper::XML_PATH_ALLOWED_SHIPMENT_SERVICES, implode('-', $preset_services));
+
+        // Preset carrier taxes
+        $country_iso = Configuration::get('mbecountry');
+        $id_country = Country::getByIso($country_iso);
+
+        if (!$id_country) {
+            return;
+        }
+
+        // Build query
+        $query = new DbQuery();
+        $query->select('g.id_tax_rules_group');
+        $query->from('tax_rules_group', 'g');
+        $query->innerJoin('tax_rule', 'tr', 'tr.id_tax_rules_group = g.id_tax_rules_group');
+        $query->innerJoin('tax', 't', '(t.id_tax = tr.id_tax AND t.active = 1)');
+        $query->innerJoin('tax_rules_group_shop', 'gs', 'gs.id_tax_rules_group = g.id_tax_rules_group');
+        $query->where('gs.id_shop = ' . (int)Context::getContext()->shop->id);
+        $query->where('g.deleted = 0 AND g.active = 1');
+        $query->where('tr.id_state = 0 AND tr.zipcode_from = 0 AND tr.zipcode_to = 0 AND tr.id_country = ' . (int)$id_country);
+        $query->where('ABS(t.rate - ' . STANDARD_TAX_RATES[$country_iso] . ') < 0.001');
+
+        self::doLog(__METHOD__ . ' - Query:' . PHP_EOL . $query->build());
+
+        $id_tax_rules_group = Db::getInstance()->getValue($query);
+
+        self::doLog(__METHOD__ . ' - id_tax_rules_group: ' . print_r($id_tax_rules_group, true));
+
+        if (!$id_tax_rules_group) {
+            return;
+        }
+
+        foreach ($preset_services as $service) {
+            $id_service = Tools::strtolower(str_replace('+', 'p', $service));
+            Configuration::updateValue('mbe_tax_rule_' . $id_service, $id_tax_rules_group);
+        }
+    }
+
     private function saveTokens($access_token, $refresh_token)
     {
         Configuration::updateValue('MBESHIPPING_ACCESS_TOKEN', $access_token);
@@ -675,6 +754,10 @@ class AuthAPI
         Configuration::updateValue(DataHelper::XML_PATH_SHIPMENT_CONFIGURATION_MODE, 2);
         // Force pickup request mode to "automatically" for DIRECT_CHANNEL_USER
         Configuration::updateValue('MBESHIPPING_PICKUP_REQUEST_MODE', 'automatically');
+        // Force max package weight to 30 for DIRECT_CHANNEL_USER
+        Configuration::updateValue('max_package_weight', 30);
+        // Force max shipment weight to 30 for DIRECT_CHANNEL_USER
+        Configuration::updateValue('max_shipment_weight', 30);
 
         self::togglePrivateArea(1);
     }
@@ -683,11 +766,7 @@ class AuthAPI
     public static function isDirectChannelUser()
     {
         $user_role = Configuration::get('MBESHIPPING_USER_ROLE');
-        if ($user_role === 'DIRECT_CHANNEL_USER') {
-            return true;
-        }
-
-        return false;
+        return $user_role === 'DIRECT_CHANNEL_USER';
     }
 
     public static function thirdPartyPickupsAllowed()
@@ -713,5 +792,47 @@ class AuthAPI
     public static function enableThirdPartyPickups($enabled)
     {
         Configuration::updateValue('MBESHIPPING_PICKUP_MODE', $enabled);
+    }
+
+    public static function existsPayment() {
+        $authApi = new self();
+        $url = "$authApi->apiEndpoint/payments/customer/payment-check";
+        $bearer_token = Configuration::get('MBESHIPPING_ACCESS_TOKEN');
+
+        $headers = [
+            'Content-type: application/json',
+            'Accept: application/json, text/plain, */*',
+            "Authorization: Bearer $bearer_token",
+        ];
+
+        try {
+            $curl = curl_init();
+            curl_setopt($curl, CURLOPT_HTTPHEADER, $headers);
+
+            if ($curl === false) {
+                return false;
+            }
+
+            curl_setopt($curl, CURLOPT_URL, $url);
+            curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+
+            $result = curl_exec($curl);
+
+            if ($result === false || curl_errno($curl) != 0) {
+                return false;
+            }
+
+            curl_close($curl);
+
+            $decoded = json_decode($result, true);
+
+            if (!isset($decoded['existsPayment'])) {
+                return false;
+            }
+
+            return $decoded['existsPayment'];
+        } catch (Exception $e) {
+            return false;
+        }
     }
 }

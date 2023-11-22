@@ -22,38 +22,24 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
- <style>
- .color {
-  color: #FFFFFF !important;  
-}
-
-
-
-.colorli{
-background-color: transparent;
-border-bottom:0px solid transparent !important;
-}
-
-</style>
 <div class="col-md-6 links">
   <div class="row">
   {foreach $linkBlocks as $linkBlock}
     <div class="col-md-6 wrapper">
-      <p style="border-bottom: 2px solid rgba(128, 128, 128, 0.5); color: White" class="h3 hidden-sm-down">{$linkBlock.title}</p>
+      <p class="h3 hidden-sm-down">{$linkBlock.title}</p>
       <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_{$linkBlock.id}" data-toggle="collapse">
-        <span style="color: White;" class="h3">{$linkBlock.title}</span>
+        <span class="h3">{$linkBlock.title}</span>
         <span class="float-xs-right">
           <span class="navbar-toggler collapse-icons">
-            <i style="color: white" class="material-icons add">&#xE313;</i>
-            <i style="color: white" class="material-icons remove">&#xE316;</i>
+            <i class="material-icons add">&#xE313;</i>
+            <i class="material-icons remove">&#xE316;</i>
           </span>
         </span>
       </div>
-      <ul  id="footer_sub_menu_{$linkBlock.id}" class="collapse">
+      <ul id="footer_sub_menu_{$linkBlock.id}" class="collapse">
         {foreach $linkBlock.links as $link}
-          <li class="colorli">
-            <a class="color"
-                
+          <li>
+            <a
                 id="{$link.id}-{$linkBlock.id}"
                 class="{$link.class}"
                 href="{$link.url}"

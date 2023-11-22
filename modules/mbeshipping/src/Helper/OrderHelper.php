@@ -38,6 +38,10 @@ if (version_compare(_PS_VERSION_, '1.7.0.0', '>=')) {
     //include_once(dirname(__FILE__) . '/../../../../../init.php');
 }
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class OrderHelper
 {
     public static function getCarrierName($value)

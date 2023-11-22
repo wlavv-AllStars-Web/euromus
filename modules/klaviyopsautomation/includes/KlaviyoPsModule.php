@@ -22,7 +22,7 @@ if (!defined('_PS_VERSION_')) {
     exit;
 }
 
-use Klaviyo\Exception\KlaviyoException;
+use KlaviyoV3Sdk\Exception\KlaviyoException;
 use KlaviyoPs\Classes\HooksHandler;
 use KlaviyoPs\Classes\BusinessLogicServices\ProductPayloadService;
 use KlaviyoPs\Classes\KlaviyoServices\OrderEventService;

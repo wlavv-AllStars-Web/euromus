@@ -126,7 +126,7 @@ class SetupGuideDataPresenter
                 ],
                 [
                     'cta' => $this->translator->trans('Configure your Delivery Options', [], 'Modules.Editionbasic.Admin'),
-                    'href' => $router->generate('admin_carriers_index'),
+                    'href' => \Context::getContext()->link->getAdminLink('AdminCarriers'),
                     'userflow_id' => 'e085ee0c-cecf-4ba6-8a70-3f4310790dbf',
                 ],
             ]
@@ -178,8 +178,8 @@ class SetupGuideDataPresenter
                     $this->translator->trans('Select and Customize your Theme', [], 'Modules.Editionbasic.Admin'),
                     $this->translator->trans('Choose and customize a theme that defines the look of your store', [], 'Modules.Editionbasic.Admin'),
                     [
-                        'cta' => $this->translator->trans('Ignorer cette étape', [], 'Modules.Editionbasic.Admin'),
-                        'href' => '#',
+                        'cta' => $this->translator->trans('View documentation', [], 'Modules.Editionbasic.Admin'),
+                        'href' => $this->translator->trans('https://help-center.prestashop.com/fr/articles/11663976521490-choisir-et-configurer-un-theme', [], 'Modules.Editionbasic.Admin'),
                         'variant' => 'secondary',
                         'skip' => true,
                     ],

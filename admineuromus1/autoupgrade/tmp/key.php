@@ -1,2 +1,0 @@
-<?php
-$key = "UVOTeeKpLYMYUMfW6evA2Qz48gW3VyBRqy9DJKLIAJeLfIba9e0JAJCiNSwQBKxz";

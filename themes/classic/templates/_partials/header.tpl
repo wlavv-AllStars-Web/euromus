@@ -22,22 +22,23 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<style>
+{block name='header_banner'}
+  <div class="header-banner">
+    {hook h='displayBanner'}
+  </div>
+{/block}
 
 {block name='header_nav'}
-  <div style="border-top:2px solid #103054;border-bottom:2px solid red;padding-block:1px;"></div>
   <nav class="header-nav">
     <div class="container">
       <div class="row">
         <div class="hidden-sm-down">
-          <div class="col-md-7 right-nav" style="display:none;">
-              {hook h='displayNav2'}
-            </div>
-          </div>
-          <div class="col-md-12 col-xs-12 right-nav" style="gap:1rem">
+          <div class="col-md-5 col-xs-12">
             {hook h='displayNav1'}
           </div>
-          
+          <div class="col-md-7 right-nav">
+              {hook h='displayNav2'}
+          </div>
         </div>
         <div class="hidden-md-up text-sm-center mobile">
           <div class="float-xs-left" id="menu-icon">
@@ -54,29 +55,21 @@
 {/block}
 
 {block name='header_top'}
-  <div class="header-top" style="background:">
+  <div class="header-top">
     <div class="container">
-       <div class="row" style="display:flex;justify-content:center;">
+       <div class="row">
         <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}
               <h1>
-                 {renderLogo} 
+                {renderLogo}
               </h1>
             {else}
               {renderLogo}
             {/if}
           {/if}
-          </div>
-          <div style="padding: 0; padding-left: 25px; margin-top: 10px; margin-bottom: 10px"
-            class="header-top transp col-md-10 col-sm-12 vanish"
-            id="searchdiv">
-            <div style="display: flex; width:100%; " class="row">
-              {hook h='displayTop'}
-            </div>
-          </div>
         </div>
-        <div class="header-top-right col-md-12 col-sm-12 position-static" style="display:flex;align-items:center;gap:1rem;">
+        <div class="header-top-right col-md-10 col-sm-12 position-static">
           {hook h='displayTop'}
         </div>
       </div>
@@ -89,6 +82,6 @@
         </div>
       </div>
     </div>
-    {hook h='displayNavFullWidth'}
-  {/block}
-</div>
+  </div>
+  {hook h='displayNavFullWidth'}
+{/block}

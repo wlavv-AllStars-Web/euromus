@@ -26,6 +26,10 @@
 
 namespace PrestaShop\Module\Mbeshipping\Helper;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class PackageProductHelper
 {
     protected $_cvs_package_product_table_name  = 'mbe_shipping_standard_package_product';

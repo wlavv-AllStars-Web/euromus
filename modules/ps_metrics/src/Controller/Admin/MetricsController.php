@@ -25,10 +25,8 @@ use PrestaShop\Module\Ps_metrics\Helper\ConfigHelper;
 use PrestaShop\Module\Ps_metrics\Helper\ModuleHelper;
 use PrestaShop\Module\Ps_metrics\Helper\PrestaShopHelper;
 use PrestaShop\Module\Ps_metrics\Helper\ToolsHelper;
-use PrestaShop\PsAccountsInstaller\Installer\Exception\InstallerException;
-use PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
-use PrestaShop\PsAccountsInstaller\Installer\Installer;
 use PrestaShopBundle\Controller\Admin\FrameworkBundleAdminController;
+use PrestaShop\PrestaShop\Core\Addon\Module\ModuleManagerBuilder;
 use Ps_metrics;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -53,41 +51,11 @@ class MetricsController extends FrameworkBundleAdminController
      */
     public function renderApp()
     {
-        $accountsService = null;
-        try {
-            /** @var PsAccounts $accounts */
-            $accounts = $this->module->getService('ps_accounts.facade');
-            $accountsService = $accounts->getPsAccountsService();
-        } catch (InstallerException $e) {
-            $accountsService = false;
-        }
-
-        if (empty($accountsService)) {
-            /** @var Installer $accountsInstaller */
-            $accountsInstaller = $this->module->getService('ps_accounts.installer');
-            $accountsInstaller->install();
-        }
-
         /** @var ToolsHelper $toolsHelper */
         $toolsHelper = $this->module->getService('ps_metrics.helper.tools');
 
         /** @var PrestaShopHelper $prestashopHelper */
         $prestashopHelper = $this->module->getService('ps_metrics.helper.prestashop');
-
-        if (
-            !empty($accountsService) &&
-            empty($accountsService->getShopUuidV4()) &&
-            $toolsHelper->getValue('settings_redirect', 0) === 0
-        ) {
-            $link = $prestashopHelper->getLink();
-
-            $toolsHelper->redirectAdmin(
-                $link->getAdminLink('MetricsController', true, [
-                    'route' => 'metrics_page',
-                    'settings_redirect' => 1,
-                ]) . '#/settings'
-            );
-        }
 
         $fullscreen = false;
 
@@ -109,6 +77,30 @@ class MetricsController extends FrameworkBundleAdminController
 
         $link = $prestashopHelper->getLink();
 
+        $moduleManager = ModuleManagerBuilder::getInstance()->build();
+
+        $contextPsEventbus = null;
+
+        if ($moduleManager->isInstalled('ps_eventbus')) {
+            /** @var \Module $eventbusModule */
+            $eventbusModule =  \Module::getInstanceByName('ps_eventbus');
+            $eventbusScope = [
+                'info',
+                'modules',
+                'themes',
+                'products',
+                'categories',
+                'orders',
+                'carts',
+                'carriers',
+            ];
+
+            if (version_compare($eventbusModule->version, '1.9.0', '>=')) {
+                $eventbusPresenterService = $eventbusModule->getService('PrestaShop\Module\PsEventbus\Service\PresenterService');
+                $contextPsEventbus = $eventbusPresenterService->expose($this->module, $eventbusScope);
+            }
+        }
+
         return $this->render(
             '@Modules/ps_metrics/views/templates/admin/metrics.html.twig',
             [
@@ -124,6 +116,7 @@ class MetricsController extends FrameworkBundleAdminController
                 'pathAssetsBuilded' => $pathAssetsBuilded,
                 'pathAssetsCdn' => $pathAssetsCdn,
                 'contextPsAccounts' => $this->module->loadPsAccountsAssets(),
+                'contextPsEventbus' => $contextPsEventbus,
                 'metricsApiUrl' => $prestashopHelper->getLinkWithoutToken(
                     'MetricsResolverController',
                     'metrics_api_resolver'
@@ -141,6 +134,9 @@ class MetricsController extends FrameworkBundleAdminController
                 ),
                 'accountsModule' => $moduleHelper->buildModuleInformations(
                     'ps_accounts'
+                ),
+                'mboModule' => $moduleHelper->buildModuleInformations(
+                    'ps_mbo'
                 ),
                 'graphqlEndpoint' => $link->getAdminLink(
                     'MetricsGraphqlController',

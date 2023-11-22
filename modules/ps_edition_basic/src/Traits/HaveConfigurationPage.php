@@ -43,12 +43,12 @@ trait HaveConfigurationPage
                         'options' => [
                             'query' => [
                                 [
-                                    'id' => 'new_menu_enabled',
-                                    'name' => 'ON',
-                                ],
-                                [
                                     'id' => 'new_menu_disabled',
                                     'name' => 'OFF',
+                                ],
+                                [
+                                    'id' => 'new_menu_enabled',
+                                    'name' => 'ON',
                                 ],
                             ],
                             'id' => 'id',

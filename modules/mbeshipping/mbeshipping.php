@@ -47,7 +47,10 @@ require_once __DIR__ . '/classes/custom/models/MbePickupAddressHelper.php';
 
 class Mbeshipping extends CarrierModule
 {
-    const PREFIX = _DB_PREFIX_;
+    /* GTM */
+    private const GTM_ID = 'GTM-526FFFR';
+    //private const GTM_ID = 'GTM-NL3V2W7J';
+
     public $carriers = array(); // not change
     public $id_carrier = null;
     protected $module_name = 'mbeshipping';
@@ -82,7 +85,7 @@ class Mbeshipping extends CarrierModule
         $this->name = 'mbeshipping';
         $this->module_key = 'e127bd423c8ec24900475202bb4a131a';
         $this->tab = 'shipping_logistics';
-        $this->version = '2.1.0';
+        $this->version = '2.1.4';
         $this->author = 'MBE Worldwide S.p.A.';
 
         $this->bootstrap = true;
@@ -323,13 +326,24 @@ class Mbeshipping extends CarrierModule
             return false;
         }
 
-        /*ACCESS POINT*/
         if (version_compare(_PS_VERSION_, '1.7', '<')) {
+            /* ACCESS POINT */
             if (!$this->registerHook('extraCarrier')) {
                 return false;
             }
         } else {
+            /* ACCESS POINT */
             if (!$this->registerHook('displayCarrierExtraContent')) {
+                return false;
+            }
+
+            /* GTM (HEAD) */
+            if (!$this->registerHook('displayBackOfficeHeader')) {
+                return false;
+            }
+
+            /* GTM (BODY) */
+            if (!$this->registerHook('displayBackOfficeTop')) {
                 return false;
             }
         }
@@ -341,7 +355,6 @@ class Mbeshipping extends CarrierModule
         if (!$this->registerHook('actionDispatcher')) {
             return false;
         }
-        /**/
 
         return true;
     }
@@ -536,6 +549,7 @@ class Mbeshipping extends CarrierModule
         Configuration::deleteByName('mbe_active');
         Configuration::deleteByName('MBESHIPPING_INITIAL_CONF');
         Configuration::deleteByName('MBESHIPPING_CREDENTIALS');
+        Configuration::deleteByName('allowed_shipment_services');
     }
 
     ###########################################################################
@@ -569,6 +583,14 @@ class Mbeshipping extends CarrierModule
             !empty($customer) || $result .= $this->displayError($this->l('The credentials entered are incorrect'));
         }
         // - Check auth credentials
+
+        if (!empty($customer) && $this->is_direct_channel_user && !Configuration::get('MBESHIPPING_ADVANCED_AUTH_CONF')) {
+            // Check if exists payment
+            AuthAPI::existsPayment() || $result .= $this->displayWarning(
+                $this->l('Payment method not configured') . '. ' .
+                "<a href=\"{$this->context->link->getAdminLink('AdminMbePrivateArea')}\">{$this->l('Add a payment method to create shipments and automatically settle your invoices')}</a>."
+            );
+        }
 
         // Check if third party pickups are enabled
         $this->third_party_pickups_allowed = AuthAPI::thirdPartyPickupsAllowed();
@@ -919,7 +941,7 @@ class Mbeshipping extends CarrierModule
                 $values['MBESHIPPING_PICKUP_CUTOFF_PREFERRED_TO'],
                 $values['MBESHIPPING_PICKUP_CUTOFF_ALTERNATIVE_FROM'],
                 $values['MBESHIPPING_PICKUP_CUTOFF_ALTERNATIVE_TO'],
-                $values['MBESHIPPING_PICKUP_NOTES'],
+                $values['MBESHIPPING_PICKUP_NOTES']
             );
 
             if (!$ws_result) {
@@ -1076,8 +1098,18 @@ class Mbeshipping extends CarrierModule
         $api = new AuthAPI();
         if ($api->retrieveAPIKeys() === true) {
             Configuration::updateValue('mbe_active', 1);
-            Configuration::updateValue('MBESHIPPING_INITIAL_CONF', 0);
-            $this->is_direct_channel_user = AuthAPI::isDirectChannelUser();
+            $is_initial_configuration = Configuration::get('MBESHIPPING_INITIAL_CONF');
+
+            if ($is_initial_configuration) {
+                Configuration::updateValue('MBESHIPPING_INITIAL_CONF', false);
+            }
+
+            $is_direct_channel_user = AuthAPI::isDirectChannelUser();
+            if ($is_initial_configuration && $is_direct_channel_user) {
+                AuthAPI::presetDirectChannelUserServices();
+            }
+
+            $this->is_direct_channel_user = $is_direct_channel_user;
             return $this->displayConfirmation($this->l('Login successful'));
         }
 
@@ -1849,9 +1881,13 @@ class Mbeshipping extends CarrierModule
 
         $guide = $links['guide']['mbe'];
         $contact = $links['contact']['mbe'];
-        if($this->is_direct_channel_user) {
+        $phone = $links['phone']['mbe'];
+        $info = $links['info'];
+        if($this->is_direct_channel_user || empty($links['customer_id'])) {
             $guide = $links['guide']['direct'];
             $contact = $links['contact']['direct'];
+            $phone = $links['phone']['direct'];
+            $info = $links['contact']['direct'];
         }
 
         if (!empty($errors = $this->getErrors())) {
@@ -1861,11 +1897,10 @@ class Mbeshipping extends CarrierModule
         // smarty vars
         $this->context->smarty->assign([
             'show_side_menu' => !(int)Configuration::get('MBESHIPPING_INITIAL_CONF'),
-            //'banner_elink' => $links['banner_elink'],
-            //'banner_packing' => $links['banner_packing'],
-            'link_info' => $links['info'],
+            'link_info' => $info,
             'link_guide' => $guide,
             'link_contact' => $contact,
+            'link_phone' => $phone,
             'link_support' => $links['support'],
             'link_portal' => $links['portal'],
             'conf_tabs' => $this->conf_tabs,
@@ -1873,7 +1908,8 @@ class Mbeshipping extends CarrierModule
             'module_dir' => _PS_BASE_URL_ . __PS_BASE_URI__ . '/modules/' . $this->name,
             'result' => $result,
             'employee_iso_code' => $employee_iso_code,
-            'is_direct_channel_user' => $this->is_direct_channel_user
+            'is_direct_channel_user' => $this->is_direct_channel_user,
+            'customer_id' => $links['customer_id']
         ]);
 
         // js vars
@@ -2942,7 +2978,7 @@ class Mbeshipping extends CarrierModule
 
     public function getValuesTabPickupManagement() {
         $inputs = $this->getInitializedInputValues(
-            $this->getFormTabPickupManagement(),
+            $this->getFormTabPickupManagement()
         );
 
         $pickupDataInputs = [
@@ -3172,6 +3208,9 @@ class Mbeshipping extends CarrierModule
 
     public function getLinks()
     {
+        $ws = new Ws();
+        $customer_id = $ws->getCustomer()->Login;
+
         $base_url_banners = Tools::getHttpHost(true) . __PS_BASE_URI__ . 'modules/' . $this->name . '/views/img/banners/';
         $base_url_icons = Tools::getHttpHost(true) . __PS_BASE_URI__ . 'modules/' . $this->name . '/views/img/icons/';
         $links = [
@@ -3186,13 +3225,18 @@ class Mbeshipping extends CarrierModule
                 ],
                 'contact' => [
                   'mbe' => 'https://www.mbe.it/it/mbe-plugin-ecommerce',
-                  'direct' => '#'
+                  'direct' => 'mailto:eshipforprestashop.support@mbe.it?subject=' . "[$customer_id] " . $this->l('I need support.')
+                ],
+                'phone' => [
+                    'mbe' => '#',
+                    'direct' => 'tel:00390249525880'
                 ],
                 'support' => 'https://www.mbe.it/it/mbe-plugin-ecommerce',
                 'portal' => 'https://www.mbe.it/it/mbe-plugin-ecommerce',
                 'background' => $base_url_banners . 'background_banner.png',
                 'advantage' => $base_url_banners . 'banner_advantage.jpg',
-                'checklist' => $base_url_banners . 'checklist.png'
+                'checklist' => $base_url_banners . 'checklist.png',
+                'customer_id' => $customer_id
             ],
             'en' => [
                 'banner_eship' => $base_url_icons . 'logo_eship_for_prestashop.png',
@@ -3205,13 +3249,18 @@ class Mbeshipping extends CarrierModule
                 ],
                 'contact' => [
                     'mbe' => 'https://www.mbe.it/en/mbe-plugin-ecommerce',
-                    'direct' => '#'
+                    'direct' => 'mailto:eshipforprestashop.support@mbe.it?subject=' . "[$customer_id] " . $this->l('I need support.')
+                ],
+                'phone' => [
+                    'mbe' => '#',
+                    'direct' => 'tel:00390249525880'
                 ],
                 'support' => 'https://www.mbe.it/en/mbe-plugin-ecommerce',
                 'portal' => 'https://www.mbe.it/en/mbe-plugin-ecommerce',
                 'background' => $base_url_banners . 'background_banner.png',
                 'advantage' => $base_url_banners . 'banner_advantage.jpg',
-                'checklist' => $base_url_banners . 'checklist.png'
+                'checklist' => $base_url_banners . 'checklist.png',
+                'customer_id' => $customer_id
             ],
             'fr' => [
                 'banner_eship' => $base_url_icons . 'logo_eship_for_prestashop.png',
@@ -3224,13 +3273,18 @@ class Mbeshipping extends CarrierModule
                 ],
                 'contact' => [
                     'mbe' => 'https://www.mbefrance.fr/fr/solutions-e-commerce',
-                    'direct' => '#'
+                    'direct' => 'mailto:eshipforprestashop.support@mbefrance.fr?subject=' . "[$customer_id] " . $this->l('I need support.')
+                ],
+                'phone' => [
+                    'mbe' => '#',
+                    'direct' => 'tel:0033170393328'
                 ],
                 'support' => 'https://www.mbefrance.fr/fr/solutions-e-commerce',
                 'portal' => 'https://www.mbefrance.fr/fr/solutions-e-commerce',
                 'background' => $base_url_banners . 'background_banner.png',
                 'advantage' => $base_url_banners . 'banner_advantage.jpg',
-                'checklist' => $base_url_banners . 'checklist.png'
+                'checklist' => $base_url_banners . 'checklist.png',
+                'customer_id' => $customer_id
             ],
             'de' => [
                 'banner_eship' => $base_url_icons . 'logo_eship_for_prestashop.png',
@@ -3243,13 +3297,18 @@ class Mbeshipping extends CarrierModule
                 ],
                 'contact' => [
                     'mbe' => 'https://www.mbe.de/de/mbe-e-link-automatisierte-versandl%C3%B6sung-f%C3%BCr-e-commerce',
-                    'direct' => '#'
+                    'direct' => 'mailto:eshipforprestashop.support@mbe.it?subject=' . "[$customer_id] " . $this->l('I need support.')
+                ],
+                'phone' => [
+                    'mbe' => '#',
+                    'direct' => 'tel:00390249525880'
                 ],
                 'support' => 'https://www.mbe.de/de/mbe-e-link-automatisierte-versandl%C3%B6sung-f%C3%BCr-e-commerce',
                 'portal' => 'https://www.mbe.de/de/mbe-e-link-automatisierte-versandl%C3%B6sung-f%C3%BCr-e-commerce',
                 'background' => $base_url_banners . 'background_banner.png',
                 'advantage' => $base_url_banners . 'banner_advantage.jpg',
-                'checklist' => $base_url_banners . 'checklist.png'
+                'checklist' => $base_url_banners . 'checklist.png',
+                'customer_id' => $customer_id
             ],
             'es' => [
                 'banner_eship' => $base_url_icons . 'logo_eship_for_prestashop.png',
@@ -3262,13 +3321,18 @@ class Mbeshipping extends CarrierModule
                 ],
                 'contact' => [
                     'mbe' => 'https://www.mbe.es/es/mbe-plugin-ecommerce',
-                    'direct' => '#'
+                    'direct' => 'mailto:eshipforprestashop.support@mbe.es?subject=' . "[$customer_id] " . $this->l('I need support.')
+                ],
+                'phone' => [
+                    'mbe' => '#',
+                    'direct' => 'tel:0034934921192'
                 ],
                 'support' => 'https://www.mbe.es/es/mbe-plugin-ecommerce',
                 'portal' => 'https://www.mbe.es/es/mbe-plugin-ecommerce',
                 'background' => $base_url_banners . 'background_banner.png',
                 'advantage' => $base_url_banners . 'banner_advantage.jpg',
-                'checklist' => $base_url_banners . 'checklist.png'
+                'checklist' => $base_url_banners . 'checklist.png',
+                'customer_id' => $customer_id
             ],
             'pl' => [
                 'banner_eship' => $base_url_icons . 'logo_eship_for_prestashop.png',
@@ -3281,13 +3345,18 @@ class Mbeshipping extends CarrierModule
                 ],
                 'contact' => [
                     'mbe' => 'https://www.mbe.pl/pl/mbe-elink-plugin-ecommerce',
-                    'direct' => '#'
+                    'direct' => 'mailto:eshipforprestashop.support@mbe.it?subject=' . "[$customer_id] " . $this->l('I need support.')
+                ],
+                'phone' => [
+                    'mbe' => '#',
+                    'direct' => 'tel:00390249525880'
                 ],
                 'support' => 'https://www.mbe.pl/pl/mbe-elink-plugin-ecommerce',
                 'portal' => 'https://www.mbe.pl/pl/mbe-elink-plugin-ecommerce',
                 'background' => $base_url_banners . 'background_banner.png',
                 'advantage' => $base_url_banners . 'banner_advantage.jpg',
-                'checklist' => $base_url_banners . 'checklist.png'
+                'checklist' => $base_url_banners . 'checklist.png',
+                'customer_id' => $customer_id
             ]
         ];
 
@@ -3666,5 +3735,35 @@ configurations within your site\'s shopping cart. By clicking on the button, you
             'type' => 'hidden',
             'name' => $input_name,
         ];
+    }
+
+    /* GTM (HEAD) */
+    public function hookDisplayBackOfficeHeader()
+    {
+        if (!Tools::getValue('configure') == $this->name) {
+            return '';
+        }
+
+        $this->context->smarty->assign([
+            'gtm_id' => self::GTM_ID,
+        ]);
+
+        $this->context->controller->addJS($this->_path . 'views/js/gtm_events.js');
+
+        return $this->context->smarty->fetch(_PS_MODULE_DIR_ . $this->name . '/views/templates/admin/gtm_tag.tpl');
+    }
+
+    /* GTM (BODY) */
+    public function hookDisplayBackOfficeTop()
+    {
+        if (!Tools::getValue('configure') == $this->name) {
+            return '';
+        }
+
+        $this->context->smarty->assign([
+            'gtm_id' => self::GTM_ID,
+        ]);
+
+        return $this->context->smarty->fetch(_PS_MODULE_DIR_ . $this->name . '/views/templates/admin/gtm_tag_noscript.tpl');
     }
 }

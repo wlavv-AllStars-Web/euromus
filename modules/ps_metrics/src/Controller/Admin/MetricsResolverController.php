@@ -30,11 +30,11 @@ use PrestaShop\Module\Ps_metrics\Presenter\FaqPresenter;
 use PrestaShop\Module\Ps_metrics\Presenter\ShopDataPresenter;
 use PrestaShop\Module\Ps_metrics\Provider\AnalyticsAccountsListProvider;
 use PrestaShop\Module\Ps_metrics\Validation\SelectAccountAnalytics;
-use PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
 use PrestaShopBundle\Controller\Admin\FrameworkBundleAdminController;
 use Ps_metrics;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Prestashop\ModuleLibMboInstaller\Installer as MBOInstaller;
 
 class MetricsResolverController extends FrameworkBundleAdminController
 {
@@ -151,28 +151,18 @@ class MetricsResolverController extends FrameworkBundleAdminController
     }
 
     /**
-     * Generate product link
+     * Install ps_mbo module
      *
      * @return Response
      */
-    public function retrieveProductsLinksFromList()
+    public function installPsMbo(): Response
     {
         /** @var JsonHelper $jsonHelper */
         $jsonHelper = $this->module->getService('ps_metrics.helper.json');
 
-        $products = explode(',', (string) $this->request->request->get('products', ''));
-        $links = [];
+        $mboInstaller = new MBOInstaller(_PS_VERSION_);
 
-        foreach ($products as $product) {
-            $links[$product] =
-                $this->getAdminLink(
-                    'AdminProducts',
-                    ['id_product' => $product, 'updateproduct' => 1],
-                    true
-                ) . '#tab-step3';
-        }
-
-        return new Response($jsonHelper->jsonEncode($links), 200, [
+        return new Response($jsonHelper->jsonEncode($mboInstaller->installModule()), 200, [
             'Content-Type' => 'application/json',
         ]);
     }
@@ -367,63 +357,6 @@ class MetricsResolverController extends FrameworkBundleAdminController
             $jsonHelper->jsonEncode([
                 'success' => true,
                 'listProperty' => $serviceResult,
-            ]),
-            200,
-            ['Content-Type' => 'application/json']
-        );
-    }
-
-    /**
-     * Init Billing Free
-     *
-     * @return Response
-     */
-    public function ajaxProcessBillingFree()
-    {
-        /** @var JsonHelper $jsonHelper */
-        $jsonHelper = $this->module->getService('ps_metrics.helper.json');
-
-        /** @var PsAccounts $accounts */
-        $accounts = $this->module->getService('ps_accounts.facade');
-        $billingService = $accounts->getPsBillingService();
-
-        if (!empty($_SERVER['HTTP_CLIENT_IP'])) {
-            $ip_address = $_SERVER['HTTP_CLIENT_IP'];
-        } elseif (!empty($_SERVER['HTTP_X_FORWARDED_FOR'])) {
-            //whether ip is from proxy
-            $ip_address = $_SERVER['HTTP_X_FORWARDED_FOR'];
-        } else {
-            //whether ip is from remote address
-            $ip_address = $_SERVER['REMOTE_ADDR'];
-        }
-
-        /*
-            in some case, $ip_address contain list of ip address...
-            and cause some billings problems
-        */
-        $ip_address = explode(',', $ip_address)[0];
-
-        $result = $billingService->subscribeToFreePlan(
-            $this->module->name,
-            'metrics-free',
-            false,
-            trim($ip_address)
-        );
-
-        if (empty($result)) {
-            return new Response(
-                $jsonHelper->jsonEncode([
-                    'success' => false,
-                ]),
-                200,
-                ['Content-Type' => 'application/json']
-            );
-        }
-
-        return new Response(
-            $jsonHelper->jsonEncode([
-                'success' => true,
-                'billing' => $result,
             ]),
             200,
             ['Content-Type' => 'application/json']

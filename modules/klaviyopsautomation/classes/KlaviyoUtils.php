@@ -31,7 +31,7 @@ use Context;
 use Db;
 use Exception;
 use Image;
-use Klaviyo\Exception\KlaviyoException;
+use KlaviyoV3Sdk\Exception\KlaviyoException;
 use KlaviyoPs\Classes\BusinessLogicServices\OrderPayloadService;
 use Link;
 use Product;
@@ -258,7 +258,7 @@ class KlaviyoUtils
      */
     public static function formatPrice($price)
     {
-        return number_format(is_numeric($price) ? $price : 0, 2);
+        return number_format(is_numeric($price) ? $price : 0, 2, '.', '');
     }
 
     /**

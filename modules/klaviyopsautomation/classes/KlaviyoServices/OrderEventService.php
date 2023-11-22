@@ -26,7 +26,7 @@ if (!defined('_PS_VERSION_')) {
 
 use ArrayObject;
 use Exception;
-use Klaviyo\Exception\KlaviyoException;
+use KlaviyoV3Sdk\Exception\KlaviyoException;
 use KlaviyoPs\Classes\BusinessLogicServices\OrderPayloadService;
 use KlaviyoPs\Classes\KlaviyoApiWrapper;
 use KlaviyoPs\Classes\KlaviyoUtils;

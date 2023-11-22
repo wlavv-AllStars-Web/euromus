@@ -32,6 +32,10 @@ use PrestaShop\Module\Mbeshipping\Helper\LoggerHelper;
 use PrestaShop\Module\Mbeshipping\Helper\OrderHelper;
 use PrestaShop\Module\Mbeshipping\Lib\MbeWs;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class Ws
 {
     private $helper;
@@ -595,7 +599,7 @@ class Ws
                 $products,
                 $shipperType,
                 $reference,
-                $pickup_batch_id,
+                $pickup_batch_id
             );
         }
         return $result;

@@ -2,11 +2,11 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Bonjour {firstname} {lastname},
 
-A new order has been generated on your behalf.
+Une nouvelle commande a été générée à votre demande.
 
-Please go on {order_link} to complete the payment.
+Veuillez vous rendre sur {order_link} pour finaliser le paiement.
 
 [{shop_name}]({shop_url})
 

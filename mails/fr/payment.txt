@@ -2,15 +2,15 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Bonjour {firstname} {lastname},
 
-Thank you for shopping with {shop_name}!
+Merci d'avoir effectué vos achats sur {shop_name}!
 
-Your payment for order with the reference {order_name} was successfully processed.
+Le paiement pour votre commande ayant pour référence {order_name} a bien été effectué.
 
-Follow your order and download your invoice on our store, go to the [Order history and details]({history_url}) section of your customer account.
+Pour suivre votre commande et télécharger votre facture sur notre site, rendez-vous dans la section [Historique et détails de mes commandes]({history_url}) de votre compte client.
 
-If you have a guest account, you can follow your order via the [Guest Tracking]({guest_tracking_url}) section on our shop.
+Si vous avez un compte invité, vous pouvez suivre votre commande via la section [Suivi de commande]({guest_tracking_url}) sur notre boutique.
 
 [{shop_name}]({shop_url})
 

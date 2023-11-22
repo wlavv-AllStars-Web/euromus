@@ -32,7 +32,7 @@ class ps_edition_basic extends Module
     public function __construct()
     {
         $this->name = 'ps_edition_basic';
-        $this->version = '1.0.0';
+        $this->version = '1.0.3';
         $this->tab = 'administration';
         $this->author = 'PrestaShop';
         $this->need_instance = 0;
@@ -85,11 +85,54 @@ class ps_edition_basic extends Module
         return true;
     }
 
+    private function authorizeAccess(): bool
+    {
+        try {
+            $slug = 'ROLE_MOD_MODULE_' . strtoupper($this->name) . '_READ';
+            $sql = 'SELECT id_authorization_role FROM `' . _DB_PREFIX_ . 'authorization_role` WHERE slug = "' . $slug . '";';
+            $responseAuthorizationRole = Db::getInstance()->executeS($sql);
+            $idAuthorizationRole = $responseAuthorizationRole[0]['id_authorization_role'];
+            Db::getInstance()->execute('
+                INSERT INTO `' . _DB_PREFIX_ . 'module_access` (`id_profile`, `id_authorization_role`) (
+                    SELECT id_profile, "' . $idAuthorizationRole . '"
+                    FROM `' . _DB_PREFIX_ . 'profile`
+                    WHERE id_profile > 1
+            )');
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
+    private function removeAccess(): bool
+    {
+        try {
+            $slug = 'ROLE_MOD_MODULE_' . strtoupper($this->name) . '_READ';
+            $sql = 'SELECT id_authorization_role FROM `' . _DB_PREFIX_ . 'authorization_role` WHERE slug = "' . $slug . '";';
+            $responseAuthorizationRole = Db::getInstance()->executeS($sql);
+            $idAuthorizationRole = $responseAuthorizationRole[0]['id_authorization_role'];
+            Db::getInstance()->execute('
+                DELETE FROM `' . _DB_PREFIX_ . 'module_access` 
+                WHERE id_profile > 1 AND id_authorization_role = ' . $idAuthorizationRole . ';
+            ');
+
+            return true;
+        } catch (Exception $e) {
+            return false;
+        }
+    }
+
     public function install(): bool
     {
+        //        Configuration::updateValue('SMB_IS_NEW_MENU_ENABLED', 'new_menu_enabled');
+        //
+        //        $this->addOverrides();
+
         return parent::install()
             && (new TabsInstaller($this->name))->installTabs()
-            && $this->registerHook($this->getHooksNames());
+            && $this->registerHook($this->getHooksNames())
+            && $this->authorizeAccess();
     }
 
     /**
@@ -100,7 +143,8 @@ class ps_edition_basic extends Module
         $this->discardOverrides();
 
         return parent::uninstall()
-            && (new Uninstall($this->name))->run();
+            && (new Uninstall($this->name))->run()
+            && $this->removeAccess();
     }
 
     /**
@@ -131,6 +175,10 @@ class ps_edition_basic extends Module
     {
         $this->context->controller->addCSS($this->getParameter('ps_edition_basic.edition_basic_admin_css'));
         $this->context->controller->addJS($this->getPathUri() . 'views/js/favicon.js');
+        // Hide minified setup guide if not in edition shop
+        if (!Module::isInstalled('smb_edition')) {
+            $this->context->controller->addJS($this->getPathUri() . 'views/js/hideMinifiedChecklist.js');
+        }
     }
 
     public function getParameter(string $key, bool $substitute = true): mixed

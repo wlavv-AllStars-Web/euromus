@@ -27,8 +27,6 @@ trait UseDisplayBackOfficeHeader
 {
     public function hookDisplayBackOfficeHeader(): string
     {
-        $this->addAdminThemeMedia();
-
         $scriptUrl = $this->getParameter('ps_edition_basic.edition_basic_homepage_js');
 
         return <<<END

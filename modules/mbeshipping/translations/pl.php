@@ -2,6 +2,7 @@
 
 global $_MODULE;
 $_MODULE = array();
+$_MODULE['<{mbeshipping}prestashop>mbeshipping_7e5ab22c428cdd9671728e6c695250a7'] = 'I need support.';
 $_MODULE['<{mbeshipping}prestashop>mbeshipping_4532e3f32524c5f842199ba5f5625d51'] = 'Standardowa szerokość opakowania';
 $_MODULE['<{mbeshipping}prestashop>mbeshipping_2ccf7a30c18e7219af7009503adb34de'] = 'Standardowa wysokość opakowania';
 $_MODULE['<{mbeshipping}prestashop>mbeshipping_28b68a48a3472d3c1b46a8d91f9aba3c'] = 'Standardowa długość opakowania';

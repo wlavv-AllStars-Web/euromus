@@ -91,7 +91,7 @@ class KlaviyoPsBuildReclaimModuleFrontController extends KlaviyoPsAjaxModuleFron
             'properties' => array(
                 '$event_id' => $cartId,
                 '$service' => 'prestashop',
-                '$value' => number_format($cart->getOrderTotal(), 2),
+                '$value' => (float) $cart->getOrderTotal(),
                 '$extra' => array(
                     'line_items' => $cartLineItemsArray['lineItems']
                 ),

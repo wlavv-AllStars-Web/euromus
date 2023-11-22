@@ -27,7 +27,7 @@ if (!defined('_PS_VERSION_')) {
 use ArrayObject;
 use Currency;
 use Customer;
-use Klaviyo\Exception\KlaviyoException;
+use KlaviyoV3Sdk\Exception\KlaviyoException;
 use KlaviyoPs\Classes\KlaviyoUtils;
 use Language;
 use Order;

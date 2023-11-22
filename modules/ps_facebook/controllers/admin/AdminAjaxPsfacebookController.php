@@ -196,6 +196,15 @@ class AdminAjaxPsfacebookController extends ModuleAdminController
                 $e->getCode(),
                 true
             );
+            $this->ajaxDie(
+                json_encode(
+                    [
+                        'success' => false,
+                        'message' => $e->getMessage(),
+                        'turnOn' => false,
+                    ]
+                )
+            );
 
             return;
         }
@@ -205,6 +214,16 @@ class AdminAjaxPsfacebookController extends ModuleAdminController
                 new FacebookOnboardException(
                     json_encode($response['message']),
                     FacebookOnboardException::FACEBOOK_RETRIEVE_EXTERNAL_BUSINESS_ID_EXCEPTION
+                )
+            );
+
+            $this->ajaxDie(
+                json_encode(
+                    [
+                        'success' => false,
+                        'message' => $response['message'],
+                        'turnOn' => false,
+                    ]
                 )
             );
 
@@ -462,7 +481,7 @@ class AdminAjaxPsfacebookController extends ModuleAdminController
                         'prevalidation' => $prevalidationScanDataProvider->getPrevalidationScanSummary($this->context->shop->id),
                         'reporting' => [
                             'lastSyncDate' => $syncReport['lastFinishedSyncStartedAt'],
-                            'catalog' => $productCount['product_count'] ?? '--',
+                            'catalog' => $productCount['product_count'] ?? null,
                             'errored' => count($syncReport['errors']), // no distinction for base lang vs l10n errors
                         ],
                     ],
@@ -606,7 +625,7 @@ class AdminAjaxPsfacebookController extends ModuleAdminController
         $moduleName = Tools::getValue('module_name');
         $moduleAction = Tools::getValue('module_action');
 
-        if (!in_array($moduleName, ['ps_accounts', 'ps_eventbus'])
+        if (!in_array($moduleName, ['ps_accounts', 'ps_eventbus', 'ps_facebook'])
             || !in_array($moduleAction, ['enable', 'install', 'upgrade'])) {
             http_response_code(401);
             $this->ajaxDie(

@@ -25,14 +25,7 @@
 {extends file='page.tpl'}
 
     {block name='page_content_container'}
-      <style>
-      @media (min-width: 991px){
-        .sli{
-          align-items: center ;
-        }
-      }
-      </style>
-      <section style="display: flex; flex-direction: column" id="content" class="sli page-home">
+      <section id="content" class="page-home">
         {block name='page_content_top'}{/block}
 
         {block name='page_content'}

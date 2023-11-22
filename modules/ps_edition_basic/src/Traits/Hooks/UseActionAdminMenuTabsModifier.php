@@ -45,7 +45,7 @@ trait UseActionAdminMenuTabsModifier
         $navItems = $this->pickTabs($navItems, PS_EDITION_BASIC_MENU_WHITE_LIST);
         $navItems = $this->removeUnactivatedSubTabs($navItems);
 
-        $params['tabs'] = $navItems;
+        $this->context->smarty->assign('tabs_simplify', $navItems);
     }
 
     private function flatSecondLevelRemovingFirstLevel(array $tabs): array

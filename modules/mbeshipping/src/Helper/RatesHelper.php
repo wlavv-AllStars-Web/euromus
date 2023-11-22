@@ -49,6 +49,10 @@ if (!defined('MBE_UAP_ALLOWED_COUNTRIES_LIST')) {
     define('MBE_UAP_ALLOWED_COUNTRIES_LIST', array('IT','FR','GB','ES','DE','PL'));
 }
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class RatesHelper
 {
     protected $rate_table_name = 'mbeshippingrate';

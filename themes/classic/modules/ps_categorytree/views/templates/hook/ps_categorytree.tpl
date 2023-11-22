@@ -59,15 +59,9 @@
   {/strip}
 {/function}
 
-<div style="text-align: center; padding:0; padding-top: 10%; align-text:center" class="block-categories">
-  <ul style="" class="category-top-menu">
-    <li style="
-    width: -webkit-fill-available;
-    align-self: center;
-    border: 2px solid #041E42;
-    border-top: 0px;
-    border-right: 0px;
-    border-left: 0px;" ><a  class="text-uppercase h6" href="{$categories.link nofilter}">{$categories.name}</a></li>
+<div class="block-categories">
+  <ul class="category-top-menu">
+    <li><a class="text-uppercase h6" href="{$categories.link nofilter}">{$categories.name}</a></li>
     {if !empty($categories.children)}
       <li>{categories nodes=$categories.children}</li>
     {/if}

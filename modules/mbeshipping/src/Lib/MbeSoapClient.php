@@ -28,6 +28,10 @@ namespace PrestaShop\Module\Mbeshipping\Lib;
 
 use PrestaShop\Module\Mbeshipping\Helper\LoggerHelper;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class MbeSoapClient extends \SoapClient
 {
     public $isOnlinembe = false;

@@ -26,6 +26,10 @@
 
 namespace PrestaShop\Module\Mbeshipping\Helper;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 class MdpHelper
 {
     protected $_mdp_table_name  = 'mbe_shipping_mdp';

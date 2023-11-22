@@ -69,7 +69,7 @@ class Ps_metrics extends Module
     {
         $this->name = 'ps_metrics';
         $this->tab = 'advertising_marketing';
-        $this->version = '3.6.3';
+        $this->version = '4.0.2';
         $this->author = 'PrestaShop';
         $this->need_instance = 0;
         $this->module_key = '697657ffe038d20741105e95a10b12d1';
@@ -245,18 +245,6 @@ class Ps_metrics extends Module
             );
         }
 
-        // INFO: Feature doesn't work anymore on PrestaShop 8. Disable the feature temporally.
-        // if ($prestashopHelper->getControllerName() === 'AdminOrders') {
-        //     $assets = $this->loadAssets('AdminOrders', false);
-        //
-        //     $twig = $this->loadInstance('twig');
-        //
-        //     return $twig->render(
-        //         '@Modules/ps_metrics/views/templates/hook/HookBlockLegacyPages.html.twig',
-        //         $assets
-        //     );
-        // }
-
         return false;
     }
 
@@ -292,11 +280,6 @@ class Ps_metrics extends Module
             $assets = $this->loadAssets('AdminStats');
             Media::addJsDef($assets);
         }
-
-        // INFO: Feature doesn't work anymore on PrestaShop 8. Disable the feature temporally.
-        // if ($prestashopHelper->getControllerName() === 'AdminOrders') {
-        //     $assets = $this->loadAssets('AdminOrders', false);
-        // }
     }
 
     /**
@@ -423,6 +406,9 @@ class Ps_metrics extends Module
             ),
             'accountsModule' => $moduleHelper->buildModuleInformations(
                 'ps_accounts'
+            ),
+            'mboModule' => $moduleHelper->buildModuleInformations(
+                'ps_mbo'
             ),
             'graphqlEndpoint' => $graphqlEndpoint,
             'isoCode' => $prestashopHelper->getLanguageIsoCode(),

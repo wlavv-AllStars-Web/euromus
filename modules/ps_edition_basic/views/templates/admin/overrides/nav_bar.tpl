@@ -22,14 +22,24 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  *}
+ 
+ <style>
+  .nav-bar.collapsed .nav-bar-overflow {
+    overflow: visible!important;
+  }
 
-<nav class="nav-bar d-none d-print-none d-md-block" style="background: white">
+  .nav-bar {
+    background: white;
+  }
+</style>
+
+<nav class="nav-bar d-none d-print-none d-md-block">
   <span class="menu-collapse" data-toggle-url="{$toggle_navigation_url}" style="display: none">
     <i class="material-icons rtl-flip">chevron_left</i>
     <i class="material-icons rtl-flip">chevron_left</i>
   </span>
 
-  <div class="nav-bar-overflow" style="overflow: visible!important;">
-    <wc-side-bar class="side-bar" tabs="{htmlspecialchars(array_values($tabs)|json_encode)}" />
+  <div class="nav-bar-overflow" style="padding-bottom:50px; ">
+    <wc-side-bar class="side-bar" tabs="{htmlspecialchars(array_values($tabs_simplify)|json_encode)}" />
   </div>
 </nav>

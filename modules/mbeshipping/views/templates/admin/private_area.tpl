@@ -41,14 +41,14 @@
 <script>
     const onMbePrivateAreaIframeLoad = () => {
         console.log('MBE > iframe loaded')
-        let endpoint = '{$private_area_iframe_url|escape:'html':'UTF-8'}'
+        let endpoint = '{$private_area_iframe_url nofilter}'
         if (typeof endpoint !== 'undefined') {
             const $iframe = $('iframe#mbe_private_area')
             if ($iframe) {
                 $iframe[0].contentWindow.postMessage({
-                    'accessToken': '{$private_area_iframe_access_token|escape:'html':'UTF-8'}',
-                    'language': '{$private_area_iframe_lang|escape:'html':'UTF-8'}',
-                    'urlLogin': '{$private_area_iframe_login_url|escape:'html':'UTF-8'}'
+                    'accessToken': '{$private_area_iframe_access_token nofilter}',
+                    'language': '{$private_area_iframe_lang nofilter}',
+                    'urlLogin': '{$private_area_iframe_login_url nofilter}'
                 }, endpoint)
             }
         }

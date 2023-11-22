@@ -22,42 +22,16 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<style>
-  .back {
-    
-    background: linear-gradient(180deg, rgba(4, 30, 66, 1) 63%, rgba(0, 0, 0, 1) 100%);
-  }
-
-  .border {
-    border-top: 2px solid red;
-    outline: 2px solid #041E42;
-    outline-offset: 2px;
-  }
-
-  @media (max-width: 576px){
-    .text-sm-center{
-      text-align: center;
-  }
-  };
-
-</style>
-
-<div class="container-fluid ">
+<div class="container">
   <div class="row">
     {block name='hook_footer_before'}
       {hook h='displayFooterBefore'}
     {/block}
   </div>
 </div>
-<<<<<<< Updated upstream
-<div class="footer-container border back">
-  <div style="width: 90%;" class="container ">
-    <div class="row ">
-=======
-<div class="footer-container1" style="background-color: darkgreen;">
+<div class="footer-container">
   <div class="container">
     <div class="row">
->>>>>>> Stashed changes
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
@@ -67,14 +41,16 @@
         {hook h='displayFooterAfter'}
       {/block}
     </div>
-  </div>
-  <div style="border-top: 2px solid rgba(128, 128, 128, 0.2); background-color: #041E42;" class="row pt-1 ">
-    <p class="text-sm-center">
-      {block name='copyright_link'}
-        <a href="https://www.prestashop-project.org/" target="_blank" rel="noopener noreferrer nofollow">
-          {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
-        </a>
-      {/block}
-    </p>
+    <div class="row">
+      <div class="col-md-12">
+        <p class="text-sm-center">
+          {block name='copyright_link'}
+            <a href="https://www.prestashop-project.org/" target="_blank" rel="noopener noreferrer nofollow">
+              {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
+            </a>
+          {/block}
+        </p>
+      </div>
+    </div>
   </div>
 </div>
