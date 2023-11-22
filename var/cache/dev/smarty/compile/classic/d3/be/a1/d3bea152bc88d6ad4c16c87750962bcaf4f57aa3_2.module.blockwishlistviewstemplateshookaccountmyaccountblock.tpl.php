@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 17:54:58
+/* Smarty version 4.3.1, created on 2023-11-22 12:53:50
   from 'module:blockwishlistviewstemplateshookaccountmyaccountblock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ceef2d5c456_44360418',
+  'unifunc' => 'content_655df9de3ee8d1_34716389',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ceef2d5c456_44360418 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655df9de3ee8d1_34716389 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/modules/blockwishlist/views/templates/hook/account/myaccount-block.tpl -->
 <?php if ($_smarty_tpl->tpl_vars['customer']->value['is_logged']) {?>
   <li>

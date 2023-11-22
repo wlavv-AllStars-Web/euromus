@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 12:18:52
+/* Smarty version 4.3.1, created on 2023-11-22 12:55:50
   from 'C:\xampp\htdocs\euromus\themes\ebusiness\templates\_partials\javascript.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ca02cae4d03_60137837',
+  'unifunc' => 'content_655dfa56c10087_17299772',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '80a9d24fc408b7877bfacbd8aedf5133462bfb2b' => 
     array (
       0 => 'C:\\xampp\\htdocs\\euromus\\themes\\ebusiness\\templates\\_partials\\javascript.tpl',
-      1 => 1700041520,
+      1 => 1700589079,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ca02cae4d03_60137837 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655dfa56c10087_17299772 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'C:\\xampp\\htdocs\\euromus\\vendor\\smarty\\smarty\\libs\\plugins\\modifier.count.php','function'=>'smarty_modifier_count',),));
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['javascript']->value['external'], 'js');
 $_smarty_tpl->tpl_vars['js']->do_else = true;

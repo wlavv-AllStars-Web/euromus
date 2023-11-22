@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 12:18:53
+/* Smarty version 4.3.1, created on 2023-11-22 12:55:51
   from 'module:ps_searchbarps_searchbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ca02d9954d2_45969440',
+  'unifunc' => 'content_655dfa57cd7ee9_37905064',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '110ec72aa9921d2c382ad628bdb2f0bc5105a617' => 
     array (
       0 => 'module:ps_searchbarps_searchbar.tpl',
-      1 => 1700236435,
+      1 => 1700589079,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ca02d9954d2_45969440 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655dfa57cd7ee9_37905064 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/themes/ebusiness/modules/ps_searchbar/ps_searchbar.tpl --><!-- Block search module TOP -->
 <div id="search_widget" class="search-widget" data-search-controller-url="<?php echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['search_controller_url']->value, ENT_QUOTES, 'UTF-8');?>
 " style="display:contents;">

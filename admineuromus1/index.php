@@ -77,12 +77,6 @@ $kernel = new AppKernel(_PS_ENV_, _PS_MODE_DEV_);
 $request = Request::createFromGlobals();
 Request::setTrustedProxies([], Request::HEADER_X_FORWARDED_ALL);
 
-
-require_once __DIR__.'/../autoload.php';
-$response = $kernel->handle($request, HttpKernelInterface::MASTER_REQUEST, null);
-$response->send();
-$kernel->terminate($request, $response);
-
 $catch = strpos($request->getRequestUri(), Api::API_BASE_PATH) !== false;
 
 try {

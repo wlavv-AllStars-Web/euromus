@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 12:19:31
+/* Smarty version 4.3.1, created on 2023-11-22 12:58:38
   from 'module:ps_linklistviewstemplateshooklinkblock.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ca053a070e2_65587314',
+  'unifunc' => 'content_655dfafe7e6f24_97524553',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '906548e89c8c6025457ddaeffb1980a0c743b872' => 
     array (
       0 => 'module:ps_linklistviewstemplateshooklinkblock.tpl',
-      1 => 1700041520,
+      1 => 1700589080,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ca053a070e2_65587314 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655dfafe7e6f24_97524553 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/themes/probusiness/modules/ps_linklist/views/templates/hook/linkblock.tpl --><div class="col-xs-12 col-sm-3 links footer_linklist">
   <div class="row">
   <?php

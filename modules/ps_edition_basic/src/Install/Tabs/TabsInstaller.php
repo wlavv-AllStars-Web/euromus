@@ -78,7 +78,7 @@ class TabsInstaller
 
         // Update employees default tab
         $tab = new \Tab(\Tab::getIdFromClassName('AdminPsEditionBasicHomepageController'));
-        \Db::getInstance()->execute("UPDATE eu_employee SET default_tab = '$tab->id';");
+        \Db::getInstance()->execute("UPDATE cc_employee SET default_tab = '$tab->id';");
 
         return $result;
     }

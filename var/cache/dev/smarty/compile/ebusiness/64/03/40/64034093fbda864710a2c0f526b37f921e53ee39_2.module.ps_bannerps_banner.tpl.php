@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 12:18:51
+/* Smarty version 4.3.1, created on 2023-11-22 12:55:46
   from 'module:ps_bannerps_banner.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ca02bca4784_02427399',
+  'unifunc' => 'content_655dfa527a40b8_12813925',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '64034093fbda864710a2c0f526b37f921e53ee39' => 
     array (
       0 => 'module:ps_bannerps_banner.tpl',
-      1 => 1700236829,
+      1 => 1700589079,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ca02bca4784_02427399 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655dfa527a40b8_12813925 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/themes/ebusiness/modules/ps_banner/ps_banner.tpl --><div class="bannersContainer">
   <div class="bannerRow1">
     <a class="banner banner1 image-box" href="#" >

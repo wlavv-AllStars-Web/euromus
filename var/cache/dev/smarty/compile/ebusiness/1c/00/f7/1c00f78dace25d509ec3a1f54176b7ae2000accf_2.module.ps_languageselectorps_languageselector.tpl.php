@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 12:18:53
+/* Smarty version 4.3.1, created on 2023-11-22 12:55:51
   from 'module:ps_languageselectorps_languageselector.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ca02d3a2c43_41510496',
+  'unifunc' => 'content_655dfa57429c78_39295492',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1c00f78dace25d509ec3a1f54176b7ae2000accf' => 
     array (
       0 => 'module:ps_languageselectorps_languageselector.tpl',
-      1 => 1700236641,
+      1 => 1700589079,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ca02d3a2c43_41510496 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655dfa57429c78_39295492 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/themes/ebusiness/modules/ps_languageselector/ps_languageselector.tpl --><div id="_desktop_language_selector" style="padding-left: 15px;">
   <div class="language-selector-wrapper">
         <div class="language-selector dropdown js-dropdown">

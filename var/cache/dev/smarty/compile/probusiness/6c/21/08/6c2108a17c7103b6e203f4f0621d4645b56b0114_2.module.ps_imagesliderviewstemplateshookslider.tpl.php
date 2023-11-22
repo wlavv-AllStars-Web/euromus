@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 12:19:28
+/* Smarty version 4.3.1, created on 2023-11-22 12:58:34
   from 'module:ps_imagesliderviewstemplateshookslider.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ca0504c48c3_94068309',
+  'unifunc' => 'content_655dfafaec9123_65668430',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '6c2108a17c7103b6e203f4f0621d4645b56b0114' => 
     array (
       0 => 'module:ps_imagesliderviewstemplateshookslider.tpl',
-      1 => 1700041520,
+      1 => 1700589080,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ca0504c48c3_94068309 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655dfafaec9123_65668430 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/themes/probusiness/modules/ps_imageslider/views/templates/hook/slider.tpl --><?php if ($_smarty_tpl->tpl_vars['homeslider']->value['slides']) {?>
   <div id="carousel" data-ride="carousel" class="carousel slide hidden-sm-down" data-interval="<?php echo htmlspecialchars((string) call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['homeslider']->value['speed'],'html','UTF-8' )), ENT_QUOTES, 'UTF-8');?>
 " data-wrap="<?php echo htmlspecialchars((string) call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['homeslider']->value['wrap'],'html','UTF-8' )), ENT_QUOTES, 'UTF-8');?>

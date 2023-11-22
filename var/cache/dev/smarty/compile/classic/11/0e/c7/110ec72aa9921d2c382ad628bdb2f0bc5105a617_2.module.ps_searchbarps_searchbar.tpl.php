@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 17:54:57
+/* Smarty version 4.3.1, created on 2023-11-22 12:53:49
   from 'module:ps_searchbarps_searchbar.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ceef1ed47b1_03214348',
+  'unifunc' => 'content_655df9dd716b18_44992641',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ceef1ed47b1_03214348 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655df9dd716b18_44992641 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/modules/ps_searchbar/ps_searchbar.tpl --> <style>
  @media (min-width: 767px){
  .bigscreen {

@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 17:54:58
+/* Smarty version 4.3.1, created on 2023-11-22 12:53:50
   from 'C:\xampp\htdocs\euromus\themes\classic\modules\ps_emailalerts\views\templates\hook\my-account-footer.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ceef2de5d41_98532524',
+  'unifunc' => 'content_655df9de46cb85_13938798',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ceef2de5d41_98532524 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655df9de46cb85_13938798 (Smarty_Internal_Template $_smarty_tpl) {
 ?>
 
 <li class="colorli">

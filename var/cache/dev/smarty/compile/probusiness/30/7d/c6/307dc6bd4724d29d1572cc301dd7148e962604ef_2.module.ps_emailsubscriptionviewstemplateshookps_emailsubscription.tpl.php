@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 12:19:31
+/* Smarty version 4.3.1, created on 2023-11-22 12:58:38
   from 'module:ps_emailsubscriptionviewstemplateshookps_emailsubscription.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ca0537acdb2_10176951',
+  'unifunc' => 'content_655dfafe46c006_33995621',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '307dc6bd4724d29d1572cc301dd7148e962604ef' => 
     array (
       0 => 'module:ps_emailsubscriptionviewstemplateshookps_emailsubscription.tpl',
-      1 => 1700041520,
+      1 => 1700589080,
       2 => 'module',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ca0537acdb2_10176951 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655dfafe46c006_33995621 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- begin C:\xampp\htdocs\euromus/themes/probusiness/modules/ps_emailsubscription/views/templates/hook/ps_emailsubscription.tpl --><div class="block_newsletter col-xs-12 col-md-3 col-sm-3 links">
 
     <h3 class="myaccount-title hidden-sm-down">

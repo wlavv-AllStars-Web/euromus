@@ -33,5 +33,4 @@ define('_PS_VERSION_', Version::VERSION);
 
 require_once _PS_CONFIG_DIR_ . 'alias.php';
 
-PrestashopAutoload::create(_PS_ROOT_DIR_, _PS_CACHE_DIR_)
-    ->register();
+PrestashopAutoload::create(_PS_ROOT_DIR_, _PS_CACHE_DIR_)->register();

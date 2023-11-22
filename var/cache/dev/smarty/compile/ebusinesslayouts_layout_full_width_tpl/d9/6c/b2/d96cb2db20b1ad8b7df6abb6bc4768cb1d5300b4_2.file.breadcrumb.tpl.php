@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-21 12:18:53
+/* Smarty version 4.3.1, created on 2023-11-22 12:55:51
   from 'C:\xampp\htdocs\euromus\themes\ebusiness\templates\_partials\breadcrumb.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655ca02dca1444_92194970',
+  'unifunc' => 'content_655dfa57b46462_02949583',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'd96cb2db20b1ad8b7df6abb6bc4768cb1d5300b4' => 
     array (
       0 => 'C:\\xampp\\htdocs\\euromus\\themes\\ebusiness\\templates\\_partials\\breadcrumb.tpl',
-      1 => 1700041520,
+      1 => 1700589079,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655ca02dca1444_92194970 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655dfa57b46462_02949583 (Smarty_Internal_Template $_smarty_tpl) {
 if ($_smarty_tpl->tpl_vars['page']->value['page_name'] != 'index') {?>
 <div class="breadcrumb_wrapper" data-depth="<?php echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['breadcrumb']->value['count'], ENT_QUOTES, 'UTF-8');?>
 ">
