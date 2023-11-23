@@ -23,11 +23,24 @@
 {else if isset($tc_config.YBC_TC_LAYOUT) && $tc_config.YBC_TC_LAYOUT == 'layouthome3'}
     {include file='_partials/header/header3.tpl'}
 {else} *}
+<style>
+.whtbl{
+  background-color: white;
+  color:#0273eb;
+  border: 1px solid #d8d8d8;
+}
+.form-control:focus {
+    color: black;
+    border-color: black;
+    outline: 0;
+}
+</style>
 <div class="header_content">
 {block name='header_nav'}
-  <nav style="background-color: #333333; display: flex; align: flex-end " class="header-nav">
-    <div style="width: 80%;"  class="container">
-    {hook h='displayNav1'}
+  <nav style="background-color: #333333; display: flex; justify-content: center " class="header-nav">
+    <div style="width: 80%; display: flex; justify-content : end ">
+      {hook h='displayNav1'}
+    </div>
             {*
              <div class="left-nav">
               {hook h='ybcCustom4'}
@@ -64,53 +77,42 @@
               </a>
             {/if}*}  
       
-    </div>
+    
   </nav>
 {/block}
 
 {block name='header_top'}
   <div class="header-top">
     <div style="padding: 0" class="container">
-       <div style="margin:0;" class="row">
-        <div style="margin-top: 0px; display: flex" id="_desktop_logo">
+       <div style="margin:0;  display: flex; align-items: center;" class="row">
+        <div style="margin-top: 0px;" id="_desktop_logo" class="col-md-4">
           <a href="{$urls.base_url|escape:'html':'UTF-8'}">
             <img style="height: 200px;" class="logo img-fluid" src="{if isset($tc_dev_mode) && $tc_dev_mode && isset($logo_url)&&$logo_url}{$logo_url|escape:'html':'UTF-8'}{else}{$shop.logo|escape:'html':'UTF-8'}{/if}" alt="{$shop.name|escape:'html':'UTF-8'}">
           </a>
         </div>
-        <div >
-        <form action=" method=post" id="login_form">
-          <div class="auth_field_container">
-            <div class="form-group auth_field" style="margin-top:0;"><div style="width:35px; background-color: #0273eb;float: left;">
-            <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px;"></i>
-            </div> 
-            <input style="width: calc(100% - 35px); float: left; height: 35px;" class="is_required validate account_input form-control" data-validate="isEmail" type="email" id="email" name="email" value="" placeholder="Email">
+       
+        <div class="col-md-9" style="display: flex; ">
+          <form style="display:flex; flex-direction: row ; justify-content:space-around; width: -webkit-fill-available;">
+            <div style="display:flex; width:30%" class="form-group col">
+            <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
+              <input type="text" class="form-control whtbl" id="username" placeholder="Enter your username">
             </div>
-            <div class="auth_field_horizontal_spacer">
+            <div style="display: flex; width: 30%" class="form-group col">
+            <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
+              <input type="password" class="form-control whtbl" id="password" placeholder="Enter your password">
             </div>
-            <div class="form-group auth_field"><div style="width:35px; background-color: #0273eb;float: left;">
-            <i class="fa fa-unlock" style="font-size: 25px; padding: 5px 7px;"></i>
+            <div style="width: 30%" class="form-group col" >
+              <button style=" width: -webkit-fill-available; " type="submit" class="btn whtbl">Login</button>
             </div>
-            <input style="width: calc(100% - 35px); float: left; height: 35px;" class="is_required validate account_input form-control" data-validate="isPasswd" type="password" id="passwd" name="passwd" value="" placeholder="Password">
-            <div class="lost_password form-group"><a href="https://www.allstarsmotorsport.fr/en/password-recovery" title="Recover your forgotten password" rel="nofollow" style="color: #0273EB">Forgot your password?</a>
-            </div>
-            </div>
-            <div class="auth_field_horizontal_spacer">
-            </div>
-            <div class="submit auth_field" style="margin-top:0;"> 
-            <button type="submit" id="SubmitLogin" name="SubmitLogin" class="button btn btn-default button-medium" style="width:100%;">
-            <div style="text-align:center;">Login</div>
-            </button>
-            </div>
-          </div>
-         
           </form>
         </div>
+       
        {*  {hook h='displayNav1'}
         {hook h='displayTop'} *}
       </div>
     </div>
   </div>
-  {*}
+  {*
   {hook h='displayNavFullWidth'}
   {hook h='displayMegaMenu'} *}
 {/block}
@@ -125,5 +127,5 @@
             {hook h='displaytopcolumn'}
         </div>
     </div>
+{/if} 
 {/if} *}
-{* {/if} *}

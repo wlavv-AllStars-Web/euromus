@@ -1,11 +1,11 @@
 <?php return array (
   'parameters' => 
   array (
-    'database_host' => 'localhost',
+    'database_host' => '192.168.1.173',
     'database_port' => '3306',
     'database_name' => 'euromus',
-    'database_user' => 'root',
-    'database_password' => '',
+    'database_user' => 'asw_dev',
+    'database_password' => 'all_p_stars_web_2023',
     'database_prefix' => 'eu_',
     'database_engine' => 'InnoDB',
     'mailer_transport' => 'smtp',
