@@ -34,6 +34,17 @@
     border-color: black;
     outline: 0;
 }
+.linkref{
+  color: #FFF;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 600;
+    text-align: center;
+    width: 100%;
+    display: block;
+    line-height: 50px;
+    cursor: pointer;
+}
 </style>
 <div class="header_content">
 {block name='header_nav'}
@@ -83,26 +94,26 @@
 
 {block name='header_top'}
   <div class="header-top">
-    <div style="padding: 0" class="container">
+    <div style="padding-bottom: 15px;" class="container">
        <div style="margin:0;  display: flex; align-items: center;" class="row">
         <div style="margin-top: 0px;" id="_desktop_logo" class="col-md-4">
           <a href="{$urls.base_url|escape:'html':'UTF-8'}">
-            <img style="height: 200px;" class="logo img-fluid" src="{if isset($tc_dev_mode) && $tc_dev_mode && isset($logo_url)&&$logo_url}{$logo_url|escape:'html':'UTF-8'}{else}{$shop.logo|escape:'html':'UTF-8'}{/if}" alt="{$shop.name|escape:'html':'UTF-8'}">
+            <img style="width: 250px;" class="logo img-fluid" src="{if isset($tc_dev_mode) && $tc_dev_mode && isset($logo_url)&&$logo_url}{$logo_url|escape:'html':'UTF-8'}{else}{$shop.logo|escape:'html':'UTF-8'}{/if}" alt="{$shop.name|escape:'html':'UTF-8'}">
           </a>
         </div>
        
-        <div class="col-md-9" style="display: flex; ">
+        <div  class="col-md-9" style="display: flex; width: 100%  ">
           <form style="display:flex; flex-direction: row ; justify-content:space-around; width: -webkit-fill-available;">
             <div style="display:flex; width:30%" class="form-group col">
             <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
-              <input type="text" class="form-control whtbl" id="username" placeholder="Enter your username">
+              <input type="text" class="form-control whtbl" id="username" placeholder="{l s="Enter your username"}">
             </div>
             <div style="display: flex; width: 30%" class="form-group col">
-            <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
-              <input type="password" class="form-control whtbl" id="password" placeholder="Enter your password">
+            <i class="fa fa-unlock" style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
+              <input type="password" class="form-control whtbl" id="password" placeholder="{l s="Enter your password"}">
             </div>
             <div style="width: 30%" class="form-group col" >
-              <button style=" width: -webkit-fill-available; " type="submit" class="btn whtbl">Login</button>
+              <button style=" width: -webkit-fill-available; " type="submit" class="btn whtbl">{l s="Login"}</button>
             </div>
           </form>
         </div>
@@ -110,7 +121,23 @@
        {*  {hook h='displayNav1'}
         {hook h='displayTop'} *}
       </div>
+      
     </div>
+    
+    <div style="width: 100%; margin: 0 ; background-color:#333333;  line-height: 45px; text-align: center; border-bottom: 4px solid #0273eb" class="row">
+              <div class="col-md-3">
+              <a class="linkref" href="">{l s="About Us"}</a>
+              </div>
+              <div  class="col-md-3 ">
+              <a class="linkref" href="">{l s="Become a Dealer"}</a>
+              </div>
+              <div  class="col-md-3 ">
+              <a class="linkref" href="" >{l s="Become a Supplier"}</a>
+              </div>
+              <div class="col-md-3 ">
+              <a class="linkref" href="" >{l s="Brands"}</a>
+              </div>
+      </div>
   </div>
   {*
   {hook h='displayNavFullWidth'}

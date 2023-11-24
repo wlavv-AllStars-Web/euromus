@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <footer id="footer">
+      <footer style="background-color:#333333; padding-top:0; color: white; " id="footer">
         {block name="footer"}
           {include file="_partials/footer.tpl"}
         {/block}
