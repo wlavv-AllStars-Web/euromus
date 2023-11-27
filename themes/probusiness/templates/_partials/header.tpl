@@ -45,6 +45,17 @@
     line-height: 50px;
     cursor: pointer;
 }
+.headerline{
+  width: 100%;
+  margin: 0 ;
+  background-color:#333333;
+  line-height: 45px; 
+  text-align: center; 
+  border-bottom: 4px solid #0273eb;
+  display: flex ;
+  justify-content: center;
+}
+
 </style>
 <div class="header_content">
 {block name='header_nav'}
@@ -52,42 +63,6 @@
     <div style="width: 80%; display: flex; justify-content : end ">
       {hook h='displayNav1'}
     </div>
-            {*
-             <div class="left-nav">
-              {hook h='ybcCustom4'}
-            </div> 
-            
-           <div class="toogle_nav_button">
-                <span class="toogle_nav">
-                    <i class="fa fa-cog"></i>
-                    
-                    {l s='Settings' d='Shop.Theme.Action'}
-                </span>
-                <div class="toogle_nav_content">
-                   {hook h='displayNav2'}
-                </div>
-            </div> 
-             <div class="ybc_myaccout">
-                <div class="toogle_user">
-                    <a href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='My account' d='Shop.Theme.Actions'}" rel="nofollow" >
-                        <i class="fa fa-user"></i>
-                        <span>{l s='Account' d='Shop.Theme.Actions'}</span>
-                    </a>
-                </div>
-            </div> 
-
-            {if $customer.is_logged}
-              <a class="logout userinfor" href="{$link->getPageLink('index', true, NULL, "mylogout")|escape:'html':'UTF-8'}" rel="nofollow" >
-                <i class="fa fa-unlock"></i>
-                {l s='Sign out' d='Shop.Theme.Actions'}
-              </a>
-            {else}
-              <a class="login userinfor" href="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" title="{l s='Log in to your customer account' d='Shop.Theme.Actions'}" rel="nofollow" >
-                <i class="fa fa-key"></i>
-                <span>{l s='Sign in' d='Shop.Theme.Actions'}</span>
-              </a>
-            {/if}*}  
-      
     
   </nav>
 {/block}
@@ -118,41 +93,28 @@
           </form>
         </div>
        
-       {*  {hook h='displayNav1'}
-        {hook h='displayTop'} *}
+     
       </div>
       
     </div>
     
-    <div style="width: 100%; margin: 0 ; background-color:#333333;  line-height: 45px; text-align: center; border-bottom: 4px solid #0273eb" class="row">
-              <div class="col-md-3">
+    <div  class="row linkref">
+              <div class="col-md-2">
               <a class="linkref" href="">{l s="About Us"}</a>
               </div>
-              <div  class="col-md-3 ">
+              <div  class="col-md-2 ">
               <a class="linkref" href="">{l s="Become a Dealer"}</a>
               </div>
-              <div  class="col-md-3 ">
+              <div  class="col-md-2 ">
               <a class="linkref" href="" >{l s="Become a Supplier"}</a>
               </div>
-              <div class="col-md-3 ">
+              <div class="col-md-2 ">
               <a class="linkref" href="" >{l s="Brands"}</a>
               </div>
       </div>
   </div>
-  {*
-  {hook h='displayNavFullWidth'}
-  {hook h='displayMegaMenu'} *}
+
 {/block}
 </div>
 
-{* {if $page.page_name == 'index'}
-    <div id="slider_row">
-        <div id="top_column" class="container">
-            <div id="ybc-nivo-slider-wrapper" class="theme-default">
-                {hook h='displayMLS'}
-            </div>
-            {hook h='displaytopcolumn'}
-        </div>
-    </div>
-{/if} 
-{/if} *}
+

@@ -115,11 +115,11 @@ class LinkBlockPresenter
         $customLinks = $this->makeCustomLinks($custom_content);
 
         return array_merge(
-            $cmsLinks,
             $productLinks,
             $staticsLinks,
             $customLinks,
-            $categoryLinks
+            $categoryLinks,
+            $cmsLinks
         );
     }
 

@@ -1,23 +1,21 @@
 <?php
-class wmmodule_homepage extends Module
-{
-    public function __construct()
-    {
+class wmmodule_homepage extends Module{
+    
+    public function __construct(){
         $this->name = "wmmodule_homepage";
         $this->tab = "front_office_features";
         $this->version = "1.0.0";
-        $this->author = "All Stars Motorsport";
+        $this->author = "Bruno Fernandes - All Stars Distribution";
         $this->need_instance = 0;
         $this->secure_key = Tools::encrypt($this->name);
         $this->bootstrap = true;
-        $this->module_key = '109266ed154d174c4856ec18homepage';
-        $this->displayName = $this->l('Homepage editor');
-        $this->description = $this->l('Professional');
+        $this->module_key = '109266ed154d174c4856ec182d55ecHo';
+        $this->displayName = $this->l('ASD - Homepage Module');
+        $this->description = $this->l('Proprietary module - All Stars Distribution');
         parent::__construct();
     }
 	
-    public function install()
-    {
+    public function install(){
         if (parent::install() == false) return false;
 
 		$tab = new Tab();
@@ -25,10 +23,8 @@ class wmmodule_homepage extends Module
 		$tab->class_name = 'AdminWmModuleHomepage';
 		$tab->position = 3;
 		$tab->name = array();
-		foreach (Language::getLanguages(true) as $lang) {
-		$tab->name[$lang['id_lang']] = 'Homepage editor';
-		}
-		$tab->id_parent = 0;
+		foreach (Language::getLanguages(true) as $lang) $tab->name[$lang['id_lang']] = 'Homepage';
+		$tab->id_parent = (int) Tab::getIdFromClassName('AdminParentCustomer');
 		$tab->module = $this->name;
 		$tab->add();
 		$tab->save();
@@ -36,10 +32,8 @@ class wmmodule_homepage extends Module
         return true;
     }
 	
-    public function uninstall()
-    {
+    public function uninstall(){
         if (parent::uninstall() == false) return false;
-		
         return true;
     }
 	

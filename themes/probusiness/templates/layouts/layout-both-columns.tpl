@@ -85,7 +85,7 @@
         </div>
       </div>
 
-      <footer style="background-color:#333333; padding-top:0; color: white; " id="footer">
+      <footer  style="background-color:#333333; padding-top:0; color: white; position:fixed; bottom: 0 ;" id="footer">
         {block name="footer"}
           {include file="_partials/footer.tpl"}
         {/block}
@@ -103,3 +103,4 @@
   </body>
 
 </html>
+ 
