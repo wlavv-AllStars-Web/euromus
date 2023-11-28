@@ -26,9 +26,8 @@
         {l s='Sign out' d='Shop.Theme.Actions'}
       </a>
     {else}
-      <a href="{$my_account_url|escape:'html':'UTF-8'}" title="{l s='Log in to your customer account' d='Shop.Theme.Actions'}" rel="nofollow" >
-        <i class="fa fa-key"></i>
-        <span>{l s='Sign in' d='Shop.Theme.Actions'}</span>
+      <a style="margin-right: 20px" href="{$my_account_url|escape:'html':'UTF-8'}" title="{l s='Log in to your customer account' d='Shop.Theme.Actions'}" rel="nofollow" >
+        <span>{l s='Log In' d='Shop.Theme.Actions'}</span>
       </a>
     {/if}
   </div>

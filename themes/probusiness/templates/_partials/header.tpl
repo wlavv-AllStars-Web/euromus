@@ -81,11 +81,11 @@
     padding-left: 15px;
 }
 
-@media (max-width:790px){
+/* @media (max-width:790px){
   .alinhamento-mobile{
     flex-direction: column;
   }
-}
+} */
 }
 </style>
 <div class="header_content">
