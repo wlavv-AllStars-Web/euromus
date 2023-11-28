@@ -35,7 +35,7 @@
     outline: 0;
 }
 .linkref{
-  color: #FFF;
+    color: #FFF;
     text-transform: uppercase;
     font-size: 16px;
     font-weight: 600;
@@ -54,8 +54,39 @@
   border-bottom: 4px solid #0273eb;
   display: flex ;
   justify-content: center;
+ 
 }
 
+.headerline a:hover{
+  color: #FFF;
+  background-color: #0273eb;
+}
+
+@media (max-width: 1200px){
+  .formula{
+    display: none !important;
+  }
+  .centrar{
+    justify-content: center;
+  }
+  .img-big{
+    max-width: 100vw !important;
+    height: 130px;
+    width: 350px;
+  }
+
+  .bortextalign{
+    text-align: start;
+    border-bottom: 1px solid gray;
+    padding-left: 15px;
+}
+
+@media (max-width:790px){
+  .alinhamento-mobile{
+    flex-direction: column;
+  }
+}
+}
 </style>
 <div class="header_content">
 {block name='header_nav'}
@@ -70,14 +101,14 @@
 {block name='header_top'}
   <div class="header-top">
     <div style="padding-bottom: 15px;" class="container">
-       <div style="margin:0;  display: flex; align-items: center;" class="row">
-        <div style="margin-top: 0px;" id="_desktop_logo" class="col-md-4">
-          <a href="{$urls.base_url|escape:'html':'UTF-8'}">
-            <img style="width: 250px;" class="logo img-fluid" src="{if isset($tc_dev_mode) && $tc_dev_mode && isset($logo_url)&&$logo_url}{$logo_url|escape:'html':'UTF-8'}{else}{$shop.logo|escape:'html':'UTF-8'}{/if}" alt="{$shop.name|escape:'html':'UTF-8'}">
+       <div style="margin:0;  display: flex; align-items: center;" class="row centrar">
+        <div style="margin: 0; padding: 0" id="_desktop_logo" class="col-md-4 col-sm-12">
+          <a style="display: flex; justify-content:center" href="{$urls.base_url|escape:'html':'UTF-8'}">
+            <img style="width: 300px; margin: 0 " class="logo img-flud img-big" src="{if isset($tc_dev_mode) && $tc_dev_mode && isset($logo_url)&&$logo_url}{$logo_url|escape:'html':'UTF-8'}{else}{$shop.logo|escape:'html':'UTF-8'}{/if}" alt="{$shop.name|escape:'html':'UTF-8'}">
           </a>
         </div>
        
-        <div  class="col-md-9" style="display: flex; width: 100%  ">
+        <div  class=" formula" style="display: flex; width: 100% ; justify-content:center; ">
           <form style="display:flex; flex-direction: row ; justify-content:space-around; width: -webkit-fill-available;">
             <div style="display:flex; width:30%" class="form-group col">
             <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
@@ -98,19 +129,8 @@
       
     </div>
     
-    <div  class="row linkref">
-              <div class="col-md-2">
-              <a class="linkref" href="">{l s="About Us"}</a>
-              </div>
-              <div  class="col-md-2 ">
-              <a class="linkref" href="">{l s="Become a Dealer"}</a>
-              </div>
-              <div  class="col-md-2 ">
-              <a class="linkref" href="" >{l s="Become a Supplier"}</a>
-              </div>
-              <div class="col-md-2 ">
-              <a class="linkref" href="" >{l s="Brands"}</a>
-              </div>
+    <div style="padding-left: 0;"  class="row headerline alinhamento-mobile">
+           {hook h='displayNav2'}
       </div>
   </div>
 

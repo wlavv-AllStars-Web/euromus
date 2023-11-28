@@ -58,10 +58,7 @@
           data-toggle="collapse">
           <span class="text h3">{$linkBlock.title|escape:'html':'UTF-8'}</span>
           <span class="pull-xs-right">
-            <span class="navbar-toggler collapse-icons">
-              <i class="material-icons material-icons-add add"></i>
-              <i class="material-icons material-icons-remove remove"></i>
-            </span>
+            
           </span>
         </div>
         <ul id="footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}" class="collapse">
@@ -69,10 +66,10 @@
 
             <li style="list-style-type: none !important;">
               {if $link.title == "Facebook"}
-                <i style="font-size:large; margin-right: 5px; margin-left: 5px"
+                <i style="color: #0273eb ; font-size:large; margin-right: 5px; margin-left: 5px"
                   class="footer_link_list_a fa fa-facebook-square"></i>
               {elseif $link.title == "Instagram"}
-                <i style="font-size:large; margin-right: 5px; margin-left: 5px"
+                <i style="color: #0273eb; font-size:large; margin-right: 5px; margin-left: 5px"
                   class="footer_link_list_a fa fa-instagram "></i>
               {else}
                 <img class="left_icon_footer" src="/img/ASD_footer_ima.png" alt="Star">
@@ -92,12 +89,6 @@
       <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_4"
         data-toggle="collapse">
         <span class="text h3">{l s="Event"}</span>
-        <span class="pull-xs-right">
-          <span class="navbar-toggler collapse-icons">
-            <i class="material-icons material-icons-add add"></i>
-            <i class="material-icons material-icons-remove remove"></i>
-          </span>
-        </span>
       </div>
       <ul id="footer_sub_menu_4" class="collapse">
         <li>
@@ -109,9 +100,6 @@
         </li>
       </ul>
     </div>
-    {*       <div class="col-lg-1 col-md-6 col-sm-6 col-xs-12 event_div">
-        <div class="footer_title hidden-sm-down">{l s='Event'}</div>
-        <div class="footer_title hidden-md-up" onclick="$('#block_4').toggle('slow')">{l s='Event'}</div> 
-      </div> *}
+   
   </div>
 </div>

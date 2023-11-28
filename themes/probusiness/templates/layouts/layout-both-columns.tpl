@@ -28,8 +28,19 @@
 
   </head>
 
+  
   <body id="{$page.page_name|escape:'html':'UTF-8'}" class="{$page.body_classes|classnames} {if isset($YBC_TC_CLASSES)}{$YBC_TC_CLASSES|escape:'html':'UTF-8'}{/if}">
-
+    <style>
+    #cms > main{
+            min-height: 100%; 
+        }
+    
+    html, body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+    </style>
     {block name='hook_after_body_opening_tag'}
       {hook h='displayAfterBodyOpeningTag'}
     {/block}
@@ -49,7 +60,7 @@
         {include file='_partials/notifications.tpl'}
       {/block}
 
-      <div id="wrapper">
+      <div style="min-height: 70vh;" id="wrapper">
         <div class="container">
           {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}
@@ -85,7 +96,7 @@
         </div>
       </div>
 
-      <footer  style="background-color:#333333; padding-top:0; color: white; position:fixed; bottom: 0 ;" id="footer">
+      <footer  style="background-color:#333333; padding-top:0; color: white;" id="footer">
         {block name="footer"}
           {include file="_partials/footer.tpl"}
         {/block}
