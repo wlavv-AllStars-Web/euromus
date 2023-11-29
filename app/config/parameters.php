@@ -2,7 +2,7 @@
   'parameters' => 
   array (
     'database_host' => '192.168.1.173',
-    'database_port' => '3306',
+    'database_port' => '3307',
     'database_name' => 'euromus',
     'database_user' => 'asw_dev',
     'database_password' => 'all_p_stars_web_2023',

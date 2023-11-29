@@ -23,6 +23,7 @@
 {else if isset($tc_config.YBC_TC_LAYOUT) && $tc_config.YBC_TC_LAYOUT == 'layouthome3'}
     {include file='_partials/header/header3.tpl'}
 {else} *}
+  
 <style>
 .whtbl{
   background-color: white;
@@ -58,11 +59,11 @@
 }
 
 .headerline a:hover{
-  color: #FFF;
+  color: #FFF !important;
   background-color: #0273eb;
 }
 
-@media (max-width: 1200px){
+@media (max-width: 900px){
   .formula{
     display: none !important;
   }
@@ -110,13 +111,19 @@
        
         <div  class=" formula" style="display: flex; width: 100% ; justify-content:center; ">
           <form style="display:flex; flex-direction: row ; justify-content:space-around; width: -webkit-fill-available;">
-            <div style="display:flex; width:30%" class="form-group col">
-            <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
+            <div style="display:flex; width:30%; height: min-content;" class="form-group col">
+              <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
               <input type="text" class="form-control whtbl" id="username" placeholder="{l s="Enter your username"}">
+              
             </div>
-            <div style="display: flex; width: 30%" class="form-group col">
-            <i class="fa fa-unlock" style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
+            <div style="margin-bottom:0 ;  display: flex; flex-direction: column ; width: 30%" class="form-group col">
+            <div style="display:flex; flex-direction: row">
+              <i class="fa fa-unlock" style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
               <input type="password" class="form-control whtbl" id="password" placeholder="{l s="Enter your password"}">
+            </div>
+            <div>
+              <a href="#" title="Recover your forgotten password" rel="nofollow" style="color: #0273EB">{l s="Forgot your password?"}</a>
+              </div>
             </div>
             <div style="width: 30%" class="form-group col" >
               <button style=" width: -webkit-fill-available; " type="submit" class="btn whtbl">{l s="Login"}</button>

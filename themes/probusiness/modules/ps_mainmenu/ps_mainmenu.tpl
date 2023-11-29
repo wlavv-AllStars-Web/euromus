@@ -18,14 +18,21 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
+<style>
+@media (min-width: 900px){
+  .deformula{
+    display: none;
+  }
+}
+</style>
 {function name="menu" nodes=[] depth=0 parent=null}
   {if $nodes|count}
     <ul class="top-menu" {if $depth == 0}id="top-menu" {/if} data-depth="{$depth}">
       {foreach from=$nodes item=node}
         <li style="width: 25%;" class=" {$node.type}{if $node.current} current {/if}" id="{$node.page_identifier}">
           {assign var=_counter value=$_counter+1}
-          <a class="{if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}" href="{$node.url}"
-            data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
+          <a style="color: white; text-align:center" class="{if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}"
+            href="{$node.url}" data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
             {if $node.children|count}
               {* Cannot use page identifier as we can have the same page several times *}
               {assign var=_expand_id value=10|mt_rand:100000}
@@ -49,12 +56,22 @@
     </ul>
   {/if}
 {/function}
-<div style="margin-left: 20px;" class="menu js-top-menu position-static hidden-sm-up" id="_desktop_top_menu">
-  <button id="mobile-menu-toggle" class="navbar-toggler">
-    <i style="color: white;" class="material-icons">&#xE5D2;</i> <!-- Icon for the button, you can customize this -->
-  </button>
+
+<div style="width: 90vw;" class="menu js-top-menu position-static formula " id="_desktop_top_menu_desktop">
+    {menu nodes=$menu.children}
+    <div class="clearfix"></div>
 </div>
-<div class="menu js-top-menu position-static hidden-md-down" id="_desktop_top_menu">
-  {menu nodes=$menu.children}
-  <div class="clearfix"></div>
+
+
+<div style="width: 100%;" class="deformula">
+  <div style="margin-top:5px; margin-left: 20px; display:flex; flex-direction:column" class="menu js-top-menu position-static " id="_desktop_top_mobile">
+    <button style="display: flex;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#_desktop_top_menu" aria-controls="_desktop_top_menu" aria-expanded="false" aria-label="Toggle mobile menu">
+      <i style="color: white; float:left" class="material-icons">&#xE5D2;</i>
+    </button>
+
+    <div style="margin: 0; width: 70vw;" class="js-top-menu collapse navbar-collapse" id="_desktop_top_menu">
+      {menu nodes=$menu.children}
+      <div class="clearfix"></div>
+    </div>
+  </div>
 </div>

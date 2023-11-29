@@ -18,7 +18,7 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<div id="_desktop_user_info" class="hidden-md-up">
+<div style="width: 20vw;" id="_desktop_user_info" class="deformula">
   <div class="user-info">
     {if $logged}
       <a class="logout" href="{$logout_url|escape:'html':'UTF-8'}" rel="nofollow" >
