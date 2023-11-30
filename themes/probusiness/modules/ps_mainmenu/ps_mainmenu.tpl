@@ -27,11 +27,11 @@
 </style>
 {function name="menu" nodes=[] depth=0 parent=null}
   {if $nodes|count}
-    <ul class="top-menu" {if $depth == 0}id="top-menu" {/if} data-depth="{$depth}">
+    <ul style="width:100%" class="top-menu" {if $depth == 0}id="top-menu" {/if} data-depth="{$depth}">
       {foreach from=$nodes item=node}
-        <li style="width: 25%;" class=" {$node.type}{if $node.current} current {/if}" id="{$node.page_identifier}">
+        <li style="width: 25%; " class="mxsz {$node.type}{if $node.current} current {/if}" id="{$node.page_identifier}">
           {assign var=_counter value=$_counter+1}
-          <a style="color: white; text-align:center" class="{if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}"
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign {if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}"
             href="{$node.url}" data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
             {if $node.children|count}
               {* Cannot use page identifier as we can have the same page several times *}
@@ -63,10 +63,10 @@
 </div>
 
 
-<div style="width: 100%;" class="deformula">
-  <div style="margin-top:5px; margin-left: 20px; display:flex; flex-direction:column" class="menu js-top-menu position-static " id="_desktop_top_mobile">
+<div style="width: 100%;" class="deformula ">
+  <div style=" display:flex; flex-direction:column; padding-left: 0" class="menu js-top-menu position-static " id="_desktop_top_mobile">
     <button style="display: flex;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#_desktop_top_menu" aria-controls="_desktop_top_menu" aria-expanded="false" aria-label="Toggle mobile menu">
-      <i style="color: white; float:left" class="material-icons">&#xE5D2;</i>
+      <i style="color: white; float:left; font-size:xx-large;" class="material-icons">&#xE5D2;</i>
     </button>
 
     <div style="margin: 0; width: 70vw;" class="js-top-menu collapse navbar-collapse" id="_desktop_top_menu">
