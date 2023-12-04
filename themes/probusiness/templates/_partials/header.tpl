@@ -135,8 +135,7 @@
                 </div>
                 <div class="cart_total_header"> Total: <span class="productsValue">0,00 €</span></div>
                 <div class="products_total_header">
-                
-                <div style="font-size: 20px; padding: 8px 5px 2px 0;text-align:center;">0</div>
+                  <div style="font-size: 20px; padding: 8px 5px 2px 0;text-align:center;">0</div>
                 </div>
               </div>
             </div>
