@@ -1,11 +1,11 @@
 <?php
-/* Smarty version 4.3.1, created on 2023-11-22 17:54:31
+/* Smarty version 4.3.1, created on 2023-11-23 09:49:35
   from 'C:\xampp\htdocs\euromus\admineuromus1\themes\new-theme\template\helpers\shops_list\list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '4.3.1',
-  'unifunc' => 'content_655e4057908220_11717393',
+  'unifunc' => 'content_655f202f183b28_42852325',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_655e4057908220_11717393 (Smarty_Internal_Template $_smarty_tpl) {
+function content_655f202f183b28_42852325 (Smarty_Internal_Template $_smarty_tpl) {
 ?><ul class="items-list"><li<?php if (!(isset($_smarty_tpl->tpl_vars['current_shop_value']->value)) || $_smarty_tpl->tpl_vars['current_shop_value']->value == '') {?> class="active"<?php }?>><a class="dropdown-item" href="<?php echo call_user_func_array($_smarty_tpl->registered_plugins[ 'modifier' ][ 'escape' ][ 0 ], array( $_smarty_tpl->tpl_vars['url']->value,'html','UTF-8' ));?>
 "><?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['l'][0], array( array('s'=>'All stores','d'=>'Admin.Global'),$_smarty_tpl ) );?>
 </a></li><?php
