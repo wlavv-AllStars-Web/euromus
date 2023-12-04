@@ -18,7 +18,7 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<a class="banner hidden-sm-down" href="{$banner_link|escape:'html':'UTF-8'}" title="{$banner_desc|escape:'html':'UTF-8'}">
+<a style="border-bottom: 3px solid #0273EB; " class="banner hidden-sm-down" href="{$banner_link|escape:'html':'UTF-8'}" title="{$banner_desc|escape:'html':'UTF-8'}">
   {if isset($banner_img)}
     <img src="{$banner_img|escape:'html':'UTF-8'}" alt="{$banner_desc|escape:'html':'UTF-8'}" title="{$banner_desc|escape:'html':'UTF-8'}" class="img-fluid">
   {else}

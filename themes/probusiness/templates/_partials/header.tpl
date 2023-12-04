@@ -126,17 +126,31 @@
               <img style="width: 250px; margin: 0 " class="logo img-flud img-big" src="{if isset($tc_dev_mode) && $tc_dev_mode && isset($logo_url)&&$logo_url}{$logo_url|escape:'html':'UTF-8'}{else}{$shop.logo|escape:'html':'UTF-8'}{/if}" alt="{$shop.name|escape:'html':'UTF-8'}">
             </a>
           </div>
-          <div  class=" formula" style="display: flex; width: 100% ; justify-content:center; margin-left: 50px; width:70%">
-            <form style="display:flex; flex-direction: row ; justify-content:space-around; width: -webkit-fill-available;" id="login-form" action="{block name='login_form_actionurl'}{$action|escape:'html':'UTF-8'}{/block}" method="post">
+          <div  class=" formula" style="display: flex; justify-content:center; margin-left: 50px; width:70%">
+          {if $logged}
+            <div onclick="window.location.href ='/quick-order'" style="cursor: pointer;">
+              <div class="cart-container">
+                <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;"> 
+                  <i class="fa fa-shopping-cart" style="font-size: 21px; padding: 6px 6px;"></i>
+                </div>
+                <div class="cart_total_header"> Total: <span class="productsValue">0,00 €</span></div>
+                <div class="products_total_header">
+                
+                <div style="font-size: 20px; padding: 8px 5px 2px 0;text-align:center;">0</div>
+                </div>
+              </div>
+            </div>
+            {else}
+            <form style="display:flex; flex-direction: row ; justify-content:space-around; width:100%; gap:20px" id="login-form" action="{block name='login_form_actionurl'}{$action|escape:'html':'UTF-8'}{/block}" method="post">
               <div style="display:flex; width:30%; height: min-content;" class="form-group col">
                 <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
-                <input type="text" class="form-control whtbl" id="username" placeholder="{l s="Enter your username"}">
+                <input type="text" class="form-control whtbl" id="email" name="email" placeholder="{l s="Email"}">
                 
               </div>
               <div style="margin-bottom:0 ;  display: flex; flex-direction: column ; width: 30%" class="form-group col">
                 <div style="display:flex; flex-direction: row">
                   <i class="fa fa-unlock" style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
-                  <input type="password" class="form-control whtbl" id="password" placeholder="{l s="Enter your password"}">
+                  <input type="password" class="form-control whtbl" id="passwd" name="passwd" placeholder="{l s="Password"}">
                 </div>
                 <div>
                   {hook h='displayPaCaptcha' posTo='login'}
@@ -144,14 +158,12 @@
                     {l s='Forgot your password?' d='Shop.Theme.Actions'}
                   </a>
                 </div>
-
-
-
               </div>
-              <div style="width: 30%" class="form-group col" >
-                <button style=" width: -webkit-fill-available; " type="submit" class="btn whtbl">{l s="Login"}</button>
+              <div style="width: 50%" class="form-group col" >
+                <button style=" width: 50%; " type="submit" class="btn whtbl">{l s="Login"}</button>
               </div>
             </form>
+            {/if}
           </div>
         </div>
       </div>
@@ -159,26 +171,6 @@
         <div class="margbot">
             {hook h='displayNav2'}
         </div>
-        {* Login Dropdown Menu *}
-        <div style="text-align: end; padding-top: 12px" id="_desktop_user_info" class="deformula mxsz">
-          <div>
-            {if $logged}
-              <a style="margin-right: 20px; color: white" class="logout" href="{$logout_url|escape:'html':'UTF-8'}" rel="nofollow" >
-                <i class="fa fa-unlock"></i>
-                {l s='Sign out' d='Shop.Theme.Actions'}
-              </a>
-            {else}
-              <a style="margin-right: 20px; color: white" title="{l s='Log in to your customer account' d='Shop.Theme.Actions'}" rel="nofollow" >
-                <span class="logtext">{l s='Login' d='Shop.Theme.Actions'}</span>
-              </a>
-            {/if}
-          </div>
-          <div>
-            {hook h="displayTop"}
-          </div>
-        </div>
-
-
       </div>    
     </div>
   {/block}

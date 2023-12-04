@@ -19,11 +19,11 @@
 *  International Registered Trademark & Property of ETS-Soft
 *}
 <style>
-@media (min-width: 900px){
-  .deformula{
-    display: none;
+  @media (min-width: 900px) {
+    .deformula {
+      display: none !important;
+    }
   }
-}
 </style>
 {function name="menu" nodes=[] depth=0 parent=null}
   {if $nodes|count}
@@ -31,8 +31,9 @@
       {foreach from=$nodes item=node}
         <li style="width: 25%; " class="mxsz {$node.type}{if $node.current} current {/if}" id="{$node.page_identifier}">
           {assign var=_counter value=$_counter+1}
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign {if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}"
-            href="{$node.url}" data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600"
+            class="bortextalign {if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}" href="{$node.url}"
+            data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
             {if $node.children|count}
               {* Cannot use page identifier as we can have the same page several times *}
               {assign var=_expand_id value=10|mt_rand:100000}
@@ -57,21 +58,63 @@
   {/if}
 {/function}
 
-<div style="width: 90vw;" class="menu js-top-menu position-static formula " id="_desktop_top_menu_desktop">
-    {menu nodes=$menu.children}
-    <div class="clearfix"></div>
+<div style="width: 90vw;" class="menu js-top-menu position-static formula row" id="_desktop_top_menu_desktop">
+  {menu nodes=$menu.children}
+  <div class="clearfix"></div>
 </div>
 
 
-<div style="width: 100%;" class="deformula ">
-  <div style=" display:flex; flex-direction:column; padding-left: 0" class="menu js-top-menu position-static " id="_desktop_top_mobile">
-    <button style="display: flex;" class="navbar-toggler" type="button" data-toggle="collapse" data-target="#_desktop_top_menu" aria-controls="_desktop_top_menu" aria-expanded="false" aria-label="Toggle mobile menu">
+<div style="width: 100vw; display: flex; flex-direction: column" class="deformula ">
+  <div style="width:100vw;" class="menu js-top-menu position-static row" id="_desktop_top_mobile">
+    <button style="float: left; padding-left:24px" class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#_desktop_top_menu" aria-controls="_desktop_top_menu" aria-expanded="false"
+      aria-label="Toggle mobile menu">
       <i style="color: white; float:left; font-size:xx-large;" class="material-icons">&#xE5D2;</i>
     </button>
-
-    <div style="margin: 0; width: 70vw;" class="js-top-menu collapse navbar-collapse" id="_desktop_top_menu">
-      {menu nodes=$menu.children}
-      <div class="clearfix"></div>
-    </div>
+    {if $logged}
+      <a style="margin-right: 20px; color: white; float:right ; padding-top: 12px" class="logout"
+        href="{$logout_url|escape:'html':'UTF-8'}" rel="nofollow">
+        <i class="fa fa-unlock"></i>
+        {l s='Sign out' d='Shop.Theme.Actions'}
+      </a>
+    {else}
+      <button style="float: right; padding-left:24px; padding-top: 15px; color: white " class="navbar-toggler" type="button" data-toggle="collapse"
+      data-target="#login_block" aria-controls="login_block" aria-expanded="false"
+      aria-label="Toggle mobile menu">
+        <span class="logtext">{l s='Login' d='Shop.Theme.Actions'}</span>
+      </button>
+    {/if}
+  </div>
+  <div style="margin: 0; width: 100vw;" class="js-top-menu collapse navbar-collapse row" id="_desktop_top_menu">
+    {menu nodes=$menu.children}
+    <div class="clearfix"></div>
+  </div>
+  {* Login Dropdown Menu *}
+  <div
+    style="text-align: end; padding-top: 12px; width: 100% !important; padding-left: 25px; padding-right: 25px; background-color:white"
+    id="login_block" class="collapse navbar-collapse mxsz">
+    <form style="display:flex;flex-direction: column; width: 100%" id="login-form" action="{block name='login_form_actionurl'}{$action|escape:'html':'UTF-8'}{/block}" method="post">
+      <div style="display:flex; width:100%; height: min-content" class="form-group col">
+        <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
+        <input type="text" class="form-control whtbl" id="email" name="email" placeholder="{l s="Email"}">
+      </div>
+      <div style="margin-bottom:0 ;  display: flex; flex-direction: column ; width: 100%; margin-top: 20px"
+        class="form-group col">
+        <div style="display:flex; flex-direction: row">
+          <i class="fa fa-unlock"
+            style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
+          <input type="password" class="form-control whtbl" id="passwd" name="passwd" placeholder="{l s="Password"}">
+        </div>
+        <div style="justify-content:end">
+          {hook h='displayPaCaptcha' posTo='login'}
+          <a href="{$urls.pages.password|escape:'html':'UTF-8'}" rel="nofollow" style="color: #0273EB">
+            {l s='Forgot your password?' d='Shop.Theme.Actions'}
+          </a>
+        </div>
+      </div>
+      <div style="width: 100% ; margin-top: 20px" class="form-group col">
+        <button style=" width: 100%; " type="submit" class="btn whtbl">{l s="Login"}</button>
+      </div>
+    </form>
   </div>
 </div>
