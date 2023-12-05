@@ -36,13 +36,13 @@
             data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
             {if $node.children|count}
               {* Cannot use page identifier as we can have the same page several times *}
-              {assign var=_expand_id value=10|mt_rand:100000}
+       {*        {assign var=_expand_id value=10|mt_rand:100000}
               <span class="float-xs-right hidden-md-up">
                 <span data-target="#top_sub_menu_{$_expand_id}" data-toggle="collapse" class="navbar-toggler collapse-icons">
                   <i class="material-icons add">&#xE313;</i>
                   <i class="material-icons remove">&#xE316;</i>
                 </span>
-              </span>
+              </span> *}
             {/if}
             {$node.label}
           </a>
@@ -71,7 +71,7 @@
       aria-label="Toggle mobile menu">
       <i style="color: white; float:left; font-size:xx-large;" class="material-icons">&#xE5D2;</i>
     </button>
-    {if $logged}
+    {if Context::getContext()->customer->logged} 
       <a style="margin-right: 20px; color: white; float:right ; padding-top: 12px" class="logout"
         href="{$logout_url|escape:'html':'UTF-8'}" rel="nofollow">
         <i class="fa fa-unlock"></i>
@@ -90,9 +90,15 @@
     <div class="clearfix"></div>
   </div>
   {* Login Dropdown Menu *}
-  <div
-    style="text-align: end; padding-top: 12px; width: 100% !important; padding-left: 25px; padding-right: 25px; background-color:white"
+
+
+  <div style="text-align: end; padding-top: 12px; width: 100% !important; padding-left: 25px; padding-right: 25px; background-color:white"
     id="login_block" class="collapse navbar-collapse mxsz">
+
+
+
+
+   
     <form style="display:flex;flex-direction: column; width: 100%" id="login-form" action="{block name='login_form_actionurl'}{$action|escape:'html':'UTF-8'}{/block}" method="post">
       <div style="display:flex; width:100%; height: min-content" class="form-group col">
         <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
@@ -115,6 +121,8 @@
       <div style="width: 100% ; margin-top: 20px" class="form-group col">
         <button style=" width: 100%; " type="submit" class="btn whtbl">{l s="Login"}</button>
       </div>
-    </form>
+    </form> 
+
+
   </div>
 </div>
