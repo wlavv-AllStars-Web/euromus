@@ -54,19 +54,3 @@
           </div>
       </div>
   </div>
-  
-  <div class="footer_bottom">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12 coppyright">
-                  <div class="ybc_coppyright">
-                     {if isset($tc_config.YBC_TC_COPYRIGHT_TEXT) && $tc_config.YBC_TC_COPYRIGHT_TEXT}
-                        {$tc_config.YBC_TC_COPYRIGHT_TEXT nofilter}
-                     {/if}
-                  </div>
-              </div>
-          </div>
-      </div>
-  </div>
-  <div class="scroll_top"><span>{l s='TOP' d='Shop.Theme.Actions'}</span></div>
-</div>

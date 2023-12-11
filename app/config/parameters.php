@@ -2,10 +2,10 @@
   'parameters' => 
   array (
     'database_host' => 'localhost',
-    'database_port' => '3305',
+    'database_port' => '3307',
     'database_name' => 'euromus',
-    'database_user' => 'root',
-    'database_password' => '',
+    'database_user' => 'asw_dev',
+    'database_password' => 'all_p_stars_web_2023',
     'database_prefix' => 'eu_',
     'database_engine' => 'InnoDB',
     'mailer_transport' => 'smtp',

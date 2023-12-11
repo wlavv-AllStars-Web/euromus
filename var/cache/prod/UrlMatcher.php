@@ -467,14 +467,23 @@ return [
         '/api/translations/reset' => [[['_route' => 'api_translation_value_reset', '_controller' => 'prestashop.core.api.translation.controller:translationResetAction', '_legacy_controller' => 'AdminTranslations'], null, ['POST' => 0], null, false, false, null]],
         '/api/improve/design/positions/update' => [[['_route' => 'api_improve_design_positions_update', '_controller' => 'prestashop.core.api.improve.design.postions.controller:updateAction', '_legacy_controller' => 'AdminModulesPositions'], null, ['POST' => 0], null, false, false, null]],
         '/api/oauth2/token' => [[['_route' => 'api_oauth2', '_controller' => 'PrestaShopBundle\\Controller\\Api\\OAuth2\\AccessTokenController'], null, ['POST' => 0], null, false, false, null]],
-        '/modules/blockwishlist/configuration' => [[['_route' => 'blockwishlist_configuration', '_controller' => 'PrestaShop\\Module\\BlockWishList\\Controller\\WishlistConfigurationAdminController::configurationAction', '_legacy_controller' => 'WishlistConfigurationAdminController', '_legacy_link' => 'WishlistConfigurationAdminController'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
-        '/modules/blockwishlist/statistics' => [[['_route' => 'blockwishlist_statistics', '_controller' => 'PrestaShop\\Module\\BlockWishList\\Controller\\WishlistConfigurationAdminController::statisticsAction', '_legacy_controller' => 'WishlistStatisticsAdminController', '_legacy_link' => 'WishlistStatisticsAdminController'], null, ['GET' => 0], null, false, false, null]],
-        '/modules/blockwishlist/statistics/reset' => [[['_route' => 'blockwishlist_statistics_reset', '_controller' => 'PrestaShop\\Module\\BlockWishList\\Controller\\WishlistConfigurationAdminController::resetStatisticsCacheAction'], null, ['POST' => 0], null, false, false, null]],
+        '/modules/mbo/modules/catalog' => [[['_route' => 'admin_mbo_catalog_module', '_controller' => 'mbo.controller.modules.catalog:indexAction', '_legacy_controller' => 'AdminPsMboModule', '_legacy_link' => ['AdminPsMboModuleParent', 'AdminPsMboModule']], null, ['GET' => 0], null, true, false, null]],
+        '/modules/mbo/modules/catalog/selection' => [[['_route' => 'admin_mbo_catalog_module_selection', '_controller' => 'mbo.controller.modules.selection:indexAction', '_legacy_controller' => 'AdminPsMboSelection', '_legacy_link' => 'AdminPsMboSelection'], null, ['GET' => 0], null, false, false, null]],
+        '/modules/mbo/modules/catalog/cdc_error' => [[['_route' => 'admin_mbo_module_cdc_error', '_controller' => 'mbo.controller.modules.catalog:cdcErrorAction'], null, ['GET' => 0], null, false, false, null]],
+        '/modules/mbo/modules/recommended' => [[['_route' => 'admin_mbo_recommended_modules', '_controller' => 'mbo.controller.modules.recommended:indexAction', '_legacy_controller' => 'AdminPsMboRecommended', '_legacy_link' => 'AdminPsMboRecommended'], null, ['GET' => 0], null, true, false, null]],
+        '/modules/mbo/themes/catalog' => [[['_route' => 'admin_mbo_catalog_theme', '_controller' => 'mbo.controller.themes.catalog:indexAction', '_legacy_controller' => 'AdminPsMboTheme', '_legacy_link' => 'AdminPsMboTheme'], null, ['GET' => 0], null, true, false, null]],
+        '/modules/mbo/addons/login' => [[['_route' => 'admin_mbo_addons_login', '_controller' => 'mbo.controller.addons:loginAction'], null, ['POST' => 0], null, false, false, null]],
+        '/modules/mbo/addons/logout' => [[['_route' => 'admin_mbo_addons_logout', '_controller' => 'mbo.controller.addons:logoutAction'], null, ['GET' => 0], null, false, false, null]],
+        '/modules/mbo/addons/modules/upgrade' => [[['_route' => 'admin_mbo_addons_module_upgrade', '_controller' => 'mbo.controller.addons:upgradeModuleAction'], null, ['POST' => 0], null, false, false, null]],
         '/modules/link-widget/list' => [[['_route' => 'admin_link_block_list', '_controller' => 'PrestaShop\\Module\\LinkList\\Controller\\Admin\\Improve\\Design\\LinkBlockController::listAction', '_legacy_controller' => 'AdminLinkWidget', '_legacy_link' => 'AdminLinkWidget'], null, ['GET' => 0], null, false, false, null]],
         '/modules/link-widget/create' => [
             [['_route' => 'admin_link_block_create', '_controller' => 'PrestaShop\\Module\\LinkList\\Controller\\Admin\\Improve\\Design\\LinkBlockController::createAction', '_legacy_controller' => 'AdminLinkWidget'], null, ['GET' => 0], null, false, false, null],
             [['_route' => 'admin_link_block_create_process', '_controller' => 'PrestaShop\\Module\\LinkList\\Controller\\Admin\\Improve\\Design\\LinkBlockController::createProcessAction', '_legacy_controller' => 'AdminLinkWidget'], null, ['POST' => 0], null, false, false, null],
         ],
+        '/modules/metrics' => [[['_route' => 'metrics_page', '_controller' => 'PrestaShop\\Module\\Ps_metrics\\Controller\\Admin\\MetricsController::renderApp', '_legacy_controller' => 'AdminMetricsController', '_legacy_link' => 'AdminMetricsController'], null, ['GET' => 0], null, false, false, null]],
+        '/modules/metrics/legacy/stats' => [[['_route' => 'metrics_api_legacy_stats', '_controller' => 'PrestaShop\\Module\\Ps_metrics\\Controller\\Admin\\MetricsLegacyStatsController::redirectToLegacyStats', '_legacy_controller' => 'AdminMetricsLegacyStatsController', '_legacy_link' => 'AdminMetricsLegacyStatsController'], null, ['GET' => 0], null, false, false, null]],
+        '/modules/metrics/oauth' => [[['_route' => 'metrics_oauth', '_controller' => 'PrestaShop\\Module\\Ps_metrics\\Controller\\Admin\\MetricsOauthController::oauth'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
+        '/modules/metrics/graphql' => [[['_route' => 'metrics_graphql', '_controller' => 'PrestaShop\\Module\\Ps_metrics\\Controller\\Admin\\MetricsGraphqlController::execute'], null, ['GET' => 0, 'POST' => 1], null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
@@ -985,12 +994,18 @@ return [
                     .')'
                     .'|hook\\-status/(\\d+)(*:10244)'
                 .')'
-                .'|/modules/link\\-widget/(?'
-                    .'|edit/([^/]++)(?'
-                        .'|(*:10296)'
+                .'|/modules/(?'
+                    .'|m(?'
+                        .'|bo/modules/catalog/see_more/(\\d+)(*:10304)'
+                        .'|etrics/api(?:/([^/]++))?(*:10338)'
                     .')'
-                    .'|delete/(\\d+)(*:10319)'
-                    .'|update\\-positions/(\\d+)(*:10352)'
+                    .'|link\\-widget/(?'
+                        .'|edit/([^/]++)(?'
+                            .'|(*:10381)'
+                        .')'
+                        .'|delete/(\\d+)(*:10404)'
+                        .'|update\\-positions/(\\d+)(*:10437)'
+                    .')'
                 .')'
             .')/?$}sD',
     ],
@@ -1295,12 +1310,14 @@ return [
         10179 => [[['_route' => 'api_feature_flags_post_collection', '_api_item_operation_name' => 'api_feature_flags_post_collection', '_api_identifiers' => [], '_api_has_composite_identifier' => false, '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'PrestaShopBundle\\Entity\\FeatureFlag', '_api_operation_name' => 'api_feature_flags_post_collection'], ['_format'], ['POST' => 0], null, false, true, null]],
         10215 => [[['_route' => 'api_feature_flags_put_item', '_api_item_operation_name' => 'api_feature_flags_put_item', '_api_identifiers' => ['id'], '_api_has_composite_identifier' => false, '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'PrestaShopBundle\\Entity\\FeatureFlag', '_api_operation_name' => 'api_feature_flags_put_item'], ['id', '_format'], ['PUT' => 0], null, false, true, null]],
         10244 => [[['_route' => '_api_/hook-status/{id}_get', '_controller' => 'api_platform.action.placeholder', '_format' => null, '_stateless' => null, '_api_resource_class' => 'PrestaShopBundle\\Api\\Resource\\HookStatus', '_api_operation_name' => '_api_/hook-status/{id}_get'], ['id'], ['GET' => 0], null, false, true, null]],
-        10296 => [
+        10304 => [[['_route' => 'admin_mbo_module_see_more', '_controller' => 'mbo.controller.modules.catalog:seeMoreAction'], ['moduleId'], ['GET' => 0], null, false, true, null]],
+        10338 => [[['_route' => 'metrics_api_resolver', 'query' => '', '_controller' => 'PrestaShop\\Module\\Ps_metrics\\Controller\\Admin\\MetricsResolverController::resolve'], ['query'], ['GET' => 0, 'POST' => 1], null, false, true, null]],
+        10381 => [
             [['_route' => 'admin_link_block_edit', '_controller' => 'PrestaShop\\Module\\LinkList\\Controller\\Admin\\Improve\\Design\\LinkBlockController::editAction', '_legacy_controller' => 'AdminLinkWidget'], ['linkBlockId'], ['GET' => 0], null, false, true, null],
             [['_route' => 'admin_link_block_edit_process', '_controller' => 'PrestaShop\\Module\\LinkList\\Controller\\Admin\\Improve\\Design\\LinkBlockController::editProcessAction', '_legacy_controller' => 'AdminLinkWidget'], ['linkBlockId'], ['POST' => 0], null, false, true, null],
         ],
-        10319 => [[['_route' => 'admin_link_block_delete', '_controller' => 'PrestaShop\\Module\\LinkList\\Controller\\Admin\\Improve\\Design\\LinkBlockController::deleteAction', '_legacy_controller' => 'AdminLinkWidget'], ['linkBlockId'], ['POST' => 0], null, false, true, null]],
-        10352 => [
+        10404 => [[['_route' => 'admin_link_block_delete', '_controller' => 'PrestaShop\\Module\\LinkList\\Controller\\Admin\\Improve\\Design\\LinkBlockController::deleteAction', '_legacy_controller' => 'AdminLinkWidget'], ['linkBlockId'], ['POST' => 0], null, false, true, null]],
+        10437 => [
             [['_route' => 'admin_link_block_update_positions', '_controller' => 'PrestaShop\\Module\\LinkList\\Controller\\Admin\\Improve\\Design\\LinkBlockController::updatePositionsAction', '_legacy_controller' => 'AdminLinkWidget'], ['hookId'], ['POST' => 0], null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],

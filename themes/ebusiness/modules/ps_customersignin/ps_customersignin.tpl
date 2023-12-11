@@ -11,9 +11,10 @@
       </a>
     {else}
       <a href="{$my_account_url}" title="{l s='Log in to your customer account' d='Shop.Theme.CustomerAccount'}" rel="nofollow" >
-        
-      <i class="fa-solid fa-user"></i>
+      <i class="fa-solid fa-user" style="margin-top: -16px;color:#fff"></i>
       </a>
+        <span style="border-right: 1px solid #444; margin-top: 9px;   height: 21px;   display: inline-block;" >
+    </span>
     {/if}
   </div>
 </div>
