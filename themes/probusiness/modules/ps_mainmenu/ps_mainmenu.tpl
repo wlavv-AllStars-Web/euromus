@@ -24,35 +24,83 @@
       display: none !important;
     }
   }
+
+  @media (max-width: 900px) {
+    .colu {
+      flex-direction: column;
+    }
+  }
 </style>
 {function name="menu" nodes=[] depth=0 parent=null}
   {if $nodes|count}
-    <ul style="width:100%" class="top-menu" {if $depth == 0}id="top-menu" {/if} data-depth="{$depth}">
+
+    <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:5px" class="top-menu colu"
+      {if $depth == 0}id="top-menu" {/if} data-depth="{$depth}">
+
       {foreach from=$nodes item=node}
-        <li style="width: 25%; " class="mxsz {$node.type}{if $node.current} current {/if}" id="{$node.page_identifier}">
-          {assign var=_counter value=$_counter+1}
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600"
-            class="bortextalign {if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}" href="{$node.url}"
-            data-depth="{$depth}" {if $node.open_in_new_window} target="_blank" {/if}>
-            {if $node.children|count}
-              {* Cannot use page identifier as we can have the same page several times *}
-       {*        {assign var=_expand_id value=10|mt_rand:100000}
-              <span class="float-xs-right hidden-md-up">
-                <span data-target="#top_sub_menu_{$_expand_id}" data-toggle="collapse" class="navbar-toggler collapse-icons">
-                  <i class="material-icons add">&#xE313;</i>
-                  <i class="material-icons remove">&#xE316;</i>
-                </span>
-              </span> *}
-            {/if}
-            {$node.label}
-          </a>
-          {if $node.children|count}
-            <div {if $depth === 0} class="popover sub-menu js-sub-menu collapse" {else} class="collapse" {/if}
-              id="top_sub_menu_{$_expand_id}">
-              {menu nodes=$node.children depth=$node.depth parent=$node}
-            </div>
+
+        {if Context::getContext()->customer->logged == 1}
+          {if $node.label == "Logged"}
+            {foreach $node['children'] AS $children }
+              {if $children.label == "Brands"}
+
+                <li style="width: 100%" class="mxsz {$children.type}{if $children.current} current {/if}"
+                  id="{$children.page_identifier}">
+                  {assign var=_counter value=$_counter+1}
+                  <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600"
+                    class="bortextalign {if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}" href="/brands"
+                    data-depth="{$depth}" {if $children.open_in_new_window} target="_blank" {/if}>
+
+                    {$children.label}
+                  </a>
+                </li>
+              {else}
+
+                <li style="width: 100%" class="mxsz {$children.type}{if $children.current} current {/if}"
+                  id="{$children.page_identifier}">
+                  {assign var=_counter value=$_counter+1}
+                  <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600"
+                    class="bortextalign {if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}"
+                    href="{$children.url}" data-depth="{$depth}" {if $children.open_in_new_window} target="_blank" {/if}>
+
+                    {$children.label}
+                  </a>
+                </li>
+              {/if}
+            {/foreach}
           {/if}
-        </li>
+        {else if Context::getContext()->customer->logged == 0}
+
+
+          {if $node.label == "NotLogged"}
+            {foreach $node['children'] AS $children }
+              {if $children.label == "Brands"}
+
+                <li style="width: 100%" class="mxsz {$children.type}{if $children.current} current {/if}"
+                  id="{$children.page_identifier}">
+                  {assign var=_counter value=$_counter+1}
+                  <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600"
+                    class="bortextalign {if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}" href="/brands"
+                    data-depth="{$depth}" {if $children.open_in_new_window} target="_blank" {/if}>
+
+                    {$children.label}
+                  </a>
+                </li>
+              {else}
+                <li style="width: 100%" class="mxsz {$children.type}{if $children.current} current {/if}"
+                  id="{$children.page_identifier}">
+                  {assign var=_counter value=$_counter+1}
+                  <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600"
+                    class="bortextalign {if $depth >= 0}dropdown-item{/if}{if $depth === 1} dropdown-submenu{/if}"
+                    href="{$children.url}" data-depth="{$depth}" {if $children.open_in_new_window} target="_blank" {/if}>
+
+                    {$children.label}
+                  </a>
+                </li>
+              {/if}
+            {/foreach}
+          {/if}
+        {/if}
       {/foreach}
     </ul>
   {/if}
@@ -71,16 +119,16 @@
       aria-label="Toggle mobile menu">
       <i style="color: white; float:left; font-size:xx-large;" class="material-icons">&#xE5D2;</i>
     </button>
-    {if Context::getContext()->customer->logged} 
-      <a style="margin-right: 20px; color: white; float:right ; padding-top: 12px" class="logout"
-        href="{$logout_url|escape:'html':'UTF-8'}" rel="nofollow">
-        <i class="fa fa-unlock"></i>
-        {l s='Sign out' d='Shop.Theme.Actions'}
+    {if Context::getContext()->customer->logged}
+
+      <a style="margin-right: 20px; color: white; float:right ; padding-top: 12px" class="logout" href="/?mylogout="
+        rel="nofollow" title="Log me out">
+        <span class="logtext">{l s='Logout' d='Shop.Theme.Actions'}</span>
       </a>
     {else}
-      <button style="float: right; padding-left:24px; padding-top: 15px; color: white " class="navbar-toggler" type="button" data-toggle="collapse"
-      data-target="#login_block" aria-controls="login_block" aria-expanded="false"
-      aria-label="Toggle mobile menu">
+      <button style="float: right; padding-left:24px; padding-top: 15px; color: white " class="navbar-toggler"
+        type="button" data-toggle="collapse" data-target="#login_block" aria-controls="login_block" aria-expanded="false"
+        aria-label="Toggle mobile menu">
         <span class="logtext">{l s='Login' d='Shop.Theme.Actions'}</span>
       </button>
     {/if}
@@ -92,14 +140,10 @@
   {* Login Dropdown Menu *}
 
 
-  <div style="text-align: end; padding-top: 12px; width: 100% !important; padding-left: 25px; padding-right: 25px; background-color:white"
+  <div
+    style="text-align: end; padding-top: 12px; width: 100% !important; padding-left: 25px; padding-right: 25px; background-color:white"
     id="login_block" class="collapse navbar-collapse mxsz">
-
-
-
-
-   
-    <form style="display:flex;flex-direction: column; width: 100%" id="login-form" action="{block name='login_form_actionurl'}{$action|escape:'html':'UTF-8'}{/block}" method="post">
+    <form style="display:flex;flex-direction: column; width: 100%" id="login-form" action="/login" method="post">
       <div style="display:flex; width:100%; height: min-content" class="form-group col">
         <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
         <input type="text" class="form-control whtbl" id="email" name="email" placeholder="{l s="Email"}">
@@ -109,7 +153,8 @@
         <div style="display:flex; flex-direction: row">
           <i class="fa fa-unlock"
             style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
-          <input type="password" class="form-control whtbl" id="passwd" name="passwd" placeholder="{l s="Password"}">
+          <input class="form-control js-child-focus js-visible-password whtbl" name="password" type="password" value=""
+            required placeholder="{l s="Password"}">
         </div>
         <div style="justify-content:end">
           {hook h='displayPaCaptcha' posTo='login'}
@@ -119,10 +164,9 @@
         </div>
       </div>
       <div style="width: 100% ; margin-top: 20px" class="form-group col">
+        <input type="hidden" name="submitLogin" value="1">
         <button style=" width: 100%; " type="submit" class="btn whtbl">{l s="Login"}</button>
       </div>
-    </form> 
-
-
+    </form>
   </div>
 </div>

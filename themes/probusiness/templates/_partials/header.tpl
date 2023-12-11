@@ -136,14 +136,24 @@
     transition: all 0.3s ease;
 }
 
+#sender:hover{
+  color: white !important;
+  background-color: #0273EB !important;
+  font-weight: 600;
+}
+
 @media (max-width: 1200px){
   .wdth{
-    width: 90% !important;
+    width: 80% !important;
   }
 
   .wdth .cart_total_header{
-    width:60% !important;
+    width: 65% !important;
   }
+
+  .wdth .search_query{
+    width:65% !important;
+  }  
 }
 
 @media (min-width: 900px){
@@ -187,7 +197,7 @@
   {block name='header_nav'}
     <nav style="background-color: #333333; display: flex; justify-content: center " class="header-nav">
       <div  style="width: 80%; display: flex;">
-        <div id="navigation" style="width: 50%; display: flex; justify-content: start ;">
+        <div id="navigation" style="width: 50%; display: flex; justify-content: start; align-self: self-end">
         {if Context::getContext()->customer->logged}
           <a class="logout" href="/?mylogout=" rel="nofollow" title="Log me out"> <i class="fa fa-unlock"></i> </a>
         {/if}
@@ -211,22 +221,22 @@
            {if Context::getContext()->customer->logged}  
             {* shooping cart bar*}
             <div class="wdth" style="width: 50%;">
-              
-             
-              <div onclick="window.location.href ='/cart'" style="cursor: pointer; width: 100%">
+            <a href="/order">
+              <div  style="cursor: pointer; width: 100%">
                 <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container ">
                   <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;"> 
                     <i class="fa fa-shopping-cart" style="font-size: 21px; padding: 6px 6px;"></i>
                   </div>
-                  <div style="width:40%; height:35px; border: 1px solid #777" class="cart_total_header"> Total: <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
+                  <div style="width:40%; height:35px; border: 1px solid #777" class="cart_total_header"> {l s="Total"} <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
                   <div class="products_total_header">
                     <div style="width:33px; height:35px; background-color: #0273eb;float: left;border-radius: 0px 20px 20px 0px;border: 1px solid #777; color: white; font-size: 20px; padding: 4px 5px 4px 5px;text-align:center;" >{$cart.products_count}</div>
                   </div>
                 </div>
               </div>
+              </a>
             </div>
             {* search bar *}
-            <div style="width: 50%">
+            <div class="wdth" style="width: 50%">
               <form style="display:flex; justify-content:center" method="get" action="{$search_controller_url|escape:'html':'UTF-8'}" id="searchbox">
     		        <input type="hidden" name="controller" value="search">
     		        <input style="border: 1px solid #777; width:50%; border-radius: 20px 0px 0px 20px;" class="search_query form-control" type="text" id="search_query_top" name="s" value="{$search_string|escape:'html':'UTF-8'}" placeholder="{l s='Search' d='Shop.Theme.Catalog'}">
@@ -257,7 +267,7 @@
                 </div>             
                 <div style="width: 50%" class="form-group col" >
                   <input type="hidden" name="submitLogin" value="1">           
-                  <button style=" width: 50%; " class="btn btn-primary form-control-submit whtbl" data-link-action="sign-in" type="submit">
+                  <button id="sender" style=" width: 50%; " class="btn btn-primary form-control-submit whtbl" data-link-action="sign-in" type="submit">
                   {l s="Login"}
                   </button>                
                 </div>          

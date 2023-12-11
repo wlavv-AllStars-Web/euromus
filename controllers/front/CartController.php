@@ -67,7 +67,7 @@ class CartControllerCore extends FrontController
     public function init()
     {
         parent::init();
-
+      
         // Send noindex to avoid ghost carts by bots
         header('X-Robots-Tag: noindex, nofollow', true);
 
