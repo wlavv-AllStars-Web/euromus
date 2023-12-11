@@ -18,35 +18,88 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<div class="col-xs-12 col-sm-3 links footer_linklist">
-  <div class="row">
-  {foreach $linkBlocks as $linkBlock}
-    <div class="col-md-12 wrapper">
-      <h3 class="h3 hidden-sm-down">{$linkBlock.title|escape:'html':'UTF-8'}</h3>
-      {assign var=_expand_id value=10|mt_rand:100000}
-      <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}" data-toggle="collapse">
-        <span class="h3">{$linkBlock.title|escape:'html':'UTF-8'}</span>
-        <span class="pull-xs-right">
-          <span class="navbar-toggler collapse-icons">
-            <i class="material-icons material-icons-add add"></i>
-            <i class="material-icons material-icons-remove remove"></i>
+<style>
+  .text {
+    color: white !important;
+    text-transform: uppercase;
+    font-weight: bold !important;
+    font-size: 16px !important;
+    font-family: "Open Sans", sans-serif;
+  }
+
+  .footer-container .links li a:before {
+    display: none;
+  }
+
+  @media (max-width: 760px) {
+    .alignment {
+      width: 100%;
+    }
+
+    .bigalign {
+      display: flex;
+      flex-direction: row-reverse;
+
+
+    }
+  }
+
+  .links.footer_linklist div.wrapper:nth-child(n+2) {
+    display: unset;
+  }
+</style>
+<div style="padding-top: 25px;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
+  <div class="row alignment ">
+    {foreach $linkBlocks as $linkBlock}
+      <div class="col-md-3 col-sm-10 wrapper">
+
+        {assign var=_expand_id value=10|mt_rand:100000}
+        <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}"
+          data-toggle="collapse">
+          <span class="text h3">{$linkBlock.title|escape:'html':'UTF-8'}</span>
+          <span class="pull-xs-right">
+            
           </span>
-        </span>
-      </div>
-      <ul id="footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}" class="collapse">
-        {foreach $linkBlock.links as $link}
-          <li>
-            <a
-                id="{$link.id|escape:'html':'UTF-8'}-{$linkBlock.id|escape:'html':'UTF-8'}"
-                class="{$link.class|escape:'html':'UTF-8'}"
-                href="{$link.url|escape:'html':'UTF-8'}"
+        </div>
+        <ul id="footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}" class="collapse">
+          {foreach $linkBlock.links as $link}
+
+            <li style="list-style-type: none !important;">
+              {if $link.title == "Facebook"}
+                <i style="color: #0273eb ; font-size:large; margin-right: 5px; margin-left: 5px"
+                  class="footer_link_list_a fa fa-facebook-square"></i>
+              {elseif $link.title == "Instagram"}
+                <i style="color: #0273eb; font-size:large; margin-right: 5px; margin-left: 5px"
+                  class="footer_link_list_a fa fa-instagram "></i>
+              {else}
+                <img class="left_icon_footer" src="/img/ASD_footer_ima.png" alt="Star">
+              {/if}
+              <a id="{$link.id|escape:'html':'UTF-8'}-{$linkBlock.id|escape:'html':'UTF-8'}"
+                class="text {$link.class|escape:'html':'UTF-8'}" href="{$link.url|escape:'html':'UTF-8'}"
                 title="{$link.description|escape:'html':'UTF-8'}">
-              {$link.title|escape:'html':'UTF-8'}
-            </a>
-          </li>
-        {/foreach}
+                {$link.title|escape:'html':'UTF-8'}
+              </a>
+            </li>
+          {/foreach}
+        </ul>
+
+      </div>
+    {/foreach}
+    <div class="col-md-3 col-sm-10 wrapper">
+      <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_4"
+        data-toggle="collapse">
+        <span class="text h3">{l s="Event"}</span>
+      </div>
+      <ul id="footer_sub_menu_4" class="collapse">
+        <li>
+          <a target="_blank" href="{$homepage_footer['link_footer']}">
+            <img src="/img/media_images/Events/main_250x100.webp?updated={rand()}"
+              title="{$homepage_footer['alt_footer']}" id="footer_event_image"
+              style="max-width: 200px;max-height: 80px;" class="img-responsive">
+          </a>
+        </li>
       </ul>
     </div>
-  {/foreach}
+   
   </div>
 </div>

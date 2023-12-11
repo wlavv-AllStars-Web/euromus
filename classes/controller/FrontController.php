@@ -470,6 +470,8 @@ class FrontControllerCore extends Controller
             $this->displayRestrictedCountryPage();
         }
 
+       
+
         $this->context->cart = $cart;
         $this->context->currency = $currency;
 
@@ -499,7 +501,10 @@ class FrontControllerCore extends Controller
             $cart = new Cart();
         }
 
+        $homepage_footer = Db::getInstance()->getRow('SELECT * FROM eu_ASD_homepage WHERE id=1');
+
         $templateVars = [
+            'homepage_footer'    => $homepage_footer,
             'cart' => $this->cart_presenter->present($cart),
             'currency' => $this->getTemplateVarCurrency(),
             'customer' => $this->getTemplateVarCustomer(),

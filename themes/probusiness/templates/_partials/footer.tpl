@@ -18,51 +18,24 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<div class="footer-container">
-  <div class="container">
-        <div class="footer_top">
-            {hook h='displayFooter'}
-        </div> 
-  </div>
-  <div class="footer_after">
-      <div class="container">
-            {if isset($tc_config.YBC_TC_PAYMENT_LOGO) && $tc_config.YBC_TC_PAYMENT_LOGO}
-                <div class="payment_footer">                                       
-                    <ul class="payment_footer_img">
-                        <li>
-                            <img src="{$tc_module_path|escape:'html':'UTF-8'}images/config/{$tc_config.YBC_TC_PAYMENT_LOGO|escape:'html':'UTF-8'}" alt="{l s='Payment methods'}" title="{l s='Payment methods'}" />
-                        </li>
-                    </ul>
-                </div>
-            {/if}
-            {if isset($tc_config.YBC_FOOTER_LINK_CUSTOM) && $tc_config.YBC_FOOTER_LINK_CUSTOM}
-                <div class="footer_link_bottom">
-                    {$tc_config.YBC_FOOTER_LINK_CUSTOM nofilter}
-                </div>
-             {/if}
-          {hook h='displayFooterAfter'}
+
+
+<div  class="footer-container">
+      <div style="max-width: 100%;" class="row">
+      {hook h='displayFooter'}
       </div>
-  </div>
-  <div class="footer_before">
-      <div class="container">
-          <div class="row">
-            {hook h='displayFooterBefore'}
-          </div>
-      </div>
+    
+    <div style="justify-content:center; display: flex ; max-width: 100%;" class="row">
+    <div style="padding-top: 25px ;" class="col-md-12" >
+      <p class="text-sm-center" >
+        {block name='copyright_link'}
+          <a style="color: white " href="https://www.prestashop-project.org/" target="_blank" rel="noopener noreferrer nofollow">
+            {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
+          </a>
+        {/block}
+      </p>
+    </div>
   </div>
   
-  <div class="footer_bottom">
-      <div class="container">
-          <div class="row">
-              <div class="col-md-12 coppyright">
-                  <div class="ybc_coppyright">
-                     {if isset($tc_config.YBC_TC_COPYRIGHT_TEXT) && $tc_config.YBC_TC_COPYRIGHT_TEXT}
-                        {$tc_config.YBC_TC_COPYRIGHT_TEXT nofilter}
-                     {/if}
-                  </div>
-              </div>
-          </div>
-      </div>
+    </div>
   </div>
-</div>
-<div class="scroll_top"><span>TOP</span></div>

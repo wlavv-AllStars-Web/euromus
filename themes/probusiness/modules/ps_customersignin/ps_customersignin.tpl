@@ -18,7 +18,10 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-<div id="_desktop_user_info">
+<style>
+
+</style>
+<div style="width: 20vw;" id="_desktop_user_info" class="">
   <div class="user-info">
     {if $logged}
       <a class="logout" href="{$logout_url|escape:'html':'UTF-8'}" rel="nofollow" >
@@ -26,9 +29,8 @@
         {l s='Sign out' d='Shop.Theme.Actions'}
       </a>
     {else}
-      <a href="{$my_account_url|escape:'html':'UTF-8'}" title="{l s='Log in to your customer account' d='Shop.Theme.Actions'}" rel="nofollow" >
-        <i class="fa fa-key"></i>
-        <span>{l s='Sign in' d='Shop.Theme.Actions'}</span>
+      <a style="margin-right: 20px" href="{$my_account_url|escape:'html':'UTF-8'}" title="{l s='Log in to your customer account' d='Shop.Theme.Actions'}" rel="nofollow" >
+        <span class="logtext">{l s='Login' d='Shop.Theme.Actions'}</span>
       </a>
     {/if}
   </div>
