@@ -1,92 +1,146 @@
-{*
-* 2007-2015 PrestaShop
-*
-* NOTICE OF LICENSE
-*
-* This source file is subject to the Academic Free License (AFL 3.0)
-* that is bundled with this package in the file LICENSE.txt.
-* It is also available through the world-wide-web at this URL:
-* http://opensource.org/licenses/afl-3.0.php
-* If you did not receive a copy of the license and are unable to
-* obtain it through the world-wide-web, please send an email
-* to license@prestashop.com so we can send you a copy immediately.
-*
-* DISCLAIMER
-*
-* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
-* versions in the future. If you wish to customize PrestaShop for your
-* needs please refer to http://www.prestashop.com for more information.
-*
-*  @author PrestaShop SA <contact@prestashop.com>
-*  @copyright  2007-2015 PrestaShop SA
-*  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
-*  International Registered Trademark & Property of PrestaShop SA
-*}
-<div id="_desktop_language_selector" style="padding-left: 15px;">
-  <div class="language-selector-wrapper">
-    {* <span class="title_lang">{l s='Language:' d='Shop.Theme'}</span> *}
-    <div class="language-selector dropdown js-dropdown">
-    
-      <span class=" d-none d-lg-block" data-toggle="dropdown" style="text-transform: uppercase;"><img width="20" src="/img/asmFlags/flag{$current_language.iso_code}.jpg"> {$current_language.iso_code}</span>
-      <span class=" mobile d-lg-none text-uppercase" onclick="mobileFlags()">{$current_language.iso_code}</span>
-      
-      <a data-target="#" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="d-none d-lg-block">
-        <i class="material-icons material-icons-expand_more" style="position: relative;"></i>
-      </a>
-      <ul class="dropdown-menu " style="background: #121212;right:0;left:unset;margin-top:1rem;z-index:99999;">
-        {foreach from=$languages item=language}
-          <li style="display: flex;justify-content:center;width:100%;" {if $language.id_lang == $current_language.id_lang} class="current" {/if}>
-            <div style="display: flex;justify-content:space-between;align-items:center;width:100%;padding-left:0.5rem;">
-              <img width="20" src="/img/asmFlags/flag{$language.iso_code}.jpg">
-              <a href="{url entity='language' id=$language.id_lang}" class="dropdown-item"{if $language.id_lang == $current_language.id_lang}class="current link" style="color: #dd1411 !important;"{else}style="color: #fff" {/if}>{$language.name_simple}</a>
-            </div>
-          </li>
-        {/foreach}
-      </ul>
-      <div style="display: none;">
-        <ul class="selectorMobileFlags d-lg-none">
-            {foreach from=$languages item=language}
-            <li style="display: flex;justify-content:center;" {if $language.id_lang == $current_language.id_lang} class="current" {/if}>
-              <div style="display: flex;justify-content:center;align-items:center;">
-               <a href="{url entity='language' id=$language.id_lang}">
-                <img  src="/img/asmFlags/flag{$language.iso_code}.jpg">
-                {* <a href="{url entity='language' id=$language.id_lang}" class="dropdown-item"{if $language.id_lang == $current_language.id_lang}class="current link" style="color: #dd1411 !important;"{else}style="color: #fff" {/if}>{$language.name_simple}</a> *}
-               </a>
-                  </div>
-            </li>
-            {/foreach}
-        </ul>
-      </div>
-
-      <select class="link hidden-md-up hidden-sm-down">
-        {foreach from=$languages item=language}
-          <option value="{url entity='language' id=$language.id_lang}"{if $language.id_lang == $current_language.id_lang} selected="selected"{/if}>{$language.name_simple}</option>
-        {/foreach}
-      </select>
-    </div>
-  </div>
-</div>
-<script>
-  isDropdownVisible = false;
- 
-	function mobileFlags() {
-    const dropdownMobile = document.getElementById("languageSelectorMobile");
-    const dropdown = document.querySelector('.selectorMobileFlags');
-    
-    if (!isDropdownVisible) {
-        dropdownMobile.appendChild(dropdown);
-        isDropdownVisible = true;
-        console.log(isDropdownVisible + dropdown)
-    } else {
-      const dropdownFlags = document.querySelector('#languageSelectorMobile .selectorMobileFlags')
-      
-      if (dropdownMobile.contains(dropdownFlags)) {
-            dropdownMobile.removeChild(dropdownFlags);
-      }
-
-        isDropdownVisible = false;
-        console.log(isDropdownVisible + dropdownFlags)
-    }
-
+{if Context::getContext()->isMobile() == 1}
+<style>
+.dropdown-menu {
+ position: absolute;
+ top: 100%;
+ left: 0;
+ z-index: 1000;
+ display: none;
+ float: left;
+ min-width: 116px;
+ padding: 4px 13px;
+ margin: 5px 0 0;
+   margin-left: 0px;
+ font-size: 1rem;
+ color: #878787;
+ text-align: left;
+ list-style: none;
+ background-color: #fff;
+ background-clip: padding-box;
+ border: 1px solid rgba(0, 0, 0, 0.15);
+ border-radius: 0;
+}
+@media (max-width: 767px) {
+  .header-nav .dropdown-menu {
+    font-size: 13px;
+    width: 940%;
+    overflow: 900%;
   }
+}
+.dropdown-item {
+  display: block;
+  width: auto;
+  padding: 0px 0px;
+  clear: both;
+  font-weight: normal;
+  color: #fff !important;
+  text-align: inherit;
+  white-space: nowrap;
+  background: none;
+  border: 0;
+  font-size: 13px;
+  line-height: 23px;
+}
+.lgss {
+display: none;flex-wrap: inherit;   padding-top: 7px;   position: absolute;   margin-top: 87px;   width: 100%;   margin-left: -15px;   background: #fff;   padding-bottom: 7px;   justify-content: center;   gap: 1rem; padding-left: 150%;
+  padding-right: 150%;
+}
+.dropdown-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 990;
+  width: 1px;
+  height: 1px;
+}
+</style>
+ <div id="_desktop_language_selector" style="padding-right: 133px;">
+   <div style="display-flex;" class="language-selector-wrapper">
+  {*   <span style="color: white;" id="language-selector-label" class="hidden-md-up">{l s='Language:' d='Shop.Theme.Global'}</span> *}
+     <div class="language-selector dropdown js-dropdown"  onclick="alternarDisplay()" style="border-left: 1px solid #444;" >
+       <div data-toggle="dropdown" class=" btn-unstyle lang lgh" aria-haspopup="true" aria-expanded="false" aria-label="{l s='Language dropdown' d='Shop.Theme.Global'}">
+       <span>{strtoupper($current_language.iso_code)}</span>
+       </div>
+     </div>
+   </div>
+ </div>
+       <div class="lgss" id="lgm">
+          {foreach from=$languages item=language}
+            <a href="{url entity='language' id=$language.id_lang}" class="dropdown-item" style="display: flex;
+  justify-content: center;" data-iso-code="{$language.iso_code}">
+             <img src="/img/tmp/lang_mini_{$language.id_lang}_3.jpg?time=1699550058" style="width:48px; height:30px; border-radius: 5px;
+  border: 1px solid #000;" class="languageimg">
+            </a>
+         {/foreach}
+                </div> 
+              
+<script>
+
+function alternarDisplay() {
+
+			var idd = document.getElementById('searchbar');
+			var idds = window.getComputedStyle(idd);
+			var iddss = idds.getPropertyValue('display');
+
+			if(iddss == 'block'){
+					dropdownSearch();
+			}
+
+var elementoLgm = document.getElementById('lgm');
+
+var estiloComputado = window.getComputedStyle(elementoLgm);
+
+var displayAtual = estiloComputado.getPropertyValue('display');
+
+if (displayAtual == 'none'){
+    var elementos = document.getElementsByClassName('lgss');
+    for (var i = 0; i < elementos.length; i++) {
+        elementos[i].style.display = 'flex';
+    }
+}
+if (displayAtual == 'flex'){
+    var elementos = document.getElementsByClassName('lgss');
+    for (var i = 0; i < elementos.length; i++) {
+        elementos[i].style.display = 'none';
+    }
+}
+			var logoDesktop = document.getElementById('_desktop_logo');
+			var estiloComputado = window.getComputedStyle(logoDesktop);
+			var paddingTop = estiloComputado.getPropertyValue('padding-top');
+
+			if(paddingTop == '0px'){
+			logoDesktop.style.paddingTop = '47px';
+			logoDesktop.style.setProperty('padding-top', '47px', 'important');
+				}else
+				{
+			logoDesktop.style.paddingTop = '0px';
+			logoDesktop.style.setProperty('padding-top', '0px', 'important');		
+				}
+}
 </script>
+   
+{else}
+
+ <div id="_desktop_language_selector" style="padding-right: 133px;">
+   <div style="display-flex;" class="language-selector-wrapper">
+  {*   <span style="color: white;" id="language-selector-label" class="hidden-md-up">{l s='Language:' d='Shop.Theme.Global'}</span> *}
+     <div class="language-selector dropdown js-dropdown">
+       <div data-toggle="dropdown" class=" btn-unstyle lang lgh" aria-haspopup="true" aria-expanded="false" aria-label="{l s='Language dropdown' d='Shop.Theme.Global'}">
+       <img style="width:16px; height:11px;vertical-align: inherit;" src="/img/tmp/lang_mini_{$current_language.id_lang}_3.jpg?time=1699550058">
+       <span style="font-weight: bold;">{strtoupper($current_language.iso_code)}</span>
+         <i class="material-icons expand-more">&#xE5C5;</i>
+       </div>
+       <ul class="dropdown-menu" style="margin-top: -1px;margin-left: -46px; background-color:#000; color: white " aria-labelledby="language-selector-label ">
+         {foreach from=$languages item=language}
+           <li style="display: flex; " class=" selector {if $language.id_lang == $current_language.id_lang} current  {/if}">
+             <img src="/img/tmp/lang_mini_{$language.id_lang}_3.jpg?time=1699550058" style="width:16px; height:11px" class="languageimg">
+             <a style="margin-left: 8px; " href="{url entity='language' id=$language.id_lang}" class="dropdown-item" data-iso-code="{$language.iso_code}">{$language.name_simple}</a>
+           </li>
+         {/foreach}
+       </ul>
+     </div>
+   </div>
+ </div>
+{/if}

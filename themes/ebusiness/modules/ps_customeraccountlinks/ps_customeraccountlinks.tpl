@@ -22,13 +22,39 @@
 *  @license    http://opensource.org/licenses/afl-3.0.php  Academic Free License (AFL 3.0)
 *  International Registered Trademark & Property of PrestaShop SA
 *}
-
-<div id="block_myaccount_infos" class="links wrapper">
-  <h3 class="myaccount-title hidden-sm-down" style="margin: 0;">
+<style>
+.myacc{
+  border-right: 1px solid #fff;
+  padding-right: 8px;
+  height: 21px;
+  padding-left: 0px;
+  margin-left: 178px !important;
+  padding-left: 8px;
+}
+.myacc:hover{
+  border-right: 1px solid #fff;
+  padding-right: 8px;
+  height: 21px;
+  padding-left: 0px;
+  margin-left: 178px !important;
+  background-color: #000;
+  color: #dd170e!important;
+  padding-left: 8px;
+}
+.myacct{
+  color:#fff;
+  font-size:14px;
+}
+.myacct:hover{
+  font-size:14px;
+  color:#dd170e !important;
+}
+</style>
+<div id="block_myaccount_infos" class="links wrapper myacc">
+  <h3 class="myaccount-title hidden-sm-down">
     <a class="text-uppercase" href="{$urls.pages.my_account}" rel="nofollow">
-    <span style="color: #fff;font-size:14px;font-weight:600;"><i class="icon_profile" style="font-size: 16px;"></i>{l s='Your account' d='Shop.Theme.CustomerAccount'}
+    <span class="myacct"><i class="fa-solid fa-user" style="padding-right: 5px;"></i>{l s='Your account' d='Shop.Theme.CustomerAccount'}
     </span>
-  
     </a>
   </h3>
   <div class="title clearfix hidden-xs-up" data-target="#footer_account_list" data-toggle="collapse">

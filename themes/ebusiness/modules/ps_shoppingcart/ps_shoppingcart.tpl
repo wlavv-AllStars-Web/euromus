@@ -1,10 +1,37 @@
-<div id="_desktop_cart" data-refresh-url="{$refresh_url}">  
-  <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
+ 
+ {if Context::getContext()->isMobile() != 1}
+ <style>
+  .p3v{
+  font-size: 14px;
+  border-right: 1px solid #fff;
+  padding-right: 14px;
+}
+.crt{
+  padding-top: 4px;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: #fff !important;
+  height: 25px;
+}
+.crt:hover{
+  background-color: #000;
+  padding-left: 7px;
+  padding-right: 7px;
+  color: #dd170e !important;
+}
+ </style>
+       <div class="p3v">
+            <a href="./content/6-payment">
+              <span style="color: white;">PAIMENT EN 3X / 4X PAR CB - EN SAVOIR PLUS</span>
+              </a>
+        </div>
+  {/if}
+   <div id="_desktop_cart" data-refresh-url="{$refresh_url}">  
+  <div class="lpp blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}" >
     <a rel="nofollow" href="{$cart_url}">
-        <i class="icon_cart"></i>
+        <div class=" icon_cart crt"></div>
       {if $cart.products_count > 0}<span class="cart-products-count">{$cart.products_count}</span>{else}<span></span>{/if}
     </a>
-    
     <!-- begin -->
     <div class="body cart-hover-content">
       <ul>

@@ -25,6 +25,7 @@
  */
 define('_PS_MODE_DEV_', false);
 /* Debug only */
+define('_PS_MODE_DEV_', true);
 if (!defined('_PS_MODE_DEV_')) {
 define('_PS_MODE_DEV_', true);
 }

@@ -23,6 +23,8 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <div class="bannersContainer">
+{if Context::getContext()->isMobile() != 1}
+  {/if}
   <div class="bannerRow1">
     <a class="banner banner1 image-box" href="#" >
       {* {if isset($banner_img)} *}

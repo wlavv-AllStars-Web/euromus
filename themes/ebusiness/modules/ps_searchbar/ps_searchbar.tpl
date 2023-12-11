@@ -23,6 +23,16 @@
 *  International Registered Trademark & Property of PrestaShop SA
 *}
 <!-- Block search module TOP -->
+{if Context::getContext()->isMobile() != 1}
+<style>
+#ui-id-1{
+  width: 293px!important;
+  top: 155px!important;
+  right: 162px!important;
+  display: block;
+  left: auto!important;
+}
+</style>
 <div id="search_widget" class="search-widget" data-search-controller-url="{$search_controller_url}" style="display:contents;">
 	{* <span class="search_icon_toogle"> *}
         {* <i class="material-icons-search"></i></span> *}
@@ -34,19 +44,58 @@
             {* {l s='Search' d='Shop.Theme.Catalog'} *}
 		</button>
 	</form>
-	<form class="active mobile d-lg-none" method="get" action="{$search_controller_url}" style="display: flex;width:100%;">
+</div>
+{/if}
+{if Context::getContext()->isMobile() == 1}
+<style>
+.header-top .search-widget form input[type="text"] {
+  border-radius: 0 0 0 0;
+  border: 0;
+}
+#ui-id-1{
+  top: 88px!important;
+}
+.ui-autocomplete.searchbar-autocomplete {
+  min-height: 22px;
+}
+</style>
+</div></div>
+<div id="search_widget" class="search-widget" data-search-controller-url="{$search_controller_url}" style="display:contents;">
+  <div id="searchbar" style="display: none;">
+	<form class="active mobile d-lg-none" method="get" action="{$search_controller_url}" style="display: flex;width:100%;top:0px;position:absolute;">
 		<input type="hidden" name="controller" value="search">
-		<input type="text" name="s" value="{$search_string}" placeholder="{l s='Buscar' d='Shop.Theme.Catalog'}" style="width: 100%;">
-		<button type="submit" style="border-radius: 0;">
+		<input type="text" name="s" value="{$search_string}" placeholder="{l s='Buscar' d='Shop.Theme.Catalog'}" style="width: 100%; height: 44px; border: 0px; padding-left: 12px;">
+		<button type="submit" style="border-radius: 0;   background-color: #dd1312;   border: 0px;   padding-left: 17px;   padding-right: 17px;">
 			<i class="fa-solid fa-magnifying-glass"></i>
 			{* {l s='Search' d='Shop.Theme.Catalog'} *}
 		</button>
 	</form>
-</div>
+	</div>
+	</div>
 <script>
-	function dropdownSearch() {
-		$('#searchbar').toggle()
+function dropdownSearch() {
+
+			var idd = document.getElementById('lgm');
+			var idds = window.getComputedStyle(idd);
+			var iddss = idds.getPropertyValue('display');
+
+			if(iddss == 'flex'){
+					alternarDisplay();
+			}
+
+			var logoDesktop = document.getElementById('_desktop_logo');
+			var estiloComputado = window.getComputedStyle(logoDesktop);
+			var paddingTop = estiloComputado.getPropertyValue('padding-top');
+			if(paddingTop == '0px'){
+			logoDesktop.style.paddingTop = '47px';
+			logoDesktop.style.setProperty('padding-top', '47px', 'important');
+				}else
+				{
+			logoDesktop.style.paddingTop = '0px';
+			logoDesktop.style.setProperty('padding-top', '0px', 'important');		
+				}
+					$('#searchbar').toggle()
+			
 	}
 </script>
-
-<!-- /Block search module TOP -->
+{/if}
