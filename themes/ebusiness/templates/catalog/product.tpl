@@ -24,6 +24,7 @@
  *}
 {extends file=$layout}
 
+
 {block name='head_seo' prepend}
   <link rel="canonical" href="{$product.canonical_url}">
 {/block}
@@ -42,6 +43,7 @@
   {if isset($product.weight) && ($product.weight != 0)}
   <meta property="product:weight:value" content="{$product.weight}">
   <meta property="product:weight:units" content="{$product.weight_unit}">
+  
   {/if}
 {/block}
 {block name='javascript_head'}

@@ -23,12 +23,28 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <section id="content" class="page-content page-not-found">
+  <h1>{l s='No products available for the moment.' d='Shop.Theme'}</h1>
   <h4>{l s='Sorry for the inconvenience.' d='Shop.Theme'}</h4>
   <p>{l s='Search again what you are looking for' d='Shop.Theme'}</p>
 
-  {block name='search'}
+
+  {* {block name='search'}
     {hook h='displaySearch'}
   {/block}
 
-  {hook h='displayNotFound'}
+  {hook h='displayNotFound'} *}
 </section>
+<style>
+  #manufacturer main {
+      min-height: 100vh;
+    }
+  #manufacturer main #wrapper{
+      min-height: 57vh;
+    }
+  #manufacturer main #wrapper #content{
+    text-align: center;
+  }
+  #manufacturer main #wrapper #content h1 {
+    color: var(--color-red);
+  }
+</style>

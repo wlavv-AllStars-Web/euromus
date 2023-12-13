@@ -1,4 +1,4 @@
- 
+{*  
  {if Context::getContext()->isMobile() != 1}
  <style>
   .p3v{
@@ -29,7 +29,7 @@
    <div id="_desktop_cart" data-refresh-url="{$refresh_url}">  
   <div class="lpp blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}" >
     <a rel="nofollow" href="{$cart_url}">
-        <div class=" icon_cart crt"></div>
+    <i class="icon icon_cart_alt" style="color: white;"></i>
       {if $cart.products_count > 0}<span class="cart-products-count">{$cart.products_count}</span>{else}<span></span>{/if}
     </a>
     <!-- begin -->
@@ -56,8 +56,8 @@
         <span class="value">{$cart.totals.total.value|escape:'html':'UTF-8'}</span>
       </div>
       <div class="cart-wishlist-action">
-        {*<a class="cart-wishlist-viewcart" href="{$cart_url|escape:'html':'UTF-8'}">view cart</a>*}
-        <a class="cart-wishlist-checkout"
+        <a class="cart-wishlist-viewcart" href="{$cart_url|escape:'html':'UTF-8'}">view cart</a>*}
+        {* <a class="cart-wishlist-checkout"
            href="{$urls.pages.order|escape:'html':'UTF-8'}">{l s='Check Out' d='Shop.Theme.Actions'}</a>
       </div>
     </div>
@@ -66,4 +66,69 @@
 
       
 </div>
+  *}
 
+
+
+  {* novoooooo *}
+
+
+  <div id="_desktop_cart">
+  <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url|escape:'html':'UTF-8'}">
+    <div class="header">
+      <a rel="nofollow" href="{$cart_url|escape:'html':'UTF-8'}">
+      <i class="fa-solid fa-cart-shopping"></i>
+        {* <span class="cart-products-label">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</span> *}
+        {* <span class="cart-products-count">{$cart.products_count|escape:'html':'UTF-8'} {if $cart.products_count > 1}{l s=' Items' d='Shop.Theme.Checkout'}{else}{l s=' Item' d='Shop.Theme.Checkout'}{/if} - {$cart.totals.total.value|escape:'html':'UTF-8'} </span> *}
+        <span class="cart-products-count cart-products-count-absolution">{$cart.products_count|escape:'html':'UTF-8'}</span>
+      </a>
+
+      <div class="body cart-hover-content">
+        <ul>
+          {foreach from=$cart.products item=product}
+            <li class="cart-wishlist-item">{include 'module:ps_shoppingcart/ps_shoppingcart-product-line.tpl' product=$product}</li>
+          {/foreach}
+        </ul>
+        {if isset($cart.subtotals)}
+          <div class="cart-subtotals">
+            {foreach from=$cart.subtotals item="subtotal"}
+              <div class="{if isset($subtotal.type)}{$subtotal.type|escape:'html':'UTF-8'}{/if}">
+                <span class="label">{if isset($subtotal.label)}{$subtotal.label|escape:'html':'UTF-8'}{/if}</span>
+                <span class="value">{if isset($subtotal.value)}{$subtotal.value|escape:'html':'UTF-8'}{/if}</span>
+              </div>
+            {/foreach}
+          </div>
+          {if isset($cart.totals.total)}
+            <div class="cart-total">
+              <span class="label">{$cart.totals.total.label|escape:'html':'UTF-8'}</span>
+              <span class="value">{$cart.totals.total.value|escape:'html':'UTF-8'}</span>
+            </div>
+
+          {/if}
+        {/if}
+        <div class="cart-wishlist-action">
+          <a class="cart-wishlist-checkout" href="{$cart_url|escape:'html':'UTF-8'}">{l s='Check Out' d='Shop.Theme.Actions'}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+.cart-preview .cart-products-count {
+  background-color: #EC4249;
+    border-radius: 50% 50% 50% 50%;
+    color: #FFFFFF;
+    font-size: 10px;
+    height: 14px;
+    line-height: 14px;
+    position: absolute;
+    right: -10px;
+    text-align: center;
+    top: 3px;
+    width: 17px;
+}
+
+#_desktop_cart .fa-cart-shopping{
+  font-size: 14px;
+}
+</style>

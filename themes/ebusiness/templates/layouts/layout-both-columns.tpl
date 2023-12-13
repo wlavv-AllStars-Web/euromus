@@ -56,7 +56,9 @@
       <div id="wrapper" {if isset($tc_config.YBC_TC_LAYOUT) && $tc_config.YBC_TC_LAYOUT == 'LayoutHome1'}class="maincontent_v1"{/if}>
         {block name='breadcrumb'}
             {include file='_partials/breadcrumb.tpl'}
+           
           {/block}
+        
         {if $page.page_name != 'index'}
         <div class="container">
         {/if}

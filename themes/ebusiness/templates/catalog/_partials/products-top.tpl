@@ -65,7 +65,17 @@
           </div>
       </div>
   </div> *}
+  {assign var="categories" value=Category::getCategories()}
+  {* {assign var="attribute_groups" value=AttributeGroup::getAttributesGroups()} *}
 
+{* <select name="category_id">
+  {foreach from=$categories item=category}
+      <option value="{$category.id_category}">{$category.name}</option>
+  {/foreach}
+</select> *}
+
+
+{* <pre>{print_r($attribute_groups,1)}</pre> *}
   {* bycategory *}
   <div class="box-sortby col-md-3">
     <div class="row sort-by-row">
@@ -82,15 +92,18 @@
           <i class="material-icons pull-xs-right">arrow_drop_down</i>
         </a>
         <div class="dropdown-menu">
-          {* {foreach from=$listing.sort_orders item=sort_order} *}
+        {foreach from=$categories[2] item=categoryLevel1}
+          {foreach from=$categoryLevel1 item=category}
+              
             <a
-              rel="nofollow"
-              href="{$sort_order.url}"
-              class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
-            >
-              {$sort_order.label}
-            </a>
-          {* {/foreach} *}
+            rel="nofollow"
+            href="/{$category.id_category}-{$category.link_rewrite}"
+            class="select-list "
+          >
+            {$category.name}
+          </a>
+          {/foreach}
+        {/foreach}
         </div>
       </div>
     </div>
@@ -113,13 +126,13 @@
         </a>
         <div class="dropdown-menu">
           {* {foreach from=$listing.sort_orders item=sort_order} *}
-            <a
+            {* <a
               rel="nofollow"
               href="{$sort_order.url}"
               class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
             >
               {$sort_order.label}
-            </a>
+            </a> *}
           {* {/foreach} *}
         </div>
       </div>
@@ -159,13 +172,13 @@
         </a>
         <div class="dropdown-menu">
           {* {foreach from=$listing.sort_orders item=sort_order} *}
-            <a
+            {* <a
               rel="nofollow"
               href="{$sort_order.url}"
               class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
             >
               {$sort_order.label}
-            </a>
+            </a> *}
           {* {/foreach} *}
         </div>
       </div>
@@ -213,4 +226,10 @@
     width: 100%;
     border: 1px solid #d0d0d0;
   }
+
+  #manufacturer .products-sort-order .select-list:hover{
+    background: var(--color-red);
+  }
+
+  
 </style>
