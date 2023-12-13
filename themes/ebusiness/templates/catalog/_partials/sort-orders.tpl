@@ -22,10 +22,11 @@
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<span class="hidden-sm-down sort-by">{l s='Sort by:' d='Shop.Theme'}</span>
+{* <span class="hidden-sm-down sort-by">{l s='Sort by:' d='Shop.Theme'}</span> *}
 <div class="{*if !empty($listing.rendered_facets)}col-sm-9 col-xs-8{else}col-sm-12 col-xs-12{/if*} products-sort-order dropdown">
   <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    {if isset($listing.sort_selected)}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if}
+  {l s='Sort By' d='Shop.Theme.Actions'}
+    {* {if isset($listing.sort_selected)}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if} *}
     <i class="material-icons pull-xs-right">arrow_drop_down</i>
   </a>
   <div class="dropdown-menu">

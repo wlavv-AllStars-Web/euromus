@@ -25,16 +25,26 @@
 
 {if $page.page_name != 'index'}
 <div class="breadcrumb_wrapper" data-depth="{$breadcrumb.count}">
-    <div class="container">
+    <div class="">
         <nav data-depth="{$breadcrumb.count}" class="breadcrumb">
           <ol itemscope itemtype="http://schema.org/BreadcrumbList">
             {foreach from=$breadcrumb.links item=path name=breadcrumb}
-              <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                <a itemprop="item" href="{$path.url}">
-                  <span itemprop="name">{$path.title}</span>
-                </a>
-                <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
-              </li>
+              {if str_contains($path.title, 'Home') == true}
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a itemprop="item" href="{$path.url}">
+                  <i class="fa-solid fa-house" ></i>
+                  </a>
+                  <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
+                </li>
+              {else}
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a itemprop="item" href="{$path.url}">
+                    <span itemprop="name">{$path.title}</span>
+                  </a>
+                  <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
+                </li>
+              {/if}
+              
             {/foreach}
             {if $page.page_name == 'cart'}
                 <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
@@ -47,4 +57,31 @@
         </nav>
     </div>
 </div>
+<style>
+  .breadcrumb_wrapper{
+    border-top: 3px solid var(--color-red);
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+
+  .breadcrumb_wrapper nav{
+    background: var(--color-grey_light);
+  }
+
+  .breadcrumb_wrapper a span {
+    color: var(--color-text);
+  }
+  .breadcrumb_wrapper a span:hover {
+    color: var(--color-red);
+  }
+
+  .breadcrumb_wrapper .fa-house {
+    color: var(--color-text);
+  }
+
+  .breadcrumb_wrapper .fa-house:hover {
+    color: var(--color-red);
+  }
+</style>
+
 {/if}

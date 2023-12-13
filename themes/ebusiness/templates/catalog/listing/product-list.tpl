@@ -66,4 +66,14 @@
     </div>
 
   </section>
+  <style>
+  #manufacturer .container {
+    max-width: none !important;
+    margin: 0;
+  }
+  #manufacturer #main {
+    width: 100%;
+    background: #fff;
+  }
+  </style>
 {/block}

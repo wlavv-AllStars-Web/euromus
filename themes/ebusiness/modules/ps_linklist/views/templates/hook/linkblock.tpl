@@ -155,7 +155,7 @@
 </div> 
 </footer>
 
-<p align="center" class="rights">@ 2013 All Stars Motorsport. All Rights Reserved.</p>
+{* <p align="center" class="rights">@ 2013 All Stars Motorsport. All Rights Reserved.</p> *}
 
 {/if}
 

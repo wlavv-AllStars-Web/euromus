@@ -8,6 +8,15 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 /*! normalize.css v4.0.0 | MIT License | github.com/necolas/normalize.css */
+:root{
+  --color-red: #dd1312;
+  --color-grey: #282828;
+  --color-grey_light: #d9d9d9;
+  --color-black: #000;
+  --color-text: #333333;
+}
+
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -3039,7 +3048,7 @@ pre {
       max-width: 940px; } }
   @media (min-width: 1200px) {
     .container {
-      max-width: 1170px; } }
+      max-width: 1440px; } }
 
 .container-fluid {
   margin-left: auto;
@@ -12317,9 +12326,9 @@ body#index .maincontent_v1 .mls_pag_button:not(.active) {
   padding: 30px 10px;
 }
 
-#main .page-content {
+/* #main .page-content {
   margin-bottom: 1.5625rem; 
-}
+} */
 #main .page-content h6 {
     margin-bottom: 1.125rem; 
 }
@@ -12328,9 +12337,9 @@ body#index .maincontent_v1 .mls_pag_button:not(.active) {
     margin-right: -15px; 
 }
 
-#main .page-footer {
+/* #main .page-footer {
   margin-bottom: 1.5625rem; 
-}
+} */
 
 #notifications ul {
   margin-bottom: 0; 

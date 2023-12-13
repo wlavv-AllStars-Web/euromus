@@ -152,7 +152,7 @@ cursor: pointer;
                     </span>
                   </span>
                 {/if}
-                {$node.label}
+                {$node.label}         
               </a>
               {if $node.children|count}
               <div {if $depth === 0} class="popover sub-menu js-sub-menu collapse"{else} class="collapse"{/if} id="top_sub_menu_{$_expand_id}">

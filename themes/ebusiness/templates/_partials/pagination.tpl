@@ -22,11 +22,8 @@
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<nav class="pagination">
-  <div class="col-md-6">
-    {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=['%from%' => $pagination.items_shown_from ,'%to%' => $pagination.items_shown_to, '%total%' => $pagination.total_items]}
-  </div>
-  <div class="col-md-6">
+<nav class="pagination" style="margin-bottom: 0;border-bottom:0;">
+  <div class="col-md-12" style="display: flex;justify-content:center;">
     <ul class="page-list clearfix">
       {foreach from=$pagination.pages item="page"}
         <li {if $page.current} class="current" {/if}>
@@ -51,4 +48,40 @@
       {/foreach}
     </ul>
   </div>
+  <div class="col-md-12" style="display: flex;justify-content:center;font-size:14px">
+    {l s='Showing %from%-%to% of %total% items' d='Shop.Theme.Catalog' sprintf=['%from%' => $pagination.items_shown_from ,'%to%' => $pagination.items_shown_to, '%total%' => $pagination.total_items]}
+  </div>
 </nav>
+<style>
+.pagination{
+  padding: 0.5rem 0;
+}
+
+.pagination li a  {
+    background-color: #ccc ;
+    color: #000 !important;
+    margin: 2px ;
+    font-size: 14px ;
+    border: 1px solid #999;
+}
+.pagination li a:hover{
+  color: var(--color-red)!important;
+}
+
+.pagination .current a  {
+    background-color: #fff !important;
+    color: red !important;
+    margin: 2px !important;
+    font-size: 14px !important;
+    font-weight: bold;
+    border: 1px solid red;
+}
+
+.pagination .current a:hover{
+  cursor: text;
+}
+
+.pagination > div:first-child {
+  line-height: 0;
+}
+</style>

@@ -21,15 +21,17 @@
  * @copyright 2007-2016 PrestaShop SA
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * International Registered Trademark & Property of PrestaShop SA
- *}
+ *}  
+
+{* <pre>{print_r($brand,1)}</pre> *}
 <div id="js-product-list-top" class="row products-selection">
-  <div class="col-md-6 hidden-sm-down total-products">
+  {* <div class="col-md-6 hidden-sm-down total-products"> *}
     {*if $listing.products|count > 1}
       <p>{l s='There are %product_count% products.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.products|count]}</p>
     {else}
       <p>{l s='There is %product_count% product.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.products|count]}</p>
     {/if*}
-        <ul class="display hidden-xs">
+        {* <ul class="display hidden-xs">
             <li id="grid" class="active">
                 <a rel="nofollow" href="#" title="{l s='Grid'}">
                     <i class="fa fa-th"></i>
@@ -41,8 +43,91 @@
                 </a>
             </li>
       </ul>
+  </div> *}
+
+  {* <div class="filter_button">
+      <a class="wmbtnlayered btn button filter_button_action" onclick="$('.wm-hiddenCategoryMenu').toggle()">
+          <span id="name_category">{l s='By Category'}</span>
+      </a>
+      <div class="wm-hiddenCategoryMenu" style="display:none;">
+          <div style="display: block;">
+              {if ( isset($listing))}
+                <ul id="ul_layered_category_0" class="layered_filter_ul">
+                    {foreach $listing['products'] AS $key => $category}
+                       
+                        <li class="nomargin hiddable col-lg-12" style="padding:0">
+                            <div  id="category_element_{$category['id_category']}" onclick="setCategory({$category['id_category']})">{$category['name']}</div>
+                        </li>
+                      
+                    {/foreach}
+                </ul>
+              {/if}
+          </div>
+      </div>
+  </div> *}
+
+  {* bycategory *}
+  <div class="box-sortby col-md-3">
+    <div class="row sort-by-row">
+      <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
+        <button id="search_filter_toggler" class="btn btn-secondary">
+          {l s='Filter' d='Shop.Theme.Actions'}
+        </button>
+      </div>
+
+      <div class="{*if !empty($listing.rendered_facets)}col-sm-9 col-xs-8{else}col-sm-12 col-xs-12{/if*} products-sort-order dropdown">
+        <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {l s='By Category' d='Shop.Theme.Actions'}
+          {* {if isset($listing.sort_selected)}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if} *}
+          <i class="material-icons pull-xs-right">arrow_drop_down</i>
+        </a>
+        <div class="dropdown-menu">
+          {* {foreach from=$listing.sort_orders item=sort_order} *}
+            <a
+              rel="nofollow"
+              href="{$sort_order.url}"
+              class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
+            >
+              {$sort_order.label}
+            </a>
+          {* {/foreach} *}
+        </div>
+      </div>
+    </div>
   </div>
-  <div class="col-md-6">
+
+  {* bybrand *}
+  <div class=" box-sortby col-md-3">
+    <div class="row sort-by-row">
+      <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
+        <button id="search_filter_toggler" class="btn btn-secondary">
+          {l s='Filter' d='Shop.Theme.Actions'}
+        </button>
+      </div>
+
+      <div class="{*if !empty($listing.rendered_facets)}col-sm-9 col-xs-8{else}col-sm-12 col-xs-12{/if*} products-sort-order dropdown">
+        <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {l s='By Brand' d='Shop.Theme.Actions'}
+          {* {if isset($listing.sort_selected)}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if} *}
+          <i class="material-icons pull-xs-right">arrow_drop_down</i>
+        </a>
+        <div class="dropdown-menu">
+          {* {foreach from=$listing.sort_orders item=sort_order} *}
+            <a
+              rel="nofollow"
+              href="{$sort_order.url}"
+              class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
+            >
+              {$sort_order.label}
+            </a>
+          {* {/foreach} *}
+        </div>
+      </div>
+    </div>
+  </div>
+
+{* SortBy *}
+  <div class="box-sortby col-md-3">
     <div class="row sort-by-row">
       {if !empty($listing.rendered_facets)}
         <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
@@ -56,11 +141,76 @@
       {/block}
     </div>
   </div>
-  {*<div class="col-sm-12 hidden-md-up text-xs-center showing">
+
+  {* bypage *}
+  <div class="box-sortby col-md-3">
+    <div class="row sort-by-row">
+      <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
+        <button id="search_filter_toggler" class="btn btn-secondary">
+          {l s='Filter' d='Shop.Theme.Actions'}
+        </button>
+      </div>
+
+      <div class="{*if !empty($listing.rendered_facets)}col-sm-9 col-xs-8{else}col-sm-12 col-xs-12{/if*} products-sort-order dropdown">
+        <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        {l s='By Page' d='Shop.Theme.Actions'}
+          {* {if isset($listing.sort_selected)}{$listing.sort_selected}{else}{l s='Select' d='Shop.Theme.Actions'}{/if} *}
+          <i class="material-icons pull-xs-right">arrow_drop_down</i>
+        </a>
+        <div class="dropdown-menu">
+          {* {foreach from=$listing.sort_orders item=sort_order} *}
+            <a
+              rel="nofollow"
+              href="{$sort_order.url}"
+              class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
+            >
+              {$sort_order.label}
+            </a>
+          {* {/foreach} *}
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {* <div class="col-sm-12 hidden-md-up text-xs-center showing">
     {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=[
     '%from%' => $listing.pagination.items_shown_from ,
     '%to%' => $listing.pagination.items_shown_to,
     '%total%' => $listing.pagination.total_items
     ]}
-  </div>*}
+  </div> *}
 </div>
+<style>
+  #manufacturer .products-selection {
+    display: flex;
+    justify-content: center;
+  }
+
+  #manufacturer .select-title{
+    color: var(--color-red);
+    font-size: 14px;
+    padding: 0.425rem;
+  }
+  #manufacturer .sort-by-row {
+    display: flex;
+    justify-content:center;
+  }
+
+  #manufacturer .products-sort-order {
+    width: 400px;
+    height: 32px;
+    text-align: center;
+  }
+  #manufacturer .products-sort-order:hover .select-title{
+    color: black;
+  }
+
+  #manufacturer .box-sortby{
+    max-width: 400px;
+  }
+
+  #manufacturer .products-sort-order .dropdown-menu {
+    width: 100%;
+    border: 1px solid #d0d0d0;
+  }
+</style>

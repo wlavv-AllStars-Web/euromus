@@ -29,6 +29,10 @@
         </div> 
   </div>
   <div class="footer_after">
+  <div style="display: flex;flex-direction:column;justify-content:center;align-items:center;color:#f3f3f3">
+    <strong>@ 2013 All Stars Motorsport.</strong>
+    <p>All Rights Reserved.</p>
+  </div>
       <div class="container">
             {if isset($tc_config.YBC_TC_PAYMENT_LOGO) && $tc_config.YBC_TC_PAYMENT_LOGO}
                 <div class="payment_footer">                                       
