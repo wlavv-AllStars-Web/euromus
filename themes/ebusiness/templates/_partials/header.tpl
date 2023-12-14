@@ -1,3 +1,4 @@
+{assign var="currentLanguage" value=Context::getContext()->language}
 <div class="header_content">
 {block name='header_nav'}
   <nav class="header-nav d-none d-lg-block" style="margin-bottom:0;background:linear-gradient(to bottom, #969696,#282828);">
@@ -7,7 +8,14 @@
              {hook h='displayNav1'}
             </div>
             <div class="right-nav" style="display: flex;gap:1rem;align-items:center;">
-                {hook h='displayNav2'}
+              {if $currentLanguage->iso_code == 'es'}
+              <a href="/es/content/5-pagamentos" style="font-size:14px;font-weight:500;padding: 0px 10px;color: white; text-transform: uppercase; margin: 0 auto;line-height: 2;float: right;">PAGO EN 3X / 4X CON TARJETA - MAS INFO</a>
+              {elseif $currentLanguage->iso_code == 'fr'}
+              <a href="/fr/content/5-paiment" style="font-size:14px;font-weight:500;padding: 0px 10px;color: white; text-transform: uppercase; margin: 0 auto;line-height: 2;float: right;">MON COMPTEPAIEMENT EN 3X / 4X PAR CB - EN SAVOIR PLUS</a>
+              {elseif $currentLanguage->iso_code == 'en'}  
+              <a href="/en/content/5-payment" style="font-size:14px;font-weight:500;padding: 0px 10px;color: white; text-transform: uppercase; margin: 0 auto;line-height: 2;float: right;">PAY IN 3 / 4 INSTALLMENTS BY CREDIT CARD - LEARN MORE</a>
+              {/if}
+              {hook h='displayNav2'}
             </div>
         </div>
     </div>

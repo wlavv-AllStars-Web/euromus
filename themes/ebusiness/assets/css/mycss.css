@@ -133,11 +133,25 @@
 
 
   /* page.tpl */
+  .logout{padding: 1px 1px 1px 4px;}
+  .logout:hover{
+    background: #121212;
+    padding: 1px 1px 1px 4px;
+    border-radius: 3px;
+  }
+  .user-info-account{padding: 1px 1px 1px 4px;}
+  .user-info-account:hover{
+    background: #121212;
+    padding: 1px 1px 1px 4px;
+    border-radius: 3px;
+  }
 
   @media screen and (min-width:561px) {
     #main{
       background: #000000;
     }
+
+    
   }
  @media screen and (max-width:560px) {
   #main{

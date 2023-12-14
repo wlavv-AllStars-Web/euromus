@@ -88,7 +88,7 @@
     padding: 20px;
     min-height: 295px;
     line-height: 1.4;
-    font-size: 15px;
+    font-size: 14px;
     text-align: center;
     hyphens: auto;
     -ms-hyphens: auto;

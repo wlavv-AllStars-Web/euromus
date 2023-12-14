@@ -11634,8 +11634,21 @@ body#index .maincontent_v1 .mls_pag_button:not(.active) {
 .linkedin a:before{
   content: "\f0e1";
 }
+#block_myaccount_infos{
+  display: flex;
+  align-items: end;
+}
+
+#block_myaccount_infos .myaccount-title{
+  margin-bottom: 0!important;
+}
+
 #block_myaccount_infos .myaccount-title a {
-  color: #414141; }
+  color: #414141; 
+}
+
+
+
 .footer-container {
   padding-top: 14px;
 }
@@ -12071,6 +12084,11 @@ body#index .maincontent_v1 .mls_pag_button:not(.active) {
   color: #DDDDDD;
   display: inline-block;
 }
+
+.user-info-account:hover span{
+  color: var(--color-red)!important;
+}
+
 #header .user-info a.user-info-account {
   margin-right: 5px;
   padding-right: 10px;
@@ -12249,10 +12267,11 @@ body#index .maincontent_v1 .mls_pag_button:not(.active) {
 .user-info i {
   float: left;
   font-size: 16px;
-  line-height: 13px;
   margin-right: 2px;
   margin-top: 1px;
 }
+
+
 #header .header-top {
 	padding-bottom: 30px;
 }
@@ -13196,8 +13215,8 @@ li {
 .sitemap a {
   line-height: 30px;
 }
-.user-info .logout i {
-  display: none;
+.user-info .logout i:hover {
+  color: var(--color-red)!important;
 }
 @media (min-width: 992px) and (max-width: 1199px){
     #product-availability {
