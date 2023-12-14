@@ -20,11 +20,11 @@
             {assign var="title5" value="`$link.title`"}
             {assign var="url5" value="`$link.url`"}
           {/if}
-        {if $link.id == "link-custom-page-galleries"}
+        {if $link.id == "link-cms-page-27"}
             {assign var="title6" value="`$link.title`"}
             {assign var="url6" value="`$link.url`"}
           {/if}
-        {if $link.id == "link-custom-page-user-help"}
+        {if $link.id == "link-cms-page-30"}
             {assign var="title7" value="`$link.title`"}
             {assign var="url7" value="`$link.url`"}
           {/if}
@@ -32,7 +32,7 @@
             {assign var="title8" value="`$link.title`"}
             {assign var="url8" value="`$link.url`"}
           {/if}
-        {if $link.id == "link-custom-page-partners"}
+        {if $link.id == "link-cms-page-31"}
             {assign var="title9" value="`$link.title`"}
             {assign var="url9" value="`$link.url`"}
           {/if}
