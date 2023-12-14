@@ -145,14 +145,22 @@
     padding: 1px 1px 1px 4px;
     border-radius: 3px;
   }
-
-  @media screen and (min-width:561px) {
-    #main{
-      background: #000000;
-    }
-
-    
+  #my-account #wrapper #main{
+    width: 100%;
   }
+  #my-account #wrapper #main #content{
+    border: 0;
+  }
+  #my-account #wrapper .row{
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+  }
+  #my-account #wrapper{
+    min-height: 57vh;
+  }
+
+  
  @media screen and (max-width:560px) {
   #main{
     display: flex;

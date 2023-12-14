@@ -29,6 +29,7 @@
 {/block}
 
 {block name='page_content'}
+  <p>Welcome to your account. Here you can manage all of your personal information and orders.</p>
   <div class="row">
     <div class="links">
 
@@ -42,14 +43,14 @@
       {if $customer.addresses|count}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="addresses-link" href="{$urls.pages.addresses}">
           <span class="link-item">
-            <i class="material-icons">&#xE56A;</i>
+            <i class="fa-solid fa-house"></i>
             {l s='Addresses' d='Shop.Theme.CustomerAccount'}
           </span>
         </a>
       {else}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="address-link" href="{$urls.pages.address}">
           <span class="link-item">
-            <i class="material-icons">&#xE567;</i>
+            <i class="fa-solid fa-house"></i>
             {l s='Add first address' d='Shop.Theme.CustomerAccount'}
           </span>
         </a>
@@ -58,7 +59,7 @@
       {if !$configuration.is_catalog}
         <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="history-link" href="{$urls.pages.history}">
           <span class="link-item">
-            <i class="material-icons">&#xE916;</i>
+            <i class="fa-solid fa-list"></i>
             {l s='Order history and details' d='Shop.Theme.CustomerAccount'}
           </span>
         </a>
@@ -97,6 +98,7 @@
 
     </div>
   </div>
+ 
 {/block}
 
 
@@ -109,3 +111,4 @@
     </div>
   {/block}
 {/block}
+
