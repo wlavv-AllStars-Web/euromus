@@ -115,17 +115,21 @@
 </div>
 <style>
 .cart-preview .cart-products-count {
-  background-color: #EC4249;
+  /* background-color: #EC4249; */
+  background-color: transparent !important;
     border-radius: 50% 50% 50% 50%;
     color: #FFFFFF;
-    font-size: 10px;
+    font-size: 12px;
     height: 14px;
     line-height: 14px;
     position: absolute;
-    right: -10px;
+    right: -15px;
     text-align: center;
-    top: 3px;
-    width: 17px;
+    top: 5px;
+    width: 14px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
 }
 
 #_desktop_cart .fa-cart-shopping{

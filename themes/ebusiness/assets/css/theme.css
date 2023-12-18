@@ -28,11 +28,13 @@ body {
 text-rendering: geometricPrecision;
 font-smooth: always;
 
+
 font-smoothing: antialiased;
 -moz-font-smoothing: antialiased;
 -moz-text-stroke: 0.5px #000;
 
 }
+
 
 article,
 aside,
@@ -12254,7 +12256,7 @@ body#index .maincontent_v1 .mls_pag_button:not(.active) {
     color: white; 
 }
 #header .header-nav .blockcart .header {
-    margin-top: 0.125rem; 
+    margin-top: 0; 
 }
 #header .header-nav #contact-link {
   margin-top: 5px; 
@@ -14035,6 +14037,15 @@ body .product-list-reviews {
   color: #fa0207;
 }
 
+
+#authentication #wrapper .container{
+  margin: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+#authentication .breadcrump {
+
+}
 
 
 /*# sourceMappingURL=theme.css.map*/

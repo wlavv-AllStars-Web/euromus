@@ -22,9 +22,8 @@
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-
-{if $page.page_name != 'index'}
-<div class="breadcrumb_wrapper" data-depth="{$breadcrumb.count}">
+ {if $page.page_name != 'index'}
+  <div class="breadcrumb_wrapper" data-depth="{$breadcrumb.count}">
     <div class="">
         <nav data-depth="{$breadcrumb.count}" class="breadcrumb">
           <ol itemscope itemtype="http://schema.org/BreadcrumbList">
@@ -82,6 +81,7 @@
   .breadcrumb_wrapper .fa-house:hover {
     color: var(--color-red);
   }
+
 </style>
 
 {/if}

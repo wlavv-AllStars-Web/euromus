@@ -22,6 +22,7 @@
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
+
 {if $field.type == 'hidden'}
 
   <input type="hidden" name="{$field.name}" value="{$field.value}">

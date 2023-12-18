@@ -3,7 +3,6 @@
 {* TODO StarterTheme: HOOKS!!! *}
 
 <form id="login-form" action="{$action}" method="post">
-
   <div>
     {block name='form_fields'}
       {foreach from=$formFields item="field"}
@@ -28,3 +27,42 @@
     {/block}
   </footer>
 </form>
+<style>
+  #authentication #main {
+    width: 100% !important;
+    min-height: 57vh;
+    display: flex;
+  align-items: center;
+  }
+
+  #authentication #main #content{
+    border: 0 !important;
+  }
+
+  #login-form .forgot-password a{
+    color: var(--color-text)!important;
+  }
+
+  #login-form .forgot-password a:hover{
+    color: var(--color-red)!important;
+  }
+  
+  .register_form .register_form_cell a.button-to-register-form{
+    color: #fff !important;
+  }
+  .register_form .register_form_cell a.button-to-register-form:hover{
+    color: #fff !important;
+  }
+
+  .register_form .register_form_cell a[data-link-action="display-register-form"]{
+    color: var(--color-text);
+  }
+
+  .register_form .register_form_cell a[data-link-action="display-register-form"]:hover{
+    color: var(--color-red);
+  }
+  
+  .login_page_content input{
+    color: var(--color-text);
+  }
+</style>

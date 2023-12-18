@@ -29,7 +29,7 @@
 {/block}
 
 {block name='page_content'}
-  <p>Welcome to your account. Here you can manage all of your personal information and orders.</p>
+  <p>{l s='Welcome to your account. Here you can manage all of your personal information and orders.' d='Shop.Theme.CustomerAccount'}</p>
   <div class="row">
     <div class="links">
 

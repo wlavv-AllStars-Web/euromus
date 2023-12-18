@@ -160,6 +160,7 @@
     min-height: 57vh;
   }
 
+
   
  @media screen and (max-width:560px) {
   #main{
@@ -262,8 +263,13 @@
 
 
   /* ps_banner.tpl */
-
+  #index{
+    background: #121212 !important;
+  }
   @media screen and (min-width:768px){
+
+   
+
     .bannerRow1,
     .bannerRow2,
     .bannerRow3{

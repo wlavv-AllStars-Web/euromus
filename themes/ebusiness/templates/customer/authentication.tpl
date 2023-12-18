@@ -25,25 +25,56 @@
 {extends file='page.tpl'}
 
 {block name='breadcrumb'}
-  <div class="container">
-        <nav class="breadcrumb">
+  <div class="container-login" style="margin: 0;width:100%;max-width:none;">
+        <nav class="breadcrumb" style="background: #d9d9d9;">
           <ol itemscope itemtype="http://schema.org/BreadcrumbList">
             {foreach from=$breadcrumb.links item=path name=breadcrumb}
-              <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
-                <a itemprop="item" href="{$path.url}">
-                  <span itemprop="name">{$path.title}</span>
-                </a>
-                <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
-              </li>
+              {if str_contains($path.title, 'Home') == true || str_contains($path.title, 'Accueil') == true || str_contains($path.title, 'Inicio') == true}
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a itemprop="item" href="{$path.url}">
+                  <i class="fa-solid fa-house" ></i>
+                  </a>
+                  <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
+                </li>
+              {else}
+                <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a itemprop="item" href="{$path.url}">
+                    <span itemprop="name">{$path.title}</span>
+                  </a>
+                  <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
+                </li>
+              {/if}
             {/foreach}
-            <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
-                <a>
-                  <span itemprop="name">{l s='Log in to your account' d='Shop.Theme.CustomerAccount'}</span>
-                </a>
-              </li>
+            
           </ol>
         </nav>
     </div>
+    <style>
+  .container-login .breadcrumb{
+    border-top: 3px solid var(--color-red);
+    margin-bottom: 0;
+  }
+
+  .container-login .breadcrumb{
+    background: var(--color-grey_light);
+  }
+
+  .container-login .breadcrumb a span {
+    color: var(--color-text);
+  }
+  .container-login .breadcrumb a span:hover {
+    color: var(--color-red);
+  }
+
+  .container-login .breadcrumb .fa-house {
+    color: var(--color-text);
+  }
+
+  .container-login .breadcrumb .fa-house:hover {
+    color: var(--color-red);
+  }
+
+</style>
 {/block}
 
 {block name='page_content'}
