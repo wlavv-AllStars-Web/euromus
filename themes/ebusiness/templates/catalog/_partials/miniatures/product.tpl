@@ -29,7 +29,7 @@
 }
 
 .thumbnail-container:hover {
-  border: 2px solid var(--color-red);
+  border: 2px solid var(--color-red)!important;
 }
 
 .add_to_cart_button .btn-primary i {
@@ -76,7 +76,7 @@ font-size: 24px !important;
 
 </style>
 {* <pre>{print_r($product,1)}</pre> *}
-<article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+<article class="product-miniature js-product-miniature d-flex justify-content-center mr-auto col-lg-3" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
 
   <div class="thumbnail-container" style="width: 526px;height:349px;display:flex;flex-direction:column;justify-content:center;align-items:center;">
     <div class="image_item_product" style="border: 0;">
