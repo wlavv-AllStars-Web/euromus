@@ -24,6 +24,7 @@
  *}
 <style>
 .thumbnail-container{
+  width: 456px !important;
   border: 2px solid white; 
 }
 
@@ -61,6 +62,12 @@ font-size: 24px !important;
 
 .product-miniature {
   width: fit-content;
+  padding: 0 !important;
+}
+
+#products .products{
+  display: flex;
+  justify-content: center;
 }
 
 #products .product-title{
@@ -164,7 +171,7 @@ font-size: 24px !important;
       
       
     </div>
-    {block name='product_flags'}
+    {* {block name='product_flags'}
       <ul class="product-flags">
         {foreach from=$product.flags item=flag}
             {if $flag.type != 'discount'}
@@ -183,7 +190,7 @@ font-size: 24px !important;
             {/if}
         {/if}
       </ul>
-    {/block}
+    {/block} *}
   </div>
 
 </article>

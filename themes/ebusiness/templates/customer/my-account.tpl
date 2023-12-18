@@ -29,11 +29,12 @@
 {/block}
 
 {block name='page_content'}
+
   <p>{l s='Welcome to your account. Here you can manage all of your personal information and orders.' d='Shop.Theme.CustomerAccount'}</p>
   <div class="row">
     <div class="links">
 
-      <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="identity-link" href="{$urls.pages.identity}">
+      <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="identity-link" href="{$urls.pages.identity}">
         <span class="link-item">
           <i class="material-icons">&#xE853;</i>
           {l s='Information' d='Shop.Theme.CustomerAccount'}
@@ -41,14 +42,14 @@
       </a>
 
       {if $customer.addresses|count}
-        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="addresses-link" href="{$urls.pages.addresses}">
+        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="addresses-link" href="{$urls.pages.addresses}">
           <span class="link-item">
             <i class="fa-solid fa-house"></i>
-            {l s='Addresses' d='Shop.Theme.CustomerAccount'}
+            {l s='My Addresses' d='Shop.Theme.CustomerAccount'}
           </span>
         </a>
       {else}
-        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="address-link" href="{$urls.pages.address}">
+        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="address-link" href="{$urls.pages.address}">
           <span class="link-item">
             <i class="fa-solid fa-house"></i>
             {l s='Add first address' d='Shop.Theme.CustomerAccount'}
@@ -57,7 +58,7 @@
       {/if}
 
       {if !$configuration.is_catalog}
-        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="history-link" href="{$urls.pages.history}">
+        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="history-link" href="{$urls.pages.history}">
           <span class="link-item">
             <i class="fa-solid fa-list"></i>
             {l s='Order history and details' d='Shop.Theme.CustomerAccount'}
@@ -66,7 +67,7 @@
       {/if}
 
       {if !$configuration.is_catalog}
-        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="order-slips-link" href="{$urls.pages.order_slip}">
+        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="order-slips-link" href="{$urls.pages.order_slip}">
           <span class="link-item">
             <i class="material-icons">&#xE8B0;</i>
             {l s='Credit slips' d='Shop.Theme.CustomerAccount'}
@@ -75,7 +76,7 @@
       {/if}
 
       {if $configuration.voucher_enabled && !$configuration.is_catalog}
-        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="discounts-link" href="{$urls.pages.discount}">
+        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="discounts-link" href="{$urls.pages.discount}">
           <span class="link-item">
             <i class="material-icons">&#xE54E;</i>
             {l s='Vouchers' d='Shop.Theme.CustomerAccount'}
@@ -84,7 +85,7 @@
       {/if}
 
       {if $configuration.return_enabled && !$configuration.is_catalog}
-        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-12" id="returns-link" href="{$urls.pages.order_follow}">
+        <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="returns-link" href="{$urls.pages.order_follow}">
           <span class="link-item">
             <i class="material-icons">&#xE860;</i>
             {l s='Merchandise returns' d='Shop.Theme.CustomerAccount'}
@@ -92,9 +93,40 @@
         </a>
       {/if}
 
+      <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="identity-link" href="{$urls.pages.identity}">
+        <span class="link-item">
+          <i class="fa-solid fa-car"></i>
+          {l s='My Cars' d='Shop.Theme.CustomerAccount'}
+        </span>
+      </a>
+
+      <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="identity-link" href="{$logout_url}">
+        <span class="link-item">
+          <i class="fa-solid fa-lock"></i>
+          {l s='Logout' d='Shop.Theme.CustomerAccount'}
+        </span>
+      </a>
+
+      <div class="tvaNumber col-lg-4 col-md-6 col-sm-6 col-xs-12 mb-3" style="display: flex;flex-direction: column;">
+        <h3>{l s='TVA number (Only for companies)' d='Shop.Theme.CustomerAccount'} :</h3>
+        <div class="input-group col-lg-4 col-md-6 col-sm-6  col-xs-12" style="display:flex;flex-wrap: nowrap;padding-left: 0px;padding-right:0px;">
+          <input type="text" class="form-control" placeholder="TVA number" aria-label="TVA number" aria-describedby="basic-addon2">
+          <div class="input-group-append">
+            <button class="btn btn-secondary" type="button">{l s='Save' d='Shop.Theme.CustomerAccount'}</button>
+          </div>
+        </div>
+        <small style="text-align: start;">{l s='(Ex: FR99999999999 / GR999999999)' d='Shop.Theme.CustomerAccount'}</small>
+      </div>
+
+      
+
       {block name='display_customer_account'}
         {hook h='displayCustomerAccount'}
       {/block}
+
+      <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12">
+        <button type="button" class="btn btn-outline-danger">{l s='Back to homepage' d='Shop.Theme.CustomerAccount'}</button>
+      </div>
 
     </div>
   </div>

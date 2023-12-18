@@ -29,28 +29,28 @@
         </div> 
   </div>
   <div class="footer_after">
-  <div style="display: flex;flex-direction:column;justify-content:center;align-items:center;color:#f3f3f3">
+  <div style="display: flex;flex-direction:column;justify-content:center;align-items:center;color:#f3f3f3;gap: 0.25rem;padding-top: 0.5rem;">
     <strong>@ 2013 All Stars Motorsport.</strong>
     <p>All Rights Reserved.</p>
   </div>
-      <div class="container">
-            {if isset($tc_config.YBC_TC_PAYMENT_LOGO) && $tc_config.YBC_TC_PAYMENT_LOGO}
-                <div class="payment_footer">                                       
-                    <ul class="payment_footer_img">
-                        <li>
-                            <img src="{$tc_module_path}images/config/{$tc_config.YBC_TC_PAYMENT_LOGO}" alt="{l s='Payment methods'}" title="{l s='Payment methods'}" />
-                        </li>
-                    </ul>
-                </div>
+    <div class="container">
+        {if isset($tc_config.YBC_TC_PAYMENT_LOGO) && $tc_config.YBC_TC_PAYMENT_LOGO}
+            <div class="payment_footer">                                       
+                <ul class="payment_footer_img">
+                    <li>
+                        <img src="{$tc_module_path}images/config/{$tc_config.YBC_TC_PAYMENT_LOGO}" alt="{l s='Payment methods'}" title="{l s='Payment methods'}" />
+                    </li>
+                </ul>
+            </div>
+        {/if}
+        {if isset($tc_config.YBC_FOOTER_LINK_CUSTOM) && $tc_config.YBC_FOOTER_LINK_CUSTOM}
+            <div class="footer_link_bottom">
+                {$tc_config.YBC_FOOTER_LINK_CUSTOM nofilter}
+            </div>
             {/if}
-            {if isset($tc_config.YBC_FOOTER_LINK_CUSTOM) && $tc_config.YBC_FOOTER_LINK_CUSTOM}
-                <div class="footer_link_bottom">
-                    {$tc_config.YBC_FOOTER_LINK_CUSTOM nofilter}
-                </div>
-             {/if}
-          {hook h='displayFooterAfter'}
-      </div>
-  </div>
+        {hook h='displayFooterAfter'}
+    </div>
+</div>
   <div class="footer_before">
       <div class="container">
           <div class="row">

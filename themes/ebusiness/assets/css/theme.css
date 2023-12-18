@@ -12619,6 +12619,25 @@ body#index .maincontent_v1 .mls_pag_button:not(.active) {
     }
 }
 @media (max-width: 767px) {
+
+  #my-account #wrapper #main {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    background: white;
+  }
+
+  .page-my-account #content .links a {
+    font-size: 0.95rem;
+  }
+
+  .page-my-account #content .links a span.link-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
   #wrapper {
     box-shadow: none; 
   }
