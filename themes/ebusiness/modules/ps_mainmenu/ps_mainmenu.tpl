@@ -73,7 +73,7 @@ cursor: pointer;
 }
 #top-menu li a:hover{
     background: #fff;
-    color: #000000!important;
+    color: #dd170e !important;
 }
 
 #lnk-your-car{
@@ -113,6 +113,10 @@ cursor: pointer;
   font-weight: normal;
   line-height: 1.1;
 }
+
+.top-menu a.dropdown-submenu {
+  font-size: 16px !important;
+}
 </style>
 {if Context::getContext()->isMobile() != 1}
 <script>
@@ -138,9 +142,12 @@ cursor: pointer;
             {assign var=_counter value=$_counter+1}
               <a
                 class="{if $depth >= 0}bb{/if}{if $depth === 1} dropdown-submenu sss{/if}"
-                {if $node.url == 'car'}onclick="toggleDisplay()" style="cursor: pointer;"{/if}
-                {if $node.url != 'car'}href="{$node.url}" data-depth="{$depth}"{/if}
-                {if $node.open_in_new_window} target="_blank" {/if}
+                
+                  {if $node.url == 'car'}onclick="toggleDisplay()" style="cursor: pointer;"{/if}
+                  {if $node.url != 'car'}href="{$node.url}" data-depth="{$depth}"{/if}
+                  
+                  {if $node.open_in_new_window} target="_blank" {/if}
+                
               >
                 {if $node.children|count}
                   {* Cannot use page identifier as we can have the same page several times *}

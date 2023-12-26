@@ -29,6 +29,7 @@
 {/block}
 
 {block name='header_nav'}
+  <div style="border-top:2px solid #103054;border-bottom:2px solid red;padding-block:1px;"></div>
   <nav class="header-nav">
     <div class="container">
       <div class="row">

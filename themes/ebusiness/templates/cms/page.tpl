@@ -35,76 +35,7 @@
   {$cms.content nofilter}
 
 
-  <style>
-  
 
-
-.cms-id-28 .container {
-  max-width: none !important;
-  margin: 0;
-}
-
-.hover_for_text:hover div{
-  opacity: 1 !important;
-}
-
-.hover_for_text:hover div h2 {
-  color: var(--white);
-}
-
-.car-container strong {
-  font-weight: 600 !important;
-}
-
-.button_partners {
-    color: white;
-    background-color: #dd170e;
-    text-transform: uppercase;
-    padding: 10px;
-    text-decoration: none;
-    font-size: 18px;
-}
-
-.button_partners:hover {
-  color: #dd170e;
-  background-color: #FFF;
-  text-transform: uppercase;
-  padding: 10px;
-  text-decoration: none;
-}
-
-.card_partners {
-  box-shadow: 3px 3px 5px 6px #ccc;
-  height: auto;
-  background-color: #333;
-  color: white;
-  min-height: 465px;
-}
-
-.card_partners .image_partners {
-  width: 100%;
-}
-.text_partners {
-    padding: 20px;
-    min-height: 295px;
-    line-height: 1.4;
-    font-size: 14px;
-    text-align: center;
-    hyphens: auto;
-    -ms-hyphens: auto;
-    -webkit-hyphens: auto;
-    text-align: center;
-}
-
-.button_container_partners {
-  padding: 0 20px 20px 20px;
-  margin: 20px auto 20px auto;
-  text-align: center;
-  display: grid;
-}
-
-
-</style>
 
 <script>
 function playhoverFunction(e) {

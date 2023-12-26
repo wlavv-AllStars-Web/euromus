@@ -23,10 +23,12 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
  {if $page.page_name != 'index'}
+  
   <div class="breadcrumb_wrapper" data-depth="{$breadcrumb.count}">
     <div class="">
         <nav data-depth="{$breadcrumb.count}" class="breadcrumb">
           <ol itemscope itemtype="http://schema.org/BreadcrumbList">
+          {* <pre>{print_r($breadcrumb,1)}</pre> *}
             {foreach from=$breadcrumb.links item=path name=breadcrumb}
               {if str_contains($path.title, 'Home') == true || str_contains($path.title, 'Accueil') == true || str_contains($path.title, 'Inicio') == true}
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
@@ -35,6 +37,13 @@
                   </a>
                   <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
                 </li>
+              {else if str_contains($path.title, 'Brands') == true}
+                {* <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
+                  <a itemprop="item" href="{$path.url}">
+                    <span itemprop="name">{$path.title}</span>
+                  </a>
+                  <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
+                </li> *}
               {else}
                 <li itemprop="itemListElement" itemscope itemtype="http://schema.org/ListItem">
                   <a itemprop="item" href="{$path.url}">
@@ -42,6 +51,7 @@
                   </a>
                   <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration}" />
                 </li>
+              
               {/if}
               
             {/foreach}
@@ -58,9 +68,11 @@
 </div>
 <style>
   .breadcrumb_wrapper{
-    border-top: 3px solid var(--color-red);
-    padding-bottom: 0;
-    margin-bottom: 0;
+    padding: 0;
+    border-bottom: none;
+    background: #f5f5f5;
+    font-size: 12px;
+    border: 1px solid #d8d8d8;
   }
 
   .breadcrumb_wrapper nav{
@@ -80,6 +92,27 @@
 
   .breadcrumb_wrapper .fa-house:hover {
     color: var(--color-red);
+  }
+
+  @media screen and (min-width:992px){
+    .breadcrumb_wrapper{
+    border-top: 3px solid var(--color-red);
+    padding-bottom: 0;
+    margin-bottom: 0;
+  }
+  }
+
+  @media screen and (max-width:991px){
+    .breadcrumb_wrapper {
+      margin-bottom: 0;
+      display: none;
+    }
+    #cms #main {
+      padding: 0;
+    }
+    #cms #content {
+      padding: 0;
+    }
   }
 
 </style>

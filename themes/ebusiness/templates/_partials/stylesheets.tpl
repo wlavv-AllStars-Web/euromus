@@ -31,6 +31,7 @@
 <link rel="stylesheet" href="{$urls.css_url}owl/owl.transitions.css" type="text/css" media="all" />*}
 <link rel="stylesheet" href="{$urls.css_url}font-elegant.css" type="text/css" media="all" />
 <link rel="stylesheet" href="{$urls.css_url}mycss.css" type="text/css" media="all" />
+<link href="{$urls.css_url}cmsASM.css" rel="stylesheet" type="text/css" media="all"/>
 
   
 {if isset($tc_config.YBC_TC_FONT1_DATA) && $tc_config.YBC_TC_FONT1_DATA != ''}

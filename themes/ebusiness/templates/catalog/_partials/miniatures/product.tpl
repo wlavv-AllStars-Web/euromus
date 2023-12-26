@@ -23,6 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <style>
+
 .thumbnail-container{
   width: 456px !important;
   border: 2px solid white; 
@@ -39,16 +40,16 @@
 
 .add_to_cart_button .btn.btn-primary {
   transform: rotate(0);
-  border-color: var(--color-red);
-  width: 40px;
-  height: 40px;
+  border: solid 1px #d8d8d8;
+  width: 48px;
+  height: 48px;
   margin-bottom: 0;
   margin-top: 1rem;
 }
 
 .add_to_cart_button .btn.btn-primary:hover{
   background: var(--color-red);
-  border-color: var(--color-red);
+  border: solid 1px var(--color-red);
 }
 
 .add_to_cart_button .btn.btn-primary:hover ~ .add_to_cart i::before {
@@ -65,20 +66,20 @@ font-size: 24px !important;
   padding: 0 !important;
 }
 
-#products .products{
-  display: flex;
-  justify-content: center;
+.product-description .product-title a:hover {
+  color: #dd1312;
 }
+
 
 #products .product-title{
   margin-bottom: 0;
 }
 
 </style>
-{* <pre>{print_r($product,1)}</pre> *}
-<article class="product-miniature js-product-miniature d-flex justify-content-center mr-auto col-lg-3" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+{* <pre>{print_r($product['category'],1)}</pre> *}
 
-  <div class="thumbnail-container" style="width: 526px;height:349px;display:flex;flex-direction:column;justify-content:center;align-items:center;">
+<article class="product-miniature js-product-miniature d-flex justify-content-center col-lg-3" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
+  <div class="thumbnail-container" style="width: 526px;height:349px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative">
     <div class="image_item_product" style="border: 0;">
         {block name='product_thumbnail'}
           <a href="{$product.url}" class="thumbnail product-thumbnail">
@@ -116,15 +117,15 @@ font-size: 24px !important;
     {block name='product_price_and_shipping'}
       {if $product.show_price}
         <div class="product_pricebox" style="width: 100%;display:flex;">
-          <div class="product-price-and-shipping" style="width: fit-content;height:30px;background:var(--color-red);border-radius:0 50px 50px 0;display:flex;align-items:center;min-width:150px;">
+          <div class="product-price-and-shipping" style="width: fit-content;height:31px;background:var(--color-red);border-radius:0 50px 50px 0;display:flex;align-items:center;min-width:200px;">
             {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
-            <span itemprop="price" class="price" style="color: white;font-size:18px;padding:0 0rem 0 1rem;">{$product.price}</span>
+            <span itemprop="price" class="price" style="color: white;padding:0 0rem 0 1rem;font: 600 21px/26px 'Open Sans', sans-serif;margin-right:0;">{$product.price}</span>
             
             {if $product.has_discount}
               {hook h='displayProductPriceBlock' product=$product type="old_price"}
 
-              <span class="regular-price" style="color: black;">{$product.regular_price}</span>
+              <span class="regular-price" style="color: #131313;font-weight:600;font-size:19px;padding-top:4px;">{$product.regular_price}</span>
               {*if $product.discount_type === 'percentage'}
                 <span class="discount-percentage">{$product.discount_percentage}</span>
               {/if*}
@@ -142,8 +143,8 @@ font-size: 24px !important;
     
       {block name='product_name'}
         {* <h4 class="h3 product-title"  itemprop="name"><a style="color: black;" href="{$product.url}">{$product.name|truncate:30:'...'}</a></h4> *}
-        <div style="display:flex;align-items:center;justify-content: space-between;">
-          <h4 class="h3 product-title"  itemprop="name" style="max-width: 450px;text-align:start;padding:0 1rem"><a style="color:var(--color-text);font-size:14px" href="{$product.url}">{$product.name}</a></h4>
+        <div style="display:flex;align-items:flex-start;justify-content: space-between;">
+          <h4 class="h3 product-title"  itemprop="name" style="max-width: 382px;text-align:start;padding:0 0.5rem; margin-top:11px;"><a style="color: #131313;font-size:14px;text-transform:uppercase;" href="{$product.url}">{$product.name}</a></h4>
           <div class="add_to_cart_button" style="margin-right: 1rem;">
   {*              <form action="{$urls.pages.cart}" method="post">*}
                 <div>
@@ -167,7 +168,23 @@ font-size: 24px !important;
       <div class="hook-reviews">
 	      {hook h='displayProductListReviews' product=$product}
 	  </div>
-      
+
+    {if count($product['attributes']) > 0}
+    <div class="variantionsProductList" style="color: red;text-align:center;display: block;line-height: 17px;color: red;text-align: center;font-size: 14px;margin-top: 5px;">
+      {l s='More variations available' d='Shop.Theme.Actions'}
+    </div>
+    {else}
+      <div class="variantionsProductList" style="min-height:17px"></div>
+    {/if}
+    
+
+    {if str_contains($product['category'] ,'clearance')}
+      <div style="position: absolute;top:1rem; left:0; width: fit-content;height:31px;background:var(--color-red);border-radius:0 50px 50px 0;display:flex;align-items:center;gap:0.5rem;min-width:200px;font-weight:600;font-size:18px;padding:0 0.5rem;">
+      <span style="color: #131313;font-weight:700">CLEARANCE</span>  
+      <span style="color: white;"> - 25%</span>  
+     
+      </div>
+    {/if}
       
       
     </div>

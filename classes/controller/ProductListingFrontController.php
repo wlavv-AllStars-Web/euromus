@@ -579,24 +579,27 @@ abstract class ProductListingFrontControllerCore extends ProductPresentingFrontC
     {
         $search = $this->getProductSearchVariables();
 
-        $rendered_products_top = $this->render('catalog/_partials/products-top', ['listing' => $search]);
-        $rendered_products = $this->render('catalog/_partials/products', ['listing' => $search]);
-        $rendered_products_bottom = $this->render('catalog/_partials/products-bottom', ['listing' => $search]);
+    $rendered_products_top = $this->render('catalog/_partials/products-top', ['listing' => $search]);
+    $rendered_products = $this->render('catalog/_partials/products', ['listing' => $search]);
+    $rendered_products_bottom = $this->render('catalog/_partials/products-bottom', ['listing' => $search]);
 
-        $data = array_merge(
-            [
-                'rendered_products_top' => $rendered_products_top,
-                'rendered_products' => $rendered_products,
-                'rendered_products_bottom' => $rendered_products_bottom,
-            ],
-            $search
-        );
+    $data = array_merge(
+        [
+            'rendered_products_top' => $rendered_products_top,
+            'rendered_products' => $rendered_products,
+            'rendered_products_bottom' => $rendered_products_bottom,
+        ],
+        $search
+    );
 
-        if (!empty($data['products']) && is_array($data['products'])) {
-            $data['products'] = $this->prepareProductArrayForAjaxReturn($data['products']);
-        }
+    // Include brand information in the response
+    $data['brand'] = $this->getBrandFromUrl();
 
-        return $data;
+    if (!empty($data['products']) && is_array($data['products'])) {
+        $data['products'] = $this->prepareProductArrayForAjaxReturn($data['products']);
+    }
+
+    return $data;
     }
 
     /**
@@ -649,7 +652,35 @@ abstract class ProductListingFrontControllerCore extends ProductPresentingFrontC
      *
      * @return ProductSearchQuery
      */
-    abstract protected function getProductSearchQuery();
+    // abstract protected function getProductSearchQuery();
+    protected function getProductSearchQuery()
+{
+    $query = new ProductSearchQuery();
+    
+    // Add other parameters as needed
+    $query->setPage((int) Tools::getValue('page', 1));
+    $query->setSortOrder(SortOrder::newFromString(Tools::getValue('order')));
+
+    // Extract brand from the URL
+    $brand = $this->getBrandFromUrl();
+    $query->setBrand($brand);
+
+    return $query;
+}
+
+private function getBrandFromUrl()
+{
+    $pathInfo = $_SERVER['REQUEST_URI'];
+    $urlParts = explode('/', trim($pathInfo, '/'));
+
+    // Extract the brand part from the URL
+    $brandIndex = array_search('brand', $urlParts);
+    if ($brandIndex !== false && isset($urlParts[$brandIndex + 1])) {
+        return $urlParts[$brandIndex + 1];
+    }
+
+    return null;
+}
 
     /**
      * We cannot assume that modules will handle the query,

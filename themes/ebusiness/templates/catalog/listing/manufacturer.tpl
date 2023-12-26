@@ -43,12 +43,12 @@
     </div>
 {/if} *}
 
-<div class="description_box" style="padding: 0 4rem; display:flex;align-items:center;">
-  <div class="webmaster-logomanufacturer col-2" style="width:300px;">
-    <img src="/img/m/{$manufacturer.id}-medium_default.jpg" style="width:80%;height: auto;"/>
+<div class="description_box" style="display:flex;align-items:center;">
+  <div class="webmaster-logomanufacturer" style="width:10%;padding: 0 1rem;">
+    <img src="/img/m/{$manufacturer.id}-medium_default.jpg" style="width:100%;height: auto;"/>
   </div>
   {if !empty($manufacturer.short_description)}
-    <div class="description_short" style="display: flex;flex-direction:column">
+    <div class="description_short" style="display: flex;flex-direction:column;width:80%;">
       <div id="manufacturer-short_description" class="text_description hiddenTextDescription" style="font-size:15px;line-height:22px;text-transform:uppercase;font-weight:500;padding:0 3rem;margin:0 !important;text-align:center;">
         {$manufacturer.short_description nofilter}
       </div>

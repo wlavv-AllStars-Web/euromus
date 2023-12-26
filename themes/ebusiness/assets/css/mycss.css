@@ -581,3 +581,31 @@ color:#ffffff;
   visibility: visible;
   opacity: 1;
 }
+
+
+#my-account .breadcrumb_wrapper {
+  padding: 0!important;
+  border-bottom: 0;
+}
+
+#authentication .login_page_content {
+  flex-direction: row-reverse !important;
+}
+
+.cart-preview .cart-products-count {
+  background-color: transparent !important;
+  border-radius: 50% 50% 50% 50%;
+  color: #FFFFFF;
+  font-size: 15px !important;
+  height: 14px;
+  line-height: 14px;
+  position: absolute;
+  right: -15px;
+  text-align: center;
+  top: 3px;
+  width: 14px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  font-weight: normal;
+}

@@ -26,6 +26,7 @@
 
 <form action="{$action}" id="customer-form" class="js-customer-form" method="post">
   <section>
+    {* <pre>{print_r($formFields,1)}</pre> *}
     {block "form_fields"}
       {foreach from=$formFields item="field"}
         {block "form_field"}
@@ -33,6 +34,10 @@
         {/block}
       {/foreach}
     {/block}
+    
+  
+  
+  
   </section>
 
   <footer class="form-footer clearfix">
@@ -43,5 +48,25 @@
       </button>
     {/block}
   </footer>
+<style>
+#registration #main{
+  width: 100%;
+}
+#registration #content {
+  border: none;
+}
+#identity #main{
+  width: 100%;
+}
+#identity #content {
+  border: none;
+}
+#identity .breadcrumb_wrapper {
+  padding: 0;
+  border-bottom: 0;
+}
+</style>
+
+
 
 </form>

@@ -9054,7 +9054,7 @@ body#checkout #gift_message {
   text-decoration: line-through;
 }
 .product-price-and-shipping span {
-  margin: 0 5px;
+  margin: 0 2px;
 }
 .product-description .hook-reviews {
   margin-bottom: 0.5rem;
@@ -14065,6 +14065,8 @@ body .product-list-reviews {
 #authentication .breadcrump {
 
 }
+
+
 
 
 /*# sourceMappingURL=theme.css.map*/

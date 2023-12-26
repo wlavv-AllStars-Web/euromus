@@ -23,6 +23,7 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 <nav class="pagination" style="margin-bottom: 0;border-bottom:0;">
+
   <div class="col-md-12" style="display: flex;justify-content:center;">
     <ul class="page-list clearfix">
       {foreach from=$pagination.pages item="page"}
