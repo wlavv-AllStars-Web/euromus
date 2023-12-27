@@ -22,9 +22,16 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="col-md-6 links">
-  <div class="row">
+ {* <pre>{print_r($linkBlocks,1)}</pre> *}
+ 
+ 
   {foreach $linkBlocks as $linkBlock}
+    {if $linkBlock['title'] === 'Support'}
+      <div class="links">
+     {else}
+      <div class="col-md-6 links">
+      {/if}
+      <div class="row">
     <div class="col-md-6 wrapper">
       <p class="h3 hidden-sm-down">{$linkBlock.title}</p>
       <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_{$linkBlock.id}" data-toggle="collapse">
@@ -52,6 +59,7 @@
         {/foreach}
       </ul>
     </div>
+    </div>
+    </div>
   {/foreach}
-  </div>
-</div>
+
