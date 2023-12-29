@@ -119,6 +119,8 @@ global_settings:
         - ps_featuredproducts
       displayProductActions:
         - blockwishlist
+      displayCompact:
+        - ukoocompact
 
   image_types:
     cart_default:

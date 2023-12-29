@@ -28,6 +28,8 @@
       {if $cart.products_count > 0}
         <a rel="nofollow" aria-label="{l s='Shopping cart link containing %nbProducts% product(s)' sprintf=['%nbProducts%' => $cart.products_count] d='Shop.Theme.Checkout'}" href="{$cart_url}">
       {/if}
+
+        <i class="material-icons search" aria-hidden="true">search</i>
         <i class="material-icons shopping-cart" aria-hidden="true">shopping_cart</i>
         {* <span class="hidden-sm-down">{l s='Cart' d='Shop.Theme.Checkout'}</span>
         <span class="cart-products-count">({$cart.products_count})</span> *}
@@ -38,7 +40,45 @@
   </div>
 </div>
 
+<script>
+
+// document.addEventListener("DOMContentLoaded", function() {
+//   const buttonSearchMobile = document.querySelector('#_desktop_cart .search');
+//   const search_widget = document.getElementById('search_widget');
+
+//   buttonSearchMobile.addEventListener('click', () => {
+//     if(search_widget.style.display === 'none'){
+//       search_widget.style.display = 'block'
+//     }else{
+//       search_widget.style.display = 'none'
+//     }
+//   });
+// });
+
+document.addEventListener("DOMContentLoaded", function() {
+  const buttonSearchMobile = document.querySelector('#_desktop_cart .search');
+  const search_widget = document.getElementById('search_widget');
+
+  buttonSearchMobile.addEventListener('click', () => {
+    const computedStyle = window.getComputedStyle(search_widget);
+
+    if (computedStyle.display === 'none') {
+      search_widget.style.display = 'block';
+    } else {
+      search_widget.style.display = 'none';
+    }
+  });
+});
+
+
+</script>
+
+
 <style>
+
+
+
+
 #_desktop_cart .shopping-cart {
   font-size: 2em;
   width:55px;

@@ -23,6 +23,9 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 <div class="container">
+<div id="scrollToTopBtn" onclick="scrollToTop()" >
+            <i class="fa-solid fa-arrow-up"></i>
+    </div>
   <div class="row">
     {block name='hook_footer_before'}
       {hook h='displayFooterBefore'}
@@ -30,11 +33,38 @@
   </div>
 </div>
 <div class="footer-container">
-  <div class="container">
+  <div class="helpFooter ">
+    <h3>{l s='Need assistance?' d='Shop.Theme.Global'}</h3>
+    <p>{l s='Contact us' d='Shop.Theme.Global'}&#160;<strong>{l s='by phone' d='Shop.Theme.Global'}&#160;</strong>{l s='at' d='Shop.Theme.Global'}&#160;<strong>+39 049 8597636</strong>&#160;{l s='or via' d='Shop.Theme.Global'} <strong class="whatsappStrong">Whatsapp</strong>&#160;{l s='always at the same number. We are available Monday through Friday, 8:30 am to 1 pm and 2:30 pm to 7 pm GMT+1' d='Shop.Theme.Global'}</p>
+    <div class="phone">
+    <i class="fa-solid fa-phone"></i>
+      049 8597636
+    </div>
+  </div>
+  <div class="lines">
+    <div class="line1"></div>
+    <div class="line2"></div>
+    <div class="line3"></div>
+  </div>
+  <div class="container-md container-fluid">
     <div class="row">
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
+      <div class="socials hidden-md-down">
+        <a aria-label="Facebook" id="footer_facebook" class="social-icon" style="margin-right: 5px;" href="https://www.facebook.com/allstarsmotorsport" target="_NEW">
+          <i class="fa-brands fa-square-facebook"></i>
+        </a>
+        <a aria-label="Instagram" id="footer_insta" class="social-icon" style="margin-right: 5px;" href="https://instagram.com/allstarsmotorsport" target="_NEW">
+          <i class="fa-brands fa-instagram"></i>
+        </a>
+        <a aria-label="Flickr" id="footer_flickr" class="social-icon" style="margin-right: 5px;" href="https://www.flickr.com/photos/allstarsmotorsport/" target="_NEW">
+          <i class="fa-brands fa-flickr"></i>
+        </a>
+        <a aria-label="Youtube" id="footer_youtube" class="social-icon" style="margin-right: 5px;" href="https://www.youtube.com/user/allstarsmotorsport" target="_NEW">
+          <i class="fa-brands fa-youtube"></i>
+        </a>
+      </div>
     </div>
     <div class="row">
       {block name='hook_footer_after'}
@@ -54,3 +84,24 @@
     </div>
   </div>
 </div>
+
+<script>
+const buttonTop = document.querySelector('#scrollToTopBtn')
+const windowHeight = window.innerHeight
+
+// document.addEventListener("scroll", (event) => {
+//   if(windowHeight < window.innerHeight){
+//   buttonTop.style.display = "flex"
+// }else {
+//   buttonTop.style.display = "none"
+// }
+// })
+
+
+function scrollToTop() {
+  window.scrollTo({
+  top: 0,
+  behavior: 'smooth',
+});
+}
+</script>

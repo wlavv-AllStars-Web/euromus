@@ -29,11 +29,10 @@
     {if $linkBlock['title'] === 'Support'}
       <div class="links">
      {else}
-      <div class="col-md-6 links">
+      <div class="col-md-6 col-lg-12 links">
       {/if}
       <div class="row">
-    <div class="col-md-6 wrapper">
-      <p class="h3 hidden-sm-down">{$linkBlock.title}</p>
+    <div class="col-md-6 col-lg-12 wrapper">
       <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_{$linkBlock.id}" data-toggle="collapse">
         <span class="h3">{$linkBlock.title}</span>
         <span class="float-xs-right">
@@ -46,6 +45,7 @@
       <ul id="footer_sub_menu_{$linkBlock.id}" class="collapse">
         {foreach $linkBlock.links as $link}
           <li>
+          
             <a
                 id="{$link.id}-{$linkBlock.id}"
                 class="{$link.class}"
@@ -53,6 +53,7 @@
                 title="{$link.description}"
                 {if !empty($link.target)} target="{$link.target}" {/if}
             >
+            <i class="fa-solid fa-circle-arrow-right hidden-md-down"></i>
               {$link.title}
             </a>
           </li>

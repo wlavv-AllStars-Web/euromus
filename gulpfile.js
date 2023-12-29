@@ -1,6 +1,6 @@
 const gulp = require('gulp');
 
-gulp.task('default', gulp.parallel('serve:asm', 'serve:asd'));
+gulp.task('default', gulp.parallel('serve:asm', 'serve:asd', 'serve:euromus'));
 
 gulp.task('serve:asm', (done) => {
   const bs = require('browser-sync').create();
@@ -11,6 +11,18 @@ gulp.task('serve:asm', (done) => {
   });
 
   gulp.watch('themes/ebusiness/**/*.*').on('change', bs.reload);
+  done();
+});
+
+gulp.task('serve:euromus', (done) => {
+  const bs = require('browser-sync').create();
+  bs.init({
+    proxy: 'http://euromus.local',
+    port: 5001,
+    host: '192.168.1.64',
+  });
+
+  gulp.watch('themes/classic/**/*.*').on('change', bs.reload);
   done();
 });
 
