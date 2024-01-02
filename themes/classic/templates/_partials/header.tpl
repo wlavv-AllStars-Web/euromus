@@ -85,15 +85,15 @@
         </div>
         <div class="header-top-right col-md-10 col-sm-12 position-static">
           {hook h='displayTop'}
-          <a href="" class="btn-header">
+          {* <a href="" class="btn-header">
             <h5>{l s='MAKE MODELS' d='Shop.Theme.Global'}</h5>
             <small>{l s='Make Model List' d='Shop.Theme.Global'}</small>
           </a>
           <a href="" class="btn-header">
             <h5>{l s='GET A QUOTE' d='Shop.Theme.Global'}</h5>
             <small>{l s='Online Parts Quote' d='Shop.Theme.Global'}</small>
-          </a>
-          {hook h='displayNav2'}
+          </a> *}
+          {* {hook h='displayNav2'} *}
         </div>
       </div>
       
@@ -364,7 +364,8 @@ window.onclick = function(event) {
 .header-nav .right-nav {
   align-items: unset;
   gap: 2rem;
-  margin-top: 1rem;
+  /* margin-top: 1rem; */
+  align-items: center !important;
 }
 .header-nav .right-nav .links ul{
   margin-bottom: 0;
@@ -373,6 +374,8 @@ window.onclick = function(event) {
 .header-nav .right-nav .links .h3{
   display: none;
 }
+
+
 .header-top {
   padding: 0 !important;
   /* max-height: 117px; */
@@ -380,6 +383,7 @@ window.onclick = function(event) {
 }
 .header-top-right {
   display: flex !important;
+  justify-content: center;
 }
 
 .header-top .container{

@@ -33,14 +33,14 @@
   </div>
 </div>
 <div class="footer-container">
-  <div class="helpFooter ">
+  {* <div class="helpFooter ">
     <h3>{l s='Need assistance?' d='Shop.Theme.Global'}</h3>
     <p>{l s='Contact us' d='Shop.Theme.Global'}&#160;<strong>{l s='by phone' d='Shop.Theme.Global'}&#160;</strong>{l s='at' d='Shop.Theme.Global'}&#160;<strong>+39 049 8597636</strong>&#160;{l s='or via' d='Shop.Theme.Global'} <strong class="whatsappStrong">Whatsapp</strong>&#160;{l s='always at the same number. We are available Monday through Friday, 8:30 am to 1 pm and 2:30 pm to 7 pm GMT+1' d='Shop.Theme.Global'}</p>
     <div class="phone">
     <i class="fa-solid fa-phone"></i>
       049 8597636
     </div>
-  </div>
+  </div> *}
   <div class="lines">
     <div class="line1"></div>
     <div class="line2"></div>
@@ -86,22 +86,23 @@
 </div>
 
 <script>
-const buttonTop = document.querySelector('#scrollToTopBtn')
-const windowHeight = window.innerHeight
+document.addEventListener("scroll", (event) => {
+  const buttonTop = document.querySelector('#scrollToTopBtn')
+  const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
+  if(currentScroll > 0){
+    buttonTop.style.display = "flex";
+    function scrollToTop() {
+        window.scrollTo({
+        top: 0,
+        behavior: 'smooth',
+      });
+    }
+  } else {
+    buttonTop.style.display = "none";
+  }
+})
 
-// document.addEventListener("scroll", (event) => {
-//   if(windowHeight < window.innerHeight){
-//   buttonTop.style.display = "flex"
-// }else {
-//   buttonTop.style.display = "none"
-// }
-// })
 
 
-function scrollToTop() {
-  window.scrollTo({
-  top: 0,
-  behavior: 'smooth',
-});
-}
+
 </script>

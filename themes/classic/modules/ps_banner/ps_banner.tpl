@@ -79,11 +79,6 @@
       <button class="btn" disabled>SEARCH</button>
     </div>
   </div>
-  <div class="selectVehicle-links">
-    <a href="">Search by Brand</a>
-    <div>|</div>
-    <a href="">Search by Category</a>
-  </div>
   <div class="counter-products">
     <span>3.811.039</span> products available in the catalog
   </div>
@@ -170,124 +165,241 @@
 </div>
 
 <div class="bannersHomeMobile">
-  <div class="card-img"><img src="/img/eurmuscle/bannersHome/banner_mini1.jpg" /></div>
-  <div class="card-img"><img src="/img/eurmuscle/bannersHome/banner_mini2.png" /></div>
-  <div class="card-img"><img src="/img/eurmuscle/bannersHome/banner_mini3.png" /></div>
-  <div class="card-img"><img src="/img/eurmuscle/bannersHome/banner_mini3.png" /></div>
-  <div class="card-img"><img src="/img/eurmuscle/bannersHome/banner_mini2.png" /></div>
-  <div class="card-img"><img src="/img/eurmuscle/bannersHome/banner_mini1.jpg" /></div>
-  <div class="card-img"><img src="/img/eurmuscle/bannersHome/banner_mini2.png" /></div>
-  <div class="card-img"><img src="/img/eurmuscle/bannersHome/banner_mini3.png" /></div>
+  <a class="card-img" href="">
+    <img src="/img/eurmuscle/bannersHome/banner_mini1.jpg" />
+    <div class="layerHovermobile">Jeep Wrangler</div>
+  </a>
+  <a class="card-img">
+  <img src="/img/eurmuscle/bannersHome/banner_mini2.png" />
+  <div class="layerHovermobile">Ram 1500</div>
+  </a>
+  <a class="card-img">
+  <img src="/img/eurmuscle/bannersHome/banner_mini3.png" />
+  <div class="layerHovermobile">Jeep Wrangler</div>
+  </a>
 </div>
 
-  <div class="cars-container" style="min-height:100dvh;display:flex;justify-content:center;padding:3rem 0">
-    <div class="cars-cards col-12" style="max-width:1440px;width:100%;display:flex;flex-wrap:wrap;">
+  <div class="cars-container" style="display:flex;justify-content:center;padding:3rem 0">
+    <div class="cars-cards col-12">
       <div class="card col-lg-3" >
         <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Ford-Mustang-Shelby-GT500.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-title"><a href="">Ford Mustang</a></div>
-          <div class="card-text">
-            <div class="card-link"><a href="">3700 V6</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 5000 V8 Coyote </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 4600 V8</a><span>(2005 - 2009)</span></div>
+        <div class="card-title"><a href="">Ford Mustang</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">3700 V6</a><span>(2013 - 2014)</span></div>
+                    <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged </a><span>(2013 - 2014)</span></div>
+                    <div class="card-link"><a href="">GT 5000 V8 Coyote </a><span>(2013 - 2014)</span></div>
+                    <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged</a><span>(2013 - 2014)</span></div>
+                    <div class="card-link"><a href="">GT 4600 V8</a><span>(2005 - 2009)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="#" class="btn btn-outline-secondary">{l s='See all versions' d='Shop.Theme.Banner'}</a>
-        </div>
+
+        
       </div>
       <div class="card col-lg-3" >
         <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/2020-chevrolet-camaro-zl1.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-title"><a href="">Chevrolet Camaro</a></div>
-          <div class="card-text">
-            <div class="card-link"><a href="">SS 6200 V8 </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2000 L4 Ecotec </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">SS 6200 V8 376 Cu In</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">3600 V6 217 Cu In </a><span>(2013 - 2014)</span></div>
+        <div class="card-title"><a href="">Chevrolet Camaro</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">SS 6200 V8</a><span>(2016 -)</span></div>
+                    <div class="card-link"><a href="">2000 L4 Ecotec</a><span>(2016 -)</span></div>
+                    <div class="card-link"><a href="">SS 6200 V8 376 Cu In </a><span>(2010 - 2015)</span></div>
+                    <div class="card-link"><a href="">3600 V6 217 Cu In</a><span>(2010 - 2011)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="#" class="btn btn-outline-secondary">{l s='See all versions' d='Shop.Theme.Banner'}</a>
-        </div>
+
+        
       </div>
       <div class="card col-lg-3" >
         <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/2016-dodge-challenger-hellcat-2.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-title"><a href="">Dodge Challenger</a></div>
-          <div class="card-text">
-            <div class="card-link"><a href="">6200 V8 Supercharged </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">5700 V8 HEMI </a><span>(2013 - 2014)</span></div>
+        <div class="card-title"><a href="">Dodge Challenger</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true" aria-controls="collapseThree" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">6200 V8 Supercharged</a><span>(2015)</span></div>
+                    <div class="card-link"><a href="">5700 V8 HEMI</a><span>(2009 -)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="#" class="btn">{l s='See all versions' d='Shop.Theme.Banner'}</a>
-        </div>
+
+        
       </div>
       <div class="card col-lg-3" >
         <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/2020-chevrolet-corvette-c8.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-title"><a href="">Chevrolet Corvette</a></div>
-          <div class="card-text">
-            <div class="card-link"><a href="">C8 6200 V8</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">C7 6200 V8 </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">C6 Z06 7000 V8</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">C6 6000 V8</a><span>(2013 - 2014)</span></div>
+        <div class="card-title"><a href="">Chevrolet Corvette</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true" aria-controls="collapseFour" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseFour" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">C8 6200 V8</a><span>(2020 -)</span></div>
+                    <div class="card-link"><a href="">C7 6200 V8</a><span>(2014 - 2018)</span></div>
+                    <div class="card-link"><a href="">C6 Z06 7000 V8</a><span>(2006 - 2013)</span></div>
+                    <div class="card-link"><a href="">C6 6000 V8</a><span>(2005 - 2007)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="#" class="btn">{l s='See all versions' d='Shop.Theme.Banner'}</a>
-        </div>
+
+        
       </div>
       <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Ford-Mustang-Shelby-GT500.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-title"><a href="">Ford Mustang</a></div>
-          <div class="card-text">
-            <div class="card-link"><a href="">3700 V6</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 5000 V8 Coyote </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 4600 V8</a><span>(2005 - 2009)</span></div>
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/2019-Ram-1500.png" alt="Card image cap">
+        <div class="card-title"><a href="">Ram 1500</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
+                    <div class="card-link"><a href="">DS 5700 V8 HEMI Classic</a><span>(2013 - 2022)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
-          <a href="#" class="btn">{l s='See all versions' d='Shop.Theme.Banner'}</a>
+
+        
+      </div>
+        
+    </div>
+  </div>
+
+  {* teste *}
+
+  {* <div class="bd-example">
+  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+      <div class="carousel-item active">
+        <img src="/img/eurmuscle/cardCarsHome/2016-dodge-challenger-hellcat-2.png" class="d-block w-100" alt="...">
+        <div class="carousel-caption d-none d-md-block">
+          <h5>First slide label</h5>
+          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
         </div>
       </div>
-      <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Ford-Mustang-Shelby-GT500.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-title"><a href="">Ford Mustang</a></div>
-          <div class="card-text">
-            <div class="card-link"><a href="">3700 V6</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 5000 V8 Coyote </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 4600 V8</a><span>(2005 - 2009)</span></div>
-          </div>
-          <a href="#" class="btn">{l s='See all versions' d='Shop.Theme.Banner'}</a>
-        </div>
+      <div class="carousel-item">
+      <img src="/img/eurmuscle/cardCarsHome/2016-dodge-challenger-hellcat-2.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
       </div>
-      <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Ford-Mustang-Shelby-GT500.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-title"><a href="">Ford Mustang</a></div>
-          <div class="card-text">
-            <div class="card-link"><a href="">3700 V6</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 5000 V8 Coyote </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 4600 V8</a><span>(2005 - 2009)</span></div>
-          </div>
-          <a href="#" class="btn">{l s='See all versions' d='Shop.Theme.Banner'}</a>
-        </div>
       </div>
-      <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Ford-Mustang-Shelby-GT500.png" alt="Card image cap">
-        <div class="card-body">
-          <div class="card-title"><a href="">Ford Mustang</a></div>
-          <div class="card-text">
-            <div class="card-link"><a href="">3700 V6</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 5000 V8 Coyote </a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged</a><span>(2013 - 2014)</span></div>
-            <div class="card-link"><a href="">GT 4600 V8</a><span>(2005 - 2009)</span></div>
-          </div>
-          <a href="#" class="btn">{l s='See all versions' d='Shop.Theme.Banner'}</a>
+      <div class="carousel-item">
+      <img src="/img/eurmuscle/cardCarsHome/2016-dodge-challenger-hellcat-2.png" class="d-block w-100" alt="...">
+      <div class="carousel-caption d-none d-md-block">
+        <h5>First slide label</h5>
+        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
+      </div>
+      </div>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
+      <span class="fa fa-chevron-left" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
+      <span class="fa fa-chevron-right" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+</div> *}
+
+  {* fimt este *}
+
+  <div class="videosContainer">
+    <div class="video1">
+        <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+        <img src="/img/eurmuscle/bannersHome/banner3.png" />
+        <div class="play">
+          <img class="image_play" alt="video player" src="/img/youtube_play.png" />
         </div>
+        </div>
+        <div style="display:none">
+            <iframe width="420" height="315" frameborder="0" allowfullscreen
+            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
+          </iframe>
+        </div>
+    </div>
+    <div class="product" style="width: 420px;height:315px;background:#fff;display:flex;justify-content:center;align-items:center;">
+      <h3>Produto</h3>
+    </div>
+    <div class="video2">
+      <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+      <img src="/img/eurmuscle/bannersHome/banner3.png" />
+      <div class="play">
+        <img class="image_play" alt="video player" src="/img/youtube_play.png" />
+      </div>
+      </div>
+      <div style="display:none">
+          <iframe width="420" height="315" allowfullscreen frameborder="0"
+          src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
+        </iframe>
       </div>
     </div>
   </div>
@@ -345,10 +457,152 @@ window.addEventListener("load", () => {
 
   // falta o submit event
 
+  // hover youtube
 
-  
+  const videosContainer = Array.from(document.querySelector('.videosContainer').children);
+
+videosContainer.forEach((item) => {
+  const img = item.querySelector('.play img');
+  if(img) {
+    item.addEventListener('mouseover', () => {
+      img.setAttribute('src', "/img/youtube_play_hover.png")
+    });
+    item.addEventListener('mouseleave', () => {
+      img.setAttribute('src', "/img/youtube_play.png")
+    });
+  }
+});
+
+
 
 });
+// javascript carsmobile
+
+
+if(screen.width < 560){
+                //  function toggleStatus(element){
+                //      element.parentElement.classList.toggle("show");
+  //               //  }
+  const modelCars = document.querySelectorAll('.cars-cards');
+    modelCars.forEach(function(container) {
+      // console.log(container.children.length)
+      if (container.children.length > 1) {
+        // container.classList.add('hasMultipleChildren');
+
+                    
+                            container.querySelectorAll('.card').forEach((child, index) => {
+                              // console.log(child)
+                            //     const versionsParent = document.querySelectorAll("#container_version_parent");
+                            //     versionsParent.forEach((item) => {
+                            //         item.style.background= "#282828";
+                            //         item.style.borderRadius= "5px";
+                            //         item.style.boxShadow = "2px 4px 4px #444444";
+                                    
+                                    
+                            //     });
+                                
+                                child.style.position = "relative";
+                                const div = document.createElement('div');
+                                // div.innerHTML += `<span style="font-weight:bold;font-size:1.25rem;">index + 1</span><span style="color: #222222;font-size:1rem;"> / container.children.length</span>`;
+
+                                // div.style.color = "red";
+                                // div.style.fontWeight = "regular";
+                                // div.style.textAlign = "center";
+                                
+                                // div.style.margin = "0 0 1rem 0";
+                                
+                            //     // arrow right
+                                    const arrowRight = document.createElement('span')
+                                    arrowRight.classList.add("fa");
+                                    arrowRight.classList.add("fa-chevron-right");
+                                    // arrowRight.textContent += 'arrow_right';
+                                    arrowRight.style.marginLeft = "1rem";
+                                    arrowRight.style.fontSize = "30px";
+                                    arrowRight.style.right = "1rem";
+                                    arrowRight.style.bottom = "0.85rem";
+                                    arrowRight.style.color = "#14654d";
+                                    arrowRight.style.background = "rgba(255, 255, 255, 0.4)";
+                                    arrowRight.style.padding = "0.25rem";
+                                    arrowRight.style.borderRadius = "5px";
+                                    arrowRight.style.boxShadow = "2px 4px 4px #444444";
+                                    arrowRight.style.position = "absolute";
+                                    arrowRight.style.width = "2.5rem";
+                                    arrowRight.style.height = "2.5rem";
+                                
+                            //     // arrow left
+                                
+                                    const arrowLeft = document.createElement('span');
+                                    arrowLeft.classList.add("fa");
+                                    arrowLeft.classList.add("fa-chevron-left");
+                                    // arrowLeft.textContent += 'arrow_left';
+                                    arrowLeft.style.fontSize = "30px";
+                                    arrowLeft.style.left = "1rem";
+                                    arrowLeft.style.bottom = "0.85rem";
+                                    arrowLeft.style.color = "#14654d";
+                                    arrowLeft.style.background = "rgba(255, 255, 255, 0.4)";
+                                    arrowLeft.style.padding = "0.25rem";
+                                    arrowLeft.style.borderRadius = "5px";
+                                    arrowLeft.style.boxShadow = "2px 4px 4px #444444";
+                                    arrowLeft.style.position = "absolute";
+                                    arrowLeft.style.width = "2.5rem";
+                                    arrowLeft.style.height = "2.5rem";
+                                    
+                                
+                                if (index === 0) {
+                                    
+                                    arrowRight.addEventListener('click', function() {
+                                    
+                                        if (index < container.children.length - 1) {
+                                            
+                                            const nextIndex = index + 1;
+                                            container.children[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start'  });
+                                        }
+                                    });
+                                    child.appendChild(arrowRight)
+                                } else if(index == container.children.length - 1){
+                                    
+                                    
+                                    arrowLeft.addEventListener('click', function() {
+                                        if (index == container.children.length - 1) {
+                                            
+                                            const prevIndex = index - 1;
+                                            container.children[prevIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start'  });
+                                        }
+                                    });
+                                    
+                                    child.appendChild(arrowLeft)
+                                }else{
+                                    
+                                    
+                                    arrowLeft.addEventListener('click', function() {
+                                        
+                                            
+                                            const prevIndex = index - 1;
+                                            container.children[prevIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start'  });
+                                    
+                                    });
+                                    arrowRight.addEventListener('click', function() {
+                                    
+                                        if (index < container.children.length - 1) {
+                                            
+                                            const nextIndex = index + 1;
+                                            container.children[nextIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'start'  });
+                                        }
+                                    });
+                                
+                                    child.appendChild(arrowLeft)
+                                    child.appendChild(arrowRight)
+                                    
+                                }
+                    
+                                child.appendChild(div);
+                                
+                               
+                            
+      });
+    }
+  });
+}
 
 </script>
 
