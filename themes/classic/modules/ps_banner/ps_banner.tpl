@@ -82,7 +82,7 @@
   <div class="counter-products">
     <span>3.811.039</span> products available in the catalog
   </div>
-  <div class="mobileLine"></div>
+  {* <div class="mobileLine"></div>
   <div class="mobilePartsCar">
     <div class="mobilePartsCar-text">
       <p>Precisa de fazer uma reparação, tem uma lista de peças ou não consegue encontrar o que precisa?<br>
@@ -92,7 +92,7 @@
     <div class="mobilePartsCar-button">
       <a class="btn">Orçamento de peças sobresselentes</a>
     </div>
-  </div>
+  </div> *}
 </div>
 
 </div>
@@ -179,7 +179,7 @@
   </a>
 </div>
 
-  <div class="cars-container" style="display:flex;justify-content:center;padding:3rem 0">
+  <div class="cars-container">
     <div class="cars-cards col-12">
       <div class="card col-lg-3" >
         <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Ford-Mustang-Shelby-GT500.png" alt="Card image cap">
@@ -372,6 +372,7 @@
 
   {* fimt este *}
 
+
   <div class="videosContainer">
     <div class="video1">
         <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
@@ -381,13 +382,10 @@
         </div>
         </div>
         <div style="display:none">
-            <iframe width="420" height="315" frameborder="0" allowfullscreen
+            <iframe frameborder="0" allowfullscreen
             src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
           </iframe>
         </div>
-    </div>
-    <div class="product" style="width: 420px;height:315px;background:#fff;display:flex;justify-content:center;align-items:center;">
-      <h3>Produto</h3>
     </div>
     <div class="video2">
       <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
@@ -397,7 +395,20 @@
       </div>
       </div>
       <div style="display:none">
-          <iframe width="420" height="315" allowfullscreen frameborder="0"
+          <iframe allowfullscreen frameborder="0"
+          src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
+        </iframe>
+      </div>
+    </div>
+    <div class="video3">
+      <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+      <img src="/img/eurmuscle/bannersHome/banner3.png" />
+      <div class="play">
+        <img class="image_play" alt="video player" src="/img/youtube_play.png" />
+      </div>
+      </div>
+      <div style="display:none">
+          <iframe allowfullscreen frameborder="0"
           src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
         </iframe>
       </div>
@@ -461,17 +472,18 @@ window.addEventListener("load", () => {
 
   const videosContainer = Array.from(document.querySelector('.videosContainer').children);
 
-videosContainer.forEach((item) => {
-  const img = item.querySelector('.play img');
-  if(img) {
-    item.addEventListener('mouseover', () => {
-      img.setAttribute('src', "/img/youtube_play_hover.png")
-    });
-    item.addEventListener('mouseleave', () => {
-      img.setAttribute('src', "/img/youtube_play.png")
-    });
-  }
-});
+  videosContainer.forEach((item) => {
+    const img = item.querySelector('.play img');
+    if(img) {
+      item.addEventListener('mouseover', () => {
+        img.setAttribute('src', "/img/youtube_play_hover.png")
+      });
+      item.addEventListener('mouseleave', () => {
+        img.setAttribute('src', "/img/youtube_play.png")
+      });
+    }
+  });
+
 
 
 
@@ -491,27 +503,11 @@ if(screen.width < 560){
 
                     
                             container.querySelectorAll('.card').forEach((child, index) => {
-                              // console.log(child)
-                            //     const versionsParent = document.querySelectorAll("#container_version_parent");
-                            //     versionsParent.forEach((item) => {
-                            //         item.style.background= "#282828";
-                            //         item.style.borderRadius= "5px";
-                            //         item.style.boxShadow = "2px 4px 4px #444444";
-                                    
-                                    
-                            //     });
+
                                 
                                 child.style.position = "relative";
                                 const div = document.createElement('div');
-                                // div.innerHTML += `<span style="font-weight:bold;font-size:1.25rem;">index + 1</span><span style="color: #222222;font-size:1rem;"> / container.children.length</span>`;
 
-                                // div.style.color = "red";
-                                // div.style.fontWeight = "regular";
-                                // div.style.textAlign = "center";
-                                
-                                // div.style.margin = "0 0 1rem 0";
-                                
-                            //     // arrow right
                                     const arrowRight = document.createElement('span')
                                     arrowRight.classList.add("fa");
                                     arrowRight.classList.add("fa-chevron-right");
@@ -519,12 +515,13 @@ if(screen.width < 560){
                                     arrowRight.style.marginLeft = "1rem";
                                     arrowRight.style.fontSize = "30px";
                                     arrowRight.style.right = "1rem";
-                                    arrowRight.style.bottom = "0.85rem";
+                                    arrowRight.style.top = "50%";
+                                    arrowRight.style.transform = "translateY(-50%)";
                                     arrowRight.style.color = "#14654d";
-                                    arrowRight.style.background = "rgba(255, 255, 255, 0.4)";
+                                    // arrowRight.style.background = "rgba(255, 255, 255, 0.4)";
                                     arrowRight.style.padding = "0.25rem";
                                     arrowRight.style.borderRadius = "5px";
-                                    arrowRight.style.boxShadow = "2px 4px 4px #444444";
+                                    // arrowRight.style.boxShadow = "2px 4px 4px #444444";
                                     arrowRight.style.position = "absolute";
                                     arrowRight.style.width = "2.5rem";
                                     arrowRight.style.height = "2.5rem";
@@ -537,12 +534,13 @@ if(screen.width < 560){
                                     // arrowLeft.textContent += 'arrow_left';
                                     arrowLeft.style.fontSize = "30px";
                                     arrowLeft.style.left = "1rem";
-                                    arrowLeft.style.bottom = "0.85rem";
+                                    arrowLeft.style.top = "50%";
+                                    arrowLeft.style.transform = "translateY(-50%)";
                                     arrowLeft.style.color = "#14654d";
-                                    arrowLeft.style.background = "rgba(255, 255, 255, 0.4)";
+                                    // arrowLeft.style.background = "rgba(255, 255, 255, 0.4)";
                                     arrowLeft.style.padding = "0.25rem";
                                     arrowLeft.style.borderRadius = "5px";
-                                    arrowLeft.style.boxShadow = "2px 4px 4px #444444";
+                                    // arrowLeft.style.boxShadow = "2px 4px 4px #444444";
                                     arrowLeft.style.position = "absolute";
                                     arrowLeft.style.width = "2.5rem";
                                     arrowLeft.style.height = "2.5rem";

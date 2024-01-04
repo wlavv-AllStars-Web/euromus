@@ -54,19 +54,48 @@
   </div>
 
   <script>
-  const inputSearch = document.querySelector(".searchbarInput");
-  const iconSearch = document.querySelector(".search")
-  // const log = document.getElementById("log");
+  document.addEventListener('DOMContentLoaded', () => {
+    if(window.screen.width > 580) {
+      const inputSearch = document.querySelector(".header-top-right-desktop #search_widget .searchbarInput");
+      const iconSearch = document.querySelector(".header-top-right-desktop #search_widget .search")
+      inputSearch.style.border = "1px solid #103054"
+      // const log = document.getElementById("log");
 
-  inputSearch.addEventListener("input", updateValue);
-  function updateValue(e) {
-    inputSearch.setAttribute("value", e.target.value);
-    if(inputSearch.value.length != 0) {
-      iconSearch.style.background = "#157347"
-    }else {
-      iconSearch.style.background = "#768397"
+    inputSearch.addEventListener("input", updateValue);
+    function updateValue(e) {
+      inputSearch.setAttribute("value", e.target.value);
+      if(inputSearch.value.length != 0) {
+        iconSearch.style.background = "#04aa6d";
+        iconSearch.style.cursor = "pointer";
+        iconSearch.style.color = "#fff";
+        iconSearch.style.borderColor = "#04aa6d";
+      }else {
+        iconSearch.style.background = "none"
+        iconSearch.style.color = "#103054";
+        iconSearch.style.borderColor = "#103054";
+      }
     }
+
+    document.querySelector('#search_widget i.search').addEventListener('click', function() {
+      document.querySelector('#search_widget form').submit();
+    });
+
+  } else {
+    // const inputSearch = document.querySelector("#_mobile_cart .searchbarInput");
+    // const iconSearch = document.querySelector(".header-nav .mobile #_mobile_cart .search")
+    //     if(iconSearch && inputSearch) {
+    //       iconSearch.addEventListener('click', () => {
+    //         console.log("deu")
+    //           document.querySelector('.header-top .header-top-right #search_widget form').submit();
+    //         })
+    //     }
+   
   }
+
+  })
+  
+
+
   </script>
 
   <style>
@@ -89,4 +118,28 @@
     color: #fff;
     border-radius: 0 5px 5px 0;
 }
+#search_widget {
+  /* margin: auto;
+  margin-right: 1rem; */
+}
+
+#search_widget form input.ui-autocomplete-input{
+  border-color: #2d405f90;
+    color: #2d405f;
+    border: 1px solid #768397;
+}
+#search_widget form i{
+  right: 0;
+    overflow: clip;
+    height: 100%;
+    width: fit-content;
+    /* background: #768397; */
+    color: #2d405f;
+    border-radius: 0 5px 5px 0;
+}
+
+#search_widget form input {
+  padding: 10px 20px 10px 20px;
+}
+
   </style>

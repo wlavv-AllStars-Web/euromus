@@ -72,12 +72,27 @@
       {/block}
     </div>
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-12 socialsMobile">
+      <a aria-label="Facebook" id="footer_facebook" class="social-icon" style="margin-right: 5px;" href="https://www.facebook.com/allstarsmotorsport" target="_NEW">
+        <i class="fa-brands fa-square-facebook"></i>
+      </a>
+      <a aria-label="Instagram" id="footer_insta" class="social-icon" style="margin-right: 5px;" href="https://instagram.com/allstarsmotorsport" target="_NEW">
+        <i class="fa-brands fa-instagram"></i>
+      </a>
+      <a aria-label="Flickr" id="footer_flickr" class="social-icon" style="margin-right: 5px;" href="https://www.flickr.com/photos/allstarsmotorsport/" target="_NEW">
+        <i class="fa-brands fa-flickr"></i>
+      </a>
+      <a aria-label="Youtube" id="footer_youtube" class="social-icon" style="margin-right: 5px;" href="https://www.youtube.com/user/allstarsmotorsport" target="_NEW">
+        <i class="fa-brands fa-youtube"></i>
+      </a>
+      </div>
+      <div class="col-md-12 copyrights">
         <p class="text-sm-center">
           {block name='copyright_link'}
-            <a href="https://www.prestashop-project.org/" target="_blank" rel="noopener noreferrer nofollow">
-              {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
+            <a href="/" target="_blank" rel="noopener noreferrer nofollow" style="color: #fff;text-decoration:underline;text-decoration-color:#04aa6d">
+              {l s='%copyright% %year% - Euro Muscle Parts' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
             </a>
+            <p style="color: #fff;">{l s='All Rights Reserved' d='Shop.Theme.Global'}</p>
           {/block}
         </p>
       </div>
@@ -91,16 +106,46 @@ document.addEventListener("scroll", (event) => {
   const currentScroll = document.documentElement.scrollTop || document.body.scrollTop;
   if(currentScroll > 0){
     buttonTop.style.display = "flex";
-    function scrollToTop() {
+  } else {
+    buttonTop.style.display = "none";
+  }
+})
+
+function scrollToTop() {
         window.scrollTo({
         top: 0,
         behavior: 'smooth',
       });
     }
+
+  window.addEventListener('load', () => {
+  const footer = document.querySelector('#footer.js-footer');
+  const menuMobile = document.querySelector('#mobile_top_menu_wrapper');
+  
+  if(menuMobile.style.display === "none"){
+    footer.style.display = "block"
+  
   } else {
-    buttonTop.style.display = "none";
+    footer.style.display = "none"
+
   }
+
+
+  const buttonMenuFooter = document.querySelector('div[data-target="#footer_sub_menu_12"]')
+
+
+  if (window.screen.width < 580) {
+    const menuItems = document.querySelectorAll('#footer_sub_menu_12 li')
+    const lastItem = menuItems[menuItems.length - 2];
+
+    if (lastItem) {
+      lastItem.parentNode.removeChild(lastItem);
+    }
+  }
+
+
 })
+
 
 
 

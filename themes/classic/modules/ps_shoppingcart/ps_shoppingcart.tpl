@@ -74,24 +74,3 @@ document.addEventListener("DOMContentLoaded", function() {
 </script>
 
 
-<style>
-
-
-
-
-#_desktop_cart .shopping-cart {
-  font-size: 2em;
-  width:55px;
-  height:55px;
-  display: flex;
-    justify-content: center;
-    align-items: center;
-    color: #103054;
-
-}
-#_desktop_cart .shopping-cart:hover {
-  color: #fff;
-    background: #103054;
-    cursor: pointer;
-}
-</style>

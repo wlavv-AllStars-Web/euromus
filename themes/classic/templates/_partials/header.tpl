@@ -27,6 +27,9 @@
  {* {Language::getLanguages(true, $this->context->shop->id)} *}
 
 {assign var="languages" value=Language::getLanguages(true, $this->context->shop->id)}
+{assign var="currentLanguage" value=Context::getContext()->language}
+  {* <pre>{print_r($currentLanguage,1)}</pre> *}
+
 {assign var="currentUrl" value=Tools::getCurrentUrl()}
 {assign var="manufacturers" value=Manufacturer::getManufacturers()}
 
@@ -37,19 +40,17 @@
 {/block}
 
 {block name='header_nav'}
-  <div style="border-top:2px solid #103054;border-bottom:2px solid red;padding-block:1px;"></div>
   <nav class="header-nav" style="border-bottom: none;">
 
     <div class="container">
       <div class="row">
         <div class="hidden-sm-down">
-          {* <div class="col-md-7 col-xs-12">
+          <div class="col-md-6 col-xs-12" style="display: flex;align-items:center;height:57px;gap:2rem;">
           {hook h='displayNav2'}
-          </div> *}
-          <div class="col-md-12 right-nav">
+          </div>
+          <div class="col-md-6 right-nav">
           
 
-          {* <a>{l s='Support' d='Shop.Theme.Global'}</a> *}
           {hook h='displayNav1'}
                 
           </div>
@@ -59,7 +60,6 @@
             <i class="material-icons d-inline">&#xE5D2;</i>
           </div>
           <div class="float-xs-right" id="_mobile_cart"></div>
-          <div class="float-xs-right" id="_mobile_user_info"></div>
           <div class="top-logo" id="_mobile_logo"></div>
           <div class="clearfix"></div>
         </div>
@@ -72,7 +72,7 @@
   <div class="header-top">
     <div class="container">
        <div class="row">
-        <div class="col-md-2 hidden-sm-down" id="_desktop_logo">
+        <div class="col-md-4 hidden-sm-down" id="_desktop_logo" style="display: flex;justify-content:center;">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}
               <h1 class="header-logo">
@@ -83,17 +83,13 @@
             {/if}
           {/if}
         </div>
-        <div class="header-top-right col-md-10 col-sm-12 position-static">
+        <div class="header-top-right col-md-10 col-sm-12 position-static mobile-search">
           {hook h='displayTop'}
-          {* <a href="" class="btn-header">
-            <h5>{l s='MAKE MODELS' d='Shop.Theme.Global'}</h5>
-            <small>{l s='Make Model List' d='Shop.Theme.Global'}</small>
-          </a>
-          <a href="" class="btn-header">
-            <h5>{l s='GET A QUOTE' d='Shop.Theme.Global'}</h5>
-            <small>{l s='Online Parts Quote' d='Shop.Theme.Global'}</small>
-          </a> *}
-          {* {hook h='displayNav2'} *}
+        </div>
+
+        <div class="col-md-8 header-top-right-desktop">
+        {hook h='displayNav2'}
+        {hook h='displayNav1'}
         </div>
       </div>
       
@@ -106,19 +102,20 @@
           <div id="_mobile_currency_selector"></div>
           {* {$_SERVER.REQUEST_URI} *}
        
-          {* <pre>{print_r($currentUrl,1)}</pre> *}
+          <pre>{print_r($links,1)}</pre>
           <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/">{l s='Home' d='Shop.Theme.Global'}</a></div>
-        <div id="supportLinkMobile" class="{if $currentUrl === $link->getCMSLink(42)}activeLink{/if}"><a href="{$link->getCMSLink(42)}">{l s='Support' d='Shop.Theme.Global'}</a></div>
-          <div id="_mobile_contact_link" class="{if $currentUrl === $link->getPageLink('contact', true)}activeLink{/if}"></div>
+        <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></div>
+          <div id="_mobile_contact_link" class="{if $currentUrl === $link->getPageLink('contact', true)}activeLink{/if}"><a href="{$link->getPageLink('contact', true)}">{l s='Contacts' d='Shop.Theme.Global'}</a></div>
           <div id="button_modal_language"><img src="/img/flags/{$language.iso_code}.jpg" /><p>{l s='Change Language' d='Shop.Theme.Global'}</p></div>
           {* <div id="_mobile_language_selector"></div> *}
         </div>
       </div>
     </div>
+    <div style="border-top:2px solid #103054;border-bottom:2px solid #ee302e;padding-block:1px;"></div>
     <ul class="mainmenuDesktop">
         <li><a href="{$link->getPageLink('index', true)}">Home</a></li>
         <li><a href="{$link->getPageLink('new-products', true)}">News</a></li>
-        <li><a style="background: #04AA6D;">Your Car</a></li>
+        <li><a style="background: #ee302e;">Your Car</a></li>
         <li class="dropdown">
           <div class="dropbtn">Brands<i class="fa-solid fa-caret-down"></i></div>
           <ul class="dropdown-content">
@@ -130,6 +127,10 @@
             </li>
           {/foreach}
             {* <pre>{print_r($manufacturers,1)}</pre> *}
+            <div style="border-top:2px solid #103054;border-bottom:2px solid #ee302e;padding-block:1px;width: 100%;
+            height: 2px;
+            position: absolute;
+            bottom: 0;"></div>
           </ul>
         </li>
         <li><a href="{$link->getPageLink('contact', true)}">Contact</a></li>
@@ -139,9 +140,16 @@
 
   <div id="modalLanguage" class="modalLanguage">
   <!-- Modal content -->
-    <div class="modal-content">
-    <span class="close">&times;</span>
-      <div id="_mobile_language_selector"></div>
+
+    <div class="modal-content" style="display: flex;align-items:center;justify-content:space-between;flex-direction: column;position:relative;gap: 0.85rem;">
+    {foreach from=$languages item=$language }
+      <div style="display: flex;gap:1rem;align-items:center;width:90%;padding:0.5rem;border-radius: 4px;{if $currentLanguage->iso_code === $language.iso_code}background:#04aa6d;{/if}">
+        <img src="/img/flags/{$language.iso_code}.jpg" width="16" height="11"/>
+        {* <div id="_mobile_language_selector"></div> *}
+        <a href="/{$language.iso_code}" data-iso="{$language.iso_code}" style="{if $currentLanguage->iso_code === $language.iso_code}color:#fff;{/if}">{$language.name}</a>
+        </div>
+      {/foreach}
+      <span class="close" style="color: #103054;opacity:1;position:absolute;top:1rem;right:1rem;">&times;</span>
     </div>
   </div>  
 
@@ -149,15 +157,22 @@
 {/block}
 
 <script>
-
+window.addEventListener('scroll', () => {
+  const footer = document.querySelector('footer#footer.js-footer');
+  if (footer) {
+    footer.style.display = "block"
+}
+});
 
 function closeMenu() {
   const buttonCloseMenu = document.querySelector('#_mobile_top_menu')
 const menuMobile = document.querySelector('#mobile_top_menu_wrapper')
 const headerMobile = document.querySelector('#header')
+const footer = document.querySelector('footer#footer.js-footer')
 
   menuMobile.style.display = "none";
   headerMobile.classList.remove("is-open")
+  footer.style.display = "block"
 }
 
 var modal = document.getElementById("modalLanguage");
@@ -185,17 +200,23 @@ window.onclick = function(event) {
   }
 }
 
-// const liList = document.querySelectorAll('.mainmenuDesktop .dropdown-content li');
-// const screenSize = window.screen.width / 4;
+window.onload = function() {
+  const searchIconMobile = document.querySelector('.header-nav #_mobile_cart .search');
+  const searchBarMobile = document.querySelector('.header-top-right #search_widget');
 
-// console.log(liList);
-// console.log(screenSize);
+  if (searchIconMobile) {
+    searchIconMobile.addEventListener('click', () => {
 
-// if (liList.length > 0 && screenSize) {
-//   liList.forEach((li) => {
-//     li.style.width = screenSize + 'px !important'; // Note: 'px' is added here
-//   });
-// }
+      if (!searchBarMobile.style.display || searchBarMobile.style.display === "none") {
+        searchBarMobile.style.display = "block";
+      } else {
+        searchBarMobile.style.display = "none";
+      }
+    });
+  } else {
+    console.error("searchIconMobile is null. Check your selector or HTML structure.");
+  }
+};
 
 
 
@@ -228,12 +249,9 @@ window.onclick = function(event) {
   /* max-width: 100px; */
   display: flex;
   justify-content: center;
+  transition: 0.3s;
 }
 
-.mainmenuDesktop a:hover{
-  background: #04AA6D !important;
-  cursor: pointer;
-}
 
 /* drppdown inicio */
 
@@ -248,6 +266,7 @@ window.onclick = function(event) {
   justify-content: center;
   align-items: center;
   gap: 0.5rem;
+  transition: 0.3s;
 }
 
 .dropdown {
@@ -259,15 +278,17 @@ window.onclick = function(event) {
 .dropdown-content {
   display: none;
   position: absolute;
-  background: #82bba6;
+  background: #fff;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  width: 1913px;
+  width: 99.6vw;
   left: -60vw;
+  transition: all 1s;
 }
 .dropdown:hover .dropbtn {
-  background: #04AA6D;
+  background: #fff;
+  color: #103054;
 }
 
 .dropdown:hover .dropdown-content {
@@ -326,17 +347,24 @@ window.onclick = function(event) {
 /* Modal Content/Box */
 .modal-content {
   background-color: #fefefe;
-  margin: 15% auto; /* 15% from the top and centered */
+  margin:auto;
   padding: 20px;
   border: 1px solid #888;
   width: 80%; /* Could be more or less, depending on screen size */
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.modal-content a {
+  font-size: 1.1rem;
+  width: 100%;
 }
 
 /* The Close Button */
 .close {
   color: #aaa;
   float: right;
-  font-size: 28px;
+  font-size: 36px;
   font-weight: bold;
 }
 
