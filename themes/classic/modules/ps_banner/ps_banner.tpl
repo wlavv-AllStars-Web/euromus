@@ -28,7 +28,7 @@
 {* {$cms_infos.text nofilter} *}
 <div class="selectVehicle-container">
   <h1>SELECT YOUR VEHICLE</h1>
-  <div class="selectVehicle-description">Insert modelyear, make and model and start experience with AmericanParts</div>
+  {* <div class="selectVehicle-description">Insert modelyear, make and model and start experience with AmericanParts</div> *}
   <div class="selects-card">
     <div class="selectField">
       <input id="modelyearHidden" type="hidden" value="">
@@ -79,9 +79,9 @@
       <button class="btn" disabled>SEARCH</button>
     </div>
   </div>
-  <div class="counter-products">
+  {* <div class="counter-products">
     <span>3.811.039</span> products available in the catalog
-  </div>
+  </div> *}
   {* <div class="mobileLine"></div>
   <div class="mobilePartsCar">
     <div class="mobilePartsCar-text">
@@ -96,7 +96,7 @@
 </div>
 
 </div>
-
+<div class="lines-tablet" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
 <div class="bannersHome">
   <div class="card-img-container">
     <div class="card-big">
@@ -122,7 +122,7 @@
   </div>
   <div class="card-img-container">
     <div class="card-big">
-      <div class="layerHover"></div>
+      <div class="layerHover"><h6>Jeep</h6></div>
       <img src="/img/eurmuscle/bannersHome/banner2.webp" />
     </div>
     <div class="card-min-img">
@@ -163,6 +163,7 @@
     </div>
   </div>
 </div>
+<div class="lines-tablet" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
 
 <div class="bannersHomeMobile">
   <a class="card-img" href="">
@@ -178,6 +179,8 @@
   <div class="layerHovermobile">Jeep Wrangler</div>
   </a>
 </div>
+
+<div class="hidden-md-up" style="border-top:4px solid #103054;border-bottom:20px solid #ee302e;padding-block:2px;width: 100%;"></div>
 
   <div class="cars-container">
     <div class="cars-cards col-12">
@@ -327,53 +330,45 @@
     </div>
   </div>
 
-  {* teste *}
+  <div class="hidden-md-up" style="border-top:20px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
 
-  {* <div class="bd-example">
-  <div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-      <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
-    </ol>
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="/img/eurmuscle/cardCarsHome/2016-dodge-challenger-hellcat-2.png" class="d-block w-100" alt="...">
-        <div class="carousel-caption d-none d-md-block">
-          <h5>First slide label</h5>
-          <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-        </div>
-      </div>
-      <div class="carousel-item">
-      <img src="/img/eurmuscle/cardCarsHome/2016-dodge-challenger-hellcat-2.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-      </div>
-      <div class="carousel-item">
-      <img src="/img/eurmuscle/cardCarsHome/2016-dodge-challenger-hellcat-2.png" class="d-block w-100" alt="...">
-      <div class="carousel-caption d-none d-md-block">
-        <h5>First slide label</h5>
-        <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
-      </div>
-      </div>
-    </div>
-    <a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
-      <span class="fa fa-chevron-left" aria-hidden="true"></span>
-      <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleCaptions" role="button" data-slide="next">
-      <span class="fa fa-chevron-right" aria-hidden="true"></span>
-      <span class="sr-only">Next</span>
-    </a>
+<div class="otherCars" style="width:100%;display: flex;flex-direction:column;justify-content:center;align-items:center;background:#707c88;">
+  <div class="titleCars" style="text-align: center;padding:3rem 0">
+    <h5 style="font-weight: 400;">OTHER</h5>
+    <h3>VEHICLE TYPES</h3>
   </div>
-</div> *}
+  <div class="categoryCars" style="display: flex;justify-content:space-evenly;width:100%;padding-bottom:3rem;">
+    <div class="category cat1">
+      <img src="/img/eurmuscle/bannersHome/other-vehicles-jeep.jpg" loading="lazy" alt="Jeep">
+      <div class="model-type-overlay"><span>JEEP</span></div>
+    </div>
+    <div class="category cat2">
+      <img src="/img/eurmuscle/bannersHome/other-vehicles-f150.jpg
+      " loading="lazy" alt="Truck">
+      <div class="model-type-overlay"><span>TRUCK</span></div>
+    </div>
+    <div class="category cat3">
+      <img src="/img/eurmuscle/bannersHome/other-vehicles-f100.jpg" loading="lazy" alt="Classic">
+      <div class="model-type-overlay"><span>CLASSIC</span></div>
+    </div>
+    <div class="category cat4">
+      <img src="/img/eurmuscle/bannersHome/other-vehicles-focus.jpg" loading="lazy" alt="Hatch">
+      <div class="model-type-overlay"><span>HATCH</span></div>
+    </div>
+    <div class="category cat4">
+      <img src="/img/eurmuscle/bannersHome/other-vehicles-f100.jpg" loading="lazy" alt="Classic">
+      <div class="model-type-overlay"><span>TOOLS</span></div>
+    </div>
+    <div class="category cat5">
+      <img src="/img/eurmuscle/bannersHome/other-vehicles-focus.jpg" loading="lazy" alt="Hatch">
+      <div class="model-type-overlay"><span>MERCHANDISING</span></div>
+    </div>
 
-  {* fimt este *}
+  </div>
+</div>
 
-
-  <div class="videosContainer">
+    <div style="border-top:4px solid #103054;border-bottom:2px solid #ee302e;padding-block:2px;width: 100%;"></div>
+  <div class="videosContainer" style="background-color: #ee302e;">
     <div class="video1">
         <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
         <img src="/img/eurmuscle/bannersHome/banner3.png" />
@@ -484,17 +479,28 @@ window.addEventListener("load", () => {
     }
   });
 
+  if(window.screen.width < 768) {
+    videosContainer.forEach((item) => {
+      const img = item.querySelector('.play img');
+      if(img) {
+        img.setAttribute("src", "/img/youtube_play_hover.png")
+      }
+    })
+  }
+
 
 
 
 });
 // javascript carsmobile
 
+window.addEventListener("orientationchange", function() {
+  location.reload(); 
+});
 
-if(screen.width < 560){
-                //  function toggleStatus(element){
-                //      element.parentElement.classList.toggle("show");
-  //               //  }
+
+if(window.innerWidth < 768){
+
   const modelCars = document.querySelectorAll('.cars-cards');
     modelCars.forEach(function(container) {
       // console.log(container.children.length)
@@ -517,7 +523,7 @@ if(screen.width < 560){
                                     arrowRight.style.right = "1rem";
                                     arrowRight.style.top = "50%";
                                     arrowRight.style.transform = "translateY(-50%)";
-                                    arrowRight.style.color = "#14654d";
+                                    arrowRight.style.color = "#fff";
                                     // arrowRight.style.background = "rgba(255, 255, 255, 0.4)";
                                     arrowRight.style.padding = "0.25rem";
                                     arrowRight.style.borderRadius = "5px";
@@ -536,7 +542,7 @@ if(screen.width < 560){
                                     arrowLeft.style.left = "1rem";
                                     arrowLeft.style.top = "50%";
                                     arrowLeft.style.transform = "translateY(-50%)";
-                                    arrowLeft.style.color = "#14654d";
+                                    arrowLeft.style.color = "#fff";
                                     // arrowLeft.style.background = "rgba(255, 255, 255, 0.4)";
                                     arrowLeft.style.padding = "0.25rem";
                                     arrowLeft.style.borderRadius = "5px";

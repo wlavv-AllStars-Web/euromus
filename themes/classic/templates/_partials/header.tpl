@@ -71,7 +71,7 @@
 {block name='header_top'}
   <div class="header-top">
     <div class="container">
-       <div class="row">
+       <div class="row" style="position: relative;z-index:1;">
         <div class="col-md-4 hidden-sm-down" id="_desktop_logo" style="display: flex;justify-content:center;">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}
@@ -91,7 +91,8 @@
         {hook h='displayNav2'}
         {hook h='displayNav1'}
         </div>
-      </div>
+        </div>
+        
       
       <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
         <div class="js-top-menu mobile" id="_mobile_top_menu" onclick="closeMenu()">
@@ -102,7 +103,7 @@
           <div id="_mobile_currency_selector"></div>
           {* {$_SERVER.REQUEST_URI} *}
        
-          <pre>{print_r($links,1)}</pre>
+          {* <pre>{print_r($links,1)}</pre> *}
           <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/">{l s='Home' d='Shop.Theme.Global'}</a></div>
         <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></div>
           <div id="_mobile_contact_link" class="{if $currentUrl === $link->getPageLink('contact', true)}activeLink{/if}"><a href="{$link->getPageLink('contact', true)}">{l s='Contacts' d='Shop.Theme.Global'}</a></div>
@@ -111,12 +112,13 @@
         </div>
       </div>
     </div>
-    <div style="border-top:2px solid #103054;border-bottom:2px solid #ee302e;padding-block:1px;"></div>
+    <div class="linesHeaderDesktop"></div>
+    <div style="border-top:0.5rem solid #103054;border-bottom:0.5rem solid #ee302e;padding-block:0.25rem;background:#fff;position:absolute;width:100%;z-index:-1;"></div>
     <ul class="mainmenuDesktop">
-        <li><a href="{$link->getPageLink('index', true)}">Home</a></li>
-        <li><a href="{$link->getPageLink('new-products', true)}">News</a></li>
+        <li class="{if $currentUrl === $link->getPageLink('index', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('index', true)}">Home</a></li>
+        <li class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('new-products', true)}">News</a></li>
         <li><a style="background: #ee302e;">Your Car</a></li>
-        <li class="dropdown">
+        <li class="dropdown ">
           <div class="dropbtn">Brands<i class="fa-solid fa-caret-down"></i></div>
           <ul class="dropdown-content">
           {foreach from=$manufacturers item=$manufacturer }
@@ -133,7 +135,7 @@
             bottom: 0;"></div>
           </ul>
         </li>
-        <li><a href="{$link->getPageLink('contact', true)}">Contact</a></li>
+        <li class="{if $currentUrl === $link->getPageLink('contact', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('contact', true)}">Contact</a></li>
       </ul>
   </div>
 
@@ -213,11 +215,100 @@ window.onload = function() {
         searchBarMobile.style.display = "none";
       }
     });
-  } else {
-    console.error("searchIconMobile is null. Check your selector or HTML structure.");
   }
 };
 
+// document.addEventListener('DOMContentLoaded', function () {
+//   const dropdownBrands = document.querySelector('li.dropdown');
+//   const dropdownBrandsCaret = document.querySelector('li.dropdown i');
+//   const dropdownContent = document.querySelector('ul.dropdown-content');
+
+//   dropdownBrands.addEventListener('click', () => {
+//     if (!dropdownContent.style.display || dropdownContent.style.display === "none") {
+//       dropdownContent.style.display = "flex";
+//       dropdownContent.style.flexWrap = "wrap";
+//       dropdownBrandsCaret.style.transform = "rotate(0deg)";
+//     } else {
+//       dropdownContent.style.display = "none";
+//       dropdownBrandsCaret.style.transform = "rotate(-90deg)";
+//     }
+//   });
+// });
+
+// const dropdownBrands = document.querySelector('li .dropbtn');
+// const dropdownBrandsCaret = document.querySelector('li.dropdown i');
+// const dropdownContent = document.querySelector('ul.dropdown-content');
+
+// dropdownBrands.addEventListener('click', (e) => {
+//   e.stopPropagation();
+//   toggleDropdown();
+// });
+
+// dropdownBrands.addEventListener('mouseover', (e) => {
+//   e.stopPropagation();
+//   toggleDropdown();
+// });
+// dropdownBrands.addEventListener('mouseout', (e) => {
+//   e.stopPropagation();
+//   toggleDropdown();
+// });
+
+// function toggleDropdown() {
+//   console.log("click");
+//   if (!dropdownContent.style.display || dropdownContent.style.display === "none") {
+//     dropdownContent.style.display = "flex";
+//     dropdownContent.style.flexWrap = "wrap";
+//     dropdownBrandsCaret.style.transform = "rotate(0deg)";
+//   } else {
+//     dropdownContent.style.display = "none";
+//     dropdownBrandsCaret.style.transform = "rotate(-90deg)";
+//   }
+// }
+
+
+const dropdownBrands = document.querySelector('li .dropbtn');
+const dropdownBrandsCaret = document.querySelector('li.dropdown i');
+const dropdownContent = document.querySelector('ul.dropdown-content');
+
+dropdownBrands.addEventListener('click', (e) => {
+  e.stopPropagation();
+  toggleDropdown();
+});
+
+dropdownBrands.addEventListener('mouseover', (e) => {
+  e.stopPropagation();
+  toggleDropdown();
+});
+
+dropdownBrands.addEventListener('mouseleave', (e) => {
+  e.stopPropagation();
+  closeDropdown();
+});
+
+// Add event listener to close dropdown on clicks outside
+document.addEventListener('click', (e) => {
+  const isClickInsideDropdown = dropdownBrands.contains(e.target) || dropdownContent.contains(e.target);
+
+  if (!isClickInsideDropdown) {
+    closeDropdown();
+  }
+});
+
+function toggleDropdown() {
+  console.log("click");
+  if (!dropdownContent.style.display || dropdownContent.style.display === "none") {
+    dropdownContent.style.display = "flex";
+    dropdownContent.style.flexWrap = "wrap";
+    dropdownBrandsCaret.style.transform = "rotate(0deg)";
+  } else {
+    closeDropdown();
+  }
+}
+
+function closeDropdown() {
+  dropdownContent.style.display = "none";
+  dropdownBrandsCaret.style.transform = "rotate(-90deg)";
+}
 
 
 
@@ -252,6 +343,10 @@ window.onload = function() {
   transition: 0.3s;
 }
 
+.mainmenuDesktop .activeLinkDesk a{
+  background-color: #fff !important;
+  color: #103054 !important;
+}
 
 /* drppdown inicio */
 
@@ -282,7 +377,7 @@ window.onload = function() {
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  width: 99.6vw;
+  width: 100vw;
   left: -60vw;
   transition: all 1s;
 }
@@ -292,7 +387,7 @@ window.onload = function() {
 }
 
 .dropdown:hover .dropdown-content {
-  display: flex !important;
+  display: flex ;
   min-height: fit-content;
   flex-wrap: wrap;
   /* justify-content: space-evenly; */
@@ -317,15 +412,15 @@ window.onload = function() {
   max-width: none !important;
 }
 .dropdown-content li a:hover{
-  color: #198754 !important;
+  color: #ee302e !important;
   background: transparent !important;
 }
 
 
 /* Show the dropdown menu on hover */
-.dropdown:hover .dropdown-content {
+/* .dropdown:hover .dropdown-content {
   display: block;
-}
+} */
 
 
 /* drppdown fim */

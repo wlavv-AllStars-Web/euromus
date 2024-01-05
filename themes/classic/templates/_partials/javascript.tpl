@@ -22,7 +22,9 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
 {foreach $javascript.external as $js}
+  
   <script type="text/javascript" src="{$js.uri}" {$js.attribute}></script>
 {/foreach}
 

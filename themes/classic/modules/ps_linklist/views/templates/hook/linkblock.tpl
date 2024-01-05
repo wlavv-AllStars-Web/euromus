@@ -29,7 +29,7 @@
     {if $linkBlock['title'] === 'Support'}
       <div class="links">
      {else}
-      <div class="col-md-6 col-lg-12 links">
+      <div class="col-md-6 col-lg-10 links">
       {/if}
       <div class="row">
     <div class="col-md-6 col-lg-12 wrapper">

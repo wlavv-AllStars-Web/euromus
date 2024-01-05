@@ -22,11 +22,12 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+ <div class="hidden-md-up" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;background:#fff;"></div>
 <div class="container">
 <div id="scrollToTopBtn" onclick="scrollToTop()" >
             <i class="fa-solid fa-arrow-up"></i>
     </div>
-  <div class="row">
+  <div class="row" style="display: none;">
     {block name='hook_footer_before'}
       {hook h='displayFooterBefore'}
     {/block}
@@ -47,7 +48,7 @@
     <div class="line3"></div>
   </div>
   <div class="container-md container-fluid">
-    <div class="row">
+    <div class="row footer-row">
       {block name='hook_footer'}
         {hook h='displayFooter'}
       {/block}
@@ -89,7 +90,7 @@
       <div class="col-md-12 copyrights">
         <p class="text-sm-center">
           {block name='copyright_link'}
-            <a href="/" target="_blank" rel="noopener noreferrer nofollow" style="color: #fff;text-decoration:underline;text-decoration-color:#04aa6d">
+            <a href="/" target="_blank" rel="noopener noreferrer nofollow" style="color: #fff;text-decoration:underline;text-decoration-color:#ee302e">
               {l s='%copyright% %year% - Euro Muscle Parts' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
             </a>
             <p style="color: #fff;">{l s='All Rights Reserved' d='Shop.Theme.Global'}</p>
@@ -129,21 +130,6 @@ function scrollToTop() {
     footer.style.display = "none"
 
   }
-
-
-  const buttonMenuFooter = document.querySelector('div[data-target="#footer_sub_menu_12"]')
-
-
-  if (window.screen.width < 580) {
-    const menuItems = document.querySelectorAll('#footer_sub_menu_12 li')
-    const lastItem = menuItems[menuItems.length - 2];
-
-    if (lastItem) {
-      lastItem.parentNode.removeChild(lastItem);
-    }
-  }
-
-
 })
 
 

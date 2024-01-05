@@ -65,14 +65,14 @@
     function updateValue(e) {
       inputSearch.setAttribute("value", e.target.value);
       if(inputSearch.value.length != 0) {
-        iconSearch.style.background = "#04aa6d";
+        iconSearch.style.background = "#ee302e";
         iconSearch.style.cursor = "pointer";
         iconSearch.style.color = "#fff";
-        iconSearch.style.borderColor = "#04aa6d";
+        inputSearch.style.borderColor = "#ee302e";
       }else {
         iconSearch.style.background = "none"
         iconSearch.style.color = "#103054";
-        iconSearch.style.borderColor = "#103054";
+        inputSearch.style.borderColor = "#ee302e";
       }
     }
 
