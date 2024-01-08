@@ -43,7 +43,7 @@
         <div class="newsletter_container" id="newsletter_en" style="display: none;"> 
             <div style="margin: 20px;">E-mails EN</div>
             <div id="emails_newsletter_en"> 
-                {$emailsNewsletter['en']} 
+                {* {$emailsNewsletter['en']}  *}
             </div>
             <div style="margin-top: 20px;">
                 <button type="button" class="btn btn-success" style="width: 150px;" onclick="copyDivToClipboard('emails_newsletter_en')">COPY</button>    
@@ -52,7 +52,7 @@
         <div class="newsletter_container" id="newsletter_es" style="display: none;"> 
             <div style="margin: 20px;">E-mails ES</div>
             <div id="emails_newsletter_es">
-                {$emailsNewsletter['es']}
+                {* {$emailsNewsletter['es']} *}
             </div>
             <div style="margin-top: 20px;">
                 <button type="button" class="btn btn-success" style="width: 150px;" onclick="copyDivToClipboard('emails_newsletter_es')">COPY</button>    
@@ -61,7 +61,7 @@
         <div class="newsletter_container" id="newsletter_fr" style="display: none;"> 
             <div style="margin: 20px;">E-mails FR</div>
             <div id="emails_newsletter_fr"> 
-                {$emailsNewsletter['fr']} 
+                {* {$emailsNewsletter['fr']}  *}
             </div>
             <div style="margin-top: 20px;">
                 <button type="button" class="btn btn-success" style="width: 150px;" onclick="copyDivToClipboard('emails_newsletter_fr')">COPY</button>    
