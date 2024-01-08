@@ -95,25 +95,39 @@
         
       
       <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
+      {* <pre>{print_r($manufacturers,1)}</pre> *}
         <div class="js-top-menu mobile" id="_mobile_top_menu" onclick="closeMenu()">
         <i class="fa fa-times"></i>
           <div>Close</div>
         </div>
         <div class="js-top-menu-bottom">
           <div id="_mobile_currency_selector"></div>
+          {* <div style="border-top:0.5rem solid #103054;border-bottom:0.5rem solid #ee302e;padding-block:0.25rem;background:#fff;height: 0.5rem;width:100%;z-index:-1;transform:rotate(180deg)"></div> *}
           {* {$_SERVER.REQUEST_URI} *}
        
           {* <pre>{print_r($links,1)}</pre> *}
           <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/">{l s='Home' d='Shop.Theme.Global'}</a></div>
-        <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></div>
+          <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></div>
           <div id="_mobile_contact_link" class="{if $currentUrl === $link->getPageLink('contact', true)}activeLink{/if}"><a href="{$link->getPageLink('contact', true)}">{l s='Contacts' d='Shop.Theme.Global'}</a></div>
           <div id="button_modal_language"><img src="/img/flags/{$language.iso_code}.jpg" /><p>{l s='Change Language' d='Shop.Theme.Global'}</p></div>
+          <div id="brands_mobile">
+            <div class="btn-brandsMobile">{l s='Brands' d='Shop.Theme.Global'}<i class="fa-solid fa-caret-down"></i></div>
+            <ul class="content_brands">
+            {foreach from=$manufacturers item=$manufacturer }
+              <li class="col-lg-3">
+              <a href="{$manufacturer.link_rewrite}">
+              <img src="/img/tmp/manufacturer_mini_{$manufacturer.id_manufacturer}.jpg" width="100%" style="max-width: 100px;" />
+              </a>
+              </li>
+            {/foreach}
+            </ul>
+          </div>
           {* <div id="_mobile_language_selector"></div> *}
         </div>
       </div>
     </div>
     <div class="linesHeaderDesktop"></div>
-    <div style="border-top:0.5rem solid #103054;border-bottom:0.5rem solid #ee302e;padding-block:0.25rem;background:#fff;position:absolute;width:100%;z-index:-1;"></div>
+    <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;background:#fff;position:absolute;width:100%;z-index:-1;"></div>
     <ul class="mainmenuDesktop">
         <li class="{if $currentUrl === $link->getPageLink('index', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('index', true)}">Home</a></li>
         <li class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('new-products', true)}">News</a></li>
@@ -237,7 +251,6 @@ document.addEventListener('click', (e) => {
 });
 
 function toggleDropdown() {
-  console.log("click");
   if (!dropdownContent.style.display || dropdownContent.style.display === "none") {
     dropdownContent.style.display = "flex";
     dropdownContent.style.flexWrap = "wrap";
@@ -252,6 +265,16 @@ function closeDropdown() {
   dropdownBrandsCaret.style.transform = "rotate(-90deg)";
 }
 
+
+// mobile
+
+const contentBrands = document.querySelector('.content_brands');
+const btnBrandsMobile = document.querySelector('.btn-brandsMobile')
+
+btnBrandsMobile.addEventListener('click', () => {
+  btnBrandsMobile.classList.toggle('activeBtnBrands')
+  contentBrands.classList.toggle("showBrands")
+})
 
 
 
@@ -358,7 +381,6 @@ function closeDropdown() {
   color: #ee302e !important;
   background: transparent !important;
 }
-
 
 /* Show the dropdown menu on hover */
 /* .dropdown:hover .dropdown-content {
