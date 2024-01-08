@@ -501,7 +501,7 @@ class FrontControllerCore extends Controller
             $cart = new Cart();
         }
 
-        $homepage_footer = Db::getInstance()->getRow('SELECT * FROM eu_ASD_homepage WHERE id=1');
+        $homepage_footer = Db::getInstance()->getRow('SELECT * FROM eu_asd_homepage WHERE id=1');
 
         $templateVars = [
             'homepage_footer'    => $homepage_footer,
