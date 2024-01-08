@@ -145,7 +145,7 @@
 
     <div class="modal-content" style="display: flex;align-items:center;justify-content:space-between;flex-direction: column;position:relative;gap: 0.85rem;">
     {foreach from=$languages item=$language }
-      <div style="display: flex;gap:1rem;align-items:center;width:90%;padding:0.5rem;border-radius: 4px;{if $currentLanguage->iso_code === $language.iso_code}background:#04aa6d;{/if}">
+      <div style="display: flex;gap:1rem;align-items:center;width:90%;padding:0.5rem;border-radius: 4px;{if $currentLanguage->iso_code === $language.iso_code}background:#ee302e;{/if}">
         <img src="/img/flags/{$language.iso_code}.jpg" width="16" height="11"/>
         {* <div id="_mobile_language_selector"></div> *}
         <a href="/{$language.iso_code}" data-iso="{$language.iso_code}" style="{if $currentLanguage->iso_code === $language.iso_code}color:#fff;{/if}">{$language.name}</a>
@@ -218,54 +218,6 @@ window.onload = function() {
   }
 };
 
-// document.addEventListener('DOMContentLoaded', function () {
-//   const dropdownBrands = document.querySelector('li.dropdown');
-//   const dropdownBrandsCaret = document.querySelector('li.dropdown i');
-//   const dropdownContent = document.querySelector('ul.dropdown-content');
-
-//   dropdownBrands.addEventListener('click', () => {
-//     if (!dropdownContent.style.display || dropdownContent.style.display === "none") {
-//       dropdownContent.style.display = "flex";
-//       dropdownContent.style.flexWrap = "wrap";
-//       dropdownBrandsCaret.style.transform = "rotate(0deg)";
-//     } else {
-//       dropdownContent.style.display = "none";
-//       dropdownBrandsCaret.style.transform = "rotate(-90deg)";
-//     }
-//   });
-// });
-
-// const dropdownBrands = document.querySelector('li .dropbtn');
-// const dropdownBrandsCaret = document.querySelector('li.dropdown i');
-// const dropdownContent = document.querySelector('ul.dropdown-content');
-
-// dropdownBrands.addEventListener('click', (e) => {
-//   e.stopPropagation();
-//   toggleDropdown();
-// });
-
-// dropdownBrands.addEventListener('mouseover', (e) => {
-//   e.stopPropagation();
-//   toggleDropdown();
-// });
-// dropdownBrands.addEventListener('mouseout', (e) => {
-//   e.stopPropagation();
-//   toggleDropdown();
-// });
-
-// function toggleDropdown() {
-//   console.log("click");
-//   if (!dropdownContent.style.display || dropdownContent.style.display === "none") {
-//     dropdownContent.style.display = "flex";
-//     dropdownContent.style.flexWrap = "wrap";
-//     dropdownBrandsCaret.style.transform = "rotate(0deg)";
-//   } else {
-//     dropdownContent.style.display = "none";
-//     dropdownBrandsCaret.style.transform = "rotate(-90deg)";
-//   }
-// }
-
-
 const dropdownBrands = document.querySelector('li .dropbtn');
 const dropdownBrandsCaret = document.querySelector('li.dropdown i');
 const dropdownContent = document.querySelector('ul.dropdown-content');
@@ -273,16 +225,6 @@ const dropdownContent = document.querySelector('ul.dropdown-content');
 dropdownBrands.addEventListener('click', (e) => {
   e.stopPropagation();
   toggleDropdown();
-});
-
-dropdownBrands.addEventListener('mouseover', (e) => {
-  e.stopPropagation();
-  toggleDropdown();
-});
-
-dropdownBrands.addEventListener('mouseleave', (e) => {
-  e.stopPropagation();
-  closeDropdown();
 });
 
 // Add event listener to close dropdown on clicks outside
@@ -309,6 +251,7 @@ function closeDropdown() {
   dropdownContent.style.display = "none";
   dropdownBrandsCaret.style.transform = "rotate(-90deg)";
 }
+
 
 
 
