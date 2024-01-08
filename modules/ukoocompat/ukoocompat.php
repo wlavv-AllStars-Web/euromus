@@ -247,12 +247,13 @@ class UkooCompat extends Module
         $this->ps_version_compliancy = array(
             'min' => '1.6',
             'max' => _PS_VERSION_);
+            
         $this->context = Context::getContext();
         parent::__construct();
 
-        $this->displayName = $this->l('Search products by compatibility');
-        $this->description = $this->l('Allow your customers to find your products compatible with their.');
-        $this->confirmUninstall = $this->l('Are you sure you want to delete your details?');
+        $this->displayName = $this->trans('Search products by compatibility');
+        $this->description = $this->trans('Allow your customers to find your products compatible with their.');
+        $this->confirmUninstall = $this->trans('Are you sure you want to delete your details?');
 
         // Défini les hooks sur lesquels le bloc de recherche peut être accroché
         $this->allowed_hooks = array(
@@ -427,8 +428,6 @@ class UkooCompat extends Module
 
 	/*webmaster hook display compat para nova posicao das compatibilidades*/
 	 public function hookDisplayCompat($params) {
-        echo 'qualquer coisa';
-        exit;
 	   // On récupère les infos des filtres, puis on lance le rendu pour chacune des recherches
         $output = '';
         

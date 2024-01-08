@@ -26,8 +26,8 @@ class AdminUkooCompatSearchFilterController extends ModuleAdminController
         $this->addRowAction('delete');
         $this->bulk_actions = array(
             'delete' => array(
-                'text' => $this->l('Delete selected'),
-                'confirm' => $this->l('Delete selected items?'),
+                'text' => $this->trans('Detransete selected'),
+                'confirm' => $this->trans('Delete selected items?'),
                 'icon' => 'icon-trash'));
 
         $this->_select = 'us.`name` AS search_name, ufl.`name` AS filter_name';
@@ -39,35 +39,35 @@ class AdminUkooCompatSearchFilterController extends ModuleAdminController
 
         $this->fields_list = array(
             'id_ukoocompat_search_filter' => array(
-                'title' => $this->l('ID'),
+                'title' => $this->trans('ID'),
                 'align' => 'center',
                 'class' => 'fixed-width-xs'),
             'name' => array(
-                'title' => $this->l('Name'),
+                'title' => $this->trans('Name'),
                 'align' => 'left'),
             'search_name' => array(
-                'title' => $this->l('Search name'),
+                'title' => $this->trans('Search name'),
                 'align' => 'left'),
             'filter_name' => array(
-                'title' => $this->l('Filter'),
+                'title' => $this->trans('Filter'),
                 'align' => 'left'),
             'display_type' => array(
-                'title' => $this->l('Display type'),
+                'title' => $this->trans('Display type'),
                 'align' => 'left'),
             'order_by' => array(
-                'title' => $this->l('Order by'),
+                'title' => $this->trans('Order by'),
                 'align' => 'left'),
             'order_way' => array(
-                'title' => $this->l('Order way'),
+                'title' => $this->trans('Order way'),
                 'align' => 'left'),
             'position' => array(
-                'title' => $this->l('Ordre'),
+                'title' => $this->trans('Ordre'),
                 'filter_key' => 'position',
                 'position' => 'position',
                 'class' => 'fixed-width-xs',
                 'align' => 'center'),
             'active' => array(
-                'title' => $this->l('Displayed'),
+                'title' => $this->trans('Displayed'),
                 'active' => 'status',
                 'type' => 'bool',
                 'class' => 'fixed-width-xs',

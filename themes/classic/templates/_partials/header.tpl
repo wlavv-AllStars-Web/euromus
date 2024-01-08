@@ -376,6 +376,7 @@ btnBrandsMobile.addEventListener('click', () => {
   /* color: #103054 !important; */
   color: #0b223b !important;
   max-width: none !important;
+  text-transform: uppercase;
 }
 .dropdown-content li a:hover{
   color: #ee302e !important;
