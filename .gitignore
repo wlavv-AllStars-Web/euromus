@@ -71,6 +71,8 @@
 *.hot-update.js
 *.hot-update.json
 
+/admineuromus1/*
+
 
 /admin-dev/autoupgrade/*
 !/admin-dev/autoupgrade/index.php
