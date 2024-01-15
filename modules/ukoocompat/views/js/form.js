@@ -316,7 +316,7 @@ function addFilterToSearch(id_filter)
             id_filter: parseInt(id_filter)
         },
         error: function(jqXHR, textStatus, errorThrown){
-            alert(request.responseText);
+            alert(jqXHR.responseText);
         },
         success: function(data){
             $('#tr_available_filter_' + parseInt(id_filter)).remove();
@@ -381,7 +381,7 @@ function toggleSearchFilterState(id_search_filter)
     });
 }
 
-/* affichage des options du filtre dans la modal (UkooCompatSearchFilter::renderForm) */
+/* exibição das opções do filtro na modalidade (UkooCompatSearchFilter::renderForm) */
 function getSearchFilterForm(id_search_filter)
 {
     $('#tr_used_filter_' + parseInt(id_search_filter) + ' button i').attr('class', 'icon-refresh icon-spin icon-fw');
@@ -450,7 +450,7 @@ function getSearchFilterForm(id_search_filter)
     });
 }
 
-/* met à jour un filtre de la recherche */
+/* atualiza um filtro da pesquisa */
 function updateSearchFilterForm(id_search_filter)
 {
     $('#ukoocompat_modal [name=submit] i').attr('class', 'process-icon-refresh icon-spin icon-fw');
@@ -483,7 +483,7 @@ function updateSearchFilterForm(id_search_filter)
     });
 }
 
-/* Charge l'édition d'un groupe de critères */
+/* Carrega a edição de um grupo de critérios */
 function editGroup(id_group)
 {
     $('#tr_available_group_' + parseInt(id_group) + ' button i').attr('class', 'icon-refresh icon-spin icon-fw');

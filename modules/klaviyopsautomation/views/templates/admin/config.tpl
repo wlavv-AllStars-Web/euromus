@@ -1,10 +1,10 @@
 <div class="klaviyo-container">
-    {$psAccounts}
+    {$psAccounts nofilter}
 
     <div id="klaviyo-config">
-        {$form}
-        {$orderStatusMapForm}
-        {$couponsGenerator}
+        {$form nofilter}
+        {$orderStatusMapForm nofilter}
+        {$couponsGenerator nofilter}
     </div>
 
     <script src="{$chunkVendorJs|escape:'htmlall':'UTF-8'}"></script>

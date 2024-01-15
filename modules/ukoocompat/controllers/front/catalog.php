@@ -21,8 +21,8 @@ class UkooCompatCatalogModuleFrontController extends ModuleFrontController
 
     public function initContent()
     {
-        echo 'deu';
-        exit;
+        // $result = new UkooCompatSearch((int) Tools::getValue('id_search'), (int) $this->context->language->id);
+        
         // si les variables ne sont pas présente, on redirige vers la home
         if (!Tools::isSubmit('id_search')) {
             Tools::redirect('index');
@@ -32,9 +32,11 @@ class UkooCompatCatalogModuleFrontController extends ModuleFrontController
 
         // on récupère les informations de la recherche
         $search = new UkooCompatSearch((int)Tools::getValue('id_search'), (int)$this->context->language->id);
+        echo $search;
+        exit;
         $search->current_id_lang = (int)$this->context->language->id;
         $search->filters = $search->getFilters((int)$this->context->language->id);
-
+       
         // on assigne les critères sélectionnés à la recherche (pré-remplissage des valeurs saisies)
         $search->selected_criteria = unserialize($this->context->cookie->__get('ukoocompat_search_'.(int)$search->id));
 

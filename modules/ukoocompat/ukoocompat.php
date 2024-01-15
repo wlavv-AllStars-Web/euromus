@@ -234,6 +234,13 @@ require_once dirname(__FILE__).'/controllers/admin/AdminUkooCompatAliasInstanceC
 
 class UkooCompat extends Module
 {
+    public $allowed_hooks;
+    public $display_type;
+    public $order_by;
+    public $order_way;
+    public $link_to_product;
+    public $import_status;
+
     public function __construct()
     {
         $this->name = 'ukoocompat';
@@ -244,10 +251,10 @@ class UkooCompat extends Module
         $this->module_key = '57adef10a092a9d74538640b645db7de';
         $this->need_instance = 0;
         $this->bootstrap = true;
-        $this->ps_version_compliancy = array(
-            'min' => '1.6',
-            'max' => _PS_VERSION_);
-            
+        $this->ps_versions_compliancy = [
+            'min' => '1.7.0.0',
+            'max' => '8.99.99',
+        ];
         $this->context = Context::getContext();
         parent::__construct();
 
@@ -259,75 +266,75 @@ class UkooCompat extends Module
         $this->allowed_hooks = array(
             1 => array(
                 'id' => (int)Hook::getIdByName('displayRightColumn'),
-                'name' => $this->l('Right Column').' (displayRightColumn)'),
+                'name' => $this->trans('Right Column').' (displayRightColumn)'),
             2 => array(
                 'id' => (int)Hook::getIdByName('displayLeftColumn'),
-                'name' => $this->l('Left Column').' (displayLeftColumn)'),
+                'name' => $this->trans('Left Column').' (displayLeftColumn)'),
             3 => array(
                 'id' => (int)Hook::getIdByName('displayHome'),
-                'name' => $this->l('Homepage').' (displayHome)'),
+                'name' => $this->trans('Homepage').' (displayHome)'),
             4 => array(
                 'id' => (int)Hook::getIdByName('displayTop'),
-                'name' => $this->l('Top of page').' (displayTop)'),
+                'name' => $this->trans('Top of page').' (displayTop)'),
             5 => array(
                 'id' => (int)Hook::getIdByName('displayFooter'),
-                'name' => $this->l('Footer').' (displayFooter)'),
+                'name' => $this->trans('Footer').' (displayFooter)'),
             6 => array(
                 'id' => (int)Hook::getIdByName('displayTopColumn'),
-                'name' => $this->l('Top Column').' (displayTopColumn)'));
+                'name' => $this->trans('Top Column').' (displayTopColumn)'));
 
         // Défini les types d'affichage possibles pour les filtres des blocs de recherche
         // TODO :: finaliser checkbox
         $this->display_type = array(
             1 => array(
                 'id' => 'select',
-                'name' => $this->l('Select-list')),
+                'name' => $this->trans('Select-list')),
             //			2 => array(
             //				'id' => 'checkbox',
             //				'name' => $this->l('Checkbox')
             //			),
             3 => array(
                 'id' => 'radio',
-                'name' => $this->l('Radio')));
+                'name' => $this->trans('Radio')));
 
         // Défini les types de trie possible pour les critères des filtres
         $this->order_by = array(
             1 => array(
                 'id' => 'position',
-                'name' => $this->l('Position')),
+                'name' => $this->trans('Position')),
             2 => array(
                 'id' => 'value',
-                'name' => $this->l('Value')),
+                'name' => $this->trans('Value')),
             3 => array(
                 'id' => 'id',
-                'name' => $this->l('ID')));
+                'name' => $this->trans('ID')));
 
         // Défini les sens de trie possible pour les critères des filtres
         $this->order_way = array(
             1 => array(
                 'id' => 'ASC',
-                'name' => $this->l('Ascending (A-Z)')),
+                'name' => $this->trans('Ascending (A-Z)')),
             2 => array(
                 'id' => 'DESC',
-                'name' => $this->l('Descending (Z-A)')));
+                'name' => $this->trans('Descending (Z-A)')));
 
         // Défini les méthodes d'associations des produits pour les imports
         $this->link_to_product = array(
             1 => array(
                 'id' => 'id_product',
-                'name' => $this->l('Product ID')),
+                'name' => $this->trans('Product ID')),
             2 => array(
                 'id' => 'reference',
-                'name' => $this->l('Product reference')),
+                'name' => $this->trans('Product reference')),
             3 => array(
                 'id' => 'supplier_reference',
-                'name' => $this->l('Supplier reference')),
+                'name' => $this->trans('Supplier reference')),
             4 => array(
                 'id' => 'ean13',
-                'name' => $this->l('EAN13')),
+                'name' => $this->trans('EAN13')),
             5 => array(
                 'id' => 'upc',
-                'name' => $this->l('UPC')));
+                'name' => $this->trans('UPC')));
 
         // Défini les différents statuts des imports
         // TODO :: les rendres plus utiles car peu d'intérêt pour le moment
@@ -430,7 +437,6 @@ class UkooCompat extends Module
 	 public function hookDisplayCompat($params) {
 	   // On récupère les infos des filtres, puis on lance le rendu pour chacune des recherches
         $output = '';
-        
         //echo '<pre>' . print_r($this->context->cookie, 1) . '</pre>';
         
         $search = new UkooCompatSearch(1, (int) $this->context->language->id);
@@ -574,7 +580,8 @@ class UkooCompat extends Module
 
             // On récupère les autres variables comme la pagination ou le trie
             $others_vars = UkooCompat::getUrlParameters();
-
+            echo '<pre>'.print_r($others_vars,1).'</pre>';
+        exit;
             // On enregistre la recherche dans les cookies pour la conserver lors de la navigation
             $this->context->cookie->__set('ukoocompat_search_'.(int)$search->id, serialize($filters));
 
@@ -971,27 +978,33 @@ class UkooCompat extends Module
      */
     public function hookDisplayAdminProductsExtra()
     {
-        // On récupère la liste des recherches
+        // Obtém a lista de pesquisas
         $search_blocks = UkooCompatSearch::getSearchInProductTab((int)$this->context->language->id);
+        
         $compatTab = array();
 
         // On récupère les compatibilités du produit puis on lance le rendu
         foreach ($search_blocks as $search_block) {
+            
             // On récupère les filtres actifs de la recherche
             $search = new UkooCompatSearch(
                 (int)$search_block['id_ukoocompat_search'],
                 (int)$this->context->language->id
             );
+
+            
             $search->current_id_lang = (int)$this->context->language->id;
             $search->filters = $search->getFilters((int)$this->context->language->id, true);
-
+            
             // On récupère la liste des compatibilités associées à ce produit et à cette recherche
             $compatibilities = UkooCompatCompat::getProductsCompatibilitiesFromSearch(
                 (int)Tools::getValue('id_product'),
                 $search,
                 (int)$this->context->language->id
             );
-
+            // echo '<pre>'.print_r($compatibilities,1).'</pre>';
+            // exit;
+            
             // On assigne les différents résultat à une varibale que l'on transmettra à smarty,
             // si le nombre de compat n'est pas nul
             if (count($compatibilities) > 0) {
@@ -1001,6 +1014,8 @@ class UkooCompat extends Module
             }
         }
 
+        // echo '<pre>'.print_r($compatTab,1).'</pre>';
+        //     exit;
         $this->context->smarty->assign(array(
             'compatTab' => $compatTab,
             'id_product' => (int)Tools::getValue('id_product'),
@@ -1400,7 +1415,7 @@ class UkooCompat extends Module
      * @param int $current_depth
      * @return array|bool
      */
-    public function getTree($search, $result_parents, $result_ids, $max_depth, $id_category = null, $current_depth = 0)
+    public function getTree($search, $result_parents, $result_ids, $max_depth, $id_category = null, $current_depth = 0, $nb_products_temp = null)
     {
         if (is_null($id_category)) {
             $id_category = $this->context->shop->getCategory();
@@ -1608,6 +1623,7 @@ class UkooCompat extends Module
                         'filters' => $search->selected_criteria))));
             }
 			//webmaster so mostra na pagina index
+
 			if( Tools::getValue('page_name')=='index'){
 			    
 			    if( Context::getContext()->isMobile() ){
@@ -1674,7 +1690,7 @@ class UkooCompat extends Module
                         unset($alias_results[$key]);
                     }
                 }
-                die(Tools::jsonEncode(array_values($alias_results)));
+                die(json_encode(array_values($alias_results)));
             }
         } else {
             die('{"hasError" : true, errors : "Invalid vars!"}');
@@ -1787,7 +1803,7 @@ class UkooCompat extends Module
         foreach ($filters as $id_criterion) {
             if (!empty($id_criterion)) {
                 $criterion = new UkooCompatCriterion((int)$id_criterion, (int)$id_lang);
-                $rewrite = Tools::link_rewrite($criterion->value);
+                $rewrite = Tools::str2url($criterion->value);
                 $link_rewrite .= ($rewrite != '' ? '/'.$rewrite : '/'.(int)$id_criterion);
                 $ids_criteria .= '-'.$id_criterion;
             } else {
@@ -1809,10 +1825,17 @@ class UkooCompat extends Module
 
         // Ajout des paramètres de pagination et de trie
         if (isset($others_vars) && !empty($others_vars)) {
+            if (is_string($others_vars)) {
+                // Convert the string into an array (adjust the delimiter based on your string format)
+                $others_vars = explode('&', $others_vars);
+            }
+        
             foreach ($others_vars as $k => &$val) {
-                $val = $k.'='.$val;
+                $val = $k . '=' . $val;
             }
         }
+        
+        
 
         return $url.$link_rewrite.'/'.(int)$id_search.$ids_criteria.
         (isset($others_vars) && !empty($others_vars) ? '?'.implode('&', $others_vars) : '');

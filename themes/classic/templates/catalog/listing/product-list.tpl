@@ -32,7 +32,18 @@
   <section id="main">
 
     {block name='product_list_header'}
-      <h1 id="js-product-list-header" class="h2">{$listing.label}</h1>
+    <h1 id="js-product-list-header" style="margin-left:3rem;" class="h2">
+      {if $listing.label}
+        {$listing.label}
+      {else} 
+        <div class="breadcrumb">
+            <a class="home" href="https://euromuscleparts/" title="Return to Home">
+              <i class="fa fa-home" style="color: #103054;"></i>
+            </a> 
+            
+        </div>
+      {/if}
+    </h1>
     {/block}
 
     {block name='subcategory_list'}

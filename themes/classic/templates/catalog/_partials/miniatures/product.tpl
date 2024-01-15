@@ -22,19 +22,23 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+
+ {* <pre>{print_r($product,1)}</pre> *}
+ {* http://euromus.local/29-home_default/mustang-23t-ecoboost-mishimoto-aluminium-radiator.jpg *}
+ {* {$link->getImageLink($product.link_rewrite, $product.cover_image_id, 'home_default')} *}
 {block name='product_miniature_item'}
 <div class="js-product product{if !empty($productClasses)} {$productClasses}{/if}">
   <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
     <div class="thumbnail-container">
       <div class="thumbnail-top">
         {block name='product_thumbnail'}
-          {if $product.cover}
-            <a href="{$product.url}" class="thumbnail product-thumbnail">
+          {if $product.cover_image_id}
+            <a href="{$product.link}" class="thumbnail product-thumbnail">
               <picture>
-                {if !empty($product.cover.bySize.home_default.sources.avif)}<source srcset="{$product.cover.bySize.home_default.sources.avif}" type="image/avif">{/if}
-                {if !empty($product.cover.bySize.home_default.sources.webp)}<source srcset="{$product.cover.bySize.home_default.sources.webp}" type="image/webp">{/if}
+                {* {if !empty($product.cover.bySize.home_default.sources.avif)}<source srcset="{$product.cover.bySize.home_default.sources.avif}" type="image/avif">{/if}
+                {if !empty($product.cover.bySize.home_default.sources.webp)}<source srcset="{$product.cover.bySize.home_default.sources.webp}" type="image/webp">{/if} *}
                 <img
-                  src="{$product.cover.bySize.home_default.url}"
+                src="{if !empty($product.cover.bySize.home_default.url)}{$product.cover.bySize.home_default.url}{else}{$link->getImageLink($product.link_rewrite, $product.cover_image_id, 'home_default')}{/if}"
                   alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
                   loading="lazy"
                   data-full-size-image-url="{$product.cover.large.url}"
@@ -76,10 +80,14 @@
 
       <div class="product-description">
         {block name='product_name'}
-          {if $page.page_name == 'index'}
-            <h3 class="h3 product-title"><a href="{$product.url}" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h3>
+          {if $product.url}
+            {if $page.page_name == 'index'}
+              <h3 class="h3 product-title"><a href="{$product.url}" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h3>
+            {else}
+              <h2 class="h3 product-title"><a href="{$product.url}" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h2>
+            {/if}
           {else}
-            <h2 class="h3 product-title"><a href="{$product.url}" content="{$product.url}">{$product.name|truncate:30:'...'}</a></h2>
+            <h2 class="h3 product-title"><a href="{$product.link}" content="{$product.link}">{$product.name|truncate:30:'...'}</a></h2>
           {/if}
         {/block}
 

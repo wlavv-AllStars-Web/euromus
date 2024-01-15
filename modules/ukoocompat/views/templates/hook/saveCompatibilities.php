@@ -2,42 +2,45 @@
 include_once $_SERVER['DOCUMENT_ROOT'] . "/allstarsmotorsport/SCRIPTS/Helpers/inc.php";
 
 function insert_data_into_ps_ukoocompat_compat($id_product){
-    insert_data("INSERT INTO ps_ukoocompat_compat (id_product) VALUES ('" . $id_product . "')");
-    return get_inserted_id('SELECT id_ukoocompat_compat FROM ps_ukoocompat_compat ORDER BY id_ukoocompat_compat DESC LIMIT 1', 'id_ukoocompat_compat')['id_ukoocompat_compat'];
+    insert_data("INSERT INTO eu_ukoocompat_compat (id_product) VALUES ('" . $id_product . "')");
+
+    return get_inserted_id('SELECT id_ukoocompat_compat FROM eu_ukoocompat_compat ORDER BY id_ukoocompat_compat DESC LIMIT 1', 'id_ukoocompat_compat')['id_ukoocompat_compat'];
 }
 
 function insert_data_into_ps_ukoocompat_compat_criterion($id_ukoocompat_compat, $id_ukoocompat_filter, $id_ikoocompat_criterion){   
-    insert_data("INSERT INTO ps_ukoocompat_compat_criterion (id_ukoocompat_compat, id_ukoocompat_filter, id_ukoocompat_criterion) VALUES ('" . $id_ukoocompat_compat . "', '" . $id_ukoocompat_filter . "', '" . $id_ikoocompat_criterion . "')");
+    insert_data("INSERT INTO eu_ukoocompat_compat_criterion (id_ukoocompat_compat, id_ukoocompat_filter, id_ukoocompat_criterion) VALUES ('" . $id_ukoocompat_compat . "', '" . $id_ukoocompat_filter . "', '" . $id_ikoocompat_criterion . "')");
 }
 
 function get_id_ukoocompat_compat($id_product, $id_ukoocompat_criterion_1, $id_ukoocompat_criterion_2, $id_ukoocompat_criterion_3, $id_ukoocompat_criterion_4){
     
     $data['is_new'] = false;
     $sql = "SELECT * 
-            FROM ps_ukoocompat_compat_criterion
-            INNER JOIN ps_ukoocompat_compat
-            ON ps_ukoocompat_compat_criterion.id_ukoocompat_compat = ps_ukoocompat_compat.id_ukoocompat_compat
-            WHERE ps_ukoocompat_compat.id_ukoocompat_compat IN ( 
+            FROM eu_ukoocompat_compat_criterion
+            INNER JOIN eu_ukoocompat_compat
+            ON eu_ukoocompat_compat_criterion.id_ukoocompat_compat = eu_ukoocompat_compat.id_ukoocompat_compat
+            WHERE eu_ukoocompat_compat.id_ukoocompat_compat IN ( 
                                         SELECT id_ukoocompat_compat 
-                                        FROM ps_ukoocompat_compat_criterion 
+                                        FROM eu_ukoocompat_compat_criterion 
                                         WHERE id_ukoocompat_filter = 1 AND id_ukoocompat_criterion = " . $id_ukoocompat_criterion_1 . "
                                         )
-            AND ps_ukoocompat_compat.id_ukoocompat_compat IN ( 
+            AND eu_ukoocompat_compat.id_ukoocompat_compat IN ( 
                                         SELECT id_ukoocompat_compat 
-                                        FROM ps_ukoocompat_compat_criterion 
+                                        FROM eu_ukoocompat_compat_criterion 
                                         WHERE id_ukoocompat_filter = 2 AND id_ukoocompat_criterion = " . $id_ukoocompat_criterion_2 . "
                                         )
-            AND ps_ukoocompat_compat.id_ukoocompat_compat IN (
+            AND eu_ukoocompat_compat.id_ukoocompat_compat IN (
                                         SELECT id_ukoocompat_compat 
-                                        FROM ps_ukoocompat_compat_criterion 
+                                        FROM eu_ukoocompat_compat_criterion 
                                         WHERE id_ukoocompat_filter = 3 AND id_ukoocompat_criterion = " . $id_ukoocompat_criterion_3 . "
                                         )
-            AND ps_ukoocompat_compat.id_ukoocompat_compat IN (
+            AND eu_ukoocompat_compat.id_ukoocompat_compat IN (
                                         SELECT id_ukoocompat_compat 
-                                        FROM ps_ukoocompat_compat_criterion 
+                                        FROM eu_ukoocompat_compat_criterion 
                                         WHERE id_ukoocompat_filter = 4 AND id_ukoocompat_criterion = " . $id_ukoocompat_criterion_4 . "
                                         )
             AND id_product=" . $id_product;
+
+
             
     $conn = getConn();
     $result = $conn->query($sql);

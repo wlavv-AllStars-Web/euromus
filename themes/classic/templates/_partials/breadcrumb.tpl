@@ -22,20 +22,50 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<nav data-depth="{$breadcrumb.count}" class="breadcrumb">
-  <ol>
-    {block name='breadcrumb'}
-      {foreach from=$breadcrumb.links item=path name=breadcrumb}
-        {block name='breadcrumb_item'}
-          <li>
-            {if not $smarty.foreach.breadcrumb.last}
-              <a href="{$path.url}"><span>{$path.title}</span></a>
-            {else}
-              <span>{$path.title}</span>
-            {/if}
-          </li>
-        {/block}
-      {/foreach}
-    {/block}
-  </ol>
-</nav>
+ {* <pre>{print_r($listing['filters'][0]->getCriteria()[0]['value'],1)}</pre> *}
+ {* {assign var=filters value=$listing['search']->filters} *}
+ 
+ {* <pre>{print_r($listing['search']->filters,1)}</pre> *}
+ {* <pre>{print_r($filters,1)}</pre> *}
+
+
+{if $breadcrumb.links}
+  <nav data-depth="{$breadcrumb.count}" class="breadcrumb">
+    <ol>
+      {block name='breadcrumb'}
+        {foreach from=$breadcrumb.links item=path name=breadcrumb}
+          {block name='breadcrumb_item'}
+            <li>
+              {if not $smarty.foreach.breadcrumb.last}
+                <a href="{$path.url}"><span>{$path.title}</span></a>
+              {else}
+                <span>{$path.title}</span>
+              {/if}
+            </li>
+          {/block}
+        {/foreach}
+      {/block}
+    </ol>
+  </nav>
+{else}
+  <nav data-depth="{$breadcrumb.count}" class="breadcrumb">
+  paulo
+    <ol>
+      {block name='breadcrumb'}
+        {foreach from=$filters item=item name=breadcrumb}
+          {block name='breadcrumb_item'}
+            <li>
+            <pre>{print_r($item,1)}</pre>
+              {$item.criteria[0]['value']}
+              {* {if not $smarty.foreach.breadcrumb.last}
+                <a href="{$path.url}"><span>{$path.title}</span></a>
+              {else}
+                <span>{$path.title}</span>
+              {/if} *}
+            </li>
+          {/block}
+        {/foreach}
+      {/block}
+    </ol>
+  </nav>
+{/if}

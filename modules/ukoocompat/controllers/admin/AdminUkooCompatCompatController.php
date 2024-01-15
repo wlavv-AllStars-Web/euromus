@@ -28,8 +28,8 @@ class AdminUkooCompatCompatController extends ModuleAdminController
 
         $this->bulk_actions = array(
             'delete' => array(
-                'text' => $this->l('Delete selected'),
-                'confirm' => $this->l('Delete selected items?'),
+                'text' => $this->trans('Delete selected'),
+                'confirm' => $this->trans('Delete selected items?'),
                 'icon' => 'icon-trash'));
 
         $this->_select = 'pl.`name` AS `product_name`, p.`reference`, a.`id_ukoocompat_compat` AS `compatibilities`';
@@ -339,6 +339,7 @@ class AdminUkooCompatCompatController extends ModuleAdminController
      */
     public function processDelete()
     {
+        
         $object = parent::processDelete();
 
         if (!Validate::isLoadedObject($object)) {
@@ -533,7 +534,15 @@ class AdminUkooCompatCompatController extends ModuleAdminController
      */
     public static function removeFromBO()
     {
-        $remove_id = Tab::getIdFromClassName('AdminUkooCompatParent');
+        $className = 'AdminUkooCompatParent';
+
+    // Get the tab ID based on class name using a direct SQL query
+        $remove_id = Db::getInstance()->getValue("
+            SELECT `id_tab`
+            FROM `" . _DB_PREFIX_ . "tab`
+            WHERE `class_name` = '" . pSQL($className) . "'
+        ");
+        // $remove_id = Tab::getIdFromClassName('AdminUkooCompatParent');
         if ($remove_id) {
             $to_remove = new Tab($remove_id);
             if (validate::isLoadedObject($to_remove)) {
@@ -546,16 +555,27 @@ class AdminUkooCompatCompatController extends ModuleAdminController
     /**
      * Supprimer une compatibilité, ainsi que toutes ses associations de critères
      */
+    
     public function ajaxProcessDeleteCompatibility()
     {
+    
+        $id_compat = (int)Tools::getValue('id_compat');
+        // echo $id_compat;
+        //     exit;
         if (!Tools::isSubmit('id_compat')) {
-            die(Tools::jsonEncode(array('status' => 'error', 'message' => $this->l('Wrong id_compat.'))));
+            die(json_encode(array('status' => 'error', 'message' => $this->trans('Wrong id_compat.'))));
         }
+        // echo '<pre>'.print_r($this,1).'</pre>';
+        // exit;
 
-        if ($this->tabAccess['delete'] === '1') {
+        
+    
+        
+        if ($this->access('delete')) {
+            
             // On récupère l'ID de la compatibilité à supprimer
             $id_compat = (int)Tools::getValue('id_compat');
-
+            
             // On tente de charger la compatibilité (objet)
             if ($id_compat && Validate::isUnsignedId($id_compat) &&
                 Validate::isLoadedObject($compatibility = new UkooCompatCompat($id_compat))) {
@@ -563,34 +583,36 @@ class AdminUkooCompatCompatController extends ModuleAdminController
                 if (!$compatibility->deleteAssociatedCriteria()) {
                     $json = array(
                         'status' => 'error',
-                        'message' => $this->l('Unabled to desassociate criteria from compatibility!'));
+                        'message' => $this->trans('Unabled to desassociate criteria from compatibility!'));
                 } else {
                     // On supprime l'entrée de la compatibilité
                     if (!$compatibility->delete()) {
                         $json = array(
                             'status' => 'error',
-                            'message' => $this->l('Unabled to delete the compatibility!'));
+                            'message' => $this->trans('Unabled to delete the compatibility!'));
                     } else {
+                        
                         $json = array(
                             'status' => 'ok',
-                            'message' => $this->l('Compatibility successfully deleted!'),
+                            'message' => $this->trans('Delete successful'),
                             'id_compat' => (int)$id_compat);
                     }
                 }
             } else {
                 $json = array(
                     'status' => 'error',
-                    'message' => $this->l('You cannot delete this compatibility.'));
+                    'message' => $this->trans('You cannot delete this compatibility.'));
             }
         } else {
+            
             $json = array(
                 'status' => 'error',
-                'message' => $this->l('You do not have permission to delete this.'));
+                'message' => $this->trans('You do not have permission to delete this.'));
         }
-
         // Suppression du cache du module
         UkooCompat::clearUkooCompatCache();
 
-        die(Tools::jsonEncode($json));
+        header('Content-Type: application/json');
+        die(json_encode($json));
     }
 }

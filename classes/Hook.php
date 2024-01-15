@@ -414,7 +414,7 @@ class HookCore extends ObjectModel
             // if the module was expecting an aliased hook name to be invoked, but we send
             // the canonical hook name instead, the hook will never be acknowledged by the module.
             $methodName = self::getMethodName($hookName);
-            if (is_callable([$module, $methodName])) {
+            if (is_callable([$module, $methodName]) ) {
                 return static::coreCallHook($module, $methodName, $hookArgs);
             }
 

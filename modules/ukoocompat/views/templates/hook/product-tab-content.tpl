@@ -8,7 +8,7 @@
  * "In Ukoo we trust!"
  *}
 
-<!--<h3 id="ukoocompat_tabcontent_title" class="idTabHrefShort page-product-heading">{l s='Compatibilities' mod='ukoocompat'}</h3>-->
+{* <h3 id="ukoocompat_tabcontent_title" class="idTabHrefShort page-product-heading">{l s='Compatibilities' mod='ukoocompat'}</h3> *}
 <div id="ukoocompat_tabcontent">
     {foreach from=$compatTab item=tab}
     <table class="table table-bordered">

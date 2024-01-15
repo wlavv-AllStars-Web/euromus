@@ -215,55 +215,7 @@ class CustomerFormatterCore implements FormFormatterInterface
                     $this->translator->trans('(E.g.: %date_format%)', ['%date_format%' => Tools::formatDateStr('31 May 1970')], 'Shop.Forms.Help')
                 );
         }
-// paulo
 
-        $format['address'] = (new FormField())
-        ->setName('Address')
-        ->setType('text')
-        ->setLabel($this->translator->trans(
-            'Address', [], 'Shop.Forms.Labels'))
-        ->setRequired(true);
-
-        $format['postalcode'] = (new FormField())
-        ->setName('Zip/PostalCode')
-        ->setType('text')
-        ->setLabel($this->translator->trans(
-            'Zip/Postal Code', [], 'Shop.Forms.Labels'))
-        ->setRequired(true);
-
-        $format['city'] = (new FormField())
-        ->setName('City')
-        ->setType('text')
-        ->setLabel($this->translator->trans(
-            'City', [], 'Shop.Forms.Labels'))
-        ->setRequired(true);
-
-        $countrys = Country::getCountries($this->language->id);
-        $countryField = (new FormField())
-        ->setName('Country')
-        ->setType('select')
-        ->setLabel($this->translator->trans(
-            'Country', [], 'Shop.Forms.Labels'))
-        
-        ->setRequired(true);
-
-        foreach ($countrys as $country) {
-            $countryField->addAvailableValue($country['id_country'], $country['name']);
-        }
-        
-        $format[$countryField->getName()] = $countryField;
-
-    
-        
-        $format['phone'] = (new FormField())
-            ->setName('Phone')
-            ->setType('phone')
-            ->setLabel($this->translator->trans('Phone', [], 'Shop.Forms.Labels'))
-            ->setRequired(true);
-        
-
-
-        // paulo fim
         if ($this->ask_for_partner_optin) {
             $format['optin'] = (new FormField())
                 ->setName('optin')

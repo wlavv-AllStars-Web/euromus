@@ -30,6 +30,7 @@ use PrestaShop\Module\Mbo\Module\Repository;
 use PrestaShop\Module\Mbo\Service\View\ContextBuilder;
 use PrestaShop\Module\Mbo\Tab\TabCollectionProviderInterface;
 use PrestaShop\PrestaShop\Adapter\Cache\Clearer\SymfonyCacheClearer;
+use PrestaShop\PrestaShop\Core\Cache\Clearer\CacheClearerInterface;
 use PrestaShop\PrestaShop\Core\Module\ModuleInterface;
 use PrestaShopBundle\Event\ModuleManagementEvent;
 use Psr\Log\LoggerInterface;
@@ -73,7 +74,7 @@ class ModuleManagementEventSubscriber implements EventSubscriberInterface
     private $versionChangeApplyConfigCommandHandler;
 
     /**
-     * @var SymfonyCacheClearer
+     * @var CacheClearerInterface
      */
     private $cacheClearer;
 
@@ -88,7 +89,7 @@ class ModuleManagementEventSubscriber implements EventSubscriberInterface
         Client $distributionClient,
         AdminAuthenticationProvider $adminAuthenticationProvider,
         VersionChangeApplyConfigCommandHandler $versionChangeApplyConfigCommandHandler,
-        SymfonyCacheClearer $cacheClearer
+        CacheClearerInterface $cacheClearer
     ) {
         $this->logger = $logger;
         $this->moduleRepository = $moduleRepository;
@@ -124,16 +125,6 @@ class ModuleManagementEventSubscriber implements EventSubscriberInterface
                 ['clearSfCache'],
                 ['clearCatalogCache'],
                 ['onDisable'],
-            ],
-            ModuleManagementEvent::ENABLE_MOBILE => [
-                ['clearSfCache'],
-                ['clearCatalogCache'],
-                ['onEnableMobile'],
-            ],
-            ModuleManagementEvent::DISABLE_MOBILE => [
-                ['clearSfCache'],
-                ['clearCatalogCache'],
-                ['onDisableMobile'],
             ],
             ModuleManagementEvent::UPGRADE => [
                 ['clearCatalogCache'],
@@ -191,16 +182,6 @@ class ModuleManagementEventSubscriber implements EventSubscriberInterface
     public function onDisable(ModuleManagementEvent $event): void
     {
         $this->logEvent(ModuleManagementEvent::DISABLE, $event);
-    }
-
-    public function onEnableMobile(ModuleManagementEvent $event): void
-    {
-        $this->logEvent(ModuleManagementEvent::ENABLE_MOBILE, $event);
-    }
-
-    public function onDisableMobile(ModuleManagementEvent $event): void
-    {
-        $this->logEvent(ModuleManagementEvent::DISABLE_MOBILE, $event);
     }
 
     public function onUpgrade(ModuleManagementEvent $event): void

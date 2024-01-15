@@ -11,7 +11,7 @@
 <div class="alert alert-info">
     {l s='Select the filters you want to use in your search block, and configure each one as you see fit.' mod='ukoocompat'}
 </div>
-
+<pre>{print_r($filters,1)}</pre>
 <div class="row">
     <div class="col-lg-4">
         <div class="panel">

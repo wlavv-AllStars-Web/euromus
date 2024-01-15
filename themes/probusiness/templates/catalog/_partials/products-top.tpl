@@ -18,6 +18,7 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
+
 <div id="js-product-list-top" class="row products-selection">
   <div class="col-md-6 hidden-sm-down total-products">
     <ul class="display hidden-xs">

@@ -1,6 +1,20 @@
 {if !isset($ajax_reload)}
-<div id="ukoocompat_search_block_{$search->id|intval}" style="display:none;" class="wm-hiddencompats block ukoocompat_search_block" style="clear: both;">
+
+<div id="ukoocompat_search_block_{$search->id|intval}" class="wm-hiddencompats block ukoocompat_search_block" style="clear: both;">
+<h1>{l s='SELECT YOUR VEHICLE' d='Shop.Theme.Global'}</h1>
 	<div class="block_content">
+<style>
+    .ukoocompat_search_block {
+        background-color: #103054;
+        background-image: url(/img/eurmuscle/tire.webp);
+        background-repeat: no-repeat;
+        background-position: right top;
+        background-size: auto;
+        display: flex;
+        justify-content: center;
+        padding: 3rem 0;
+    }
+</style>
 {/if}
         <form id="ukoocompat_search_block_form_{$search->id|intval}" action="{$form_action|escape}" method="POST" class="ajax_ukoo_response ukoocompat_search_block_form{if $search->dynamic_criteria} dynamic_criteria{/if}">
 			<input type="hidden" name="id_search" value="{$search->id|intval}" />

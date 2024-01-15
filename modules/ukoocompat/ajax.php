@@ -16,6 +16,7 @@ require_once(dirname(__FILE__).'/ukoocompat.php');
 $ukoocompat = new UkooCompat();
 
 // Soit on lance la recherche d'alias, soit en lance le rechargement ajax des filtres de recherche
+
 if (Tools::isSubmit('q')) {
     echo $ukoocompat->ajaxSearchByAlias();
 } else {

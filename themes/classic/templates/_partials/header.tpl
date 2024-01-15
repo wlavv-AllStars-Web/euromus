@@ -115,7 +115,7 @@
             <ul class="content_brands">
             {foreach from=$manufacturers item=$manufacturer }
               <li class="col-lg-3">
-              <a href="{$manufacturer.link_rewrite}">
+              <a href="/{$currentLanguage->iso_code }/{l s='brand' d='Shop.Theme.Global'}/{$manufacturer.id_manufacturer}-{$manufacturer.link_rewrite}">
               <img src="/img/tmp/manufacturer_mini_{$manufacturer.id_manufacturer}.jpg" width="100%" style="max-width: 100px;" />
               </a>
               </li>
@@ -133,11 +133,12 @@
         <li class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('new-products', true)}">News</a></li>
         <li><a style="background: #ee302e;">Your Car</a></li>
         <li class="dropdown ">
-          <div class="dropbtn">Brands<i class="fa-solid fa-caret-down"></i></div>
+          <div class="dropbtn">{l s='Brands' d='Shop.Theme.Global'}<i class="fa-solid fa-caret-down"></i></div>
           <ul class="dropdown-content">
+          {* <pre>{print_r($currentLanguage,1)}</pre> *}
           {foreach from=$manufacturers item=$manufacturer }
             <li class="col-lg-3">
-            <a href="{$manufacturer.link_rewrite}">
+            <a href="/{$currentLanguage->iso_code }/{l s='brand' d='Shop.Theme.Global'}/{$manufacturer.id_manufacturer}-{$manufacturer.link_rewrite}">
               {$manufacturer.name}
             </a>
             </li>
@@ -185,10 +186,12 @@ function closeMenu() {
 const menuMobile = document.querySelector('#mobile_top_menu_wrapper')
 const headerMobile = document.querySelector('#header')
 const footer = document.querySelector('footer#footer.js-footer')
+var wrapper =  document.getElementById("wrapper");
 
   menuMobile.style.display = "none";
   headerMobile.classList.remove("is-open")
   footer.style.display = "block"
+  wrapper.style.display = "block";
 }
 
 var modal = document.getElementById("modalLanguage");
@@ -207,12 +210,14 @@ btn.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+ 
 }
 
 // When the user clicks anywhere outside of the modal, close it
 window.onclick = function(event) {
   if (event.target == modal) {
     modal.style.display = "none";
+    wrapper.style.display = "block";
   }
 }
 

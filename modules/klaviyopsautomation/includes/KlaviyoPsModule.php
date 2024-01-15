@@ -859,6 +859,10 @@ class KlaviyoPsModule extends Module
         $link = new Link();
         $productLink = $link->getProductLink($product);
 
+        // Get product price without tax. This returns a float while
+        // price attribute returns a string with 6 significant digits.
+        $price = $product->getPrice(false);
+
         Media::addJsDef(
             array(
                 'klProduct' => array(
@@ -866,14 +870,15 @@ class KlaviyoPsModule extends Module
                     'ProductID' => $product_id,
                     'SKU' => $product->reference,
                     'Tags' => ProductPayloadService::getProductTagsArray($product_id, $lang_id),
-                    'Price' => KlaviyoUtils::formatPrice($product->price),
+                    'Price' => KlaviyoUtils::formatPrice($price),
                     'PriceInclTax' => KlaviyoUtils::formatPrice($product->getPrice()),
                     'SpecialPrice' => KlaviyoUtils::formatPrice(Product::getPriceStatic($product_id)),
                     'Categories' => $productCategories,
                     'Image' => ProductPayloadService::buildProductImageUrls($product),
                     'Link' => $productLink,
                     'ShopID' => $shop_id,
-                    'LangID' => $lang_id
+                    'LangID' => $lang_id,
+                    'eventValue' => is_numeric($price) ? $price : 0
                 )
             )
         );

@@ -23,6 +23,7 @@ namespace PrestaShop\Module\Mbo\Traits\Hooks;
 
 use Exception;
 use PrestaShop\Module\Mbo\Addons\Toolbar;
+use PrestaShop\Module\Mbo\Helpers\ErrorHelper;
 use PrestaShop\PrestaShop\Core\Action\ActionsBarButton;
 use PrestaShop\PrestaShop\Core\Action\ActionsBarButtonsCollection;
 use PrestaShop\PrestaShop\Core\Exception\TypeException;
@@ -46,7 +47,15 @@ trait UseActionGetAdminToolbarButtons
          */
         $extraToolbarButtons = $params['toolbar_extra_buttons_collection'];
 
-        if (!in_array(Tools::getValue('controller'), self::CONTROLLERS_WITH_CONNECTION_TOOLBAR)) {
+        $controllersWithConnectionToolbar = self::CONTROLLERS_WITH_CONNECTION_TOOLBAR;
+        if (
+            $this->isPsAccountEnabled()
+            && ($key = array_search('AdminModulesManage', $controllersWithConnectionToolbar)) !== false
+        ) {
+            unset($controllersWithConnectionToolbar[$key]);
+        }
+
+        if (!in_array(Tools::getValue('controller'), $controllersWithConnectionToolbar)) {
             return $extraToolbarButtons;
         }
 
@@ -55,6 +64,7 @@ trait UseActionGetAdminToolbarButtons
             $addonsToolbar = $this->get('mbo.addons.toolbar');
             $toolbarButtons = $addonsToolbar->getConnectionToolbar();
         } catch (Exception $e) {
+            ErrorHelper::reportError($e);
             $toolbarButtons = [];
         }
 
@@ -68,6 +78,7 @@ trait UseActionGetAdminToolbarButtons
                 $extraToolbarButtons->add($actionBarButton);
             } catch (TypeException $e) {
                 // Do nothing, just not adding this element
+                ErrorHelper::reportError($e);
             }
         }
 

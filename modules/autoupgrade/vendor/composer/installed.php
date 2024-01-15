@@ -3,7 +3,7 @@
         'name' => 'prestashop/autoupgrade',
         'pretty_version' => 'dev-master',
         'version' => 'dev-master',
-        'reference' => '106e6ebfabc202b01ede19366974a00db83348a0',
+        'reference' => '5b59ba47f422606a9f1359512f6317dc5e6a0dcb',
         'type' => 'prestashop-module',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -22,7 +22,7 @@
         'prestashop/autoupgrade' => array(
             'pretty_version' => 'dev-master',
             'version' => 'dev-master',
-            'reference' => '106e6ebfabc202b01ede19366974a00db83348a0',
+            'reference' => '5b59ba47f422606a9f1359512f6317dc5e6a0dcb',
             'type' => 'prestashop-module',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

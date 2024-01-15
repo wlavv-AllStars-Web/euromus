@@ -21,8 +21,9 @@ declare(strict_types=1);
 
 namespace PrestaShop\Module\Mbo\Traits\Hooks;
 
+use PrestaShop\Module\Mbo\Addons\ApiClient;
+use PrestaShop\Module\Mbo\Helpers\ErrorHelper;
 use PrestaShop\Module\Mbo\Module\ActionsManager;
-use PrestaShop\Module\Mbo\Module\Repository;
 use PrestaShop\PrestaShop\Adapter\Module\ModuleDataProvider;
 use PrestaShop\PrestaShop\Core\File\Exception\FileNotFoundException;
 use PrestaShop\PrestaShop\Core\Module\SourceHandler\SourceHandlerNotFoundException;
@@ -41,6 +42,7 @@ trait UseActionBeforeInstallModule
             /** @var ModuleDataProvider $moduleDataProvider */
             $moduleDataProvider = $this->get('prestashop.adapter.data_provider.module');
         } catch (\Exception $e) {
+            ErrorHelper::reportError($e);
             return;
         }
 
@@ -51,23 +53,32 @@ trait UseActionBeforeInstallModule
         $moduleName = (string) $params['moduleName'];
 
         try {
-            /** @var Repository $moduleRepository */
-            $moduleRepository = $this->get('mbo.modules.repository');
+            /** @var ApiClient $addonsClient */
+            $addonsClient = $this->get('mbo.addons.client.api');
         } catch (\Exception $e) {
+            ErrorHelper::reportError($e);
             return;
         }
-        $module = $moduleRepository->getModule($moduleName);
 
-        if (null === $module) {
-            return;
+        $moduleId = (int) \Tools::getValue('module_id');
+
+        if (!$moduleId) {
+            $addon = $addonsClient->getModuleByName($moduleName);
+
+            if (null === $addon || !isset($addon->product->id_product)) {
+                return;
+            }
+
+            $moduleId = (int) $addon->product->id_product;
         }
 
         try {
             /** @var ActionsManager $actionsManager */
             $actionsManager = $this->get('mbo.modules.actions_manager');
         } catch (\Exception $e) {
+            ErrorHelper::reportError($e);
             return;
         }
-        $actionsManager->install((int) $module->get('id'));
+        $actionsManager->install($moduleId);
     }
 }

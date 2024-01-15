@@ -2,6 +2,25 @@
 {assign var="apply_filter_fr" value="Appliquer des filtres"}
 {assign var="apply_filter_es" value="Aplicar filtros"}
 
+{* {Tools::getShopDomain()} *}
+
+
+{assign var=listing value=[
+    'search' => $search,
+    'products' => $products,
+    'nb_products' => $nb_products,
+    'meta_title' => $search->listing_meta_title,
+    'meta_description' => $search->listing_meta_description,
+    'sort_orders' => $sort_orders,
+    'sort_selected' => $sort_selected,
+    'pagination' => $pagination
+    ]}
+    {* 'catalog_link' => $this->context->link->getModuleLink('ukoocompat', 'catalog', $params),
+    
+{* <pre>{print_r($products,1)}</pre> *}
+
+{* {print_r($name_1)} *}
+
 <form id="ukoocompat_search_block_form_1" action="/{$lang_iso}/module/ukoocompat/listing" method="POST"> 
 
 <input type="hidden" id="temp_multiFilter_news" name="temp_news_compats" value="{$news_compats}"/>
@@ -15,6 +34,13 @@
 <input type="hidden" id="ukoocompat_select_2" name="filters2" value="{$selected_filter_2}"/>
 <input type="hidden" id="ukoocompat_select_3" name="filters3" value="{$selected_filter_3}"/>
 <input type="hidden" id="ukoocompat_select_4" name="filters4" value="{$selected_filter_4}"/>
+<input type="hidden" id="ukoocompat_value_1" name="filters1value" value="{$ukoo_name_1}"/>
+<input type="hidden" id="ukoocompat_value_2" name="filters1value" value="{$ukoo_name_2}"/>
+<input type="hidden" id="ukoocompat_value_3" name="filters1value" value="{$ukoo_name_3}"/>
+<input type="hidden" id="ukoocompat_value_4" name="filters1value" value="{$ukoo_name_4}"/>
+<input type="hidden" id="sort_selected" name="sort_selected" value="{$sort_selected.label}"/>
+
+
 <input type="hidden" id="temp_multiFilter_root_page" name="temp_root_file" value="{$root_page}"/>
 <input type="hidden" id="id_search" name="id_search" value="1"/>
 
@@ -35,7 +61,7 @@
     {/if}
 {/if}
 
-{include file="$tpl_dir./errors.tpl"}
+{* {include file="$tpl_dir./errors.tpl"} *}
 
 {capture name=path}
     {strip}
@@ -102,44 +128,56 @@
 {/if}
 
 
-
-
-
+{* {if isset($products)}
+    {foreach $products as $product}
+        <pre>{print_r($product,1)}</pre>
+    {/foreach}
+{else}
+    {l s='No products available yet' d='Shop.Theme.Catalog'}
+{/if} *}
 
 
 {if isset($products) && !empty($products)}
 	{if !Context::getContext()->isMobile()}
 	
         <div class="content_sortPagiBar">
-            {include file="$tpl_dir./wm_top_filter.tpl"}
+            {* {include file="$tpl_dir./wm_top_filter.tpl"} *}
         </div>
 
         {if $products}
-            {include file="$tpl_dir./product-list.tpl" products=$products}
+            {* {include file="/themes/classic/templates/catalog/listing/product-list.tpl" products=$products} *}
+            
+            {* <pre>{print_r($pagination,1)}</pre> *}
+            
+            {include file="themes/classic/templates/catalog/listing/product-list.tpl" listing=$listing}
+
+
         {else}
             <p class="alert alert-warning text-center">{l s='No new products.'}</p>
         {/if}
 
         {if $products}
             <div class="content_sortPagiBar">
-                <div class="bottom-pagination-content clearfix"> {include file="$tpl_dir./pagination.tpl" paginationId='top'} </div>
+                {* <div class="bottom-pagination-content clearfix"> {include file="$tpl_dir./pagination.tpl" paginationId='top'} </div> *}
+                {* <div class="bottom-pagination-content clearfix"> {include file="file:themes/classic/templates/_partials/pagination.tpl" paginationId='top'} </div> *}
+
             </div>
         {/if}
         
 	{else}
 	
-        <div class="text-center" style="background-color: #333; color: white; text-transform: uppercase;padding: 10px;" onclick="$('#filters_holder').toggle('slow')">
-            <span><i class="fas fa-filter"></i></span>
-            <span>{${"apply_filter_$lang_iso"}}</span>
-        </div>
+        {* <div class="text-center" style="background-color: #333; color: white; text-transform: uppercase;padding: 10px;" onclick="$('#filters_holder').toggle('slow')"> *}
+            {* <span><i class="fas fa-filter"></i></span> *}
+            {* <span>{${"apply_filter_$lang_iso"}}</span> *}
+        {* </div> *}
         <div class="content_sortPagiBar" id="filters_holder" style="display: none;">
-            <span> {include file="themes/theme1164/mobile/wm_top_filter.tpl"} </span>
+            {* <span> {include file="themes/theme1164/mobile/wm_top_filter.tpl"} </span> *}
         </div>
 
-		{include file="$tpl_dir./mobile/product-list.tpl" products=$products}
+		{include file="themes/classic/templates/catalog/listing/product-list.tpl" listing=$listing}
 		<div class="content_sortPagiBar">
 			<div class="bottom-pagination-content clearfix">
-				{include file="$tpl_dir./mobile/pagination.tpl" paginationId='bottom'}
+				{* {include file="$tpl_dir./mobile/pagination.tpl" paginationId='bottom'} *}
 			</div>
 		</div>
 	{/if}
@@ -147,7 +185,7 @@
     {if !Context::getContext()->isMobile()}
         <div class="content_sortPagiBar">
             {include file="$tpl_dir./wm_top_filter.tpl"}
-            {if $products}<div class="top-pagination-content clearfix"> {include file="$tpl_dir./pagination.tpl"} </div>{/if}
+            {if $products}<div class="top-pagination-content clearfix"> {include file="file:themes/classic/templates/_partials/pagination.tpl"} </div>{/if}
         </div>
     {else}
         <div class="text-center" style="background-color: #333; color: white; text-transform: uppercase;padding: 10px;" onclick="$('#filters_holder').toggle('slow')">
@@ -167,6 +205,6 @@
     div#center_column{ padding: 5px 0; }
 </style>
 <script>
-    let search =
-    $('.breadcrumb').replaceWith('<div class="breadcrumb"><a class="home" href="https://development.local/" title="Return to Home"><i class="fa fa-home"></i></a> <i style="margin:5px 10px;" class="fa fa-caret-right"></i><span id="tag_filter"></span></div>');
+    // let search =
+    // $('.breadcrumb').replaceWith('<div class="breadcrumb"><a class="home" href="https://development.local/" title="Return to Home"><i class="fa fa-home"></i></a> <i style="margin:5px 10px;" class="fa fa-caret-right"></i><span id="tag_filter"></span></div>');
 </script>

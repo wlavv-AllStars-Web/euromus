@@ -26,37 +26,37 @@ class AdminUkooCompatSearchController extends ModuleAdminController
         $this->addRowAction('delete');
         $this->bulk_actions = array(
             'delete' => array(
-                'text' => $this->l('Delete selected'),
-                'confirm' => $this->l('Delete selected items?'),
+                'text' => $this->trans('Delete selected'),
+                'confirm' => $this->trans('Delete selected items?'),
                 'icon' => 'icon-trash'));
 
         $this->fields_list = array(
             'id_ukoocompat_search' => array(
-                'title' => $this->l('ID'),
+                'title' => $this->trans('ID'),
                 'align' => 'center',
                 'class' => 'fixed-width-xs'),
             'name' => array(
-                'title' => $this->l('Name'),
+                'title' => $this->trans('Name'),
                 'align' => 'left'),
             'id_hook' => array(
-                'title' => $this->l('Hook'),
+                'title' => $this->trans('Hook'),
                 'align' => 'left',
                 'callback' => 'getHookName'),
             'display_alias_search_block' => array(
-                'title' => $this->l('Display alias search'),
+                'title' => $this->trans('Display alias search'),
                 'active' => 'display_alias_search_block',
                 'type' => 'bool',
                 'class' => 'fixed-width-xs',
                 'align' => 'center',
                 'orderby' => false),
             'position' => array(
-                'title' => $this->l('Ordre'),
+                'title' => $this->trans('Ordre'),
                 'filter_key' => 'position',
                 'position' => 'position',
                 'class' => 'fixed-width-xs',
                 'align' => 'center'),
             'active' => array(
-                'title' => $this->l('Displayed'),
+                'title' => $this->trans('Displayed'),
                 'active' => 'status',
                 'type' => 'bool',
                 'class' => 'fixed-width-xs',
@@ -75,7 +75,7 @@ class AdminUkooCompatSearchController extends ModuleAdminController
         if ($this->display != 'edit' && $this->display != 'add') {
             $this->page_header_toolbar_btn['new_ukoocompat_search'] = array(
                 'href' => self::$currentIndex.'&addukoocompat_search&token='.$this->token,
-                'desc' => $this->l('Add new search', null, null, false),
+                'desc' => $this->trans('Add new search', array(), null, false),
                 'icon' => 'process-icon-new');
         }
 
@@ -83,7 +83,7 @@ class AdminUkooCompatSearchController extends ModuleAdminController
         $this->page_header_toolbar_btn['doc_ukoocompat_compat'] = array(
             'href' => '../modules/ukoocompat/doc/documentation_'.
                 ($this->context->language->iso_code == 'fr' ? 'FR' : 'EN').'.pdf',
-            'desc' => $this->l('Documentation'),
+            'desc' => $this->trans('Documentation'),
             'target' => '_blank',
             'icon' => 'process-icon-book');
     }
@@ -103,9 +103,10 @@ class AdminUkooCompatSearchController extends ModuleAdminController
      * @param $id_hook
      * @return mixed
      */
+    public $allowed_hooks = array();
     public function getHookName($id_hook)
     {
-        foreach ($this->module->allowed_hooks as $hook) {
+        foreach ($this->allowed_hooks as $hook) {
             if ((int)$hook['id'] == (int)$id_hook) {
                 return $hook['name'];
             }
