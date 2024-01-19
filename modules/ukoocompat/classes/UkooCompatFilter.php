@@ -151,6 +151,8 @@ class UkooCompatFilter extends ObjectModel
             FROM `'._DB_PREFIX_.'ukoocompat_filter` uf
             WHERE 1');
         foreach ($filters as $key => $filter) {
+            // echo '<pre>'.print_r($filter,1).'</pre>';
+            // exit;
             // aucune langue particulère n'est demandée, on les retournes toutes
             if ($id_lang === null) {
                 $filter_lang = array();
@@ -163,6 +165,11 @@ class UkooCompatFilter extends ObjectModel
                 }
                 $filters[$key]['name'] = $filter_lang;
             } else {
+                // echo 'SELECT `name`
+				// 	FROM `'._DB_PREFIX_.'ukoocompat_filter_lang`
+				// 	WHERE `id_ukoocompat_filter` = '.(int)$filter['id'].'
+				// 	AND `id_lang` = '.(int)$id_lang;
+                //     exit;
                 $filters[$key]['name'] = Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue('
 					SELECT `name`
 					FROM `'._DB_PREFIX_.'ukoocompat_filter_lang`
@@ -172,8 +179,11 @@ class UkooCompatFilter extends ObjectModel
             
             // on récupère également les valeurs des filtres si elles sont demandées
             if ($get_values) {
+                
                 $filters[$key]['criteria'] = UkooCompatCriterion::getCriteria((int)$filter['id'], (int)$id_lang);
             }
+            // echo '<pre>'.print_r($filters,1).'</pre>';
+            //     exit;
         }
         return $filters;
     }

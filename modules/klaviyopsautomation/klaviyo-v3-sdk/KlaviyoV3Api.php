@@ -2,6 +2,10 @@
 
 namespace KlaviyoV3Sdk;
 
+if (!defined('_PS_VERSION_')) {
+    exit;
+}
+
 use KlaviyoV3Sdk\Exception\KlaviyoAuthenticationException;
 use KlaviyoV3Sdk\Exception\KlaviyoException;
 use KlaviyoV3Sdk\Exception\KlaviyoRateLimitException;
@@ -49,6 +53,8 @@ class KlaviyoV3Api
      */
     const CUSTOMER_PROPERTIES_MAP = ['$email' => 'email', 'firstname' => 'first_name', 'lastname' => 'last_name'];
     const DATA_KEY_PAYLOAD = 'data';
+    const LINKS_KEY_PAYLOAD = 'links';
+    const NEXT_KEY_PAYLOAD = 'next';
     const TYPE_KEY_PAYLOAD = 'type';
     const ATTRIBUTE_KEY_PAYLOAD = 'attributes';
     const PROPERTIES_KEY_PAYLOAD = 'properties';
@@ -125,9 +131,19 @@ class KlaviyoV3Api
      */
     public function getLists()
     {
-        $response_body = $this->requestV3('api/lists/', self::HTTP_GET);
+        $response = $this->requestV3('api/lists/', self::HTTP_GET);
+        $lists = $response[self::DATA_KEY_PAYLOAD];
 
-        return $response_body[self::DATA_KEY_PAYLOAD];
+        $next = $response[self::LINKS_KEY_PAYLOAD][self::NEXT_KEY_PAYLOAD];
+        while ($next) {
+            $next_qs = explode("?", $next)[1];
+            $response = $this->requestV3("api/lists/?$next_qs", self::HTTP_GET);
+            array_push($lists, ...$response[self::DATA_KEY_PAYLOAD]);
+
+            $next = $response[self::LINKS_KEY_PAYLOAD][self::NEXT_KEY_PAYLOAD];
+        }
+
+        return $lists;
     }
 
     /**

@@ -362,16 +362,17 @@ class UkooCompatCompat extends ObjectModel
             // suite et fin de la requête
             $sql .= '
                 WHERE product_shop.`visibility` IN ("both", "catalog")'.
-                'AND p.`universal` = 0'.
+                
                 $newsSQL .
                 $categorySQL .
-                $manufacturerSQL .
+                // $manufacturerSQL .
                 ($active ? ' AND product_shop.`active` = 1' : '').
                 ($id_category != null && is_array($id_categories) && !empty($id_categories) ?
                     ' AND cp.`id_category` IN ('.pSQL(implode(', ', $id_categories)).')' :
                     ($id_category != null ? ' AND cp.`id_category` = '.(int)$id_category :
                         ''));
-
+            // echo $sql;
+            // exit;
             return (int)Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue($sql);
         }
 
@@ -412,7 +413,8 @@ class UkooCompatCompat extends ObjectModel
                 ON (p.`id_product` = cp.`id_product`)' : '') . 
             'LEFT JOIN `'._DB_PREFIX_.'stock_available` sa
                 ON (p.`id_product` = sa.`id_product`)';
-
+        // echo $sql;
+        // exit;
         // on créé une jointure pour chaque filtre sélectionné
         foreach ($search->selected_criteria as $id_filter => $id_criterion) {
             // si l'id_criterion est vide, on saute la jointure
@@ -433,7 +435,6 @@ class UkooCompatCompat extends ObjectModel
         // suite et fin de la requête
         $sql .= '
             WHERE product_shop.`id_shop` = '.(int)$context->shop->id.'
-            AND p.`universal` = 0'.'
             AND product_shop.`visibility` IN ("both", "catalog")'.
             ($active ? ' AND product_shop.`active` = 1' : '').
             ($id_category != null && is_array($id_categories) && !empty($id_categories) ?
@@ -442,7 +443,7 @@ class UkooCompatCompat extends ObjectModel
                     '')).
             $newsSQL .
             $categorySQL .
-            $manufacturerSQL .
+            // $manufacturerSQL .
             ' GROUP BY product_shop.id_product';
 
         if ($random === true) {
@@ -452,7 +453,8 @@ class UkooCompatCompat extends ObjectModel
                 pSQL($order_way).'
             LIMIT '.(((int)$p - 1) * (int)$n).','.(int)$n;
         }
-
+        // echo $sql;
+        // exit;
         $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
         if ($order_by == 'orderprice') {
             Tools::orderbyPrice($result, $order_way);
@@ -551,10 +553,10 @@ class UkooCompatCompat extends ObjectModel
             // suite et fin de la requête
             $sql .= '
                 WHERE product_shop.`visibility` IN ("both", "catalog")'.
-                'AND p.`universal` = 1'.
+
                 $newsSQL .
                 $categorySQL .
-                $manufacturerSQL .
+                // $manufacturerSQL .
                 ($active ? ' AND product_shop.`active` = 1' : '').
                 ($id_category != null && is_array($id_categories) && !empty($id_categories) ?
                     ' AND cp.`id_category` IN ('.pSQL(implode(', ', $id_categories)).')' :
@@ -622,7 +624,7 @@ class UkooCompatCompat extends ObjectModel
         // suite et fin de la requête
         $sql .= '
             WHERE product_shop.`id_shop` = '.(int)$context->shop->id.'
-            AND p.`universal` = 1'.'
+
             AND product_shop.`visibility` IN ("both", "catalog")'.
             ($active ? ' AND product_shop.`active` = 1' : '').
             ($id_category != null && is_array($id_categories) && !empty($id_categories) ?
@@ -631,7 +633,7 @@ class UkooCompatCompat extends ObjectModel
                     '')).
             $newsSQL .
             $categorySQL .
-            $manufacturerSQL .
+            // $manufacturerSQL .
             ' GROUP BY product_shop.id_product';
 
         if ($random === true) {
@@ -792,7 +794,8 @@ class UkooCompatCompat extends ObjectModel
             }
         }
         $sql .= ' WHERE uc.`id_product` = '.(int)$id_product.'';
-        
+        // echo $sql;
+        // exit;
         return Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
     }
 

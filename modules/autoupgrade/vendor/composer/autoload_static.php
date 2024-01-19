@@ -4,7 +4,7 @@
 
 namespace Composer\Autoload;
 
-class ComposerStaticInit7a29aafbe4a63aeec985b3432083542b
+class ComposerStaticInit0d1682c605cfcb4d026cde41db2fb8e8
 {
     public static $files = array (
         '320cde22f66dd4f5d3fd621d3e88b98f' => __DIR__ . '/..' . '/symfony/polyfill-ctype/bootstrap.php',
@@ -139,7 +139,6 @@ class ComposerStaticInit7a29aafbe4a63aeec985b3432083542b
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeSelfCheck' => __DIR__ . '/../..' . '/classes/UpgradeSelfCheck.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CacheCleaner' => __DIR__ . '/../..' . '/classes/UpgradeTools/CacheCleaner.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreUpgrader\\CoreUpgrader' => __DIR__ . '/../..' . '/classes/UpgradeTools/CoreUpgrader/CoreUpgrader.php',
-        'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreUpgrader\\CoreUpgrader16' => __DIR__ . '/../..' . '/classes/UpgradeTools/CoreUpgrader/CoreUpgrader16.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreUpgrader\\CoreUpgrader17' => __DIR__ . '/../..' . '/classes/UpgradeTools/CoreUpgrader/CoreUpgrader17.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreUpgrader\\CoreUpgrader80' => __DIR__ . '/../..' . '/classes/UpgradeTools/CoreUpgrader/CoreUpgrader80.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\CoreUpgrader\\CoreUpgrader81' => __DIR__ . '/../..' . '/classes/UpgradeTools/CoreUpgrader/CoreUpgrader81.php',
@@ -147,7 +146,6 @@ class ComposerStaticInit7a29aafbe4a63aeec985b3432083542b
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\FileFilter' => __DIR__ . '/../..' . '/classes/UpgradeTools/FileFilter.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\FilesystemAdapter' => __DIR__ . '/../..' . '/classes/UpgradeTools/FilesystemAdapter.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\ModuleAdapter' => __DIR__ . '/../..' . '/classes/UpgradeTools/ModuleAdapter.php',
-        'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\SettingsFileWriter' => __DIR__ . '/../..' . '/classes/UpgradeTools/SettingsFileWriter.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\SymfonyAdapter' => __DIR__ . '/../..' . '/classes/UpgradeTools/SymfonyAdapter.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\TaskRepository' => __DIR__ . '/../..' . '/classes/UpgradeTools/TaskRepository.php',
         'PrestaShop\\Module\\AutoUpgrade\\UpgradeTools\\ThemeAdapter' => __DIR__ . '/../..' . '/classes/UpgradeTools/ThemeAdapter.php',
@@ -545,10 +543,10 @@ class ComposerStaticInit7a29aafbe4a63aeec985b3432083542b
     public static function getInitializer(ClassLoader $loader)
     {
         return \Closure::bind(function () use ($loader) {
-            $loader->prefixLengthsPsr4 = ComposerStaticInit7a29aafbe4a63aeec985b3432083542b::$prefixLengthsPsr4;
-            $loader->prefixDirsPsr4 = ComposerStaticInit7a29aafbe4a63aeec985b3432083542b::$prefixDirsPsr4;
-            $loader->prefixesPsr0 = ComposerStaticInit7a29aafbe4a63aeec985b3432083542b::$prefixesPsr0;
-            $loader->classMap = ComposerStaticInit7a29aafbe4a63aeec985b3432083542b::$classMap;
+            $loader->prefixLengthsPsr4 = ComposerStaticInit0d1682c605cfcb4d026cde41db2fb8e8::$prefixLengthsPsr4;
+            $loader->prefixDirsPsr4 = ComposerStaticInit0d1682c605cfcb4d026cde41db2fb8e8::$prefixDirsPsr4;
+            $loader->prefixesPsr0 = ComposerStaticInit0d1682c605cfcb4d026cde41db2fb8e8::$prefixesPsr0;
+            $loader->classMap = ComposerStaticInit0d1682c605cfcb4d026cde41db2fb8e8::$classMap;
 
         }, null, ClassLoader::class);
     }

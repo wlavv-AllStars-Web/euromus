@@ -1,12 +1,16 @@
+{assign var="context" value=Context::getContext()}
+{assign var="idLang" value=(int)$context->language->id}
+{* {$idLang} *}
+
 <script>
 
     $(document).ready(function() {
         return ;
     });
+    
 
     function call_ajax_fill_selects(index){
-        
-        id_lang = 1;
+        id_lang = {$idLang};
         select_1 = 0;
         select_2 = 0;
         select_3 = 0;
@@ -76,6 +80,8 @@
 
     }
 
+    
+
     function save_compatibilities(){
         
         select_1 = 0;
@@ -102,9 +108,29 @@
                 select_4,
                 id_product,
             },
-            success: function(result){
-
+            success: function(data){
+            
                 $('#show_group_compats_message').toggle();
+
+                // var rowClass = 'id_compat_' + data.id_product;
+
+                // var html = '<tr class="' + rowClass + '">';
+                // html += '<input type="hidden" id="compatibility_number">';
+
+                // html += '<td>';
+                // html += '<input type="checkbox" name="delete_compats" value="' + data.checkboxValue + '">';
+                // html += '</td>';
+
+                // html += '<td>' + data.select_1 + '</td>';
+                // html += '<td>' + data.select_2 + '</td>';
+                // html += '<td>' + data.select_3 + '</td>';
+                // html += '<td>' + data.select_4 + '</td>';
+
+                // html += '</tr>';
+
+                // // Now you can use the 'html' variable to append this row to your table
+                // $('#module_ukoocompat').append(html);
+
                 location.reload();
 
             }

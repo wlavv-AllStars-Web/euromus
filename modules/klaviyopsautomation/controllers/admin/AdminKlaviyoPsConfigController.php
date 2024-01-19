@@ -632,7 +632,7 @@ class AdminKlaviyoPsConfigController extends ModuleAdminController
             );
 
             $data = $couponGeneratorService->buildPayload($generatedCartRules);
-            $data = $csvService->serialize($data, [
+            $data = $csvService->csvSerialize($data, [
                 'enclosure' => '',
             ]);
 

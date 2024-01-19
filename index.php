@@ -23,6 +23,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  */
-
+// phpinfo();
+// exit;
 require dirname(__FILE__).'/config/config.inc.php';
 Dispatcher::getInstance()->dispatch();

@@ -1,0 +1,8 @@
+*ERROR* 	v8.1.2	2023/12/11 - 13:28:40: Link to database cannot be established: SQLSTATE[HY000] [2002] Nenhuma liga&ccedil;&atilde;o p&ocirc;de ser feita porque o computador de destino
+as recusou ativamente at line 119 in file classes/db/DbPDO.php
+*ERROR* 	v8.1.2	2023/12/11 - 13:28:48: Link to database cannot be established: SQLSTATE[HY000] [2002] Nenhuma liga&ccedil;&atilde;o p&ocirc;de ser feita porque o computador de destino
+as recusou ativamente at line 119 in file classes/db/DbPDO.php
+*ERROR* 	v8.1.2	2023/12/11 - 13:29:25: Link to database cannot be established: SQLSTATE[HY000] [2002] Nenhuma liga&ccedil;&atilde;o p&ocirc;de ser feita porque o computador de destino
+as recusou ativamente at line 119 in file classes/db/DbPDO.php
+*ERROR* 	v8.1.2	2023/12/11 - 13:29:29: Link to database cannot be established: SQLSTATE[HY000] [2002] Nenhuma liga&ccedil;&atilde;o p&ocirc;de ser feita porque o computador de destino
+as recusou ativamente at line 119 in file classes/db/DbPDO.php

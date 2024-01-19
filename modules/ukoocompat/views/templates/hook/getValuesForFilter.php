@@ -2,7 +2,7 @@
 
 include_once $_SERVER['DOCUMENT_ROOT'] . "/allstarsmotorsport/SCRIPTS/Helpers/inc.php";
 
-$sql = "SELECT * FROM ps_ukoocompat_criterion_lang WHERE id_filter=" . ( $_POST['id_filter'] - 1 ) . " AND id_lang = 1";
+$sql = "SELECT * FROM ps_ukoocompat_criterion_lang WHERE id_filter=" . ( $_POST['id_filter'] - 1 ) . " AND id_lang = 2";
 
 $conn = getConn();
 $result = $conn->query( $sql);

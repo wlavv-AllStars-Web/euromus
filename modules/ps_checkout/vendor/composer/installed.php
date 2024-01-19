@@ -3,7 +3,7 @@
         'name' => 'prestashop/ps_checkout',
         'pretty_version' => 'dev-prestashop/8.x',
         'version' => 'dev-prestashop/8.x',
-        'reference' => '171ed9831f6c1291244db74523e011c7e264f3ef',
+        'reference' => '0a792c97ddb095863fcefa2454e820563d922932',
         'type' => 'prestashop-module',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -169,7 +169,7 @@
         'prestashop/ps_checkout' => array(
             'pretty_version' => 'dev-prestashop/8.x',
             'version' => 'dev-prestashop/8.x',
-            'reference' => '171ed9831f6c1291244db74523e011c7e264f3ef',
+            'reference' => '0a792c97ddb095863fcefa2454e820563d922932',
             'type' => 'prestashop-module',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),

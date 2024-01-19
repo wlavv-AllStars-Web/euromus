@@ -1,0 +1,12 @@
+*ERROR* 	v8.1.2	2023/12/12 - 13:11:35: Link to database cannot be established: SQLSTATE[HY000] [2002] Uma tentativa de liga&ccedil;&atilde;o falhou porque o componente ligado n&atilde;o respondeu
+corretamente ap&oacute;s um per&iacute;odo de tempo, ou a liga&ccedil;&atilde;o estabelecida falhou
+porque o anfitri&atilde;o ligado n&atilde;o respondeu at line 119 in file classes/db/DbPDO.php
+*ERROR* 	v8.1.2	2023/12/12 - 13:11:35: Link to database cannot be established: SQLSTATE[HY000] [2002] Uma tentativa de liga&ccedil;&atilde;o falhou porque o componente ligado n&atilde;o respondeu
+corretamente ap&oacute;s um per&iacute;odo de tempo, ou a liga&ccedil;&atilde;o estabelecida falhou
+porque o anfitri&atilde;o ligado n&atilde;o respondeu at line 119 in file classes/db/DbPDO.php
+*ERROR* 	v8.1.2	2023/12/12 - 13:11:36: Link to database cannot be established: SQLSTATE[HY000] [2002] Uma tentativa de liga&ccedil;&atilde;o falhou porque o componente ligado n&atilde;o respondeu
+corretamente ap&oacute;s um per&iacute;odo de tempo, ou a liga&ccedil;&atilde;o estabelecida falhou
+porque o anfitri&atilde;o ligado n&atilde;o respondeu at line 119 in file classes/db/DbPDO.php
+*ERROR* 	v8.1.2	2023/12/12 - 13:11:47: Link to database cannot be established: SQLSTATE[HY000] [2002] Uma tentativa de liga&ccedil;&atilde;o falhou porque o componente ligado n&atilde;o respondeu
+corretamente ap&oacute;s um per&iacute;odo de tempo, ou a liga&ccedil;&atilde;o estabelecida falhou
+porque o anfitri&atilde;o ligado n&atilde;o respondeu at line 119 in file classes/db/DbPDO.php

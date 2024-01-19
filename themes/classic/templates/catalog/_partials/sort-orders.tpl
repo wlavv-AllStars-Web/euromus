@@ -22,17 +22,27 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-
+{* <pre style="
+z-index: 9999;
+position: absolute;
+width: 100vw !important;
+background: white;
+overflow: scroll;
+top: 0;
+">{print_r($listing.search->filters,1)}</pre> *}
+{* <pre>{print_r($listing.sort_selected,1)}</pre> *}
+{* {$order_by_orientation_compats} *}
 <span class="col-sm-3 col-md-5 hidden-sm-down sort-by">{l s='Sort by:' d='Shop.Theme.Global'}</span>
-<div class="{if !empty($listing.rendered_facets)}col-xs-8 col-sm-7{else}col-xs-12 col-sm-12{/if} col-md-9 products-sort-order dropdown">
-  <button
+{* <div class="{if !empty($listing.rendered_facets)}col-xs-8 col-sm-7{else}col-xs-12 col-sm-12{/if} col-md-9 products-sort-order dropdown"> *}
+<div class="col-md-9 col-xs-12 products-sort-order dropdown">
+  <button style="color: black !important"
     class="btn-unstyle select-title"
     rel="nofollow"
     data-toggle="dropdown"
     aria-label="{l s='Sort by selection' d='Shop.Theme.Global'}"
     aria-haspopup="true"
     aria-expanded="false">
-    {if $listing.sort_selected}{$listing.sort_selected}{else}{l s='Choose' d='Shop.Theme.Actions'}{/if}
+    {l s='Choose' d='Shop.Theme.Actions'}
     <i class="material-icons float-xs-right">&#xE5C5;</i>
   </button>
   <div class="dropdown-menu">

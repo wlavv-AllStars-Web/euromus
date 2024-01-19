@@ -7,13 +7,14 @@
  *
  * "In Ukoo we trust!"
  *}
-
+ {assign var="context" value=Context::getContext()}
+ {assign var="idLang" value=(int)$context->language->id}
 {if isset($id_product) && $id_product|intval != 0}
 
     <div class="panel product-tab">
         <h3><i class="icon-check"></i> Criar compatibilidades para grupos ( em massa )</h3>
 
-        <input type="hidden" id="id_lang" name="id_lang" value="1" />
+        <input type="hidden" id="id_lang" name="id_lang" value="{$idLang}" />
 
         <div class="row">
             {foreach from=$filters item=filter}
@@ -92,7 +93,8 @@
         .newsletter_container{ margin: 20px 0; font-size: 16px; color: black; }
         
     </style>
-
+    {* <pre>{print_r($compatTab,1)}<pre> *}
+    
     {foreach from=$compatTab item=tab}
     <div class="panel product-tab">
         <h3><i class="icon-search"></i> {l s='Search:' mod='ukoocompat'} {$tab.search->name|escape:'htmlall':'UTF-8'}</h3>
@@ -104,6 +106,7 @@
             <thead>
                 <tr>
                     <th class="even"><span class="title_box"></span></th>
+
                     {foreach from=$tab.search->filters item=filter}
                         <th class="even"><span class="title_box">{$filter->name|escape:'htmlall':'UTF-8'}</span></th>
                     {/foreach}
@@ -176,7 +179,7 @@
 			</div>-->
 			<input type="hidden" name="id_product" id="id_product" value="{$id_product|intval}" />
 			<input type="hidden" name="compatToken" id="compatToken" value="{$compatToken|escape:'htmlall':'UTF-8'}" />
-			<input type="hidden" name="id_lang" value="{$search->current_id_lang|intval}" />
+			{* <input type="hidden" name="id_lang" value="{$search->current_id_lang|intval}" /> *}
 
 			{foreach from=$filters item=filter}
 				{if $filter.id != 5 }
@@ -223,7 +226,7 @@
 			{/foreach}
 
 			<div class="panel-footer">
-				<a href="{$link->getAdminLink('AdminProducts')|escape:'html':'UTF-8'}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel' mod='ukoocompat'}</a>
+				{* <a href="{$link->getAdminLink('AdminProducts')|escape:'html':'UTF-8'}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel' mod='ukoocompat'}</a> *}
 				<button type="submit" name="submitAddproduct" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save' mod='ukoocompat'}</button>
 				<button type="submit" name="submitAddproductAndStay" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save and stay' mod='ukoocompat'}</button>
 			</div>
@@ -238,7 +241,6 @@
             $.ajax({
                 url: './index.php?controller=AdminUkooCompatCompat&action=deleteCompatibility',
                 type: 'POST',
-                dataType: 'json',
                 data: {
                     token: $('#compatToken').val(),
                     id_compat: parseInt(id_compat),
@@ -249,11 +251,13 @@
                     {
                         showSuccessMessage(data.message);
                         $('.id_compat_' + data.id_compat).fadeOut('slow', function(){ $('.id_compat_' + data.id_compat).remove(); });
+                        // $('#module_ukoocompat').fadeOut('slow', function(){ $('.id_compat_' + data.id_compat).remove(); });
+                        
                     }
                     else
                         showErrorMessage(data.message);
                 }
-            });
+                });
         }
 
         function setToSendNewsletter(id_product){

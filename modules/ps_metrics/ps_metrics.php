@@ -69,7 +69,7 @@ class Ps_metrics extends Module
     {
         $this->name = 'ps_metrics';
         $this->tab = 'advertising_marketing';
-        $this->version = '4.0.2';
+        $this->version = '4.0.3';
         $this->author = 'PrestaShop';
         $this->need_instance = 0;
         $this->module_key = '697657ffe038d20741105e95a10b12d1';

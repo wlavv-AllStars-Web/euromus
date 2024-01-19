@@ -67,7 +67,7 @@ class CartControllerCore extends FrontController
     public function init()
     {
         parent::init();
-      
+
         // Send noindex to avoid ghost carts by bots
         header('X-Robots-Tag: noindex, nofollow', true);
 
@@ -540,7 +540,7 @@ class CartControllerCore extends FrontController
         CartRule::autoAddToCart();
 
         // Finally check that all other products are also available, but only if there was no previous error
-        if (empty($this->{$ErrorKey})) {
+        if ('add' !== $mode && empty($this->{$ErrorKey})) {
             $areProductsAvailable = $this->areProductsAvailable();
             if (true !== $areProductsAvailable) {
                 $this->{$ErrorKey}[] = $areProductsAvailable;

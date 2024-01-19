@@ -1,2 +1,5 @@
 <?php
-class WmModuleHomepageMain extends ObjectModel{ }
+class WmModuleHomepageMain extends ObjectModel
+{
+
+}

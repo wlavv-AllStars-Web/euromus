@@ -22,6 +22,8 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+  {* <pre>{print_r($listing,1)}</pre> *}
+
 <nav class="pagination">
   <div class="col-md-4">
     {block name='pagination_summary'}

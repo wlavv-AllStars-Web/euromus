@@ -125,7 +125,7 @@ class CategoryControllerCore extends ProductListingFrontController
     public function initContent()
     {
         parent::initContent();
-        
+
         if (
             Validate::isLoadedObject($this->category)
             && $this->category->active

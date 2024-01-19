@@ -24,11 +24,10 @@
  *}
 
  
-<div id="custom-banner">
+{* <div id="custom-banner"> *}
 {* {$cms_infos.text nofilter} *}
-<div class="selectVehicle-container">
+{* <div class="selectVehicle-container">
   <h1>SELECT YOUR VEHICLE</h1>
-  {* <div class="selectVehicle-description">Insert modelyear, make and model and start experience with AmericanParts</div> *}
   <div class="selects-card">
     <div class="selectField">
       <input id="modelyearHidden" type="hidden" value="">
@@ -78,7 +77,7 @@
     <div class="selectField">
       <button class="btn" disabled>SEARCH</button>
     </div>
-  </div>
+  </div> *}
   {* <div class="counter-products">
     <span>3.811.039</span> products available in the catalog
   </div> *}
@@ -93,7 +92,7 @@
       <a class="btn">Orçamento de peças sobresselentes</a>
     </div>
   </div> *}
-</div>
+{* </div> *}
 
 </div>
 <div class="lines-tablet" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
@@ -101,7 +100,7 @@
   <div class="card-img-container">
     <div class="card-big">
       <div class="layerHover">
-        <h6>RAM 1500</h6>
+        <h6>Ram 1500</h6>
       </div>
       <img src="/img/eurmuscle/bannersHome/banner1.webp" />
     </div>
@@ -185,7 +184,7 @@
   <div class="cars-container">
     <div class="cars-cards col-12">
       <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Ford-Mustang-Shelby-GT500.png" alt="Card image cap">
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/FordMustang.png" alt="Card image cap">
         <div class="card-title"><a href="">Ford Mustang</a></div>
           <div id="accordion" style="width: 100%;">
             <div class="cardAccordion">
@@ -201,7 +200,7 @@
               <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
                 <div class="card-body">
                   <div class="card-text">
-                    <div class="card-link"><a href="">3700 V6</a><span>(2013 - 2014)</span></div>
+                    <div class="card-link"><a href="module/ukoocompat/listingid_search=1&id_lang=2&news_compats=0&order_by_compats=position&order_by_orientation_compats=desc&id_manufacturer_compats=&nr_items_compats=20&n=20&p=1&id_category=&root_page=&ukoo_email=&filters1=92&filters2=98&filters3=843&filters4=321&ukoocompat_search_submit=&page_name=">3700 V6</a><span>(2013 - 2014)</span></div>
                     <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged </a><span>(2013 - 2014)</span></div>
                     <div class="card-link"><a href="">GT 5000 V8 Coyote </a><span>(2013 - 2014)</span></div>
                     <div class="card-link"><a href="">2300 L4 Ecoboost Turbocharged</a><span>(2013 - 2014)</span></div>
@@ -215,7 +214,7 @@
         
       </div>
       <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/2020-chevrolet-camaro-zl1.png" alt="Card image cap">
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Camaro.png" alt="Card image cap">
         <div class="card-title"><a href="">Chevrolet Camaro</a></div>
           <div id="accordion" style="width: 100%;">
             <div class="cardAccordion">
@@ -244,7 +243,7 @@
         
       </div>
       <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/2016-dodge-challenger-hellcat-2.png" alt="Card image cap">
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/DodgeChallanger.png" alt="Card image cap">
         <div class="card-title"><a href="">Dodge Challenger</a></div>
           <div id="accordion" style="width: 100%;">
             <div class="cardAccordion">
@@ -271,7 +270,7 @@
         
       </div>
       <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/2020-chevrolet-corvette-c8.png" alt="Card image cap">
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Corvette.png" alt="Card image cap">
         <div class="card-title"><a href="">Chevrolet Corvette</a></div>
           <div id="accordion" style="width: 100%;">
             <div class="cardAccordion">
@@ -300,8 +299,8 @@
         
       </div>
       <div class="card col-lg-3" >
-        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/2019-Ram-1500.png" alt="Card image cap">
-        <div class="card-title"><a href="">Ram 1500</a></div>
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/RamTrx.png" alt="Card image cap">
+        <div class="card-title"><a href="">Ram Trx</a></div>
           <div id="accordion" style="width: 100%;">
             <div class="cardAccordion">
             
@@ -339,21 +338,21 @@
   </div>
   <div class="categoryCars" style="display: flex;justify-content:space-evenly;width:100%;padding-bottom:3rem;">
     <div class="category cat1">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-jeep.jpg" loading="lazy" alt="Jeep">
-      <div class="model-type-overlay"><span>JEEP</span></div>
+      <img src="/img/eurmuscle/bannersHome/4X4.png" loading="lazy" alt="Jeep">
+      <div class="model-type-overlay"><span>4 x 4</span></div>
     </div>
     <div class="category cat2">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-f150.jpg
+      <img src="/img/eurmuscle/bannersHome/TRUCK.png
       " loading="lazy" alt="Truck">
       <div class="model-type-overlay"><span>TRUCK</span></div>
     </div>
     <div class="category cat3">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-f100.jpg" loading="lazy" alt="Classic">
-      <div class="model-type-overlay"><span>CLASSIC</span></div>
+      <img src="/img/eurmuscle/bannersHome/CLASSICS.png" loading="lazy" alt="Classic">
+      <div class="model-type-overlay"><span>CLASSICS</span></div>
     </div>
     <div class="category cat4">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-focus.jpg" loading="lazy" alt="Hatch">
-      <div class="model-type-overlay"><span>HATCH</span></div>
+      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Hatch">
+      <div class="model-type-overlay"><span>MODERN</span></div>
     </div>
     <div class="category cat4">
       <img src="/img/eurmuscle/bannersHome/other-vehicles-f100.jpg" loading="lazy" alt="Classic">
@@ -369,7 +368,7 @@
 
     <div style="border-top:4px solid #103054;border-bottom:2px solid #ee302e;padding-block:2px;width: 100%;"></div>
   <div class="videosContainer" style="background-color: #ee302e;">
-    <div class="video1">
+    <div class="video1 video">
         <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
         <img src="/img/eurmuscle/bannersHome/banner3.png" />
         <div class="play">
@@ -382,7 +381,7 @@
           </iframe>
         </div>
     </div>
-    <div class="video2">
+    <div class="video2 video">
       <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
       <img src="/img/eurmuscle/bannersHome/banner3.png" />
       <div class="play">
@@ -395,7 +394,7 @@
         </iframe>
       </div>
     </div>
-    <div class="video3">
+    <div class="video3 video">
       <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
       <img src="/img/eurmuscle/bannersHome/banner3.png" />
       <div class="play">
@@ -410,58 +409,24 @@
     </div>
   </div>
 
+  <style>
+    .video {
+      width: 100%;
+    }
+  </style>
+
 <script>
-window.addEventListener("load", () => {
-  const modelyearSelect = document.querySelector('#modelyear')
-  const brandSelect = document.querySelector('#brand')
-  const modelSelect = document.querySelector('#model')
-  const versionSelect = document.querySelector('#version')
-  const buttonSubmit = document.querySelector('.selectField .btn')
+window.addEventListener("DOMContentLoaded", () => {
+  const brandSelect = document.querySelector('#ukoocompat_select_1')
+  const modelSelect = document.querySelector('#ukoocompat_select_2')
+  const typeSelect = document.querySelector('#ukoocompat_select_3')
+  const versionSelect = document.querySelector('#ukoocompat_select_4')
+  // const buttonSubmit = document.querySelector('.selectField .btn')
 
-
-  const modelyearSelectHidden = document.querySelector('#modelyearHidden')
-  const brandSelectHidden = document.querySelector('#brandHidden')
-  const modelSelectHidden = document.querySelector('#modelHidden')
-  const versionSelectHidden = document.querySelector('#versionHidden')
-
-  // modelyear select on change
-  modelyearSelect.addEventListener('change', (e) => {
-    modelyearSelectHidden.setAttribute('value', e.target.value)
-
-    if(modelyearSelectHidden.value != null){
-    brandSelect.removeAttribute('disabled')
-    }
-
-  })
-
-  // brand select on change
-  brandSelect.addEventListener('change', (e) => {
-    brandSelectHidden.setAttribute('value', e.target.value)
-
-
-    if(brandSelectHidden.value != null){
-      modelSelect.removeAttribute('disabled')
-    }
-  })
-
-  modelSelect.addEventListener('change', (e) => {
-    modelSelectHidden.setAttribute('value', e.target.value)
-
-    if(modelSelectHidden.value != null){
-      versionSelect.removeAttribute('disabled')
-    }
-  })
-
-  versionSelect.addEventListener('change', (e) => {
-    versionSelectHidden.setAttribute('value', e.target.value)
-
-    if(modelSelectHidden.value != null){
-      buttonSubmit.removeAttribute('disabled')
-    }
-    
-  })
-
-  // falta o submit event
+  brandSelect.firstElementChild.setAttribute('selected','selected');
+  modelSelect.firstElementChild.setAttribute('selected','selected');
+  typeSelect.firstElementChild.setAttribute('selected','selected');
+  versionSelect.firstElementChild.setAttribute('selected','selected');
 
   // hover youtube
 
@@ -531,6 +496,7 @@ if(window.innerWidth < 768){
                                     arrowRight.style.position = "absolute";
                                     arrowRight.style.width = "2.5rem";
                                     arrowRight.style.height = "2.5rem";
+                                    arrowRight.style.cursor = "pointer";
                                 
                             //     // arrow left
                                 
@@ -550,7 +516,7 @@ if(window.innerWidth < 768){
                                     arrowLeft.style.position = "absolute";
                                     arrowLeft.style.width = "2.5rem";
                                     arrowLeft.style.height = "2.5rem";
-                                    
+                                    arrowLeft.style.cursor = "pointer";
                                 
                                 if (index === 0) {
                                     
@@ -621,7 +587,12 @@ if(window.innerWidth < 768){
 
 
 <style>
-
+.categoryCars .category img {
+  width: 100%;
+    background-color: #bfbfbf;
+    object-fit: contain;
+    height: 100%;
+}
 
 
 </style>

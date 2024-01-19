@@ -155,7 +155,7 @@ class SearchProvider implements FacetsRendererInterface, ProductSearchProviderIn
         ProductSearchQuery $query
     ) {
         $result = new ProductSearchResult();
-
+        
         /**
          * Get currently selected filters. In the query, it's passed as encoded URL string,
          * we make it an array. All filters in the URL that are no longer valid are removed.
