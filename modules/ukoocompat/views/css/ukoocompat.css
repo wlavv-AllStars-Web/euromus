@@ -68,7 +68,8 @@
     border-radius: 0.25rem;
     font-family: 'Roboto', Arial,Helvetica,sans-serif;
     border: none;
-    max-width: 230px;
+    /* max-width: 230px; */
+    max-width: 80%;
 }
 
 .ukoocompat_search_block form #ukoocompat_search_block_submit_1{
