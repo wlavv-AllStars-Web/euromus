@@ -3,9 +3,9 @@
   array (
     'database_host' => 'localhost',
     'database_port' => '',
-    'database_name' => 'euromus',
-    'database_user' => 'root',
-    'database_password' => '',
+    'database_name' => 'asw200923_euromuscle_beta',
+    'database_user' => 'asw200923_user_db',
+    'database_password' => '*U;Z)q%F5T.1',
     'database_prefix' => 'eu_',
     'database_engine' => 'InnoDB',
     'mailer_transport' => 'smtp',
