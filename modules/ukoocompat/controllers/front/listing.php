@@ -505,7 +505,9 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $totalItems = $result->getTotalProductsCount();
         $itemsShownFrom = ($query->getResultsPerPage() * ($query->getPage() - 1)) + 1;
         $itemsShownTo = $query->getResultsPerPage() * $query->getPage();
-
+        // echo $totalItems;
+        // exit;
+        
         $pages = array_map(function ($link) {
             $link['url'] = $this->updateQueryString([
                 'page' => $link['page'] > 1 ? $link['page'] : null,
