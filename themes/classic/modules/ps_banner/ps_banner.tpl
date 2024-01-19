@@ -338,21 +338,21 @@
   </div>
   <div class="categoryCars" style="display: flex;justify-content:space-evenly;width:100%;padding-bottom:3rem;">
     <div class="category cat1">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-jeep.jpg" loading="lazy" alt="Jeep">
-      <div class="model-type-overlay"><span>JEEP</span></div>
+      <img src="/img/eurmuscle/bannersHome/4X4.png" loading="lazy" alt="Jeep">
+      <div class="model-type-overlay"><span>4 x 4</span></div>
     </div>
     <div class="category cat2">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-f150.jpg
+      <img src="/img/eurmuscle/bannersHome/TRUCK.png
       " loading="lazy" alt="Truck">
       <div class="model-type-overlay"><span>TRUCK</span></div>
     </div>
     <div class="category cat3">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-f100.jpg" loading="lazy" alt="Classic">
-      <div class="model-type-overlay"><span>CLASSIC</span></div>
+      <img src="/img/eurmuscle/bannersHome/CLASSICS.png" loading="lazy" alt="Classic">
+      <div class="model-type-overlay"><span>CLASSICS</span></div>
     </div>
     <div class="category cat4">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-focus.jpg" loading="lazy" alt="Hatch">
-      <div class="model-type-overlay"><span>HATCH</span></div>
+      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Hatch">
+      <div class="model-type-overlay"><span>MODERN</span></div>
     </div>
     <div class="category cat4">
       <img src="/img/eurmuscle/bannersHome/other-vehicles-f100.jpg" loading="lazy" alt="Classic">
@@ -587,7 +587,12 @@ if(window.innerWidth < 768){
 
 
 <style>
-
+.categoryCars .category img {
+  width: 100%;
+    background-color: #bfbfbf;
+    object-fit: contain;
+    height: 100%;
+}
 
 
 </style>
