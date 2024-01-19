@@ -54,40 +54,11 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         
         $query = new ProductSearchQuery();
         $result = new ProductSearchResult();
+        // $totalProductsCount = $result->getTotalProductsCount();
 
-        // Set up pagination using the method from ProductListingFrontController
-       
-        // echo '<pre>'.print_r($this->listing,1).'</pre>';
-        // $sort = self::getAvailableSortOrders();
-        
-        // si les variables ne sont pas présente, on redirige vers la home
-        /*if (!Tools::isSubmit('id_search')) {
-            Tools::redirect('index');
-        }*/
-        // Assuming you have the necessary parameters
-        // $sort_orders = new SortOrder('product', Tools::getProductsOrder('by'), Tools::getProductsOrder('way'));
-        
-        // // Create a SortOrder instance
-        // $sort_orders = $this->getProductSearchQuery();
-        // // echo '<pre>'.print_r($sort_orders,1).'</pre>';
-        // // exit;
-        // $sortOrderArray = [
-            //     'entity' => $sort_orders->getEntity(),
-            //     'field' => $sort_orders->getField(),
-            //     'direction' => $sort_orders->getDirection(),
-            //     'label' => $sort_orders->getLabel(),
-            // ];
-        // Assuming you are in a PrestaShop controller or another relevant context
-        // $productSearchQuery = new ProductSearchQuery();
+//         echo var_dump($result);
+// exit;
 
-        // // Create an instance of SearchProvider
-        // $searchProvider = new SearchProvider();
-        
-        // // Get the available sort orders
-        // $sortOrders = $searchProvider->getAvailableSortOrders($productSearchQuery);
-        
-        // // Now $sortOrders should contain the available sort orders
-            
         // echo '<pre>' . print_r($sortOrders, true) . '</pre>';
         // exit;
         parent::initContent();
@@ -321,7 +292,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         // $this->Pagination($nb_products);
         // $pagination = $this->getTemplateVarPagination($query, $result);
         $pagination = $this->getTemplateVarPagination($query, $result);
-        // $this->context->smarty->assign($pagination);
+        $this->context->smarty->assign($pagination);
 
         // echo '<pre>'.print_r($paginationData,1).'</pre>';
         // exit;
@@ -490,10 +461,11 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         }
     }
 
-    protected function getTemplateVarPagination(
+    private function getTemplateVarPagination(
         ProductSearchQuery $query,
         ProductSearchResult $result
     ) {
+
         $pagination = new Pagination();
         $pagination
             ->setPage($query->getPage())
@@ -505,8 +477,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $totalItems = $result->getTotalProductsCount();
         $itemsShownFrom = ($query->getResultsPerPage() * ($query->getPage() - 1)) + 1;
         $itemsShownTo = $query->getResultsPerPage() * $query->getPage();
-        // echo $totalItems;
-        // exit;
+
         
         $pages = array_map(function ($link) {
             $link['url'] = $this->updateQueryString([
