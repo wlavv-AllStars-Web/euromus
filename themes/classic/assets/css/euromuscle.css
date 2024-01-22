@@ -776,12 +776,18 @@ main {
   
   .videosContainer {
     display: flex;
-    /* flex-direction: column; */
-    gap: 2rem !important;
+    flex-direction: column;
+    gap: 1rem !important;
     align-items: center
   }
 
+  .videosContainer img {
+    height: 427px !important;
+  }
 
+  .videosContainer iframe {
+    height: 427px !important;
+  }
 
   .videosContainer .video1,
   .videosContainer .video2,
