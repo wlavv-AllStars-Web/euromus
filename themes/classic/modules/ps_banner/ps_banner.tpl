@@ -102,7 +102,7 @@
       <div class="layerHover">
         <h6>Ram 1500</h6>
       </div>
-      <img src="/img/eurmuscle/bannersHome/banner1.webp" />
+      <img src="/img/eurmuscle/bannersHome/banner1.png" />
     </div>
     <div class="card-min-img">
       <div class="card-img ">
@@ -122,7 +122,7 @@
   <div class="card-img-container">
     <div class="card-big">
       <div class="layerHover"><h6>Jeep</h6></div>
-      <img src="/img/eurmuscle/bannersHome/banner2.webp" />
+      <img src="/img/eurmuscle/bannersHome/banner2.png" />
     </div>
     <div class="card-min-img">
       <div class="card-img ">
