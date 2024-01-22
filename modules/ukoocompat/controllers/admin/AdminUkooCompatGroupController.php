@@ -90,6 +90,7 @@ class AdminUkooCompatGroupController extends ModuleAdminController
         }
 
         $filters = UkooCompatFilter::getFilters($this->context->language->id);
+
         if (Tools::isEmpty($filters)) {
             $this->errors[] = $this->l('You have to create filters and criteria first!');
         }
@@ -141,7 +142,8 @@ class AdminUkooCompatGroupController extends ModuleAdminController
      */
     public function processAdd()
     {
-        $object = parent::processAdd();
+        $object = new UkooCompatCriterion();
+        // $object = parent::processAdd();
 
         if (!Validate::isLoadedObject($object)) {
             $this->errors[] = $this->l('Unable to add group!');

@@ -338,7 +338,7 @@
   </div>
   <div class="categoryCars" style="display: flex;justify-content:space-evenly;width:100%;padding-bottom:3rem;">
     <div class="category cat1">
-      <img src="/img/eurmuscle/bannersHome/4X4.png" loading="lazy" alt="Jeep">
+      <img src="/img/eurmuscle/bannersHome/4X4.png" loading="lazy" alt="4x4">
       <div class="model-type-overlay"><span>4 x 4</span></div>
     </div>
     <div class="category cat2">
@@ -351,15 +351,15 @@
       <div class="model-type-overlay"><span>CLASSICS</span></div>
     </div>
     <div class="category cat4">
-      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Hatch">
+      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Modern">
       <div class="model-type-overlay"><span>MODERN</span></div>
     </div>
     <div class="category cat4">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-f100.jpg" loading="lazy" alt="Classic">
+      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Tools">
       <div class="model-type-overlay"><span>TOOLS</span></div>
     </div>
     <div class="category cat5">
-      <img src="/img/eurmuscle/bannersHome/other-vehicles-focus.jpg" loading="lazy" alt="Hatch">
+      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Merchandising">
       <div class="model-type-overlay"><span>MERCHANDISING</span></div>
     </div>
 

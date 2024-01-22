@@ -580,8 +580,6 @@ class UkooCompat extends Module
 
             // On récupère les autres variables comme la pagination ou le trie
             $others_vars = UkooCompat::getUrlParameters();
-            echo '<pre>'.print_r($others_vars,1).'</pre>';
-        exit;
             // On enregistre la recherche dans les cookies pour la conserver lors de la navigation
             $this->context->cookie->__set('ukoocompat_search_'.(int)$search->id, serialize($filters));
 
