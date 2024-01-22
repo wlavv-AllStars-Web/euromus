@@ -144,6 +144,34 @@ $(document).ready(() => {
       },
     );
 
+    $('#id_ukoocompat_filter').change(function(){
+
+      id_filter = $(this).val();
+  
+      if(id_filter > 1 && id_filter < 5) {
+        $.ajax({
+          url: "/modules/ukoocompat/views/templates/hook/getValuesForFilter.php",
+          type: "POST",
+          data: {
+            id_filter: $(this).val()
+          },
+          success: function (result) {
+            if (result.length > 0) {
+              $('#id_parent_item').replaceWith(result);
+            }
+          }
+        });
+      }
+  
+      if(id_filter < 2){
+        $('#id_parent_item').replaceWith('<select name="id_parent_item" class=" fixed-width-xl" id="id_parent_item"><option value="0" selected="selected">Root</option> </select>');
+      }
+  
+      if(id_filter > 4){
+        $('#id_parent_item').replaceWith('<select disabled name="id_parent_item" class=" fixed-width-xl" id="id_parent_item"><option value="0" selected="selected">Sem relação</option> </select>');
+      }
+    });
+
   $('.nav-bar li.link-levelone.has_submenu > a').on('click', function (e) {
     e.preventDefault();
     e.stopPropagation();
