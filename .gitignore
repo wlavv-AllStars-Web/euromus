@@ -25,7 +25,7 @@
 !/download/index.php
 
 # Images
-# /img/*
+/img/*
 !/img/.htaccess
 !/img/index.php
 !/img/404.gif
