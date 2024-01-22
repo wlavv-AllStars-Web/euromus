@@ -325,6 +325,138 @@
 
         
       </div>
+      <div class="card col-lg-3 hidden-md-up" >
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/CHARGER.png" alt="Card image cap">
+        <div class="card-title"><a href="">Dodge Charger</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
+                    <div class="card-link"><a href="">DS 5700 V8 HEMI Classic</a><span>(2013 - 2022)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+      </div>
+      <div class="card col-lg-3 hidden-md-up" >
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/BRONCO.png" alt="Card image cap">
+        <div class="card-title"><a href="">Ford Bronco</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
+                    <div class="card-link"><a href="">DS 5700 V8 HEMI Classic</a><span>(2013 - 2022)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+      </div>
+      <div class="card col-lg-3 hidden-md-up" >
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/CHEROKEE.png" alt="Card image cap">
+        <div class="card-title"><a href="">Jeep Cherokee</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
+                    <div class="card-link"><a href="">DS 5700 V8 HEMI Classic</a><span>(2013 - 2022)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        
+      </div>
+      <div class="card col-lg-3 hidden-md-up" >
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/F-150.png" alt="Card image cap">
+        <div class="card-title"><a href="">Ford F-150</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
+                    <div class="card-link"><a href="">DS 5700 V8 HEMI Classic</a><span>(2013 - 2022)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
+
+      <div class="card col-lg-3 hidden-md-up" >
+        <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/WRANGLER.png" alt="Card image cap">
+        <div class="card-title"><a href="">Jeep Wrangler</a></div>
+          <div id="accordion" style="width: 100%;">
+            <div class="cardAccordion">
+            
+              <div class="card-header" id="headingOne">
+                <h5 class="mb-0">
+                  <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true" aria-controls="collapseFive" >
+                    Versions
+                  </button>
+                </h5>
+              </div>
+          
+              <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <div class="card-body">
+                  <div class="card-text">
+                    <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
+                    <div class="card-link"><a href="">DS 5700 V8 HEMI Classic</a><span>(2013 - 2022)</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+      </div>
         
     </div>
   </div>

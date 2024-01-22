@@ -152,3 +152,4 @@ php-cs-fixer
 !var/SymfonyRequirements.php
 /vendor/
 /web/bundles/
+
