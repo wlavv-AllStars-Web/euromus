@@ -187,8 +187,8 @@ class AdminUkooCompatCriterionController extends ModuleAdminController
     public function processAdd()
     {
 
-        $object = new UkooCompatCriterion();
-        // $object = parent::processAdd();
+        // $object = new UkooCompatCriterion();
+        $object = parent::processAdd();
 
         if (!Validate::isLoadedObject($object)) {
             $this->errors[] = $this->l('Unable to add criterion!');
@@ -213,7 +213,10 @@ class AdminUkooCompatCriterionController extends ModuleAdminController
 
         /** ASM **/
         $sql_update_parent_id = "UPDATE eu_ukoocompat_criterion_lang SET id_filter=" . (int)$_POST['id_ukoocompat_filter'] . ", id_parent_item=" . (int)$_POST['id_parent_item'] . " WHERE id_ukoocompat_criterion = " . $object->id;
-        Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql_update_parent_id);
+        // echo $sql_update_parent_id;
+        // exit;
+        Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($sql_update_parent_id);
+
         /** ASM **/
 
         // Suppression du cache du module
@@ -232,7 +235,7 @@ class AdminUkooCompatCriterionController extends ModuleAdminController
 
         /** ASM **/
         $sql_update_parent_id = "UPDATE eu_ukoocompat_criterion_lang SET id_parent_item=" . (int)$_POST['id_parent_item'] . ' WHERE id_ukoocompat_criterion = ' . $_POST['id_ukoocompat_criterion'];
-        Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql_update_parent_id);
+        Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($sql_update_parent_id);
         /** ASM **/
 
         // Rajout de l'utilisation d'un bouton "Enregistrer et nouveau"

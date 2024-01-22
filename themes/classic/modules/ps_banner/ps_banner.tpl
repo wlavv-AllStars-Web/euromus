@@ -23,7 +23,6 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 
- 
 {* <div id="custom-banner"> *}
 {* {$cms_infos.text nofilter} *}
 {* <div class="selectVehicle-container">
@@ -502,40 +501,40 @@
   <div class="videosContainer" style="background-color: #ee302e;">
     <div class="video1 video">
         <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-        <img src="/img/eurmuscle/bannersHome/banner3.png" />
+        <img src="https://img.youtube.com/vi/sGZ1lRpGfnA/maxresdefault.jpg" />
         <div class="play">
           <img class="image_play" alt="video player" src="/img/youtube_play.png" />
         </div>
         </div>
         <div style="display:none">
             <iframe frameborder="0" allowfullscreen
-            src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
+            src="https://www.youtube.com/embed/sGZ1lRpGfnA?autoplay=0&mute=1">
           </iframe>
         </div>
     </div>
     <div class="video2 video">
       <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-      <img src="/img/eurmuscle/bannersHome/banner3.png" />
+      <img src="https://img.youtube.com/vi/5SpcsztedgQ/maxresdefault.jpg" />
       <div class="play">
         <img class="image_play" alt="video player" src="/img/youtube_play.png" />
       </div>
       </div>
       <div style="display:none">
           <iframe allowfullscreen frameborder="0"
-          src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
+          src="https://www.youtube.com/embed/5SpcsztedgQ?autoplay=0&mute=1">
         </iframe>
       </div>
     </div>
     <div class="video3 video">
       <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-      <img src="/img/eurmuscle/bannersHome/banner3.png" />
+      <img src="https://img.youtube.com/vi/KWLv_iCL8ww/maxresdefault.jpg" />
       <div class="play">
         <img class="image_play" alt="video player" src="/img/youtube_play.png" />
       </div>
       </div>
       <div style="display:none">
           <iframe allowfullscreen frameborder="0"
-          src="https://www.youtube.com/embed/tgbNymZ7vqY?autoplay=0&mute=1">
+          src="https://www.youtube.com/embed/KWLv_iCL8ww?autoplay=0&mute=1">
         </iframe>
       </div>
     </div>
