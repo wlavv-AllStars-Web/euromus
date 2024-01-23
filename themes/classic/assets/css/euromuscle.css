@@ -1737,3 +1737,13 @@ select {
 .header-top .search-widgets form input[type="text"] {
   color: #0d2540 !important;
 }
+
+
+/* sign in */
+header.page-header {
+  color: #103054 !important;
+}
+
+#login-form .form-control-label{
+  color: #103054 !important;
+}

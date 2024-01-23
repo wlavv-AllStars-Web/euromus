@@ -92,6 +92,8 @@
     </div>
   </div> *}
 {* </div> *}
+{assign var="currentLanguage" value=Context::getContext()->language->id}
+{assign var="categories" value=Category::getCategories($currentLanguage)}
 
 </div>
 <div class="lines-tablet" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
@@ -468,31 +470,22 @@
     <h3>VEHICLE TYPES</h3>
   </div>
   <div class="categoryCars" style="display: flex;justify-content:space-evenly;width:100%;padding-bottom:3rem;">
-    <div class="category cat1">
-      <img src="/img/eurmuscle/bannersHome/4X4.png" loading="lazy" alt="4x4">
-      <div class="model-type-overlay"><span>4 x 4</span></div>
-    </div>
-    <div class="category cat2">
-      <img src="/img/eurmuscle/bannersHome/TRUCK.png
-      " loading="lazy" alt="Truck">
-      <div class="model-type-overlay"><span>TRUCK</span></div>
-    </div>
-    <div class="category cat3">
-      <img src="/img/eurmuscle/bannersHome/CLASSICS.png" loading="lazy" alt="Classic">
-      <div class="model-type-overlay"><span>CLASSICS</span></div>
-    </div>
-    <div class="category cat4">
-      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Modern">
-      <div class="model-type-overlay"><span>MODERN</span></div>
-    </div>
-    <div class="category cat4">
-      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Tools">
-      <div class="model-type-overlay"><span>TOOLS</span></div>
-    </div>
-    <div class="category cat5">
-      <img src="/img/eurmuscle/bannersHome/MODERN.png" loading="lazy" alt="Merchandising">
-      <div class="model-type-overlay"><span>MERCHANDISING</span></div>
-    </div>
+  {foreach from=$categories[1] item=categoryLevel1}
+    {foreach from=$categoryLevel1 item=category}
+      {if $category.id_category != 2}
+      <a
+        rel="nofollow"
+        href="/{$category.id_category}-{$category.link_rewrite}"
+        class="select-list "
+      >
+        <div class="category cat">
+          <img src="/img/eurmuscle/bannersHome/{$category.name}.png" loading="lazy" alt="{$category.name}">
+          <div class="model-type-overlay"><span>{$category.name}</span></div>
+        </div>
+      </a>
+      {/if}
+    {/foreach}
+  {/foreach}
 
   </div>
 </div>
