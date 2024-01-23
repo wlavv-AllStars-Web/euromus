@@ -695,11 +695,11 @@ main {
         flex-wrap: wrap;
         width: 100% !important;
         padding: 0.5rem;
-        gap: 0.5rem;
+        gap: 2rem;
       }
 
       .otherCars .categoryCars .category {
-        width: 48%;
+        width: calc(100vw / 2);
 
         display: flex;
         justify-content: center;
@@ -755,7 +755,8 @@ main {
 /* categories tablet */
 @media screen and (min-width:580px) and (max-width:767px) {
   .otherCars .categoryCars .category {
-    width: 30% !important;
+    /* width: 30% !important; */
+    width: calc(100vw/3);
   }
   .otherCars .categoryCars .category .model-type-overlay {
     font-size: 1.3em;
@@ -898,7 +899,7 @@ main {
   }
 
   .otherCars .categoryCars .category {
-    width: 28% !important;
+    /* width: 28% !important; */
     margin-bottom: 2rem;
   }
 
