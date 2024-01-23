@@ -515,16 +515,17 @@ main {
     .videosContainer {
       display: flex;
       flex-direction: column;
-      padding: 3rem 0 !important;
+      padding: 0.5rem 0 !important;
     }
     .videosContainer img{
       width: 100% !important;
       padding: 0.5rem;
+      height: auto !important;
     }
 
     .videosContainer iframe{
       width: 100vw !important;
-      height: 315px;
+      height: 223px !important;
     }
 
     .videosContainer .product {
