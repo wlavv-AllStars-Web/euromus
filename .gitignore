@@ -151,5 +151,6 @@ php-cs-fixer
 !var/sessions/.gitkeep
 !var/SymfonyRequirements.php
 /vendor/
+!/vendor/.htaccess
 /web/bundles/
 
