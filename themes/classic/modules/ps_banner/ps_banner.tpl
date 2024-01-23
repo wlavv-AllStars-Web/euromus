@@ -479,7 +479,7 @@
         class="select-list "
       >
         <div class="category cat">
-          <img src="/img/eurmuscle/bannersHome/{$category.name}.png" loading="lazy" alt="{$category.name}">
+          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.png" loading="lazy" alt="{$category.name}">
           <div class="model-type-overlay"><span>{$category.name}</span></div>
         </div>
       </a>
