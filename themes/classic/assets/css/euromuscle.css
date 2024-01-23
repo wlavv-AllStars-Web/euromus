@@ -18,6 +18,10 @@ main {
   gap: 0.5rem;
 }
 
+#module-ukoocompat-listing #ukoocompat_search_block_form_1 {
+  display: none;
+}
+
 @media screen and (max-width:300px){
   #brands_mobile .content_brands li {
     width: 100%;

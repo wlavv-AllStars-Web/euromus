@@ -45,7 +45,13 @@
   </div>
   {if $ukoo_name_1}
     <div class="col-lg-4 ukooListTitle">
-      <span id="ukoo1">{$ukoo_name_1}</span>
+      <span id="ukoo1">
+        <div class="brand-logo">
+          <span style="color:#0d2540;">
+            <img src="/img/eurmuscle/brandsCars/{$ukoo_name_1}.png" style="width: 80px;background-color: #0d2540;padding: 0.5rem;border-radius: 0.5rem;gap:2rem;" />
+          </span>
+        </div>
+      </span>
       <i style="margin:5px 10px;color: #103054;" class="fa fa-caret-right"></i>
       <span id="ukoo2">{$ukoo_name_2}</span>
       <i style="margin:5px 10px;color: #103054;" class="fa fa-caret-right"></i>
