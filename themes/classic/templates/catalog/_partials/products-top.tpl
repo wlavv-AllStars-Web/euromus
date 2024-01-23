@@ -27,31 +27,25 @@
 <div id="js-product-list-top" class="row products-selection" style="display: flex;align-items:center;margin:2rem 0;gap:2rem;">
   
   {if $ukoo_name_1}
-    <div class="col-lg-2 hidden-sm-down total-products">
+    <div class="col-lg-2  total-products">
     <div class="brand-logo">
       <span style="color:#0d2540;">
-        <img src="/img/eurmuscle/brandsCars/{$ukoo_name_1}.png" style="width: 150px;background-color: #0d2540;padding: 0.5rem;border-radius: 0.5rem;gap:2rem;" />
+        <img src="/img/eurmuscle/brandsCars/{$ukoo_name_1}.png" style="width: 80px;background-color: #0d2540;padding: 0.5rem;border-radius: 0.5rem;gap:2rem;" />
       </span>
     </div>
   {else}
     <div class="col-lg-5 hidden-sm-down total-products">
   {/if}
 
-    {if $listing.products|count > 1}
+    {* {if $listing.products|count > 1}
       <p>{l s='There are %product_count% products.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.products|count]}</p>
     {elseif $listing.products|count > 0}
       <p>{l s='There is 1 product.' d='Shop.Theme.Catalog'}</p>
-    {/if}
+    {/if} *}
   </div>
   {if $ukoo_name_1}
-    <div class="col-lg-4 ukooListTitle">
-      <span id="ukoo1">
-        <div class="brand-logo">
-          <span style="color:#0d2540;">
-            <img src="/img/eurmuscle/brandsCars/{$ukoo_name_1}.png" style="width: 80px;background-color: #0d2540;padding: 0.5rem;border-radius: 0.5rem;gap:2rem;" />
-          </span>
-        </div>
-      </span>
+    <div class="col-lg-5 ukooListTitle">
+      {* <span id="ukoo1">{$ukoo_name_1}</span> *}
       <i style="margin:5px 10px;color: #103054;" class="fa fa-caret-right"></i>
       <span id="ukoo2">{$ukoo_name_2}</span>
       <i style="margin:5px 10px;color: #103054;" class="fa fa-caret-right"></i>
