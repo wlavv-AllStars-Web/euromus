@@ -699,7 +699,7 @@ main {
       }
 
       .otherCars .categoryCars .category {
-        width: calc(100vw / 2);
+        width: calc(100vw / 1.5);
 
         display: flex;
         justify-content: center;
@@ -899,7 +899,7 @@ main {
   }
 
   .otherCars .categoryCars .category {
-    /* width: 28% !important; */
+    width: calc(100vw/4);
     margin-bottom: 2rem;
   }
 
