@@ -1855,3 +1855,17 @@ header.page-header {
   color: #7a7a7a;
   font-style: normal;
 }
+
+/* #js-product-list-header {
+  height: 1rem;
+} */
+
+#js-product-list-header .card-block {
+  height: fit-content;
+  padding: 0;
+  min-height: fit-content !important;
+}
+
+#js-product-list-header .card-block h1 {
+  color: #103054 !important;
+}
