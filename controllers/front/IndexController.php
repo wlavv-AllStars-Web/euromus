@@ -41,4 +41,39 @@ class IndexControllerCore extends FrontController
         ]);
         $this->setTemplate('index');
     }
+
+    public static function getCarsOfBrand($idBrand,$idModel,$idLang){
+        
+        
+        $array_cars = [];
+        $sql = "Select *
+                FROM eu_ukoocompat_compat_asm 
+                WHERE id_filter_value_1 = " . $idBrand . ' AND id_filter_value_2 = '. $idModel .'
+                ORDER BY position';
+        
+        $cars = Db::getInstance()->executeS($sql);
+        
+        foreach($cars AS $car){
+            
+            $brand   = Db::getInstance()->getValue('SELECT value FROM eu_ukoocompat_criterion_lang WHERE id_lang='.$idLang.' AND id_ukoocompat_criterion=' . $car['id_filter_value_1']);
+            $model   = Db::getInstance()->getValue('SELECT value FROM eu_ukoocompat_criterion_lang WHERE id_lang='.$idLang.' AND id_ukoocompat_criterion=' . $car['id_filter_value_2']);
+            $version = Db::getInstance()->getValue('SELECT value FROM eu_ukoocompat_criterion_lang WHERE id_lang='.$idLang.' AND id_ukoocompat_criterion=' . $car['id_filter_value_3']);
+            $type    = Db::getInstance()->getValue('SELECT value FROM eu_ukoocompat_criterion_lang WHERE id_lang='.$idLang.' AND id_ukoocompat_criterion=' . $car['id_filter_value_4']);
+            
+            $array_cars[] = [
+                'id_brand'   => $car['id_filter_value_1'],
+                'id_model'   => $car['id_filter_value_2'],
+                'id_type'    => $car['id_filter_value_3'],
+                'id_version' => $car['id_filter_value_4'],
+                'brand'      => $brand,
+                'model'      => $model,
+                'type'       => $version,
+                'version'    => $type
+            ];
+            
+        }
+        
+        return $array_cars;
+        
+    }
 }

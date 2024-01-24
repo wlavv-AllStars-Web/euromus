@@ -81,6 +81,8 @@
     });
 
   } else {
+    const inputSearch = document.querySelector(".header-top-right #search_widget .searchbarInput");
+    inputSearch.style.border = "1px solid #103054"
     // const inputSearch = document.querySelector("#_mobile_cart .searchbarInput");
     // const iconSearch = document.querySelector(".header-nav .mobile #_mobile_cart .search")
     //     if(iconSearch && inputSearch) {

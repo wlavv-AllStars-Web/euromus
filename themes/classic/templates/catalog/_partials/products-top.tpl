@@ -24,7 +24,7 @@
  *}
  {* <pre>{print_r($listing.search->filters,1)}</pre> *}
  {* <pre>{print_r($pagination,1)}</pre> *}
-<div id="js-product-list-top" class="row products-selection" style="display: flex;align-items:center;margin:2rem 0;gap:2rem;">
+<div id="js-product-list-top" class="row products-selection" style="display: flex;align-items:center;margin:2rem 0;gap:1rem;">
   
   {if $ukoo_name_1}
     <div class="col-lg-2  total-products">
