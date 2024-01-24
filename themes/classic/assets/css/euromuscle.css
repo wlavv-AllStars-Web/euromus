@@ -1876,3 +1876,7 @@ header.page-header {
 .quickview .modal-content {
   transform: translateY(0);
 }
+
+.js-product-images-modal .modal-content {
+  transform: translateY(0);
+}
