@@ -1880,3 +1880,8 @@ header.page-header {
 .js-product-images-modal .modal-content {
   transform: translateY(0);
 }
+
+#product-modal .modal-content .modal-body .product-cover-modal {
+  height: 84vh;
+  width: auto;
+}
