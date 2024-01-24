@@ -40,6 +40,11 @@ main {
   .ukooListTitle i {
     transform: rotate(90deg);
   }
+
+  .categoryCars .category.TOOLS img {
+    object-position: top !important;
+    width: 70% !important;
+  }
 }
 @media screen and (min-width:301px) and (max-width:520px){
   #brands_mobile .content_brands li {
@@ -61,6 +66,11 @@ main {
   }
   .ukooListTitle i {
     transform: rotate(90deg);
+  }
+
+  .categoryCars .category.TOOLS img {
+    object-position: top !important;
+    width: 70% !important;
   }
 }
 @media screen and (min-width:521px) and (max-width:767px){
@@ -752,7 +762,15 @@ main {
         padding-right: 0.5rem;
       }
 
+      .categoryCars .category {
+        max-height: 169px !important;
+        height: 100%;
+      }
 
+      .categoryCars .category.TOOLS img {
+        object-position: top !important;
+        width: 70% !important;
+      }
 
 }
 
@@ -977,6 +995,10 @@ main {
   z-index:0;
 }
 
+.categoryCars .category.TOOLS img {
+  object-position: top !important;
+  width: 76% !important;
+}
 
 }
 
@@ -1026,6 +1048,11 @@ main {
     .cars-container .card .btn:hover{
       /* color: #103054 !important; */
       border-color: #fff !important;
+    }
+
+    .categoryCars .category.TOOLS img {
+      object-position: top !important;
+      width: 78% !important;
     }
   }
 

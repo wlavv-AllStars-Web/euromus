@@ -815,16 +815,18 @@
 
 
 <style>
+  .categoryCars .category {
+    max-height: 195px !important;
+    background: #bfbfbf !important;
+  }
   .categoryCars .category img {
     width: 100%;
-    background-color: #bfbfbf;
     object-fit: contain;
     height: 100%;
+    
   }
 
   
-  .categoryCars .category.TOOLS img {
-    object-position: top !important;
-  }
+
 
 </style>
