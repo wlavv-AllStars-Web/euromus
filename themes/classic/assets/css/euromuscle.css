@@ -1869,3 +1869,10 @@ header.page-header {
 #js-product-list-header .card-block h1 {
   color: #103054 !important;
 }
+
+
+/* quick view */
+
+.quickview .modal-content {
+  transform: translateY(0);
+}
