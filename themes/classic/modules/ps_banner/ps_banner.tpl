@@ -520,7 +520,7 @@
       {foreach from=$categoryLevel1 item=category}
         {if $category.id_category != 2}
           <a rel="nofollow" href="/{$category.id_category}-{$category.link_rewrite}" class="select-list ">
-            <div class="category cat">
+            <div class="category {$category.name}">
               <img src="/img/eurmuscle/bannersHome/{$category.id_category}.png" loading="lazy" alt="{$category.name}">
               <div class="model-type-overlay"><span>{$category.name}</span></div>
             </div>
@@ -821,4 +821,10 @@
     object-fit: contain;
     height: 100%;
   }
+
+  
+  .categoryCars .category.TOOLS img {
+    object-position: top !important;
+  }
+
 </style>
