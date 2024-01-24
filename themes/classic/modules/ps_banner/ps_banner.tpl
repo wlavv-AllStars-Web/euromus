@@ -97,7 +97,7 @@
 {assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand(92,100,$currentLanguage)}
 {assign var="versionsChevroletCamaro" value=IndexControllerCore::getCarsOfBrand(1011,1012,$currentLanguage)}
 {assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand(995,998,$currentLanguage)}
-{assign var="versionsChevroletCorvette" value=IndexControllerCore::getCarsOfBrand(1011,1017,$currentLanguage)}
+{assign var="versionsChevroletCorvette" value=IndexControllerCore::getCarsOfBrand(994,995,$currentLanguage)}
 
 <div style="display: none;">
   <form id="ukoocompat_my_cars_custom_form" action="/en/module/ukoocompat/listing" method="POST"> 
