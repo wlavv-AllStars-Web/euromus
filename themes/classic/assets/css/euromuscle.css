@@ -106,11 +106,6 @@ main {
       display: none;
     }
 
-    #header .top-logo {
-      z-index: 3;
-    position: absolute;
-    left: 5rem;
-    }
 
     .header-top-right-desktop {
       display: none !important;
@@ -149,7 +144,7 @@ main {
     display: flex;
     width: 100%;
     max-width: 80vw;
-    height: 100dvh;
+    min-height: 100dvh;
     background: white;
     z-index: 2;
     transition: all 0.25s ease-in-out;
@@ -171,7 +166,10 @@ main {
 
     #mobile_top_menu_wrapper .js-top-menu-bottom a {
         color: #0d2540;
+        display: flex;
+        gap: 0.5rem;
     }
+
 
     #mobile_top_menu_wrapper .js-top-menu-bottom > div{
         display: flex;
@@ -772,6 +770,36 @@ main {
         width: 70% !important;
       }
 
+      #login-form .form-control-label {
+        text-align: left;
+      }
+
+      #login-form .form-footer{
+        display: flex;
+        justify-content: center;
+      }
+
+      #authentication .breadcrumb {
+        display: none;
+      }
+      #registration .breadcrumb {
+        display: none;
+      }
+
+      #registration .register-form:first-child p{
+        padding: 0.625rem 0;
+        gap: 1rem;
+        font-size: 1rem;
+        color: #103054;
+      }
+
+      #registration .register-form:first-child a {
+        color: #ee302e !important;
+      }
+
+      #registration #customer-form .form-control-label{
+        text-align: left;
+      }
 }
 
 /* categories tablet */
@@ -1776,6 +1804,54 @@ header.page-header {
   color: #103054 !important;
 }
 
+.page-registration #content{
+  max-width: 1139px !important;
+}
+
 #login-form .form-control-label{
   color: #103054 !important;
+}
+
+#login-form .form-control {
+  border-color: #103054 !important;
+}
+
+#login-form .forgot-password a{
+  color: #103054;
+}
+#login-form .forgot-password a:hover{
+  color: #ee302e;
+}
+
+.input-group .input-group-btn > .btn[data-action="show-password"] {
+  background: #103054;
+}
+
+#authentication .no-account a {
+  color: #103054;
+}
+#authentication .no-account a:hover {
+  color: #ee302e;
+}
+
+#authentication #login-form .form-control-label {
+  font-size: 1rem;
+  color: #103054 !important;
+}
+#registration #customer-form .radio-inline{
+  color: #103054 !important;
+}
+#registration #customer-form .form-control-label{
+  font-size: 1rem;
+  color: #103054 !important;
+}
+
+#registration #customer-form .custom-checkbox label{
+  font-size: 1rem;
+  color: #103054 !important;
+}
+#registration #customer-form .custom-checkbox label em{
+  font-size: 0.85rem;
+  color: #7a7a7a;
+  font-style: normal;
 }

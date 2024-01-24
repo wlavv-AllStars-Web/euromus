@@ -28,7 +28,9 @@
 
 {assign var="languages" value=Language::getLanguages(true, $this->context->shop->id)}
 {assign var="currentLanguage" value=Context::getContext()->language}
-  {* <pre>{print_r($currentLanguage,1)}</pre> *}
+{assign var="linkRegistration" value=$urls.pages.registration}
+{assign var="linkMyaccount" value=$urls.pages.my_account}
+{* <pre>{print_r($urls,1)}</pre> *}
 
 {assign var="currentUrl" value=Tools::getCurrentUrl()}
 {assign var="manufacturers" value=Manufacturer::getManufacturers()}
@@ -40,6 +42,7 @@
 {/block}
 
 {block name='header_nav'}
+  
   <nav class="header-nav" style="border-bottom: none;">
 
     <div class="container">
@@ -97,21 +100,22 @@
       <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
       {* <pre>{print_r($manufacturers,1)}</pre> *}
         <div class="js-top-menu mobile" id="_mobile_top_menu" onclick="closeMenu()">
+        <img src="http://euromus.local/img/logo-17047994381.jpg" style="width: 37vw; margin-right:auto; margin-left:1rem;">
         <i class="fa fa-times"></i>
           <div>Close</div>
         </div>
-        <div class="js-top-menu-bottom">
+        <div class="js-top-menu-bottom mobile-menu-open">
           <div id="_mobile_currency_selector"></div>
           {* <div style="border-top:0.5rem solid #103054;border-bottom:0.5rem solid #ee302e;padding-block:0.25rem;background:#fff;height: 0.5rem;width:100%;z-index:-1;transform:rotate(180deg)"></div> *}
           {* {$_SERVER.REQUEST_URI} *}
-       
-          {* <pre>{print_r($links,1)}</pre> *}
-          <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/">{l s='Home' d='Shop.Theme.Global'}</a></div>
-          <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></div>
-          <div id="_mobile_contact_link" class="{if $currentUrl === $link->getPageLink('contact', true)}activeLink{/if}"><a href="{$link->getPageLink('contact', true)}">{l s='Contacts' d='Shop.Theme.Global'}</a></div>
+          {* <pre>{$currentUrl}</pre> *}
+          <div id="_mobile_login" class="{if $currentUrl === "http://euromus.local/en/login?back=my-account"}activeLink{/if}"><a href="{$linkMyaccount}"><i class="fa-solid fa-user"></i>{l s='Login' d='Shop.Theme.Global'}</a></div>
+          <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/"><i class="fa-solid fa-house"></i>{l s='Home' d='Shop.Theme.Global'}</a></div>
+          <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}"><i class="fa-solid fa-newspaper"></i>{l s='News' d='Shop.Theme.Global'}</a></div>
+          <div id="_mobile_contact_link" class="{if $currentUrl === $link->getPageLink('contact', true)}activeLink{/if}"><a href="{$link->getPageLink('contact', true)}"><i class="fa-solid fa-phone"></i>{l s='Contacts' d='Shop.Theme.Global'}</a></div>
           <div id="button_modal_language"><img src="/img/flags/{$language.iso_code}.jpg" /><p>{l s='Change Language' d='Shop.Theme.Global'}</p></div>
           <div id="brands_mobile">
-            <div class="btn-brandsMobile">{l s='Brands' d='Shop.Theme.Global'}<i class="fa-solid fa-caret-down"></i></div>
+            <div class="btn-brandsMobile"><i class="fa-solid fa-list"></i>{l s='Brands' d='Shop.Theme.Global'}<i class="fa-solid fa-caret-down"></i></div>
             <ul class="content_brands">
             {foreach from=$manufacturers item=$manufacturer }
               <li class="col-lg-3">
@@ -122,6 +126,7 @@
             {/foreach}
             </ul>
           </div>
+          
           {* <div id="_mobile_language_selector"></div> *}
         </div>
       </div>
