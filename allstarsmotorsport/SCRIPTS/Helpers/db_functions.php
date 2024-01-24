@@ -5,7 +5,7 @@ function getConn()
     define('_DB_SERVER_', 'localhost');
     define('_DB_USER_', 'asw200923_user_db');
     define('_DB_PASSWD_', '*U;Z)q%F5T.1');
-    define('_DB_NAME_', 'asw200923_euromuscle_beta');
+    define('_DB_NAME_', 'asw200923_euromuscle');
     return new mysqli("localhost", "asw200923_user_db", "*U;Z)q%F5T.1", "asw200923_euromuscle_beta");
 
     /* check connection */
