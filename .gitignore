@@ -154,3 +154,5 @@ php-cs-fixer
 !/vendor/.htaccess
 /web/bundles/
 
+/home/asw200923/beta/*
+/home/asw200923/public_html/*
