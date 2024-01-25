@@ -97,7 +97,7 @@
 {assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand(92,100,$currentLanguage)}
 {assign var="versionsChevroletCamaro" value=IndexControllerCore::getCarsOfBrand(1011,1012,$currentLanguage)}
 {assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand(995,998,$currentLanguage)}
-{assign var="versionsChevroletCorvette" value=IndexControllerCore::getCarsOfBrand(994,995,$currentLanguage)}
+
 
 <div style="display: none;">
   <form id="ukoocompat_my_cars_custom_form" action="/en/module/ukoocompat/listing" method="POST"> 
@@ -267,10 +267,11 @@
           <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-                <div class="card-link"><a href="">SS 6200 V8</a><span>(2016 -)</span></div>
-                <div class="card-link"><a href="">2000 L4 Ecotec</a><span>(2016 -)</span></div>
-                <div class="card-link"><a href="">SS 6200 V8 376 Cu In </a><span>(2010 - 2015)</span></div>
-                <div class="card-link"><a href="">3600 V6 217 Cu In</a><span>(2010 - 2011)</span></div>
+              {foreach from=$versionsChevroletCamaro item=item key=key name=name}
+                <div class="card-link"><a style="cursor: pointer;"
+                    onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
+                </div>
+              {/foreach}
               </div>
             </div>
           </div>
