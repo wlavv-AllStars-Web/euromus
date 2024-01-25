@@ -37,8 +37,9 @@
         {$listing.label}
       {else} 
         <div class="breadcrumb">
-            <a class="home" href="https://euromuscleparts/" title="Return to Home">
+            <a class="home" href="/" title="Return to Home" style="display: flex;align-items:center;gap:0.5rem;">
               <i class="fa fa-home" style="color: #103054;"></i>
+              <h6 style="margin-bottom: 0;">{l s='Home' d='Shop.Theme.Catalog'}</h6>
             </a> 
             
         </div>
