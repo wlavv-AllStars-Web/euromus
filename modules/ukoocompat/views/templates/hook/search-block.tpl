@@ -1,5 +1,5 @@
-paulo
 {if !isset($ajax_reload)}
+
 <div id="ukoocompat_search_block_{$search->id|intval}" class="wm-hiddencompats block ukoocompat_search_block" style="clear: both;">
 <h1>{l s='SELECT YOUR VEHICLE' d='Shop.Theme.Global'}</h1>
 	<div class="block_content">
