@@ -30,7 +30,7 @@
 {assign var="currentLanguage" value=Context::getContext()->language}
 {assign var="linkRegistration" value=$urls.pages.registration}
 {assign var="linkMyaccount" value=$urls.pages.my_account}
-{* <pre>{print_r($urls,1)}</pre> *}
+
 
 {assign var="currentUrl" value=Tools::getCurrentUrl()}
 {assign var="manufacturers" value=Manufacturer::getManufacturers()}
@@ -107,8 +107,7 @@
         <div class="js-top-menu-bottom mobile-menu-open">
           <div id="_mobile_currency_selector"></div>
           {* <div style="border-top:0.5rem solid #103054;border-bottom:0.5rem solid #ee302e;padding-block:0.25rem;background:#fff;height: 0.5rem;width:100%;z-index:-1;transform:rotate(180deg)"></div> *}
-          {* {$_SERVER.REQUEST_URI} *}
-          {* <pre>{$currentUrl}</pre> *}
+
           <div id="_mobile_login" class="{if $currentUrl === "http://euromus.local/en/login?back=my-account"}activeLink{/if}"><a href="{$linkMyaccount}"><i class="fa-solid fa-user"></i>{l s='Login' d='Shop.Theme.Global'}</a></div>
           <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/"><i class="fa-solid fa-house"></i>{l s='Home' d='Shop.Theme.Global'}</a></div>
           <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}"><i class="fa-solid fa-newspaper"></i>{l s='News' d='Shop.Theme.Global'}</a></div>
@@ -140,7 +139,7 @@
         <li class="dropdown ">
           <div class="dropbtn">{l s='Brands' d='Shop.Theme.Global'}<i class="fa-solid fa-caret-down"></i></div>
           <ul class="dropdown-content">
-          {* <pre>{print_r($currentLanguage,1)}</pre> *}
+        
           {foreach from=$manufacturers item=$manufacturer }
             <li class="col-lg-3">
             <a href="/{$currentLanguage->iso_code }/{l s='brand' d='Shop.Theme.Global'}/{$manufacturer.id_manufacturer}-{$manufacturer.link_rewrite}">
@@ -148,7 +147,7 @@
             </a>
             </li>
           {/foreach}
-            {* <pre>{print_r($manufacturers,1)}</pre> *}
+  
             <div style="border-top:2px solid #103054;border-bottom:2px solid #ee302e;padding-block:1px;width: 100%;
             height: 2px;
             position: absolute;
