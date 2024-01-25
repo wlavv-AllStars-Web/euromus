@@ -94,9 +94,9 @@
 {* </div> *}
 {assign var="currentLanguage" value=Context::getContext()->language->id}
 {assign var="categories" value=Category::getCategories($currentLanguage)}
-{assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand(92,100,$currentLanguage)}
+{* {assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand(92,100,$currentLanguage)}
 {assign var="versionsChevroletCamaro" value=IndexControllerCore::getCarsOfBrand(1011,1012,$currentLanguage)}
-{assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand(995,998,$currentLanguage)}
+{assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand(995,998,$currentLanguage)} *}
 
 
 <div style="display: none;">
@@ -236,11 +236,11 @@
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-                {foreach from=$versionsFordMustang item=item key=key name=name}
+                {* {foreach from=$versionsFordMustang item=item key=key name=name}
                   <div class="card-link"><a style="cursor: pointer;"
                       onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
                   </div>
-                {/foreach}
+                {/foreach} *}
               </div>
             </div>
           </div>
@@ -267,11 +267,11 @@
           <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-              {foreach from=$versionsChevroletCamaro item=item key=key name=name}
+              {* {foreach from=$versionsChevroletCamaro item=item key=key name=name}
                 <div class="card-link"><a style="cursor: pointer;"
                     onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
                 </div>
-              {/foreach}
+              {/foreach} *}
               </div>
             </div>
           </div>
@@ -325,11 +325,11 @@
           <div id="collapseFour" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-                {foreach from=$versionsChevroletCorvette item=item key=key name=name}
+                {* {foreach from=$versionsChevroletCorvette item=item key=key name=name}
                   <div class="card-link"><a style="cursor: pointer;"
                       onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
                   </div>
-                {/foreach}
+                {/foreach} *}
               </div>
             </div>
           </div>
