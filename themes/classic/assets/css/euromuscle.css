@@ -1062,7 +1062,7 @@ main {
     }
 
     .bannersHome {
-      padding: 0 0.5rem;
+      padding: 0;
     }
 
     .videosContainer {
@@ -1920,4 +1920,23 @@ header.page-header {
 }
 .categoryCars .MERCHANDISING:hover img {
   transform: scale(1.2) !important;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 15px;
+}
+
+::-webkit-scrollbar-track-piece {
+  background-color: #f6f6f6;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  height: 30px;
+  background-color: #103054;
+}
+
+:root{
+  scrollbar-color: #103054 #f6f6f6 !important;
+  scrollbar-width: thin !important;
 }
