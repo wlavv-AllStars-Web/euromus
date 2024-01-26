@@ -7015,6 +7015,7 @@ body#checkout
 #search_filters_brands .facet .facet-label,
 #search_filters_suppliers .facet .facet-label {
   margin-bottom: 0.3125rem;
+  color: #ee302e;
 }
 .pagination {
   width: 100%;
