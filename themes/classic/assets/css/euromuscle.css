@@ -68,10 +68,10 @@ main {
     transform: rotate(90deg);
   }
 
-  .categoryCars .category.TOOLS img {
+  /* .categoryCars .category.TOOLS img {
     object-position: top !important;
     width: 70% !important;
-  }
+  } */
 }
 @media screen and (min-width:521px) and (max-width:767px){
   #brands_mobile .content_brands li {
@@ -711,8 +711,8 @@ main {
       }
 
       .otherCars .categoryCars .category {
-        width: calc(100vw / 1.5);
-
+        width: 59vw;
+        height: 258px;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -765,10 +765,10 @@ main {
         height: 100%;
       }
 
-      .categoryCars .category.TOOLS img {
+      /* .categoryCars .category.TOOLS img {
         object-position: top !important;
         width: 70% !important;
-      }
+      } */
 
       #login-form .form-control-label {
         text-align: left;

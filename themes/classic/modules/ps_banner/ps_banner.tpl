@@ -816,6 +816,24 @@
 
 
 <style>
+  
+
+  @media screen and (max-width:767px){
+    .categoryCars .category {
+    max-height: 291px !important;
+    background: #bfbfbf !important;
+  }
+  .categoryCars .category img {
+    width: 100%;
+    object-fit: cover;
+    height: 100%;
+    transform: scale(1.25);
+    object-position: 5px;
+    
+  }
+  }
+
+ @media screen and (min-width:768px){
   .categoryCars .category {
     max-height: 258px !important;
     background: #bfbfbf !important;
@@ -833,6 +851,7 @@
     object-position: left 14px !important;
   }
 
+ }
   
 
 
