@@ -636,6 +636,16 @@
     }
 
 
+    const cardsVersions = document.querySelectorAll(".cars-cards .card");
+    cardsVersions.forEach((item) => {
+
+      const cardImg = item.querySelector(".card-img-top");
+      const versionsButton = item.querySelector('.btn');
+      cardImg.addEventListener('click', (event) => {
+        versionsButton.click();
+      });
+    });
+
 
   });
 
