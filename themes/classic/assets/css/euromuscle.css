@@ -1070,7 +1070,7 @@ main {
     }
 
     .videosContainer {
-      padding:4rem 0.5rem;
+      padding:8rem 0.5rem !important;
     }
 
     .cars-container .card .btn:hover{
@@ -1191,7 +1191,7 @@ main {
     .cars-container {
       display:flex;
       justify-content:center;
-      padding: 3rem 0;
+      padding: 8rem 0;
     }
 
     .cars-container .cars-cards{

@@ -94,8 +94,8 @@
 {* </div> *}
 {assign var="currentLanguage" value=Context::getContext()->language->id}
 {assign var="categories" value=Category::getCategories($currentLanguage)}
-{* {assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand(92,100,$currentLanguage)}
-{assign var="versionsChevroletCamaro" value=IndexControllerCore::getCarsOfBrand(1011,1012,$currentLanguage)}
+{assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand(92,100,$currentLanguage)}
+{* {assign var="versionsChevroletCamaro" value=IndexControllerCore::getCarsOfBrand(1011,1012,$currentLanguage)}
 {assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand(995,998,$currentLanguage)} *}
 
 
@@ -236,11 +236,11 @@
           <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-                {* {foreach from=$versionsFordMustang item=item key=key name=name}
+                {foreach from=$versionsFordMustang item=item key=key name=name}
                   <div class="card-link"><a style="cursor: pointer;"
                       onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
                   </div>
-                {/foreach} *}
+                {/foreach}
               </div>
             </div>
           </div>
@@ -509,14 +509,14 @@
 
 <div class="hidden-md-up"
   style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
-
+  <div class="hidden-sm-down" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
 <div class="otherCars"
   style="width:100%;display: flex;flex-direction:column;justify-content:center;align-items:center;background:#707c88;">
-  <div class="titleCars" style="text-align: center;padding:3rem 0">
+  {* <div class="titleCars" style="text-align: center;padding:3rem 0">
     <h5 style="font-weight: 400;">OTHER</h5>
     <h3>VEHICLE TYPES</h3>
-  </div>
-  <div class="categoryCars" style="display: flex;justify-content:space-evenly;width:100%;padding-bottom:3rem;">
+  </div> *}
+  <div class="categoryCars" style="display: flex;justify-content:space-evenly;width:100%;padding:3rem 0;">
     {foreach from=$categories[1] item=categoryLevel1}
       {foreach from=$categoryLevel1 item=category}
         {if $category.id_category != 2}
@@ -533,8 +533,8 @@
   </div>
 </div>
 
-<div style="border-top:4px solid #103054;border-bottom:2px solid #ee302e;padding-block:2px;width: 100%;"></div>
-<div class="videosContainer" style="background-color: #ee302e;">
+<div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
+<div class="videosContainer">
   <div class="video1 video">
     <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
       <img src="https://img.youtube.com/vi/sGZ1lRpGfnA/maxresdefault.jpg" />
