@@ -1023,10 +1023,6 @@ main {
   z-index:0;
 }
 
-.categoryCars .category.TOOLS img {
-  object-position: top !important;
-  width: 76% !important;
-}
 
 }
 
@@ -1070,7 +1066,7 @@ main {
     }
 
     .videosContainer {
-      padding:8rem 0.5rem !important;
+      padding:2rem 0.5rem !important;
     }
 
     .cars-container .card .btn:hover{
@@ -1078,10 +1074,6 @@ main {
       border-color: #fff !important;
     }
 
-    .categoryCars .category.TOOLS img {
-      object-position: top !important;
-      width: 78% !important;
-    }
   }
 
   #scrollToTopBtn {
@@ -1134,7 +1126,7 @@ main {
     } */
 
     #_desktop_logo img {
-      max-width: 150px !important;
+      max-width: 190px !important;
     }
 
     #search_widget .search {
@@ -1191,7 +1183,7 @@ main {
     .cars-container {
       display:flex;
       justify-content:center;
-      padding: 8rem 0;
+      padding: 2rem 0;
     }
 
     .cars-container .cars-cards{
@@ -1494,10 +1486,10 @@ main {
 .cars-container .card .card-img-top{
   background-color: transparent;
   transition: all 0.25s ease-out;
-  object-fit: contain;
+  object-fit: cover;
   height: 180px;
   max-width: 334px;
-  width: 80%;
+  width: 100%;
 }
 
 .cars-container .card .card-body .card-text{
@@ -1555,7 +1547,7 @@ main {
 .videosContainer img {
   cursor: pointer;
   width: 100%;
-  height: 315px;
+  height: 349.6px;
   object-fit: contain;
   object-position: center;
 }
@@ -1583,7 +1575,7 @@ main {
 
 .videosContainer iframe {
   width: 100% ;
-  height: 315px;
+  height: 349.6px;
 }
 
 .bannersHome{

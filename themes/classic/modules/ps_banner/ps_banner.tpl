@@ -817,14 +817,20 @@
 
 <style>
   .categoryCars .category {
-    max-height: 195px !important;
+    max-height: 258px !important;
     background: #bfbfbf !important;
   }
   .categoryCars .category img {
     width: 100%;
-    object-fit: contain;
+    object-fit: cover;
     height: 100%;
+    transform: scale(1.25);
+    object-position: left;
     
+  }
+
+  .categoryCars .category.MODERN img {
+    object-position: left 14px !important;
   }
 
   
