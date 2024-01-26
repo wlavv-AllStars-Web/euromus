@@ -1160,6 +1160,11 @@ main {
       color: #103054 !important;
     }
 
+    #_desktop_cart .cart-preview:hover.inactive .shopping-cart{
+      color: #103054 !important;
+      cursor: default;
+    }
+
     #_desktop_cart .cart-preview:hover .shopping-cart {
       color: #ee302e !important;
       cursor: pointer;
