@@ -92,11 +92,14 @@
     </div>
   </div> *}
 {* </div> *}
+{assign var="currentLanguageIso" value=Context::getContext()->language->iso_code}
 {assign var="currentLanguage" value=Context::getContext()->language->id}
 {assign var="categories" value=Category::getCategories($currentLanguage)}
-{assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand(92,100,$currentLanguage)}
-{* {assign var="versionsChevroletCamaro" value=IndexControllerCore::getCarsOfBrand(1011,1012,$currentLanguage)}
-{assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand(995,998,$currentLanguage)} *}
+{assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand("Ford","Mustang",$currentLanguage)}
+{assign var="versionsChevroletCamaro" value=IndexControllerCore::getCarsOfBrand("Chevrolet","Camaro",$currentLanguage)}
+{assign var="versionsChevroletCorvette" value=IndexControllerCore::getCarsOfBrand("Chevrolet","Corvette",$currentLanguage)}
+{assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand("Dodge","Challenger",$currentLanguage)}
+{assign var="versionsRamTrx" value=IndexControllerCore::getCarsOfBrand("Ram","Trx",$currentLanguage)}
 
 
 <div style="display: none;">
@@ -267,11 +270,11 @@
           <div id="collapseTwo" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-              {* {foreach from=$versionsChevroletCamaro item=item key=key name=name}
+              {foreach from=$versionsChevroletCamaro item=item key=key name=name}
                 <div class="card-link"><a style="cursor: pointer;"
                     onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
                 </div>
-              {/foreach} *}
+              {/foreach}
               </div>
             </div>
           </div>
@@ -298,8 +301,11 @@
           <div id="collapseThree" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-                <div class="card-link"><a href="">6200 V8 Supercharged</a><span>(2015)</span></div>
-                <div class="card-link"><a href="">5700 V8 HEMI</a><span>(2009 -)</span></div>
+              {foreach from=$versionsDodgeChallenger item=item key=key name=name}
+                <div class="card-link"><a style="cursor: pointer;"
+                    onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
+                </div>
+              {/foreach}
               </div>
             </div>
           </div>
@@ -325,11 +331,11 @@
           <div id="collapseFour" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-                {* {foreach from=$versionsChevroletCorvette item=item key=key name=name}
+                {foreach from=$versionsChevroletCorvette item=item key=key name=name}
                   <div class="card-link"><a style="cursor: pointer;"
                       onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
                   </div>
-                {/foreach} *}
+                {/foreach}
               </div>
             </div>
           </div>
@@ -356,8 +362,11 @@
           <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-                <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
-                <div class="card-link"><a href="">DS 5700 V8 HEMI Classic</a><span>(2013 - 2022)</span></div>
+              {foreach from=$versionsRamTrx item=item key=key name=name}
+                <div class="card-link"><a style="cursor: pointer;"
+                    onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
+                </div>
+              {/foreach}
               </div>
             </div>
           </div>
@@ -520,12 +529,21 @@
     {foreach from=$categories[1] item=categoryLevel1}
       {foreach from=$categoryLevel1 item=category}
         {if $category.id_category != 2}
-          <a rel="nofollow" href="/{$category.id_category}-{$category.link_rewrite}" class="select-list ">
-            <div class="category {$category.name}">
-              <img src="/img/eurmuscle/bannersHome/{$category.id_category}.png" loading="lazy" alt="{$category.name}">
-              <div class="model-type-overlay"><span>{$category.name}</span></div>
-            </div>
-          </a>
+          {if $category.id_category == 14}
+            <a rel="nofollow" href="http://tune4style.com/{$currentLanguageIso}" class="select-list ">
+              <div class="category {$category.name}">
+                <img src="/img/eurmuscle/bannersHome/{$category.id_category}.png" loading="lazy" alt="{$category.name}">
+                <div class="model-type-overlay"><span>{$category.name}</span></div>
+              </div>
+            </a>
+          {else}
+            <a rel="nofollow" href="/{$category.id_category}-{$category.link_rewrite}" class="select-list ">
+              <div class="category {$category.name}">
+                <img src="/img/eurmuscle/bannersHome/{$category.id_category}.png" loading="lazy" alt="{$category.name}">
+                <div class="model-type-overlay"><span>{$category.name}</span></div>
+              </div>
+            </a>
+          {/if}
         {/if}
       {/foreach}
     {/foreach}

@@ -1911,3 +1911,12 @@ header.page-header {
 #index #wrapper{
   padding-bottom: 0;
 }
+
+.categoryCars .MERCHANDISING img {
+  object-fit: contain !important;
+  transform: scale(1) !important;
+  object-position: center !important;
+}
+.categoryCars .MERCHANDISING:hover img {
+  transform: scale(1.2) !important;
+}
