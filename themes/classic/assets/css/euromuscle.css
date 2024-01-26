@@ -1874,6 +1874,7 @@ header.page-header {
   height: fit-content;
   padding: 0;
   min-height: fit-content !important;
+  background: #f6f6f6;
 }
 
 #js-product-list-header .card-block h1 {
