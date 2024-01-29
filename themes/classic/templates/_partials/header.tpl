@@ -30,7 +30,8 @@
 {assign var="currentLanguage" value=Context::getContext()->language}
 {assign var="linkRegistration" value=$urls.pages.registration}
 {assign var="linkMyaccount" value=$urls.pages.my_account}
-
+{assign var="linkShipping" value=$link->getCMSLink(46)}
+{assign var="linkPayment" value=$link->getCMSLink(47)}
 
 {assign var="currentUrl" value=Tools::getCurrentUrl()}
 {assign var="manufacturers" value=Manufacturer::getManufacturers()}
@@ -93,13 +94,13 @@
         <div class="col-md-10 header-top-right-desktop">
         {hook h='displayNav1'}
         <div class="shipped-eu">
-          <a href="/"><img src="/img/eurmuscle/topHeader/europe-rounded-02.svg
+          <a href="{$linkShipping}"><img src="/img/eurmuscle/topHeader/europe-rounded-02.svg
           " alt="shipped from europe"/><div style="display: flex;flex-direction:column;">SHIPPED<small style="white-space: nowrap;">FROM EUROPE</small></a></div>
         </div>
         
         {hook h='displayNav2'}
         <div class="payment-plans">
-          <a href="/"><img src="/img/eurmuscle/topHeader/payment-01.svg" alt="payment-plans"/><div style="display: flex;flex-direction:column;">PAYMENT<small style="white-space: nowrap;">PLANS</small></a></div>
+          <a href="{$linkPayment}"><img src="/img/eurmuscle/topHeader/payment-01.svg" alt="payment-plans"/><div style="display: flex;flex-direction:column;">PAYMENT<small style="white-space: nowrap;">PLANS</small></a></div>
         </div>
         </div>
         </div>
