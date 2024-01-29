@@ -75,7 +75,7 @@
   <div class="header-top">
     <div class="container">
        <div class="row" style="position: relative;z-index:1;">
-        <div class="col-md-4 hidden-sm-down" id="_desktop_logo" style="display: flex;justify-content:center;">
+        <div class="col-md-1 hidden-sm-down" id="_desktop_logo" style="display: flex;justify-content:center;">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}
               <h1 class="header-logo">
@@ -90,9 +90,17 @@
           {hook h='displayTop'}
         </div>
 
-        <div class="col-md-8 header-top-right-desktop">
-        {hook h='displayNav2'}
+        <div class="col-md-10 header-top-right-desktop">
         {hook h='displayNav1'}
+        <div class="shipped-eu">
+          <a href="/"><img src="/img/eurmuscle/topHeader/europe-rounded-02.svg
+          " alt="shipped from europe"/><div style="display: flex;flex-direction:column;">SHIPPED<small style="white-space: nowrap;">FROM EUROPE</small></a></div>
+        </div>
+        
+        {hook h='displayNav2'}
+        <div class="payment-plans">
+          <a href="/"><img src="/img/eurmuscle/topHeader/payment-01.svg" alt="payment-plans"/><div style="display: flex;flex-direction:column;">PAYMENT<small style="white-space: nowrap;">PLANS</small></a></div>
+        </div>
         </div>
         </div>
         
