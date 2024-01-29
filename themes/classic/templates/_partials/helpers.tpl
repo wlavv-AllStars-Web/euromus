@@ -30,6 +30,6 @@
       src="{$shop.logo_details.src}"
       alt="{$shop.name}"
       width="{$shop.logo_details.width}"
-      height="{$shop.logo_details.height}">
+      height="auto">
   </a>
 {/function}

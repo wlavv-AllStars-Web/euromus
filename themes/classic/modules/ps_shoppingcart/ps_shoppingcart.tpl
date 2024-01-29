@@ -62,6 +62,8 @@
 document.addEventListener("DOMContentLoaded", function() {
   const buttonSearchMobile = document.querySelector('#_desktop_cart .search');
   const search_widget = document.getElementById('search_widget');
+  const submitFormBtn = document.querySelector("#search_widget form .search")
+  const formSearch = document.querySelector("#search_widget form")
 
   buttonSearchMobile.addEventListener('click', () => {
     const computedStyle = window.getComputedStyle(search_widget);
@@ -72,6 +74,12 @@ document.addEventListener("DOMContentLoaded", function() {
       search_widget.style.display = 'none';
     }
   });
+
+  // submitFormBtn.addEventListener("submit", (event) => {
+  //   console.log("submit")
+  //   event.preventDefault();
+  // })
+
 });
 
 

@@ -944,9 +944,9 @@ main {
     font-size: 1.2rem !important;
   }
 
-  .header-top .container {
+  /* .header-top .container {
     height: 10dvh;
-  }
+  } */
 
   /* .lines-tablet {
     transform: rotate(180deg);
@@ -1226,7 +1226,8 @@ main {
     } */
 
     #_desktop_logo img {
-      max-width: 200px !important;
+      max-width: 234px !important;
+      width: 234px;
     }
 
     #search_widget .search {
