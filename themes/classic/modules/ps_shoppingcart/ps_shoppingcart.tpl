@@ -30,10 +30,10 @@
       {* {/if} *}
 
         <i class="material-icons search" aria-hidden="true">search</i>
-        <div style="position: relative;">
+        {* <div style="position: relative;"> *}
           <i class="material-icons shopping-cart" aria-hidden="true">shopping_cart</i>
           {* <span style="position: absolute;top:-6px;right:0;z-index:999;color:white;background:#ee302e;padding:0 4px;border-radius:25rem;font-size:11px;" class="cart-products-count">{$cart.products_count}</span> *}
-        </div>
+        {* </div> *}
         <span class="hidden-sm-down">{l s='Your Cart' d='Shop.Theme.Checkout'}</span>
       {* {if $cart.products_count > 0} *}
         </a>

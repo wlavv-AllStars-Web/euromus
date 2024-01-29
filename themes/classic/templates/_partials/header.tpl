@@ -48,7 +48,7 @@
     <div class="container">
       <div class="row">
         <div class="hidden-sm-down">
-          <div class="col-md-6 col-xs-12" style="display: flex;align-items:center;height:57px;gap:2rem;">
+          <div class="col-md-6 col-xs-12" style="display: flex;align-items:center;height:57px;gap:2rem;justify-content:end;width:100%;padding-right: 8rem;">
           {hook h='displayNav2'}
           </div>
           <div class="col-md-6 right-nav">
@@ -74,7 +74,7 @@
 {block name='header_top'}
   <div class="header-top">
     <div class="container">
-       <div class="row" style="position: relative;z-index:1;">
+       <div class="row" style="position: relative;z-index:1;width:100%;">
         <div class="col-md-1 hidden-sm-down" id="_desktop_logo" style="display: flex;justify-content:center;">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}
@@ -86,7 +86,7 @@
             {/if}
           {/if}
         </div>
-        <div class="header-top-right col-md-10 col-sm-12 position-static mobile-search">
+        <div class="header-top-right col-md-9 col-sm-12 position-static mobile-search">
           {hook h='displayTop'}
         </div>
 
