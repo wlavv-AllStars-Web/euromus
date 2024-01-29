@@ -1323,8 +1323,8 @@ main {
       }
 
       .otherCars .categoryCars .category {
-        width: 205px;
-        height: 255px;
+        width: 231px;
+        height: 305px;
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -1915,8 +1915,8 @@ header.page-header {
 
 .categoryCars .MERCHANDISING img {
   object-fit: contain !important;
-  transform: scale(1) !important;
-  object-position: center !important;
+  transform: scale(0.9) !important;
+  object-position: 2px center !important;
 }
 .categoryCars .MERCHANDISING:hover img {
   transform: scale(1.2) !important;
