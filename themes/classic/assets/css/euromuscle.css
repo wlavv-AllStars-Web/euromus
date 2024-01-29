@@ -249,7 +249,8 @@ main {
 
     #header .top-logo img {
         width: auto;
-        max-height: 2.5rem;
+        max-height: 3rem;
+        padding-top: 0.5rem;
     }
 
     #index #header .header-top{
