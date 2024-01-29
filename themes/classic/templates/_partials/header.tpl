@@ -176,11 +176,13 @@
 
     <div class="modal-content" style="display: flex;align-items:center;justify-content:space-between;flex-direction: column;position:relative;gap: 0.85rem;">
     {foreach from=$languages item=$language }
+      {if $language.id_lang === 2 ||$language.id_lang === 4 ||$language.id_lang === 5 }
       <div style="display: flex;gap:1rem;align-items:center;width:90%;padding:0.5rem;border-radius: 4px;{if $currentLanguage->iso_code === $language.iso_code}background:#ee302e;{/if}">
         <img src="/img/flags/{$language.iso_code}.jpg" width="16" height="11"/>
         {* <div id="_mobile_language_selector"></div> *}
         <a href="/{$language.iso_code}" data-iso="{$language.iso_code}" style="{if $currentLanguage->iso_code === $language.iso_code}color:#fff;{/if}">{$language.name}</a>
         </div>
+        {/if}
       {/foreach}
       <span class="close" style="color: #103054;opacity:1;position:absolute;top:1rem;right:1rem;">&times;</span>
     </div>
