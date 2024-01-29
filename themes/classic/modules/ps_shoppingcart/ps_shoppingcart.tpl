@@ -22,14 +22,16 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+ 
 <div id="_desktop_cart">
   <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
     <div class="header cart-link">
+      <i class="material-icons search" aria-hidden="true">search</i>
       {* {if $cart.products_count > 0} *}
         <a rel="nofollow" aria-label="{l s='Shopping cart link containing %nbProducts% product(s)' sprintf=['%nbProducts%' => $cart.products_count] d='Shop.Theme.Checkout'}" href="{$cart_url}">
       {* {/if} *}
 
-        <i class="material-icons search" aria-hidden="true">search</i>
+        
         {* <div style="position: relative;"> *}
           <i class="material-icons shopping-cart" aria-hidden="true">shopping_cart</i>
           {* <span style="position: absolute;top:-6px;right:0;z-index:999;color:white;background:#ee302e;padding:0 4px;border-radius:25rem;font-size:11px;" class="cart-products-count">{$cart.products_count}</span> *}
