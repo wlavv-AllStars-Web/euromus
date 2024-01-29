@@ -75,7 +75,7 @@
   <div class="header-top">
     <div class="container">
        <div class="row" style="position: relative;z-index:1;width:100%;">
-        <div class="col-md-1 hidden-sm-down" id="_desktop_logo" style="display: flex;justify-content:center;">
+        <div class="col-md-1 hidden-sm-down" id="_desktop_logo" style="display: flex;justify-content:flex-start;">
           {if $shop.logo_details}
             {if $page.page_name == 'index'}
               <h1 class="header-logo">
