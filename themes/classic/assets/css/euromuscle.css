@@ -885,6 +885,10 @@ main {
     display: none;
   }
 
+  #_desktop_cart .cart-link span {
+    color: #103054;
+  }
+
   #_desktop_user_info .user-info a {
     display: flex;
     align-items: center;
