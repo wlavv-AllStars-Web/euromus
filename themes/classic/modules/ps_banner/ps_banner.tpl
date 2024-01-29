@@ -555,7 +555,7 @@
 <div class="videosContainer">
   <div class="video1 video">
     <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-      <img src="https://img.youtube.com/vi/sGZ1lRpGfnA/maxresdefault.jpg" />
+      <img src="/img/eurmuscle/bannersHome/vid1.png" />
       <div class="play">
         <img class="image_play" alt="video player" src="/img/youtube_play.png" />
       </div>
@@ -567,7 +567,7 @@
   </div>
   <div class="video2 video">
     <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-      <img src="https://img.youtube.com/vi/5SpcsztedgQ/maxresdefault.jpg" />
+      <img src="/img/eurmuscle/bannersHome/vid2.png" />
       <div class="play">
         <img class="image_play" alt="video player" src="/img/youtube_play.png" />
       </div>
@@ -579,7 +579,7 @@
   </div>
   <div class="video3 video">
     <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-      <img src="https://img.youtube.com/vi/KWLv_iCL8ww/maxresdefault.jpg" />
+      <img src="/img/eurmuscle/bannersHome/vid3.png" />
       <div class="play">
         <img class="image_play" alt="video player" src="/img/youtube_play.png" />
       </div>
