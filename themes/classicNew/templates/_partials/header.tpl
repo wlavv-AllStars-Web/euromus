@@ -323,7 +323,7 @@ btnBrandsMobile.addEventListener('click', () => {
   background: #103054;
   color: white !important;
   padding: 16px;
-  font-size: 16px;
+  font-size: 1.2rem;
   border: none;
   width: 100%;
   /* max-width: 100px; */
@@ -343,7 +343,8 @@ btnBrandsMobile.addEventListener('click', () => {
   background: #103054;
   color: white;
   padding: 16px;
-  font-size: 16px;
+  font-size: 1.2rem;
+  font-weight: 600;
   border: none;
   width: 100%;
   display: flex;
