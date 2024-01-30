@@ -100,7 +100,7 @@
         
         {hook h='displayNav2'}
         <div class="payment-plans">
-          <a href="{$linkPayment}"><img src="/img/eurmuscle/topHeader/payment-01.svg" alt="payment-plans"/><div style="display: flex;flex-direction:column;">{l s='Payment' d="Shop.Theme.Header"}<small style="white-space: nowrap;">{l s='PLANS' d='Shop.Theme.Global'}</small></a></div>
+          <a href="{$linkPayment}"><img src="/img/eurmuscle/topHeader/payment-01.svg" alt="payment-plans"/><div style="display: flex;flex-direction:column;">{l s='Payment' d="Shop.Theme.Global"}<small style="white-space: nowrap;">{l s='PLANS' d='Shop.Theme.Global'}</small></a></div>
         </div>
         </div>
         </div>
@@ -118,7 +118,7 @@
           {* <div style="border-top:0.5rem solid #103054;border-bottom:0.5rem solid #ee302e;padding-block:0.25rem;background:#fff;height: 0.5rem;width:100%;z-index:-1;transform:rotate(180deg)"></div> *}
 
           <div id="_mobile_login" class="{if $currentUrl === "http://euromus.local/en/login?back=my-account"}activeLink{/if}"><a href="{$linkMyaccount}"><i class="fa-solid fa-user"></i>{l s='Login' d='Shop.Theme.Global'}</a></div>
-          <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/"><i class="fa-solid fa-house"></i>{l s='Home' d='Shop.Theme.Global'}</a></div>
+          <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/"><i class="fa-solid fa-house"></i>{l s='Home' d='Shop.Theme.euromuscle'}</a></div>
           <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}"><i class="fa-solid fa-newspaper"></i>{l s='News' d='Shop.Theme.Global'}</a></div>
           <div id="_mobile_contact_link" class="{if $currentUrl === $link->getPageLink('contact', true)}activeLink{/if}"><a href="{$link->getPageLink('contact', true)}"><i class="fa-solid fa-phone"></i>{l s='Contacts' d='Shop.Theme.Global'}</a></div>
           <div id="_mobile_shipping_link" class="{if $currentUrl === $linkShipping}activeLink{/if}"><a href="{$linkShipping}"><i class="fa-solid fa-truck-fast"></i>{l s='Shipping' d='Shop.Theme.Global'}</a></div>
@@ -126,11 +126,11 @@
           
           <div id="button_modal_language"><img src="/img/flags/{$language.iso_code}.jpg" /><p>{l s='Change Language' d='Shop.Theme.Global'}</p></div>
           <div id="brands_mobile">
-            <div class="btn-brandsMobile"><i class="fa-solid fa-list"></i>{l s='Brands' d='Shop.Theme.Global'}<i class="fa-solid fa-caret-down"></i></div>
+            <div class="btn-brandsMobile"><i class="fa-solid fa-list"></i>{l s='Brands' d='Shop.Theme.euromuscle'}<i class="fa-solid fa-caret-down"></i></div>
             <ul class="content_brands">
             {foreach from=$manufacturers item=$manufacturer }
               <li class="col-lg-3">
-              <a href="/{$currentLanguage->iso_code }/{l s='brand' d='Shop.Theme.Global'}/{$manufacturer.id_manufacturer}-{$manufacturer.link_rewrite}">
+              <a href="/{$currentLanguage->iso_code }/{l s='brand' d='Shop.Theme.euromuscle'}/{$manufacturer.id_manufacturer}-{$manufacturer.link_rewrite}">
               <img src="/img/tmp/manufacturer_mini_{$manufacturer.id_manufacturer}.jpg" width="100%" style="max-width: 100px;" />
               </a>
               </li>
@@ -145,8 +145,8 @@
     <div class="linesHeaderDesktop"></div>
     <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;background:#fff;position:absolute;width:100%;z-index:-1;"></div>
     <ul class="mainmenuDesktop">
-        <li class="{if $currentUrl === $link->getPageLink('index', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('index', true)}">Home</a></li>
-        <li class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('new-products', true)}">News</a></li>
+        <li class="{if $currentUrl === $link->getPageLink('index', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('index', true)}">{l s='Home' d='Shop.Theme.Global'}</a></li>
+        <li class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></li>
         <li><a style="background: #ee302e;">Your Car</a></li>
         <li class="dropdown ">
           <div class="dropbtn">{l s='Brands' d='Shop.Theme.Global'}<i class="fa-solid fa-caret-down"></i></div>
@@ -166,7 +166,7 @@
             bottom: 0;"></div>
           </ul>
         </li>
-        <li class="{if $currentUrl === $link->getPageLink('contact', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('contact', true)}">Contact</a></li>
+        <li class="{if $currentUrl === $link->getPageLink('contact', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('contact', true)}">{l s='Contact' d='Shop.Theme.Global'}</a></li>
       </ul>
   </div>
 
