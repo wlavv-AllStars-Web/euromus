@@ -93,6 +93,10 @@
 
         <div class="col-md-10 header-top-right-desktop">
         {hook h='displayNav1'}
+        
+        
+        {hook h='displayNav2'}
+
         <div class="shipped-eu">
           <a href="{$linkShipping}"><img src="/img/eurmuscle/topHeader/europe-rounded-02.svg
           " alt="shipped from europe"/><div style="display: flex;flex-direction:column;">{l s='SHIPPED' d='Shop.Theme.Global'}<small style="white-space: nowrap;">{l s='FROM EUROPE' d='Shop.Theme.Global'}</small></a></div>
@@ -101,7 +105,6 @@
           <a href="{$linkPayment}"><img src="/img/eurmuscle/topHeader/payment-01.svg" alt="payment-plans"/><div style="display: flex;flex-direction:column;">{l s='Payment' d="Shop.Theme.Global"}<small style="white-space: nowrap;">{l s='PLANS' d='Shop.Theme.Global'}</small></a></div>
         </div>
         
-        {hook h='displayNav2'}
         </div>
         </div>
         
