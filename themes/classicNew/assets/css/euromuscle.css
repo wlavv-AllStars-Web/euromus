@@ -1172,14 +1172,14 @@ main {
     }
 
     .shipped-eu a img{
-      height: 40px;
+      height: 36px;
     }
     .payment-plans a img{
-      height: 40px;
+      height: 36px;
     }
 
     #_desktop_user_info .user-info a i {
-      font-size: 40px !important;
+      font-size: 44px !important;
     }
 
     #_desktop_user_info span {
@@ -1205,7 +1205,7 @@ main {
     }
 
     #_desktop_cart .cart-link a i{
-      font-size: 33px !important;
+      font-size: 36px !important;
     }
 
     #_desktop_language_selector span.expand-more {
