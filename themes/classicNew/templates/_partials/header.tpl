@@ -109,7 +109,7 @@
       <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
       {* <pre>{print_r($manufacturers,1)}</pre> *}
         <div class="js-top-menu mobile" id="_mobile_top_menu" onclick="closeMenu()">
-        <img src="http://euromus.local/img/logo-17047994381.jpg" style="width: 26vw; margin-right:auto; margin-left:1rem;">
+        <img src="/img/logo-17047994381.jpg" style="width: 26vw; margin-right:auto; margin-left:1rem;">
         <i class="fa fa-times"></i>
           <div>Close</div>
         </div>
