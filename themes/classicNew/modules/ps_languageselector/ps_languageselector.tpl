@@ -28,7 +28,7 @@
     <div class="language-selector dropdown js-dropdown">
       <button data-toggle="dropdown" class="hidden-sm-down btn-unstyle" aria-haspopup="true" aria-expanded="false" aria-label="{l s='Language dropdown' d='Shop.Theme.Global'}" style="cursor: pointer;">
         <img src="/img/flags/{$current_language.iso_code}.svg" width="40" height="auto" style="outline: 2px solid #103054;border-radius: 0.15rem;" />
-        <span class="expand-more" style="font-weight: 600;">{$current_language.iso_code}</span>
+        <span class="expand-more" style="font-weight: 500;">{$current_language.iso_code}</span>
         {* <i class="material-icons expand-more">&#xE5C5;</i> *}
       </button>
       <ul class="dropdown-menu hidden-sm-down" aria-labelledby="language-selector-label">
