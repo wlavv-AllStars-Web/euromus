@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admineuromus1" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="81346f233cbc348f145cd49339f0cec2">
+        <source>This will be display in your search block</source>
+        <target>Aparecerá en el bloque de búsqueda</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b48968e1c912da07df5e8d6d246291ec">
+        <source>Display Name</source>
+        <target>Mostrar nombre</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="695ab0caa609a24df0af4aa299938ac5">
+        <source>Display search filter</source>
+        <target>Mostrar filtro de búsqueda</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="93cba07454f06a4a960172bbd6e2a435">
+        <source>Yes</source>
+        <target>Sí</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="bafd7322c6e97d25b6299b5d6fe8920b">
+        <source>No</source>
+        <target>No</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="365119d429fc230c8e9b5c3c94842c19">
+        <source>Display type</source>
+        <target>Tipo de visualización</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="01fda57aa6c7e9f07f5aa36b108e95cb">
+        <source>Order by</source>
+        <target>Ordenar por</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="fbba17f62befcbde5499d07f3f6fb93d">
+        <source>Order way</source>
+        <target>Ordenar</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

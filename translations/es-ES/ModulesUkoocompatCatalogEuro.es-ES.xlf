@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admineuromus1" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="c8b59681a9fdd006f99a269da6c98308">
+        <source>All your products for</source>
+        <target>Todos sus productos para	</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5774533fbb4947094ec662f4d9faf16c">
+        <source>All your products</source>
+        <target>Todos sus productos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="891ad007e2e9f2d55be6669cd9abc7a0">
+        <source>See more</source>
+        <target>Más información</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="78a1949268ace1fc7465c3ccd5782138">
+        <source>Download documentation</source>
+        <target>Descargar documentación</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5360d85a9ae96107ccee8624678d22fc">
+        <source>Change your search</source>
+        <target>Cambiar la búsqueda</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="7751fd195aba9d790c3a492da01e01d9">
+        <source>There is 1 product</source>
+        <target>Hay 1 producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="763dab47c9a9febb38cd90224d9f138a">
+        <source>There is no product</source>
+        <target>No existe ningún producto</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="50e1740a9b968cfeb5a46c8a97e432c4">
+        <source>There are %d products</source>
+        <target>Hay %d productos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="13348442cc6a27032d2b4aa28b75a5d3">
+        <source>Search</source>
+        <target>Buscar</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

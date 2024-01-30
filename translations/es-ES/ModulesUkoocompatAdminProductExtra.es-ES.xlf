@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admineuromus1" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="24c29702dc9c63dedb98e92f3028e068">
+        <source>Search:</source>
+        <target>Buscar:</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="b1c94ca2fbc3e78fc30069c8d0f01680">
+        <source>All</source>
+        <target>Todos</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4b6e00d36cea59280fb7fc2d71fd5dd0">
+        <source>Delete the compatibility:</source>
+        <target>Elimina la compatibilidad: </target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f2a6c498fb90ee345d997f888fce3b18">
+        <source>Delete</source>
+        <target>Borrar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="0eb1fdf13411d123624d5946cd3c3e5d">
+        <source>Create new compatibility</source>
+        <target>Crear nueva compatibilidad</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9af0060e9724e375a4b3d80fd08b3b73">
+        <source>Indicate the combination of criteria with which there is compatible.</source>
+        <target>Indique la combinación de criterios con la que es compatible.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9efc314b65237d5d646e1b817372afc6">
+        <source>---</source>
+        <target>---</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="c9cc8cce247e49bae79f15173ce97354">
+        <source>Save</source>
+        <target>Guardar</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="9ea67be453eaccf020697b4654fc021a">
+        <source>Save and stay</source>
+        <target>Guardar y quedarse</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5116863132b6147cc5d778bf81d88bc3">
+        <source>There is a warning</source>
+        <target>Hay una advertencia </target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5dba82429a4f194607dc274985ec7c5d">
+        <source>You must register the product before creating its compatibility.</source>
+        <target>Debe registrar el producto antes de crear su compatibilidad.</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

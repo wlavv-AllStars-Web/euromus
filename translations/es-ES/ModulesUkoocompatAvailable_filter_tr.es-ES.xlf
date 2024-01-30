@@ -2,9 +2,9 @@
 <xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
   <file original="admineuromus1" source-language="es-ES" target-language="es-ES" datatype="plaintext">
     <body>
-      <trans-unit id="56d3db43fb7f323139022a29d57276d8">
-        <source>No addresses are available.</source>
-        <target>No hay direcciones disponibles.</target>
+      <trans-unit id="29b5898adaac0cee096071ddd365ff0a">
+        <source>Add to search</source>
+        <target>Add to search</target>
         <note>Line: </note>
       </trans-unit>
     </body>

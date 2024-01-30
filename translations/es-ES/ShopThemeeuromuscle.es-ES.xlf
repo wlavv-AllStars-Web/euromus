@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admineuromus1" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="8cf04a9734132302f96da8e113e80ce5">
+        <source>Home</source>
+        <target>Inicio</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="84be54bb4bd1b755a27d86388700d097">
+        <source>Brands</source>
+        <target>Marcas</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="8c4d3a946a1fcde2ded7e17651fd0ed7">
+        <source>brand</source>
+        <target>Marca</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

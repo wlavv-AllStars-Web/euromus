@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admineuromus1" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="2252e15a30dd1a78e0a44ba8e49cd381">
+        <source>Analyze</source>
+        <target>Analyze</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="d5ef96e383d376beeec28da7acfea516">
+        <source>Download file</source>
+        <target>Download file</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4b3a6218bb3e3a7303e8a171a60fcf92">
+        <source>bytes</source>
+        <target>bytes</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="6dd757cbdd852a16f222a7d1a07eab3e">
+        <source>Mb</source>
+        <target>Mb</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="1908624a0bca678cd26b99bfd405324e">
+        <source>File size</source>
+        <target>File size</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="5251010ec9e364492c236bf8b9983928">
+        <source>File not found</source>
+        <target>File not found</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="f7585dca02f941492ce2a56cecf7b71f">
+        <source>File path</source>
+        <target>File path</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="01ae2e552c349bd5608af0f670f8ebc2">
+        <source>Unknow</source>
+        <target>Unknow</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="1480d5c8b99510f44a2f2f751baf2341">
+        <source>Original filename</source>
+        <target>Original filename</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="0b27918290ff5323bea1e3b78a9cf04e">
+        <source>File</source>
+        <target>File</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

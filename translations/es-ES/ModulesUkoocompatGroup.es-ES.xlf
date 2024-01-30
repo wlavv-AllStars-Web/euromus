@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xliff xmlns="urn:oasis:names:tc:xliff:document:1.2" version="1.2">
+  <file original="admineuromus1" source-language="es-ES" target-language="es-ES" datatype="plaintext">
+    <body>
+      <trans-unit id="4b8f7580a1bd66dd191059958947f0d7">
+        <source>No groups available yet.</source>
+        <target>No groups available yet.</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="4d3d769b812b6faa6b76e1a8abaece2d">
+        <source>Active</source>
+        <target>Active</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="52f5e0bc3859bc5f5e25130b6c7e8881">
+        <source>Position</source>
+        <target>Position</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="49ee3087348e8d44e1feda1917443987">
+        <source>Name</source>
+        <target>Name</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="de57aad5027de560713ea8e1dde6f5f7">
+        <source>Criteria groups</source>
+        <target>Criteria groups</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="26aae1cbb854074e2b25f218b978c375">
+        <source>Add new criteria group</source>
+        <target>Add new criteria group</target>
+        <note>Line: </note>
+      </trans-unit>
+      <trans-unit id="1d0007a496b24d7283bfe07faa0ab51c">
+        <source>The criteria groups allow you to highlight some search criteria compared to others. For example you can group the "Most Popular Brand" when searching for vehicle...</source>
+        <target>The criteria groups allow you to highlight some search criteria compared to others. For example you can group the "Most Popular Brand" when searching for vehicle...</target>
+        <note>Line: </note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
