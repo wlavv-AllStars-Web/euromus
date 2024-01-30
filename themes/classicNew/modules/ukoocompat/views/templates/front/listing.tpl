@@ -50,14 +50,14 @@
     {assign var=catalog_title value=$search->catalog_title}
 {else}
     {if isset($search->tags) && !empty($search->tags)}
-        {assign var=catalog_title value={l s='All your products for' mod='ukoocompat'}}
+        {assign var=catalog_title value={l s='All your products for' d='Modules.Ukoocompat.ListingEuro'}}
         {foreach from=$search->tags item=tag key=k}
             {if $k != '{CATEGORY}'}
                 {assign var=catalog_title value=$catalog_title|cat:' '|cat:$tag}
             {/if}
         {/foreach}
     {else}
-        {assign var=catalog_title value={l s='All your products' mod='ukoocompat'}}
+        {assign var=catalog_title value={l s='All your products' d='Modules.Ukoocompat.ListingEuro'}}
     {/if}
 {/if}
 
@@ -72,7 +72,7 @@
         {if isset($search->listing_title) && !empty($search->listing_title)}
             {$search->listing_title|escape:'htmlall':'UTF-8'}
         {else}
-            {assign var=listing_title value={$search->tags['{CATEGORY}']|cat:' '|cat:{l s='for' mod='ukoocompat'}}}
+            {assign var=listing_title value={$search->tags['{CATEGORY}']|cat:' '|cat:{l s='for' d='Modules.Ukoocompat.ListingEuro'}}}
             {foreach from=$search->tags item=tag key=k}
                 {if $k != '{CATEGORY}'}
                     {assign var=listing_title value=$listing_title|cat:' '|cat:$tag}
@@ -98,18 +98,18 @@
                 {/if}
                 {if isset($search->alias->link) && !empty($search->alias->link)}
                     <a href="{$search->alias->link|escape:'url':'UTF-8'}" class="btn btn-default">
-                        <i class="icon-eye"></i> {l s='See more' mod='ukoocompat'}
+                        <i class="icon-eye"></i> {l s='See more' d='Modules.Ukoocompat.ListingEuro'}
                     </a>
                 {/if}
                 {if file_exists('modules/ukoocompat/pdf/notice_'|cat:$search->alias->id|cat:'.pdf')}
                     <a href="{$base_dir_ssl|cat:'modules/ukoocompat/pdf/notice_'|cat:$search->alias->id|cat:'.pdf'|escape:'url':'UTF-8'}" target="_blank" class="btn btn-default">
-                        <i class="icon-download"></i> {l s='Download documentation' mod='ukoocompat'}
+                        <i class="icon-download"></i> {l s='Download documentation' d='Modules.Ukoocompat.ListingEuro'}
                     </a>
                 {/if}
                 
                 {*
                 <button type="button" class="btn exclusive" id="change_search_button">
-                    <i class="icon-exchange"></i> {l s='Change your search' mod='ukoocompat'}
+                    <i class="icon-exchange"></i> {l s='Change your search' d='Modules.Ukoocompat.ListingEuro'}
                 </button>
                 *}
             </div>
@@ -133,7 +133,7 @@
         <pre>{print_r($product,1)}</pre>
     {/foreach}
 {else}
-    {l s='No products available yet' d='Shop.Theme.Catalog'}
+    {l s='No products available yet' d='ListingEuro.Theme.Catalog'}
 {/if} *}
 
 
@@ -197,7 +197,7 @@
         </div>
     {/if}
     <div class="spacer-15"></div>
-    <p class="alert alert-warning text-center">{l s='No result for your search.' mod='ukoocompat'}</p>
+    <p class="alert alert-warning text-center">{l s='No result for your search.' d='Modules.Ukoocompat.ListingEuro'}</p>
 {/if}
 
 

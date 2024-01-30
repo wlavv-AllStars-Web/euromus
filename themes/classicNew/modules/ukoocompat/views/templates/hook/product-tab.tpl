@@ -8,4 +8,4 @@
   * "In Ukoo we trust!"
   *}
 
-<h3 id="ukoocompat_tabcontent_title" class="idTabHrefShort page-product-heading">{l s='Compatibilities' mod='ukoocompat'}</h3>
+<h3 id="ukoocompat_tabcontent_title" class="idTabHrefShort page-product-heading">{l s='Compatibilities' d='Modules.Ukoocompat.ProductTab'}</h3>

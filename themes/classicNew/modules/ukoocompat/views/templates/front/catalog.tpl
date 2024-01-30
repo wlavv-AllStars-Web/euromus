@@ -12,12 +12,12 @@
     {assign var=catalog_title value=$search->catalog_title}
 {else}
     {if isset($search->tags) && !empty($search->tags)}
-        {assign var=catalog_title value={l s='All your products for' mod='ukoocompat'}}
+        {assign var=catalog_title value={l s='All your products for' d='Modules.Ukoocompat.CatalogEuro'}}
         {foreach from=$search->tags item=tag}
             {assign var=catalog_title value=$catalog_title|cat:' '|cat:$tag}
         {/foreach}
     {else}
-        {assign var=catalog_title value={l s='All your products' mod='ukoocompat'}}
+        {assign var=catalog_title value={l s='All your products' d='Modules.Ukoocompat.CatalogEuro'}}
     {/if}
 {/if}
 
@@ -45,16 +45,16 @@
                 <p>
                     {if isset($search->alias->link) && !empty($search->alias->link)}
                         <a href="{$search->alias->link|escape:'url':'UTF-8'}" class="btn btn-default">
-                            <i class="icon-eye"></i> {l s='See more' mod='ukoocompat'}
+                            <i class="icon-eye"></i> {l s='See more' d='Modules.Ukoocompat.CatalogEuro'}
                         </a>
                     {/if}
                     {if file_exists('modules/ukoocompat/pdf/notice_'|cat:$search->alias->id|cat:'.pdf')}
                         <a href="{$base_dir_ssl|cat:'modules/ukoocompat/pdf/notice_'|cat:$search->alias->id|cat:'.pdf'|escape:'url':'UTF-8'}" target="_blank" class="btn btn-default">
-                            <i class="icon-download"></i> {l s='Download documentation' mod='ukoocompat'}
+                            <i class="icon-download"></i> {l s='Download documentation' d='Modules.Ukoocompat.CatalogEuro'}
                         </a>
                     {/if}
                     <button type="button" class="btn exclusive" id="change_search_button">
-                        <i class="icon-exchange"></i> {l s='Change your search' mod='ukoocompat'}
+                        <i class="icon-exchange"></i> {l s='Change your search' d='Modules.Ukoocompat.CatalogEuro'}
                     </button>
                 </p>
             </div>
@@ -81,11 +81,11 @@
                     {strip}
                         <span class="heading-counter">
                         {if isset($nb_products) && $nb_products == 1}
-                            {l s='There is 1 product' mod='ukoocompat'}
+                            {l s='There is 1 product' d='Modules.Ukoocompat.CatalogEuro'}
                         {elseif isset($nb_products) && $nb_products == 0}
-                            {l s='There is no product' mod='ukoocompat'}
+                            {l s='There is no product' d='Modules.Ukoocompat.CatalogEuro'}
                         {elseif isset($nb_products)}
-                            {l s='There are %d products' sprintf=$nb_products mod='ukoocompat'}
+                            {l s='There are %d products' sprintf=$nb_products d='Modules.Ukoocompat.CatalogEuro'}
                         {/if}
                         </span>
                     {/strip}
@@ -96,7 +96,7 @@
                     </div>
                 {/if}
                 <button type="button" class="btn" id="change_search_button">
-                    <i class="icon-exchange"></i> {l s='Change your search' mod='ukoocompat'}
+                    <i class="icon-exchange"></i> {l s='Change your search' d='Modules.Ukoocompat.CatalogEuro'}
                 </button>
             </div>
         </div>

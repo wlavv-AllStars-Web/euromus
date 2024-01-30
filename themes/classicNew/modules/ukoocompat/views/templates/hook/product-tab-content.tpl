@@ -8,7 +8,7 @@
  * "In Ukoo we trust!"
  *}
 
-{* <h3 id="ukoocompat_tabcontent_title" class="idTabHrefShort page-product-heading">{l s='Compatibilities' mod='ukoocompat'}</h3> *}
+{* <h3 id="ukoocompat_tabcontent_title" class="idTabHrefShort page-product-heading">{l s='Compatibilities' d='Modules.Ukoocompat.ProductTab'}</h3> *}
 <div id="ukoocompat_tabcontent">
     {foreach from=$compatTab item=tab}
     <table class="table table-bordered">
@@ -26,7 +26,7 @@
 					 {if $filter->id != 10}
                         <td>
                             {if $compat['filter_'|cat:$filter->id_ukoocompat_filter] == '*'}
-                                {l s='All' mod='ukoocompat'} {$filter->name|escape:'htmlall':'UTF-8'|lower}
+                                {l s='All' d='Modules.Ukoocompat.ProductTab'} {$filter->name|escape:'htmlall':'UTF-8'|lower}
                             {else}
                                 {$compat['filter_'|cat:$filter->id_ukoocompat_filter]|escape:'htmlall':'UTF-8'}
                             {/if}
@@ -37,8 +37,8 @@
             {/foreach}
 			<tr {if count($tab.compatibilities) < 5} style="display:none" {/if}>
 			<td>
-			<a id="showMoreCompat"{if count($tab.compatibilities) < 5} style="display:none" {/if} style="color:red;font-size:12px;" href="javascript:void();" onclick="$('.compatNotDisplay:hidden, #reduceCompat').show(); $(this).hide();">...{l s='See more compatibilities' mod='ukoocompat'}</a>
-			<a id="reduceCompat" style="display:none; color:red;font-size:12px;"  href="javascript:void();" onclick="$('.compatNotDisplay:visible').hide(); $('#showMoreCompat').show(); $(this).hide();">{l s='Reduce' mod='ukoocompat'}...</a>
+			<a id="showMoreCompat"{if count($tab.compatibilities) < 5} style="display:none" {/if} style="color:red;font-size:12px;" href="javascript:void();" onclick="$('.compatNotDisplay:hidden, #reduceCompat').show(); $(this).hide();">...{l s='See more compatibilities' d='Modules.Ukoocompat.ProductTab'}</a>
+			<a id="reduceCompat" style="display:none; color:red;font-size:12px;"  href="javascript:void();" onclick="$('.compatNotDisplay:visible').hide(); $('#showMoreCompat').show(); $(this).hide();">{l s='Reduce' d='Modules.Ukoocompat.ProductTab'}...</a>
 			</td>
 			</tr>
         </tbody>

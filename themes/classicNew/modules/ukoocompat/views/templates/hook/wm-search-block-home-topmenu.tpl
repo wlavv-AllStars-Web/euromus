@@ -52,7 +52,7 @@
 
             <div class="ukoocompat_search_block_button" style="float:left; width:200px; padding-top:5px;display: none;">
                 <button id="ukoocompat_search_block_submit_{$search->id|intval}" type="submit" name="ukoocompat_search_submit" class="button btn btn-default button-medium" style="line-height: 13px; width:100%; padding:6px 10px;">
-                    <span>{l s='Search' mod='ukoocompat'}</span>
+                    <span>{l s='Search' d='Modules.Ukoocompat.HomeTopmenu'}</span>
                 </button>
             </div>
             <input type="hidden" id="ukoocompat_page_name" name="page_name" value="{$page_name|escape:'htmlall':'UTF-8'}"/>

@@ -9,7 +9,7 @@
   *}
 
 <div id="ukoocompat_search_block_alias_{$search->id|intval}" class="block ukoocompat_search_block_alias">
-    <h4 class="title_block">{l s='Search by alias' mod='ukoocompat'}</h4>
+    <h4 class="title_block">{l s='Search by alias' d='Modules.Ukoocompat.AliasEuro'}</h4>
     <div class="block_content">
         <form id="ukoocompat_search_block_alias_form_{$search->id|intval}" action="{$form_action|escape}" method="get" class="ukoocompat_search_block_alias_form{if $search->dynamic_criteria} dynamic_criteria{/if}">
             {if !$is_rewrite_active}
@@ -20,12 +20,12 @@
             <input type="hidden" name="id_search" value="{$search->id|intval}" />
             <input type="hidden" name="id_lang" value="{$search->current_id_lang|intval}" />
 
-            <input id="ukoocompat_search_alias_{$search->id|intval}" type="text" class="form-control" placeholder="{l s='Type your alias here' mod='ukoocompat'}" />
-            <p class="help-block">{l s='eg. ALIAS1' mod='ukoocompat'}</p>
+            <input id="ukoocompat_search_alias_{$search->id|intval}" type="text" class="form-control" placeholder="{l s='Type your alias here' d='Modules.Ukoocompat.AliasEuro'}" />
+            <p class="help-block">{l s='eg. ALIAS1' d='Modules.Ukoocompat.AliasEuro'}</p>
 
             <div class="ukoocompat_search_block_button">
                 <button id="ukoocompat_search_block_alias_submit_{$search->id|intval}" type="submit" name="ukoocompat_search_submit" class="button btn btn-default button-medium">
-                    <span>{l s='Search' mod='ukoocompat'}</span>
+                    <span>{l s='Search' d='Modules.Ukoocompat.AliasEuro'}</span>
                 </button>
             </div>
         </form>

@@ -97,7 +97,7 @@
     
     {foreach from=$compatTab item=tab}
     <div class="panel product-tab">
-        <h3><i class="icon-search"></i> {l s='Search:' mod='ukoocompat'} {$tab.search->name|escape:'htmlall':'UTF-8'}</h3>
+        <h3><i class="icon-search"></i> {l s='Search:' d='Modules.Ukoocompat.AdminProductExtra'} {$tab.search->name|escape:'htmlall':'UTF-8'}</h3>
         
         <span class="btn btn-default" style="cursor: pointer;" onclick="selectAll()">Select all</span>
         <span class="btn btn-default" style="cursor: pointer; margin-left: 10px;" onclick="deleteSelectedCompatibility()">Remove selected</span>
@@ -127,7 +127,7 @@
 
                         <td>
                             {if $compat['filter_'|cat:$filter->id_ukoocompat_filter] == '*'}
-                                {l s='All' mod='ukoocompat'} {$filter->name|escape:'htmlall':'UTF-8'|lower}
+                                {l s='All' d='Modules.Ukoocompat.AdminProductExtra'} {$filter->name|escape:'htmlall':'UTF-8'|lower}
                             {else}
                                 {$compat['filter_'|cat:$filter->id_ukoocompat_filter]|escape:'htmlall':'UTF-8'}
                             {/if}
@@ -141,13 +141,13 @@
                             <div class="btn-group pull-right">
 								<!--
                                 <a href="javascript:void(0);"
-                                   onclick="{literal}if (confirm('{/literal}{l s='Delete the compatibility:' mod='ukoocompat'} {foreach from=$tab.search->filters item=filter}{if $compat['filter_'|cat:$filter->id_ukoocompat_filter] == '*'}{l s='All' mod='ukoocompat'} {$filter->name|lower}{else}{$compat['filter_'|cat:$filter->id_ukoocompat_filter]}{/if} {/foreach}?{literal}')){deleteCompatibility({/literal}{$compat.id_ukoocompat_compat|intval}{literal});}else{event.stopPropagation(); event.preventDefault();};{/literal}" class="edit btn btn-default" title="{l s='Delete' mod='ukoocompat'}">
-                                    <i class="icon-trash"></i> {l s='Delete' mod='ukoocompat'}
+                                   onclick="{literal}if (confirm('{/literal}{l s='Delete the compatibility:' d='Modules.Ukoocompat.AdminProductExtra'} {foreach from=$tab.search->filters item=filter}{if $compat['filter_'|cat:$filter->id_ukoocompat_filter] == '*'}{l s='All' d='Modules.Ukoocompat.AdminProductExtra'} {$filter->name|lower}{else}{$compat['filter_'|cat:$filter->id_ukoocompat_filter]}{/if} {/foreach}?{literal}')){deleteCompatibility({/literal}{$compat.id_ukoocompat_compat|intval}{literal});}else{event.stopPropagation(); event.preventDefault();};{/literal}" class="edit btn btn-default" title="{l s='Delete' d='Modules.Ukoocompat.AdminProductExtra'}">
+                                    <i class="icon-trash"></i> {l s='Delete' d='Modules.Ukoocompat.AdminProductExtra'}
                                 </a>-->
 
 								<a href="javascript:void(0);"
-                                   onclick="{literal}if (confirm('Supprimer la compatibilité sélectionnée?')){deleteCompatibility({/literal}{$compat.id_ukoocompat_compat|intval}{literal});}else{event.stopPropagation(); event.preventDefault();};{/literal}" class="edit btn btn-default" title="{l s='Delete' mod='ukoocompat'}">
-                                    <i class="icon-trash"></i> {l s='Delete' mod='ukoocompat'}
+                                   onclick="{literal}if (confirm('Supprimer la compatibilité sélectionnée?')){deleteCompatibility({/literal}{$compat.id_ukoocompat_compat|intval}{literal});}else{event.stopPropagation(); event.preventDefault();};{/literal}" class="edit btn btn-default" title="{l s='Delete' d='Modules.Ukoocompat.AdminProductExtra'}">
+                                    <i class="icon-trash"></i> {l s='Delete' d='Modules.Ukoocompat.AdminProductExtra'}
                                 </a>
 
                             </div>
@@ -170,12 +170,12 @@
 	
     <div class="panel product-tab" style="display: none;">
 		<div onclick="$('#container_new_compatibility').toggle()" style="cursor:pointer;">
-			<h3><i class="icon-check"></i> {l s='Create new compatibility' mod='ukoocompat'}</h3>
+			<h3><i class="icon-check"></i> {l s='Create new compatibility' d='Modules.Ukoocompat.AdminProductExtra'}</h3>
 		</div>
 
 		<div id="container_new_compatibility" style="display:blobk;">
 			<!--<div class="alert alert-info">
-				{l s='Indicate the combination of criteria with which there is compatible.' mod='ukoocompat'}
+				{l s='Indicate the combination of criteria with which there is compatible.' d='Modules.Ukoocompat.AdminProductExtra'}
 			</div>-->
 			<input type="hidden" name="id_product" id="id_product" value="{$id_product|intval}" />
 			<input type="hidden" name="compatToken" id="compatToken" value="{$compatToken|escape:'htmlall':'UTF-8'}" />
@@ -189,8 +189,8 @@
 						</label>
 						<div class="col-lg-9">
 							<select name="id_ukoocompat_criterion[{$filter.id|intval}]" id="id_ukoocompat_criterion_{$filter.id|intval}">
-								<option value="" >{l s='---' mod='ukoocompat'}</option>
-								<option value="*"{if isset($selected_criteria[$filter.id|intval]) && $selected_criteria[$filter.id|intval].id_ukoocompat_criterion == '*'} selected="selected"{/if}>{l s='All' mod='ukoocompat'}</option>
+								<option value="" >{l s='---' d='Modules.Ukoocompat.AdminProductExtra'}</option>
+								<option value="*"{if isset($selected_criteria[$filter.id|intval]) && $selected_criteria[$filter.id|intval].id_ukoocompat_criterion == '*'} selected="selected"{/if}>{l s='All' d='Modules.Ukoocompat.AdminProductExtra'}</option>
 								{foreach from=$filter.criteria item=criterion}
 										<option value="{$criterion.id|intval}"{if isset($selected_criteria[$filter.id|intval]) && $selected_criteria[$filter.id|intval].id_ukoocompat_criterion == $criterion.id|intval} selected="selected"{/if}>
 											{$criterion.value|escape:'html':'UTF-8'}
@@ -208,8 +208,8 @@
 						</label>
 						<div class="col-lg-9">
 							<select name="id_ukoocompat_criterion[{$filter.id|intval}]" id="id_ukoocompat_criterion_{$filter.id|intval}" style="display: none">
-								<option value="" >{l s='---' mod='ukoocompat'}</option>
-								<option value="*"{if isset($selected_criteria[$filter.id|intval]) && $selected_criteria[$filter.id|intval].id_ukoocompat_criterion == '*'} selected="selected"{/if}>{l s='All' mod='ukoocompat'}</option>
+								<option value="" >{l s='---' d='Modules.Ukoocompat.AdminProductExtra'}</option>
+								<option value="*"{if isset($selected_criteria[$filter.id|intval]) && $selected_criteria[$filter.id|intval].id_ukoocompat_criterion == '*'} selected="selected"{/if}>{l s='All' d='Modules.Ukoocompat.AdminProductExtra'}</option>
 								{foreach from=$filter.criteria item=criterion}
 									<option value="{$criterion.id|intval}"{if isset($selected_criteria[$filter.id|intval]) && $selected_criteria[$filter.id|intval].id_ukoocompat_criterion == $criterion.id|intval} selected="selected"{/if}>
 										{$criterion.value|escape:'html':'UTF-8'}
@@ -226,9 +226,9 @@
 			{/foreach}
 
 			<div class="panel-footer">
-				{* <a href="{$link->getAdminLink('AdminProducts')|escape:'html':'UTF-8'}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel' mod='ukoocompat'}</a> *}
-				<button type="submit" name="submitAddproduct" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save' mod='ukoocompat'}</button>
-				<button type="submit" name="submitAddproductAndStay" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save and stay' mod='ukoocompat'}</button>
+				{* <a href="{$link->getAdminLink('AdminProducts')|escape:'html':'UTF-8'}" class="btn btn-default"><i class="process-icon-cancel"></i> {l s='Cancel' d='Modules.Ukoocompat.AdminProductExtra'}</a> *}
+				<button type="submit" name="submitAddproduct" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save' d='Modules.Ukoocompat.AdminProductExtra'}</button>
+				<button type="submit" name="submitAddproductAndStay" class="btn btn-default pull-right"><i class="process-icon-save"></i> {l s='Save and stay' d='Modules.Ukoocompat.AdminProductExtra'}</button>
 			</div>
 		</siv>
 
@@ -294,9 +294,9 @@
     </script>
 {else}
     <div class="alert alert-warning">
-        {l s='There is a warning' mod='ukoocompat'}
+        {l s='There is a warning' d='Modules.Ukoocompat.AdminProductExtra'}
         <ul style="display:block;" id="seeMore">
-            <li>{l s='You must register the product before creating its compatibility.' mod='ukoocompat'}</li>
+            <li>{l s='You must register the product before creating its compatibility.' d='Modules.Ukoocompat.AdminProductExtra'}</li>
         </ul>
     </div>
 {/if}

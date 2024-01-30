@@ -49,7 +49,7 @@
             {/foreach}
             <div class="ukoocompat_search_block_button">
                 <button id="ukoocompat_search_block_submit_{$search->id|intval}" type="submit" name="ukoocompat_search_submit" class="button btn btn-default button-medium">
-					<span>{l s='Search' mod='ukoocompat'}</span>
+					<span>{l s='Search' d='Modules.Ukoocompat.SearchBlock'}</span>
 				</button>
 			</div>
             <input type="hidden" id="ukoocompat_page_name" name="page_name" value="{$page_name|escape:'htmlall':'UTF-8'}"/>
