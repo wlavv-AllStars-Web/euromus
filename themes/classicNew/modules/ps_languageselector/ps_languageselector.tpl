@@ -27,14 +27,14 @@
     <span id="language-selector-label" class="hidden-md-up">{l s='Language:' d='Shop.Theme.Global'}</span>
     <div class="language-selector dropdown js-dropdown">
       <button data-toggle="dropdown" class="hidden-sm-down btn-unstyle" aria-haspopup="true" aria-expanded="false" aria-label="{l s='Language dropdown' d='Shop.Theme.Global'}" style="cursor: pointer;">
-        <img src="/img/flags/{$current_language.iso_code}.jpg" />
-        <span class="expand-more">{$current_language.name_simple}</span>
+        <img src="/img/flags/{$current_language.iso_code}.svg" width="36" height="auto" />
+        {* <span class="expand-more">{$current_language.name_simple}</span> *}
         {* <i class="material-icons expand-more">&#xE5C5;</i> *}
       </button>
       <ul class="dropdown-menu hidden-sm-down" aria-labelledby="language-selector-label">
         {foreach from=$languages item=language}
           <li {if $language.id_lang == $current_language.id_lang} class="current" {/if} style="display: flex;align-items:center;">
-            <img src="/img/flags/{$language.iso_code}.jpg" width="16" height="11" style="margin-left: 0.5rem;"/>
+            <img src="/img/flags/{$language.iso_code}.svg" width="16" height="11" style="margin-left: 0.5rem;"/>
             <a href="{url entity='language' id=$language.id_lang}" class="dropdown-item" data-iso-code="{$language.iso_code}">{$language.name_simple}</a>
           </li>
         {/foreach}
