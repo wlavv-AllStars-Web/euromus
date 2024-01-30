@@ -383,14 +383,14 @@
 
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSix" aria-expanded="true"
                 aria-controls="collapseFive">
                 {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
 
-          <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseSix" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
                 <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
@@ -411,14 +411,14 @@
 
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="true"
                 aria-controls="collapseFive">
                 {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
 
-          <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseSeven" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
                 <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
@@ -439,8 +439,8 @@
 
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
-                aria-controls="collapseFive">
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseEight" aria-expanded="true"
+                aria-controls="collapseEight">
                 {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
@@ -467,14 +467,14 @@
 
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseNine" aria-expanded="true"
                 aria-controls="collapseFive">
                 {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
 
-          <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseNine" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
                 <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
@@ -494,14 +494,14 @@
 
           <div class="card-header" id="headingOne">
             <h5 class="mb-0">
-              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
+              <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTen" aria-expanded="true"
                 aria-controls="collapseFive">
                 {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
 
-          <div id="collapseFive" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+          <div id="collapseTen" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
                 <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
