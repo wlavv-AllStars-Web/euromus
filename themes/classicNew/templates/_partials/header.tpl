@@ -147,7 +147,7 @@
     <ul class="mainmenuDesktop">
         <li class="{if $currentUrl === $link->getPageLink('index', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('index', true)}">{l s='Home' d='Shop.Theme.Global'}</a></li>
         <li class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></li>
-        <li><a style="background: #ee302e;">Your Car</a></li>
+        <li><a style="background: #ee302e;">{l s='Your Car' d='Shop.Theme.Global'}</a></li>
         <li class="dropdown ">
           <div class="dropbtn">{l s='Brands' d='Shop.Theme.Global'}<i class="fa-solid fa-caret-down"></i></div>
           <ul class="dropdown-content">
