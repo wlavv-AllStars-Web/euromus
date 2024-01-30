@@ -863,7 +863,7 @@
 
  @media screen and (min-width:768px){
   .categoryCars .category {
-    max-height: 305px !important;
+    max-height: 370px !important;
     background: #bfbfbf !important;
   }
   .categoryCars .category img {

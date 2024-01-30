@@ -1413,8 +1413,8 @@ main {
       }
 
       .otherCars .categoryCars .category {
-        width: 231px;
-        height: 305px;
+        width: 279px;
+        height: 370px;
         display: flex;
         flex-direction: column;
         justify-content: center;
