@@ -231,7 +231,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true"
                 aria-controls="collapseOne">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -262,7 +262,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true"
                 aria-controls="collapseTwo">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -293,7 +293,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="true"
                 aria-controls="collapseThree">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -324,7 +324,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFour" aria-expanded="true"
                 aria-controls="collapseFour">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -354,7 +354,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
                 aria-controls="collapseFive">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -385,7 +385,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
                 aria-controls="collapseFive">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -413,7 +413,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
                 aria-controls="collapseFive">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -441,7 +441,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
                 aria-controls="collapseFive">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -469,7 +469,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
                 aria-controls="collapseFive">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
@@ -496,7 +496,7 @@
             <h5 class="mb-0">
               <button class="btn btn-link" data-toggle="collapse" data-target="#collapseFive" aria-expanded="true"
                 aria-controls="collapseFive">
-                Versions
+                {l s='Versions' d='Shop.Theme.Banner'}
               </button>
             </h5>
           </div>
