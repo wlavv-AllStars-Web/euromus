@@ -561,7 +561,7 @@
       </div>
     </div>
     <div class="iframeClass" style="display:none">
-      <iframe frameborder="0" allowfullscreen src="https://www.youtube.com/embed/sGZ1lRpGfnA?autoplay=0&mute=1">
+      <iframe frameborder="0" allowfullscreen src="https://www.youtube.com/embed/sGZ1lRpGfnA?autoplay=0&mute=1&rel=0">
       </iframe>
     </div>
   </div>
@@ -573,7 +573,7 @@
       </div>
     </div>
     <div  class="iframeClass" style="display:none">
-      <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/5SpcsztedgQ?autoplay=0&mute=1">
+      <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/5SpcsztedgQ?autoplay=0&mute=1&rel=0">
       </iframe>
     </div>
   </div>
@@ -585,7 +585,7 @@
       </div>
     </div>
     <div  class="iframeClass"  style="display:none">
-      <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/KWLv_iCL8ww?autoplay=0&mute=1">
+      <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/KWLv_iCL8ww?autoplay=0&mute=1&rel=0">
       </iframe>
     </div>
   </div>
