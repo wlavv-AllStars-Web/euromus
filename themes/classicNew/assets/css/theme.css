@@ -2093,7 +2093,7 @@ tbody.collapse.in {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid rgba(0, 0, 0, 0.15);
-  border-radius: 0;
+  border-radius: 10px;
 }
 .dropdown-divider {
   height: 1px;
@@ -2106,7 +2106,7 @@ tbody.collapse.in {
   width: 100%;
   padding: 3px 1.5rem;
   clear: both;
-  font-weight: 400;
+  font-weight: 600;
   color: #363a42;
   text-align: inherit;
   white-space: nowrap;
