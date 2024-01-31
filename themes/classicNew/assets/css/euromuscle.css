@@ -878,7 +878,21 @@ main {
   .header-top .container #_desktop_logo{
     justify-content: initial !important;
   }
+  .language-selector button span {
+    display: none;
+  }
+  #header .header-nav .user-info span {
+    display: none;
+  }
+  #header .header-nav .blockcart span {
+    display: none;
+  }
+
+  #header .header-nav .user-info{
+    margin-left: 0 !important;
+  }
   #header .header-nav .blockcart {
+    margin-left: 0 !important;
     background: none;
   }
   .header-top .header-top-right-desktop {
