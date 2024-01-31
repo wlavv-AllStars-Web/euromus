@@ -24,6 +24,13 @@
 !/download/.htaccess
 !/download/index.php
 
+#pasta classic
+/themes/classic/*
+
+#pasta app
+/app/config/*
+
+/var/logs/*
 # Images
 /img/*
 !/img/.htaccess
