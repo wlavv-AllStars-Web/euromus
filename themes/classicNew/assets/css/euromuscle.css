@@ -801,6 +801,10 @@ main {
       #registration #customer-form .form-control-label{
         text-align: left;
       }
+
+      .row-mobile {
+        padding: 0 !important;
+      }
 }
 
 /* categories tablet */
@@ -854,6 +858,10 @@ main {
   .bannersHomeMobile {
     padding-bottom: 3rem;
   }
+
+  .row-mobile {
+    padding: 0 !important;
+  }
 }
 
 /* tablet */
@@ -878,9 +886,31 @@ main {
   }
 
   .header-top .header-top-right #search_widget{
-    width: 42% !important;
+    width: 66% !important;
     max-width: none !important;
+    margin-right: 0 !important;
   }
+
+  #search_widget form
+  {
+    position: relative;
+    border: 1px solid #103054;
+    border-radius: 5px;
+  }
+  .header-top-right {
+    padding-right: 0 !important;
+  }
+  .header-top-right #search_widget form i {
+    border-radius: 0 !important;
+  }
+
+  .header-top .row {
+    padding-top: 0 !important;
+  }
+
+
+
+
 
   #_desktop_cart .cart-link .search {
     display: none;
