@@ -53,10 +53,10 @@
         {hook h='displayFooter'}
       {/block}
       <div class="socials hidden-md-down">
-        <a aria-label="Facebook" id="footer_facebook" class="social-icon" style="margin-right: 5px;" href="https://www.facebook.com/allstarsmotorsport" target="_NEW">
+        <a aria-label="Facebook" id="footer_facebook" class="social-icon" style="margin-right: 5px;" href="https://www.facebook.com/people/Euro-muscle-partscom/61551422408680/" target="_NEW">
           <i class="fa-brands fa-square-facebook"></i>
         </a>
-        <a aria-label="Instagram" id="footer_insta" class="social-icon" style="margin-right: 5px;" href="https://instagram.com/allstarsmotorsport" target="_NEW">
+        <a aria-label="Instagram" id="footer_insta" class="social-icon" style="margin-right: 5px;" href="https://www.instagram.com/euromusclepart" target="_NEW">
           <i class="fa-brands fa-instagram"></i>
         </a>
         <a aria-label="Flickr" id="footer_flickr" class="social-icon" style="margin-right: 5px;" href="https://www.flickr.com/photos/allstarsmotorsport/" target="_NEW">
@@ -74,10 +74,10 @@
     </div>
     <div class="row">
       <div class="col-md-12 socialsMobile">
-      <a aria-label="Facebook" id="footer_facebook" class="social-icon" style="margin-right: 5px;" href="https://www.facebook.com/allstarsmotorsport" target="_NEW">
+      <a aria-label="Facebook" id="footer_facebook" class="social-icon" style="margin-right: 5px;" href="https://www.facebook.com/people/Euro-muscle-partscom/61551422408680/" target="_NEW">
         <i class="fa-brands fa-square-facebook"></i>
       </a>
-      <a aria-label="Instagram" id="footer_insta" class="social-icon" style="margin-right: 5px;" href="https://instagram.com/allstarsmotorsport" target="_NEW">
+      <a aria-label="Instagram" id="footer_insta" class="social-icon" style="margin-right: 5px;" href="https://www.instagram.com/euromusclepart" target="_NEW">
         <i class="fa-brands fa-instagram"></i>
       </a>
       <a aria-label="Flickr" id="footer_flickr" class="social-icon" style="margin-right: 5px;" href="https://www.flickr.com/photos/allstarsmotorsport/" target="_NEW">
