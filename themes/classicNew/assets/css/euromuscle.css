@@ -881,12 +881,6 @@ main {
   .language-selector button span {
     display: none;
   }
-  #header .header-nav .user-info span {
-    display: none;
-  }
-  #header .header-nav .blockcart span {
-    display: none;
-  }
 
   #header .header-nav .user-info{
     margin-left: 0 !important;
