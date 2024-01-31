@@ -560,7 +560,7 @@
         <img class="image_play" alt="video player" src="/img/youtube_play.png" />
       </div>
     </div>
-    <div style="display:none">
+    <div class="iframeClass" style="display:none">
       <iframe frameborder="0" allowfullscreen src="https://www.youtube.com/embed/sGZ1lRpGfnA?autoplay=0&mute=1">
       </iframe>
     </div>
@@ -572,7 +572,7 @@
         <img class="image_play" alt="video player" src="/img/youtube_play.png" />
       </div>
     </div>
-    <div style="display:none">
+    <div  class="iframeClass" style="display:none">
       <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/5SpcsztedgQ?autoplay=0&mute=1">
       </iframe>
     </div>
@@ -584,7 +584,7 @@
         <img class="image_play" alt="video player" src="/img/youtube_play.png" />
       </div>
     </div>
-    <div style="display:none">
+    <div  class="iframeClass"  style="display:none">
       <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/KWLv_iCL8ww?autoplay=0&mute=1">
       </iframe>
     </div>
