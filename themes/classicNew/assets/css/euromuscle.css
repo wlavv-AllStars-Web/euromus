@@ -1176,7 +1176,7 @@ main {
       justify-content: end;
     align-items: center;
     gap: 2rem;
-    padding: 2rem 0;
+    padding: 2rem 1rem;
     text-transform: uppercase;
     }
     .shipped-eu {
