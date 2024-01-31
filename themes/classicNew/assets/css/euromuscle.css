@@ -2010,6 +2010,17 @@ header.page-header {
   transform: scale(1.2) !important;
 }
 
+.categoryCars .COMERCIALIZACIÓN img
+{
+  object-fit: contain !important;
+  transform: scale(0.9) !important;
+  object-position: 2px center !important;
+}
+
+.categoryCars .COMERCIALIZACIÓN:hover img {
+  transform: scale(1.2) !important;
+}
+
 ::-webkit-scrollbar {
   width: 8px;
   height: 15px;
