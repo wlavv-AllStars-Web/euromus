@@ -2156,7 +2156,7 @@ header.page-header {
     justify-content: center;
   }
   #cms-partners .cards .col-lg-3 {
-    min-width: 40%;
+    min-width: 50%;
   }
 }
 @media screen and (min-width:900px) and (max-width:1200px) {
@@ -2166,7 +2166,23 @@ header.page-header {
     justify-content: center;
   }
   #cms-partners .cards .col-lg-3 {
-    min-width: 33.3333%;
+    min-width: 40%;
+  }
+}
+@media screen and (min-width:1201px) and (max-width:1260px) {
+  #cms-partners .cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  #cms-partners .cards .col-lg-3 {
+    min-width: 33%;
+  }
+}
+
+@media screen and (min-width:1400px){
+  .text_partners {
+    min-height: 300px !important;
   }
 }
 
@@ -2248,7 +2264,7 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
     -webkit-hyphens: auto;
     text-align: center;
     font-weight: 600;
-    min-height: 295px;
+    min-height: 314px;
 }
 
 .text_partners .title_company {
