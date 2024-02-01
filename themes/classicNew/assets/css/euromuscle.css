@@ -1149,6 +1149,10 @@ main {
     .product-additional-info .js-mailalert .js-mailalert-add {
       margin-top: 0 !important;
     }
+
+    .row-mobile #_desktop_logo{
+        width: auto !important;
+      }
   }
 
   #scrollToTopBtn {
@@ -1183,7 +1187,7 @@ main {
       display: flex !important;
       justify-content: end;
     align-items: center;
-    gap: 2rem;
+    gap: 4rem;
     padding: 2rem 1rem;
     text-transform: uppercase;
     }
@@ -1270,12 +1274,13 @@ main {
       padding-top: 0 2rem 2rem 2rem !important;
     }
     .row-mobile #_desktop_logo{
-      width: 100% !important;
+      width: 100% ;
     }
 
     #_desktop_logo img {
       max-width: 234px !important;
-      width: 100%;
+      width: 110%;
+      margin-left: 2rem;
     }
 
     #search_widget .search {
@@ -1329,7 +1334,7 @@ main {
     }
     #search_widget{
       width: 100%;
-      max-width: 200px !important;
+      max-width: 480px !important;
     }
 
 
