@@ -1181,6 +1181,35 @@ main {
     z-index: 999999;
   }
 
+  @media screen and (min-width:768px) and (max-width:1400px){
+    .row-mobile #_desktop_logo{
+      width: 100% ;
+    }
+    .header-top-right-desktop{
+      display: flex !important;
+      justify-content: end;
+    align-items: center;
+    gap: 1rem;
+    padding: 2rem 1rem;
+    text-transform: uppercase;
+    }
+  }
+  @media screen and (min-width:1401px) and (max-width:1770px){
+    .row-mobile #_desktop_logo{
+      width: 100% ;
+    }
+    .header-top-right-desktop{
+      display: flex !important;
+      justify-content: end;
+    align-items: center;
+    gap: 3rem;
+    padding: 2rem 1rem;
+    text-transform: uppercase;
+    }
+  }
+
+
+
   @media screen and (min-width:768px){
 
     #_desktop_user_info .user-info a:focus {
@@ -1193,14 +1222,7 @@ main {
       color: #103054 !important;
     }
 
-    .header-top-right-desktop{
-      display: flex !important;
-      justify-content: end;
-    align-items: center;
-    gap: 1rem;
-    padding: 2rem 1rem;
-    text-transform: uppercase;
-    }
+
     .shipped-eu {
       display: flex;
       align-items: center;
@@ -1283,9 +1305,7 @@ main {
     .row-mobile {
       padding-top: 0 2rem 2rem 2rem !important;
     }
-    .row-mobile #_desktop_logo{
-      width: 100% ;
-    }
+ 
 
     #_desktop_logo img {
       max-width: 234px !important;
