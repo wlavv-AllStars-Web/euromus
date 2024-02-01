@@ -2248,6 +2248,7 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
     -webkit-hyphens: auto;
     text-align: center;
     font-weight: 600;
+    min-height: 295px;
 }
 
 .text_partners .title_company {
