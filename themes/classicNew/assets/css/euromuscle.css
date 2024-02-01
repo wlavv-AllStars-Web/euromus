@@ -2217,7 +2217,7 @@ header.page-header {
 .card_partners {
   box-shadow: 3px 3px 5px 6px #ccc;
   height: auto;
-  background-color: #707c88;
+  background-color: #707c88a1;
   color: white;
   /* min-height: 465px; */
   border-radius: 5px;
@@ -2249,6 +2249,7 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 .text_partners .title_company {
   color: #103054;
   font-weight: 700;
+  text-transform: uppercase;
 }
 
 .button_container_partners {
