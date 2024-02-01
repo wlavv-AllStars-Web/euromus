@@ -1150,9 +1150,19 @@ main {
       margin-top: 0 !important;
     }
 
-    .row-mobile #_desktop_logo{
-        width: auto !important;
-      }
+
+      .header-top-right-desktop
+      {
+          display: flex !important;
+          justify-content: end;
+          align-items: center;
+          gap: 4rem;
+          padding: 2rem 1rem;
+          text-transform: uppercase;
+        }
+        .row-mobile #_desktop_logo{
+          width: auto;
+        }
   }
 
   #scrollToTopBtn {
@@ -1187,7 +1197,7 @@ main {
       display: flex !important;
       justify-content: end;
     align-items: center;
-    gap: 4rem;
+    gap: 1rem;
     padding: 2rem 1rem;
     text-transform: uppercase;
     }
