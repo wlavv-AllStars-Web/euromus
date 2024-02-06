@@ -35,10 +35,25 @@ class IndexControllerCore extends FrontController
      */
     public function initContent()
     {
+
+        $homepage_mobile = Db::getInstance()->executes("Select * FROM "._DB_PREFIX_."asm_homepage_online WHERE destination = 'mobile' AND active=1 ORDER BY id");
+
+        $homepage_desktop = [
+            'banners'       => Db::getInstance()->executes("Select * FROM "._DB_PREFIX_."asm_homepage_online WHERE destination = 'desktop' AND icon_type=1 AND active=1"),
+            'icones_50'     => Db::getInstance()->executes("Select * FROM "._DB_PREFIX_."asm_homepage_online WHERE destination = 'desktop' AND icon_type=2 AND active=1"),
+            'icones_33'     => Db::getInstance()->executes("Select * FROM "._DB_PREFIX_."asm_homepage_online WHERE destination = 'desktop' AND icon_type=3 AND active=1"),
+            'icones_videos' => Db::getInstance()->executes("Select * FROM "._DB_PREFIX_."asm_homepage_online WHERE destination = 'desktop' AND icon_type=4 AND active=1")
+        ];
+
+        $this->context->smarty->assign('desktop', $homepage_desktop);
+        $this->context->smarty->assign('mobile', $homepage_mobile);
+
         parent::initContent();
         $this->context->smarty->assign([
             'HOOK_HOME' => Hook::exec('displayHome'),
         ]);
+        
+
         $this->setTemplate('index');
     }
 

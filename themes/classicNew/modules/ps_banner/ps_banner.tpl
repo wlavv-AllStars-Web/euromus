@@ -552,7 +552,7 @@
 </div>
 
 <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
-<div class="videosContainer">
+{* <div class="videosContainer">
   <div class="video1 video">
     <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
       <img src="/img/eurmuscle/bannersHome/vid1.png" />
@@ -589,7 +589,7 @@
       </iframe>
     </div>
   </div>
-</div>
+</div> *}
 
 <style>
   .video {
