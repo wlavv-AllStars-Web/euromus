@@ -146,7 +146,6 @@
       </div>
     </div>
     <div class="linesHeaderDesktop"></div>
-    <pre>{print_r($manufacturers,1)}</pre>
     <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;background:#fff;position:absolute;width:100%;z-index:-1;"></div>
     <ul class="mainmenuDesktop">
         <li class="{if $currentUrl === $link->getPageLink('index', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('index', true)}">{l s='Home' d='Shop.Theme.Global'}</a></li>
