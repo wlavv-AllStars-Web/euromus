@@ -13,8 +13,8 @@
              	        <div style="border-bottom: 1px solid #666;"></div>
                         <div style="width: 68%; float: left;"> <img id="image_{$banner['id']}" src="{$banner['image_en']}{if strlen($banner['image_en']) > 0}?t={rand()}{/if}" style="width: 1100px;border: 1px solid #000;height: 200px;background-image: url('/modules/wmmodule_homepage/views/images/upload_banner.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$banner['id']},1,$('#select_brand_{$banner['id']}'))"> </div>
                         <div style="width: calc(32% - 10px);float: left;margin: 0 10px;">                            
-                            <div style="margin-top: 10px;"> <input type="checkbox" value="1" name="active[{$banner['id']}]" {if $banner['active'] == 1} checked="checked" {else} {/if}> <span style="margin-left: 5px;"> Ativo</span> </div>
-                            <div style="margin-top: 10px;width: 45%; float: left;">
+                            <div style="margin-top: 10px;"> <input type="checkbox" onclick="ativa('ativo_{$banner['id']}');" id="ativo_{$banner['id']}" value="1" name="active[{$banner['id']}]" {if $banner['active'] == 1} checked="checked" {else} {/if}> <span style="margin-left: 5px;"> Ativo</span> </div>
+                            <div style="margin-top: 10px;width: 100%; float: left;">
                                 <label>Select brand</label> 
                                 <select id="select_brand_{$banner['id']}" name="link[{$banner['id']}]" onclick="setImageText(this, {$banner['id']}, 'select_brand_{$banner['id']}')">
                                     <option value="">---</option>
@@ -24,15 +24,17 @@
                                     {/foreach}
                                 </select>
                             </div>
-                            <div style="margin-top: 10px;width: 10%; float: left; color: black; font-weight: bolder; font-size: 16px; text-transform: uppercase; text-align: center; padding: 27px 0 0 0;" > OR </div>
-                            <div style="margin-top: 10px;width: 45%; float: left;">
+                            <div style="display:none;margin-top: 10px;width: 0%; float: left; color: black; font-weight: bolder; font-size: 16px; text-transform: uppercase; text-align: center; padding: 27px 0 0 0;" ></div>
+                            <div style="display:none;margin-top: 10px;width: 0%; float: left;">
                                 <label>Select car</label> 
                                 {assign var="compat" value="`$banner['brand']`_`$banner['model']`_`$banner['type']`_`$banner['version']`"}
                                 <select id="select_car_{$banner['id']}" name="car[{$banner['id']}]" onclick="setImageText($(this), {$banner['id']}, 'select_car_{$banner['id']}');">
                                     <option value="">---</option>
+                                {*
                                     {foreach $cars AS $car}
                                         <option value="{implode('_', array_keys($car['filters']))}" {if (implode('_', array_keys($car['filters'])) == $compat)} selected {/if}>{implode(' | ', array_values($car['filters']))}</option>
                                     {/foreach}
+                                 *}
                                 </select>                        
                             </div>
                             <div style="color: #666; text-transform: uppercase; background-color: #ddd;padding: 5px;display: inline-block; padding: 10px; margin-top: 10px;">

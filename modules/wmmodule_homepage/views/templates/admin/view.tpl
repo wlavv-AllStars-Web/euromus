@@ -1,4 +1,22 @@
-<div style="display: flow-root;" id="abas_container">
+{if $banners[5]['active'] == '1'}
+   {assign var='bb' value=$banners[5]['image_en']}
+   {/if}
+{if $banners[4]['active'] == '1'}
+   {assign var='bb' value=$banners[4]['image_en']}
+   {/if}
+{if $banners[3]['active'] == '1'}
+   {assign var='bb' value=$banners[3]['image_en']}
+   {/if}
+   {if $banners[2]['active'] == '1'}
+   {assign var='bb' value=$banners[2]['image_en']}
+   {/if}
+{if $banners[1]['active'] == '1'}
+   {assign var='bb' value=$banners[1]['image_en']}
+   {/if}
+{if $banners[0]['active'] == '1'}
+   {assign var='bb' value=$banners[0]['image_en']}
+   {/if}
+   <div style="display: flow-root;" id="abas_container">
     <div class="desktop_mobile_container" style="cursor: pointer;border-radius: 10px 0 0 0;background-color: dodgerblue; color: #fff;width:50%;float: left; border: 1px solid #777;padding: 10px;font-weight: bolder; font-size:40px;text-align: center;" onclick="$('.desktop_mobile_container').css('background-color', 'grey');$(this).css('background-color', 'dodgerblue');$('#desktop_layer_container').toggle();$('#mobile_layer_container').toggle();">
         DESKTOP
     </div>
@@ -32,8 +50,8 @@
     
 <style>
     .page-title{ padding-left: 150px; }
+    #select_car_1,#select_car_2,#select_car_3,#select_car_4,#select_car_5,#select_car_6{ display:none; }
 </style>
-
 
 <script>
 
@@ -79,13 +97,25 @@
     $("#select_car_22").on("change",  function () { setModal(22, 5, $(this), 'compatibility' ) });
     $("#select_car_23").on("change",  function () { setModal(23, 5, $(this), 'compatibility' ) });
     
+    
+    $("#select_mini_13").on("change",  function () { setModal(13, 3, $(this), 'miniature' ) });
+    $("#select_mini_14").on("change",  function () { setModal(14, 3, $(this), 'miniature' ) });
+    $("#select_mini_15").on("change",  function () { setModal(15, 3, $(this), 'miniature' ) });
+
+    $("#select_mini_29").on("change",  function () { setModal(29, 3, $(this), 'miniature' ) });
+    $("#select_mini_30").on("change",  function () { setModal(30, 3, $(this), 'miniature' ) });
+    $("#select_mini_31").on("change",  function () { setModal(31, 3, $(this), 'miniature' ) });
+
+    $("#select_mini_32").on("change",  function () { setModal(32, 3, $(this), 'miniature' ) });
+    $("#select_mini_33").on("change",  function () { setModal(33, 3, $(this), 'miniature' ) });
+    $("#select_mini_34").on("change",  function () { setModal(34, 3, $(this), 'miniature' ) });
+    
     $(document).on("click","#uploadSubmitButton", function(){
-        
         var dataForm = new FormData($('#uploadForm')[0]);
         
 		$.ajax({
 			type : 'POST',
-			url : "https://www.allstarsmotorsport.com/admin77500/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=uploadSubmitButton",
+			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=uploadSubmitButton",
 			data : dataForm,
             processData: false,
             contentType: false,
@@ -103,7 +133,7 @@
     }
     
     function setModal(id_image, type, selectElement, element){
-        
+
         let id_element = 0;
         
         if(element === undefined){
@@ -125,14 +155,18 @@
         }else if(element === 'manufacturer'){
             document.getElementById('select_car_' + id_image).selectedIndex = 0;
             id_element = $('#select_brand_' + id_image).val();
+        }else if(element === 'miniature'){
+            document.getElementById('select_mini_' + id_image).selectedIndex = 1;
+            id_element = $('#select_mini_' + id_image).attr("inputparentcard");
         }else{
             document.getElementById('select_brand_' + id_image).selectedIndex = 0;
             id_element = $('#select_car_' + id_image).val();
         }
         
+        
 		$.ajax({
 			type : 'POST',
-			url : "https://www.allstarsmotorsport.com/admin77500/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=getBrandImages",
+			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=getBrandImages",
 			data : {
 				'id_element' : id_element,
 				'type' : type,
@@ -149,10 +183,34 @@
         modal = $('#exampleModal');
         modal.modal('show');
     }
+    
+    function ativa(qq){
+        var checkbox = document.getElementById(qq);
+        var att = 3;
+        var numero = qq.replace("ativo_", "");
+
+        // Verifica se a checkbox está marcada
+        if (checkbox.checked) {
+            att = 1;
+        } else {
+            att = 0;
+        }
+			$.ajax({
+			type : 'POST',
+			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=updateActive",
+			data : {
+				'id' : numero,
+				'ativo' : att
+			},
+			success : function(data) { location.reload(); }
+		});
+		
+    }
 
     function setImageText(sel, index, element){
         
         let imageText = sel.options[sel.selectedIndex].text;
+
         document.getElementById("title_en_" + index).value = imageText;
         document.getElementById("title_es_" + index).value = imageText;
         document.getElementById("title_fr_" + index).value = imageText;
@@ -163,7 +221,7 @@
 
 		$.ajax({
 			type : 'POST',
-			url : "https://www.allstarsmotorsport.com/admin77500/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=updateHomepageTemp",
+			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=updateHomepageTemp",
 			data : {
 				'id_zone' : id_zone,
 				'id_image' : id_image,
@@ -193,7 +251,7 @@
         if (resposta) {
     		$.ajax({
     			type : 'POST',
-    			url : "https://www.allstarsmotorsport.com/admin77500/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=setDesktopLive",
+    			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=setDesktopLive",
     			data : { },
     			success : function(data) { alert("As alterações foram aplicadas em desktop."); }
     		});
@@ -209,7 +267,7 @@
         if (resposta) {
     		$.ajax({
     			type : 'POST',
-    			url : "https://www.allstarsmotorsport.com/admin77500/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=setMobileLive",
+    			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=setMobileLive",
     			data : { },
     			success : function(data) { alert("As alterações foram aplicadas em mobile."); }
     		});
@@ -219,10 +277,9 @@
     }
     
     function saveVideoCode(element, position){
-
 	    $.ajax({
 			type : 'POST',
-			url : "https://www.allstarsmotorsport.com/admin77500/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=updateVideoCode",
+			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=updateVideoCode",
 			data : {
 				'position' : position,
 				'code' : element.value
@@ -231,7 +288,4 @@
 		});
 		
     }
-    
-    
-
 </script>
