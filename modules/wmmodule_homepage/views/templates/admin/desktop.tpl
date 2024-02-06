@@ -112,6 +112,29 @@
                     <img id="preview_image_18" src="{$array_videos[2]['image_en']}" style="cursor: pointer;overflow: hidden;border: 1px solid #999;width: 100%;"> 
                 </div>
             </div> *}
+            <div style="display: flex;gap:1rem;margin:2rem 1rem;background:#333">
+                <div style="flex: 1;background:#fff;height:100px;">CAR 1</div>
+                <div style="flex: 1;background:#fff;height:100px;">CAR 2</div>
+                <div style="flex: 1;background:#fff;height:100px;">CAR 3</div>
+                <div style="flex: 1;background:#fff;height:100px;">CAR 4</div>
+                <div style="flex: 1;background:#fff;height:100px;">CAR 5</div>
+            </div>
+
+            <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
+            
+              <div class="videosContainer">
+              {foreach $array_videos AS $index => $video}
+                <div class="video3 video">
+                  <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+                  <img src="{$video["image_{$currentLanguageIso}"]}"/>
+                    <div class="play">
+                      <img class="image_play" alt="video player" src="/img/youtube_play.png" />
+                    </div>
+                  </div>
+                </div>
+              {/foreach}
+                </div>
+
             <div style="width: 100%;">
                 <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/footer{$currentShop}.png"> 
             </div>
@@ -129,6 +152,45 @@
     
     #exampleModalLabel{ padding: 0 15px; }
     .modal-footer{ display: none; }
+
+    .videosContainer
+{
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  padding: 2rem 15px;
+  background-color: #707c88;
+}
+
+.videosContainer .video
+{
+    flex: 1;
+}
+
+.videosContainer .video3
+{
+  position: relative;
+}
+
+.videosContainer img
+{
+  cursor: pointer;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.videosContainer .image_play
+{
+  max-width: 100px !important;
+  position: absolute !important;
+  pointer-events: none;
+  width: 100%;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
 
 
     .bannersHome {
@@ -163,6 +225,8 @@
     .card-big img {
         width: 100%;
         object-fit: cover;
+        height: 100%;
+        min-height: 214px;
     }
 
     .card-min-img {
