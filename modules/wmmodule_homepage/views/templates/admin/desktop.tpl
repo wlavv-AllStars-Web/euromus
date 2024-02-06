@@ -112,12 +112,8 @@
                     <img id="preview_image_18" src="{$array_videos[2]['image_en']}" style="cursor: pointer;overflow: hidden;border: 1px solid #999;width: 100%;"> 
                 </div>
             </div> *}
-            <div style="display: flex;gap:1rem;margin:2rem 1rem;background:#333">
-                <div style="flex: 1;background:#fff;height:100px;">CAR 1</div>
-                <div style="flex: 1;background:#fff;height:100px;">CAR 2</div>
-                <div style="flex: 1;background:#fff;height:100px;">CAR 3</div>
-                <div style="flex: 1;background:#fff;height:100px;">CAR 4</div>
-                <div style="flex: 1;background:#fff;height:100px;">CAR 5</div>
+            <div style="width: 100%;">
+                <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/body{$currentShop}.png"> 
             </div>
 
             <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
