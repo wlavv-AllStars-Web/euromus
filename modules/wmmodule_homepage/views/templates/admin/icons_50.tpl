@@ -1,7 +1,7 @@
 <div style="display: none;" id="sliders50_container" class="elements_container">
 
     {foreach $array_icons_50 AS $index => $icons_50}
-        <div style="border: 1px solid #666;width: 33%;float: left;padding: 5px;">
+        <div style="border: 1px solid #666;flex:1;padding: 5px;">
      	    <input type="hidden" name="position[{$icons_50['id']}]" value="{$index+1}">
      	    <input type="hidden" name="type[{$icons_50['id']}]" value="desktop">
      	    <input type="hidden" name="icon_type[{$icons_50['id']}]" value="2">
@@ -9,7 +9,7 @@
      	    {assign var=id_manufacturer value="_"|explode:$icons_50['link']}
      	    <input type="hidden" id="homepage_manufacturer_id_manufacturer_{$icons_50['id']}" name="homepage_manufacturer_id_manufacturer[{$icons_50['id']}]" value="{$id_manufacturer[0]}">
      	    <input type="hidden" id="homepage_manufacturer_id_{$icons_50['id']}" name="homepage_manufacturer_id[{$icons_50['id']}]" value="">
-            <img id="image_{$icons_50['id']}" src="{$icons_50['image_en']}{if strlen($icons_50['image_en']) > 0}?t={rand()}{/if}" style="background-color: #fff;margin-bottom: 10px;width: 100%;border: 1px solid #000;min-height: 253px;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$icons_50['id']},2,$('#select_brand_{$icons_50['id']}'))">
+            <img id="image_{$icons_50['id']}" src="{$icons_50['image_en']}{if strlen($icons_50['image_en']) > 0}?t={rand()}{/if}" style="object-fit:cover;background-color: #fff;margin-bottom: 10px;width: 100%;border: 1px solid #000;min-height: 365px;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$icons_50['id']},2,$('#select_brand_{$icons_50['id']}'))">
             <div>
                 <div style="display: flex;align-items:center;">
                     <div style="width: 45%;float: left;">

@@ -1,9 +1,11 @@
 {* <pre>{print_r($array_icons_50,1)}</pre> *}
 <div style="display: none;" id="sliders33_container" class="elements_container">
+{assign var=cardNumber value=0}
     {foreach $array_icons_50 AS $index_50 => $icons_50}
+        <h1 style="font-weight: 700;">Card {$index_50 + 1}</h1>
         {foreach $array_icons_33 AS $index_33 => $icons_33}
             {if $index_50 == 0 && $icons_33.id_parent_card == 1}
-                <div style="border: 1px solid #666;width: 33.33%;float: left;padding: 5px;min-height:560px;background:#ee302e;color:#fff">
+                <div style="border: 1px solid #666;width: 33.33%;float: left;padding: 5px;min-height:560px;background:#808080;color:#fff">
                     <input type="hidden" name="position[{$icons_33['id']}]" value="{$index+1}">
                     <input type="hidden" name="type[{$icons_33['id']}]" value="desktop">
                     <input type="hidden" name="icon_type[{$icons_33['id']}]" value="3">
@@ -53,7 +55,7 @@
 
                 
 
-                    <div style="color: #666; text-transform: uppercase; background-color: #ee302e;color:#fff;padding: 5px;display: inline-block;">
+                    <div style="color: #666; text-transform: uppercase; background-color: #808080;color:#fff;padding: 5px;display: inline-block;">
                         <span  style="width: 80px; float: left;padding: 5px 0;">Inglês</span>
                         <input style="width: calc(100% - 80px); float: left;" name="title_en[{$icons_33['id']}]" type="text" value="{$icons_33['title_en']}" placeholder="Titulo em inglês" id="title_en_{$icons_33['id']}">
                         <span  style="width: 80px; float: left;padding: 5px 0;">Espanhol</span>
@@ -63,7 +65,7 @@
                     </div>
                 </div>
             {elseif $index_50 == 1 && $icons_33.id_parent_card == 2}
-                <div style="border: 1px solid #666;width: 33.33%;float: left;padding: 5px;min-height:560px;background:#103054;color:#fff;">
+                <div style="border: 1px solid #666;width: 33.33%;float: left;padding: 5px;min-height:560px;background:#808080;color:#fff;">
                 <input type="hidden" name="position[{$icons_33['id']}]" value="{$index+1}">
                 <input type="hidden" name="type[{$icons_33['id']}]" value="desktop">
                 <input type="hidden" name="icon_type[{$icons_33['id']}]" value="3">
@@ -113,7 +115,7 @@
 
             
 
-                <div style="color: #666; text-transform: uppercase;background:#103054;color:#fff;padding: 5px;display: inline-block;">
+                <div style="color: #666; text-transform: uppercase;background:#808080;color:#fff;padding: 5px;display: inline-block;">
                     <span  style="width: 80px; float: left;padding: 5px 0;">Inglês</span>
                     <input style="width: calc(100% - 80px); float: left;" name="title_en[{$icons_33['id']}]" type="text" value="{$icons_33['title_en']}" placeholder="Titulo em inglês" id="title_en_{$icons_33['id']}">
                     <span  style="width: 80px; float: left;padding: 5px 0;">Espanhol</span>
@@ -123,7 +125,7 @@
                 </div>
             </div>
             {elseif $index_50 == 2 && $icons_33.id_parent_card == 3}
-                <div style="border: 1px solid #666;width: 33.33%;float: left;padding: 5px;min-height:560px">
+                <div style="border: 1px solid #666;width: 33.33%;float: left;padding: 5px;background:#808080;color:#fff;min-height:560px">
                 <input type="hidden" name="position[{$icons_33['id']}]" value="{$index+1}">
                 <input type="hidden" name="type[{$icons_33['id']}]" value="desktop">
                 <input type="hidden" name="icon_type[{$icons_33['id']}]" value="3">
@@ -173,7 +175,7 @@
 
             
 
-                <div style="color: #666; text-transform: uppercase; background-color: #ddd;padding: 5px;display: inline-block;">
+                <div style="color: #fff; text-transform: uppercase; background-color: #808080;padding: 5px;display: inline-block;">
                     <span  style="width: 80px; float: left;padding: 5px 0;">Inglês</span>
                     <input style="width: calc(100% - 80px); float: left;" name="title_en[{$icons_33['id']}]" type="text" value="{$icons_33['title_en']}" placeholder="Titulo em inglês" id="title_en_{$icons_33['id']}">
                     <span  style="width: 80px; float: left;padding: 5px 0;">Espanhol</span>

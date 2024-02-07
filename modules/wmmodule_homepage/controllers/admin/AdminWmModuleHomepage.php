@@ -338,6 +338,12 @@ class AdminWmModuleHomepageController extends AdminController{
             self::setDesktopLive();
         }elseif(Tools::getValue('action') == 'setMobileLive'){
             self::setMobileLive();
+        }elseif(Tools::getValue('action') == 'deleteImgButton'){
+            $data = Tools::getAllValues();
+            $id_row=$data['id_ps_asm_homepage_temp'];
+        
+            $sql = 'DELETE FROM `'._DB_PREFIX_.'asm_homepage_manufacturers` WHERE id='. $id_row;
+            Db::getInstance()->execute($sql);
         }
 
     }
@@ -435,11 +441,12 @@ class AdminWmModuleHomepageController extends AdminController{
         
         $html = '<div style="text-align: center;">';
             if(isset($icons_brand) && ( count($icons_brand) > 0 ) ){
-            $html .= '<div id="image_selector_container">';
+            $html .= '<div id="image_selector_container" style="display:flex;flex-direction:column;gap:2rem;">';
                 $html .= '<h2>SELECT IMAGE</h2>';
                 foreach($icons_brand AS $icon){
-                        $html .= '<div class="image_container" onclick="setImage(' . $zone . ', ' . $id_image  . ', \'' . $icon['url_en'] . '\', ' . $icon['id'] . ', ' . $icon[$field] . ')">';
-                        $html .= '<img src="' . $icon['url_en'] . '" style="width: 100%;">';
+                        $html .= '<div class="image_container">';
+                        $html .= '<img src="' . $icon['url_en'] . '" style="width: 100%;" onclick="setImage(' . $zone . ', ' . $id_image  . ', \'' . $icon['url_en'] . '\', ' . $icon['id'] . ', ' . $icon[$field] . ')">';
+                        $html .= '<div class="delete_btn" style="top:0;right:0;background:#ee302e;color:#fff;cursor:pointer;" onclick="deleteImage(' . $zone . ', ' . $id_image  . ', \'' . $icon['url_en'] . '\', ' . $icon['id'] . ', ' . $icon[$field] . ',$(this))"><i class="material-icons">&#xe872;</i></div>';
                     $html .= '</div>';
                 }
             $html .= '</div>';

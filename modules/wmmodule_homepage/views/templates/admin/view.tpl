@@ -243,6 +243,33 @@
 
         $('#setImageButton').click();
     }
+
+    function deleteImage(id_zone, id_image, url, homepage_manufacturer_id, homepage_manufacturer_id_manufacturer,clickedElement){
+
+		$.ajax({
+			type : 'POST',
+			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=deleteImgButton",
+			data : {
+				'id_zone' : id_zone,
+				'id_image' : id_image,
+				'url' : url,
+				'id_ps_asm_homepage_temp' : homepage_manufacturer_id,
+				'id_element' : homepage_manufacturer_id_manufacturer,
+				'title_en' : $('#title_en_' + id_image).val(),
+				'title_es' : $('#title_es_' + id_image).val(),
+				'title_fr' : $('#title_fr_' + id_image).val()
+			},
+			success : function(data) { 
+                clickedElement.parent().fadeOut();
+            }
+            
+		});
+		
+
+        
+
+
+    }
     
     function saveDesktopLive(){
         
