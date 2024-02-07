@@ -82,7 +82,7 @@
       <div class="layerHover">
         <h6>{$item["title_{$currentLanguageIso}"]}</h6>
       </div>
-      {if isset($numbers)}
+      {if isset($numbers) && count($numbers) > 1}
       <a style="cursor: pointer;"
       onclick="setCarAndSearch({$numbers[0]},{$numbers[1]},{$numbers[2]},{$numbers[3]})">
       {elseif $linkBrand != ''}
