@@ -263,9 +263,9 @@
 				'title_fr' : $('#title_fr_' + id_image).val()
 			},
 			success : function(data) { 
-                update
+                
             }
-            
+            clickedElement.parent().fadeOut();
 		});
 		
 
