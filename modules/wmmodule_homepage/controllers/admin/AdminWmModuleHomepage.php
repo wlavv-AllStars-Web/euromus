@@ -237,7 +237,7 @@ class AdminWmModuleHomepageController extends AdminController{
 
             if($row_data['id_manufacturer']  > 0){
                 $name = Db::getInstance()->getValue('SELECT name FROM '._DB_PREFIX_.'manufacturer WHERE id_manufacturer = ' . $row_data['id_manufacturer']);
-                $link = $row_data['id_manufacturer'] . '_' . str_replace(' ', '-', $name);
+                $link = $row_data['id_manufacturer'] . '-' . str_replace(' ', '-', $name);
             }elseif($row_data['id_category']  > 0){
                 $name = Db::getInstance()->getValue('SELECT name FROM '._DB_PREFIX_.'category_lang WHERE id_category = ' . $row_data['id_category'] . ' AND id_lang=1');
                 $link = $row_data['id_category'] . '_' . str_replace(' ', '-', $name);
@@ -350,6 +350,7 @@ class AdminWmModuleHomepageController extends AdminController{
     }
 
     public function getBrandImages($id_image, $id_element, $zone, $element, $id_shop){
+        
         if($id_element == 523) $element = 'category';
 
         if($element == 'manufacturer'){
@@ -391,18 +392,18 @@ class AdminWmModuleHomepageController extends AdminController{
 
         if($element == 'manufacturer'){
             $field = 'id_manufacturer';
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . " AND zone=" . $zone ." AND id_shop=" . $this->id_shop;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . " AND zone=" . $zone ." AND id_shop=" . $id_shop;
         }elseif($element == 'category'){
             $field = 'id_category';
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . " AND zone=" . $zone ." AND id_shop=" . $this->id_shop;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . " AND zone=" . $zone ." AND id_shop=" . $id_shop;
         }elseif($element == 'compatibility'){
             $field = 'id_compatibility';
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = "'. $id_element . '" AND zone=' . $zone ." AND id_shop=" . $this->id_shop;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = "'. $id_element . '" AND zone=' . $zone ." AND id_shop=" . $id_shop;
         }elseif($element == 'video'){
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE id_video > 0 AND id_shop=' .$this->id_shop;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE id_video > 0 AND id_shop=' .$id_shop;
         }elseif($element == 'miniature'){
             $field = 'id_miniature';
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . ' AND zone=' . $zone ." AND id_shop=" . $this->id_shop;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . ' AND zone=' . $zone ." AND id_shop=" . $id_shop;
         }
         
         $icons_brand = Db::getInstance()->executeS($sql);

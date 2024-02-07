@@ -71,7 +71,7 @@
   {foreach from=$desktop['icones_50'] item=item key=key name=name }
     {assign var="url" value=$item["image_{$currentLanguageIso}"]}
     {assign var="numberString" value="`$url`"|regex_replace:"/.*\/(\d+)_(\d+)_(\d+)_(\d+)_.*$/":"$1,$2,$3,$4"}
-
+    {assign var="linkBrand" value=$item["link"]}
     {if $numberString != $url}
       {assign var="numbers" value=[]}
         {assign var="numbers" value=explode(",", $numberString)}
@@ -85,10 +85,14 @@
       {if isset($numbers)}
       <a style="cursor: pointer;"
       onclick="setCarAndSearch({$numbers[0]},{$numbers[1]},{$numbers[2]},{$numbers[3]})">
+      {elseif $linkBrand != ''}
+        <a href="/{$currentLanguageIso}/brand/{$linkBrand}">
       {/if}
         <img src="{$item["image_{$currentLanguageIso}"]}" />
       {if isset($numbers)}
       </a>
+      {elseif $linkBrand != ''}
+        </a>
       {/if}
       </div>
     <div class="card-min-img">
