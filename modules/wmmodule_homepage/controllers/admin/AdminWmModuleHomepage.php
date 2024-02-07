@@ -1,11 +1,12 @@
 <?php
 class AdminWmModuleHomepageController extends AdminController{
-    
+    public  $id_shop;
     public function __construct()
     {
         $this->bootstrap = true;
         parent::__construct();
         $this->context = Context::getContext();
+        $this->id_shop = (int)Context::getContext()->shop->id;
     }
 
     public function initContent()
@@ -18,12 +19,12 @@ class AdminWmModuleHomepageController extends AdminController{
         parent::initContent();
         include dirname(__FILE__).'/../../classes/WmModuleHomepageMain.php';
         $template_file = _PS_MODULE_DIR_. 'wmmodule_homepage/views/templates/admin/view.tpl';
-
-        $this->context->smarty->assign("banners",        Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop" AND icon_type=1 ORDER BY id ASC'));
-        $this->context->smarty->assign("array_icons_50", Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop" AND icon_type=2 ORDER BY id ASC'));
-        $this->context->smarty->assign("array_icons_33", Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop" AND icon_type=3 ORDER BY id ASC'));
-        $this->context->smarty->assign("array_videos",   Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop" AND icon_type=4 ORDER BY id ASC'));
-        $this->context->smarty->assign("mobile_icons",   Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="mobile"'));
+       
+        $this->context->smarty->assign("banners",        Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop" AND icon_type=1 AND id_shop='.$this->id_shop.' ORDER BY id ASC'));
+        $this->context->smarty->assign("array_icons_50", Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop" AND icon_type=2 AND id_shop='.$this->id_shop.' ORDER BY id ASC'));
+        $this->context->smarty->assign("array_icons_33", Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop" AND icon_type=3 AND id_shop='.$this->id_shop.' ORDER BY id ASC'));
+        $this->context->smarty->assign("array_videos",   Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop" AND icon_type=4 AND id_shop='.$this->id_shop.' ORDER BY id ASC'));
+        $this->context->smarty->assign("mobile_icons",   Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="mobile"  AND id_shop='.$this->id_shop));
         $this->context->smarty->assign("manufacturers",  self::getManufacturers());
         $this->context->smarty->assign("cars",           self::getCompatibilities());
         $this->context->smarty->assign("modules",        _PS_MODULE_DIR_);
@@ -217,7 +218,7 @@ class AdminWmModuleHomepageController extends AdminController{
             Db::getInstance()->execute($sql);
             
         }elseif(Tools::getValue('action') == 'getBrandImages'){
-           $this->getBrandImages(Tools::getValue('id_image'), Tools::getValue('id_element'), Tools::getValue('type'), Tools::getValue('element'));
+           $this->getBrandImages(Tools::getValue('id_image'), Tools::getValue('id_element'), Tools::getValue('type'), Tools::getValue('element'), $this->id_shop);
             die();
         }elseif(Tools::getValue('action') == 'updateActive'){
            $data = Tools::getAllValues();
@@ -225,7 +226,6 @@ class AdminWmModuleHomepageController extends AdminController{
            Db::getInstance()->execute($sql);
             die();
         }elseif(Tools::getValue('action') == 'updateHomepageTemp'){
-
             $data = Tools::getAllValues();
             $car_brand = 0;
             $car_model = 0;
@@ -262,12 +262,13 @@ class AdminWmModuleHomepageController extends AdminController{
                         brand=" .   $car_brand . ", 
                         model=" .   $car_model . ", 
                         type="  .   $car_type . ", 
-                        version=" . $car_version . " 
+                        version=" . $car_version . " ,
+                        id_shop=" . $this->id_shop . "
                     WHERE id=" . $data['id_image'];
             Db::getInstance()->execute($sql);
             
         }elseif(Tools::getValue('action') == 'uploadSubmitButton'){
-            
+
             $element = Tools::getValue('uploadElement');
             $idElement = Tools::getValue('uploadIdElement');
             $zone = Tools::getValue('uploadTypeValue');
@@ -314,22 +315,22 @@ class AdminWmModuleHomepageController extends AdminController{
 
             
             if($element == 'manufacturer'){
-                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_manufacturer`,  `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`) VALUES (' . $idElement . ',' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt . '","' . date('Y-m-d') . '")';
+                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_manufacturer`,  `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`,`id_shop`) VALUES (' . $idElement . ',' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt . '","' . date('Y-m-d') . '","' . $this->id_shop . '")';
             }elseif($element == 'category'){
-                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_category`,      `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`) VALUES (' . $idElement . ',' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt .  '","' . date('Y-m-d') . '")';
+                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_category`,      `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`,`id_shop`) VALUES (' . $idElement . ',' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt .  '","' . date('Y-m-d') . '","' . $this->id_shop . '")';
             }elseif($element == 'compatibility'){
-                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_compatibility`, `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`) VALUES ("' . $idElement . '",' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt . '","' . date('Y-m-d') . '")';
+                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_compatibility`, `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`,`id_shop`) VALUES ("' . $idElement . '",' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt . '","' . date('Y-m-d') . '","' . $this->id_shop . '")';
             }elseif($element == 'video'){
-                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_video`, `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`) VALUES (' . $idElement . ', ' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt .  '","' . date('Y-m-d') . '")';
+                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_video`, `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`,`id_shop`) VALUES (' . $idElement . ', ' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt .  '","' . date('Y-m-d') . '","' . $this->id_shop . '")';
             }
             elseif($element == 'miniature'){
-                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_miniature`, `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`) VALUES (' . $idElement . ', ' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt .  '","' . date('Y-m-d') . '")';
+                $sql = 'INSERT INTO `'._DB_PREFIX_.'asm_homepage_manufacturers`(`id_miniature`, `zone`, `url_en`, `url_es`, `url_fr`, `url_pt`, `inserted_at`,`id_shop`) VALUES (' . $idElement . ', ' . $zone . '' . ',"' . $image_en . '","' . $image_es . '","' . $image_fr . '","' . $image_pt .  '","' . date('Y-m-d') . '","' . $this->id_shop . '")';
             }
             
             Db::getInstance()->execute($sql);
             
             /** VER TIPOS POSSIVEIS **/
-            $this->getBrandImages($id_image, $idElement, $zone, $element);
+            $this->getBrandImages($id_image, $idElement, $zone, $element,$this->id_shop);
             
             die();
         }elseif(Tools::getValue('action') == 'updateVideoCode'){
@@ -348,7 +349,7 @@ class AdminWmModuleHomepageController extends AdminController{
 
     }
 
-    public function getBrandImages($id_image, $id_element, $zone, $element){
+    public function getBrandImages($id_image, $id_element, $zone, $element, $id_shop){
         if($id_element == 523) $element = 'category';
 
         if($element == 'manufacturer'){
@@ -365,7 +366,7 @@ class AdminWmModuleHomepageController extends AdminController{
             $name = "Miniatures " . $id_element;
         }
 
-        $model_content = self::getImagesOfZone($id_image, $id_element, $zone, $element);
+        $model_content = self::getImagesOfZone($id_image, $id_element, $zone, $element,$id_shop);
         
         $array=[
             'modal_title' => $name,
@@ -375,7 +376,7 @@ class AdminWmModuleHomepageController extends AdminController{
         echo json_encode($array);
     }
     
-    public function getImagesOfZone($id_image, $id_element, $zone, $element)
+    public function getImagesOfZone($id_image, $id_element, $zone, $element,$id_shop)
     {
 
         if (strpos($id_element, "_") !== false) {
@@ -390,18 +391,18 @@ class AdminWmModuleHomepageController extends AdminController{
 
         if($element == 'manufacturer'){
             $field = 'id_manufacturer';
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . " AND zone=" . $zone;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . " AND zone=" . $zone ." AND id_shop=" . $this->id_shop;
         }elseif($element == 'category'){
             $field = 'id_category';
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . " AND zone=" . $zone;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . " AND zone=" . $zone ." AND id_shop=" . $this->id_shop;
         }elseif($element == 'compatibility'){
             $field = 'id_compatibility';
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = "'. $id_element . '" AND zone=' . $zone;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = "'. $id_element . '" AND zone=' . $zone ." AND id_shop=" . $this->id_shop;
         }elseif($element == 'video'){
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE id_video > 0';
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE id_video > 0 AND id_shop=' .$this->id_shop;
         }elseif($element == 'miniature'){
             $field = 'id_miniature';
-            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . ' AND zone=' . $zone;
+            $sql = 'SELECT * FROM '._DB_PREFIX_.'asm_homepage_manufacturers WHERE ' . $field . ' = '. $id_element . ' AND zone=' . $zone ." AND id_shop=" . $this->id_shop;
         }
         
         $icons_brand = Db::getInstance()->executeS($sql);
@@ -549,7 +550,8 @@ class AdminWmModuleHomepageController extends AdminController{
                         model="         . $row['model'] . ", 
                         type="          . $row['type'] . ", 
                         version="       . $row['version'] . ", 
-                        youtube_code='" . $row['youtube_code'] . "' 
+                        youtube_code='" . $row['youtube_code'] . "' ,
+                        id_shop='" . $row['id_shop'] . "' 
                     WHERE id=" . $row['id'];
             Db::getInstance()->execute($sql);
             

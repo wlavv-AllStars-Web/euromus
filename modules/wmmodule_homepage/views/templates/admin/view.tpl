@@ -1,3 +1,4 @@
+{assign var="currentShop" value=Context::getContext()->shop->id}
 {if $banners[5]['active'] == '1'}
    {assign var='bb' value=$banners[5]['image_en']}
    {/if}
@@ -132,10 +133,11 @@
         $('#'+imadeID).prop('src', '/modules/wmmodule_homepage/views/images/check_upload_'+index+'.gif');
     }
     
-    function setModal(id_image, type, selectElement, element){
+    function setModal(id_image, type, selectElement, element,id_shop){
 
         let id_element = 0;
-        
+
+
         if(element === undefined){
             if($('#select_brand_' + id_image).val() == ''){
                 element = 'compatibility';
@@ -171,7 +173,8 @@
 				'id_element' : id_element,
 				'type' : type,
 				'id_image' : id_image,
-				'element' : element
+				'element' : element,
+                'id_shop': id_shop
 			},
 			success : function(data) {
 			    let data_modal = JSON.parse(data);
@@ -260,7 +263,7 @@
 				'title_fr' : $('#title_fr_' + id_image).val()
 			},
 			success : function(data) { 
-                clickedElement.parent().fadeOut();
+                update
             }
             
 		});
@@ -280,7 +283,7 @@
     			type : 'POST',
     			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=setDesktopLive",
     			data : { },
-    			success : function(data) { alert("As alterações foram aplicadas em desktop."); }
+    			success : function(data) { alert("As alterações foram aplicadas em desktop."); location.reload();}
     		});
         } else {
           console.log("Nenhuma alteração foi aplicada.");
@@ -296,7 +299,7 @@
     			type : 'POST',
     			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=setMobileLive",
     			data : { },
-    			success : function(data) { alert("As alterações foram aplicadas em mobile."); }
+    			success : function(data) { alert("As alterações foram aplicadas em mobile.");location.reload(); }
     		});
         } else {
           console.log("Nenhuma alteração foi aplicada.");
