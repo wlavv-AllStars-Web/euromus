@@ -91,7 +91,7 @@ class AdminWmModuleHomepageController extends AdminController{
     }
 
     public function postProcess(){
-        
+
         if(Tools::getValue('action') == 'updateDesktop'){
             echo '<pre>' . print_r(Tools::getAllValues(), 1) . '</pre>';
             exit;
