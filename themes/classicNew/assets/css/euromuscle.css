@@ -87,6 +87,37 @@ main {
 
 /* mobile */
 @media screen and (max-width:767px) {
+  .cms-id-43 #wrapper {
+    background-color: #103054;
+  }
+  .cms-id-43 #content {
+    background-color: #103054 !important;
+    padding: 0;
+  }
+  #terms {
+    margin: auto;
+    width: 100%;
+    text-align: justify;
+    gap: 1rem;
+    display: flex;
+    flex-direction: column;
+    background: #f6f6f6;
+    color: #103054;
+    border-radius: 0.5rem;
+  }
+  #terms img{
+    width: 100%;
+    border-radius: 0.5rem 0.5rem 0 0;
+  }
+  #terms .terms-content{
+    padding: 1.5rem;
+  }
+  #terms .terms-content .terms-line{
+    margin-bottom: 1rem;
+  }
+  #terms .terms-content .terms-line b,#terms .terms-content .terms-line h2{
+    color: #ee302e;
+  }
     /* .videosContainer2 {
       display: none !important;
     } */
@@ -1086,6 +1117,36 @@ main {
   z-index:0;
 }
 
+.cms-id-43 #wrapper {
+  background-color: #103054;
+}
+.cms-id-43 #content {
+  background-color: #103054 !important;
+}
+#terms {
+  margin: auto;
+  width: 78%;
+  text-align: center;
+  gap: 1rem;
+  display: flex;
+  flex-direction: column;
+  background: #f6f6f6;
+  color: #103054;
+  border-radius: 0.5rem;
+}
+#terms img{
+  width: 100%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+#terms .terms-content{
+  padding: 1rem 2rem;
+}
+#terms .terms-content .terms-line{
+  margin-bottom: 1rem;
+}
+#terms .terms-content .terms-line b,#terms .terms-content .terms-line h2{
+  color: #ee302e;
+}
 
 }
 
@@ -1094,6 +1155,37 @@ main {
 @media screen and (min-width:1280px){
     .lines-tablet {
       display: none;
+    }
+    /* terms */
+    .cms-id-43 #wrapper {
+      background-color: #103054;
+    }
+    .cms-id-43 #content {
+      background-color: #103054 !important;
+    }
+    #terms {
+      margin: auto;
+      width: 78%;
+      text-align: center;
+      gap: 1rem;
+      display: flex;
+      flex-direction: column;
+      background: #f6f6f6;
+      color: #103054;
+      border-radius: 0.5rem;
+    }
+    #terms img{
+      width: 100%;
+      border-radius: 0.5rem 0.5rem 0 0;
+    }
+    #terms .terms-content{
+      padding: 1rem 6rem;
+    }
+    #terms .terms-content .terms-line{
+      margin-bottom: 1rem;
+    }
+    #terms .terms-content .terms-line b,#terms .terms-content .terms-line h2{
+      color: #ee302e;
     }
 
     .linesHeaderDesktop {
