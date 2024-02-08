@@ -1,3 +1,4 @@
+
 {assign var="currentShop" value=Context::getContext()->shop->id}
 {if $banners[5]['active'] == '1'}
    {assign var='bb' value=$banners[5]['image_en']}
@@ -17,6 +18,15 @@
 {if $banners[0]['active'] == '1'}
    {assign var='bb' value=$banners[0]['image_en']}
    {/if}
+{if $currentShop ==1}
+    <h1 style="text-transform: uppercase;font-weight:bold;color:dodgerblue;">Euromuscle</h1>
+{elseif $currentShop ==2}
+    <h1 style="text-transform: uppercase;font-weight:bold;color:#ee302e;">All Stars Motorsport</h1>
+{elseif $currentShop ==3}
+    <h1 style="text-transform: uppercase;font-weight:bold;color:dodgerblue;">All Stars Distribution</h1>
+{else}
+    <h1>Escolhe um Site</h1>
+{/if}
    <div style="display: flow-root;" id="abas_container">
     <div class="desktop_mobile_container" style="cursor: pointer;border-radius: 10px 0 0 0;background-color: dodgerblue; color: #fff;width:50%;float: left; border: 1px solid #777;padding: 10px;font-weight: bolder; font-size:40px;text-align: center;" onclick="$('.desktop_mobile_container').css('background-color', 'grey');$(this).css('background-color', 'dodgerblue');$('#desktop_layer_container').toggle();$('#mobile_layer_container').toggle();">
         DESKTOP
