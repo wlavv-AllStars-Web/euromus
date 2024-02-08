@@ -566,24 +566,30 @@ class AdminWmModuleHomepageController extends AdminController{
         
         foreach($desktop_rows AS $row){
 
-            $sql = "UPDATE "._DB_PREFIX_."asm_homepage 
-                    SET active="        . $row['active'] . ", 
-                        icon_type='"    . $row['icon_type'] . "', 
-                        destination='"  . $row['destination'] . "', 
-                        image_en='"     . $row['image_en'] . "', 
-                        image_es='"     . $row['image_es'] . "', 
-                        image_fr='"     . $row['image_fr'] . "', 
-                        image_pt='"     . $row['image_pt'] . "', 
-                        title_en='"     . $row['title_en'] ."', 
-                        title_es='"     . $row['title_es'] . "',
-                        title_fr='"     . $row['title_fr'] . "', 
-                        title_pt='"     . $row['title_pt'] . "', 
-                        link='"         . $row['link'] . "', 
-                        brand="         . $row['brand'] . ", 
-                        model="         . $row['model'] . ", 
-                        type="          . $row['type'] . ", 
-                        version="       . $row['version'] . "
-                    WHERE id=" . $row['id'];
+            $sql = "UPDATE "._DB_PREFIX_."asm_homepage_online 
+                SET active="        . $row['active'] . ", 
+                icon_type='"    . $row['icon_type'] . "', 
+                destination='"  . $row['destination'] . "', 
+                image_en='"     . $row['image_en'] . "', 
+                image_es='"     . $row['image_es'] . "', 
+                image_fr='"     . $row['image_fr'] . "',
+                image_pt='"     . $row['image_fr'] . "',
+
+                title_en='"     . $row['title_en'] ."', 
+                title_es='"     . $row['title_es'] . "',
+                title_fr='"     . $row['title_fr'] . "', 
+                title_pt='"     . $row['title_fr'] . "', 
+                
+                id_parent_card='"     . $row['id_parent_card'] . "', 
+
+                link='"         . $row['link'] . "', 
+                brand="         . $row['brand'] . ", 
+                model="         . $row['model'] . ", 
+                type="          . $row['type'] . ", 
+                version="       . $row['version'] . ", 
+                youtube_code='" . $row['youtube_code'] . "' ,
+                id_shop='" . $row['id_shop'] . "' 
+                WHERE id=" . $row['id'];
             Db::getInstance()->execute($sql);
             
         }

@@ -427,6 +427,7 @@ main {
         padding: 0.15rem;
         position: relative;
         background-color: #fff;
+        min-height: 248px;
     }
 
     .bannersHomeMobile .layerHovermobile {

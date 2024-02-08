@@ -1,30 +1,22 @@
 <div id="mobile_container">
-    <div>
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;width:16.66%;float:left;background-color: dodgerblue; " onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_0').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
+    <div style="display: flex;">
+        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: dodgerblue; " onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_0').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
             <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder; color: #FFF;text-align: center;"> POSITION 1 </div>
         </div>
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;width:16.66%;float:left;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_1').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
+        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_1').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
             <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder; color: #FFF;text-align: center;"> POSITION 2 </div>
         </div>
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;width:16.66%;float:left;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_2').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
+        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_2').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
             <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder; color: #FFF;text-align: center;"> POSITION 3 </div>
-        </div>
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;width:16.66%;float:left;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_3').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
-            <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder;color: #FFF;text-align: center;"> POSITION 4 </div>
-        </div>
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;width:16.66%;float:left;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_4').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
-            <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder;color: #FFF;text-align: center;"> POSITION 5 </div>
-        </div>
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;width:16.66%;float:left;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_5').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
-            <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder;color: #FFF;text-align: center;"> POSITION 6 </div>
         </div>
     </div>
     <div style="display: ruby">
         {foreach $mobile_icons AS $index => $mobile}
-        
+            
             <div id="container_block_mobile_{$index}" class="elements_mobile_container" style="margin-top: 20px;display: inline-block; width: 100%;{if $index == 0} dispplay: block; {else} display:none; {/if}">
                 <div style="width: 25%; float: left;height: 240px;"></div>
                 <div style="width: 25%; float: left;height: 240px;">
+                <pre>{print_r($mobile,1)}</pre>
                     <img id="image_{$mobile['id']}" src="{$mobile['image_en']}{if strlen($mobile['image_en']) > 0}?t={rand()}{/if}" style="background-color: #fff;width: 100%;border: 1px solid #000;height: 239px;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$mobile['id']},{$mobile['icon_type']},$('#select_brand_{$mobile['id']}'))">
                 </div>
                 <div style="width: 25%; float: left;border: 1px solid #000;height: 240px;">
