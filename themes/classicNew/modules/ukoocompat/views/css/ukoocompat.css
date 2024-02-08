@@ -1,6 +1,7 @@
 @media screen and (max-width:767px) {
     .ukoocompat_search_block{
         overflow: hidden;
+        margin-top: 0 ;
     }
     .ukoocompat_search_block form {
         display: flex;
@@ -19,6 +20,11 @@
         justify-content: center;
     }
 }
+@media screen and (min-width:767px) {
+    .ukoocompat_search_block{
+        margin-bottom: 5px;
+    }
+}
 
 .ukoocompat_search_block{
     position: relative;
@@ -33,7 +39,6 @@
     align-items: center;
     gap: 2rem;
     padding: 3rem 0;
-    margin-bottom: 5px;
 }
 
 .ukoocompat_search_block h1{
