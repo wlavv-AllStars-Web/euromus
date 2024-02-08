@@ -24,7 +24,7 @@
                     <input type="hidden" value="$mobile_icon_1['active']" name="active"> 
                     <div style="padding: 5px;margin-top: 10px;padding: 0 10px;">
                         <div style="display: flex;">
-                            <div style="width: 100%; float: left;">
+                            <div style="width: 45%; float: left;">
                                 <label>Select brand</label> 
                                 <select id="select_brand_{$mobile['id']}" name="link" onclick="setImageText(this, {$mobile['id']}, 'select_car_{$mobile['id']}')">
                                     <option value="">---</option>
@@ -34,17 +34,17 @@
                                     {/foreach}
                                 </select>
                             </div>
-                            <div style="display:none;width: 20%; float: left;"> <div style="color: black; font-weight: bolder; font-size: 20px; text-transform: uppercase; text-align: center;" ></div> </div>
-                            <div style="display:none;width: 40%; float: left;">
+                            <div style="width: 10%; float: left;"> <div style="color: black; font-weight: bolder; font-size: 20px; text-transform: uppercase; text-align: center;" ></div> </div>
+                            <div style="width: 45%; float: left;">
                                 {assign var="compat" value="`$mobile['brand']`_`$mobile['model']`_`$mobile['type']`_`$mobile['version']`"}
                                 <label>Select car</label> 
                                 <select id="select_car_{$mobile['id']}" name="car" onclick="setImageText(this, {$mobile['id']}, 'select_brand_{$mobile['id']}');">
                                     <option value="">---</option>
-                                   {*
+                                   
                                    {foreach $cars AS $car}
                                         <option value="{implode('_', array_keys($car['filters']))}" {if (implode('_', array_keys($car['filters'])) == $compat)} selected {/if}>{implode(' | ', array_values($car['filters']))}</option>
                                     {/foreach}
-                                    *}
+                                   
                                 </select>
                             </div>
                         </div>

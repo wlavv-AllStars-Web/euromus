@@ -37,7 +37,7 @@ class AdminWmModuleHomepageController extends AdminController{
     }
 
     public function getManufacturers(){
-        return Db::getInstance()->executeS('SELECT name, CONCAT( CONCAT(id_manufacturer, "_"), REPLACE(LOWER(name), " ", "-")) AS link_data FROM '._DB_PREFIX_.'manufacturer WHERE active=1 ORDER BY name ASC');
+        return Db::getInstance()->executeS('SELECT m.name, CONCAT( CONCAT(m.id_manufacturer, "_"), REPLACE(LOWER(m.name), " ", "-")) AS link_data FROM '._DB_PREFIX_.'manufacturer AS m LEFT JOIN '._DB_PREFIX_.'manufacturer_shop AS ms ON m.id_manufacturer = ms.id_manufacturer WHERE ms.id_shop ='.$this->id_shop.' AND m.active=1 ORDER BY m.name ASC');
     }
 
     public function getCompatibilities(){

@@ -123,11 +123,32 @@
             
             <div class="bannersHomeMobile">
             {foreach from=$mobile item=mobileItem key=mobilekey name=mobilename}
+              {assign var="url" value=$mobileItem["image_{$currentLanguageIso}"]}
+              {assign var="numberString" value="`$url`"|regex_replace:"/.*\/(\d+)_(\d+)_(\d+)_(\d+)_.*$/":"$1,$2,$3,$4"}
+              {assign var="linkBrand" value=$mobileItem["link"]}
+              
+              {if $numberString != $url}
+                {assign var="numbers" value=[]}
+                  {assign var="numbers" value=explode(",", $numberString)}
+              {/if}
 
-                <a class="card-img"  href="/{$currentLanguageIso}/brand/{$mobileItem['link']}">
+                {if $numberString != $url}
+                <a class="card-img" style="cursor: pointer;"
+                onclick="setCarAndSearch({$numbers[0]},{$numbers[1]},{$numbers[2]},{$numbers[3]})">
+                {elseif $linkBrand != ''}
+                  <a class="card-img" href="/{$currentLanguageIso}/brand/{$linkBrand}">
+                {else}
+                  <a class="card-img" href="">
+                {/if}
+
                   <img src="{$mobileItem["image_{$currentLanguageIso}"]}" />
                   <div class="layerHovermobile">{$mobileItem["title_{$currentLanguageIso}"]}</div>
+
+                {if isset($numbers)}
                 </a>
+                {elseif $linkBrand != ''}
+                  </a>
+                {/if}
               {/foreach}
           
             </div>
