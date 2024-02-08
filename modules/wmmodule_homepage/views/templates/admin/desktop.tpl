@@ -44,30 +44,32 @@
                 <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/header{$currentShop}.png"> 
             </div>
             <div class="bannersHome">
+            
                 {foreach $array_icons_50 AS $index_50 => $icons_50 }
                 <div class="card-img-container">
                     <div class="card-big">
                     <div class="layerHover">
                         <h6>{$icons_50["title_{$currentLanguageIso}"]}</h6>
                     </div>
-                    <img src="{$icons_50["image_{$currentLanguageIso}"]}" />
+                    
+                    <img id="preview_image_{$icons_50['id']}" src="{$icons_50["image_{$currentLanguageIso}"]}" />
                     </div>
                     <div class="card-min-img" style="{if $index_50 == 0}background:#ee302e{elseif $index_50 == 1}background:#103054;{elseif $index_50 == 2}background:#ddd;{/if}">
                     {foreach $array_icons_33 AS $index_33 => $icons_33}
                         {if $index_50 == 0 && $icons_33.id_parent_card == 1}
                             <div class="card-img ">
                             <div class="layerHover">{$icons_33["title_{$currentLanguageIso}"]}</div>
-                            <img src="{$icons_33["image_{$currentLanguageIso}"]}?t={rand()}" />
+                            <img id="preview_image_{$icons_33['id']}" src="{$icons_33["image_{$currentLanguageIso}"]}?t={rand()}" />
                             </div>
                         {elseif  $index_50 == 1 && $icons_33.id_parent_card == 2}
                             <div class="card-img ">
                             <div class="layerHover">{$icons_33["title_{$currentLanguageIso}"]}</div>
-                            <img src="{$icons_33["image_{$currentLanguageIso}"]}?t={rand()}" />
+                            <img id="preview_image_{$icons_33['id']}"  src="{$icons_33["image_{$currentLanguageIso}"]}?t={rand()}" />
                             </div>
                         {elseif  $index_50 == 2 && $icons_33.id_parent_card == 3}
                             <div class="card-img ">
                             <div class="layerHover">{$icons_33["title_{$currentLanguageIso}"]}</div>
-                            <img src="{$icons_33["image_{$currentLanguageIso}"]}?t={rand()}" />
+                            <img id="preview_image_{$icons_33['id']}" src="{$icons_33["image_{$currentLanguageIso}"]}?t={rand()}" />
                             </div>
                         {/if}
                         
@@ -122,7 +124,7 @@
               {foreach $array_videos AS $index => $video}
                 <div class="video3 video">
                   <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-                  <img src="{$video["image_{$currentLanguageIso}"]}"/>
+                  <img id="preview_image_{$video['id']}"  src="{$video["image_{$currentLanguageIso}"]}"/>
                     <div class="play">
                       <img class="image_play" alt="video player" src="/img/youtube_play.png" />
                     </div>

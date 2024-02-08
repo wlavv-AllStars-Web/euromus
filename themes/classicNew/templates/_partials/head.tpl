@@ -36,7 +36,6 @@
   {/block}
   <meta name="description" content="{block name='head_seo_description'}{$page.meta.description}{/block}">
   <meta name="keywords" content="{block name='head_seo_keywords'}{$page.meta.keywords}{/block}">
-    <link rel="font" as="font" type="font/woff2" crossorigin="" href="http://tune4style.com/themes/AngarTheme/assets/css/fonts/fontawesome-webfont.woff2?v=4.7.0">
   {if $page.meta.robots !== 'index'}
     <meta name="robots" content="{$page.meta.robots}">
   {/if}
