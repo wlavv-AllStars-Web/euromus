@@ -1,25 +1,26 @@
+{assign var="currentLanguageIso" value=Context::getContext()->language->iso_code}
+{assign var="currentShop" value=Context::getContext()->shop->id}
 <div id="mobile_container">
     <div style="display: flex;">
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: dodgerblue; " onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_0').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
+        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: dodgerblue; " onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_0').toggle();$('#container_block_mobile_0').css('display', 'flex');$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
             <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder; color: #FFF;text-align: center;"> POSITION 1 </div>
         </div>
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_1').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
+        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_1').toggle();$('#container_block_mobile_1').css('display', 'flex');$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
             <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder; color: #FFF;text-align: center;"> POSITION 2 </div>
         </div>
-        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_2').toggle();$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
+        <div class="options_mobile_container" style="cursor: pointer;display: flow-root;margin-top: 10px;flex:1;background-color: grey;" onclick="$('.elements_mobile_container').css('display', 'none');$('#container_block_mobile_2').toggle();$('#container_block_mobile_2').css('display', 'flex');$('.options_mobile_container').css('background-color', 'grey'); $(this).css('background-color', 'dodgerblue')">
             <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder; color: #FFF;text-align: center;"> POSITION 3 </div>
         </div>
     </div>
     <div style="display: ruby">
         {foreach $mobile_icons AS $index => $mobile}
             
-            <div id="container_block_mobile_{$index}" class="elements_mobile_container" style="margin-top: 20px;display: inline-block; width: 100%;{if $index == 0} dispplay: block; {else} display:none; {/if}">
-                <div style="width: 25%; float: left;height: 240px;"></div>
-                <div style="width: 25%; float: left;height: 240px;">
-                <pre>{print_r($mobile,1)}</pre>
-                    <img id="image_{$mobile['id']}" src="{$mobile['image_en']}{if strlen($mobile['image_en']) > 0}?t={rand()}{/if}" style="background-color: #fff;width: 100%;border: 1px solid #000;height: 239px;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$mobile['id']},{$mobile['icon_type']},$('#select_brand_{$mobile['id']}'))">
+            <div id="container_block_mobile_{$index}" class="elements_mobile_container" style="margin-top: 20px;display: flex;justify-content:center;width: 100%;{if $index == 0} dispplay: block; {else} display:none; {/if}">
+
+                <div style="width: 25%;">
+                    <img id="image_{$mobile['id']}" src="{$mobile['image_en']}{if strlen($mobile['image_en']) > 0}?t={rand()}{/if}" style="background-color: #fff;width: 100%;height:268px;border: 1px solid #000;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;object-fit: cover;" onclick="setModal({$mobile['id']},{$mobile['icon_type']},$('#select_brand_{$mobile['id']}'))">
                 </div>
-                <div style="width: 25%; float: left;border: 1px solid #000;height: 240px;">
+                <div style="width: 25%;border: 1px solid #000;">
                     <input type="hidden" value="$mobile_icon_1['active']" name="active"> 
                     <div style="padding: 5px;margin-top: 10px;padding: 0 10px;">
                         <div style="display: flex;">
@@ -63,7 +64,7 @@
                         </div>
                     </div>
                 </div>
-                <div style="width: 25%; float: left;height: 240px;"></div>
+
             </div>
         
         {/foreach}
@@ -82,37 +83,33 @@
     
         <div style="width: 320px;margin: 0 auto;background-color: #5c5c5c;">
             <div style="width: 100%;">
-                <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/header_mobile.jpg"> 
-            </div>
+                <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/header_mobile{$currentShop}.png"> 
+            </div>   
+
+            {foreach from=$mobile_icons item=item key=key name=name}
+                <div style="width: 100%;padding: 5px;">
+                    <img id="preview_image_{$item['id']}" src="{$item['image_en']}" style="overflow: hidden;border: 1px solid #999;width: 100%;min-height:210px;object-fit:cover;"> 
+                </div>
+            {/foreach}
+
             <div style="width: 100%;">
-                <img id="bb" src="{$bb}" style="overflow: hidden;width: 100%;"> 
-            </div>            
-            <div style="width: 100%;padding: 5px;">
-                <img id="preview_image_19" src="{$mobile_icons[0]['image_en']}" style="overflow: hidden;border: 1px solid #999;width: 100%;"> 
+                <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/body_mobile{$currentShop}.png"> 
             </div>
-            
-            <div style="width: 100%;padding: 5px;">
-                <img id="preview_image_20" src="{$mobile_icons[1]['image_en']}" style="overflow: hidden;border: 1px solid #999;width: 100%;"> 
-            </div>
-            
-            <div style="width: 100%;padding: 5px;">
-                <img id="preview_image_21" src="{$mobile_icons[2]['image_en']}" style="cursor: pointer;overflow: hidden;border: 1px solid #999;width: 100%;"> 
-            </div>
-    
-            <div style="width: 100%;padding: 5px">
-                <img id="preview_image_22" src="{$mobile_icons[3]['image_en']}" style="overflow: hidden;border: 1px solid #999;width: 100%;"> 
-            </div>
-            
-            <div style="width: 100%;padding: 5px">
-                <img id="preview_image_23" src="{$mobile_icons[4]['image_en']}" style="cursor: pointer;overflow: hidden;border: 1px solid #999;width: 100%;"> 
+            <div class="videosContainer">
+                {foreach $array_videos AS $index => $video}
+                    <div class="video3 video">
+                    <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+                    <img id="preview_image_{$video['id']}"  src="{$video["image_{$currentLanguageIso}"]}"/>
+                        <div class="play">
+                        <img class="image_play" alt="video player" src="/img/youtube_play.png" />
+                        </div>
+                    </div>
+                    </div>
+                {/foreach}
             </div>
 
-            <div style="width: 100%;padding: 5px">
-                <img id="preview_image_23" src="{$mobile_icons[5]['image_en']}" style="cursor: pointer;overflow: hidden;border: 1px solid #999;width: 100%;"> 
-            </div>
-            
             <div style="width: 100%;">
-                <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/footer_mobile.jpg"> 
+                <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/footer_mobile{$currentShop}.png"> 
             </div>
         </div>
         
@@ -122,3 +119,45 @@
     </div>
 </div>
 
+<style>
+ .videosContainer
+{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  padding: 2rem 15px;
+  background-color: #707c88;
+}
+
+.videosContainer .video
+{
+    flex: 1;
+}
+
+.videosContainer .video3
+{
+  position: relative;
+}
+
+.videosContainer img
+{
+  cursor: pointer;
+  width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.videosContainer .image_play
+{
+  max-width: 100px !important;
+  position: absolute !important;
+  pointer-events: none;
+  width: 100%;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+</style>
