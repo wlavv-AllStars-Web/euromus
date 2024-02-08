@@ -56,7 +56,7 @@ try {
     }
 
     /* Server Params */
-    $protocol_link = (Configuration::get('PS_SSL_ENABLED')) ? 'https://' : 'http://';
+    $protocol_link = 'https://';
     $protocol_content = (isset($useSSL) && $useSSL && Configuration::get('PS_SSL_ENABLED')) ? 'https://' : 'http://';
     $link = new Link($protocol_link, $protocol_content);
     $context->link = $link;
