@@ -72,17 +72,18 @@
     {assign var="url" value=$item["image_{$currentLanguageIso}"]}
     {assign var="numberString" value="`$url`"|regex_replace:"/.*\/(\d+)_(\d+)_(\d+)_(\d+)_.*$/":"$1,$2,$3,$4"}
     {assign var="linkBrand" value=$item["link"]}
+    
     {if $numberString != $url}
       {assign var="numbers" value=[]}
         {assign var="numbers" value=explode(",", $numberString)}
     {/if}
-
+    {* <pre>{print_r($item,1)}</pre> *}
   <div class="card-img-container">
     <div class="card-big">
       <div class="layerHover">
         <h6>{$item["title_{$currentLanguageIso}"]}</h6>
       </div>
-      {if isset($numbers) && count($numbers) > 1}
+      {if $numberString != $url}
       <a style="cursor: pointer;"
       onclick="setCarAndSearch({$numbers[0]},{$numbers[1]},{$numbers[2]},{$numbers[3]})">
       {elseif $linkBrand != ''}
