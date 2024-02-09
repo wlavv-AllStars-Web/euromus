@@ -9,7 +9,7 @@
      	    {assign var=id_manufacturer value="_"|explode:$icons_50['link']}
      	    <input type="hidden" id="homepage_manufacturer_id_manufacturer_{$icons_50['id']}" name="homepage_manufacturer_id_manufacturer[{$icons_50['id']}]" value="{$id_manufacturer[0]}">
      	    <input type="hidden" id="homepage_manufacturer_id_{$icons_50['id']}" name="homepage_manufacturer_id[{$icons_50['id']}]" value="">
-            <img id="image_{$icons_50['id']}" src="{$icons_50['image_en']}{if strlen($icons_50['image_en']) > 0}?t={rand()}{/if}" style="object-fit:cover;background-color: #fff;margin-bottom: 10px;width: 100%;border: 1px solid #000;min-height: 365px;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$icons_50['id']},2,$('#select_brand_{$icons_50['id']}'))">
+            <img id="image_{$icons_50['id']}" src="{$icons_50['image_en']}{if strlen($icons_50['image_en']) > 0}?t={rand()}{/if}" style="object-fit:cover;background-color: #fff;margin-bottom: 10px;width: 100%;border: 1px solid #000;min-height: 365px;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;object-fit:cover;max-height: 365px;" onclick="setModal({$icons_50['id']},2,$('#select_brand_{$icons_50['id']}'))">
             <div>
                 <div style="display: flex;align-items:center;flex-wrap:wrap;">
                     <div style="width: 45%;">
