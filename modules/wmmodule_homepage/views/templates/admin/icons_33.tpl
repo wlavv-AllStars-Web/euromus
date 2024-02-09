@@ -2,6 +2,8 @@
 <div style="display: none;" id="sliders33_container" class="elements_container">
 {assign var="currentShop" value=Context::getContext()->shop->id}
 {assign var=cardNumber value=0}
+
+
     {foreach $array_icons_50 AS $index_50 => $icons_50}
         {if $currentShop == 1}
         <h1 style="font-weight: 700;width:100%">Card {$index_50 + 1}</h1>
@@ -51,7 +53,8 @@
                         {/if}
 
                         {if $currentShop == 1}
-                            <div style="width: 40%;float: left;">
+                            <div style="display: flex;flex-wrap:wrap;">
+                            <div style="width: 45%;float: left;">
                                 <label>Select Parent</label> 
                                 <select id="select_mini_{$icons_33['id']}" inputparentcard="1"  name="link[{$icons_33['id']}]" onclick="setImageText(this, {$icons_33['id']}, 'select_mini_{$icons_33['id']}')" style="padding:5px;">
                                     <option value="">---</option>
@@ -59,6 +62,26 @@
                                         <option value="{$icons_50.id}" selected >{$icons_50.id}</option>
                                     {* {/foreach} *}
                                 </select>
+                            </div>
+                            <div style="width: 10%;">
+                                <div style="color: black; font-weight: bolder; font-size: 1rem; text-transform: uppercase; text-align: center; padding: 15px 15px 0px 15px;" > OR </div>
+                            </div>
+                            <div style="width: 45%;">
+                                <label>Select car</label> 
+                                {assign var="compat" value="`$icons_33['brand']`_`$icons_33['model']`_`$icons_33['type']`_`$icons_33['version']`"}
+                                <select id="select_car_{$icons_33['id']}" name="car[{$icons_33['id']}]" onclick="setIdToZero(this, {$icons_33['id']});" style="padding:5px;">
+                                    <option value="">---</option>
+                                    
+                                    {foreach $cars AS $car}
+                                        <option value="{implode('_', array_keys($car['filters']))}"  {if (implode('_', array_keys($car['filters'])) == $compat)} selected {/if}>{implode(' | ', array_values($car['filters']))}</option>
+                                    {/foreach}
+                                
+                                </select>
+                            </div>
+                            <div style="width: 100%;display:flex;flex-direction: column;margin:0.5rem 0;">
+                                <label style="color: #103054;">ID of Product</label> 
+                                <input class="id_product_input" style="width: 100%;height:39px;color: #555;font-size:0.85rem;" name="link_[{$icons_33['id']}]" type="number" value="{$icons_33['link']}" placeholder="0" id="link_{$icons_33['id']}" onchange="setIdProduct(this,{$icons_33['id']})">  
+                            </div>
                             </div>
                         {/if}
 
@@ -112,15 +135,36 @@
                 </div> *}
 
                 
-                    <div style="width: 40%;float: left;">
-                            <label>Select Parent</label> 
-                            <select id="select_mini_{$icons_33['id']}" inputparentcard="2"  name="link[{$icons_33['id']}]" onclick="setImageText(this, {$icons_33['id']}, 'select_mini_{$icons_33['id']}')" style="padding:5px;">
-                                <option value="">---</option>
-                                {* {foreach $array_icons_50 AS $icons_50} *}
-                                    <option value="{$icons_50.id}" selected >{$icons_50.id}</option>
-                                {* {/foreach} *}
-                            </select>
-                        </div>
+                <div style="display: flex;flex-wrap:wrap;">
+                <div style="width: 45%;float: left;">
+                    <label>Select Parent</label> 
+                    <select id="select_mini_{$icons_33['id']}" inputparentcard="1"  name="link[{$icons_33['id']}]" onclick="setImageText(this, {$icons_33['id']}, 'select_mini_{$icons_33['id']}')" style="padding:5px;">
+                        <option value="">---</option>
+                        {* {foreach $array_icons_50 AS $icons_50} *}
+                            <option value="{$icons_50.id}" selected >{$icons_50.id}</option>
+                        {* {/foreach} *}
+                    </select>
+                </div>
+                <div style="width: 10%;">
+                    <div style="color: black; font-weight: bolder; font-size: 1rem; text-transform: uppercase; text-align: center; padding: 15px 15px 0px 15px;" > OR </div>
+                </div>
+                <div style="width: 45%;">
+                    <label>Select car</label> 
+                    {assign var="compat" value="`$icons_33['brand']`_`$icons_33['model']`_`$icons_33['type']`_`$icons_33['version']`"}
+                    <select id="select_car_{$icons_33['id']}" name="car[{$icons_33['id']}]" onclick="setIdToZero(this, {$icons_33['id']});" style="padding:5px;">
+                        <option value="">---</option>
+                        
+                        {foreach $cars AS $car}
+                            <option value="{implode('_', array_keys($car['filters']))}"  {if (implode('_', array_keys($car['filters'])) == $compat)} selected {/if}>{implode(' | ', array_values($car['filters']))}</option>
+                        {/foreach}
+                    
+                    </select>
+                </div>
+                <div style="width: 100%;display:flex;flex-direction: column;margin:0.5rem 0;">
+                    <label style="color: #103054;">ID of Product</label> 
+                    <input class="id_product_input" style="width: 100%;height:39px;color: #555;font-size:0.85rem;" name="link_[{$icons_33['id']}]" type="number" value="{$icons_33['link']}" placeholder="0" id="link_{$icons_33['id']}" onchange="setIdProduct(this,{$icons_33['id']})">  
+                </div>
+                </div>
                 
 
 
@@ -172,17 +216,36 @@
                 </div> *}
 
                 
-                <div style="width: 40%;float: left;">
-                <label>Select Parent</label> 
-                <select id="select_mini_{$icons_33['id']}" inputparentcard="3" name="link[{$icons_33['id']}]" onclick="setImageText(this, {$icons_33['id']}, 'select_mini_{$icons_33['id']}')" style="padding:5px;">
-                    <option value="">---</option>
-                    {* {foreach $array_icons_50 AS $icons_50} *}
-                        <option value="{$icons_50.id}" selected >{$icons_50.id}</option>
-                    {* {/foreach} *}
-                </select>
-            </div>
-     
-
+                <div style="display: flex;flex-wrap:wrap;">
+                            <div style="width: 45%;float: left;">
+                                <label>Select Parent</label> 
+                                <select id="select_mini_{$icons_33['id']}" inputparentcard="1"  name="link[{$icons_33['id']}]" onclick="setImageText(this, {$icons_33['id']}, 'select_mini_{$icons_33['id']}')" style="padding:5px;">
+                                    <option value="">---</option>
+                                    {* {foreach $array_icons_50 AS $icons_50} *}
+                                        <option value="{$icons_50.id}" selected >{$icons_50.id}</option>
+                                    {* {/foreach} *}
+                                </select>
+                            </div>
+                            <div style="width: 10%;">
+                                <div style="color: black; font-weight: bolder; font-size: 1rem; text-transform: uppercase; text-align: center; padding: 15px 15px 0px 15px;" > OR </div>
+                            </div>
+                            <div style="width: 45%;">
+                                <label>Select car</label> 
+                                {assign var="compat" value="`$icons_33['brand']`_`$icons_33['model']`_`$icons_33['type']`_`$icons_33['version']`"}
+                                <select id="select_car_{$icons_33['id']}" name="car[{$icons_33['id']}]" onclick="setIdToZero(this, {$icons_33['id']});" style="padding:5px;">
+                                    <option value="">---</option>
+                                    
+                                    {foreach $cars AS $car}
+                                        <option value="{implode('_', array_keys($car['filters']))}"  {if (implode('_', array_keys($car['filters'])) == $compat)} selected {/if}>{implode(' | ', array_values($car['filters']))}</option>
+                                    {/foreach}
+                                
+                                </select>
+                            </div>
+                            <div style="width: 100%;display:flex;flex-direction: column;margin:0.5rem 0;">
+                                <label style="color: #103054;">ID of Product</label> 
+                                <input class="id_product_input" style="width: 100%;height:39px;color: #555;font-size:0.85rem;" name="link_[{$icons_33['id']}]" type="number" value="{$icons_33['link']}" placeholder="0" id="link_{$icons_33['id']}" onchange="setIdProduct(this,{$icons_33['id']})">  
+                            </div>
+                            </div>
 
             
 
@@ -200,3 +263,18 @@
         </div>
     {/foreach}
 </div>
+
+
+<style>
+.id_product_input:focus {
+    border: none !important;
+    border-color:#103054 !important;
+    background: #e6e6e6 !important;
+}
+.id_product_input:focus-visible {
+    border-color:#103054 !important;
+    background: #e6e6e6 !important;
+    border: none !important;
+}
+</style>
+

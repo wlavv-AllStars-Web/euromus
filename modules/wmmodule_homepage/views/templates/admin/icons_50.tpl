@@ -11,8 +11,8 @@
      	    <input type="hidden" id="homepage_manufacturer_id_{$icons_50['id']}" name="homepage_manufacturer_id[{$icons_50['id']}]" value="">
             <img id="image_{$icons_50['id']}" src="{$icons_50['image_en']}{if strlen($icons_50['image_en']) > 0}?t={rand()}{/if}" style="object-fit:cover;background-color: #fff;margin-bottom: 10px;width: 100%;border: 1px solid #000;min-height: 365px;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$icons_50['id']},2,$('#select_brand_{$icons_50['id']}'))">
             <div>
-                <div style="display: flex;align-items:center;">
-                    <div style="width: 45%;float: left;">
+                <div style="display: flex;align-items:center;flex-wrap:wrap;">
+                    <div style="width: 45%;">
                         <label>Select brand</label> 
                         <select id="select_brand_{$icons_50['id']}" name="link[{$icons_50['id']}]" onclick="setImageText(this, {$icons_50['id']}, 'select_brand_{$icons_50['id']}')">
                             <option value="">---</option>
@@ -22,10 +22,10 @@
                             {/foreach}
                         </select>
                     </div>
-                    <div style="width: 10%;float: left;">
+                    <div style="width: 10%;">
                         <div style="color: black; font-weight: bolder; font-size: 16px; text-transform: uppercase; text-align: center; padding: 15px 15px 0px 15px;" > OR </div>
                     </div>
-                    <div style="width: 45%;float: left;">
+                    <div style="width: 45%;">
                         {assign var="compat" value="`$icons_50['brand']`_`$icons_50['model']`_`$icons_50['type']`_`$icons_50['version']`"}
                         <label>Select car</label> 
                         <select id="select_car_{$icons_50['id']}" name="car[{$icons_50['id']}]" onclick="setImageText(this, {$icons_50['id']}, 'select_car_{$icons_50['id']}');">
@@ -36,6 +36,10 @@
                             {/foreach}
                         
                         </select>
+                    </div>
+                    <div style="width: 100%;display:flex;flex-direction: column;margin:0.5rem 0;">
+                                <label style="color: #103054;">ID of Product</label> 
+                                <input class="id_product_input" style="width: 100%;height:39px;color: #555;font-size:0.85rem;" name="link_[{$icons_50['id']}]" type="number" value="{$icons_50['link']}" placeholder="0" id="link_{$icons_50['id']}" onchange="setIdProduct(this,{$icons_50['id']})">  
                     </div>
                 </div>
                 <div style="color: #666; text-transform: uppercase; background-color: #ddd;padding: 5px;display: inline-block; padding: 10px; width: 100%;">

@@ -33,6 +33,7 @@
 {assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand("Dodge","Challenger",$currentLanguage)}
 {assign var="versionsRamTrx" value=IndexControllerCore::getCarsOfBrand("Ram","Trx",$currentLanguage)}
 
+
 {extends file='page.tpl'}
 
     {block name='page_content_container'}
@@ -66,11 +67,15 @@
             {$HOOK_HOME nofilter}
 
             <div class="lines-tablet" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
+            
             <div class="bannersHome">
+            <pre>{print_r($productProperties,1)}</pre>
               {foreach from=$desktop['icones_50'] item=item key=key name=name }
                 {assign var="url" value=$item["image_{$currentLanguageIso}"]}
                 {assign var="numberString" value="`$url`"|regex_replace:"/.*\/(\d+)_(\d+)_(\d+)_(\d+)_.*$/":"$1,$2,$3,$4"}
                 {assign var="linkBrand" value=$item["link"]}
+
+                
                 
                 {if $numberString != $url}
                   {assign var="numbers" value=[]}
@@ -85,7 +90,12 @@
                     <a style="cursor: pointer;"
                     onclick="setCarAndSearch({$numbers[0]},{$numbers[1]},{$numbers[2]},{$numbers[3]})">
                     {elseif $linkBrand != ''}
-                      <a href="/{$currentLanguageIso}/brand/{$linkBrand}">
+                      {if $linkBrand|is_numeric}
+                        <a href="/{$currentLanguageIso}/{$linkBrand}-product.html">
+                      {else}
+                        <a href="/{$currentLanguageIso}/brand/{$linkBrand}">
+                      {/if}
+                      
                     {/if}
                       <img src="{$item["image_{$currentLanguageIso}"]}" />
                     {if isset($numbers)}
@@ -96,20 +106,53 @@
                     </div>
                   <div class="card-min-img">
                   {foreach from=$desktop['icones_33'] item=child key=childkey name=childname}
+                    {assign var="urlMini" value=$child["image_{$currentLanguageIso}"]}
+                    {assign var="numberStringMini" value="`$urlMini`"|regex_replace:"/.*\/(\d+)_(\d+)_(\d+)_(\d+)_.*$/":"$1,$2,$3,$4"}
+                    {assign var="linkBrandMini" value=$child["link"]}
+                
+                    {if $numberStringMini != $urlMini}
+                      {assign var="numbersMini" value=[]}
+                        {assign var="numbersMini" value=explode(",", $numberStringMini)}
+                    {/if}
+
                         {if $key == 0 && $child.id_parent_card == 1}
                           <div class="card-img ">
-                            <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
-                            <img src="{$child["image_{$currentLanguageIso}"]}" />
+{* aquui *}
+
+                          {if $numberStringMini != $urlMini}
+                            <a style="cursor: pointer;"
+                            onclick="setCarAndSearch({$numbersMini[0]},{$numbersMini[1]},{$numbersMini[2]},{$numbersMini[3]})">
+                            {elseif $linkBrandMini != ''}
+                              <a href="/{$currentLanguageIso}/{$linkBrandMini}-product.html">
+                            {/if}
+                              <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
+                              <img src="{$child["image_{$currentLanguageIso}"]}" />
+                            {if isset($numbersMini)}
+                            </a>
+                            {elseif $linkBrandMini != ''}
+                              </a>
+                          {/if}
+
+{* aqiiiii *}
+                            {* <a href="/{$currentLanguageIso}/{$child['link']}-product.html">
+                              <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
+                              <img src="{$child["image_{$currentLanguageIso}"]}" />
+                            </a> *}
+
                           </div>
                         {elseif  $key == 1 && $child.id_parent_card == 2}
                           <div class="card-img ">
-                            <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
-                            <img src="{$child["image_{$currentLanguageIso}"]}" />
+                            <a href="/{$currentLanguageIso}/{$child['link']}-product.html">
+                              <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
+                              <img src="{$child["image_{$currentLanguageIso}"]}" />
+                            </a>
                           </div>
                         {elseif  $key == 2 && $child.id_parent_card == 3}
                           <div class="card-img ">
-                            <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
-                            <img src="{$child["image_{$currentLanguageIso}"]}" />
+                            <a href="/{$currentLanguageIso}/{$child['link']}-product.html">
+                              <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
+                              <img src="{$child["image_{$currentLanguageIso}"]}" />
+                            </a>
                           </div>
                         {/if}
                       

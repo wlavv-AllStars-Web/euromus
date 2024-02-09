@@ -170,6 +170,8 @@
         }else if(element === 'miniature'){
             document.getElementById('select_mini_' + id_image).selectedIndex = 1;
             id_element = $('#select_mini_' + id_image).attr("inputparentcard");
+        }else if(element === 'compatibility'){
+            id_element = $('#select_car_' + id_image).val();
         }else{
             document.getElementById('select_brand_' + id_image).selectedIndex = 0;
             id_element = $('#select_car_' + id_image).val();
@@ -221,8 +223,8 @@
     }
 
     function setImageText(sel, index, element){
-        
-        let imageText = sel.options[sel.selectedIndex].text;
+
+        let imageText = $(sel).find('option:selected').text();
 
         document.getElementById("title_en_" + index).value = imageText;
         document.getElementById("title_es_" + index).value = imageText;
@@ -231,7 +233,8 @@
     }
     
     function setImage(id_zone, id_image, url, homepage_manufacturer_id, homepage_manufacturer_id_manufacturer){
-
+        // const linkProduct = document.getElementById("link_"+ id_image).innerText;
+        // console.log(linkProduct)
 		$.ajax({
 			type : 'POST',
 			url : "{$httpssl}//{$dominio}/{$back_path}/index.php?controller=AdminWmModuleHomepage&token={Tools::getAdminTokenLite('AdminWmModuleHomepage')}&action=updateHomepageTemp",
@@ -243,7 +246,8 @@
 				'id_element' : homepage_manufacturer_id_manufacturer,
 				'title_en' : $('#title_en_' + id_image).val(),
 				'title_es' : $('#title_es_' + id_image).val(),
-				'title_fr' : $('#title_fr_' + id_image).val()
+				'title_fr' : $('#title_fr_' + id_image).val(),
+                'linkProduct' : $('#link_'+ id_image).val()
 			},
 			success : function(data) { }
 		});
@@ -278,10 +282,20 @@
             
 		});
 		
+    }
 
+
+    function setIdProduct(element,id_element) {
+        const linkProduct = $('#link_'+ id_element).val()
+        console.log("idProduto->"+linkProduct)
+        console.log("idProduto->"+$("#select_car_"+id_element).find('option:selected').text())
         
+        $("#select_car_"+id_element).val("").change();
+    }
 
-
+    function setIdToZero(element,id_element) {
+        $('#link_'+ id_element).val(0)
+        setImageText(element, id_element, `select_car_{$id_element}`)
     }
     
     function saveDesktopLive(){

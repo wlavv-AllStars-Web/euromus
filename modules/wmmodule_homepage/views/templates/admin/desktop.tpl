@@ -160,6 +160,7 @@
     .videosContainer
 {
   display: flex;
+  flex-direction: row !important;
   justify-content: center;
   gap: 5px;
   padding: 2rem 15px;

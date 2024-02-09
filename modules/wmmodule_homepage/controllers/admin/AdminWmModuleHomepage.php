@@ -227,6 +227,7 @@ class AdminWmModuleHomepageController extends AdminController{
             die();
         }elseif(Tools::getValue('action') == 'updateHomepageTemp'){
             $data = Tools::getAllValues();
+
             $car_brand = 0;
             $car_model = 0;
             $car_type = 0;
@@ -241,6 +242,10 @@ class AdminWmModuleHomepageController extends AdminController{
             }elseif($row_data['id_category']  > 0){
                 $name = Db::getInstance()->getValue('SELECT name FROM '._DB_PREFIX_.'category_lang WHERE id_category = ' . $row_data['id_category'] . ' AND id_lang=1');
                 $link = $row_data['id_category'] . '_' . str_replace(' ', '-', $name);
+            }
+
+            if( $data['linkProduct'] > 0){
+                $link = $data['linkProduct'];
             }
             
             $type="desktop";
