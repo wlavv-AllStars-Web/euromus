@@ -176,15 +176,17 @@
               {/if}
 
                 {if $numberString != $url}
-                <a class="card-img" style="cursor: pointer;"
+                <a class="card-img" style="cursor: pointer; position: relative;"
                 onclick="setCarAndSearch({$numbers[0]},{$numbers[1]},{$numbers[2]},{$numbers[3]})">
                 {elseif $linkBrand != ''}
-                  <a class="card-img" href="/{$currentLanguageIso}/brand/{$linkBrand}">
-                {else}
-                  <a class="card-img" href="">
+                  {if $linkBrand|is_numeric}
+                    <a href="/{$currentLanguageIso}/{$linkBrand}-product.html" style="position: relative;">
+                  {else}
+                    <a href="/{$currentLanguageIso}/brand/{$linkBrand}" style="position: relative;">
+                  {/if}
                 {/if}
 
-                  <img src="{$mobileItem["image_{$currentLanguageIso}"]}" />
+                  <img src="{$mobileItem["image_{$currentLanguageIso}"]}" style="width: 100%;"/>
                   <div class="layerHovermobile">{$mobileItem["title_{$currentLanguageIso}"]}</div>
 
                 {if isset($numbers)}

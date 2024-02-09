@@ -1929,7 +1929,7 @@ main {
  /* margin-bottom: 5px; */
  object-fit: cover;
  height: 100%;
- max-height: 139px;
+
 }
 
 .card-min-img{
@@ -2311,6 +2311,10 @@ header.page-header {
 @media screen and (min-width:1301px){
   .text_partners {
     min-height: auto !important;
+  }
+
+  .card-img img {
+    max-height: 139px;
   }
 }
 

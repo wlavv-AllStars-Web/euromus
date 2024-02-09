@@ -126,7 +126,7 @@
 
             <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
             
-              <div class="videosContainer">
+              <div class="videosContainer" style="  flex-direction: row;">
               {foreach $array_videos AS $index => $video}
                 <div class="video3 video">
                   <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
@@ -160,7 +160,7 @@
     .videosContainer
 {
   display: flex;
-  flex-direction: row !important;
+
   justify-content: center;
   gap: 5px;
   padding: 2rem 15px;
@@ -231,7 +231,8 @@
         width: 100%;
         object-fit: cover;
         height: 100%;
-        min-height: 214px;
+        min-height: 222px;
+        max-height: 222px;
     }
 
     .card-min-img {
@@ -252,6 +253,8 @@
         width: 100%;
         height: 100%;
         object-fit: cover;
+        max-height: 71px;
+        min-height: 71px;
     }
 
 

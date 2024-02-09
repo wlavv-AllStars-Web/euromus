@@ -23,8 +23,8 @@
                 <div style="width: 25%;border: 1px solid #000;">
                     <input type="hidden" value="$mobile_icon_1['active']" name="active"> 
                     <div style="padding: 5px;margin-top: 10px;padding: 0 10px;">
-                        <div style="display: flex;">
-                            <div style="width: 45%; float: left;">
+                        <div style="display: flex;flex-wrap:wrap;">
+                            <div style="width: 45%;">
                                 <label>Select brand</label> 
                                 <select id="select_brand_{$mobile['id']}" name="link" onclick="setImageText(this, {$mobile['id']}, 'select_car_{$mobile['id']}')">
                                     <option value="">---</option>
@@ -34,8 +34,8 @@
                                     {/foreach}
                                 </select>
                             </div>
-                            <div style="width: 10%; float: left;"> <div style="color: black; font-weight: bolder; font-size: 20px; text-transform: uppercase; text-align: center;" ></div> </div>
-                            <div style="width: 45%; float: left;">
+                            <div style="width: 10%;"> <div style="color: black; font-weight: bolder; font-size: 20px; text-transform: uppercase; text-align: center;" ></div> </div>
+                            <div style="width: 45%;">
                                 {assign var="compat" value="`$mobile['brand']`_`$mobile['model']`_`$mobile['type']`_`$mobile['version']`"}
                                 <label>Select car</label> 
                                 <select id="select_car_{$mobile['id']}" name="car" onclick="setImageText(this, {$mobile['id']}, 'select_brand_{$mobile['id']}');">
@@ -46,6 +46,10 @@
                                     {/foreach}
                                    
                                 </select>
+                            </div>
+                            <div style="width: 100%;display:flex;flex-direction: column;margin:0.5rem 0;">
+                                <label style="color: #103054;">ID of Product</label> 
+                                <input class="id_product_input" style="width: 100%;height:39px;color: #555;font-size:0.85rem;" name="link_[{$mobile['id']}]" type="number" value="{$mobile['link']}" placeholder="0" id="link_{$mobile['id']}" onchange="setIdProduct(this,{$mobile['id']})">  
                             </div>
                         </div>
                         <div style="margin-top: 20px;">
@@ -95,7 +99,7 @@
             <div style="width: 100%;">
                 <img style="width: 100%;" src="/modules/wmmodule_homepage/views/images/body_mobile{$currentShop}.png"> 
             </div>
-            <div class="videosContainer">
+            <div class="videosContainer" style="flex-direction:column;">
                 {foreach $array_videos AS $index => $video}
                     <div class="video3 video">
                     <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
