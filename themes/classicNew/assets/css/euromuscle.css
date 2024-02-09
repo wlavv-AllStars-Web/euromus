@@ -2309,7 +2309,7 @@ header.page-header {
 
 @media screen and (min-width:1301px){
   .text_partners {
-    min-height: 316px !important;
+    min-height: auto !important;
   }
 }
 
@@ -2330,12 +2330,18 @@ header.page-header {
 }
 
 #cms-partners .p-3 {
-  padding: 1rem !important;
+  padding: 0rem !important;
+  width: 385px;
+  margin: 1rem;
 }
 
 #cms-partners .cards {
   /* max-width:1350px; */
   margin:1rem auto;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .button_partners {
@@ -2367,14 +2373,25 @@ header.page-header {
   height: auto;
   background-color: #707c88a1;
   color: white;
-  /* min-height: 465px; */
+
   border-radius: 5px;
   overflow: hidden;
-  min-width: 254px;
+  min-width: 385px;
+  min-height: 552px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.image_container_partners {
+  display: flex;
+  justify-content: center;
+  background: #fff;
 }
 
 .card_partners .image_partners {
   width: 100%;
+  max-width: 300px;
 }
 .text_partners {
   font-family: system-ui, -apple-system, 
@@ -2391,7 +2408,7 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
     -webkit-hyphens: auto;
     text-align: center;
     font-weight: 600;
-    min-height: 314px;
+    /* min-height: 314px; */
 }
 
 .text_partners .title_company {
@@ -2402,7 +2419,6 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 
 .button_container_partners {
   padding: 0 20px 10px 20px;
-  margin: 20px auto 20px auto;
   text-align: center;
   display: grid;
 }
