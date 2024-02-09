@@ -88,10 +88,11 @@ main {
 /* mobile */
 @media screen and (max-width:767px) {
   .cms-id-43 #wrapper {
-    background-color: #103054;
+    background-color: #e6e6e6;
+    padding-block: 0;
   }
   .cms-id-43 #content {
-    background-color: #103054 !important;
+    background-color: #e6e6e6 !important;
     padding: 0;
   }
   #terms {
@@ -101,7 +102,7 @@ main {
     gap: 1rem;
     display: flex;
     flex-direction: column;
-    background: #f6f6f6;
+    background: #e6e6e6;
     color: #103054;
     border-radius: 0.5rem;
   }
@@ -1118,14 +1119,14 @@ main {
 }
 
 .cms-id-43 #wrapper {
-  background-color: #103054;
+  background-color: #e6e6e6;
 }
 .cms-id-43 #content {
-  background-color: #103054 !important;
+  background-color: #e6e6e6 !important;
 }
 #terms {
   margin: auto;
-  width: 78%;
+  width: 100%;
   text-align: center;
   gap: 1rem;
   display: flex;
@@ -1158,10 +1159,10 @@ main {
     }
     /* terms */
     .cms-id-43 #wrapper {
-      background-color: #103054;
+      background-color: #e6e6e6;
     }
     .cms-id-43 #content {
-      background-color: #103054 !important;
+      background-color: #e6e6e6 !important;
     }
     #terms {
       margin: auto;
