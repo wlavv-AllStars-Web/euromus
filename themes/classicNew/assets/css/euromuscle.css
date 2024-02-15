@@ -2490,3 +2490,51 @@ justify-content: space-between;
 display: flex;
 justify-content: center;
 }
+
+
+
+/* product details page */
+
+#product .container {
+  width: 100%;
+}
+
+
+#main .images-container .js-qv-mask.scroll {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+
+  width: calc(46% - 60px);
+  margin: 0 auto;
+}
+
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+  border-bottom: 1px dotted #103054; 
+  opacity: 1 !important;/* If you want dots under the hoverable text */
+}
+
+/* Tooltip text */
+.tooltip .tooltiptext {
+  visibility: hidden;
+  width: 240px;
+  background-color: #103054;
+  color: #fff;
+  text-align: center;
+  padding: 5px;
+  border-radius: 6px;
+ 
+  /* Position the tooltip text - see examples below! */
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 1rem;
+}
+
+/* Show the tooltip text when you mouse over the tooltip container */
+.tooltip:hover .tooltiptext {
+  visibility: visible;
+}
