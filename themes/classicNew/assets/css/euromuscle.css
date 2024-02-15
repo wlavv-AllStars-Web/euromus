@@ -2531,7 +2531,7 @@ justify-content: center;
   position: absolute;
   z-index: 1;
   right: 0;
-  top: 1rem;
+  top: 3rem;
 }
 
 /* Show the tooltip text when you mouse over the tooltip container */
