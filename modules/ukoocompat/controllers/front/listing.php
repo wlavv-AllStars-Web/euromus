@@ -56,8 +56,6 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $result = new ProductSearchResult();
         // $totalProductsCount = $result->getTotalProductsCount();
 
-//         echo var_dump($result);
-// exit;
 
         // echo '<pre>' . print_r($sortOrders, true) . '</pre>';
         // exit;
@@ -251,7 +249,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             true
         );
         
-        
+
         // $itemsPerPage = Configuration::get('PS_PRODUCTS_PER_PAGE');
 
         // $pagination = $this->getPagination($nb_products, $p, $itemsPerPage);
@@ -294,7 +292,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $pagination = $this->getTemplateVarPagination($query, $result);
         $this->context->smarty->assign($pagination);
 
-        // echo '<pre>'.print_r($paginationData,1).'</pre>';
+        // echo '<pre>'.print_r($pagination,1).'</pre>';
         // exit;
         // paulo
         // $this->addColorsToProductList($productsUniversal);
@@ -373,10 +371,10 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $id_row=0;
 
         
-        if(isset($this->context->customer->id)) {
-            $id_customer = $this->context->customer->id;
-            $id_row = Db::getInstance()->getValue("Select id FROM ps_ASM_ukoo_customer WHERE id_brand = " . $getData['filters1'] . " AND id_model = " . $getData['filters2'] . " AND id_type = " . $getData['filters3'] . " AND id_version = " . $getData['filters4'] . " AND id_customer = " . $this->context->customer->id);
-        }
+        // if(isset($this->context->customer->id)) {
+        //     $id_customer = $this->context->customer->id;
+        //     $id_row = Db::getInstance()->getValue("Select id FROM eu_ASM_ukoo_customer WHERE id_brand = " . $getData['filters1'] . " AND id_model = " . $getData['filters2'] . " AND id_type = " . $getData['filters3'] . " AND id_version = " . $getData['filters4'] . " AND id_customer = " . $this->context->customer->id);
+        // }
 
         // echo '<pre>'.print_r($products,1).'</pre>';
         // exit;
