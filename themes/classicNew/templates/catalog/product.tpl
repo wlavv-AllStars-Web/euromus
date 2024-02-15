@@ -200,7 +200,7 @@
       {* <pre>{print_r($product,1)}</pre> *}
       <div class="tabs">
         <ul class="nav nav-tabs" role="tablist">
-          {if $product.description}
+          {* {if $product.description} *}
             <li class="nav-item">
                <a
                  class="nav-link{if $product.description} active js-product-nav-active{/if}"
@@ -210,7 +210,7 @@
                  aria-controls="description"
                  {if $product.description} aria-selected="true"{/if}>{l s='Product Description' d='Shop.Theme.Catalog'}</a>
             </li>
-          {/if}
+          {* {/if} *}
           <li class="nav-item">
             <a
               class="nav-link"
@@ -262,15 +262,21 @@
 
         <div class="tab-content" id="tab-content">
          <div class="tab-pane fade in{if $product.description} active js-product-tab-active{/if}" id="description" role="tabpanel">
+          {if $product.description}
            {block name='product_description'}
              <div class="product-description">{$product.description nofilter}</div>
            {/block}
-           <div class="product_features">
-                    {* <pre>{print_r($product.features,1)}</pre> *}
-              {foreach from=$product.features item=feature}
-                <div style="padding: 0.5rem 1rem;"><b>{$feature.name}:</b> {$feature.value}</div>
-              {/foreach}
-            </div>
+            {if $product.features}
+              <div class="product_features">
+                        {* <pre>{print_r($product.features,1)}</pre> *}
+                  {foreach from=$product.features item=feature}
+                    <div style="padding: 0.5rem 1rem;"><b>{$feature.name}:</b> {$feature.value}</div>
+                  {/foreach}
+                </div>
+                {/if}
+            {else}
+              <p>No Description</p>
+            {/if}
          </div>
 
          {* <div class="tab-pane fade in" id="product-installation" role="tabpanel">
