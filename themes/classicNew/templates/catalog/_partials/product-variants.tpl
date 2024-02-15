@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="product-variants js-product-variants">
+<div class="product-variants js-product-variants" style="width: 100%;padding:0.5rem 1rem;">
   {foreach from=$groups key=id_attribute_group item=group}
     {if !empty($group.attributes)}
     <div class="clearfix product-variants-item">
@@ -37,7 +37,9 @@
           id="group_{$id_attribute_group}"
           aria-label="{$group.name}"
           data-product-attribute="{$id_attribute_group}"
-          name="group[{$id_attribute_group}]">
+          name="group[{$id_attribute_group}]"
+          style="width: 100%;"
+          >
           {foreach from=$group.attributes key=id_attribute item=group_attribute}
             <option value="{$id_attribute}" title="{$group_attribute.name}"{if $group_attribute.selected} selected="selected"{/if}>{$group_attribute.name}</option>
           {/foreach}

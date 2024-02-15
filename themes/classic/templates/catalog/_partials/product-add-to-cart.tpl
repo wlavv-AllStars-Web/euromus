@@ -65,7 +65,7 @@
       </div>
     {/block}
 
-    {block name='product_availability'}
+    {* {block name='product_availability'}
       <span id="product-availability" class="js-product-availability">
         {if $product.show_availability && $product.availability_message}
           {if $product.availability == 'available'}
@@ -78,7 +78,7 @@
           {$product.availability_message}
         {/if}
       </span>
-    {/block}
+    {/block} *}
 
     {block name='product_minimal_quantity'}
       <p class="product-minimal-quantity js-product-minimal-quantity">
