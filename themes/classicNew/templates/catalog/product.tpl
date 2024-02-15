@@ -260,8 +260,11 @@
           </li>
         </ul>
 
+        {* tabs content *}
+
         <div class="tab-content" id="tab-content">
          <div class="tab-pane fade in active" id="description" role="tabpanel">
+         <pre>{print_r($product,1)}</pre>
           {if $product.description}
            {block name='product_description'}
              <div class="product-description">{$product.description nofilter}</div>
@@ -274,9 +277,10 @@
                   {/foreach}
                 </div>
                 {/if}
-            {else}
+          {else}
+            <pre>{print_r($product,1)}</pre>
               <p>No Description</p>
-            {/if}
+          {/if}
          </div>
 
          {* <div class="tab-pane fade in" id="product-installation" role="tabpanel">
