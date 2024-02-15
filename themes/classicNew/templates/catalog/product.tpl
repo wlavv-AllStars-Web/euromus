@@ -109,7 +109,7 @@
                   {/block}
                   {block name='product_availability'}
               
-                    <span id="product-availability" class="js-product-availability" style="text-align:end;width:50%;padding: 0.25rem 1rem;">
+                    <span id="product-availability" class="js-product-availability" style="text-align:end;padding: 0.25rem 1rem;flex:0.85;">
                       {if $product.show_availability && $product.availability_message}
                         {if $product.availability == 'available'}
                         {* <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i> *}

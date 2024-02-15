@@ -89,12 +89,12 @@
     {/block}
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
-
-    <div class="tax-shipping-delivery-label" style="display: flex;align-items:center;margin-left:0.5rem;">
+    <div class="tax-shipping-delivery-label" style="display: flex;align-items:center;margin-left:0.5rem;flex:0.55;">
       {if !$configuration.taxes_enabled}
         {l s='No tax' d='Shop.Theme.Catalog'}
       {elseif $configuration.display_taxes_label}
-        {$product.labels.tax_long}
+        {* {$product.labels.tax_long} *}
+        {l s='VAT,TAXES AND SHIPPING INCLUDED TO EUROPE' d='Shop.Theme.Catalog'}
       {/if}
       {hook h='displayProductPriceBlock' product=$product type="price"}
       {hook h='displayProductPriceBlock' product=$product type="after_price"}
