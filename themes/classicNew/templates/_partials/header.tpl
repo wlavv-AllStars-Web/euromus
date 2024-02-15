@@ -261,7 +261,7 @@ window.onload = function() {
 };
 
 const dropdownBrands = document.querySelector('li .dropbtn');
-const dropdownBrandsCaret = document.querySelector('li.dropdown i');
+// const dropdownBrandsCaret = document.querySelector('li.dropdown i');
 const dropdownContent = document.querySelector('ul.dropdown-content');
 
 dropdownBrands.addEventListener('click', (e) => {
@@ -282,7 +282,6 @@ function toggleDropdown() {
   if (!dropdownContent.style.display || dropdownContent.style.display === "none") {
     dropdownContent.style.display = "flex";
     dropdownContent.style.flexWrap = "wrap";
-    dropdownBrandsCaret.style.transform = "rotate(0deg)";
   } else {
     closeDropdown();
   }
@@ -290,7 +289,6 @@ function toggleDropdown() {
 
 function closeDropdown() {
   dropdownContent.style.display = "none";
-  dropdownBrandsCaret.style.transform = "rotate(-90deg)";
 }
 
 
