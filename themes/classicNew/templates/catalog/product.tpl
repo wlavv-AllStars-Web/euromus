@@ -261,7 +261,7 @@
         </ul>
 
         <div class="tab-content" id="tab-content">
-         <div class="tab-pane fade in{if $product.description} active js-product-tab-active{/if}" id="description" role="tabpanel">
+         <div class="tab-pane fade in active" id="description" role="tabpanel">
           {if $product.description}
            {block name='product_description'}
              <div class="product-description">{$product.description nofilter}</div>
