@@ -22,10 +22,11 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="product-variants js-product-variants" style="width: 100%;padding:0.5rem 1rem;">
+<div class="product-variants js-product-variants" style="width: 100%;padding:0.5rem 1rem;display:flex;gap:0.5rem;">
   {foreach from=$groups key=id_attribute_group item=group}
+    {* <pre>{print_r($group,1)}</pre> *}
     {if !empty($group.attributes)}
-    <div class="clearfix product-variants-item">
+    <div class="clearfix product-variants-item" style="flex: 1;">
       <span class="control-label">{$group.name}{l s=': ' d='Shop.Theme.Catalog'}
           {foreach from=$group.attributes key=id_attribute item=group_attribute}
             {if $group_attribute.selected}{$group_attribute.name}{/if}
