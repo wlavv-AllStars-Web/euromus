@@ -515,7 +515,7 @@
             <div class="categoryCars" style="display: flex;justify-content:space-evenly;width:100%;padding:3rem 0;">
               {foreach from=$categories[1] item=categoryLevel1}
                 {foreach from=$categoryLevel1 item=category}
-                  {if $category.id_category != 2}
+                  {if $category.id_category != 2 && $category.id_category != 15}
                     {if $category.id_category == 14}
                       <a rel="nofollow" href="http://tune4style.com/{$currentLanguageIso}" class="select-list ">
                         <div class="category {$category.name}">
