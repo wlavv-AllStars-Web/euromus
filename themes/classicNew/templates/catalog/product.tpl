@@ -213,7 +213,7 @@
           {/if}
           <li class="nav-item">
             <a
-              class="nav-link{if !$product.description} active js-product-nav-active{/if}"
+              class="nav-link"
               data-toggle="tab"
               href="#product-installation"
               role="tab"
@@ -222,7 +222,7 @@
           </li>
           <li class="nav-item">
             <a
-              class="nav-link{if !$product.description} active js-product-nav-active{/if}"
+              class="nav-link"
               data-toggle="tab"
               href="#compatibilities"
               role="tab"
@@ -251,7 +251,7 @@
           {/foreach}
           <li class="nav-item">
             <a
-              class="nav-link{if !$product.description} active js-product-nav-active{/if}"
+              class="nav-link"
               data-toggle="tab"
               href="#product_reviews"
               role="tab"
