@@ -1082,7 +1082,7 @@ class UkooCompat extends Module
                 }
 
                 Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('
-                        INSERT INTO ps_ukoocompat_compat_asm (id_ukoocompat_compat, id_filter_value_1, id_filter_value_2, id_filter_value_3, id_filter_value_4) 
+                        INSERT INTO '._DB_PREFIX_.'ukoocompat_compat_asm (id_ukoocompat_compat, id_filter_value_1, id_filter_value_2, id_filter_value_3, id_filter_value_4) 
                         VALUES (' . $compatibility->id . ', ' . $id_filter_1 . ', ' . $id_filter_2 . ', ' . $id_filter_3 . ', ' . $id_filter_4 . ')'
                 );
 

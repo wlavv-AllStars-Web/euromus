@@ -15,7 +15,7 @@
         <thead>
             <tr>
                 {foreach from=$tab.search->filters item=filter}
-                    {if $filter->id != 10}<th class="even">{$filter->name|escape:'htmlall':'UTF-8'}</th> {/if}
+                    {if $filter->id != 10}<th class="even" style="color: #ee302e;">{$filter->name|escape:'htmlall':'UTF-8'}</th> {/if}
                 {/foreach}
             </tr>
         </thead>
