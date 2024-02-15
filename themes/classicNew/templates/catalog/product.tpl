@@ -138,7 +138,7 @@
                   <div class="product_features">
                     {* <pre>{print_r($product.features,1)}</pre> *}
                     {foreach from=$product.features item=feature}
-                      <div style="padding: 0rem 2rem;"><b>{$feature.name}:</b> {$feature.value}</div>
+                      <div style="padding: 0.2rem 2rem;"><b>{$feature.name}:</b> {$feature.value}</div>
                     {/foreach}
                   </div>
 
