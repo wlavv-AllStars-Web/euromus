@@ -60,11 +60,11 @@
 
               {block name='product_cover_thumbnails'}
                 {include file='catalog/_partials/product-cover-thumbnails.tpl'}
-                <div class="scroll-box-arrows">
-                <i class="material-icons left" style="bottom:0rem;left:115px;transform:rotate(-90deg)">&#xE314;</i>
-                <i class="material-icons right" style="top:0px;left:115px;transform:rotate(-90deg)">&#xE315;</i>
-              </div>
               {/block}
+              <div class="scroll-box-arrows">
+              <i class="material-icons left" style="bottom:0rem;left:80px;transform:rotate(-90deg)">&#xE314;</i>
+              <i class="material-icons right" style="top:0px;left:80px;transform:rotate(-90deg)">&#xE315;</i>
+            </div>
               
 
             {/block}

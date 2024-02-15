@@ -24,7 +24,7 @@
  *}
 <div class="images-container js-images-container" style="display: flex; flex-direction:row-reverse;height:100%;width:100%;">
   {block name='product_cover'}
-    <div class="product-cover" style="width: 70%;">
+    <div class="product-cover" style="width: 80%;">
       {if $product.default_image}
         <picture>
           {if !empty($product.default_image.bySize.large_default.sources.avif)}<source srcset="{$product.default_image.bySize.large_default.sources.avif}" type="image/avif">{/if}
@@ -64,7 +64,7 @@
   {/block}
 
   {block name='product_images'}
-    <div class="js-qv-mask mask" style="display: flex;justify-content:center;align-items:center;width:10vw;">
+    <div class="js-qv-mask mask" style="display: flex;justify-content:center;align-items:center;width:10vw;margin:0;">
       <ul class="product-images js-qv-product-images" style="display: flex;flex-direction:column;margin-top:1rem;">
         {foreach from=$product.images item=image}
           <li class="thumb-container js-thumb-container">
