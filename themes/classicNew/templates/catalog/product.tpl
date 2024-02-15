@@ -51,7 +51,7 @@
   <section id="main">
     <meta content="{$product.url}">
 
-    <div class="row product-container js-product-container">
+    <div class="row product-container js-product-container" style="display: flex;align-items:center;">
       <div class="col-md-6" style="height: 60vh;">
         {block name='page_content_container'}
           <section class="page-content" id="content" style="height: 100%;max-width:none;margin:0;">
@@ -268,14 +268,13 @@
            {block name='product_description'}
              <div class="product-description">{$product.description nofilter}</div>
            {/block}
-            {if $product.features}
+            {* {if $product.features}
               <div class="product_features">
-                        {* <pre>{print_r($product.features,1)}</pre> *}
                   {foreach from=$product.features item=feature}
                     <div style="padding: 0.5rem 1rem;"><b>{$feature.name}:</b> {$feature.value}</div>
                   {/foreach}
                 </div>
-                {/if}
+                {/if} *}
           {else}
               <p>No Description</p>
           {/if}
