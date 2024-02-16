@@ -2687,12 +2687,16 @@ justify-content: center;
 @media screen and (max-width: 768px) {
   .row.product-container.js-product-container .left-side{
     height: auto !important;
+    width: 100%;
   }
   .images-container.js-images-container {
     flex-direction: column;
   }
   .images-container.js-images-container .product-cover{
     width: 100%;
+  }
+  .images-container.js-images-container .product-cover img{
+    max-height: 360px;
   }
   .images-container.js-images-container .js-qv-mask.mask{
     width: 100% !important;
@@ -2765,6 +2769,8 @@ justify-content: center;
   .right-side .prices-availability #product-availability{
     width: 100%;
     margin-bottom: 2rem;
+    padding: 0.25rem 0.5rem;
+    text-align: start;
   }
   .right-side .product_features > div{
     padding: 0.2rem 0.5rem !important;
