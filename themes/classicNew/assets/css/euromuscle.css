@@ -2772,6 +2772,13 @@ justify-content: center;
     padding: 0.25rem 0.5rem;
     text-align: start;
   }
+
+  .tooltip .tooltiptext{
+    left: -7rem;
+    top: -9rem;
+    right: unset;
+  }
+
   .right-side .product_features > div{
     padding: 0.2rem 0.5rem !important;
   }
