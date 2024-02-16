@@ -134,7 +134,7 @@
             <ul class="content_brands">
             {foreach from=$manufacturers item=$manufacturer }
               <li class="col-lg-3">
-              <a href="/{$currentLanguage->iso_code }/{l s='brand' d='Shop.Theme.euromuscle'}/{$manufacturer.id_manufacturer}-{$manufacturer.link_rewrite}">
+              <a href="/{$currentLanguage->iso_code }/brand/{$manufacturer.id_manufacturer}-{$manufacturer.link_rewrite}">
               <img src="/img/tmp/manufacturer_mini_{$manufacturer.id_manufacturer}.jpg" width="100%" style="max-width: 100px;" />
               </a>
               </li>

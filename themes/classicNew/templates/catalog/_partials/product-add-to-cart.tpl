@@ -22,13 +22,13 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="product-add-to-cart js-product-add-to-cart" style="width: 100%;padding:0.5rem 1rem;">
+<div class="product-add-to-cart js-product-add-to-cart">
   {if !$configuration.is_catalog}
     <span class="control-label">{l s='Quantity' d='Shop.Theme.Catalog'}</span>
 
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
-        <div class="qty" style="width: 10%;">
+        <div class="qty">
           <input
             type="number"
             name="qty"
@@ -47,7 +47,7 @@
           >
         </div>
 
-        <div class="add" style="width:90%">
+        <div class="add">
           <button
             class="btn btn-primary add-to-cart"
             data-button-action="add-to-cart"
@@ -55,7 +55,6 @@
             {if !$product.add_to_cart_url}
               disabled
             {/if}
-            style="width: 100%;"
           >
             <i class="material-icons shopping-cart">&#xE547;</i>
             {l s='Add to cart' d='Shop.Theme.Actions'}

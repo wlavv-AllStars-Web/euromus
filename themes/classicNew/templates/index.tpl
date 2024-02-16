@@ -69,7 +69,6 @@
             <div class="lines-tablet" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
             
             <div class="bannersHome">
-            <pre>{print_r($productProperties,1)}</pre>
               {foreach from=$desktop['icones_50'] item=item key=key name=name }
                 {assign var="url" value=$item["image_{$currentLanguageIso}"]}
                 {assign var="numberString" value="`$url`"|regex_replace:"/.*\/(\d+)_(\d+)_(\d+)_(\d+)_.*$/":"$1,$2,$3,$4"}

@@ -51,10 +51,10 @@
   <section id="main">
     <meta content="{$product.url}">
 
-    <div class="row product-container js-product-container" style="display: flex;align-items:center;">
-      <div class="col-md-6" style="height: 60vh;">
+    <div class="row product-container js-product-container">
+      <div class="col-md-6 left-side" >
         {block name='page_content_container'}
-          <section class="page-content" id="content" style="height: 100%;max-width:none;margin:0;">
+          <section class="page-content" id="content" >
             {block name='page_content'}
               {* {include file='catalog/_partials/product-flags.tpl'} *}
 
@@ -62,8 +62,8 @@
                 {include file='catalog/_partials/product-cover-thumbnails.tpl'}
               {/block}
               <div class="scroll-box-arrows">
-              <i class="material-icons left" style="bottom:0rem;left:80px;transform:rotate(-90deg)">&#xE314;</i>
-              <i class="material-icons right" style="top:0px;left:80px;transform:rotate(-90deg)">&#xE315;</i>
+              <i class="material-icons left" >&#xE314;</i>
+              <i class="material-icons right" >&#xE315;</i>
             </div>
               
 
@@ -71,17 +71,24 @@
           </section>
         {/block}
         </div>
-        <div class="col-md-6" style="padding-right: 4rem;">
+        <div class="col-md-6 right-side" >
           {block name='page_header_container'}
             {block name='page_header'}
-              <h1 class="h1" style="color: #ee302e; text-align:center;">{block name='page_title'}{$product.name}{/block}</h1>
+              <h1 class="h1">{block name='page_title'}{$product.name}{/block}</h1>
             {/block}
           {/block}
-{* <pre>{print_r($product,1)}</pre> *}
-          <div style="display: flex;flex-wrap:wrap;margin-bottom: 1rem;">
-            <div style="width:100%; text-align:center;margin-bottom:2rem;"><b>Reference:</b> {$product.reference}</div>
-            <div style="width:50%;"><b>Brand:</b> {$product.manufacturer_name}</div>
-            <div style="width:50%;text-align:end;padding: 0.25rem 1rem;"><b>Pay in 3 or 4 Installment</b></div>
+
+          {assign var="linkPayment" value=$link->getCMSLink(47)}
+          {assign var="manufacturers" value=Manufacturer::getManufacturers()}
+
+          <div class="subtitles-details">
+            <div class="details-reference"><b>Reference:</b> {$product.reference}</div>
+            {foreach from=$manufacturers item=item}
+              {if $item.name === $product.manufacturer_name}
+              <div class="details-brand"><b>Brand:</b> <span><a href="/brand/{$item.id_manufacturer}-{$item.link_rewrite}">{$product.manufacturer_name}</a></span></div>
+              {/if}
+            {/foreach}
+            <div class="details-payment"><a href="{$linkPayment}">Pay in 3 or 4 Installment</a></div>
           </div>
           
 
@@ -96,20 +103,20 @@
               {/block}
             {/if}
 
-            <div class="product-actions js-product-actions" style="background:#f2f2f2;">
+            <div class="product-actions js-product-actions">
               {block name='product_buy'}
                 <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
                   <input type="hidden" name="token" value="{$static_token}">
                   <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
                   <input type="hidden" name="id_customization" value="{$product.id_customization}" id="product_customization_id" class="js-product-customization-id">
                   {* availability  and price *}
-                  <div style="display: flex;justify-content:center;align-items:center;">
+                  <div class="prices-availability" >
                   {block name='product_prices'}
                     {include file='catalog/_partials/product-prices.tpl'}
                   {/block}
                   {block name='product_availability'}
               
-                    <span id="product-availability" class="js-product-availability" style="text-align:end;padding: 0.25rem 1rem;flex:0.85;">
+                    <span id="product-availability" class="js-product-availability" >
                       {if $product.show_availability && $product.availability_message}
                         {if $product.availability == 'available'}
                         {* <i class="material-icons rtl-no-flip product-available">&#xE5CA;</i> *}
@@ -119,17 +126,35 @@
                           <div style="font-weight: 700;">Availability: <span style="background: #ff9a52;color:#f2f2f2;padding: 0.25rem 0.5rem;">{$product.availability_message}</span></div>
                           {else}
                             {* <i class="material-icons product-unavailable">&#xE14B;</i> *}
-                            <div style="font-weight: 700;">Availability: <span style="background: #ee302e;color:#f2f2f2;padding: 0.25rem 1rem;">{$product.availability_message}</span></div>
+                            <div style="font-weight: 700;">Availability: <span style="background: #ee302e;color:#f2f2f2;padding: 0.25rem 1rem;">{$product.availability_message}</span>
+                            <div class="tooltip" style="font-size: 1rem;width:15px;text-align:center;cursor:pointer;">?
+                              <div class="tooltiptext">This product is currently out of stock or requires a specific order. Please check ETA mentioned as working days to know approximate shipping date for this item.</div>
+                            </div>
+                            </div>
                           {/if}
                       {else}
                         <div style="font-weight: 700;">Availability: 
                           <span style="background: #5eac2d;color:#f2f2f2;padding: 0.25rem 0.5rem;">In Stock</span>
-                          <div class="tooltip" style="font-size: 1rem;width:15px;text-align:center;cursor:pointer;">?
+                          <div class="tooltip" onclick="OpenTooltip(this)" style="font-size: 1rem;width:15px;text-align:center;cursor:pointer;">?
                             <div class="tooltiptext">This product is in stock in our warehouses and will ship the same day if ordered before 12:30 or next weekday if ordered later</div>
                           </div>
                         </div>
                       {/if}
                     </span>
+                    <script>
+                      function OpenTooltip(element){
+                        const tooltip = element;
+                        const tooltipText = element.querySelector(".tooltiptext");
+                        tooltipText.style.visibility = "visible";
+                        document.body.addEventListener("click", function(event) {
+                            // Check if the click is outside the tooltip
+                            if (!tooltip.contains(event.target)) {
+                                // If outside, hide the tooltip
+                                tooltipText.style.visibility = "hidden";
+                            }
+                        });
+                      }
+                    </script>
                   {/block}
                   </div>
 
@@ -144,7 +169,7 @@
 
                   {* end features *}
 
-                  <div style="display: flex;justify-content:center;align-items:baseline;flex-direction:column;padding:0.5rem 1rem;">
+                  <div class="product-details-options">
                     
                     {block name='product_pack'}
                       {if $packItems}

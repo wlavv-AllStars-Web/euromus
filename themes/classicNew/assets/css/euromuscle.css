@@ -2494,19 +2494,11 @@ justify-content: center;
 
 
 /* product details page */
+/* ----------------------------------------------------------------------------------------------------------- */
+
 
 #product .container {
   width: 100%;
-}
-
-
-#main .images-container .js-qv-mask.scroll {
-  display: flex;
-  justify-content: start;
-  align-items: center;
-
-  width: calc(46% - 60px);
-  margin: 0 auto;
 }
 
 
@@ -2537,4 +2529,269 @@ justify-content: center;
 /* Show the tooltip text when you mouse over the tooltip container */
 .tooltip:hover .tooltiptext {
   visibility: visible;
+}
+
+.row.product-container.js-product-container {
+  display: flex;
+  align-items: center;
+}
+
+.row.product-container.js-product-container .left-side{
+  height: 60vh;
+}
+
+.left-side #content {
+  height: 100%;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.left-side #content .scroll-box-arrows .left{
+  bottom:0rem;left:80px;transform:rotate(-90deg)
+}
+.left-side #content .scroll-box-arrows .right{
+  top:0px;left:80px;transform:rotate(-90deg)
+}
+
+.row.product-container.js-product-container .right-side{
+  padding-right: 4rem;
+}
+
+.right-side .h1{
+  color: #ee302e;
+  text-align: center;
+}
+
+.right-side .subtitles-details {
+  display: flex;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.right-side .subtitles-details .details-reference {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.right-side .subtitles-details .details-brand {
+  width: 50%;
+}
+
+.right-side .subtitles-details .details-payment {
+  width: 50%;
+  text-align: end;
+  padding: 0.25rem 1rem;
+}
+
+.right-side .product-actions {
+  background: #f2f2f2 !important;
+}
+
+.right-side .prices-availability{
+  display: flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.right-side .prices-availability #product-availability {
+  text-align:end;
+  padding: 0.25rem 1rem;
+  flex:0.85;
+}
+
+.right-side .product-details-options {
+  display: flex;
+  justify-content:center;
+  align-items:baseline;
+  flex-direction:column;
+  padding:0.5rem 1rem;
+}
+
+/* product prices tpl */
+
+.product-prices.js-product-prices{
+  display: flex;
+}
+
+.product-prices.js-product-prices .current-price-value {
+  font-size: 2.5rem;
+}
+
+.product-prices.js-product-prices .tax-shipping-delivery-label {
+  display: flex;
+  align-items:center;
+  margin-left:0.5rem;
+  flex:0.55;
+}
+
+/* product variants tpl */
+
+.product-variants.js-product-variants {
+  width: 100%;padding:0.5rem 1rem;display:flex;gap:0.5rem;
+}
+
+.product-variants.js-product-variants .product-variants-item{
+  flex: 1;
+}
+
+/* product tab content ukoo tpl */
+
+#ukoocompat_tabcontent .even {
+  color: #ee302e;
+}
+
+
+/* cover thumbnails tpl */
+
+.images-container.js-images-container {
+  display: flex; 
+  flex-direction:row-reverse;
+  height:100%;
+  width:100%;
+}
+
+.images-container.js-images-container .product-cover {
+  width: 80%;
+}
+
+.images-container.js-images-container .product-cover .js-qv-product-cover.img-fluid {
+  object-fit: contain;height:100%;width:100%;
+}
+
+.images-container.js-images-container .js-qv-mask.mask {
+  display: flex !important;justify-content:center !important;align-items:center !important;width:10vw !important;margin:0 !important;
+}
+
+.images-container.js-images-container .js-qv-mask.mask .product-images {
+  display: flex;flex-direction:column;margin-top:1rem;
+}
+
+
+/* add to cart tpl */
+
+.product-add-to-cart.js-product-add-to-cart {
+  width: 100%;
+  padding:0.5rem 1rem;
+}
+.product-add-to-cart.js-product-add-to-cart .product-quantity .qty {
+  width: 10%;
+}
+.product-add-to-cart.js-product-add-to-cart .product-quantity .add {
+  width: 90%;
+}
+.product-add-to-cart.js-product-add-to-cart .product-quantity .add .add-to-cart{
+  width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+  .row.product-container.js-product-container .left-side{
+    height: auto !important;
+  }
+  .images-container.js-images-container {
+    flex-direction: column;
+  }
+  .images-container.js-images-container .product-cover{
+    width: 100%;
+  }
+  .images-container.js-images-container .js-qv-mask.mask{
+    width: 100% !important;
+  }
+  .images-container.js-images-container .js-qv-mask.mask .product-images {
+    flex-direction: row;
+    gap: 0.5rem;
+  }
+
+  .left-side #content .scroll-box-arrows .left{
+    position: absolute;
+    left: 0;
+    bottom: 1.625rem;
+    height: 100px;
+    line-height: 100px;
+    cursor: pointer;
+    transform: rotate(0);
+  }
+  .left-side #content .scroll-box-arrows .right {
+    position: absolute;
+    bottom: 1.625rem;
+    right: 0;
+    left: unset;
+    height: 100px;
+    line-height: 100px;
+    cursor: pointer;
+    top: unset;
+    transform: rotate(0);
+  }
+  .images-container .product-images > li.thumb-container .thumb{
+    margin-right: unset;
+  }
+
+  .row.product-container.js-product-container .right-side{
+    padding-right: 15px;
+  }
+
+  .right-side .subtitles-details .details-reference{
+    margin: 1rem 0 0.5rem 0;
+    text-align: start;
+  }
+  .right-side .subtitles-details .details-brand{
+    width: 100%;
+  }
+  .right-side .subtitles-details .details-brand span{
+    color: #ee302e;
+    text-decoration: underline;
+  }
+  .right-side .subtitles-details .details-payment{
+    width: 100%;
+    text-align: start;
+    color: #ee302e;
+    padding: 0.5rem 0; 
+    text-decoration: underline;
+  }
+
+  .right-side .prices-availability{
+    display: flex;
+    flex-direction: column;
+  }
+  .right-side .prices-availability .product-price{
+    flex: 1;
+  }
+  .product-prices.js-product-prices .current-price-value{
+    padding: 0 0.5rem !important;
+  }
+  .right-side .prices-availability .tax-shipping-delivery-label{
+    flex: 1;
+  }
+  .right-side .prices-availability #product-availability{
+    width: 100%;
+    margin-bottom: 2rem;
+  }
+  .right-side .product_features > div{
+    padding: 0.2rem 0.5rem !important;
+  }
+  .product-add-to-cart.js-product-add-to-cart .product-quantity .qty{
+    width: 35%;
+  }
+  .product-add-to-cart.js-product-add-to-cart .product-quantity .qty .input-group{
+    width: max-content;
+  }
+
+  .tabs .nav-tabs .nav-item{
+    width: 100%;
+  }
+  .tabs {
+    padding: 1.25rem 1rem;
+  }
+  .tabs .table td{
+    padding: 0.5rem;
+    vertical-align: middle;
+    font-size: 0.8rem;
+  }
+  #product_reviews #product-comments-list-header{
+    flex-direction: column;
+  }
+  .product-comment-list-item .comment-infos{
+    display: flex;
+    flex-direction: column-reverse;
+  }
 }

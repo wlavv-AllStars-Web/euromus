@@ -22,9 +22,9 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<div class="images-container js-images-container" style="display: flex; flex-direction:row-reverse;height:100%;width:100%;">
+<div class="images-container js-images-container" >
   {block name='product_cover'}
-    <div class="product-cover" style="width: 80%;">
+    <div class="product-cover">
       {if $product.default_image}
         <picture>
           {if !empty($product.default_image.bySize.large_default.sources.avif)}<source srcset="{$product.default_image.bySize.large_default.sources.avif}" type="image/avif">{/if}
@@ -41,7 +41,7 @@
             loading="lazy"
             width="{$product.default_image.bySize.large_default.width}"
             height="{$product.default_image.bySize.large_default.height}"
-            style="object-fit: contain;height:100%;width:100%;"
+           
           >
         </picture>
         <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
@@ -64,8 +64,8 @@
   {/block}
 
   {block name='product_images'}
-    <div class="js-qv-mask mask" style="display: flex;justify-content:center;align-items:center;width:10vw;margin:0;">
-      <ul class="product-images js-qv-product-images" style="display: flex;flex-direction:column;margin-top:1rem;">
+    <div class="js-qv-mask mask">
+      <ul class="product-images js-qv-product-images" >
         {foreach from=$product.images item=image}
           <li class="thumb-container js-thumb-container">
             <picture>

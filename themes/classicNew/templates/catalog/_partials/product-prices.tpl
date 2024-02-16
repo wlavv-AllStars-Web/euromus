@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {if $product.show_price}
-  <div class="product-prices js-product-prices" style="display: flex;">
+  <div class="product-prices js-product-prices">
     {block name='product_discount'}
       {if $product.has_discount}
         <div class="product-discount">
@@ -38,7 +38,7 @@
         class="product-price h5 {if $product.has_discount}has-discount{/if}">
 
         <div class="current-price">
-          <span class='current-price-value' content="{$product.rounded_display_price}" style="font-size:2.5rem;">
+          <span class='current-price-value' content="{$product.rounded_display_price}">
             {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='product_sheet'}{/capture}
             {if '' !== $smarty.capture.custom_price}
               {$smarty.capture.custom_price nofilter}
@@ -89,7 +89,7 @@
     {/block}
 
     {hook h='displayProductPriceBlock' product=$product type="weight" hook_origin='product_sheet'}
-    <div class="tax-shipping-delivery-label" style="display: flex;align-items:center;margin-left:0.5rem;flex:0.55;">
+    <div class="tax-shipping-delivery-label">
       {if !$configuration.taxes_enabled}
         {l s='No tax' d='Shop.Theme.Catalog'}
       {elseif $configuration.display_taxes_label}
