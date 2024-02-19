@@ -14,11 +14,11 @@ if($nextSelect == 2) $id_parent_item = $select_1;
 if($nextSelect == 3) $id_parent_item = $select_2;
 if($nextSelect == 4) $id_parent_item = $select_3;
 
-$sql = "SELECT eu_ukoocompat_criterion_lang.id_ukoocompat_criterion, eu_ukoocompat_criterion_lang.value 
+$sql = "SELECT eu_ukoocompat_criterion_lang.id_ukoocompat_criterion, eu_ukoocompat_criterion_lang.value
         FROM eu_ukoocompat_criterion 
         INNER JOIN eu_ukoocompat_criterion_lang
         ON eu_ukoocompat_criterion_lang.id_ukoocompat_criterion = eu_ukoocompat_criterion.id_ukoocompat_criterion 
-        WHERE id_ukoocompat_filter = " .  $nextSelect . " AND id_lang=" . $id_lang . " AND id_parent_item=" . $id_parent_item . " GROUP BY id_ukoocompat_criterion ORDER BY eu_ukoocompat_criterion_lang.value";
+        WHERE id_ukoocompat_filter = " .  $nextSelect . " AND id_lang=2 AND id_parent_item=" . $id_parent_item . " GROUP BY id_ukoocompat_criterion ORDER BY eu_ukoocompat_criterion_lang.value";
 
 $conn = getConn();
 

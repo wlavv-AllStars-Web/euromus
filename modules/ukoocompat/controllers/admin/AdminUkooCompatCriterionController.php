@@ -188,41 +188,64 @@ class AdminUkooCompatCriterionController extends ModuleAdminController
     {
 
         // $object = new UkooCompatCriterion();
-        $object = parent::processAdd();
+        
+        $ukoofilter = (int)$_POST['id_ukoocompat_filter'];
+        // echo "<pre>".print_r($_POST,1).'</pre>';
 
-        if (!Validate::isLoadedObject($object)) {
-            $this->errors[] = $this->l('Unable to add criterion!');
-            return false;
+        if($ukoofilter){
+            $value = $_POST['value_2'];
+            $sqlTest = "SELECT VALUE 
+            FROM eu_ukoocompat_criterion_lang 
+            WHERE VALUE LIKE '%$value%' AND id_filter = $ukoofilter";
+            echo $sqlTest;
+            $teste = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sqlTest);
+            echo "Number of rows returned: " . count($teste) . "<br>";
+
+            if(count($teste)>0){
+                $this->errors[] = $this->l('Unable to add criterion!');
+                echo "Error: Unable to add criterion!<br>";
+            
+
+            }else{
+                $object = parent::processAdd();
+                if (!Validate::isLoadedObject($object)) {
+                    $this->errors[] = $this->l('Unable to add criterion!');
+                    return false;
+                }
+        
+                // Rajout de l'utilisation d'un bouton "Enregistrer et nouveau"
+                if (Tools::isSubmit('submitAdd'.$this->table.'AndNew') && !count($this->errors)) {
+                    $this->redirect_after = self::$currentIndex.'&add'.$this->table.'&conf=3&token='.$this->token;
+                }
+        
+                // Changement de redirection pour le bouton "Enregistrer" pour redir vers le controlleur des filtres
+                if (Tools::isSubmit('submitAdd'.$this->table.'AndBackToParent') && !count($this->errors)) {
+                    $this->redirect_after = 'index.php?controller=AdminUkooCompatFilter&'.
+                        $this->identifier.'=&conf=3&token='.Tools::getAdminTokenLite('AdminUkooCompatFilter');
+                }
+        
+                // Positionnement à la fin
+                if (!count($this->errors) && !$object->updatePosition()) {
+                    $this->errors[] = $this->l('Unable to update criterion position!');
+                }
+        
+                /** ASM **/
+                $sql_update_parent_id = "UPDATE "._DB_PREFIX_."ukoocompat_criterion_lang SET id_filter=" . (int)$_POST['id_ukoocompat_filter'] . ", id_parent_item=" . (int)$_POST['id_parent_item'] . " WHERE id_ukoocompat_criterion = " . $object->id;
+               
+        
+                Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($sql_update_parent_id);
+        
+                /** ASM **/
+        
+                // Suppression du cache du module
+                UkooCompat::clearUkooCompatCache();
+        
+                return $object;
+            }
+
         }
+        
 
-        // Rajout de l'utilisation d'un bouton "Enregistrer et nouveau"
-        if (Tools::isSubmit('submitAdd'.$this->table.'AndNew') && !count($this->errors)) {
-            $this->redirect_after = self::$currentIndex.'&add'.$this->table.'&conf=3&token='.$this->token;
-        }
-
-        // Changement de redirection pour le bouton "Enregistrer" pour redir vers le controlleur des filtres
-        if (Tools::isSubmit('submitAdd'.$this->table.'AndBackToParent') && !count($this->errors)) {
-            $this->redirect_after = 'index.php?controller=AdminUkooCompatFilter&'.
-                $this->identifier.'=&conf=3&token='.Tools::getAdminTokenLite('AdminUkooCompatFilter');
-        }
-
-        // Positionnement à la fin
-        if (!count($this->errors) && !$object->updatePosition()) {
-            $this->errors[] = $this->l('Unable to update criterion position!');
-        }
-
-        /** ASM **/
-        $sql_update_parent_id = "UPDATE eu_ukoocompat_criterion_lang SET id_filter=" . (int)$_POST['id_ukoocompat_filter'] . ", id_parent_item=" . (int)$_POST['id_parent_item'] . " WHERE id_ukoocompat_criterion = " . $object->id;
-        // echo $sql_update_parent_id;
-        // exit;
-        Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($sql_update_parent_id);
-
-        /** ASM **/
-
-        // Suppression du cache du module
-        UkooCompat::clearUkooCompatCache();
-
-        return $object;
     }
 
     /**
@@ -234,7 +257,7 @@ class AdminUkooCompatCriterionController extends ModuleAdminController
         $object = parent::processUpdate();
 
         /** ASM **/
-        $sql_update_parent_id = "UPDATE eu_ukoocompat_criterion_lang SET id_parent_item=" . (int)$_POST['id_parent_item'] . ' WHERE id_ukoocompat_criterion = ' . $_POST['id_ukoocompat_criterion'];
+        $sql_update_parent_id = "UPDATE "._DB_PREFIX_."ukoocompat_criterion_lang SET id_parent_item=" . (int)$_POST['id_parent_item'] . ' WHERE id_ukoocompat_criterion = ' . $_POST['id_ukoocompat_criterion'];
         Db::getInstance(_PS_USE_SQL_SLAVE_)->execute($sql_update_parent_id);
         /** ASM **/
 

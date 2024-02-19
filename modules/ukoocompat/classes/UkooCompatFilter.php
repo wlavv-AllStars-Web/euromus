@@ -207,14 +207,14 @@ class UkooCompatFilter extends ObjectModel
         $filters [0]['value'] = 'Root';
 
         if($id_criterion != 0) {
-            $sql = 'SELECT id_filter FROM eu_ukoocompat_criterion_lang WHERE id_lang=' . $id_lang . ' AND id_ukoocompat_criterion=' . $id_criterion . ' LIMIT 1';
+            $sql = 'SELECT id_filter FROM '._DB_PREFIX_.'ukoocompat_criterion_lang WHERE id_lang=' . $id_lang . ' AND id_ukoocompat_criterion=' . $id_criterion . ' LIMIT 1';
         //     echo $sql;
         // exit;
             $filters = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
 
             $id_filter = $filters[0]['id_filter'];
 
-            $sql = 'SELECT id_ukoocompat_criterion, value FROM eu_ukoocompat_criterion_lang WHERE id_lang=' . $id_lang . ' AND id_filter=' . ($id_filter - 1);
+            $sql = 'SELECT id_ukoocompat_criterion, value FROM '._DB_PREFIX_.'ukoocompat_criterion_lang WHERE id_lang=' . $id_lang . ' AND id_filter=' . ($id_filter - 1);
             $filters = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
         }
 

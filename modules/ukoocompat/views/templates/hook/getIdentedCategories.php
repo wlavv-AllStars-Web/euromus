@@ -9,7 +9,7 @@ function getConn()
 
 function getAllCriterionsOf($idCriterion)
 {
-    $query = 'SELECT id_ukoocompat_compat FROM ps_ukoocompat_compat_criterion WHERE id_ukoocompat_criterion = ' . $idCriterion;
+    $query = 'SELECT id_ukoocompat_compat FROM '._DB_PREFIX_.'ukoocompat_compat_criterion WHERE id_ukoocompat_criterion = ' . $idCriterion;
 
     $conn = getConn();
     $result = $conn->query($query);
@@ -25,7 +25,7 @@ function getAllCriterionsOf($idCriterion)
 
 function getAllCategoriesOfCriterion($ids)
 {
-   $query = 'SELECT id_ukoocompat_criterion FROM ps_ukoocompat_compat_criterion WHERE id_ukoocompat_filter=5 AND id_ukoocompat_compat IN (' . implode(',',$ids) . ')';
+   $query = 'SELECT id_ukoocompat_criterion FROM '._DB_PREFIX_.'ukoocompat_compat_criterion WHERE id_ukoocompat_filter=5 AND id_ukoocompat_compat IN (' . implode(',',$ids) . ')';
 
     $conn = getConn();
     $result = $conn->query($query);
@@ -43,11 +43,11 @@ function getSons($idFather, $id_lang, $level, $idsCategories, $selected_category
 
     $html = '';
 
-    $query = 'SELECT * FROM ps_ukoocompat_criterion 
-                INNER JOIN ps_category_lang
-                ON ps_category_lang.id_category = ps_ukoocompat_criterion.idCategory
+    $query = 'SELECT * FROM '._DB_PREFIX_.'ukoocompat_criterion 
+                INNER JOIN '._DB_PREFIX_.'category_lang
+                ON '._DB_PREFIX_.'category_lang.id_category = '._DB_PREFIX_.'ukoocompat_criterion.idCategory
                 WHERE id_ukoocompat_filter = 5 AND idCategoryFather = ' . $idFather . '
-                AND ps_category_lang.id_lang = ' . $id_lang . '
+                AND p'._DB_PREFIX_.'category_lang.id_lang = ' . $id_lang . '
                 ORDER BY name ASC';
     $conn = getConn();
     $result = $conn->query($query);
@@ -112,12 +112,12 @@ $html.= '<select id="ukoocompat_select_10" name="filters10" data-filter-id="10" 
 $html.= '<option style="font-weight: bold;color: white; background: #dd170e" value="all" selected="selected">' . $transAll . '</option>';
 $html.= '<option value=""></option>';
 
-$queryFather = 'SELECT * FROM ps_ukoocompat_criterion 
-                INNER JOIN ps_category_lang
-                ON ps_category_lang.id_category = ps_ukoocompat_criterion.idCategory
+$queryFather = 'SELECT * FROM '._DB_PREFIX_.'ukoocompat_criterion 
+                INNER JOIN '._DB_PREFIX_.'category_lang
+                ON '._DB_PREFIX_.'category_lang.id_category = '._DB_PREFIX_.'ukoocompat_criterion.idCategory
                 WHERE id_ukoocompat_filter = 5 
                 AND idCategoryFather = 2
-                AND ps_category_lang.id_lang = ' . $id_lang . '
+                AND '._DB_PREFIX_.'category_lang.id_lang = ' . $id_lang . '
                 ORDER BY name ASC';
 
 $conn = getConn();
