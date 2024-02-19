@@ -194,18 +194,14 @@ class AdminUkooCompatCriterionController extends ModuleAdminController
 
         if($ukoofilter){
             $value = $_POST['value_2'];
-            $sqlTest = "SELECT VALUE 
+            $sqlVerifyName = "SELECT VALUE 
             FROM eu_ukoocompat_criterion_lang 
             WHERE VALUE LIKE '%$value%' AND id_filter = $ukoofilter";
-            echo $sqlTest;
-            $teste = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sqlTest);
-            echo "Number of rows returned: " . count($teste) . "<br>";
 
-            if(count($teste)>0){
-                $this->errors[] = $this->l('Unable to add criterion!');
-                echo "Error: Unable to add criterion!<br>";
-            
+            $sqlVerifyNameSql = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sqlVerifyName);
 
+            if(count($sqlVerifyNameSql)>0){
+                $this->errors[] = $this->l('There is already that criteria!');
             }else{
                 $object = parent::processAdd();
                 if (!Validate::isLoadedObject($object)) {
