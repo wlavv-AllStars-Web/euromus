@@ -11,6 +11,7 @@ function insert_data_into_ps_ukoocompat_compat_criterion($id_ukoocompat_compat, 
     insert_data("INSERT INTO eu_ukoocompat_compat_criterion (id_ukoocompat_compat, id_ukoocompat_filter, id_ukoocompat_criterion) VALUES ('" . $id_ukoocompat_compat . "', '" . $id_ukoocompat_filter . "', '" . $id_ikoocompat_criterion . "')");
 }
 
+
 function get_id_ukoocompat_compat($id_product, $id_ukoocompat_criterion_1, $id_ukoocompat_criterion_2, $id_ukoocompat_criterion_3, $id_ukoocompat_criterion_4){
     
     $data['is_new'] = false;
@@ -191,16 +192,19 @@ function get_compats($id_product, $select_1, $select_2, $select_3, $select_4){
 }
 
 $compats = (object)get_compats((int)$_POST['id_product'], (int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
-
+// paulo
+insert_data("INSERT INTO eu_ukoocompat_compat_asm (id_filter_value_1, id_filter_value_2, id_filter_value_3, id_filter_value_4) VALUES ('".(int)$_POST['select_1']."','".(int)$_POST['select_2']."','".(int)$_POST['select_3']."','".(int)$_POST['select_4']. "')");
+// 
 $resposta = array();
 $some_compats_existe = 0;
 
 foreach ($compats As $k =>$compat) {						
     
-
+    
     
     if ( !is_numeric($compat) ){			
         $new_compat = get_id_ukoocompat_compat( $compat->id_product, $compat->id_filter_value_1, $compat->id_filter_value_2, $compat->id_filter_value_3, $compat->id_filter_value_4 );			
+
         if ($new_compat->is_new) {				
             insert_data_into_ps_ukoocompat_compat_criterion($new_compat->id_ukoocompat_compat, 1, $compat->id_filter_value_1);				
             insert_data_into_ps_ukoocompat_compat_criterion($new_compat->id_ukoocompat_compat, 2, $compat->id_filter_value_2);				
@@ -213,7 +217,7 @@ foreach ($compats As $k =>$compat) {
     }else{		
 
         $new_compat = get_id_ukoocompat_compat( $compats->id_product, $compats->id_filter_value_1, $compats->id_filter_value_2, $compats->id_filter_value_3, $compats->id_filter_value_4 );
-        
+
 		if ($new_compat->is_new) {
 			insert_data_into_ps_ukoocompat_compat_criterion($new_compat->id_ukoocompat_compat, 1, $compats->id_filter_value_1);	
 			insert_data_into_ps_ukoocompat_compat_criterion($new_compat->id_ukoocompat_compat, 2, $compats->id_filter_value_2);		
