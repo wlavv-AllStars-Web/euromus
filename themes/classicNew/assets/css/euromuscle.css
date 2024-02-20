@@ -2894,5 +2894,20 @@ justify-content: center;
   #legal {
     background: #fff;
   }
+  .page-cms-51 .banner_cms {
+    margin-bottom: 3rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  .page-cms-51 .banner_cms .img-desktop{
+    max-width: 1694px;
+  height: 340px;
+  object-fit: cover;
+  width: 100%;
+  }
+  .page-cms-51 .banner_cms h2 {
+    left: 8rem !important;
+  }
 }
 
