@@ -61,10 +61,10 @@
               {block name='product_cover_thumbnails'}
                 {include file='catalog/_partials/product-cover-thumbnails.tpl'}
               {/block}
-              <div class="scroll-box-arrows">
-              <i class="material-icons left" >&#xE314;</i>
-              <i class="material-icons right" >&#xE315;</i>
-            </div>
+              {* <div class="scroll-box-arrows">
+                <i class="material-icons left" >&#xE314;</i>
+                <i class="material-icons right" >&#xE315;</i>
+              </div> *}
               
 
             {/block}
@@ -158,46 +158,44 @@
                   {/block}
                   </div>
 
+                  <div class="features_productdetails" >
                   {* features *}
+                    <div class="product_features" >
+                      {* <pre>{print_r($product.features,1)}</pre> *}
+                      {foreach from=$product.features item=feature}
+                        <div style="padding: 0.2rem 2rem;"><b>{$feature.name}:</b> {$feature.value}</div>
+                      {/foreach}
+                    </div>
 
-                  <div class="product_features">
-                    {* <pre>{print_r($product.features,1)}</pre> *}
-                    {foreach from=$product.features item=feature}
-                      <div style="padding: 0.2rem 2rem;"><b>{$feature.name}:</b> {$feature.value}</div>
-                    {/foreach}
+                    <div class="product-details-options" >
+                      
+                      {block name='product_pack'}
+                        {if $packItems}
+                          <section class="product-pack">
+                            <p class="h4">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
+                            {foreach from=$packItems item="product_pack"}
+                              {block name='product_miniature'}
+                                {include file='catalog/_partials/miniatures/pack-product.tpl' product=$product_pack showPackProductsPrice=$product.show_price}
+                              {/block}
+                            {/foreach}
+                        </section>
+                        {/if}
+                      {/block}
+
+                      {block name='product_discounts'}
+                        {include file='catalog/_partials/product-discounts.tpl'}
+                      {/block}
+
+                      {block name='product_variants'}
+                        {include file='catalog/_partials/product-variants.tpl'}
+                      {/block}
+
+                      {block name='product_add_to_cart'}
+                        {include file='catalog/_partials/product-add-to-cart.tpl'}
+                      {/block}
+                      
+                    </div>
                   </div>
-
-                  {* end features *}
-
-                  <div class="product-details-options">
-                    
-                    {block name='product_pack'}
-                      {if $packItems}
-                        <section class="product-pack">
-                          <p class="h4">{l s='This pack contains' d='Shop.Theme.Catalog'}</p>
-                          {foreach from=$packItems item="product_pack"}
-                            {block name='product_miniature'}
-                              {include file='catalog/_partials/miniatures/pack-product.tpl' product=$product_pack showPackProductsPrice=$product.show_price}
-                            {/block}
-                          {/foreach}
-                      </section>
-                      {/if}
-                    {/block}
-
-                    {block name='product_discounts'}
-                      {include file='catalog/_partials/product-discounts.tpl'}
-                    {/block}
-
-                    {block name='product_variants'}
-                      {include file='catalog/_partials/product-variants.tpl'}
-                    {/block}
-
-                    {block name='product_add_to_cart'}
-                      {include file='catalog/_partials/product-add-to-cart.tpl'}
-                    {/block}
-                    
-                  </div>
-
                   
 
                   {* {block name='product_additional_info'}
@@ -216,10 +214,8 @@
             {/block} *}
 
         </div>
-      </div>
-    </div>
 
-    {* inicio tabs *}
+        {* inicio tabs *}
 
     {block name='product_tabs'}
       {* <pre>{print_r($product,1)}</pre> *}
@@ -352,10 +348,15 @@
          </div>
 
       </div>
-    </div>
-  {/block}
+      </div>
+    {/block}
 
   {* fim tabs *}
+
+      </div>
+    </div>
+
+    
 
     {block name='product_accessories'}
       {if $accessories}
@@ -363,9 +364,11 @@
           <p class="h5 text-uppercase">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
           <div class="products row">
             {foreach from=$accessories item="product_accessory" key="position"}
-              {block name='product_miniature'}
-                {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position productClasses="col-xs-12 col-sm-6 col-lg-4 col-xl-3"}
-              {/block}
+              {if $position < 4}
+                {block name='product_miniature'}
+                  {include file='catalog/_partials/miniatures/product.tpl' product=$product_accessory position=$position productClasses="col-xs-12 col-sm-6 col-lg-4 col-xl-3"}
+                {/block}
+              {/if}
             {/foreach}
           </div>
         </section>

@@ -142,8 +142,8 @@ class AdminUkooCompatGroupController extends ModuleAdminController
      */
     public function processAdd()
     {
-        $object = new UkooCompatCriterion();
-        // $object = parent::processAdd();
+        // $object = new UkooCompatCriterion();
+        $object = parent::processAdd();
 
         if (!Validate::isLoadedObject($object)) {
             $this->errors[] = $this->l('Unable to add group!');

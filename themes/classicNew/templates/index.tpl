@@ -96,7 +96,7 @@
                       {/if}
                       
                     {/if}
-                      <img src="{$item["image_{$currentLanguageIso}"]}" loading="lazy"/>
+                      <img src="{$item["image_{$currentLanguageIso}"]}" loading="lazy" alt="banner{$linkBrand}"/>
                     {if isset($numbers)}
                     </a>
                     {elseif $linkBrand != ''}
@@ -125,7 +125,7 @@
                               <a href="/{$currentLanguageIso}/{$linkBrandMini}-product.html">
                             {/if}
                               <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
-                              <img src="{$child["image_{$currentLanguageIso}"]}" loading="lazy"/>
+                              <img src="{$child["image_{$currentLanguageIso}"]}" loading="lazy" alt="banner_{$child.id_parent_card}_{$childkey}" />
                             {if isset($numbersMini)}
                             </a>
                             {elseif $linkBrandMini != ''}
@@ -143,14 +143,14 @@
                           <div class="card-img ">
                             <a href="/{$currentLanguageIso}/{$child['link']}-product.html">
                               <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
-                              <img src="{$child["image_{$currentLanguageIso}"]}" loading="lazy"/>
+                              <img src="{$child["image_{$currentLanguageIso}"]}" loading="lazy" alt="banner_{$child.id_parent_card}_{$childkey}"/>
                             </a>
                           </div>
                         {elseif  $key == 2 && $child.id_parent_card == 3}
                           <div class="card-img ">
                             <a href="/{$currentLanguageIso}/{$child['link']}-product.html">
                               <div class="layerHover">{$child["title_{$currentLanguageIso}"]}</div>
-                              <img src="{$child["image_{$currentLanguageIso}"]}" loading="lazy"/>
+                              <img src="{$child["image_{$currentLanguageIso}"]}" loading="lazy" alt="banner_{$child.id_parent_card}_{$childkey}"/>
                             </a>
                           </div>
                         {/if}
@@ -185,7 +185,7 @@
                   {/if}
                 {/if}
 
-                  <img src="{$mobileItem["image_{$currentLanguageIso}"]}" style="width: 100%;" loading="lazy"/>
+                  <img src="{$mobileItem["image_{$currentLanguageIso}"]}" style="width: 100%;" loading="lazy" alt="banner{$mobilekey}"/>
                   <div class="layerHovermobile">{$mobileItem["title_{$currentLanguageIso}"]}</div>
 
                 {if isset($numbers)}
@@ -205,7 +205,7 @@
 <div class="cars-container">
   <div class="cars-cards col-12">
     <div class="card col-lg-3">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/FordMustang.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/FordMustang.png" alt="Card image Ford Mustang" loading="lazy">
       <div class="card-title"><a href="">Ford Mustang</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -236,7 +236,7 @@
 
     </div>
     <div class="card col-lg-3">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Camaro.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Camaro.png" alt="Card image Chevrolet Camaro" loading="lazy">
       <div class="card-title"><a href="">Chevrolet Camaro</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -267,7 +267,7 @@
 
     </div>
     <div class="card col-lg-3">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/DodgeChallanger.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/DodgeChallanger.png" alt="Card image Dodge Challenger" loading="lazy">
       <div class="card-title"><a href="">Dodge Challenger</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -298,7 +298,7 @@
 
     </div>
     <div class="card col-lg-3">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Corvette.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Corvette.png" alt="Card image Chevrolet Corvette" loading="lazy">
       <div class="card-title"><a href="">Chevrolet Corvette</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -328,7 +328,7 @@
 
     </div>
     <div class="card col-lg-3">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/RamTrx.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/RamTrx.png" alt="Card image Ram Trx" loading="lazy">
       <div class="card-title"><a href="">Ram Trx</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -359,7 +359,7 @@
 
     </div>
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/CHARGER.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/CHARGER.png" alt="Card image Dodge Charger" loading="lazy">
       <div class="card-title"><a href="">Dodge Charger</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -387,7 +387,7 @@
 
     </div>
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/BRONCO.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/BRONCO.png" alt="Card image Ford Bronco" loading="lazy">
       <div class="card-title"><a href="">Ford Bronco</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -415,7 +415,7 @@
 
     </div>
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/CHEROKEE.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/CHEROKEE.png" alt="Card image Jeep Cherokee" loading="lazy">
       <div class="card-title"><a href="">Jeep Cherokee</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -443,7 +443,7 @@
 
     </div>
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/F-150.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/F-150.png" alt="Card image Ford F-150" loading="lazy">
       <div class="card-title"><a href="">Ford F-150</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -470,7 +470,7 @@
     </div>
 
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/WRANGLER.png" alt="Card image cap" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/WRANGLER.png" alt="Card image Jeep Wrangler" loading="lazy">
       <div class="card-title"><a href="">Jeep Wrangler</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">

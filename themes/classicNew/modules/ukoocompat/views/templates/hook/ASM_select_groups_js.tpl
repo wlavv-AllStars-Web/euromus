@@ -1,5 +1,5 @@
 {assign var="context" value=Context::getContext()}
-{assign var="idLang" value=(int)$context->language->id}
+{assign var="idLang" value=2}
 {* {$idLang} *}
 
 <script>
@@ -20,7 +20,7 @@
         if($('#id_ukoocompat_criterion_select_groups_2').length) select_2 = $('#id_ukoocompat_criterion_select_groups_2').val();
         if($('#id_ukoocompat_criterion_select_groups_3').length) select_3 = $('#id_ukoocompat_criterion_select_groups_3').val();
         if($('#id_ukoocompat_criterion_select_groups_4').length) select_4 = $('#id_ukoocompat_criterion_select_groups_4').val();
-        if($('#id_lang').length) id_lang = $('#id_lang').val();
+        // if($('#id_lang').length) id_lang = $('#id_lang').val();
         
         if(index == 1){
             $('#id_ukoocompat_criterion_select_groups_2').prop('disabled', 'disabled');
