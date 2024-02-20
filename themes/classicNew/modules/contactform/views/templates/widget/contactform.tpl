@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section class="contact-form">
+<section class="contact-form" style="background: #f6f6f6;">
   <form action="{$urls.pages.contact}" method="post" {if $contact.allow_file_upload}enctype="multipart/form-data"{/if}>
     {if $notifications}
       <div class="col-xs-12 alert {if $notifications.nw_error}alert-danger{else}alert-success{/if}">
@@ -43,7 +43,7 @@
           </div>
         </div>
 
-        <div class="form-group row">
+        <div class="form-group row" style="display: none;">
           <label class="col-md-3 form-control-label" for="id_contact">{l s='Subject' d='Shop.Forms.Labels'}</label>
           <div class="col-md-6">
             <select name="id_contact" id="id_contact" class="form-control form-control-select">
@@ -51,6 +51,34 @@
                 <option value="{$contact_elt.id_contact}">{$contact_elt.name}</option>
               {/foreach}
             </select>
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-3 form-control-label" for="firstname">{l s='Name' d='Shop.Forms.Labels'}</label>
+          <div class="col-md-6">
+            <input
+              id="firstname"
+              class="form-control"
+              name="firstname"
+              type="text"
+              value="{$contact.firstname}"
+              placeholder="{l s='Your Name' d='Shop.Forms.Help'}"
+            >
+          </div>
+        </div>
+
+        <div class="form-group row">
+          <label class="col-md-3 form-control-label" for="phone">{l s='Phone' d='Shop.Forms.Labels'}</label>
+          <div class="col-md-6">
+            <input
+              id="phone"
+              class="form-control"
+              name="phone"
+              type="text"
+              value="{$contact.phone}"
+              placeholder="{l s='000 000 000' d='Shop.Forms.Help'}"
+            >
           </div>
         </div>
 
@@ -83,6 +111,8 @@
               {l s='optional' d='Shop.Forms.Help'}
             </span>
           </div>
+        {else}
+
         {/if}
 
         {if $contact.allow_file_upload}

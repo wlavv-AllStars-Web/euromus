@@ -2834,6 +2834,9 @@ justify-content: center;
   .img-desktop{
     display: none;
   }
+  .img-mobile{
+    width: 100%;
+  }
   .banner_cms{
     position: relative;
     margin-bottom: 0 !important;

@@ -34,7 +34,7 @@
     {/block}
   </head>
 
-  <body id="{$page.page_name}" class="{$page.body_classes|classnames}">
+  <body id="{$page.page_name}" class="{$page.body_classes|classnames}" style="height: auto;">
 
     {block name='hook_after_body_opening_tag'}
       {hook h='displayAfterBodyOpeningTag'}
@@ -51,16 +51,25 @@
         {/block}
       </header>
 
-      <section id="wrapper">
+      <section id="wrapper" style="display: flex;flex-direction:column;margin:auto">
+      
         {block name='notifications'}
           {include file='_partials/notifications.tpl'}
         {/block}
 
         {hook h="displayWrapperTop"}
+        {* {block name='breadcrumb'}
+          {include file='_partials/breadcrumb.tpl'}
+        {/block} *}
+        
+        {if $page.page_name === "contact"}
+          <div class="banner_contact" style="position: relative;margin-bottom:3rem;">
+            <img src="/img/eurmuscle/cmsBanners/Banners-contact.webp" width="1440px" style="box-shadow: #1030543e 0px 7px 29px 0px;"/>
+            <h2 style="position: absolute;left:3rem;bottom:1rem;font-size:5rem;color: #fff;">CONTACTS</h2>
+          </div>
+        {/if}
         <div class="container">
-          {block name='breadcrumb'}
-            {include file='_partials/breadcrumb.tpl'}
-          {/block}
+          
 
           <div class="row">
             {block name="left_column"}

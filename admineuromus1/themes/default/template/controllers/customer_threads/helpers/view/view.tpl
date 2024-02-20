@@ -50,6 +50,7 @@
 	</div>
 	<div class="row">
 		<div class="message-item-initial media">
+		{$thread->firstname}
 			<a href="{if isset($customer->id)}{$link->getAdminLink('AdminCustomers', true, [], ['id_customer' => $customer->id|intval, 'viewcustomer' => 1])|escape:'html':'UTF-8'}{else}#{/if}" class="avatar-lg pull-left"><i class="icon-user icon-3x"></i></a>
 			<div class="media-body">
 				<div class="row">

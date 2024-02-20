@@ -278,6 +278,8 @@ class Contactform extends Module implements WidgetInterface
             }
         }
         $this->contact['contacts'] = $this->getTemplateVarContact();
+        $this->contact['firstname'] = Tools::getValue('firstname');
+        $this->contact['phone'] = Tools::getValue('phone');
         $this->contact['message'] = Tools::getValue('message');
         $this->contact['allow_file_upload'] = (bool) Configuration::get('PS_CUSTOMER_SERVICE_FILE_UPLOAD');
 
@@ -501,6 +503,8 @@ class Contactform extends Module implements WidgetInterface
                 $ct->id_lang = (int) $this->context->language->id;
                 $ct->id_contact = (int) $id_contact;
                 $ct->id_order = $id_order;
+                $ct->firstname = Tools::getValue('firstname');
+                $ct->phone = Tools::getValue('phone');
 
                 if ($id_product = (int) Tools::getValue('id_product')) {
                     $ct->id_product = $id_product;
@@ -518,10 +522,14 @@ class Contactform extends Module implements WidgetInterface
                     $ct->id_product = $id_product;
                 }
                 $ct->id_contact = (int) $id_contact;
+                $ct->firstname = Tools::getValue('firstname');
+                $ct->phone = Tools::getValue('phone');
                 $ct->id_lang = (int) $this->context->language->id;
                 $ct->email = $from;
                 $ct->status = 'open';
                 $ct->token = Tools::passwdGen(12);
+                // echo '<pre>'.print_r($ct,1).'</pre>';
+                // exit;
                 $ct->add();
             }
 
@@ -580,6 +588,8 @@ class Contactform extends Module implements WidgetInterface
             if (isset($customer->id)) {
                 $var_list['{firstname}'] = $customer->firstname;
                 $var_list['{lastname}'] = $customer->lastname;
+            }else{
+                $var_list['{firstname}'] = Tools::getValue('firstname');
             }
 
             if (isset($file_attachment['name'])) {

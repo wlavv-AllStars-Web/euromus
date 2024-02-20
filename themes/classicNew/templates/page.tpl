@@ -23,11 +23,8 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {extends file=$layout}
-
 {block name='content'}
-
   <section id="main">
-
     {block name='page_header_container'}
       {block name='page_title' hide}
         <header class="page-header">
@@ -37,7 +34,7 @@
     {/block}
 
     {block name='page_content_container'}
-      <div id="content" class="page-content card card-block">
+      <div id="content" class="page-content card card-block" style="background: #f6f6f6;">
         {block name='page_content_top'}{/block}
         {block name='page_content'}
           <!-- Page content -->

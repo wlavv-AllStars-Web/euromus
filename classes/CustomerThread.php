@@ -37,6 +37,8 @@ class CustomerThreadCore extends ObjectModel
     public $token;
     public $date_add;
     public $date_upd;
+    public $firstname;
+    public $phone;
 
     /**
      * @see ObjectModel::$definition
@@ -50,10 +52,12 @@ class CustomerThreadCore extends ObjectModel
                 'validate' => 'isUnsignedId',
                 'required' => true,
             ],
+            'firstname' => ['type' => self::TYPE_STRING, 'validate' => 'isCustomerName', 'required' => true, 'size' => 50],
+            'phone' => ['type' => self::TYPE_STRING, 'validate' => 'isPhoneNumber', 'size' => 32],
             'id_contact' => [
                 'type' => self::TYPE_INT,
                 'validate' => 'isUnsignedId',
-                'required' => true,
+                'required' => false,
             ],
             'id_shop' => [
                 'type' => self::TYPE_INT,
