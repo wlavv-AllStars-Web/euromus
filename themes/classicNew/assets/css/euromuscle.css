@@ -2851,6 +2851,22 @@ justify-content: center;
   .cms-id-44 .page-content.page-cms{
     padding: 0 !important;
   }
+  #legal .legal-content {
+    width: 100vw;
+    padding: 1rem;
+  }
+
+  #legal .legal-line.first {
+    gap:1rem;
+  }
+
+  #legal .legal-footer{
+    flex-direction: column;
+  }
+
+  #legal .legal-footer .col-8 div {
+    margin-left: 0 !important;
+  }
 
   .page-cms-44 .banner_cms h2{
 
