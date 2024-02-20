@@ -2851,6 +2851,9 @@ justify-content: center;
   .cms-id-44 .page-content.page-cms{
     padding: 0 !important;
   }
+  #legal{
+    width: 100vw;
+  }
   #legal .legal-content {
     width: 100vw;
     padding: 1rem;
@@ -2883,6 +2886,10 @@ justify-content: center;
   }
   .img-mobile{
     display: none;
+  }
+
+  #legal {
+    background: #fff;
   }
 }
 
