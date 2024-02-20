@@ -2837,6 +2837,7 @@ justify-content: center;
   .banner_cms{
     position: relative;
     margin-bottom: 0 !important;
+    width: 100vw;
   }
   .banner_cms h2{
     position: absolute;
@@ -2845,6 +2846,14 @@ justify-content: center;
     width: 70%;
     left: 1rem;
     bottom: 1rem;
+  }
+
+  .cms-id-44 .page-content.page-cms{
+    padding: 0 !important;
+  }
+
+  .page-cms-44 .banner_cms h2{
+
   }
 }
 @media  screen and (min-width:601px){

@@ -5070,7 +5070,7 @@ form section .form-informations-title {
 form .form-control-label {
   font-size: 0.875rem;
   font-weight: 700;
-  color: #103054 ;
+  color: #103054 !important;
 }
 
 #address form .form-control-label {
