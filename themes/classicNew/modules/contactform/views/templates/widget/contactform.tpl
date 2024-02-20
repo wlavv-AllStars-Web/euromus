@@ -37,11 +37,11 @@
     {if !$notifications || $notifications.nw_error}
       <section class="form-fields">
 
-        <div class="form-group row">
+        {* <div class="form-group row">
           <div class="col-md-9 col-md-offset-3">
             <h3>{l s='Contact us' d='Shop.Theme.Global'}</h3>
           </div>
-        </div>
+        </div> *}
 
         <div class="form-group row" style="display: none;">
           <label class="col-md-3 form-control-label" for="id_contact">{l s='Subject' d='Shop.Forms.Labels'}</label>
@@ -56,7 +56,7 @@
 
         <div class="form-group row">
           <label class="col-md-3 form-control-label" for="firstname">{l s='Name' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-6">
+          <div class="col-md-9">
             <input
               id="firstname"
               class="form-control"
@@ -70,7 +70,7 @@
 
         <div class="form-group row">
           <label class="col-md-3 form-control-label" for="phone">{l s='Phone' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-6">
+          <div class="col-md-9">
             <input
               id="phone"
               class="form-control"
@@ -84,7 +84,7 @@
 
         <div class="form-group row">
           <label class="col-md-3 form-control-label" for="email">{l s='Email address' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-6">
+          <div class="col-md-9">
             <input
               id="email"
               class="form-control"
@@ -99,7 +99,7 @@
         {if $contact.orders}
           <div class="form-group row">
             <label class="col-md-3 form-control-label" for="id-order">{l s='Order reference' d='Shop.Forms.Labels'}</label>
-            <div class="col-md-6">
+            <div class="col-md-7">
               <select id="id-order" name="id_order" class="form-control form-control-select">
                 <option value="">{l s='Select reference' d='Shop.Forms.Help'}</option>
                 {foreach from=$contact.orders item=order}
@@ -107,7 +107,7 @@
                 {/foreach}
               </select>
             </div>
-            <span class="col-md-3 form-control-comment">
+            <span class="col-md-2 form-control-comment">
               {l s='optional' d='Shop.Forms.Help'}
             </span>
           </div>

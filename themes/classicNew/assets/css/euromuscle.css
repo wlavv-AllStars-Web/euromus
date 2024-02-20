@@ -2909,5 +2909,10 @@ justify-content: center;
   .page-cms-51 .banner_cms h2 {
     left: 8rem !important;
   }
+
+  #contact #wrapper .container .row {
+    display: flex;
+    align-items: baseline;
+  }
 }
 
