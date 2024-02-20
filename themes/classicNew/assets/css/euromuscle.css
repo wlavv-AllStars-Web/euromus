@@ -2826,3 +2826,38 @@ justify-content: center;
     flex-direction: column-reverse;
   }
 }
+
+
+
+/* cms */
+@media  screen and (max-width:600px){
+  .img-desktop{
+    display: none;
+  }
+  .banner_cms{
+    position: relative;
+    margin-bottom: 0 !important;
+  }
+  .banner_cms h2{
+    position: absolute;
+    font-size: 3rem !important;
+    color: #fff;
+    width: 70%;
+    left: 1rem;
+    bottom: 1rem;
+  }
+}
+@media  screen and (min-width:601px){
+  .banner_cms{
+    position: relative;
+  }
+  .banner_cms h2{
+    position: absolute;
+    left: 3rem;
+    bottom: 1rem;
+  }
+  .img-mobile{
+    display: none;
+  }
+}
+
