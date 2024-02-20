@@ -2508,6 +2508,7 @@ justify-content: center;
 .right-side .features_productdetails {
   display: flex;
   align-items: center;
+  padding: 2rem 0;
 }
 
 .right-side .product_features{
@@ -2550,7 +2551,7 @@ justify-content: center;
 
 .row.product-container.js-product-container {
   display: flex;
-  align-items: center;
+  /* align-items: center; */
 }
 
 .row.product-container.js-product-container .left-side{
