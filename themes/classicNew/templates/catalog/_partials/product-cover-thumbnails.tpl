@@ -66,7 +66,8 @@
   {block name='product_images'}
     <div class="js-qv-mask mask">
       <ul class="product-images js-qv-product-images" >
-        {foreach from=$product.images item=image}
+        {foreach from=$product.images item=image key=key}
+          {if $key < 5}
           <li class="thumb-container js-thumb-container">
             <picture>
               {if !empty($image.bySize.small_default.sources.avif)}<source srcset="{$image.bySize.small_default.sources.avif}" type="image/avif">{/if}
@@ -90,6 +91,7 @@
               >
             </picture>
           </li>
+          {/if}
         {/foreach}
       </ul>
     </div>
