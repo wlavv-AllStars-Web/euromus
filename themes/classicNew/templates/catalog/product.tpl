@@ -373,7 +373,7 @@
             </div>
           {* fim tabs *}
 </div>
-<pre>{print_r($product,1)}</pre>
+
 
     {block name='product_accessories'}
       {if $accessories}
