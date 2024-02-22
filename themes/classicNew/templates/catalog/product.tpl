@@ -219,7 +219,7 @@
 
       </div>
     </div>
-<div class="section_tabs_video" style="display: flex;">
+<div class="section_tabs_video" style="display: flex;min-height:49vh;">
             {* inicio tabs *}
             <div class="column_tabs" style="width: 60%;">
             {block name='product_tabs'}
