@@ -154,12 +154,13 @@
         <li class="dropdown ">
           <div class="dropbtn">{l s='Brands' d='Shop.Theme.Global'}</div>
           <ul class="dropdown-content">
-        
+          {* <pre>{print_r($manufacturers,1)}</pre> *}
           {foreach from=$manufacturers item=$manufacturer }
             
             <li class="col-lg-3">
             <a href="/{$currentLanguage->iso_code }/brand/{$manufacturer.id_manufacturer}-{$manufacturer.link_rewrite}">
               {$manufacturer.name}
+              {* <img src="/img/tmp/manufacturer_mini_{$manufacturer.id_manufacturer}.jpg?time=1708602834" width="80px" height="auto"/> *}
             </a>
             </li>
           {/foreach}
@@ -383,6 +384,7 @@ btnBrandsMobile.addEventListener('click', () => {
   display: flex ;
   min-height: fit-content;
   flex-wrap: wrap;
+  padding: 2rem 0;
   /* justify-content: space-evenly; */
 }
 
@@ -393,7 +395,7 @@ btnBrandsMobile.addEventListener('click', () => {
   text-decoration: none;
   display: flex;
   max-width: none!important;
-  width: 25%;
+  width: 20%;
   cursor: auto;
 }
 
@@ -404,6 +406,9 @@ btnBrandsMobile.addEventListener('click', () => {
   color: #0b223b !important;
   max-width: none !important;
   text-transform: uppercase;
+  padding: 5px;
+  font-size: 1em;
+  font-weight: 500;
 }
 .dropdown-content li a:hover{
   color: #ee302e !important;
