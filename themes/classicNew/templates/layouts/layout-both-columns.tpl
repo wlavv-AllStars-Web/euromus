@@ -51,7 +51,7 @@
         {/block}
       </header>
 
-      <section id="wrapper" style="display: flex;flex-direction:column;margin:auto">
+      <section id="wrapper" style="display: flex;flex-direction:column;">
       
         {block name='notifications'}
           {include file='_partials/notifications.tpl'}
