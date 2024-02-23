@@ -6612,6 +6612,8 @@ body#checkout
   max-width: 100%;
   height: auto;
   margin: auto;
+  max-height: 200px;
+  object-fit: cover;
 }
 .product-miniature .product-title {
   margin-top: 0.7rem;
