@@ -309,7 +309,7 @@
                 <div class="tab-content" id="tab-content">
                  <div class="tab-pane fade in active" id="description" role="tabpanel">
                   {if $product.description}
-                    <div style="display: flex;">
+                    <div class="tab-description" style="display: flex;">
                       {block name='product_description'}
                         <div class="product-description" style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">{$product.description nofilter}</div>
                       {/block}
