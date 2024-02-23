@@ -2879,6 +2879,10 @@ justify-content: center;
   }
 }
 @media  screen and (min-width:601px){
+  .banner_contact {
+    position: relative;
+    margin: auto;
+  }
   .banner_cms{
     position: relative;
   }
@@ -2916,3 +2920,8 @@ justify-content: center;
   }
 }
 
+.banner_contact_mobile h2{
+  font-size: 2rem !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
