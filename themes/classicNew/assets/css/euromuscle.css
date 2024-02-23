@@ -2950,8 +2950,10 @@ justify-content: center;
   }
   .banner_cms h2{
     position: absolute;
-    left: 20%;
+    left: 50%;
     bottom: 1rem;
+    transform: translateX(-50%);
+    width: max-content;
   }
   .img-mobile{
     display: none;
