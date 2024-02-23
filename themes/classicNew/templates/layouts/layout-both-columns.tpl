@@ -51,7 +51,8 @@
         {/block}
       </header>
 
-      <section id="wrapper" style="display: flex;flex-direction:column;">
+      <section id="wrapper"  style="display: flex;flex-direction:column;">
+
       
         {block name='notifications'}
           {include file='_partials/notifications.tpl'}
@@ -73,14 +74,18 @@
               const banner_contact = document.querySelector(".banner_contact");
               const img_banner_contact = document.querySelector(".contact_Banner");
 
+              const wrapper = document.getElementById("wrapper")
+
               if(screenSize > 600){
                 banner_contact.classList.remove("banner_contact_mobile");
                 banner_contact.classList.add("banner_contact_desk");
+                wrapper.classList.add("wrapper_desktop");
                 img_banner_contact.setAttribute("src", "/img/eurmuscle/cmsBanners/Banners-contact.webp")
 
               }else{
                 banner_contact.classList.remove("banner_contact_desk");
                 banner_contact.classList.add("banner_contact_mobile");
+                wrapper.classList.add("wrapper_mobile");
                 img_banner_contact.setAttribute("src", "/img/eurmuscle/cmsBanners/Banners-contactMobile.webp")
               }
             });
