@@ -63,9 +63,9 @@
         {/block} *}
 
         {if $page.page_name === "contact"}
-          <div class="banner_contact" style="position: relative;margin-bottom:3rem;">
-            <img class="contact_Banner" src="/img/eurmuscle/cmsBanners/Banners-contactMobile.webp" width="100%" style="box-shadow: #1030543e 0px 7px 29px 0px;"/>
-            <h2 class="" style="position: absolute;left:3rem;bottom:1rem;color: #fff;">CONTACTS</h2>
+          <div class="banner_contact" style="position: relative;">
+            <img class="contact_Banner" src="/img/eurmuscle/cmsBanners/Banners-contact.webp" style="box-shadow: #1030543e 0px 7px 29px 0px;"/>
+            <h2 class="" style="position: absolute;bottom:1rem;color: #fff;">CONTACTS</h2>
           </div>
           <script>
             document.addEventListener("DOMContentLoaded", (event) => {

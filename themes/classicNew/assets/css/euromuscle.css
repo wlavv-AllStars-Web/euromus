@@ -2926,6 +2926,17 @@ justify-content: center;
   transform: translateX(-50%) !important;
 }
 
-.banner_contact_desk {
+.banner_contact_desk{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0;
+}
+
+.banner_contact_desk h2 {
+  left: 20%;
+  font-size: 5rem;
+}
+
+.banner_contact_desk img{
   max-width: 1440px;
 }
