@@ -2925,3 +2925,7 @@ justify-content: center;
   left: 50% !important;
   transform: translateX(-50%) !important;
 }
+
+.banner_contact_desk {
+  max-width: 1440px;
+}

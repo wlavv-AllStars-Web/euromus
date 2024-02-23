@@ -67,6 +67,24 @@
             <img class="contact_Banner" src="/img/eurmuscle/cmsBanners/Banners-contactMobile.webp" width="100%" style="box-shadow: #1030543e 0px 7px 29px 0px;"/>
             <h2 class="" style="position: absolute;left:3rem;bottom:1rem;color: #fff;">CONTACTS</h2>
           </div>
+          <script>
+            document.addEventListener("DOMContentLoaded", (event) => {
+              const screenSize = screen.width;
+              const banner_contact = document.querySelector(".banner_contact");
+              const img_banner_contact = document.querySelector(".contact_Banner");
+
+              if(screenSize > 600){
+                banner_contact.classList.remove("banner_contact_mobile");
+                banner_contact.classList.add("banner_contact_desk");
+                img_banner_contact.setAttribute("src", "/img/eurmuscle/cmsBanners/Banners-contact.webp")
+
+              }else{
+                banner_contact.classList.remove("banner_contact_desk");
+                banner_contact.classList.add("banner_contact_mobile");
+                img_banner_contact.setAttribute("src", "/img/eurmuscle/cmsBanners/Banners-contactMobile.webp")
+              }
+            });
+            </script>
         {/if}
         <div class="container">
           
@@ -125,21 +143,3 @@
   </body>
 
 </html>
-<script>
-addEventListener("DOMContentLoaded", (event) => {
-  const screenSize = screen.width;
-  const banner_contact = document.querySelector(".banner_contact");
-  const img_banner_contact = document.querySelector(".contact_Banner");
-
-  if(screenSize > 600){
-    banner_contact.classList.remove("banner_contact_mobile");
-    banner_contact.classList.add("banner_contact_desk");
-    img_banner_contact.setAttribute("src", "/img/eurmuscle/cmsBanners/Banners-contact.webp")
-
-  }else{
-    banner_contact.classList.remove("banner_contact_desk");
-    banner_contact.classList.add("banner_contact_mobile");
-    img_banner_contact.setAttribute("src", "/img/eurmuscle/cmsBanners/Banners-contactMobile.webp")
-  }
-});
-<script>
