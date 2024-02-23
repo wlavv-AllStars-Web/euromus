@@ -2924,6 +2924,24 @@ justify-content: center;
   padding-top: 0 !important;
 }
 
+.wrapper_mobile .container{
+  padding-top: 2rem !important;
+}
+
+.wrapper_desktop .container {
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 1rem;
+  background: #fff;
+}
+
+.wrapper_desktop .container #content{
+  background: #fff;
+}
+.wrapper_desktop .container #content .contact-form{
+  background: #fff;
+}
+
 .banner_contact_mobile h2{
   font-size: 2rem !important;
   left: 50% !important;
