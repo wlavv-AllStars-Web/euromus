@@ -2964,3 +2964,20 @@ justify-content: center;
 .banner_contact_desk img{
   max-width: 1440px;
 }
+
+.section_tabs_video ul li a {
+  color: #103054;
+}
+.tabs .nav-tabs .nav-link.active{
+  border-top: #ee302e 3px solid;
+}
+
+.tabs .nav-tabs .nav-link {
+  /* color: #103054 !important; */
+}
+.tabs .nav-tabs{
+  border-top: #f6f6f6 2px solid;
+}
+.tabs .nav-tabs .nav-item {
+  margin-top: -0.125rem;
+}
