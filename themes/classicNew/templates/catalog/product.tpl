@@ -223,13 +223,13 @@
             {* inicio tabs *}
             <div class="column_tabs" style="width:100%">
             {block name='product_tabs'}
-              {* <pre>{print_r($product,1)}</pre> *}
+              <pre>{print_r($product,1)}</pre>
               <div class="tabs">
                 <ul class="nav nav-tabs" role="tablist" style="display: flex;justify-content:space-between;">
                   {* {if $product.description} *}
                     <li class="nav-item">
                        <a
-                         class="nav-link{if $product.description} active js-product-nav-active{/if}"
+                         class="nav-link active js-product-nav-active"
                          data-toggle="tab"
                          href="#description"
                          role="tab"
@@ -338,10 +338,12 @@
                         </div>
                         {/if} *}
                   {else}
-                    <div style="display: flex;">
-                      <div style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">
-                        <p>No Description</p>
-                      </div>
+                    <div class="tab-description" style="display: flex;">
+                      {block name='product_description'}
+                        <div class="product-description" style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">
+                          <p>{l s='No description.' d='Shop.Theme.Catalog'}</p>
+                        </div>
+                      {/block}
                       {if !empty($product.youtube_code)}
                         <div class="column_video" style="width: 40%;display:flex;justify-content:center;align-items:center;">
                           <div class="video3 video" style="width: 75%;border-radius: 0.25rem;overflow: hidden;">
