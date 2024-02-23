@@ -374,6 +374,7 @@ btnBrandsMobile.addEventListener('click', () => {
   width: 100vw;
   left: -40vw;
   transition: all 1s;
+  padding: 2rem 0;
 }
 .dropdown:hover .dropbtn {
   background: #fff;
@@ -384,7 +385,7 @@ btnBrandsMobile.addEventListener('click', () => {
   display: flex ;
   min-height: fit-content;
   flex-wrap: wrap;
-  padding: 2rem 0;
+  /* padding: 2rem 0; */
   /* justify-content: space-evenly; */
 }
 
