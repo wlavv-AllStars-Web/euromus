@@ -219,9 +219,9 @@
 
       </div>
     </div>
-<div class="section_tabs_video" style="display: flex;min-height:49vh;">
+<div class="section_tabs_video" style="display: flex;min-height:49vh;{if empty($product.youtube_code)}justify-content:center;{/if}">
             {* inicio tabs *}
-            <div class="column_tabs" style="width: 60%;">
+            <div class="column_tabs" style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">
             {block name='product_tabs'}
               {* <pre>{print_r($product,1)}</pre> *}
               <div class="tabs">
@@ -357,6 +357,7 @@
             {/block}
 
             </div>
+            {if !empty($product.youtube_code)}
             <div class="column_video" style="width: 40%;display:flex;justify-content:center;align-items:center;">
               <div class="video3 video" style="width: 75%;">
                 <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'" style="position: relative;cursor:pointer;">
@@ -371,6 +372,7 @@
                 </div>
               </div>
             </div>
+            {/if}
           {* fim tabs *}
           <script>
           addEventListener("DOMContentLoaded", (event) => {
@@ -387,6 +389,7 @@
           });
           </script>
 </div>
+
 
 
     {block name='product_accessories'}
