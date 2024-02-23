@@ -2261,6 +2261,15 @@ header.page-header {
   #cms #content-wrapper .page-cms-51 {
     padding: 0 !important;
   }
+
+  #cms-partners .p-3 {
+    width: 90vw;
+    margin: 1rem 0;
+  }
+
+  .card_partners{
+    min-width: unset;
+  }
 }
 
 @media screen and (max-width:769px) {
