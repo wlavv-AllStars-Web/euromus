@@ -221,7 +221,7 @@
     </div>
 <div class="section_tabs_video" style="display: flex;min-height:49vh;{if empty($product.youtube_code)}justify-content:center;{/if}">
             {* inicio tabs *}
-            <div class="column_tabs" style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">
+            <div class="column_tabs" style="width:100%">
             {block name='product_tabs'}
               {* <pre>{print_r($product,1)}</pre> *}
               <div class="tabs">
@@ -291,9 +291,27 @@
                 <div class="tab-content" id="tab-content">
                  <div class="tab-pane fade in active" id="description" role="tabpanel">
                   {if $product.description}
-                   {block name='product_description'}
-                     <div class="product-description">{$product.description nofilter}</div>
-                   {/block}
+                    <div style="display: flex;">
+                      {block name='product_description'}
+                        <div class="product-description" style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">{$product.description nofilter}</div>
+                      {/block}
+                      {if !empty($product.youtube_code)}
+                        <div class="column_video" style="width: 40%;display:flex;justify-content:center;align-items:center;">
+                          <div class="video3 video" style="width: 75%;border-radius: 0.25rem;overflow: hidden;">
+                            <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'" style="position: relative;cursor:pointer;">
+                            <img src="{$product.cover.large.url}" style="width: 100%;max-height:318px;object-fit:cover;" loading="lazy"/>
+                              <div class="play" style="position: absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+                                <img class="image_play" alt="video player" src="/img/youtube_play.png" loading="lazy" />
+                              </div>
+                            </div>
+                            <div  class="iframeClass"  style="display:none;height:318px">
+                              <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/{$product.youtube_code}?autoplay=0&mute=1&rel=0" loading="lazy" style="width:100%;height:318px;">
+                              </iframe>
+                            </div>
+                          </div>
+                        </div>
+                        {/if}
+                    </div>
                     {* {if $product.features}
                       <div class="product_features">
                           {foreach from=$product.features item=feature}
@@ -302,8 +320,46 @@
                         </div>
                         {/if} *}
                   {else}
-                      <p>No Description</p>
+                    <div style="display: flex;">
+                      <div style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">
+                        <p>No Description</p>
+                      </div>
+                      {if !empty($product.youtube_code)}
+                        <div class="column_video" style="width: 40%;display:flex;justify-content:center;align-items:center;">
+                          <div class="video3 video" style="width: 75%;border-radius: 0.25rem;overflow: hidden;">
+                            <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'" style="position: relative;cursor:pointer;">
+                            <img src="{$product.cover.large.url}" style="width: 100%;max-height:318px;object-fit:cover;" loading="lazy"/>
+                              <div class="play" style="position: absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
+                                <img class="image_play" alt="video player" src="/img/youtube_play.png" loading="lazy" />
+                              </div>
+                            </div>
+                            <div  class="iframeClass"  style="display:none;height:318px">
+                              <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/{$product.youtube_code}?autoplay=0&mute=1&rel=0" loading="lazy" style="width:100%;height:318px;">
+                              </iframe>
+                            </div>
+                          </div>
+                        </div>
+                        {/if}
+                      {* fim tabs *}
+                      
+                    </div>
+
                   {/if}
+                  <script>
+                      addEventListener("DOMContentLoaded", (event) => {
+                        const videoProduct =  document.querySelector(".column_video .video");
+                        const imgPlay = document.querySelector(".image_play")
+                        if(videoProduct && imgPlay){
+                          videoProduct.addEventListener('mouseover', () => {
+                            imgPlay.setAttribute('src', "/img/youtube_play_hover.png")
+                          });
+                          videoProduct.addEventListener('mouseleave', () => {
+                            imgPlay.setAttribute('src', "/img/youtube_play.png")
+                          });
+                        }
+                        
+                      });
+                      </script>
                  </div>
         
                  {* <div class="tab-pane fade in" id="product-installation" role="tabpanel">
@@ -357,7 +413,7 @@
             {/block}
 
             </div>
-            {if !empty($product.youtube_code)}
+            {* {if !empty($product.youtube_code)}
             <div class="column_video" style="width: 40%;display:flex;justify-content:center;align-items:center;">
               <div class="video3 video" style="width: 75%;border-radius: 0.25rem;overflow: hidden;">
                 <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'" style="position: relative;cursor:pointer;">
@@ -372,9 +428,9 @@
                 </div>
               </div>
             </div>
-            {/if}
+            {/if} *}
           {* fim tabs *}
-          <script>
+          {* <script>
           addEventListener("DOMContentLoaded", (event) => {
             const videoProduct =  document.querySelector(".column_video .video");
             const imgPlay = document.querySelector(".image_play")
@@ -387,7 +443,7 @@
               });
             
           });
-          </script>
+          </script> *}
 </div>
 
 
