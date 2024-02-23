@@ -22,7 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-<section class="contact-form" style="background: #f6f6f6;">
+<section class="contact-form">
   <form action="{$urls.pages.contact}" method="post" {if $contact.allow_file_upload}enctype="multipart/form-data"{/if}>
     {if $notifications}
       <div class="col-xs-12 alert {if $notifications.nw_error}alert-danger{else}alert-success{/if}">
