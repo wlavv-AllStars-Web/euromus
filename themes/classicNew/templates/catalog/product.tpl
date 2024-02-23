@@ -223,7 +223,7 @@
             {* inicio tabs *}
             <div class="column_tabs" style="width:100%">
             {block name='product_tabs'}
-              <pre>{print_r($product,1)}</pre>
+              {* <pre>{print_r($product,1)}</pre> *}
               <div class="tabs">
                 <ul class="nav nav-tabs" role="tablist" style="display: flex;justify-content:space-between;">
                   {* {if $product.description} *}
