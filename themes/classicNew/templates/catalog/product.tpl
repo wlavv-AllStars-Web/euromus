@@ -359,14 +359,14 @@
             </div>
             {if !empty($product.youtube_code)}
             <div class="column_video" style="width: 40%;display:flex;justify-content:center;align-items:center;">
-              <div class="video3 video" style="width: 75%;border: 3px solid #103054;border-radius: 1rem;overflow: hidden;">
+              <div class="video3 video" style="width: 75%;border-radius: 0.25rem;overflow: hidden;">
                 <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'" style="position: relative;cursor:pointer;">
                 <img src="{$product.cover.large.url}" style="width: 100%;max-height:318px;object-fit:cover;" loading="lazy"/>
                   <div class="play" style="position: absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
                     <img class="image_play" alt="video player" src="/img/youtube_play.png" loading="lazy" />
                   </div>
                 </div>
-                <div  class="iframeClass"  style="display:none">
+                <div  class="iframeClass"  style="display:none;height:318px">
                   <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/{$product.youtube_code}?autoplay=0&mute=1&rel=0" loading="lazy" style="width:100%;height:318px;">
                   </iframe>
                 </div>
