@@ -2851,6 +2851,10 @@ justify-content: center;
     bottom: 1rem;
   }
 
+  .page-content.page-cms {
+    padding: 0 !important;
+  }
+
   .cms-id-44 .page-content.page-cms{
     padding: 0 !important;
   }
