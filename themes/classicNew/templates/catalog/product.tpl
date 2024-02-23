@@ -225,7 +225,7 @@
             {block name='product_tabs'}
               {* <pre>{print_r($product,1)}</pre> *}
               <div class="tabs">
-                <ul class="nav nav-tabs" role="tablist">
+                <ul class="nav nav-tabs" role="tablist" style="display: flex;justify-content:space-between;">
                   {* {if $product.description} *}
                     <li class="nav-item">
                        <a
@@ -283,6 +283,24 @@
                       role="tab"
                       aria-controls="product-details"
                       {if !$product.description} aria-selected="true"{/if}>{l s='Reviews' d='Shop.Theme.Catalog'}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-toggle="tab"
+                      href="#product_warranty"
+                      role="tab"
+                      aria-controls="product-details"
+                      {if !$product.description} aria-selected="true"{/if}>{l s='Warranty' d='Shop.Theme.Catalog'}</a>
+                  </li>
+                  <li class="nav-item">
+                    <a
+                      class="nav-link"
+                      data-toggle="tab"
+                      href="#product_brand"
+                      role="tab"
+                      aria-controls="product-details"
+                      {if !$product.description} aria-selected="true"{/if}>{$product.manufacturer_name}</a>
                   </li>
                 </ul>
         
@@ -406,6 +424,12 @@
         
                  <div  class="tab-pane fade in" id="product_reviews"  role="tabpanel">
                   {hook h='displayFooterProduct' product=$product category=$category}
+                 </div>
+                 <div  class="tab-pane fade in" id="product_warranty"  role="tabpanel">
+                  <p>Product Warranty</p>
+                 </div>
+                 <div  class="tab-pane fade in" id="product_brand"  role="tabpanel">
+                  <p>Product Manufacturer</p>
                  </div>
         
               </div>
