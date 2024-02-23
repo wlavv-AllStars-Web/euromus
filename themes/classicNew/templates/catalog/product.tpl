@@ -359,7 +359,7 @@
             </div>
             {if !empty($product.youtube_code)}
             <div class="column_video" style="width: 40%;display:flex;justify-content:center;align-items:center;">
-              <div class="video3 video" style="width: 75%;">
+              <div class="video3 video" style="width: 75%;border: 3px solid #103054;border-radius: 1rem;overflow: hidden;">
                 <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'" style="position: relative;cursor:pointer;">
                 <img src="{$product.cover.large.url}" style="width: 100%;max-height:318px;object-fit:cover;" loading="lazy"/>
                   <div class="play" style="position: absolute;top:50%;left:50%;transform:translate(-50%,-50%)">
