@@ -2885,10 +2885,12 @@ justify-content: center;
   }
   .banner_cms{
     position: relative;
+    display: flex;
+    justify-content: center;
   }
   .banner_cms h2{
     position: absolute;
-    left: 3rem;
+    left: 20%;
     bottom: 1rem;
   }
   .img-mobile{
@@ -2931,7 +2933,7 @@ justify-content: center;
 .wrapper_desktop .container {
   width: 100%;
   max-width: 1440px;
-  padding: 0 1rem;
+  padding: 0 3rem;
   background: #fff;
 }
 
