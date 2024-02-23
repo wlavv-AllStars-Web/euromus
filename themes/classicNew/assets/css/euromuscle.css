@@ -2920,6 +2920,10 @@ justify-content: center;
   }
 }
 
+.wrapper_mobile{
+  padding-top: 0 !important;
+}
+
 .banner_contact_mobile h2{
   font-size: 2rem !important;
   left: 50% !important;
