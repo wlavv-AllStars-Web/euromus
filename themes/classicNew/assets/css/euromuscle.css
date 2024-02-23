@@ -516,6 +516,7 @@ main {
       align-items: center;
       gap: 2%;
       background-color: #0d2540;
+      padding-top: 1rem;
     }
     #footer_sub_menu_12 li {
       margin-bottom: .5125rem !important;
@@ -529,7 +530,6 @@ main {
     .links .collapse.in {
         height: fit-content;
         visibility: visible;
-        padding-top: 1rem;
     }
 
     .footer-container .links ul > li {
