@@ -2930,7 +2930,7 @@ justify-content: center;
   #description .tab-description .column_video .video iframe{
     width: 100% !important;
     height: 100% !important;
-    min-height: 200px !important;
+    min-height: 250px !important;
   }
 
   #description .product-description > p {
