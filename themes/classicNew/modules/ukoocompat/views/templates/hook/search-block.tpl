@@ -32,7 +32,7 @@
             <input type="hidden" id="ukoo_email" name="ukoo_email" value=""/>
 
 			{foreach from=$search->filters item=filter}
-                <pre style="color: #fff;width:50%;display:flex;flex-wrap:wrap;">{print_r($search->filters,1)}</pre>
+                {* <pre style="color: #fff;width:50%;display:flex;flex-wrap:wrap;">{print_r($search->filters,1)}</pre> *}
 				{if $filter->id < 5}
 					<div class="ukoocompat_search_block_filter filter_{$filter->id|intval}{if isset($filter->disabled) && $filter->disabled|intval == 1} disabled{/if}">
 						{if isset($filter->display_type) && $filter->display_type != 'select'}
