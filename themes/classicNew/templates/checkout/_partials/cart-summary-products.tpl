@@ -24,7 +24,7 @@
  *}
 
  <div class="cart-summary-products js-cart-summary-products">
-  <p>{$cart.summary_string}</p>
+  {* <p>{$cart.summary_string}</p> *}
 
   {* <p>
     <a href="#" data-toggle="collapse" data-target="#cart-summary-product-list" class="js-show-details">

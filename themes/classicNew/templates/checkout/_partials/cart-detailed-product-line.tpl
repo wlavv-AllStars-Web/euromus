@@ -125,7 +125,7 @@
     {/if}
 
   </div>
-  {hook h="backOfficeHeader"}
+
   <!--  product line right content: actions (quantity, delete), price -->
   <div class="product-line-grid-right product-line-actions col-md-5 col-xs-12">
     <div class="row">

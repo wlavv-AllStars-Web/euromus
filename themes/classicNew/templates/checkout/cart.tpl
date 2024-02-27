@@ -25,12 +25,13 @@
 {extends file=$layout}
 
 {block name='content'}
-
+{* {assign var="shipping" value=ShippingData::shippingInfo($cart)}
+<pre>{print_r($shipping,1)}</pre> *}
   <section id="main">
     <div class="cart-grid row">
 
       <!-- Left Block: cart product informations & shipping -->
-      <div class="cart-grid-body col-lg-8">
+      <div class="cart-grid-body col-lg-12 mb-0">
 
         <!-- cart products detailed -->
         <div class="card cart-container">
@@ -43,23 +44,19 @@
           {/block}
         </div>
 
-        {block name='continue_shopping'}
-          <a class="label" href="{$urls.pages.index}">
-            <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
-          </a>
-        {/block}
-
-        <!-- shipping informations -->
-        {block name='hook_shopping_cart_footer'}
-          {hook h='displayShoppingCartFooter'}
-        {/block}
       </div>
 
       <!-- Right Block: cart subtotal & cart total -->
-      <div class="cart-grid-right col-lg-4">
+      <div class="cart-grid-right col-lg-12 mb-3" style="display: flex;justify-content:end;">
+        <!-- shipping informations -->
+        <div class="col-lg-3 p-0" style="background: #fff;">
+        {block name='hook_shopping_cart_footer'}
+          {hook h='displayShoppingCartFooter'}
+        {/block}
+        </div>
 
         {block name='cart_summary'}
-          <div class="card cart-summary">
+          <div class="card cart-summary col-lg-9 mb-0">
 
             {block name='hook_shopping_cart'}
               {hook h='displayShoppingCart'}
@@ -69,22 +66,57 @@
               {include file='checkout/_partials/cart-detailed-totals.tpl' cart=$cart}
             {/block}
 
-            {block name='cart_actions'}
+            {* {block name='cart_actions'}
               {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
-            {/block}
+            {/block} *}
 
           </div>
         {/block}
 
-        {block name='hook_reassurance'}
+        
+
+        {* {block name='hook_reassurance'}
           {hook h='displayReassurance'}
-        {/block}
+        {/block} *}
 
       </div>
+
+      {block name='continue_shopping'}
+        <a class="label" href="{$urls.pages.index}" style="margin-left: 4rem;">
+          <i class="material-icons">chevron_left</i>{l s='Continue shopping' d='Shop.Theme.Actions'}
+        </a>
+      {/block}
 
     </div>
     
     {hook h='displayCrossSellingShoppingCart'}
     
+
+    <div class="cart-grid-body col-xs-12 col-lg-12 px-0">
+        {block name='checkout_process'}
+          {render file='checkout/checkout-process.tpl' ui=$checkout_process}
+        {/block}
+      </div>
   </section>
+  
+  
 {/block}
+
+
+
+{* {if isset($checkout_process)}
+  <pre>{$checkout_process|print_r}</pre>
+{/if} *}
+{* {block name='checkout_process'}
+ {render file='checkout/checkout-process.tpl' ui=$checkout_process}
+{/block} *}
+{* <div class="payment_cart">
+  <h1><span>3</span> PAYMENT</h1>
+    {block name="delivery_block"}
+      {include file='checkout/checkout.tpl' cart=$cart} *}
+      
+
+{* checkout-personal-information-step *}
+{* checkout-addresses-step *}
+    {* {/block}
+</div> *}

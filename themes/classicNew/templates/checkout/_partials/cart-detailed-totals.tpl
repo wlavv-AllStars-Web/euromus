@@ -22,13 +22,14 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+ <!-- checkout/_partials/cart-detailed-totals.tpl -->
 {block name='cart_detailed_totals'}
 <div class="cart-detailed-totals js-cart-detailed-totals">
 
   <div class="card-block cart-detailed-subtotals js-cart-detailed-subtotals">
     {foreach from=$cart.subtotals item="subtotal"}
       {if $subtotal && $subtotal.value|count_characters > 0 && $subtotal.type !== 'tax'}
-        <div class="cart-summary-line" id="cart-subtotal-{$subtotal.type}">
+        <div class="cart-summary-line" id="cart-subtotal-{$subtotal.type}" style="width: 200px;margin-left:auto;">
           <span class="label{if 'products' === $subtotal.type} js-subtotal{/if}">
             {if 'products' == $subtotal.type}
               {$cart.summary_string}

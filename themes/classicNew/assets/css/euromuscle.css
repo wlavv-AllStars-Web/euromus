@@ -3064,3 +3064,27 @@ justify-content: center;
 .address_cart .address {
   color: #7a7a7a;
 }
+
+body#checkout section.checkout-step.-reachable.-current .step-number {
+  background: #103054 !important;
+}
+
+/* body#checkout footer#footer {
+  min-height: 26%;
+} */
+
+body#checkout .container {
+  width: 80%;
+}
+
+body#checkout #footer .container {
+  width: 100%;
+  display: none !important;
+}
+body#checkout #footer {
+  padding: 0;
+}
+
+body#checkout section.checkout-step .address-selector {
+  justify-content: center !important;
+}
