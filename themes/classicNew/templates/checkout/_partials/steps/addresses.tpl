@@ -31,8 +31,9 @@
       data-id-address="{$id_address}"
       action="{url entity='order' params=['id_address' => $id_address]}"
       data-refresh-url="{url entity='order' params=['ajax' => 1, 'action' => 'addressForm']}"
+      style="display: flex;"
     >
-
+    <div class="addressBlock col-md-6">
       {if $use_same_address}
         <p>
           {if $cart.is_virtual}
@@ -64,7 +65,7 @@
             interactive = !$show_delivery_address_form and !$show_invoice_address_form
           }
         </div>
-
+    
         {if isset($delivery_address_error)}
           <p class="alert alert-danger js-address-error" name="alert-delivery" id="id-failure-address-{$delivery_address_error.id_address}">{$delivery_address_error.exception}</p>
         {else}
@@ -74,7 +75,9 @@
         <p class="add-address">
           <a href="{$new_address_delivery_url}"><i class="material-icons">&#xE145;</i>{l s='add new address' d='Shop.Theme.Actions'}</a>
         </p>
+      </div>
 
+      
         {if $use_same_address && !$cart.is_virtual}
           <p>
             <a data-link-action="different-invoice-address" href="{$use_different_address_url}">
@@ -85,6 +88,7 @@
 
       {/if}
 
+      <div class="invoiceAddress  col-md-6">
       {if !$use_same_address}
 
         <h2 class="h4">{l s='Your Invoice Address' d='Shop.Theme.Checkout'}</h2>
@@ -121,15 +125,16 @@
         {/if}
 
       {/if}
+      </div>
 
-      {if !$form_has_continue_button}
+      {* {if !$form_has_continue_button}
         <div class="clearfix">
           <button type="submit" class="btn btn-primary continue float-xs-right" name="confirm-addresses" value="1">
             {l s='Continue' d='Shop.Theme.Actions'}
           </button>
           <input type="hidden" id="not-valid-addresses" class="js-not-valid-addresses" value="{$not_valid_addresses}">
         </div>
-      {/if}
+      {/if} *}
 
     </form>
     {hook h='displayAddressSelectorBottom'}

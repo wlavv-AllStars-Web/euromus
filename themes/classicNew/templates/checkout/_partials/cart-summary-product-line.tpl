@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='cart_summary_product_line'}
-  <div class="media-left">
+  {* <div class="media-left">
     <a href="{$product.url}" title="{$product.name}">
       {if $product.default_image}
         <picture>
@@ -54,5 +54,15 @@
         </div>
     {/foreach}
     <br/>
-  </div>
+  </div> *}
+  
+  <div class="card cart-container">
+          <div class="card-block">
+            <h1 class="h1">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</h1>
+          </div>
+          <hr class="separator">
+          {block name='cart_overview'}
+            {include file='checkout/_partials/cart-detailed.tpl' cart=$cart}
+          {/block}
+        </div>
 {/block}

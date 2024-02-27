@@ -22,6 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+ <!-- checkout/_partials/cart-detailed-product-line.tpl -->
 <div class="product-line-grid">
   <!--  product line left content: image-->
   <div class="product-line-grid-left col-md-3 col-xs-4">
@@ -30,7 +31,7 @@
         <picture>
           {if !empty($product.default_image.bySize.cart_default.sources.avif)}<source srcset="{$product.default_image.bySize.cart_default.sources.avif}" type="image/avif">{/if}
           {if !empty($product.default_image.bySize.cart_default.sources.webp)}<source srcset="{$product.default_image.bySize.cart_default.sources.webp}" type="image/webp">{/if}
-          <img src="{$product.default_image.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" loading="lazy">
+          <img src="{$product.default_image.bySize.cart_default.url}" alt="{$product.name|escape:'quotes'}" loading="lazy" style="width:100px;">
         </picture>
       {else}
         <picture>
@@ -41,7 +42,8 @@
       {/if}
     </span>
   </div>
-
+  {* <pre>{print_r($product,1)}</pre> *}
+  {* stock_quantity *}
   <!--  product line body: label, discounts, price, attributes, customizations -->
   <div class="product-line-grid-body col-md-4 col-xs-8">
     <div class="product-line-info">
@@ -73,7 +75,7 @@
     </div>
 
     <br/>
-
+    <span>Reference: {$product.reference}</span>
     {foreach from=$product.attributes key="attribute" item="value"}
       <div class="product-line-info {$attribute|lower}">
         <span class="label">{$attribute}:</span>
@@ -121,15 +123,26 @@
         {/foreach}
       {/block}
     {/if}
-  </div>
 
+  </div>
+  {hook h="backOfficeHeader"}
   <!--  product line right content: actions (quantity, delete), price -->
   <div class="product-line-grid-right product-line-actions col-md-5 col-xs-12">
     <div class="row">
+      
       <div class="col-xs-4 hidden-md-up"></div>
       <div class="col-md-10 col-xs-6">
         <div class="row">
-          <div class="col-md-6 col-xs-6 qty">
+          <div class="col-md-4">
+            {if $product.stock_quantity >= 5}
+              <p style="background: rgb(63, 192, 63);color:#fff;text-align:center;">In Stock</p>
+            {else if $product.stock_quantity >= 1}
+              <p style="background: #ffe852;color:#000;text-align:center;font-weight:600;">Last items</p>
+            {else}
+              <p style="background: rgb(231, 71, 71);color:#000;text-align:center;">Out of stock</p>
+            {/if}
+          </div>
+          <div class="col-md-4 col-xs-6 qty">
             {if !empty($product.is_gift)}
               <span class="gift-quantity">{$product.quantity}</span>
             {else}
@@ -148,7 +161,7 @@
               />
             {/if}
           </div>
-          <div class="col-md-6 col-xs-2 price">
+          <div class="col-md-4 col-xs-2 price">
             <span class="product-price">
               <strong>
                 {if !empty($product.is_gift)}

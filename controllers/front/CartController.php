@@ -35,6 +35,7 @@ class CartControllerCore extends FrontController
     protected $id_address_delivery;
     protected $customization_id;
     protected $qty;
+    protected $checkoutprocess;
     /**
      * To specify if you are in the preview mode or not.
      *
@@ -79,6 +80,14 @@ class CartControllerCore extends FrontController
         $this->id_address_delivery = (int) Tools::getValue('id_address_delivery');
         $this->preview = ('1' === Tools::getValue('preview'));
 
+        // Create an instance of OrderControllerCore
+        // $orderController = new OrderControllerCore();
+
+        // Call the non-static method getCheckoutProcess() on the instance
+        // $checkoutProcess = $orderController->getCheckoutProcess();
+        // echo '<pre>'.print_r($orderController,1).'</pre>';
+        // exit;
+
         /* Check if the products in the cart are available */
         if ('show' === Tools::getValue('action')) {
             $isAvailable = $this->areProductsAvailable();
@@ -109,7 +118,8 @@ class CartControllerCore extends FrontController
         }
 
         if ($this->context->cart->hasProducts()) {
-            $this->setTemplate('checkout/cart');
+            // $this->setTemplate('checkout/cart');
+            Tools::redirect($this->context->link->getPageLink('order'));
         } else {
             $this->context->smarty->assign([
                 'allProductsLink' => $this->context->link->getCategoryLink(
