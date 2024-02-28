@@ -81,6 +81,18 @@ class Ps_Shoppingcart extends Module implements WidgetInterface
             true
         );
     }
+    private function getcheckoutURL()
+    {
+        return $this->context->link->getPageLink(
+            'order',
+            null,
+            $this->context->language->id,
+            null,
+            false,
+            null,
+            true
+        );
+    }
 
     /**
      * @param string|null $hookName
@@ -94,6 +106,7 @@ class Ps_Shoppingcart extends Module implements WidgetInterface
             'cart' => $this->getPresentedCart(),
             'refresh_url' => $this->context->link->getModuleLink('ps_shoppingcart', 'ajax', [], null, null, null, true),
             'cart_url' => $this->getCartSummaryURL(),
+            'order_url' => $this->getcheckoutURL(),
         ];
     }
 
@@ -162,6 +175,7 @@ class Ps_Shoppingcart extends Module implements WidgetInterface
             'product' => $product,
             'cart' => $data,
             'cart_url' => $this->getCartSummaryURL(),
+            'order_url' => $this->getcheckoutURL(),
         ]);
 
         return $this->fetch('module:ps_shoppingcart/modal.tpl');
