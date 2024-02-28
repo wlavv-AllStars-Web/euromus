@@ -22,6 +22,7 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
+ <!-- checkout/_partials/cart-voucher.tpl -->
 {if $cart.vouchers.allowed}
   {block name='cart_voucher'}
     <div class="block-promo">
