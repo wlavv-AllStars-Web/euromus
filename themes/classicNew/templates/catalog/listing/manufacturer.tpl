@@ -27,7 +27,9 @@
 {block name='product_list_header'}
   {* <h1 style="color: #ee302e;">{l s='%brand_name%' sprintf=['%brand_name%' => $manufacturer.name] d='Shop.Theme.Catalog'}</h1> *}
   <div style="padding: 0.5rem 1rem;border-radius:0.25rem;background:#fff;width:fit-content;">
+    {if $manufacturer.id}
     <img src="/img/tmp/manufacturer_mini_{$manufacturer.id}.jpg?time=1708938982" />
+    {/if}
   </div>
   <div id="manufacturer-short_description">{$manufacturer.short_description nofilter}</div>
   <div id="manufacturer-description">{$manufacturer.description nofilter}</div>

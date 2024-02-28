@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
  <!-- checkout/_partials/cart-detailed-product-line.tpl -->
-<div class="product-line-grid">
+<div class="product-line-grid" style="display: flex;align-items:center;">
   <!--  product line left content: image-->
   <div class="product-line-grid-left col-md-3 col-xs-4">
     <span class="product-image media-middle">
@@ -132,14 +132,14 @@
       
       <div class="col-xs-4 hidden-md-up"></div>
       <div class="col-md-10 col-xs-6">
-        <div class="row">
+        <div class="row" style="display: flex;align-items:center;">
           <div class="col-md-4">
             {if $product.stock_quantity >= 5}
-              <p style="background: rgb(63, 192, 63);color:#fff;text-align:center;">In Stock</p>
+              <p style="background: rgb(63, 192, 63);color:#fff;text-align:center;margin-bottom:0;">In Stock</p>
             {else if $product.stock_quantity >= 1}
-              <p style="background: #ffe852;color:#000;text-align:center;font-weight:600;">Last items</p>
+              <p style="background: #ffe852;color:#000;text-align:center;font-weight:600;margin-bottom:0;">Last items</p>
             {else}
-              <p style="background: rgb(231, 71, 71);color:#000;text-align:center;">Out of stock</p>
+              <p style="background: rgb(231, 71, 71);color:#000;text-align:center;margin-bottom:0;">Out of stock</p>
             {/if}
           </div>
           <div class="col-md-4 col-xs-6 qty">

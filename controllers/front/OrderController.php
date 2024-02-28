@@ -222,7 +222,7 @@ class OrderControllerCore extends FrontController
             ]),
         ]));
     }
-
+ 
     public function displayAjaxCheckCartStillOrderable(): void
     {
         $responseData = [

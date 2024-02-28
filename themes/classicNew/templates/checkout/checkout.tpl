@@ -36,8 +36,8 @@
           {* {include file='checkout/_partials/cart-summary.tpl' cart=$cart} *}
           {include file='checkout/cart.tpl'}
         {/block}
-
       </div>
+
       {* <div class="cart-grid-body col-xs-12 col-lg-12">
         {block name='checkout_process'}
           {render file='checkout/checkout-process.tpl' ui=$checkout_process}
@@ -46,10 +46,10 @@
       {* <div class="cart-grid-right col-xs-12 col-lg-4">
         {block name='cart_summary'}
           {include file='checkout/_partials/cart-summary.tpl' cart=$cart}
-        {/block}
+        {/block} *}
         
         {* {hook h='displayReassurance'} *}
-      </div>
+      {* </div> *}
     </div>
   </section>
 {/block}

@@ -3088,3 +3088,10 @@ body#checkout #footer {
 body#checkout section.checkout-step .address-selector {
   justify-content: center !important;
 }
+
+#delivery-addresses .address-item {
+  flex: 1 !important;
+}
+#invoice-addresses .address-item {
+  flex: 1 !important;
+}
