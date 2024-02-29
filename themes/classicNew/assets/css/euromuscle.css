@@ -3160,6 +3160,7 @@ body#checkout section.checkout-step .address-selector {
   padding: 40px 0 0 0;
   font-size: 16px;
   margin: 0 auto;
+  overflow: hidden;
 }
 
 .about-content-cards .card {
