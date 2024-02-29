@@ -93,7 +93,7 @@
     </div>
   {/if}
 
-  <div class="row">
+  {* <div class="row">
     {block name='order_confirmation_table'}
       {include file='checkout/_partials/order-final-summary-table.tpl'
          products=$cart.products
@@ -104,5 +104,5 @@
          add_product_link=true
        }
     {/block}
-  </div>
+  </div> *}
 </section>
