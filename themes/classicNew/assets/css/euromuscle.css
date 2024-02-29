@@ -2439,6 +2439,53 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
   text-align: center;
   display: grid;
 }
+/* shipping cms */
+
+#cms_shipping {
+  max-width: 1440px;
+  margin: auto;
+}
+
+#cms_shipping .shipping-header {
+  background-color: #eee;
+  font-family: Roboto;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+#cms_shipping .shipping-content {
+  display: flex;
+  background-color: #eee;
+  font-family: Roboto;
+  width: 1440px;
+  margin: 0 auto;
+  text-align: center;
+  padding: 20px 0 0 0;
+  font-size: 16px;
+}
+
+#cms_shipping .shipping-content-title {
+  color: #dd170e;
+  padding: 5px;
+  text-transform: uppercase;
+}
+
+#cms_shipping .shipping-content-left-text span {
+  margin-top: 1rem;
+  background: white;
+  padding: 0.5rem 1rem;
+}
+
+#cms_shipping .shipping-content-right-text {
+  padding: 20px;
+  text-align: center;
+}
+
+#cms_shipping .shipping-content-right-img img {
+  margin: 0 auto;
+  width: 100%;
+}
+
 
 /* legal notice cms */
 
