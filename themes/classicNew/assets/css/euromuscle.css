@@ -3088,6 +3088,30 @@ body#checkout #footer {
 body#checkout section.checkout-step .address-selector {
   justify-content: center !important;
 }
+#delivery-addresses{
+  display: flex;
+  flex-direction: column;
+}
+
+#delivery-addresses .card-body{
+  padding: 1rem 0.5rem;
+}
+
+#delivery-addresses .accordion{
+  width: 100%;
+}
+
+#invoice-addresses{
+  display: flex;
+  flex-direction: column;
+}
+#invoice-addresses .card-body{
+  padding: 1rem 0.5rem;
+}
+
+#invoice-addresses .accordion{
+  width: 100%;
+}
 
 #delivery-addresses .address-item {
   flex: 1 !important;
