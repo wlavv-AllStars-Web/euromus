@@ -2550,6 +2550,7 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 #cms-payment .payment-content-bottom {
   width: 100%;
   font-size: 16px;
+  display: flex;
 }
 
 #cms-payment .payment-alma {
