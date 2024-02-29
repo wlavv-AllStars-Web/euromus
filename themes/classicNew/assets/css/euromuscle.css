@@ -2974,9 +2974,9 @@ justify-content: center;
   object-fit: cover;
   width: 100%;
   }
-  .page-cms-51 .banner_cms h2 {
+  /* .page-cms-51 .banner_cms h2 {
     left: 8rem !important;
-  }
+  } */
 
   #contact #wrapper .container .row {
     display: flex;
