@@ -3267,14 +3267,20 @@ body#checkout section.checkout-step .address-selector {
  /* about */
  #about-us .about-header {
   background-color: #eee;
-  font-family: Roboto;
+  font-family: system-ui, -apple-system, 
+    BlinkMacSystemFont, “Segoe UI”, 
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+    “Helvetica Neue”, Arial, sans-serif;
   width: 1440px;
   margin: 0 auto;
 }
 
 #about-us .about-content {
   background-color: #eee;
-  font-family: Roboto;
+  font-family: system-ui, -apple-system, 
+    BlinkMacSystemFont, “Segoe UI”, 
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+    “Helvetica Neue”, Arial, sans-serif;
   width: 1440px;
   font-size: 16px;
   margin: 0 auto;
@@ -3314,7 +3320,10 @@ body#checkout section.checkout-step .address-selector {
 
 .about-content-cards {
   background-color: #eee;
-  font-family: Roboto;
+  font-family: system-ui, -apple-system, 
+    BlinkMacSystemFont, “Segoe UI”, 
+    Roboto, Oxygen-Sans, Ubuntu, Cantarell, 
+    “Helvetica Neue”, Arial, sans-serif;
   width: 1440px;
   text-align: center;
   padding: 40px 0 0 0;
