@@ -3091,7 +3091,13 @@ body#checkout section.checkout-step .address-selector {
 
 #delivery-addresses .address-item {
   flex: 1 !important;
+  min-width: 50%;
 }
 #invoice-addresses .address-item {
   flex: 1 !important;
+  min-width: 50%;
+}
+
+.js-address-form form {
+  justify-content: center;
 }
