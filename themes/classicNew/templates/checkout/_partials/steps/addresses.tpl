@@ -56,6 +56,7 @@
           }
         </div>
       {elseif $customer.addresses|count > 0}
+        
         <div id="delivery-addresses" class="address-selector js-address-selector">
           {include  file        = 'checkout/_partials/address-selector-block.tpl'
             addresses   = $customer.addresses
@@ -65,7 +66,7 @@
             interactive = !$show_delivery_address_form and !$show_invoice_address_form
           }
         </div>
-    
+
         {if isset($delivery_address_error)}
           <p class="alert alert-danger js-address-error" name="alert-delivery" id="id-failure-address-{$delivery_address_error.id_address}">{$delivery_address_error.exception}</p>
         {else}
@@ -103,6 +104,7 @@
             }
           </div>
         {else}
+          
           <div id="invoice-addresses" class="address-selector js-address-selector">
             {include  file        = 'checkout/_partials/address-selector-block.tpl'
               addresses   = $customer.addresses
@@ -112,6 +114,7 @@
               interactive = !$show_delivery_address_form and !$show_invoice_address_form
             }
           </div>
+          
 
           {if isset($invoice_address_error)}
             <p class="alert alert-danger js-address-error" name="alert-invoice" id="id-failure-address-{$invoice_address_error.id_address}">{$invoice_address_error.exception}</p>
@@ -128,7 +131,7 @@
       </div>
 
       {if !$form_has_continue_button}
-        <div class="clearfix">
+        <div class="clearfix" style="margin-top: auto;">
           <button type="submit" class="btn btn-primary continue float-xs-right" name="confirm-addresses" value="1">
             {l s='Continue' d='Shop.Theme.Actions'}
           </button>
