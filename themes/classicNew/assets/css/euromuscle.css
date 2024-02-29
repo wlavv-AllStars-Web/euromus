@@ -2553,6 +2553,16 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
   display: flex;
 }
 
+#cms-payment .payment-content-bottom .col-2 {
+  width: 20%;
+}
+#cms-payment .payment-content-bottom .col-3 {
+  width: 25%;
+}
+#cms-payment .payment-content-bottom .col-5 {
+  width: 40%;
+}
+
 #cms-payment .payment-alma {
   background-image: url('/img/cms/payment/alma.png');
   background-repeat: no-repeat;
