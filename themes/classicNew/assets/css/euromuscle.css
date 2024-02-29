@@ -2486,6 +2486,12 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
   width: 100%;
 }
 
+#cms_shipping .shipping-content-left-text {
+  display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
 
 /* legal notice cms */
 
