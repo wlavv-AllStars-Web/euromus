@@ -3101,3 +3101,77 @@ body#checkout section.checkout-step .address-selector {
 .js-address-form form {
   justify-content: center;
 }
+
+/* cms about  */
+
+ /* about */
+ #about-us .about-header {
+  background-color: #eee;
+  font-family: Roboto;
+  width: 1440px;
+  margin: 0 auto;
+}
+
+#about-us .about-content {
+  background-color: #eee;
+  font-family: Roboto;
+  width: 1440px;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+#about-us .about-content .about-content-imgs {
+  width: 1440px;
+  background-color: #eee;
+  margin: 0 auto;
+}
+
+.about-content-warehouse {
+  padding: 10px 0px;
+  text-align: justify;
+  width: 650px;
+  float: left;
+}
+
+.about-content-text {
+  margin: 30px;
+  text-align: center;
+  width: 730px;
+}
+
+.about-content-text div {
+  padding: 20px 40px;
+}
+
+.about-content-cards {
+  background-color: #eee;
+  font-family: Roboto;
+  width: 1440px;
+  text-align: center;
+  padding: 40px 0 0 0;
+  font-size: 16px;
+  margin: 0 auto;
+}
+
+.about-content-cards .card {
+  width: 33%;
+  background: #eee;
+  border: 0;
+}
+
+.about-content-cards .card .card-content {
+  padding: 20px 60px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.about-content-cards .card .card-content img {
+  height: 70px;
+  margin: 0 auto;
+}
+
+.about-content-cards .row {
+  display: flex;
+  justify-content: space-between;
+}
