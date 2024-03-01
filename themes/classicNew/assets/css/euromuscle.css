@@ -3428,3 +3428,35 @@ body#checkout section.checkout-step .address-selector {
   display: flex;
   justify-content: space-between;
 }
+
+
+/* cms specific request */
+.cms-id-52 .container{
+  max-width: unset !important;
+}
+.cms_specificRequest{
+  display: flex;
+  flex-direction: column;
+  max-width: 1440px;
+  margin: auto;
+}
+
+.form_specificRequest{
+  background: #fff;
+  padding: 1rem 2rem;
+}
+.form_specificRequest h5{
+  color: #103054 !important;
+}
+.form_specificRequest label{
+  color: #103054 !important;
+}
+
+.btn-submit-specific {
+  background: #103054 !important;
+  color: #fff;
+}
+.btn-submit-specific:hover {
+  background: #ee302e !important;
+  color: #fff !important;
+}
