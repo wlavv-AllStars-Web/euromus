@@ -3225,7 +3225,6 @@ justify-content: center;
 #tab-content p {
   font-weight: 600 !important;
   color: #484848 !important;
-  width: max-content;
 }
 
 .tabs .nav-tabs{
