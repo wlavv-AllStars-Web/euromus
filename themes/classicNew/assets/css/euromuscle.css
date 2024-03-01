@@ -1189,7 +1189,7 @@ main {
       color: #ee302e;
     }
 
-    .linesHeaderDesktop {
+    .cms-id-52 .linesHeaderDesktop {
       border-top: 6px solid #103054;
       border-bottom: 6px solid #ee302e;
       padding-block: 3px;
@@ -1198,6 +1198,16 @@ main {
       bottom:58px;
       width:100%;
       z-index:1;
+    }
+    .linesHeaderDesktop {
+      border-top: 6px solid #103054;
+      border-bottom: 6px solid #ee302e;
+      padding-block: 3px;
+      background:#fff;
+      position:absolute;
+      bottom:52px;
+      width:100%;
+      z-index:0;
     }
 
     /* shopping cart */
