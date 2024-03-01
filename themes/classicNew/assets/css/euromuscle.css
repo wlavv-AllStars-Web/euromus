@@ -3460,3 +3460,10 @@ body#checkout section.checkout-step .address-selector {
   background: #ee302e !important;
   color: #fff !important;
 }
+
+.cms_requesteSent {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+}
