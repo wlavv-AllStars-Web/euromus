@@ -77,9 +77,9 @@
           
           <input type="submit" value="Submit">
         </form> *}
-{* <pre>{print_r($customer)}</pre> *}
+        
         <form class="form_specificRequest needs-validation" method="post" novalidate>
-        <input type="hidden" name="action_job" value="form_specificRequest"/>
+            <input type="hidden" name="action_job" value="form_specificRequest"/>
             <div class="form-row">
               <h5 class="col-md-12">Personal Information</h5>
               <div class="col-md-4 mb-3">

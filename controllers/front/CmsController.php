@@ -276,8 +276,8 @@ class CmsControllerCore extends FrontController
             $var_list['{aditional_info}'] = Tools::getValue('aditional_info');
 
             Mail::Send($this->context->language->id, 'specific_request', 'JOB APPLICATION', $var_list,  'pauloallstarsweb@gmail.com', 'Job Application', null, null, null, null, _PS_MAIL_DIR_, false, null, null, $var_list['{email}']);
-            $this->context->smarty->assign(array( 'email_sent' => 2 ));
-        
+            $this->context->smarty->assign(array( 'email_sent' => 1 ));
+            Tools::redirect($this->context->link->getCMSLink(53));
         }
     }
 }
