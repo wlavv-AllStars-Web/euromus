@@ -31,21 +31,7 @@
 {block name='content'}
   <section id="main">
 
-    {block name='product_list_header'}
-    <h1 id="js-product-list-header" style="margin-left:3rem;" class="h2">
-      {if $listing.label}
-        {$listing.label}
-      {else} 
-        <div class="breadcrumb">
-            <a class="home" href="/" title="Return to Home" style="display: flex;align-items:center;gap:0.5rem;">
-              <i class="fa fa-home" style="color: #103054;"></i>
-              <h6 style="margin-bottom: 0;">{l s='Home' d='Shop.Theme.Catalog'}</h6>
-            </a> 
-            
-        </div>
-      {/if}
-    </h1>
-    {/block}
+
 
     {block name='subcategory_list'}
       {if isset($subcategories) && $subcategories|@count > 0}

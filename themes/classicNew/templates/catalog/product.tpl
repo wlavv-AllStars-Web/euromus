@@ -219,12 +219,14 @@
 
       </div>
     </div>
-<div class="section_tabs_video" style="display: flex;min-height:49vh;{if empty($product.youtube_code)}justify-content:center;{/if}">
+    <div class="hidden-md-down"
+  style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;margin:4rem 0 0 0"></div>
+<div class="section_tabs_video" style="display: flex;{if empty($product.youtube_code)}justify-content:center;{/if}">
             {* inicio tabs *}
             <div class="column_tabs" style="width:100%">
             {block name='product_tabs'}
               {* <pre>{print_r($product,1)}</pre> *}
-              <div class="tabs">
+              <div class="tabs" style="background: #f6f6f6;margin-top:0;">
                 <ul class="nav nav-tabs" role="tablist" style="display: flex;justify-content:space-between;">
                   {* {if $product.description} *}
                     <li class="nav-item">
@@ -479,6 +481,8 @@
           })
           </script>
 </div>
+<div class="hidden-md-down"
+style="border-bottom:4px solid #103054;border-top:4px solid #ee302e;padding-block:2px;width: 100%;margin:0 0 4rem 0"></div>
 
 
 

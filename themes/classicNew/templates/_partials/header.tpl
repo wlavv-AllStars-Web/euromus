@@ -152,7 +152,7 @@
         <li class="{if $currentUrl === $link->getPageLink('index', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('index', true)}">{l s='Home' d='Shop.Theme.Global'}</a></li>
         <li class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></li> 
         <li class="dropdown ">
-          <div class="dropbtn">{l s='Brands' d='Shop.Theme.Global'}</div>
+          <div class="dropbtn">{l s='BRANDS' d='Shop.Theme.Global'}</div>
           <ul class="dropdown-content">
           {* <pre>{print_r($manufacturers,1)}</pre> *}
           {foreach from=$manufacturers item=$manufacturer }
@@ -334,6 +334,7 @@ btnBrandsMobile.addEventListener('click', () => {
   display: flex;
   justify-content: center;
   transition: 0.3s;
+  text-transform: uppercase;
 }
 
 .mainmenuDesktop .activeLinkDesk a{

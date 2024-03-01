@@ -49,13 +49,12 @@
   </nav>
 {else}
   <nav data-depth="{$breadcrumb.count}" class="breadcrumb">
-  paulo
     <ol>
       {block name='breadcrumb'}
         {foreach from=$filters item=item name=breadcrumb}
           {block name='breadcrumb_item'}
             <li>
-            <pre>{print_r($item,1)}</pre>
+            {* <pre>{print_r($item,1)}</pre> *}
               {$item.criteria[0]['value']}
               {* {if not $smarty.foreach.breadcrumb.last}
                 <a href="{$path.url}"><span>{$path.title}</span></a>
