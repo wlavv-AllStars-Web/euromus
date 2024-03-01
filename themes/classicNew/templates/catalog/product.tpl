@@ -236,7 +236,7 @@
                          href="#description"
                          role="tab"
                          aria-controls="description"
-                         {if $product.description} aria-selected="true"{/if}>{l s='Product Description' d='Shop.Theme.Catalog'}</a>
+                         {if $product.description} aria-selected="true"{/if}>{l s='DESCRIPTION' d='Shop.Theme.Catalog'}</a>
                     </li>
                   {* {/if} *}
                   <li class="nav-item">
@@ -246,7 +246,7 @@
                       href="#product-installation"
                       role="tab"
                       aria-controls="product-installation"
-                      {if !$product.description} aria-selected="true"{/if}>{l s='Installation & Fitment' d='Shop.Theme.Catalog'}</a>
+                      {if !$product.description} aria-selected="true"{/if}>{l s='INSTALLATION & FITMENT' d='Shop.Theme.Catalog'}</a>
                   </li>
                   <li class="nav-item">
                     <a
@@ -255,7 +255,7 @@
                       href="#compatibilities"
                       role="tab"
                       aria-controls="product-details"
-                      {if !$product.description} aria-selected="true"{/if}>{l s='Compatibilities' d='Shop.Theme.Catalog'}</a>
+                      {if !$product.description} aria-selected="true"{/if}>{l s='COMPATIBILITIES' d='Shop.Theme.Catalog'}</a>
                   </li>
                   {* {if $product.attachments}
                     <li class="nav-item">
@@ -284,7 +284,7 @@
                       href="#product_reviews"
                       role="tab"
                       aria-controls="product-details"
-                      {if !$product.description} aria-selected="true"{/if}>{l s='Reviews' d='Shop.Theme.Catalog'}</a>
+                      {if !$product.description} aria-selected="true"{/if}>{l s='REVIEWS' d='Shop.Theme.Catalog'}</a>
                   </li>
                   <li class="nav-item">
                     <a
@@ -293,7 +293,7 @@
                       href="#product_warranty"
                       role="tab"
                       aria-controls="product-details"
-                      {if !$product.description} aria-selected="true"{/if}>{l s='Warranty' d='Shop.Theme.Catalog'}</a>
+                      {if !$product.description} aria-selected="true"{/if}>{l s='WARRANTY' d='Shop.Theme.Catalog'}</a>
                   </li>
                   <li class="nav-item">
                     <a
