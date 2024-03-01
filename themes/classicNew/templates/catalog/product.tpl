@@ -311,7 +311,7 @@
                 <div class="tab-content" id="tab-content">
                  <div class="tab-pane fade in active" id="description" role="tabpanel">
                   {if $product.description}
-                    <div class="tab-description" style="display: flex;">
+                    <div class="tab-description" style="display: flex;justify-content:center;">
                       {block name='product_description'}
                         <div class="product-description" style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">{$product.description nofilter}</div>
                       {/block}
@@ -401,14 +401,14 @@
                    {if $product.attachments}
                     <div class="tab-pane fade in" id="product-installation" role="tabpanel">
                        <section class="product-attachments">
-                         <p class="h5 text-uppercase">{l s='Download Instructions' d='Shop.Theme.Actions'}</p>
+                         {* <p class="h5 text-uppercase">{l s='Download Instructions' d='Shop.Theme.Actions'}</p> *}
                          {foreach from=$product.attachments item=attachment}
                            <div class="attachment">
-                             <h4><a href="{url entity='attachment' params=['id_attachment' => $attachment.id_attachment]}">{$attachment.name}</a></h4>
+                             {* <h4><a href="{url entity='attachment' params=['id_attachment' => $attachment.id_attachment]}">{$attachment.name}</a></h4> *}
                              {* <p>{$attachment.description}</p> *}
-                             {* <a href="{url entity='attachment' params=['id_attachment' => $attachment.id_attachment]}">
-                               {l s='Download' d='Shop.Theme.Actions'} ({$attachment.file_size_formatted})
-                             </a> *}
+                             <a class="btn_downloadInstructions" href="{url entity='attachment' params=['id_attachment' => $attachment.id_attachment]}">
+                               {l s='Download Instructions' d='Shop.Theme.Actions'}
+                             </a>
                            </div>
                          {/foreach}
                        </section>
@@ -481,14 +481,14 @@
           })
           </script>
 </div>
-<div class="hidden-md-down"
-style="border-bottom:4px solid #103054;border-top:4px solid #ee302e;padding-block:2px;width: 100%;margin:0 0 4rem 0"></div>
+{* <div class="hidden-md-down"
+style="border-bottom:4px solid #103054;border-top:4px solid #ee302e;padding-block:2px;width: 100%;margin:0 0 4rem 0"></div> *}
 
 
 
     {block name='product_accessories'}
       {if $accessories}
-        <section class="product-accessories clearfix">
+        <section class="product-accessories clearfix" style="margin-top: 4rem;">
           <p class="h5 text-uppercase">{l s='You might also like' d='Shop.Theme.Catalog'}</p>
           <div class="products row">
             {foreach from=$accessories item="product_accessory" key="position"}

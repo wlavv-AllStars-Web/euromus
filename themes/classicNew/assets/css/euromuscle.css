@@ -2171,6 +2171,19 @@ header.page-header {
   display: none !important;
 }
 
+#product-installation {
+  padding-top: 0 !important;
+}
+
+.attachment .btn_downloadInstructions {
+ padding: 0.5rem 1rem;
+ background: #103054;
+ color: #fff;
+}
+
+.btn_downloadInstructions:hover {
+  background-color: #d2413f;
+}
 
 /* quick view */
 
@@ -3212,6 +3225,7 @@ justify-content: center;
 #tab-content p {
   font-weight: 600 !important;
   color: #484848 !important;
+  width: max-content;
 }
 
 .tabs .nav-tabs{
