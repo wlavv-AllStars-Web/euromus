@@ -1462,6 +1462,12 @@ main {
       max-width: 480px !important;
     }
 
+    #checkout .header-top-right-desktop #search_widget {
+      display: block !important;
+    }
+    #checkout .header-top-right-desktop #search_widget form{
+      margin-bottom: 0;
+    }
 
     /* cars */
     .cars-container {
