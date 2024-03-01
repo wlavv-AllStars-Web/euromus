@@ -67,6 +67,8 @@
 !/img/su/index.php
 !/img/t/index.php
 !/img/tmp/index.php
+/img/tmp/*
+
 
 # Upload
 /upload/*
@@ -79,6 +81,10 @@
 *.hot-update.json
 
 /admineuromus1/*
+
+/modules/paypal/*
+/modules/alma/*
+/modules/totshippingpreview/*
 
 
 /admin-dev/autoupgrade/*

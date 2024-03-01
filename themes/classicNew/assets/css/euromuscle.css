@@ -3225,6 +3225,7 @@ justify-content: center;
 #tab-content p {
   font-weight: 600 !important;
   color: #484848 !important;
+  min-width: 150px;
 }
 
 .tabs .nav-tabs{
@@ -3251,6 +3252,10 @@ justify-content: center;
 
 .product-accessories {
   padding: 0 2rem;
+}
+
+#product_reviews {
+  width: 100% !important;
 }
 
 #checkout-guest-form label{
