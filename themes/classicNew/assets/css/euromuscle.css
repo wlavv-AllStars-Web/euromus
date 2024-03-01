@@ -1363,6 +1363,7 @@ main {
       align-items: center;
       color: #103054;
       gap: 0.25rem;
+      font-weight: 600;
     }
 
     #_desktop_cart .cart-link a{
