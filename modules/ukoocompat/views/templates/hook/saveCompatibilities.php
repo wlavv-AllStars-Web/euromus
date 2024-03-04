@@ -197,9 +197,8 @@ function get_compats($id_product, $select_1, $select_2, $select_3, $select_4){
 
 $compats = (object)get_compats((int)$_POST['id_product'], (int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
 // paulo
-// insert_data("INSERT INTO eu_ukoocompat_compat_asm (id_filter_value_1, id_filter_value_2, id_filter_value_3, id_filter_value_4) VALUES ('".(int)$_POST['select_1']."','".(int)$_POST['select_2']."','".(int)$_POST['select_3']."','".(int)$_POST['select_4']. "')");
-// 
 insert_data_into_ps_ukoocompat_compat_asm((int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
+// fim paulo
 $resposta = array();
 $some_compats_existe = 0;
 

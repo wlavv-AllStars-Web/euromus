@@ -3214,6 +3214,9 @@ justify-content: center;
 .section_tabs_video ul li a {
   color: #103054;
 }
+.section_tabs_video .tabs {
+  padding-bottom: 3rem;
+}
 /* .tabs .nav-tabs .nav-link.active{
   border-top: #ee302e 3px solid;
 } */

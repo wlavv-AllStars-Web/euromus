@@ -1,5 +1,6 @@
 {if Context::getContext()->isMobile() || $page_name!='index'}
     <select id="ukoocompat_select_{$filter->id|intval}" 
+        aria-label="ukoocompat_select_{$filter->id|intval}"
     	name="filters{$filter->id|intval}" 
     	data-filter-id="{$filter->id_ukoocompat_filter|intval}" 
     	class="form-control-2{if $search->dynamic_criteria} dynamic_criteria{/if}{if isset($filter->disabled) && $filter->disabled|intval == 1} disabled{/if}" 

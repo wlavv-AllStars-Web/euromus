@@ -83,7 +83,7 @@
                 <div class="card-img-container">
                   <div class="card-big">
                     <div class="layerHover">
-                      <h6>{$item["title_{$currentLanguageIso}"]}</h6>
+                      <h5>{$item["title_{$currentLanguageIso}"]}</h5>
                     </div>
                     {if $numberString != $url}
                     <a style="cursor: pointer;"
@@ -544,7 +544,7 @@
               {foreach $desktop['icones_videos'] AS $key => $icon}
                 <div class="video3 video">
                   <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
-                  <img src="{$icon["image_{$currentLanguageIso}"]}" style="min-width: 32vw;" loading="lazy"/>
+                  <img src="{$icon["image_{$currentLanguageIso}"]}" style="min-width: 32vw;" loading="lazy" alt="banner_{$icon.youtube_code}"/>
                     <div class="play">
                       <img class="image_play" alt="video player" src="/img/youtube_play.png" loading="lazy" />
                     </div>
