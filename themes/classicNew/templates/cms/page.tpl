@@ -35,8 +35,8 @@
       {if $cms.id == 52}
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
         <div class="cms_specificRequest">
         <div class="banner_cms"><img class="img-desktop"
@@ -44,56 +44,22 @@
             class="img-mobile" src="/img/eurmuscle/cmsBanners/Banners-specificMobile.webp" alt="Banners-contact.webp" />
           <h2 style="font-size: 5rem; color: #fff;">SPECIFIC REQUEST</h2>
         </div>
-        {* <form class="form_specificRequest" action="#" method="POST">
-          <label for="name">Name:</label><br>
-          <input type="text" id="name" name="name"><br><br>
-
-          <label for="name">Last Name:</label><br>
-          <input type="text" id="name" name="name"><br><br>
-          
-          <label for="email">Email:</label><br>
-          <input type="email" id="email" name="email"><br><br>
-          
-          <label for="car_brand">Car Brand:</label><br>
-          <input type="text" id="car_brand" name="car_brand"><br><br>
-          
-          <label for="car_model">Car Model:</label><br>
-          <input type="text" id="car_model" name="car_model"><br><br>
-          
-          <label for="car_type">Car Type:</label><br>
-          <input type="text" id="car_type" name="car_type"><br><br>
-          
-          <label for="car_version">Car Version:</label><br>
-          <input type="text" id="car_version" name="car_version"><br><br>
-          
-          <label for="product_brand">Product Brand:</label><br>
-          <input type="text" id="product_brand" name="product_brand"><br><br>
-          
-          <label for="product_type">Product Type:</label><br>
-          <input type="text" id="product_type" name="product_type"><br><br>
-          
-          <label for="car_modifications">Car Modifications:</label><br>
-          <textarea id="car_modifications" name="car_modifications" rows="4" cols="50"></textarea><br><br>
-          
-          <input type="submit" value="Submit">
-        </form> *}
-        
         <form class="form_specificRequest needs-validation" method="post" novalidate>
             <input type="hidden" name="action_job" value="form_specificRequest"/>
             <div class="form-row">
               <h5 class="col-md-12">Personal Information</h5>
               <div class="col-md-4 mb-3">
                 <label for="validationCustom01">First name</label>
-                <input type="text" class="form-control" id="validationCustom01" name="firstname" placeholder="First name" value="{$customer.firstname}" required>
+                <input type="text" class="form-control" id="validationCustom01" name="firstname" placeholder="First name" pattern="[a-zA-Z]" value="{$customer.firstname}" required>
                 <div class="invalid-feedback">
-                    Please insert your First name.
+                    Please insert your a valid first name.
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="validationCustom02">Last name</label>
-                <input type="text" class="form-control" id="validationCustom02" name="lastname" placeholder="Last name" value="{$customer.lastname}" required>
+                <input type="text" class="form-control" id="validationCustom02" name="lastname" placeholder="Last name" pattern="[a-zA-Z]" value="{$customer.lastname}" required>
                 <div class="invalid-feedback">
-                    Please insert your Last name.
+                    Please insert your a valid last name.
                 </div>
               </div>
               <div class="col-md-4 mb-3">
@@ -155,7 +121,7 @@
               </div>
             </div>
             <div class="form-row">
-              <div class="col-md-3 mb-3">
+              <div class="col-md-6 mb-3">
                 <label for="validationCustom09">Additional Information</label>
                 <textarea class="form-control" name="aditional_info" id="validationCustom09" rows="3"></textarea>
                 <div class="invalid-feedback">
