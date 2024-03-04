@@ -7,6 +7,10 @@ function insert_data_into_ps_ukoocompat_compat($id_product){
     return get_inserted_id('SELECT id_ukoocompat_compat FROM eu_ukoocompat_compat ORDER BY id_ukoocompat_compat DESC LIMIT 1', 'id_ukoocompat_compat')['id_ukoocompat_compat'];
 }
 
+function insert_data_into_ps_ukoocompat_compat_asm( $id_ukoocompat_criterion_1, $id_ukoocompat_criterion_2, $id_ukoocompat_criterion_3, $id_ukoocompat_criterion_4) {
+    insert_data("INSERT INTO eu_ukoocompat_compat_asm (id_filter_value_1, id_filter_value_2, id_filter_value_3, id_filter_value_4) VALUES ('".$id_ukoocompat_criterion_1."','".$id_ukoocompat_criterion_2."','".$id_ukoocompat_criterion_3."','".$id_ukoocompat_criterion_4. "')");
+}
+
 function insert_data_into_ps_ukoocompat_compat_criterion($id_ukoocompat_compat, $id_ukoocompat_filter, $id_ikoocompat_criterion){   
     insert_data("INSERT INTO eu_ukoocompat_compat_criterion (id_ukoocompat_compat, id_ukoocompat_filter, id_ukoocompat_criterion) VALUES ('" . $id_ukoocompat_compat . "', '" . $id_ukoocompat_filter . "', '" . $id_ikoocompat_criterion . "')");
 }
@@ -195,6 +199,7 @@ $compats = (object)get_compats((int)$_POST['id_product'], (int)$_POST['select_1'
 // paulo
 // insert_data("INSERT INTO eu_ukoocompat_compat_asm (id_filter_value_1, id_filter_value_2, id_filter_value_3, id_filter_value_4) VALUES ('".(int)$_POST['select_1']."','".(int)$_POST['select_2']."','".(int)$_POST['select_3']."','".(int)$_POST['select_4']. "')");
 // 
+insert_data_into_ps_ukoocompat_compat_asm((int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
 $resposta = array();
 $some_compats_existe = 0;
 
