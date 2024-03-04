@@ -96,7 +96,7 @@
                       {/if}
                       
                     {/if}
-                      <img src="{$item["image_{$currentLanguageIso}"]}" loading="lazy" alt="banner{$linkBrand}"/>
+                      <img src="{$item["image_{$currentLanguageIso}"]}" alt="banner{$linkBrand}"/>
                     {if isset($numbers)}
                     </a>
                     {elseif $linkBrand != ''}
@@ -518,14 +518,14 @@
                     {if $category.id_category == 14}
                       <a rel="nofollow" href="http://tune4style.com/{$currentLanguageIso}" class="select-list ">
                         <div class="category {$category.name}">
-                          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.webp" loading="lazy" alt="{$category.name}">
+                          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.webp" loading="lazy" alt="category {$category.name}">
                           <div class="model-type-overlay"><span>{$category.name}</span></div>
                         </div>
                       </a>
                     {else}
                       <a rel="nofollow" href="/{$category.id_category}-{$category.link_rewrite}" class="select-list ">
                         <div class="category {$category.name}">
-                          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.webp" loading="lazy" alt="{$category.name}">
+                          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.webp" loading="lazy" alt="category {$category.name}">
                           <div class="model-type-overlay"><span>{$category.name}</span></div>
                         </div>
                       </a>
