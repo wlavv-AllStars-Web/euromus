@@ -267,9 +267,6 @@ class CmsControllerCore extends FrontController
             $var_list['{type}'] = Tools::getValue('type');
             $var_list['{version}'] = Tools::getValue('version');
 
-            $var_list['{distrito}'] = Tools::getValue('distrito');
-            $var_list['{city}'] = Tools::getValue('city');
-
             $var_list['{product_brand}'] = Tools::getValue('product_brand');
             $var_list['{product_type}'] = Tools::getValue('product_type');
 
