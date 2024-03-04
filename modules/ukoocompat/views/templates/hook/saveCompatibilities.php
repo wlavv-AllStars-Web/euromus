@@ -42,7 +42,7 @@ function get_id_ukoocompat_compat($id_product, $id_ukoocompat_criterion_1, $id_u
             AND id_product=" . $id_product;
 
 
-            
+    
     $conn = getConn();
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
@@ -193,7 +193,7 @@ function get_compats($id_product, $select_1, $select_2, $select_3, $select_4){
 
 $compats = (object)get_compats((int)$_POST['id_product'], (int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
 // paulo
-insert_data("INSERT INTO eu_ukoocompat_compat_asm (id_filter_value_1, id_filter_value_2, id_filter_value_3, id_filter_value_4) VALUES ('".(int)$_POST['select_1']."','".(int)$_POST['select_2']."','".(int)$_POST['select_3']."','".(int)$_POST['select_4']. "')");
+// insert_data("INSERT INTO eu_ukoocompat_compat_asm (id_filter_value_1, id_filter_value_2, id_filter_value_3, id_filter_value_4) VALUES ('".(int)$_POST['select_1']."','".(int)$_POST['select_2']."','".(int)$_POST['select_3']."','".(int)$_POST['select_4']. "')");
 // 
 $resposta = array();
 $some_compats_existe = 0;
