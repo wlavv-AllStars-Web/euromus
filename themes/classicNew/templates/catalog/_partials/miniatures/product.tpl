@@ -27,7 +27,7 @@
  {* http://euromus.local/29-home_default/mustang-23t-ecoboost-mishimoto-aluminium-radiator.jpg *}
  {* {$link->getImageLink($product.link_rewrite, $product.cover_image_id, 'home_default')} *}
 {block name='product_miniature_item'}
-<div class="js-product product{if !empty($productClasses)} {$productClasses}{/if}">
+<div class="js-product product{if !empty($productClasses)} {$productClasses}{/if}" style="display: flex;justify-content:center;">
   <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
     <div class="thumbnail-container">
       <div class="thumbnail-top">

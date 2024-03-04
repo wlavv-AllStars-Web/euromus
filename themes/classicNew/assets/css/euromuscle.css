@@ -3485,3 +3485,8 @@ body#checkout section.checkout-step .address-selector {
   align-items: center;
   justify-content: center;
 }
+
+#new-products .container{
+  max-width: unset;
+  width: 100%;
+}
