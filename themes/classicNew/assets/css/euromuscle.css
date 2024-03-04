@@ -45,8 +45,16 @@ main {
     object-position: top !important;
     width: 70% !important;
   }
+  .cart-link {
+    display: flex;
+    align-items: center;
+  }
 }
 @media screen and (min-width:301px) and (max-width:520px){
+  .cart-link {
+    display: flex;
+    align-items: center;
+  }
   #brands_mobile .content_brands li {
     width: 50%;
     margin-bottom: 1rem;
@@ -79,6 +87,10 @@ main {
     margin-bottom: 1rem;
     display: flex;
     justify-content: center;
+  }
+  .cart-link {
+    display: flex;
+    align-items: center;
   }
 }
 
