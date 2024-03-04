@@ -3505,3 +3505,15 @@ body#checkout section.checkout-step .address-selector {
   max-width: 1440px;
   width: 100%;
 }
+#module-ukoocompat-listing .container{
+  max-width: 1440px;
+  width: 100%;
+}
+#manufacturer .container{
+  max-width: 1440px;
+  width: 100%;
+}
+#category .container{
+  max-width: 1440px;
+  width: 100%;
+}
