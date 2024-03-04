@@ -518,14 +518,14 @@
                     {if $category.id_category == 14}
                       <a rel="nofollow" href="http://tune4style.com/{$currentLanguageIso}" class="select-list ">
                         <div class="category {$category.name}">
-                          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.png" loading="lazy" alt="{$category.name}">
+                          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.webp" loading="lazy" alt="{$category.name}">
                           <div class="model-type-overlay"><span>{$category.name}</span></div>
                         </div>
                       </a>
                     {else}
                       <a rel="nofollow" href="/{$category.id_category}-{$category.link_rewrite}" class="select-list ">
                         <div class="category {$category.name}">
-                          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.png" loading="lazy" alt="{$category.name}">
+                          <img src="/img/eurmuscle/bannersHome/{$category.id_category}.webp" loading="lazy" alt="{$category.name}">
                           <div class="model-type-overlay"><span>{$category.name}</span></div>
                         </div>
                       </a>
@@ -588,7 +588,6 @@ function setCarAndSearch(brand, model, type, version) {
     $("#custom_filter_3").prop('value', type);
     $("#custom_filter_4").prop('value', version);
     $('#ukoocompat_my_cars_custom_form').submit();
-
   }
 
               </script>
