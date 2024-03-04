@@ -2940,6 +2940,9 @@ justify-content: center;
     line-height: 100px;
     cursor: pointer;
     transform: rotate(0);
+    background: #103054;
+    color: #fff;
+    width: 28px;
   }
   .left-side #content .scroll-box-arrows .right {
     position: absolute;
@@ -2951,6 +2954,9 @@ justify-content: center;
     cursor: pointer;
     top: unset;
     transform: rotate(0);
+    background: #103054;
+    color: #fff;
+    width: 28px;
   }
   .images-container .product-images > li.thumb-container .thumb{
     margin-right: unset;
