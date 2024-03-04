@@ -65,10 +65,10 @@
     function updateValue(e) {
       inputSearch.setAttribute("value", e.target.value);
       if(inputSearch.value.length != 0) {
-        iconSearch.style.background = "#ee302e";
+        iconSearch.style.background = "#103054";
         iconSearch.style.cursor = "pointer";
         iconSearch.style.color = "#fff";
-        inputSearch.style.borderColor = "#ee302e";
+        inputSearch.style.borderColor = "#103054";
       }else {
         iconSearch.style.background = "none"
         iconSearch.style.color = "#103054";
@@ -98,7 +98,7 @@
     function updateValue(e) {
       inputSearch.setAttribute("value", e.target.value);
       if(inputSearch.value.length != 0) {
-        iconSearch.style.background = "#ee302e";
+        iconSearch.style.background = "#103054";
         iconSearch.style.cursor = "pointer";
         iconSearch.style.color = "#fff";
         inputSearch.style.borderColor = "#ee302e";
