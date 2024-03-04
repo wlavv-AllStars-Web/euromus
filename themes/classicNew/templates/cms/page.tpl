@@ -56,7 +56,7 @@
                 </div>
               </div>
               <div class="col-md-4 mb-3">
-                <label for="validationCustom02">Last name</label>
+                <label for="validationCustom02">{l s='Last name' d='Shop.Forms.SpecificRequest'}</label>
                 <input type="text" class="form-control" id="validationCustom02" name="lastname" placeholder="Last name" pattern="[a-zA-Z]" value="{$customer.lastname}" required>
                 <div class="invalid-feedback">
                     {l s='Please insert your a valid last name.' d='Shop.Forms.SpecificRequest'}
