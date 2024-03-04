@@ -218,6 +218,11 @@ main {
         height: 66.8px;
     }
 
+    #brands_mobile .content_brands img{
+      width: 50px;
+      margin: auto;
+    }
+
 
     #mobile_top_menu_wrapper .js-top-menu-bottom > div{
         display: flex;
