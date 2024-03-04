@@ -49,7 +49,7 @@
       <input type="text" name="s" value="{$search_string}" style="{if $search_string != null}background:#fff;{/if}" class="whitebg searchbarInput"
         placeholder="{l s='Search our catalog' d='Shop.Theme.Catalog'}"
         aria-label="{l s='Search' d='Shop.Theme.Catalog'}">
-      <i class="material-icons clear" aria-hidden="true">clear</i>
+      {* <i class="material-icons clear" aria-hidden="true">clear</i> *}
     </form>
   </div>
 
@@ -76,12 +76,15 @@
       }
     }
 
-    document.querySelector('#search_widget i.search').addEventListener('click', function() {
-      document.querySelector('#search_widget form').submit();
-    });
+    iconSearch.addEventListener("click", () => {
+        document.querySelector('.header-top-right-desktop #search_widget form').submit();
+    })
+
+
 
   } else {
     const inputSearch = document.querySelector(".header-top-right #search_widget .searchbarInput");
+    const iconSearch = document.querySelector(".header-top-right #search_widget .search")
     inputSearch.style.border = "1px solid #103054"
     // const inputSearch = document.querySelector("#_mobile_cart .searchbarInput");
     // const iconSearch = document.querySelector(".header-nav .mobile #_mobile_cart .search")
@@ -91,6 +94,24 @@
     //           document.querySelector('.header-top .header-top-right #search_widget form').submit();
     //         })
     //     }
+    inputSearch.addEventListener("input", updateValue);
+    function updateValue(e) {
+      inputSearch.setAttribute("value", e.target.value);
+      if(inputSearch.value.length != 0) {
+        iconSearch.style.background = "#ee302e";
+        iconSearch.style.cursor = "pointer";
+        iconSearch.style.color = "#fff";
+        inputSearch.style.borderColor = "#ee302e";
+      }else {
+        iconSearch.style.background = "none"
+        iconSearch.style.color = "#103054";
+        inputSearch.style.borderColor = "#ee302e";
+      }
+    }
+
+    iconSearch.addEventListener("click", () => {
+        document.querySelector('.header-top-right #search_widget form').submit();
+    })
    
   }
 
