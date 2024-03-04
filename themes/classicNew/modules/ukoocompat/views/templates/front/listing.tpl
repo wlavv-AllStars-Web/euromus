@@ -149,7 +149,7 @@
             
             {* <pre>{print_r($pagination,1)}</pre> *}
             
-            {include file="themes/classic/templates/catalog/listing/product-list.tpl" listing=$listing}
+            {include file="themes/classicNew/templates/catalog/listing/product-list.tpl" listing=$listing}
 
 
         {else}
@@ -174,7 +174,7 @@
             {* <span> {include file="themes/theme1164/mobile/wm_top_filter.tpl"} </span> *}
         </div>
 
-		{include file="themes/classic/templates/catalog/listing/product-list.tpl" listing=$listing}
+		{include file="themes/classicNew/templates/catalog/listing/product-list.tpl" listing=$listing}
 		<div class="content_sortPagiBar">
 			<div class="bottom-pagination-content clearfix">
 				{* {include file="$tpl_dir./mobile/pagination.tpl" paginationId='bottom'} *}
@@ -185,7 +185,7 @@
     {if !Context::getContext()->isMobile()}
         <div class="content_sortPagiBar">
             {include file="$tpl_dir./wm_top_filter.tpl"}
-            {if $products}<div class="top-pagination-content clearfix"> {include file="file:themes/classic/templates/_partials/pagination.tpl"} </div>{/if}
+            {if $products}<div class="top-pagination-content clearfix"> {include file="file:themes/classicNew/templates/_partials/pagination.tpl"} </div>{/if}
         </div>
     {else}
         <div class="text-center" style="background-color: #333; color: white; text-transform: uppercase;padding: 10px;" onclick="$('#filters_holder').toggle('slow')">
