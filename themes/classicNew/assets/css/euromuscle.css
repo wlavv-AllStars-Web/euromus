@@ -214,6 +214,8 @@ main {
         color: #0d2540;
         display: flex;
         gap: 0.5rem;
+        width: 114px;
+        height: 66.8px;
     }
 
 
