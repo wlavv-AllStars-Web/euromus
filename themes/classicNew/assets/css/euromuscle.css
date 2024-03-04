@@ -3487,6 +3487,6 @@ body#checkout section.checkout-step .address-selector {
 }
 
 #new-products .container{
-  max-width: unset;
+  max-width: 1440px;
   width: 100%;
 }
