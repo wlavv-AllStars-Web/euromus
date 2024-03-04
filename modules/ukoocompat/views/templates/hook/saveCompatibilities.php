@@ -51,6 +51,9 @@ function get_id_ukoocompat_compat($id_product, $id_ukoocompat_criterion_1, $id_u
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $data['is_new'] = 0;
+        // paulo
+        insert_data_into_ps_ukoocompat_compat_asm((int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
+        // fim paulo
     } else {
         $data['is_new'] = 1;
         $data['id_ukoocompat_compat'] = insert_data_into_ps_ukoocompat_compat($id_product);
@@ -196,9 +199,7 @@ function get_compats($id_product, $select_1, $select_2, $select_3, $select_4){
 }
 
 $compats = (object)get_compats((int)$_POST['id_product'], (int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
-// paulo
-insert_data_into_ps_ukoocompat_compat_asm((int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
-// fim paulo
+
 $resposta = array();
 $some_compats_existe = 0;
 
