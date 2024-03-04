@@ -194,6 +194,8 @@ main {
     transition: all 0.25s ease-in-out;
     padding-left: 0;
     padding-right: 0;
+    height: 100%;
+    overflow-y: scroll;
     }
 
     .is-open #_mobile_top_menu {
@@ -340,7 +342,7 @@ main {
       display: flex;
       flex-direction: column;
       align-items: flex-start !important;
-      height: 100% !important;
+      height: fit-content !important;
     }
 
     /* #brands_mobile .content_brands {
