@@ -46,18 +46,33 @@ function get_id_ukoocompat_compat($id_product, $id_ukoocompat_criterion_1, $id_u
             AND id_product=" . $id_product;
 
 
-    
     $conn = getConn();
     $result = $conn->query($sql);
     if ($result->num_rows > 0) {
         $data['is_new'] = 0;
-        // paulo
-        insert_data_into_ps_ukoocompat_compat_asm((int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
-        // fim paulo
+
     } else {
         $data['is_new'] = 1;
         $data['id_ukoocompat_compat'] = insert_data_into_ps_ukoocompat_compat($id_product);
     }
+
+    // paulo
+    $sql2 = "SELECT * 
+    FROM eu_ukoocompat_compat_asm
+    WHERE id_filter_value_1 =  ". $id_ukoocompat_criterion_1 . " 
+    AND id_filter_value_2 = " . $id_ukoocompat_criterion_2 . "
+    AND id_filter_value_3 = " . $id_ukoocompat_criterion_3 . " 
+    AND id_filter_value_4 = " . $id_ukoocompat_criterion_4;
+    
+    $conn = getConn();
+    $result2 = $conn->query($sql2);
+    if ($result2->num_rows > 0) {
+    }else{
+
+        insert_data_into_ps_ukoocompat_compat_asm((int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);
+        
+    }
+    // fim paulo
 
     return (object)$data;
 }
