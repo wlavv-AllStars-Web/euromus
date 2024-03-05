@@ -49,6 +49,9 @@ main {
     display: flex;
     align-items: center;
   }
+  .row.product-container.js-product-container .right-side {
+    padding: 1rem 2rem;
+  }
 }
 @media screen and (min-width:301px) and (max-width:520px){
   .cart-link {
@@ -76,6 +79,10 @@ main {
     transform: rotate(90deg);
   }
 
+  .row.product-container.js-product-container .right-side {
+    padding: 1rem 2rem;
+  }
+
   /* .categoryCars .category.TOOLS img {
     object-position: top !important;
     width: 70% !important;
@@ -92,6 +99,10 @@ main {
     display: flex;
     align-items: center;
   }
+
+  .row.product-container.js-product-container .right-side {
+    padding: 1rem 2rem;
+  }
 }
 
 
@@ -99,6 +110,25 @@ main {
 
 /* mobile */
 @media screen and (max-width:767px) {
+  .row.product-container.js-product-container .right-side {
+    padding: 1rem 2rem !important;
+  }
+  .tabs .nav-tabs .nav-item {
+    margin-top: 0 !important;
+    margin-bottom: 0;
+  }
+
+  .tabs .nav-tabs .nav-item .nav-link{
+    text-transform: uppercase;
+  }
+
+  .cms-id-52 .mobile{
+    width: 100%;
+  }
+  .cms-id-52 .mobile #_mobile_cart .blockcart{
+    padding: 0 0.75rem;
+  }
+
   .cms-id-43 #wrapper {
     background-color: #e6e6e6;
     padding-block: 0;
@@ -2940,9 +2970,8 @@ justify-content: center;
     line-height: 100px;
     cursor: pointer;
     transform: rotate(0);
-    background: #103054;
-    color: #fff;
-    width: 28px;
+    color: #103054;
+    font-size: 4rem;
   }
   .left-side #content .scroll-box-arrows .right {
     position: absolute;
@@ -2954,9 +2983,8 @@ justify-content: center;
     cursor: pointer;
     top: unset;
     transform: rotate(0);
-    background: #103054;
-    color: #fff;
-    width: 28px;
+    color: #103054;
+    font-size: 4rem;
   }
   .images-container .product-images > li.thumb-container .thumb{
     margin-right: unset;
