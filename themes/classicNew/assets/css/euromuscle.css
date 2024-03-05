@@ -179,6 +179,11 @@ main {
   .tooltip{
     z-index: 2;
   }
+
+  .modal.in .modal-dialog{
+    height: 100vh;
+    top: 0;
+  }
   /* modal add to cart mobile */
 
   #blockcart-modal .modal-content{
