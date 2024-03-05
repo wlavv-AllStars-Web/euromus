@@ -246,10 +246,14 @@ main {
       margin-left: 0;
     }
 
-    #checkout .bootstrap-touchspin .btn-touchspin {
+    .product-line-grid-right .qty .input-group.bootstrap-touchspin{
+      z-index: 99;
+    }
+
+    /* #checkout .bootstrap-touchspin .btn-touchspin {
       height: 2.3rem !important;
       width: 2.3rem !important;
-    }
+    } */
 
 
   /*  */
