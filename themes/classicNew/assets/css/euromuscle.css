@@ -196,8 +196,8 @@ main {
 /* mobile */
 @media screen and (max-width:767px) {
 
-  .shopping-cart-row .bootstrap-touchspin {
-    display: block !important;
+  .bootstrap-touchspin .btn-touchspin {
+    height: 1.5rem !important;
   }
 
   #header .header-nav{
