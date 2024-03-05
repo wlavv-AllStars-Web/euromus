@@ -205,6 +205,15 @@ main {
 
 
   /* checkout page */
+    #checkout .row-checkout {
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+    #checkout .row-checkout .cart-grid-body{
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
     #checkout .header-nav .container{
       width: 100% !important;
     }
