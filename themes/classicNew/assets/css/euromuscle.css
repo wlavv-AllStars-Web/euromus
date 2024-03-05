@@ -203,6 +203,7 @@ main {
   /* checkout page */
     #checkout .header-nav .container{
       width: 100% !important;
+      max-height: 50px !important;
     }
     #checkout #header .header-nav .logo{
       max-height: 50px !important;
