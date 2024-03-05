@@ -192,6 +192,11 @@ main {
       display: block !important;
     }
 
+    #checkout .product-image img {
+      max-height: 100px;
+      object-fit: cover;
+    }
+
 
   /*  */
   #content-wrapper .contact-form{
