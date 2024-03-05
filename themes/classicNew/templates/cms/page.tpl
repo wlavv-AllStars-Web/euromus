@@ -50,14 +50,14 @@
               <h5 class="col-md-12">{l s='Personal Information' d='Shop.Forms.SpecificRequest'}</h5>
               <div class="col-md-4 mb-3">
                 <label for="validationCustom01">{l s='First name' d='Shop.Forms.SpecificRequest'}</label>
-                <input type="text" class="form-control" id="validationCustom01" name="firstname" placeholder="First name" pattern="[a-zA-Z]" value="{$customer.firstname}" required>
+                <input type="text" class="form-control" id="validationCustom01" name="firstname" placeholder="First name"  value="{$customer.firstname}" required>
                 <div class="invalid-feedback">
                     {l s='Please insert your a valid first name.' d='Shop.Forms.SpecificRequest'}
                 </div>
               </div>
               <div class="col-md-4 mb-3">
                 <label for="validationCustom02">{l s='Last name' d='Shop.Forms.SpecificRequest'}</label>
-                <input type="text" class="form-control" id="validationCustom02" name="lastname" placeholder="Last name" pattern="[a-zA-Z]" value="{$customer.lastname}" required>
+                <input type="text" class="form-control" id="validationCustom02" name="lastname" placeholder="Last name"  value="{$customer.lastname}" required>
                 <div class="invalid-feedback">
                     {l s='Please insert your a valid last name.' d='Shop.Forms.SpecificRequest'}
                 </div>
