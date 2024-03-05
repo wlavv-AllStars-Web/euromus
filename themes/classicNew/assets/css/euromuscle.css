@@ -242,6 +242,9 @@ main {
       display: flex !important;
       flex-direction: row;
     }
+    body#checkout .additional-information {
+      margin-left: 0;
+    }
 
 
   /*  */
