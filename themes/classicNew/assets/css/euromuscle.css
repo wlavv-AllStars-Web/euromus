@@ -135,6 +135,7 @@ main {
   }
   #about-us .about-content .about-content-text{
     width: 100% !important;
+    margin: 0 !important;
   }
   #about-us .about-content .about-content-cards{
     width: 100vw !important;
