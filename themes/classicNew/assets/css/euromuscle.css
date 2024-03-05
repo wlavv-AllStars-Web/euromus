@@ -238,6 +238,11 @@ main {
       flex-direction: column;
     }
 
+    #checkout .delivery-option {
+      display: flex !important;
+      flex-direction: row;
+    }
+
 
   /*  */
   #content-wrapper .contact-form{
