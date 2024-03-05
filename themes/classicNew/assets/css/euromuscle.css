@@ -112,6 +112,17 @@ main {
     width: 100% !important;
   }
 
+  /* cms shipping mobile */
+  #cms_shipping .shipping-content{
+    width: 100vw !important;
+    flex-direction: column;
+  }
+
+  #cms_shipping .shipping-content-left-text span{
+    line-height: 3rem;
+  }
+
+
   /* .categoryCars .category.TOOLS img {
     object-position: top !important;
     width: 70% !important;
