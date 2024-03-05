@@ -87,6 +87,27 @@ main {
     width: 100vw;
   }
 
+  /* cms payment mobile*/
+  #cms-payment .payment-content-bottom {
+    padding-top: 2rem;
+    flex-wrap: wrap;
+  }
+
+  #cms-payment .payment-content-bottom .col-2 {
+    width: 50%;
+    
+  }
+  #cms-payment .payment-content-bottom .col-3 {
+    width: 100%; 
+  }
+  #cms-payment .payment-content-bottom .col-5 {
+    width: 100%;
+  }
+
+  #cms-payment .payment-footer-img img {
+    width: 100%;
+  }
+
   /* .categoryCars .category.TOOLS img {
     object-position: top !important;
     width: 70% !important;
