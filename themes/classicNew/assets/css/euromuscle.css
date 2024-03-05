@@ -176,6 +176,25 @@ main {
 
 /* mobile */
 @media screen and (max-width:767px) {
+  .tooltip{
+    z-index: 2;
+  }
+  /* modal add to cart mobile */
+
+  #blockcart-modal .modal-content{
+    width: 100% !important;
+  }
+  #blockcart-modal .modal-content .cart-content-btn{
+    flex-direction: column;
+  }
+  #blockcart-modal .cart-content .cart-content-btn button{
+    margin: 1rem 0 1rem 0;
+  }
+  #blockcart-modal .cart-content .cart-content-btn .btn-primary{
+    background: #ee302e !important;
+  }
+
+
   /* checkout page */
     #checkout .header-nav .container{
       width: 100% !important;
