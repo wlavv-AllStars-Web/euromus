@@ -176,6 +176,19 @@ main {
 
 /* mobile */
 @media screen and (max-width:767px) {
+
+  #content-wrapper .contact-form{
+    padding: 1rem !important;
+    margin-top: 2rem !important;
+  }
+  #content-wrapper .contact-form .form-fields .form-group:nth-child(1){
+    display: none !important;
+  }
+
+  .banner_contact banner_contact_mobile img{
+    width: 100%;
+  }
+
   .row.product-container.js-product-container {
     max-width: 100vw;
     width: 100%;
