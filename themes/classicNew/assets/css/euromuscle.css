@@ -3534,7 +3534,13 @@ body#checkout section.checkout-step .address-selector {
   width: 100%;
 }
 
+.page-cms-53{
+  display: flex;
+  flex-direction: column;
+  gap: 5rem;
+}
+
 .btn-back_store {
   display: flex;
-  justify-content: end;
+  justify-content: center;
 }
