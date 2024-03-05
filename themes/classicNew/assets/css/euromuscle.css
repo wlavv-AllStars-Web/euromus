@@ -111,7 +111,7 @@ main {
 /* mobile */
 @media screen and (max-width:767px) {
   .row.product-container.js-product-container .right-side {
-    padding: 1rem 2rem !important;
+    padding: 1rem 1rem !important;
   }
   .tabs .nav-tabs .nav-item {
     margin-top: 0 !important;
