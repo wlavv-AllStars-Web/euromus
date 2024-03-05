@@ -196,9 +196,9 @@ main {
 /* mobile */
 @media screen and (max-width:767px) {
 
-  .bootstrap-touchspin .btn-touchspin {
+  /* .bootstrap-touchspin .btn-touchspin {
     height: 1.5rem !important;
-  }
+  } */
 
   #header .header-nav{
     max-height: 50px !important;
