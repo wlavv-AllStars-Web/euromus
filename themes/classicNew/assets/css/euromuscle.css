@@ -88,6 +88,9 @@ main {
   }
 
   /* cms payment mobile*/
+  #cms-payment{
+    width: 100vw !important;
+  }
   #cms-payment .payment-content-bottom {
     margin-top: 2rem;
     flex-wrap: wrap;
