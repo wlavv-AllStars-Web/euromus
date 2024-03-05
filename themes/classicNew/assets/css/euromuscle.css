@@ -122,6 +122,30 @@ main {
     line-height: 3rem;
   }
 
+  /* cms about us mobile */
+
+  #about-us .about-content{
+    width: 100vw !important;
+  }
+  #about-us .about-content .about-content-warehouse{
+    width: 100% !important;
+  }
+  #about-us .about-content .about-content-warehouse img{
+    width: 100% !important;
+  }
+  #about-us .about-content .about-content-text{
+    width: 100% !important;
+  }
+  #about-us .about-content .about-content-cards{
+    width: 100vw !important;
+  }
+  #about-us .about-content .about-content-cards .row{
+    margin: 0 !important;
+  }
+  #about-us .about-content .about-content-cards .row .card{
+    width: 100% !important;
+  }
+
 
   /* .categoryCars .category.TOOLS img {
     object-position: top !important;
