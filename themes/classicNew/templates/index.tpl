@@ -168,7 +168,7 @@
               {assign var="url" value=$mobileItem["image_{$currentLanguageIso}"]}
               {assign var="numberString" value="`$url`"|regex_replace:"/.*\/(\d+)_(\d+)_(\d+)_(\d+)_.*$/":"$1,$2,$3,$4"}
               {assign var="linkBrand" value=$mobileItem["link"]}
-              <div>
+              
               {if $numberString != $url}
                 {assign var="numbers" value=[]}
                   {assign var="numbers" value=explode(",", $numberString)}
@@ -193,7 +193,7 @@
                 {elseif $linkBrand != ''}
                   </a>
                 {/if}
-                <div>
+                
               {/foreach}
           
             </div>
