@@ -52,6 +52,25 @@ main {
   .row.product-container.js-product-container .right-side {
     padding: 1rem 2rem;
   }
+
+  .shopping-cart-row {
+    gap: 0.5rem;
+  justify-content: center;
+  }
+  .product-line-grid-right .qty{
+    width: 50% !important;
+  }
+}
+
+
+@media screen and (min-width:301px) and (max-width:360px){
+  .shopping-cart-row {
+    gap: 0.5rem;
+  justify-content: center;
+  }
+  .product-line-grid-right .qty{
+    width: 50% !important;
+  }
 }
 @media screen and (min-width:301px) and (max-width:520px){
   .cart-link {
@@ -176,6 +195,11 @@ main {
 
 /* mobile */
 @media screen and (max-width:767px) {
+
+  .shopping-cart-row .bootstrap-touchspin {
+    display: block !important;
+  }
+
   #header .header-nav{
     max-height: 50px !important;
   }
