@@ -129,6 +129,7 @@ main {
   }
   #about-us .about-content .about-content-warehouse{
     width: 100% !important;
+    padding: 0 !important;
   }
   #about-us .about-content .about-content-warehouse img{
     width: 100% !important;
