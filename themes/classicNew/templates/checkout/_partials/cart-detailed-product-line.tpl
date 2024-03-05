@@ -25,7 +25,7 @@
  <!-- checkout/_partials/cart-detailed-product-line.tpl -->
 <div class="product-line-grid" style="display: flex;align-items:center;">
   <!--  product line left content: image-->
-  <div class="product-line-grid-left col-md-3 col-xs-4">
+  <div class="product-line-grid-left col-md-3 col-xs-6">
     <span class="product-image media-middle">
       {if $product.default_image}
         <picture>
@@ -45,7 +45,7 @@
   {* <pre>{print_r($product,1)}</pre> *}
   {* stock_quantity *}
   <!--  product line body: label, discounts, price, attributes, customizations -->
-  <div class="product-line-grid-body col-md-4 col-xs-8">
+  <div class="product-line-grid-body col-md-4 col-xs-6">
     <div class="product-line-info">
       <a class="label" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
     </div>
@@ -127,12 +127,12 @@
   </div>
 
   <!--  product line right content: actions (quantity, delete), price -->
-  <div class="product-line-grid-right product-line-actions col-md-5 col-xs-12">
-    <div class="row">
+  <div class="product-line-grid-right product-line-actions col-md-5 col-xs-12 pt-2">
+    <div class="row" style="flex-direction: row;">
       
-      <div class="col-xs-4 hidden-md-up"></div>
-      <div class="col-md-10 col-xs-6">
-        <div class="row" style="display: flex;align-items:center;">
+      {* <div class="col-xs-4 hidden-md-up"></div> *}
+      <div class="col-md-10 col-xs-10">
+        <div class="row" style="display: flex;align-items:center;flex-wrap:wrap;flex-direction:row;">
           <div class="col-md-4">
             {if $product.stock_quantity >= 5}
               <p style="background: rgb(63, 192, 63);color:#fff;text-align:center;margin-bottom:0;">In Stock</p>
@@ -142,7 +142,7 @@
               <p style="background: rgb(231, 71, 71);color:#000;text-align:center;margin-bottom:0;">Out of stock</p>
             {/if}
           </div>
-          <div class="col-md-4 col-xs-6 qty">
+          <div class="col-md-4 col-xs-4 qty">
             {if !empty($product.is_gift)}
               <span class="gift-quantity">{$product.quantity}</span>
             {else}

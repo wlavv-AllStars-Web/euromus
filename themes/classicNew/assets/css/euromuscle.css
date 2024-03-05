@@ -176,7 +176,24 @@ main {
 
 /* mobile */
 @media screen and (max-width:767px) {
+  /* checkout page */
+    #checkout .header-nav .container{
+      width: 100% !important;
+    }
+    #checkout #header .header-nav .logo{
+      max-height: 50px !important;
+    }
 
+    #checkout #wrapper .container {
+      width: 100vw;
+    }
+
+    #checkout .product-line-grid{
+      display: block !important;
+    }
+
+
+  /*  */
   #content-wrapper .contact-form{
     padding: 1rem !important;
     margin-top: 2rem !important;
