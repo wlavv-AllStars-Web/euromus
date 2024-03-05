@@ -30,7 +30,7 @@
 
 {block name='content'}
   <section id="content">
-    <div class="row">
+    <div class="row row-checkout">
       <div class="cart-grid-body col-xs-12 col-lg-12">
         {block name='cart_summary'}
           {* {include file='checkout/_partials/cart-summary.tpl' cart=$cart} *}
