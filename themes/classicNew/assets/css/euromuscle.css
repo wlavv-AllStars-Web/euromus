@@ -124,7 +124,7 @@ main {
   }
 
   .row.product-container.js-product-container .right-side {
-    padding: 1rem 1rem !important;
+    padding: 1rem 0.5rem !important;
   }
   .tabs .nav-tabs .nav-item {
     margin-top: 0 !important;
