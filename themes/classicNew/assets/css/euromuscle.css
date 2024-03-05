@@ -94,18 +94,18 @@ main {
   }
 
   #cms-payment .payment-content-bottom .col-2 {
-    width: 50%;
+    width: 50% !important;
     
   }
   #cms-payment .payment-content-bottom .col-3 {
-    width: 100%; 
+    width: 100% !important; 
   }
   #cms-payment .payment-content-bottom .col-5 {
-    width: 100%;
+    width: 100% !important;
   }
 
   #cms-payment .payment-footer-img img {
-    width: 100%;
+    width: 100% !important;
   }
 
   /* .categoryCars .category.TOOLS img {
