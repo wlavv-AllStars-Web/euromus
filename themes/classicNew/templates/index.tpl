@@ -168,7 +168,7 @@
               {assign var="url" value=$mobileItem["image_{$currentLanguageIso}"]}
               {assign var="numberString" value="`$url`"|regex_replace:"/.*\/(\d+)_(\d+)_(\d+)_(\d+)_.*$/":"$1,$2,$3,$4"}
               {assign var="linkBrand" value=$mobileItem["link"]}
-              
+
               {if $numberString != $url}
                 {assign var="numbers" value=[]}
                   {assign var="numbers" value=explode(",", $numberString)}
@@ -183,6 +183,8 @@
                   {else}
                     <a href="/{$currentLanguageIso}/brand/{$linkBrand}" style="position: relative;">
                   {/if}
+                {else}
+                  <a style="position: relative;">
                 {/if}
 
                   <img src="{$mobileItem["image_{$currentLanguageIso}"]}" style="width: 100%;" loading="lazy" alt="banner{$mobilekey}"/>
