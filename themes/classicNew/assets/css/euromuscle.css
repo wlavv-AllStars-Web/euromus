@@ -3533,3 +3533,8 @@ body#checkout section.checkout-step .address-selector {
   max-width: 1440px;
   width: 100%;
 }
+
+.btn-back_store {
+  display: flex;
+  justify-content: end;
+}
