@@ -234,6 +234,10 @@ main {
       object-fit: cover;
     }
 
+    .js-address-form form{
+      flex-direction: column;
+    }
+
 
   /*  */
   #content-wrapper .contact-form{
