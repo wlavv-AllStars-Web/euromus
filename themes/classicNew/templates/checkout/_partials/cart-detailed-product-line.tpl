@@ -132,7 +132,7 @@
       
       {* <div class="col-xs-4 hidden-md-up"></div> *}
       <div class="col-md-10 col-xs-10">
-        <div class="row shopping-cart-row" style="display: flex;align-items:center;flex-wrap:wrap;flex-direction:row;">
+        <div class="row shopping-cart-row" style="display: flex;align-items:center;flex-wrap:wrap;">
           <div class="col-md-4 py-1">
             {if $product.stock_quantity >= 5}
               <p style="background: rgb(63, 192, 63);color:#fff;text-align:center;margin-bottom:0;">In Stock</p>
