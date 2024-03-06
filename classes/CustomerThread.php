@@ -52,7 +52,7 @@ class CustomerThreadCore extends ObjectModel
                 'validate' => 'isUnsignedId',
                 'required' => true,
             ],
-            'firstname' => ['type' => self::TYPE_STRING, 'validate' => 'isCustomerName', 'required' => true, 'size' => 50],
+            'firstname' => ['type' => self::TYPE_STRING, 'validate' => 'isCustomerName', 'required' => false, 'size' => 50],
             'phone' => ['type' => self::TYPE_STRING, 'validate' => 'isPhoneNumber', 'size' => 32],
             'id_contact' => [
                 'type' => self::TYPE_INT,
