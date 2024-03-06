@@ -23,7 +23,7 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
  <!-- checkout/_partials/cart-detailed-product-line.tpl -->
-<div class="product-line-grid" style="display: flex;align-items:center;">
+<div class="product-line-grid" style="display: flex;align-items:center;flex-wrap:wrap;">
   <!--  product line left content: image-->
   <div class="product-line-grid-left col-md-3 col-xs-6">
     <span class="product-image media-middle">
@@ -132,8 +132,8 @@
       
       {* <div class="col-xs-4 hidden-md-up"></div> *}
       <div class="col-md-10 col-xs-10">
-        <div class="row" style="display: flex;align-items:center;flex-wrap:wrap;flex-direction:row;">
-          <div class="col-md-4">
+        <div class="row shopping-cart-row" style="display: flex;align-items:center;flex-wrap:wrap;flex-direction:row;">
+          <div class="col-md-4 py-1">
             {if $product.stock_quantity >= 5}
               <p style="background: rgb(63, 192, 63);color:#fff;text-align:center;margin-bottom:0;">In Stock</p>
             {else if $product.stock_quantity >= 1}
