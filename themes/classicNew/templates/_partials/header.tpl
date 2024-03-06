@@ -33,6 +33,7 @@
 {assign var="linkShipping" value=$link->getCMSLink(46)}
 {assign var="linkPayment" value=$link->getCMSLink(47)}
 {assign var="linkClearance" value=$link->getCategoryLink(15)}
+{assign var="customerId" value=Context::getContext()->customer->id}
 
 {assign var="currentUrl" value=Tools::getCurrentUrl()}
 {assign var="manufacturers" value=Manufacturer::getManufacturers()}
@@ -111,7 +112,6 @@
         
       
       <div id="mobile_top_menu_wrapper" class="row hidden-md-up" style="display:none;">
-      {* <pre>{print_r($manufacturers,1)}</pre> *}
         <div class="js-top-menu mobile" id="_mobile_top_menu" onclick="closeMenu()">
         <img src="/img/logo-17047994381.jpg" style="width: 26vw; margin-right:auto; margin-left:1rem;">
         <i class="fa fa-times"></i>
@@ -120,8 +120,14 @@
         <div class="js-top-menu-bottom mobile-menu-open">
           <div id="_mobile_currency_selector"></div>
           {* <div style="border-top:0.5rem solid #103054;border-bottom:0.5rem solid #ee302e;padding-block:0.25rem;background:#fff;height: 0.5rem;width:100%;z-index:-1;transform:rotate(180deg)"></div> *}
-
-          <div id="_mobile_login" class="{if $currentUrl === "http://euromus.local/en/login?back=my-account"}activeLink{/if}"><a href="{$linkMyaccount}"><i class="fa-solid fa-user"></i>{l s='Login' d='Shop.Theme.Global'}</a></div>
+          
+          <div id="_mobile_login" class="{if $currentUrl === "http://euromus.local/en/login?back=my-account"}activeLink{/if}">
+            {if $customerId }
+            <a href="{$linkMyaccount}" style="width: fit-content;"><i class="fa-solid fa-user"></i>{l s='My account' d='Shop.Theme.Global'}</a>
+            {else}
+              <a href="{$linkMyaccount}"><i class="fa-solid fa-user"></i>{l s='Login' d='Shop.Theme.Global'}</a>
+            {/if}
+          </div>
           <div id="homeLinkMobile" class="{if $currentUrl === $link->getPageLink('index', true)}activeLink{/if}"><a href="/"><i class="fa-solid fa-house"></i>{l s='Home' d='Shop.Theme.euromuscle'}</a></div>
           <div id="NewsLinkMobile" class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLink{/if}"><a href="{$link->getPageLink('new-products', true)}"><i class="fa-solid fa-newspaper"></i>{l s='News' d='Shop.Theme.Global'}</a></div>
           <div id="_mobile_contact_link" class="{if $currentUrl === $link->getPageLink('contact', true)}activeLink{/if}"><a href="{$link->getPageLink('contact', true)}"><i class="fa-solid fa-phone"></i>{l s='Contacts' d='Shop.Theme.Global'}</a></div>
