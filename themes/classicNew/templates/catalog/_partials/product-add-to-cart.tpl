@@ -29,6 +29,7 @@
     {block name='product_quantity'}
       <div class="product-quantity clearfix">
         <div class="qty">
+        <!-- product-add-to-cart -->
           <input
             type="number"
             name="qty"
