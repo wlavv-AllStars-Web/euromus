@@ -3760,6 +3760,9 @@ body#checkout section.checkout-step .address-selector {
 #manufacturer #wrapper {
   background: #fff !important;
 }
+#search #wrapper {
+  background: #fff !important;
+}
 
 .page-cms-53{
   display: flex;
@@ -3770,4 +3773,12 @@ body#checkout section.checkout-step .address-selector {
 .btn-back_store {
   display: flex;
   justify-content: center;
+}
+#js-product-list .js-product.product{
+  /* outline: 3px solid #103054;
+  border-radius: 0.5rem; */
+}
+#js-product-list .js-product.product:hover {
+  outline: 3px solid #ee302e;
+  border-radius: 0.5rem;
 }
