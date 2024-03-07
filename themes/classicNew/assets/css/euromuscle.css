@@ -1055,13 +1055,13 @@ main {
         background: #103054;
         bottom: -1px;
         width: 100%;
-        text-align: right;
+        text-align: center;
         font-weight: 700;
         font-size: 1.2em;
         opacity: .9;
         /* border-radius: 0 0 15px 15px; */
         height: 2rem;
-        padding-right: 0.5rem;
+        /* padding-right: 0.5rem; */
       }
 
       .categoryCars .category {
