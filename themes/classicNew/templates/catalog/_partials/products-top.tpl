@@ -35,7 +35,7 @@
     </div>
   {else}
     <div class="col-lg-5 hidden-sm-down total-products pt-0">
-    {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
+    {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits" || $smarty.server.REQUEST_URI === "/en/15-clearance" || $smarty.server.REQUEST_URI === "/es/15-clearance"|| $smarty.server.REQUEST_URI === "/fr/15-clearance"}
     {else}
     <div style="display: flex;align-items:center;gap:1rem;">
       <img src="/img/m/{$listing['products'][0]['id_manufacturer']}-medium_default.jpg" width="100%" style="max-width: 125px;padding:0.5rem;background:#fff;border-radius:0.5rem;">
@@ -68,7 +68,7 @@
     {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits" || $smarty.server.REQUEST_URI === "/en/15-clearance" || $smarty.server.REQUEST_URI === "/es/15-clearance"|| $smarty.server.REQUEST_URI === "/fr/15-clearance"}
       {else}
     <img class="hidden-md-up" src="/img/m/{$listing['products'][0]['id_manufacturer']}-medium_default.jpg" width="100%" style="max-width: 125px;padding:0.5rem;background:#fff;border-radius:0.5rem;margin:auto;">
-  {/if}
+    {/if}
   {/if}
       <div class="row sort-by-row">
         {block name='sort_by'}
