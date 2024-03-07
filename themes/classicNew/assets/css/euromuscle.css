@@ -1121,7 +1121,7 @@ main {
         border-radius: 0.5rem;
       }
       #js-product-list .js-product.product:hover {
-        outline: 0;
+        outline: 0 !important;
         border-radius: 0.5rem;
       }
       #js-product-list .product .product-description{
