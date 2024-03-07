@@ -1106,6 +1106,9 @@ main {
         height: 100%;
         margin-bottom: 0;
       }
+      #js-product-list .product article .thumbnail-container .product-thumbnail img{
+        max-width: 250px;
+      }
 }
 
 /* categories tablet */
