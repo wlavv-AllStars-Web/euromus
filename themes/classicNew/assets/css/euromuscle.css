@@ -927,13 +927,10 @@ main {
     .cars-container #accordion .show{
       background-color: #707c88 !important;
     }
-    .cars-container #accordion .show .card-link a{
-      color: #f6f6f6 !important;
-      /* text-decoration: underline; */
-    }
+    
     .cars-container .card .card-body .card-text .card-link span {
       color: #103054 !important;
-      font-size: 14px !important;
+      /* font-size: 14px !important; */
     }
     
     iframe {
