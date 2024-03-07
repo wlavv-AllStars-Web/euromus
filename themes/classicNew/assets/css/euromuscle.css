@@ -23,6 +23,9 @@ main {
 }
 
 @media screen and (max-width:300px){
+  html {
+    overflow-x: hidden;
+  }
   #brands_mobile .content_brands li {
     width: 100%;
     margin-bottom: 1rem;
@@ -64,6 +67,9 @@ main {
 
 
 @media screen and (min-width:301px) and (max-width:360px){
+  html {
+    overflow-x: hidden;
+  }
   .shopping-cart-row {
     gap: 0.5rem;
   justify-content: center;
@@ -73,6 +79,9 @@ main {
   }
 }
 @media screen and (min-width:301px) and (max-width:520px){
+  html {
+    overflow-x: hidden;
+  }
   .cart-link {
     display: flex;
     align-items: center;
@@ -174,6 +183,9 @@ main {
   } */
 }
 @media screen and (min-width:521px) and (max-width:767px){
+  html {
+    overflow-x: hidden;
+  }
   #brands_mobile .content_brands li {
     width: 33%;
     margin-bottom: 1rem;
