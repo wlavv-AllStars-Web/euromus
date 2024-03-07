@@ -65,7 +65,7 @@
     <div class="col-lg-6 col-xs-12">
   {else}
     <div class="col-lg-7 col-xs-12" style="display: flex;flex-direction:column;justify-content:center;">
-    {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
+    {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits" || $smarty.server.REQUEST_URI === "/en/15-clearance" || $smarty.server.REQUEST_URI === "/es/15-clearance"|| $smarty.server.REQUEST_URI === "/fr/15-clearance"}
       {else}
     <img class="hidden-md-up" src="/img/m/{$listing['products'][0]['id_manufacturer']}-medium_default.jpg" width="100%" style="max-width: 125px;padding:0.5rem;background:#fff;border-radius:0.5rem;margin:auto;">
   {/if}
