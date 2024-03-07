@@ -212,6 +212,19 @@ main {
     height: 1.5rem !important;
   } */
 
+  .cars-cards #accordion .card-link a {
+    color: #fff !important;
+    text-decoration: 2px underline #ee302e;
+    font-weight: 600;
+    font-size: 1.25rem;
+    padding-bottom: 0.25rem;
+  }
+
+  .cars-cards #accordion .card-link span {
+    font-size: 16px !important;
+    font-weight: 600;
+  }
+
   #header .header-nav{
     max-height: 50px !important;
   }
