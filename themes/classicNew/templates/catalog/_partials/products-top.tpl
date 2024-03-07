@@ -25,7 +25,7 @@
  {* <pre>{print_r($listing.search->filters,1)}</pre> *}
  {* <pre>{print_r($pagination,1)}</pre> *}
 <div id="js-product-list-top" class="row products-selection" style="display: flex;align-items:center;margin:2rem 0 4rem 0;gap:1rem;">
-  
+
   {if $ukoo_name_1}
     <div class="col-lg-2  total-products">
     <div class="brand-logo">
@@ -35,10 +35,13 @@
     </div>
   {else}
     <div class="col-lg-5 hidden-sm-down total-products pt-0">
+    {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
+    {else}
     <div style="display: flex;align-items:center;gap:1rem;">
       <img src="/img/m/{$listing['products'][0]['id_manufacturer']}-medium_default.jpg" width="100%" style="max-width: 125px;padding:0.5rem;background:#fff;border-radius:0.5rem;">
       {* <h2 style="text-transform: uppercase;color:#103054">{$listing['products'][0]['manufacturer_name']}</h2> *}
     </div>
+    {/if}
   {/if}
 
     {* {if $listing.products|count > 1}
@@ -62,7 +65,10 @@
     <div class="col-lg-6 col-xs-12">
   {else}
     <div class="col-lg-7 col-xs-12" style="display: flex;flex-direction:column;justify-content:center;">
+    {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
+      {else}
     <img class="hidden-md-up" src="/img/m/{$listing['products'][0]['id_manufacturer']}-medium_default.jpg" width="100%" style="max-width: 125px;padding:0.5rem;background:#fff;border-radius:0.5rem;margin:auto;">
+  {/if}
   {/if}
       <div class="row sort-by-row">
         {block name='sort_by'}
