@@ -3544,10 +3544,11 @@ justify-content: center;
 }
 
 #tab-content p {
-  font-weight: 600 !important;
+  font-weight: 500 !important;
   color: #484848 !important;
   min-width: 150px;
   text-align: center;
+  padding: 1.5rem;
 }
 
 .tabs .nav-tabs{
