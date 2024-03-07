@@ -214,7 +214,7 @@ main {
 
   .cars-cards #accordion .card-link a {
     color: #fff !important;
-    text-decoration: 2px underline #ee302e !important;
+    text-decoration: underline #ee302e !important;
     font-weight: 600;
     font-size: 1.25rem;
     padding-bottom: 0.25rem;
