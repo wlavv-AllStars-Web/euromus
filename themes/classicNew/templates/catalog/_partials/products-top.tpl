@@ -34,7 +34,7 @@
       </span>
     </div>
   {else}
-    <div class="col-lg-5 hidden-sm-down total-products">
+    <div class="col-lg-5 hidden-sm-down total-products pt-0">
     <img src="/img/tmp/manufacturer_mini_{$listing['products'][0]['id_manufacturer']}.jpg" width="100%" style="max-width: 100px;">
   {/if}
 
