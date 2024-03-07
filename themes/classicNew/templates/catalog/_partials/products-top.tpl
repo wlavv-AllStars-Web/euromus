@@ -62,7 +62,7 @@
     <div class="col-lg-6 col-xs-12">
   {else}
     <div class="col-lg-7 col-xs-12" style="display: flex;flex-direction:column;justify-content:center;">
-    <img src="/img/m/{$listing['products'][0]['id_manufacturer']}-medium_default.jpg" width="100%" style="max-width: 125px;padding:0.5rem;background:#fff;border-radius:0.5rem;margin:auto;">
+    <img class="hidden-md-up" src="/img/m/{$listing['products'][0]['id_manufacturer']}-medium_default.jpg" width="100%" style="max-width: 125px;padding:0.5rem;background:#fff;border-radius:0.5rem;margin:auto;">
   {/if}
       <div class="row sort-by-row">
         {block name='sort_by'}
