@@ -1110,9 +1110,7 @@ main {
         max-width: 250px;
       }
       
-      #module-ukoocompat-listing .product-price-and-shipping .price::after {
-        content: '€';
-      }
+      
 }
 
 /* categories tablet */
@@ -3814,4 +3812,7 @@ body#checkout section.checkout-step .address-selector {
 #js-product-list .js-product.product:hover {
   outline: 3px solid #ee302e;
   border-radius: 0.5rem;
+}
+#module-ukoocompat-listing .product-price-and-shipping .price::after {
+  content: '€';
 }
