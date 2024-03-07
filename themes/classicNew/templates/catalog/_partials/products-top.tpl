@@ -35,7 +35,10 @@
     </div>
   {else}
     <div class="col-lg-5 hidden-sm-down total-products pt-0">
-    <img src="/img/m/{$listing['products'][0]['id_manufacturer']}-large_default.jpg" width="100%" style="max-width: 100px;">
+    <div style="display: flex;align-items:center;gap:1rem;">
+      <img src="/img/m/{$listing['products'][0]['id_manufacturer']}-large_default.jpg" width="100%" style="max-width: 100px;padding:0.5rem;background:#fff;border-radius:0.5rem;">
+      <h2 style="text-transform: uppercase;color:#103054">{$listing['products'][0]['manufacturer_name']}</h2>
+    </div>
   {/if}
 
     {* {if $listing.products|count > 1}
