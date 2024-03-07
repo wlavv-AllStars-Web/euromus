@@ -1109,6 +1109,10 @@ main {
       #js-product-list .product article .thumbnail-container .product-thumbnail img{
         max-width: 250px;
       }
+      
+      #module-ukoocompat-listing .product-price-and-shipping .price::after {
+        content: '€';
+      }
 }
 
 /* categories tablet */
