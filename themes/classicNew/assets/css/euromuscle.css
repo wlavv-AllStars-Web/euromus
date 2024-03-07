@@ -1120,6 +1120,10 @@ main {
         /* outline: 3px solid #103054; */
         border-radius: 0.5rem;
       }
+      #js-product-list .js-product.product:hover {
+        outline: 0;
+        border-radius: 0.5rem;
+      }
       #js-product-list .product .product-description{
         border-bottom: 1px solid #103054;
       }
