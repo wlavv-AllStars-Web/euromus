@@ -3757,6 +3757,9 @@ body#checkout section.checkout-step .address-selector {
   max-width: 1440px;
   width: 100%;
 }
+#manufacturer #wrapper {
+  background: #fff !important;
+}
 
 .page-cms-53{
   display: flex;
