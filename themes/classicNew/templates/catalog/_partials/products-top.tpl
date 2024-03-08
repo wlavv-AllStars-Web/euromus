@@ -24,7 +24,14 @@
  *}
  {* <pre>{print_r($listing.search->filters,1)}</pre> *}
  {* <pre>{print_r($pagination,1)}</pre> *}
-<div id="js-product-list-top" class="row products-selection" style="display: flex;align-items:center;margin:2rem 0 4rem 0;gap:1rem;">
+ {if $smarty.server.REQUEST_URI == "/en/new-products"}
+  <div class="banner"><img src="https://www.all-stars-motorsport.com/img/app_icons/news_en.webp?t=123"  style="width:100%;"/></div>
+  {elseif  $smarty.server.REQUEST_URI === "/es/novos-produtos"}
+  <div class="banner"><img src="https://www.all-stars-motorsport.com/img/app_icons/news_es.webp?t=123"  style="width:100%;"/></div>
+  {elseif $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
+  <div class="banner"><img src="https://www.all-stars-motorsport.com/img/app_icons/news_fr.webp?t=123"  style="width:100%;"/></div>
+ {/if}
+<div id="js-product-list-top" class="row products-selection" style="display: flex;align-items:center;margin:2rem 0 4rem 0;gap:0rem;">
 
   {if $ukoo_name_1}
     <div class="col-lg-2  total-products">
@@ -77,7 +84,7 @@
   {if $ukoo_name_1}
     <div class="col-lg-6 col-xs-12">
   {else}
-    <div class="col-lg-7 col-xs-12" style="display: flex;flex-direction:column;justify-content:center;">
+    <div class="col-lg-7 col-xs-12" style="display: flex;flex-direction:column;justify-content:center;padding-right:0;">
     {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
       <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='NEW PRODUCTS' d='Shop.Theme.Catalog'}</h2>
     {elseif $smarty.server.REQUEST_URI === "/en/15-clearance" || $smarty.server.REQUEST_URI === "/es/15-clearance"|| $smarty.server.REQUEST_URI === "/fr/15-clearance"}
