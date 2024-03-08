@@ -3627,7 +3627,7 @@ justify-content: center;
   justify-content: center;
 }
 
-#tab-content #tab-description{
+#tab-content #description .tab-description{
   justify-content: space-between;
   align-items: center;
   width: 100vw;
