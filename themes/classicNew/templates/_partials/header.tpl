@@ -158,8 +158,8 @@
         <li class="{if $currentUrl === $link->getPageLink('index', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('index', true)}">{l s='Home' d='Shop.Theme.Global'}</a></li>
         <li class="{if $currentUrl === $link->getPageLink('new-products', true)}activeLinkDesk{/if}" ><a href="{$link->getPageLink('new-products', true)}">{l s='News' d='Shop.Theme.Global'}</a></li> 
         <li class="dropdown ">
-          <div class="dropbtn">{l s='BRANDS' d='Shop.Theme.Global'}</div>
-          <ul class="dropdown-content">
+          <div class="dropbtn" onclick="openLinkBrands()">{l s='BRANDS' d='Shop.Theme.Global'}</div>
+          <ul class="dropdown-content hidden-md-down">
           {* <pre>{print_r($manufacturers,1)}</pre> *}
           {foreach from=$manufacturers item=$manufacturer }
             
@@ -210,6 +210,10 @@ window.addEventListener('scroll', () => {
     footer.style.display = "block"
 }
 });
+
+function openLinkBrands(){
+  window.location.href='/brands'
+}
 
 function closeMenu() {
   const buttonCloseMenu = document.querySelector('#_mobile_top_menu')
