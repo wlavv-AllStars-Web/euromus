@@ -485,11 +485,13 @@ main {
         padding: 0.625rem;
         color: #0d2540;
         font-weight: 600;
-        font-size: 1.1em;
+        font-size: 1em;
         text-decoration: none;
         display: flex;
         align-items: center;
         margin-bottom: 0;
+        width: fit-content;
+        text-transform: uppercase;
     }
 
     .btn-brandsMobile {
@@ -3851,9 +3853,9 @@ body#checkout section.checkout-step .address-selector {
 #search #wrapper {
   background: #fff !important;
 }
-#category #wrapper {
+/* #category #wrapper {
   background: #fff !important;
-}
+} */
 #new-products #wrapper {
   background: #fff !important;
 }
