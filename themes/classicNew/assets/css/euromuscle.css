@@ -3627,6 +3627,13 @@ justify-content: center;
   justify-content: center; */
 }
 
+#tab-content #product-installation{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 20vh;
+}
+
 #tab-content #compatibilities {
   width: 90%;
 }
