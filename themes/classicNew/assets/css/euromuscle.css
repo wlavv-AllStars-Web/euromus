@@ -494,6 +494,10 @@ main {
         text-transform: uppercase;
     }
 
+    #contact .contact-form .form-control-label{
+      text-align: start;
+    }
+
     .btn-brandsMobile {
       width: 100%;
       display: flex;
