@@ -3628,10 +3628,10 @@ justify-content: center;
 }
 
 #tab-content #product-installation{
-  display: flex;
+  /* display: flex;
   justify-content: center;
   align-items: center;
-  height: 20vh;
+  height: 20vh; */
 }
 
 #tab-content #compatibilities {
