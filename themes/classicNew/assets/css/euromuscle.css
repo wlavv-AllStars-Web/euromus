@@ -3622,16 +3622,15 @@ justify-content: center;
 
 #tab-content {
   min-height: 300px;
-  /* display: flex;
+  display: flex;
   align-items: center;
-  justify-content: center; */
+  justify-content: center;
 }
 
-#tab-content #product-installation{
-  /* display: flex;
-  justify-content: center;
+#tab-content #tab-description{
+  justify-content: space-between;
   align-items: center;
-  height: 20vh; */
+  width: 100vw;
 }
 
 #tab-content #compatibilities {
