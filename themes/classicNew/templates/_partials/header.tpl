@@ -212,7 +212,7 @@ window.addEventListener('scroll', () => {
 });
 
 function openLinkBrands(){
-  window.location.href='/brands'
+  window.location.href='/{$currentLanguage->iso_code }/brands'
 }
 
 function closeMenu() {
