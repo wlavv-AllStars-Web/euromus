@@ -196,7 +196,7 @@
         </div>
         {/if}
       {/foreach}
-      <span class="close" style="color: #103054;opacity:1;position:absolute;top:1rem;right:1rem;">&times;</span>
+      <span class="close" style="color: #103054;opacity:1;position:absolute;top:0.5rem;right:0.5rem;">&times;</span>
     </div>
   </div>  
 

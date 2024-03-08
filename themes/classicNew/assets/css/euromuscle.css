@@ -82,6 +82,10 @@ main {
   html {
     overflow-x: hidden;
   }
+  #modalLanguage .modal-content{
+    width: 90% !important;
+  }
+
   .cart-link {
     display: flex;
     align-items: center;
