@@ -78,7 +78,20 @@
     <div class="col-lg-6 col-xs-12">
   {else}
     <div class="col-lg-7 col-xs-12" style="display: flex;flex-direction:column;justify-content:center;">
-    {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits" || $smarty.server.REQUEST_URI === "/en/15-clearance" || $smarty.server.REQUEST_URI === "/es/15-clearance"|| $smarty.server.REQUEST_URI === "/fr/15-clearance"}
+    {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
+      <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='NEW PRODUCTS' d='Shop.Theme.Catalog'}</h2>
+    {elseif $smarty.server.REQUEST_URI === "/en/15-clearance" || $smarty.server.REQUEST_URI === "/es/15-clearance"|| $smarty.server.REQUEST_URI === "/fr/15-clearance"}
+      <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='CLEARANCE' d='Shop.Theme.Catalog'}</h2>
+    {elseif $smarty.server.REQUEST_URI === "/en/10-truck" || $smarty.server.REQUEST_URI === "/es/10-truck"|| $smarty.server.REQUEST_URI === "/fr/10-truck"}
+      <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='TRUCK' d='Shop.Theme.Catalog'}</h2>
+    {elseif $smarty.server.REQUEST_URI === "/en/9-4x4" || $smarty.server.REQUEST_URI === "/es/9-4x4"|| $smarty.server.REQUEST_URI === "/fr/9-4x4"}
+      <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='4X4' d='Shop.Theme.Catalog'}</h2>
+    {elseif $smarty.server.REQUEST_URI === "/en/11-classics" || $smarty.server.REQUEST_URI === "/es/11-classics"|| $smarty.server.REQUEST_URI === "/fr/11-classics"}
+      <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='CLASSICS' d='Shop.Theme.Catalog'}</h2>
+    {elseif $smarty.server.REQUEST_URI === "/en/12-modern" || $smarty.server.REQUEST_URI === "/es/12-modern"|| $smarty.server.REQUEST_URI === "/fr/12-modern"}
+      <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='MODERN' d='Shop.Theme.Catalog'}</h2>
+    {elseif $smarty.server.REQUEST_URI === "/en/13-tools" || $smarty.server.REQUEST_URI === "/es/13-tools"|| $smarty.server.REQUEST_URI === "/fr/13-tools"}
+      <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='TOOLS' d='Shop.Theme.Catalog'}</h2>
       {else}
     <img class="hidden-md-up" src="/img/m/{$listing['products'][0]['id_manufacturer']}-medium_default.jpg" width="100%" style="max-width: 125px;padding:0.5rem;background:#fff;border-radius:0.5rem;margin:auto;">
     {/if}
