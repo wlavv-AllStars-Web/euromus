@@ -1825,6 +1825,12 @@ main {
       margin-bottom: 0;
     }
 
+    /* brands */
+
+    #manufacturer #main ul {
+      justify-content: center;
+    }
+
     /* cars */
     .cars-container {
       display:flex;
