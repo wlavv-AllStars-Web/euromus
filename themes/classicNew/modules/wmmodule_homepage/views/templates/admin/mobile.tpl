@@ -19,13 +19,13 @@
             <div style="width: 100%;text-align: left;border-top: 1px solid #666;border-left: 1px solid #666;border-right: 1px solid #666;padding: 5px;font-weight: bolder;color: #FFF;text-align: center;"> POSITION 6 </div>
         </div>
     </div>
-    <div style="display: ruby">
+    <div style="display: flex">
         {foreach $mobile_icons AS $index => $mobile}
         
             <div id="container_block_mobile_{$index}" class="elements_mobile_container" style="margin-top: 20px;display: inline-block; width: 100%;{if $index == 0} dispplay: block; {else} display:none; {/if}">
                 <div style="width: 25%; float: left;height: 240px;"></div>
                 <div style="width: 25%; float: left;height: 240px;">
-                    <img id="image_{$mobile['id']}" src="{$mobile['image_en']}{if strlen($mobile['image_en']) > 0}?t={rand()}{/if}" style="background-color: #fff;width: 100%;border: 1px solid #000;height: 239px;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$mobile['id']},{$mobile['icon_type']},$('#select_brand_{$mobile['id']}'))">
+                    <img id="image_{$mobile['id']}" src="{$mobile['image_en']}{if strlen($mobile['image_en']) > 0}?t={rand()}{/if}" style="background-color: #fff;width: 100%;border: 1px solid #000;height: 100%;background-image: url('/modules/wmmodule_homepage/views/images/upload.webp');background-position: center;background-repeat: no-repeat;background-size: contain;" onclick="setModal({$mobile['id']},{$mobile['icon_type']},$('#select_brand_{$mobile['id']}'))">
                 </div>
                 <div style="width: 25%; float: left;border: 1px solid #000;height: 240px;">
                     <input type="hidden" value="$mobile_icon_1['active']" name="active"> 

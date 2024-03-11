@@ -43,7 +43,7 @@
   {else}
     <div class="col-lg-5 hidden-sm-down total-products pt-0">
     {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
-      <h2 style="text-transform: uppercase;color:#103054">{l s='NEW PRODUCTS' d='Shop.Theme.Catalog'}</h2>
+      {* <h2 style="text-transform: uppercase;color:#103054">{l s='NEW PRODUCTS' d='Shop.Theme.Catalog'}</h2> *}
     {elseif $smarty.server.REQUEST_URI === "/en/15-clearance" || $smarty.server.REQUEST_URI === "/es/15-clearance"|| $smarty.server.REQUEST_URI === "/fr/15-clearance"}
       <h2 style="text-transform: uppercase;color:#103054">{l s='CLEARANCE' d='Shop.Theme.Catalog'}</h2>
     {elseif $smarty.server.REQUEST_URI === "/en/10-truck" || $smarty.server.REQUEST_URI === "/es/10-truck"|| $smarty.server.REQUEST_URI === "/fr/10-truck"}
@@ -86,7 +86,7 @@
   {else}
     <div class="col-lg-7 col-xs-12" style="display: flex;flex-direction:column;justify-content:center;padding-right:0;">
     {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
-      <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='NEW PRODUCTS' d='Shop.Theme.Catalog'}</h2>
+      {* <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='NEW PRODUCTS' d='Shop.Theme.Catalog'}</h2> *}
     {elseif $smarty.server.REQUEST_URI === "/en/15-clearance" || $smarty.server.REQUEST_URI === "/es/15-clearance"|| $smarty.server.REQUEST_URI === "/fr/15-clearance"}
       <h2 class="hidden-md-up" style="text-transform: uppercase;color:#103054">{l s='CLEARANCE' d='Shop.Theme.Catalog'}</h2>
     {elseif $smarty.server.REQUEST_URI === "/en/10-truck" || $smarty.server.REQUEST_URI === "/es/10-truck"|| $smarty.server.REQUEST_URI === "/fr/10-truck"}

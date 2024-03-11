@@ -311,6 +311,9 @@
                 <div class="tab-content" id="tab-content">
                  <div class="tab-pane fade in active" id="description" role="tabpanel">
                   {if $product.description}
+                    <div class="banner-tabs" >
+                      <img src="https://www.all-stars-motorsport.com/img/app_icons/description/99_en.webp" />
+                    </div>
                     <div class="tab-description" style="display: flex;justify-content:center;">
                       {block name='product_description'}
                         <div class="product-description" style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">{$product.description nofilter}</div>
@@ -340,6 +343,9 @@
                         </div>
                         {/if} *}
                   {else}
+                    <div class="banner-tabs" >
+                      <img src="https://www.all-stars-motorsport.com/img/app_icons/description/99_en.webp" />
+                    </div>
                     <div class="tab-description" style="display: flex;">
                       {block name='product_description'}
                         <div class="product-description" style="{if empty($product.youtube_code)}width:90%;{else}width: 60%;{/if}">
@@ -390,6 +396,9 @@
                  
         
                  <div class="tab-pane fade in" id="compatibilities" role="tabpanel">
+                    <div class="banner-tabs" >
+                      <img src="https://www.all-stars-motorsport.com/img/app_icons/compatibilities_en.webp" />
+                    </div>
                    <div>{hook h='displayProductTabContent' mod='ukoocompat' id_module=124}</div>
                  </div>
         
@@ -400,6 +409,9 @@
                  {block name='product_attachments'}
                    {if $product.attachments}
                     <div class="tab-pane fade in" id="product-installation" role="tabpanel">
+                    <div class="banner-tabs" >
+                      <img src="https://www.all-stars-motorsport.com/img/app_icons/instructions_en.webp" />
+                    </div>
                        <section class="product-attachments">
                          {* <p class="h5 text-uppercase">{l s='Download Instructions' d='Shop.Theme.Actions'}</p> *}
                          {foreach from=$product.attachments item=attachment}
@@ -414,7 +426,11 @@
                        </section>
                      </div>
                     {else}
+                     
                       <div class="tab-pane fade in" id="product-installation" role="tabpanel">
+                        <div class="banner-tabs" >
+                          <img src="https://www.all-stars-motorsport.com/img/app_icons/instructions_en.webp" />
+                        </div>
                         <p>{l s='No Instructions' d='Shop.Theme.Actions'}</p>
                       </div>
                    {/if}
@@ -427,12 +443,21 @@
                  {/foreach}
         
                  <div  class="tab-pane fade in" id="product_reviews"  role="tabpanel">
+                  <div class="banner-tabs" >
+                    <img src="https://www.all-stars-motorsport.com/img/app_icons/reviews_en.webp" />
+                  </div>
                   {hook h='displayFooterProduct' product=$product category=$category}
                  </div>
                  <div  class="tab-pane fade in" id="product_warranty"  role="tabpanel">
+                 <div class="banner-tabs" >
+                    <img src="https://www.all-stars-motorsport.com/img/app_icons/warranty_en.webp" />
+                  </div>
                   <p>Product Warranty</p>
                  </div>
                  <div  class="tab-pane fade in" id="product_brand"  role="tabpanel">
+                 <div class="banner-tabs" >
+                    <img src="https://www.all-stars-motorsport.com/img/app_icons/instructions_en.webp" />
+                  </div>
                   <p>Product Manufacturer</p>
                  </div>
         
@@ -481,8 +506,8 @@
           })
           </script>
 </div>
-{* <div class="hidden-md-down"
-style="border-bottom:4px solid #103054;border-top:4px solid #ee302e;padding-block:2px;width: 100%;margin:0 0 4rem 0"></div> *}
+<div class="hidden-md-down"
+style="border-bottom:4px solid #103054;border-top:4px solid #ee302e;padding-block:2px;width: 100%;margin:0 0 4rem 0"></div>
 
 
 

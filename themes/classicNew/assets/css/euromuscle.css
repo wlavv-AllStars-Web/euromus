@@ -3917,3 +3917,29 @@ body#checkout section.checkout-step .address-selector {
 #module-ukoocompat-listing .product-price-and-shipping .price::after {
   content: '€';
 }
+
+.section_tabs_video .banner-tabs{
+  width: 100%;
+  display:flex;
+  justify-content:center;
+  margin-bottom: 2rem;
+}
+
+.nav-tabs .nav-item .nav-link {
+  text-transform: uppercase;
+}
+
+.product-comment-list-item{
+  background: #fff;
+  display: flex;
+  align-items: center;
+}
+
+#product-comments-list .comment-content .comment-buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+
+#product-comments-list .comment-content p {
+  text-align: start !important;
+}
