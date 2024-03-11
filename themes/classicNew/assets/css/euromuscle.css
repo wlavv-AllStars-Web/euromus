@@ -343,6 +343,10 @@ main {
     margin-bottom: 0;
   }
 
+  .nav-tabs .nav-item + .nav-item {
+    margin-left: 0 !important;
+  }
+
   .tabs .nav-tabs .nav-item .nav-link{
     text-transform: uppercase;
   }
@@ -1148,6 +1152,14 @@ main {
       }
       #js-product-list .product article .thumbnail-container .product-thumbnail img{
         max-width: 250px;
+      }
+
+      .lines-product-header {
+        margin: 1rem 0 0 0;
+      }
+      
+      .lines-product-footer {
+        margin: 0 0 2rem 0;
       }
       
       
