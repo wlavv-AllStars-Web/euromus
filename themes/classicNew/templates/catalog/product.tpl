@@ -220,7 +220,7 @@
       </div>
     </div>
     <div class="hidden-md-down"
-  style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;margin:4rem 0 0 0"></div>
+  style="border-bottom:4px solid #103054;border-top:4px solid #ee302e;padding-block:2px;width: 100%;margin:4rem 0 0 0"></div>
 <div class="section_tabs_video" style="display: flex;{if empty($product.youtube_code)}justify-content:center;{/if}">
             {* inicio tabs *}
             <div class="column_tabs" style="width:100%">
