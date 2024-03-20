@@ -1591,6 +1591,10 @@ main {
         .row-mobile #_desktop_logo{
           width: auto;
         }
+
+        #module-ukoocompat-listing #js-product-list-top {
+          justify-content: end;
+        }
   }
 
   #scrollToTopBtn {
@@ -3934,6 +3938,8 @@ body#checkout section.checkout-step .address-selector {
   display:flex;
   justify-content:center;
   margin-bottom: 2rem;
+  max-width: 800px;
+  margin: auto;
 }
 
 .section_tabs_video .banner-tabs img{
