@@ -1165,6 +1165,12 @@ main {
         /* outline: 3px solid #103054; */
         border-radius: 0.5rem;
         height: 266px;
+        max-width: 300px;
+        margin: auto;
+      }
+
+      #js-product-list .product.car .thumbnail-top img{
+        object-position: -158px center !important;
       }
       #js-product-list .product.car:hover {
         outline: 3px solid #103054;
