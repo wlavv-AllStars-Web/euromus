@@ -1133,6 +1133,7 @@ main {
         overflow: hidden;
         /* outline: 3px solid #103054; */
         border-radius: 0.5rem;
+        height: 266px;
       }
       #js-product-list .js-product.product:hover {
         outline: 0 !important;
