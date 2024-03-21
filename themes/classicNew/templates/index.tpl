@@ -32,6 +32,7 @@
 {assign var="versionsChevroletCorvette" value=IndexControllerCore::getCarsOfBrand("Chevrolet","Corvette",$currentLanguage)}
 {assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand("Dodge","Challenger",$currentLanguage)}
 {assign var="versionsRamTrx" value=IndexControllerCore::getCarsOfBrand("Ram","Trx",$currentLanguage)}
+{assign var="versionsFordBronco" value=IndexControllerCore::getCarsOfBrand("Ford","Bronco",$currentLanguage)}
 
 
 {extends file='page.tpl'}
@@ -407,8 +408,11 @@
           <div id="collapseSeven" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
             <div class="card-body">
               <div class="card-text">
-                <div class="card-link"><a href="">DT 5700 V8 HEMI</a><span>(2019 -)</span></div>
-                <div class="card-link"><a href="">DS 5700 V8 HEMI Classic</a><span>(2013 - 2022)</span></div>
+                {foreach from=$versionsFordBronco item=item key=key name=name}
+                  <div class="card-link"><a style="cursor: pointer;"
+                      onclick="setCarAndSearch({$item.id_brand},{$item.id_model},{$item.id_type},{$item.id_version})">{$item.type}</a><span>{$item.version}</span>
+                  </div>
+                {/foreach}
               </div>
             </div>
           </div>
