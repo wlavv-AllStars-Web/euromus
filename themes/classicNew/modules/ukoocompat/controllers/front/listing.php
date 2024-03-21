@@ -185,6 +185,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.reference.desc',
             ],
         ];
+        
         $sort_selected = null;
 
         foreach ($sort_orders as $sortOption) {
