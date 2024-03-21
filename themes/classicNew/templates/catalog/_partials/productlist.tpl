@@ -71,7 +71,7 @@
         </div>
         
     {/if}
-    {if $products[0]['category'] == "modern"}
+    {if $category.name == "4X4" ||$category.name == "TRUCK" ||$category.name == "CLASSICS" ||$category.name == "MODERN" ||$category.name == "TOOLS" ||$category.name == "MERCHANDISING"}
     <div class="js-product product car{if !empty($productClasses)} {$productClasses}{/if}" style="display: flex;justify-content:center;outline: 3px solid #103054;">
         <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
             <div class="thumbnail-container" style="background:#1030543d;display: flex;flex-direction: row;justify-content: center;align-items:center;">
