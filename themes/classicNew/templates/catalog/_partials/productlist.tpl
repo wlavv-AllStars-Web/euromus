@@ -71,6 +71,22 @@
         </div>
         
     {/if}
+    {if $products[0]['category'] == "modern"}
+    <div class="js-product product car{if !empty($productClasses)} {$productClasses}{/if}" style="display: flex;justify-content:center;outline: 3px solid #103054;">
+        <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
+            <div class="thumbnail-container" style="background:#1030543d;display: flex;flex-direction: row;justify-content: center;align-items:center;">
+                <div class="thumbnail-top" style="flex: 1;height:100%;">
+                    <picture>
+                        <img src="/img/eurmuscle/bannersHome/{$products[0]['id_category_default']}.webp" style="width: 100%;background:transparent;height:100%;object-position: -178px center;
+                        object-fit: cover;"/>
+                    </picture>
+                </div>
+                <div class="product-descriptionn" style="background: transparent;display: flex;flex-direction: column;align-items: center;color:#fff;gap:0.5rem;padding:0.5rem 0;flex:1;">
+                    <h2 style="color: #103054;">{$products[0]['category']|upper}</h2>
+                </div>
+            </div>
+    </div>
+    {/if}
     {foreach from=$products item="product" key="position"}
         {include file="catalog/_partials/miniatures/product.tpl" product=$product position=$position productClasses=$productClasses}
     {/foreach}
