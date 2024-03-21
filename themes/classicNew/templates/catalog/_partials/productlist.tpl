@@ -77,12 +77,12 @@
             <div class="thumbnail-container" style="background:#1030543d;display: flex;flex-direction: row;justify-content: center;align-items:center;">
                 <div class="thumbnail-top" style="flex: 1;height:100%;">
                     <picture>
-                        <img src="/img/eurmuscle/bannersHome/{$products[0]['id_category_default']}.webp" style="width: 100%;background:transparent;height:100%;object-position: -178px center;
+                        <img src="/img/eurmuscle/bannersHome/{$category.id}.webp" style="width: 100%;background:transparent;height:100%;object-position: -132px center;
                         object-fit: cover;"/>
                     </picture>
                 </div>
-                <div class="product-descriptionn" style="background: transparent;display: flex;flex-direction: column;align-items: center;color:#fff;gap:0.5rem;padding:0.5rem 0;flex:1;">
-                    <h2 style="color: #103054;">{$products[0]['category']|upper}</h2>
+                <div class="product-descriptionn" style="background: transparent;display: flex;flex-direction: column;align-items: center;color:#fff;gap:0.5rem;padding:0.5rem 0;flex:0.7;">
+                    <h2 style="color: #103054;font-size:1.5rem;font-weight:600;">{$category.name|upper}</h2>
                 </div>
             </div>
     </div>
