@@ -62,8 +62,9 @@
                         <div style="display: flex;gap:1rem;font-size: 1.25rem;font-weight: 600;color:#103054;">
                             <span>{$brand}</span>|<span>{$model}</span>
                         </div>
-                        <div style="display: flex;gap:1rem;color:#ee302e;font-weight: 600;">
-                        <span>{$type}</span> | <span>{$version}</span>
+                        <div style="display: flex;flex-direction:column;justify-content:center;gap:1rem;color:#ee302e;font-weight: 600;">
+                        <span>{$type}</span>
+                        <span>{$version}</span>
                         </div>
                     </div>
                 </div>
