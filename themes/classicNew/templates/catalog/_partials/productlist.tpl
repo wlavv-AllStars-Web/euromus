@@ -49,7 +49,7 @@
             {/foreach}
         {/foreach}
 
-        <div class="js-product product{if !empty($productClasses)} {$productClasses}{/if}" style="display: flex;justify-content:center;">
+        <div class="js-product product car{if !empty($productClasses)} {$productClasses}{/if}" style="display: flex;justify-content:center;outline: 3px solid #103054;">
             <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}">
                 <div class="thumbnail-container" style="background:#1030543d;">
                     <div class="thumbnail-top">
@@ -58,7 +58,7 @@
                             object-fit: cover;"/>
                         </picture>
                     </div>
-                    <div class="product-description" style="background: transparent;display: flex;flex-direction: column;align-items: center;color:#fff;gap:0.5rem;">
+                    <div class="product-descriptionn" style="background: transparent;display: flex;flex-direction: column;align-items: center;color:#fff;gap:0.5rem;">
                         <div style="display: flex;gap:1rem;font-size: 1.25rem;font-weight: 600;color:#103054;">
                             <span>{$brand}</span>|<span>{$model}</span>
                         </div>
