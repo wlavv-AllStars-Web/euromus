@@ -239,7 +239,7 @@
 
     </div>
     <div class="card col-lg-3">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Camaro.png" alt="Card image Chevrolet Camaro" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/ChevroletCamaro.png" alt="Card image Chevrolet Camaro" loading="lazy">
       <div class="card-title"><a href="">Chevrolet Camaro</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -270,7 +270,7 @@
 
     </div>
     <div class="card col-lg-3">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/DodgeChallanger.png" alt="Card image Dodge Challenger" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/DodgeChallenger.png" alt="Card image Dodge Challenger" loading="lazy">
       <div class="card-title"><a href="">Dodge Challenger</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -301,7 +301,7 @@
 
     </div>
     <div class="card col-lg-3">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/Corvette.png" alt="Card image Chevrolet Corvette" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/ChevroletCorvette.png" alt="Card image Chevrolet Corvette" loading="lazy">
       <div class="card-title"><a href="">Chevrolet Corvette</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -362,7 +362,7 @@
 
     </div>
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/CHARGER.png" alt="Card image Dodge Charger" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/DodgeCharger.png" alt="Card image Dodge Charger" loading="lazy">
       <div class="card-title"><a href="">Dodge Charger</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -390,7 +390,7 @@
 
     </div>
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/BRONCO.png" alt="Card image Ford Bronco" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/FordBronco.png" alt="Card image Ford Bronco" loading="lazy">
       <div class="card-title"><a href="">Ford Bronco</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -418,7 +418,7 @@
 
     </div>
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/CHEROKEE.png" alt="Card image Jeep Cherokee" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/JeepCherokee.png" alt="Card image Jeep Cherokee" loading="lazy">
       <div class="card-title"><a href="">Jeep Cherokee</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -446,7 +446,7 @@
 
     </div>
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/F-150.png" alt="Card image Ford F-150" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/FordF-150.png" alt="Card image Ford F-150" loading="lazy">
       <div class="card-title"><a href="">Ford F-150</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
@@ -473,7 +473,7 @@
     </div>
 
     <div class="card col-lg-3 hidden-md-up">
-      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/WRANGLER.png" alt="Card image Jeep Wrangler" loading="lazy">
+      <img class="card-img-top" src="/img/eurmuscle/cardCarsHome/JeepWrangler.png" alt="Card image Jeep Wrangler" loading="lazy">
       <div class="card-title"><a href="">Jeep Wrangler</a></div>
       <div id="accordion" style="width: 100%;">
         <div class="cardAccordion">
