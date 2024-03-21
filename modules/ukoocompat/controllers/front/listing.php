@@ -532,15 +532,15 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             //     'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.price.asc'
             // ),
             
-            [
-                'entity' => 'product',
-                'field' => 'sales',
-                'direction' => 'desc',
-                'label' => 'Sales, highest to lowest',
-                'urlParameter' => 'product.sales.desc',
-                'current' => '',
-                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.sales.desc',
-            ],
+            // [
+            //     'entity' => 'product',
+            //     'field' => 'sales',
+            //     'direction' => 'desc',
+            //     'label' => 'Sales, highest to lowest',
+            //     'urlParameter' => 'product.sales.desc',
+            //     'current' => '',
+            //     'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.sales.desc',
+            // ],
             [
                 'entity' => 'product',
                 'field' => 'position',
