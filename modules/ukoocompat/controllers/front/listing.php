@@ -56,12 +56,12 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $result = new ProductSearchResult();
         // $totalProductsCount = $result->getTotalProductsCount();
 
-
-        // echo '<pre>' . print_r($sortOrders, true) . '</pre>';
+        // echo '<pre>' . print_r($result, true) . '</pre>';
         // exit;
         parent::initContent();
  
         // $this->productSort();
+
 
         // on récupère les informations de la recherche
         $search = new UkooCompatSearch((int)Tools::getValue('id_search'), (int)$this->context->language->id);
@@ -111,88 +111,92 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         
         $n2 = 20;
 
-        $sort_orders = [
-            [
-                'entity' => 'product',
-                'field' => 'sales',
-                'direction' => 'desc',
-                'label' => 'Sales, highest to lowest',
-                'urlParameter' => 'product.sales.desc',
-                'current' => '',
-                'url' => '?order=product.sales.desc',
-            ],
-            [
-                'entity' => 'product',
-                'field' => 'position',
-                'direction' => 'asc',
-                'label' => 'Relevance',
-                'urlParameter' => 'product.position.asc',
-                'current' => 1,
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.position.asc',
-            ],
-            [
-                'entity' => 'product',
-                'field' => 'name',
-                'direction' => 'asc',
-                'label' => 'Name, A to Z',
-                'urlParameter' => 'product.name.asc',
-                'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.name.asc',
-            ],
-            [
-                'entity' => 'product',
-                'field' => 'name',
-                'direction' => 'desc',
-                'label' => 'Name, Z to A',
-                'urlParameter' => 'product.name.desc',
-                'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.name.desc',
-            ],
-            [
-                'entity' => 'product',
-                'field' => 'price',
-                'direction' => 'asc',
-                'label' => 'Price, low to high',
-                'urlParameter' => 'product.price.asc',
-                'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.price.asc',
-            ],
-            [
-                'entity' => 'product',
-                'field' => 'price',
-                'direction' => 'desc',
-                'label' => 'Price, high to low',
-                'urlParameter' => 'product.price.desc',
-                'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.price.desc',
-            ],
-            [
-                'entity' => 'product',
-                'field' => 'reference',
-                'direction' => 'asc',
-                'label' => 'Reference, A to Z',
-                'urlParameter' => 'product.reference.asc',
-                'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.reference.asc',
-            ],
-            [
-                'entity' => 'product',
-                'field' => 'reference',
-                'direction' => 'desc',
-                'label' => 'Reference, Z to A',
-                'urlParameter' => 'product.reference.desc',
-                'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.reference.desc',
-            ],
-        ];
-        $sort_selected = null;
 
-        foreach ($sort_orders as $sortOption) {
-            if ($sortOption['current'] == 1) {
-                $sort_selected = $sortOption;
-                break; // Once we find the current one, no need to continue the loop
-            }
-        }
+
+        // $sort_orders = [
+        //     [
+        //         'entity' => 'product',
+        //         'field' => 'sales',
+        //         'direction' => 'desc',
+        //         'label' => 'Sales, highest to lowest',
+        //         'urlParameter' => 'product.sales.desc',
+        //         'current' => '',
+        //         'url' => '?order=product.sales.desc',
+        //     ],
+        //     [
+        //         'entity' => 'product',
+        //         'field' => 'position',
+        //         'direction' => 'asc',
+        //         'label' => 'Relevance',
+        //         'urlParameter' => 'product.position.asc',
+        //         'current' => 1,
+        //         'url' => '?order=product.position.asc',
+        //     ],
+        //     [
+        //         'entity' => 'product',
+        //         'field' => 'name',
+        //         'direction' => 'asc',
+        //         'label' => 'Name, A to Z',
+        //         'urlParameter' => 'product.name.asc',
+        //         'current' => '',
+        //         'url' => '?order=product.name.asc',
+        //     ],
+        //     [
+        //         'entity' => 'product',
+        //         'field' => 'name',
+        //         'direction' => 'desc',
+        //         'label' => 'Name, Z to A',
+        //         'urlParameter' => 'product.name.desc',
+        //         'current' => '',
+        //         'url' => '?order=product.name.desc',
+        //     ],
+        //     [
+        //         'entity' => 'product',
+        //         'field' => 'price',
+        //         'direction' => 'asc',
+        //         'label' => 'Price, low to high',
+        //         'urlParameter' => 'product.price.asc',
+        //         'current' => '',
+        //         'url' => 'listing',
+        //     ],
+        //     [
+        //         'entity' => 'product',
+        //         'field' => 'price',
+        //         'direction' => 'desc',
+        //         'label' => 'Price, high to low',
+        //         'urlParameter' => 'product.price.desc',
+        //         'current' => '',
+        //         'url' => '?order=product.price.desc',
+        //     ],
+        //     [
+        //         'entity' => 'product',
+        //         'field' => 'reference',
+        //         'direction' => 'asc',
+        //         'label' => 'Reference, A to Z',
+        //         'urlParameter' => 'product.reference.asc',
+        //         'current' => '',
+        //         'url' => '?order=product.reference.asc',
+        //     ],
+        //     [
+        //         'entity' => 'product',
+        //         'field' => 'reference',
+        //         'direction' => 'desc',
+        //         'label' => 'Reference, Z to A',
+        //         'urlParameter' => 'product.reference.desc',
+        //         'current' => '',
+        //         'url' => '?order=product.reference.desc',
+        //     ],
+        // ];
+
+        $sortOrdersArray = $this->getSortOrdersArray(); 
+        // $sort_selected = null;
+
+        // foreach ($sort_orders as $sortOption) {
+        //     if ($sortOption['current'] == 1) {
+        //         $sort_selected = $sortOption;
+        //         break; // Once we find the current one, no need to continue the loop
+        //     }
+        // }
         
         
         // on assigne les produits compatibles
@@ -208,7 +212,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         );
         // echo '<pre>'.print_r($products,1).'</pre>';
         // exit;
-
+        // $pagination = $this->getPagination($products);
         // $productId = [];
         // $processedProducts = array();
         // foreach ($products as $product) {
@@ -325,8 +329,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'search' => $search,
                 'products' => $products,
                 // 'processedProducts' => $processedProducts,
-                'sort_orders' => $sort_orders,
-                'sort_selected' => $sort_selected,
+                'sortOrders' => $sortOrdersArray,
                 'pagination' => $pagination,
                 // 'productsUniversal' => $productsUniversal,
                 /**'universal' => $universals,**/
@@ -380,18 +383,18 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         // exit;
         
         
-        if($getData['filters1'] == 0){
-            $params['filters1'] = 0;
-            $params['filters2'] = 0;
-            $params['filters3'] = 0;
-            $params['filters4'] = 0;
+        // if($getData['filters1'] == 0){
+        //     $params['filters1'] = 0;
+        //     $params['filters2'] = 0;
+        //     $params['filters3'] = 0;
+        //     $params['filters4'] = 0;
             
-            $filters = self::getUrlFiltersForCookie();
+        //     $filters = self::getUrlFiltersForCookie();
 
-            $this->context->cookie->__set('ukoocompat_search_'.(int)$search->id, serialize($filters));
+        //     $this->context->cookie->__set('ukoocompat_search_'.(int)$search->id, serialize($filters));
             
-            Tools::redirect('/?open=yourCar');
-        }else{
+        //     Tools::redirect('/?open=yourCar');
+        // }else{
             $this->context->smarty->assign(array(
                 'ukoodata' => $ukooData,
                 // 'blockLayered' => $data,
@@ -399,7 +402,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'manufacturers' => $manufacturers,
                 'news_compats' => Tools::getValue('news_compats', 0),
                 'order_by_compats' => Tools::getValue('order_by_compats', 'price'),
-                'order_by_orientation_compats' => Tools::getValue('order_by_orientation_compats', 'DESC'),
+                'order_by_orientation_compats' => Tools::getValue('order_by_orientation_compats', 'ASC'),
                 'id_manufacturer_compats' => Tools::getValue('id_manufacturer_compats', null),
                 'nr_items_compats' => Tools::getValue('nr_items_compats', 20),
                 'p' => Tools::getValue('p', 1),
@@ -422,8 +425,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'in_my_cars' => $id_row,
             ));
 
-        //     echo '<pre>'.print_r($name_1,1).'</pre>';
-        // exit;
+        
         
             // $link = new Link();
             // $moduleLink = $link->getModuleLink('ukoocompact');
@@ -444,9 +446,6 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             // $this->setTemplate('module:ukoocompat/views/templates/front/listing.tpl');
             // $this->module->display('front/listing.tpl', array('selected_filter_1' => 'selected_filter_2', 'selected_filter_3' => 'selected_filter_4'));
 
-
-
-
             // echo $moduleLink;
             // exit;
             // echo 'listing';
@@ -456,7 +455,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             // $this->setTemplate('module:ukoocompact/views/templates/front/listing.tpl');
 
 
-        }
+        // }
     }
 
     private function getTemplateVarPagination(
@@ -505,5 +504,117 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             'pages' => $pages,
             'should_be_displayed' => (count($pagination->buildLinks()) > 3),
         ];
+    }
+
+
+
+    public function getSortOrdersArray()
+    {
+        $iso_code = $this->context->language->iso_code;
+        // Define your sort orders array
+        $sortOrders = array(
+            // array(
+            //     'entity' => 'listing',
+            //     'field' => 'sales',
+            //     'direction' => 'desc',
+            //     'label' => 'Sales, highest to lowest',
+            //     'urlParameter' => 'product.sales.desc',
+            //     'current' => false,
+            //     'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.price.desc'
+            // ),
+            // array(
+            //     'entity' => 'listing',
+            //     'field' => 'price',
+            //     'direction' => 'asc',
+            //     'label' => 'Price, low to high',
+            //     'urlParameter' => 'product.price.asc',
+            //     'current' => false,
+            //     'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.price.asc'
+            // ),
+            
+            [
+                'entity' => 'product',
+                'field' => 'sales',
+                'direction' => 'desc',
+                'label' => 'Sales, highest to lowest',
+                'urlParameter' => 'product.sales.desc',
+                'current' => '',
+                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.sales.desc',
+            ],
+            [
+                'entity' => 'product',
+                'field' => 'position',
+                'direction' => 'asc',
+                'label' => 'Relevance',
+                'urlParameter' => 'product.position.asc',
+                'current' => 1,
+                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.position.asc',
+            ],
+            [
+                'entity' => 'product',
+                'field' => 'name',
+                'direction' => 'asc',
+                'label' => 'Name, A to Z',
+                'urlParameter' => 'product.name.asc',
+                'current' => '',
+                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.name.asc',
+            ],
+            [
+                'entity' => 'product',
+                'field' => 'name',
+                'direction' => 'desc',
+                'label' => 'Name, Z to A',
+                'urlParameter' => 'product.name.desc',
+                'current' => '',
+                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.name.desc',
+            ],
+            [
+                'entity' => 'product',
+                'field' => 'price',
+                'direction' => 'asc',
+                'label' => 'Price, low to high',
+                'urlParameter' => 'product.price.asc',
+                'current' => '',
+                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.price.asc',
+            ],
+            [
+                'entity' => 'product',
+                'field' => 'price',
+                'direction' => 'desc',
+                'label' => 'Price, high to low',
+                'urlParameter' => 'product.price.desc',
+                'current' => '',
+                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.price.desc',
+            ],
+            [
+                'entity' => 'product',
+                'field' => 'reference',
+                'direction' => 'asc',
+                'label' => 'Reference, A to Z',
+                'urlParameter' => 'product.reference.asc',
+                'current' => '',
+                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.reference.asc',
+            ],
+            [
+                'entity' => 'product',
+                'field' => 'reference',
+                'direction' => 'desc',
+                'label' => 'Reference, Z to A',
+                'urlParameter' => 'product.reference.desc',
+                'current' => '',
+                'url' => '/'.$iso_code.'/module/ukoocompat/listing?order=product.reference.desc',
+            ],
+        );
+
+        // Here, you can add logic to mark the current sort order as 'current'
+        // For example, you can compare the current sort order with the requested sort order from the URL
+        // If they match, set 'current' to true for that sort order
+        
+        // For simplicity, let's assume the first sort order is the current one
+        if (!empty($sortOrders)) {
+            $sortOrders[0]['current'] = true;
+        }
+
+        return $sortOrders;
     }
 }

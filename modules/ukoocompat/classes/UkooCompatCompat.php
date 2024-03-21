@@ -289,12 +289,21 @@ class UkooCompatCompat extends ObjectModel
         $random_number_products = 1,
         Context $context = null
     ) {
+        $data = explode('.',Tools::getValue("order"));
+
+        // echo '<pre>'.print_r($data,1).'</pre>';
+        
         
         if (!$context) $context = Context::getContext();
 
         if ($p < 1) $p = 1;
-        $order_by = Tools::getValue('order_by_compats');
-        $order_way = Tools::getValue('order_by_orientation_compats', 'DESC');
+        // $order_by = Tools::getValue('order_by_compats');
+        // $order_way = Tools::getValue('order_by_orientation_compats', 'DESC');
+        $order_by = $data[1];
+        $order_way = $data[2];
+        // echo $order_by;
+        // echo $order_way;
+        // exit;
         /*$order_way = 'DESC';*/
         $multifilter_idCategory = Tools::getValue('multiFilter_id_category', 0);
         $multifilter_idManufacturer = Tools::getValue('id_manufacturer_compats', 0);

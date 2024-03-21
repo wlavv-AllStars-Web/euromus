@@ -22,12 +22,16 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-  {* <pre>{print_r($listing,1)}</pre> *}
-
+  {* <pre style="width: 100%;">{print_r($search,1)}</pre> *}
+  {* nb_products *}
 <nav class="pagination">
   <div class="col-md-4">
     {block name='pagination_summary'}
-      {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=['%from%' => $pagination.items_shown_from ,'%to%' => $pagination.items_shown_to, '%total%' => $pagination.total_items]}
+      {if isset($search)}
+        {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=['%from%' => $pagination.items_shown_from ,'%to%' => $nb_products, '%total%' => $nb_products]}
+      {else}
+        {l s='Showing %from%-%to% of %total% item(s)' d='Shop.Theme.Catalog' sprintf=['%from%' => $pagination.items_shown_from ,'%to%' => $pagination.items_shown_to, '%total%' => $pagination.total_items]}
+      {/if}
     {/block}
   </div>
 

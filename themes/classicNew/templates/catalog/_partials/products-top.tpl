@@ -35,11 +35,11 @@
 
   {if $ukoo_name_1}
     <div class="col-lg-2  total-products">
-    <div class="brand-logo">
+    {* <div class="brand-logo">
       <span style="color:#0d2540;">
         <img src="/img/eurmuscle/brandsCars/{$ukoo_name_1}.png" style="width: 80px;background-color: #0d2540;padding: 0.5rem;border-radius: 0.5rem;gap:2rem;" />
       </span>
-    </div>
+    </div> *}
   {else}
     <div class="col-lg-5 hidden-sm-down total-products pt-0">
     {if $smarty.server.REQUEST_URI == "/en/new-products" || $smarty.server.REQUEST_URI === "/es/novos-produtos" || $smarty.server.REQUEST_URI === "/fr/nouveaux-produits"}
@@ -71,15 +71,15 @@
     {/if} *}
   </div>
   {if $ukoo_name_1}
-    <div class="col-lg-5 ukooListTitle">
-      {* <span id="ukoo1">{$ukoo_name_1}</span> *}
+    {* <div class="col-lg-5 ukooListTitle">
+      <span id="ukoo1">{$ukoo_name_1}</span>
       <i style="margin:5px 10px;color: #103054;" class="fa fa-caret-right"></i>
       <span id="ukoo2">{$ukoo_name_2}</span>
       <i style="margin:5px 10px;color: #103054;" class="fa fa-caret-right"></i>
       <span id="ukoo3">{$ukoo_name_3}</span>
       <i style="margin:5px 10px;color: #103054;" class="fa fa-caret-right"></i>
       <span id="ukoo4">{$ukoo_name_4}</span>
-    </div>
+    </div> *}
   {/if}
   {if $ukoo_name_1}
     <div class="col-lg-6 col-xs-12">

@@ -30,7 +30,7 @@ background: white;
 overflow: scroll;
 top: 0;
 ">{print_r($listing.search->filters,1)}</pre> *}
-{* <pre>{print_r($listing.sort_selected,1)}</pre> *}
+{* <pre>{print_r($sortOrders,1)}</pre> *}
 {* {$order_by_orientation_compats} *}
 <span class="col-sm-3 col-md-5 hidden-sm-down sort-by">{l s='Sort by:' d='Shop.Theme.Global'}</span>
 {* <div class="{if !empty($listing.rendered_facets)}col-xs-8 col-sm-7{else}col-xs-12 col-sm-12{/if} col-md-9 products-sort-order dropdown"> *}
@@ -46,14 +46,28 @@ top: 0;
     <i class="material-icons float-xs-right">&#xE5C5;</i>
   </button>
   <div class="dropdown-menu">
-    {foreach from=$listing.sort_orders item=sort_order}
+  {if isset($sortOrders)}
+    {foreach from=$sortOrders item=sortOrder}
       <a
         rel="nofollow"
-        href="{$sort_order.url}"
-        class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
+        href="{$sortOrder.url}&filters1={$filter_1}&filters2={$filter_2}&filters3={$filter_3}&filters4={$filter_4}"
+      class="{if $sortOrder.current}current{/if} select-list "
       >
-        {$sort_order.label}
+        {$sortOrder.label}
       </a>
+  {/foreach}
+
+  {else}
+    
+    {foreach from=$listing.sort_orders item=sort_order}
+        <a
+          rel="nofollow"
+          href="{$sort_order.url}"
+          class="select-list {['current' => $sort_order.current, 'js-search-link' => true]|classnames}"
+        >
+          {$sort_order.label}
+        </a>
     {/foreach}
+  {/if}
   </div>
 </div>

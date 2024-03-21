@@ -58,6 +58,46 @@ class IndexControllerCore extends FrontController
         $this->setTemplate('index');
     }
 
+    public static function getBrandAndModel($filter1,$filter2,$filter3,$filter4,$id_lang){
+        $array_NameModel = [];
+        $brandnamesql = "Select value
+                        FROM eu_ukoocompat_criterion_lang
+                        WHERE id_ukoocompat_criterion = '" . $filter1 . "'
+                        AND id_lang = '". $id_lang ."'
+                        LIMIT 1";
+        $brandnameResult  = Db::getInstance()->executeS($brandnamesql);
+
+        $Modelnamesql = "Select value
+                        FROM eu_ukoocompat_criterion_lang
+                        WHERE id_ukoocompat_criterion = '" . $filter2 . "'
+                        AND id_lang = '". $id_lang ."'
+                        LIMIT 1";
+        $ModelnameResult  = Db::getInstance()->executeS($Modelnamesql);
+
+        $Typenamesql = "Select value
+                        FROM eu_ukoocompat_criterion_lang
+                        WHERE id_ukoocompat_criterion = '" . $filter3 . "'
+                        AND id_lang = '". $id_lang ."'
+                        LIMIT 1";
+        $TypenameResult  = Db::getInstance()->executeS($Typenamesql);
+
+        $Versionnamesql = "Select value
+                        FROM eu_ukoocompat_criterion_lang
+                        WHERE id_ukoocompat_criterion = '" . $filter4 . "'
+                        AND id_lang = '". $id_lang ."'
+                        LIMIT 1";
+        $VersionnameResult  = Db::getInstance()->executeS($Versionnamesql);
+
+        $array_NameModel[] = [
+            'name_brand'   => $brandnameResult,
+            'name_model'   => $ModelnameResult,
+            'name_type'   => $TypenameResult,
+            'name_version'   => $VersionnameResult,
+        ];
+
+        return $array_NameModel;
+    }
+
     public static function getCarsOfBrand($idBrand,$idModel,$idLang){
         
         

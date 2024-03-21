@@ -11,7 +11,7 @@
             {foreach from=$filter->criteria item=criterion}
                     <option
                         value="{$criterion['id']|intval}" style="{if $filter->id == 1}padding: 3px 0;{/if}"
-                        {* {if isset($search->selected_criteria[{$filter->id|intval}]) && $search->selected_criteria[{$filter->id|intval}]|intval == $criterion['id']|intval} selected="selected"{/if} *}
+                        {if isset($search->selected_criteria[{$filter->id|intval}]) && $search->selected_criteria[{$filter->id|intval}]|intval == $criterion['id']|intval} selected="selected"{/if}
                     >{$criterion['value']|escape}</option>
             {/foreach}
         {/if}
@@ -35,7 +35,7 @@
             {foreach from=$filter->criteria item=criterion}
                     <option onmouseover="$(this).css('background','#0078d7').css('color','#fff')" onmouseleave="$(this).css('background','#eee').css('color','#000')"
                         value="{$criterion['id']|intval}" style="{if $filter->id == 1}padding: 3px 0;{/if}"
-                        {* {if isset($search->selected_criteria[{$filter->id|intval}]) && $search->selected_criteria[{$filter->id|intval}]|intval == $criterion['id']|intval} selected="selected"{/if} *}
+                        {if isset($search->selected_criteria[{$filter->id|intval}]) && $search->selected_criteria[{$filter->id|intval}]|intval == $criterion['id']|intval} selected="selected"{/if}
                     >{$criterion['value']|escape}</option>
             {/foreach}
         {/if}
