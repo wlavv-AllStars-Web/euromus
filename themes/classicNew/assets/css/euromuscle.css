@@ -1135,6 +1135,9 @@ main {
         border-radius: 0.5rem;
         height: 266px;
       }
+      #js-product-list .product.car:hover {
+        outline: 3px solid #103054;
+      }
       #js-product-list .js-product.product:hover {
         outline: 0 !important;
         border-radius: 0.5rem;
