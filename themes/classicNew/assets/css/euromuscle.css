@@ -1169,7 +1169,7 @@ main {
         margin: auto;
       }
 
-      #js-product-list .product.car .thumbnail-top img{
+      #js-product-list .product.category .thumbnail-top img{
         object-position: -158px center !important;
       }
       #js-product-list .product.car:hover {
@@ -2326,7 +2326,7 @@ main {
 }
 
 .ukoocompat_search_block {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 .bannersHome{
