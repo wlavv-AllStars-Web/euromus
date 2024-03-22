@@ -449,16 +449,18 @@
                   {hook h='displayFooterProduct' product=$product category=$category}
                  </div>
                  <div  class="tab-pane fade in" id="product_warranty"  role="tabpanel">
-                 <div class="banner-tabs" >
+                  <div class="banner-tabs" >
                     <img src="https://www.all-stars-motorsport.com/img/app_icons/warranty_en.webp" />
                   </div>
                   <p>Product Warranty</p>
                  </div>
                  <div  class="tab-pane fade in" id="product_brand"  role="tabpanel">
-                 <div class="banner-tabs" >
-                    <img src="https://www.all-stars-motorsport.com/img/app_icons/instructions_en.webp" />
+                  <div class="banner-tabs" >
+                      <img src="https://www.all-stars-motorsport.com/img/app_icons/instructions_en.webp" />
                   </div>
-                  <p>Product Manufacturer</p>
+                  <h4>Product Manufacturer</h4>
+                  <div>{$product_manufacturer->description|strip_tags|replace:'<p>':''|replace:'</p>':''}</div>
+                  {* <pre>{print_r($product_manufacturer->description,1)}</pre> *}
                  </div>
         
               </div>
