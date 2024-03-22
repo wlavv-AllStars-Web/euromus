@@ -1235,6 +1235,13 @@ main {
       .product-attachments .attachment{
         padding: 1rem;
       }
+
+      #checkout .product-line-actions .col-md-10.col-xs-10 {
+        padding: 0;
+      }
+      #checkout .product-line-actions .col-md-2.col-xs-2.text-xs-right {
+        padding: 0;
+      }
 }
 
 /* categories tablet */
@@ -1667,6 +1674,13 @@ main {
 
         #module-ukoocompat-listing #js-product-list-top {
           justify-content: end;
+        }
+
+        #module-ukoocompat-listing #wrapper {
+          padding-top: 0;
+        }
+        #module-ukoocompat-listing #wrapper #js-product-list-top{
+          margin: 0rem 0 2rem 0 !important;
         }
   }
 
