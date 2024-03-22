@@ -1231,6 +1231,10 @@ main {
         height: 100%;
         font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
       }
+
+      .product-attachments .attachment{
+        padding: 1rem;
+      }
 }
 
 /* categories tablet */
@@ -2326,10 +2330,14 @@ main {
   display: flex;
   gap: 5px;
   margin-top: 5px;
+  margin: auto;
+  background: #103054 !important;
+  justify-content: center;
 }
 .bannersHome .card-img-container{
   position: relative;
   flex: 1;
+  max-width: 634px;
 }
 
 .bannersHome .card-img {
@@ -4026,6 +4034,7 @@ body#checkout section.checkout-step .address-selector {
   background: #fff;
   display: flex;
   align-items: center;
+  padding: 1rem;
 }
 
 #product-comments-list .comment-content .comment-buttons{
