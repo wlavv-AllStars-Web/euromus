@@ -22,38 +22,38 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{* {extends file=$layout} *}
+{extends file=$layout}
 
-{* {block name='header'}
+{block name='header'}
   {include file='../_partials/header.tpl'}
-{/block} *}
+{/block}
 
 {block name='content'}
   <section id="content">
     <div class="row row-checkout">
       <div class="cart-grid-body col-xs-12 col-lg-12">
-        {block name='cart_summary'}
+        {* {block name='cart_summary'} *}
           {* {include file='checkout/_partials/cart-summary.tpl' cart=$cart} *}
-          {include file='checkout/cart.tpl'}
+          {* {include file='checkout/cart.tpl'}
         {/block}
-      </div>
-
-      {* <div class="cart-grid-body col-xs-12 col-lg-12">
+      </div> *}
+      <div class="cart-grid-right col-xs-12 col-lg-4">
+      {block name='cart_summary'}
+        {include file='checkout/_partials/cart-summary.tpl' cart=$cart}
+      {/block}
+      
+      {* {hook h='displayReassurance'} *}
+    </div>
+      <div class="cart-grid-body col-xs-12 col-lg-12">
         {block name='checkout_process'}
           {render file='checkout/checkout-process.tpl' ui=$checkout_process}
         {/block}
-      </div> *}
-      {* <div class="cart-grid-right col-xs-12 col-lg-4">
-        {block name='cart_summary'}
-          {include file='checkout/_partials/cart-summary.tpl' cart=$cart}
-        {/block} *}
-        
-        {* {hook h='displayReassurance'} *}
-      {* </div> *}
+      </div>
+      
     </div>
   </section>
 {/block}
 
-{* {block name='footer'}
+{block name='footer'}
   {include file='../_partials/footer.tpl'}
-{/block} *}
+{/block}

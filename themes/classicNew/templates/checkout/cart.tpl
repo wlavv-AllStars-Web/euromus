@@ -66,9 +66,9 @@
               {include file='checkout/_partials/cart-detailed-totals.tpl' cart=$cart}
             {/block}
 
-            {* {block name='cart_actions'}
+            {block name='cart_actions'}
               {include file='checkout/_partials/cart-detailed-actions.tpl' cart=$cart}
-            {/block} *}
+            {/block}
 
           </div>
         {/block}
@@ -92,11 +92,11 @@
     {hook h='displayCrossSellingShoppingCart'}
     
 
-    <div class="cart-grid-body col-xs-12 col-lg-12 px-0">
+    {* <div class="cart-grid-body col-xs-12 col-lg-12 px-0">
         {block name='checkout_process'}
           {render file='checkout/checkout-process.tpl' ui=$checkout_process}
         {/block}
-      </div>
+      </div> *}
   </section>
   
   
