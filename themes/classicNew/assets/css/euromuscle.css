@@ -1236,12 +1236,13 @@ main {
         padding: 1rem;
       }
 
-      #checkout .product-line-actions .col-md-10.col-xs-10 {
+      #checkout .cart-grid-right {
         padding: 0;
       }
-      #checkout .product-line-actions .col-md-2.col-xs-2.text-xs-right {
+      #checkout .cart-grid-right .card-block{
         padding: 0;
       }
+
 }
 
 /* categories tablet */
