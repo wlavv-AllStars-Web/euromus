@@ -458,8 +458,8 @@
                   <div class="banner-tabs" >
                       <img src="https://www.all-stars-motorsport.com/img/app_icons/instructions_en.webp" />
                   </div>
-                  <h4>Product Manufacturer</h4>
-                  <div>{$product_manufacturer->description|strip_tags|replace:'<p>':''|replace:'</p>':''}</div>
+                  <h4 style="padding: 1rem;">Product Manufacturer</h4>
+                  <div style="padding: 1rem;">{$product_manufacturer->description|strip_tags|replace:'<p>':''|replace:'</p>':''}</div>
                   {* <pre>{print_r($product_manufacturer->description,1)}</pre> *}
                  </div>
         
