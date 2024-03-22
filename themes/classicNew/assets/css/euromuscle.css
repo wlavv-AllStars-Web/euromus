@@ -2325,6 +2325,10 @@ main {
   height: 100%;
 }
 
+.ukoocompat_search_block {
+  margin-bottom: 0 !important;
+}
+
 .bannersHome{
   width: 100%;
   display: flex;
