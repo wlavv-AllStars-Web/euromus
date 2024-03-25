@@ -1,4 +1,4 @@
-window.onload = function() {
+document.addEventListener('DOMContentLoaded', function() {
     const searchIconMobile = document.querySelector('.header-nav #_mobile_cart .search');
     const searchBarMobile = document.querySelector('.header-top-right #search_widget');
 
@@ -13,4 +13,4 @@ window.onload = function() {
             }
         });
     }
-};
+});
