@@ -1572,6 +1572,11 @@ main {
     .cms-id-43 #content {
       background-color: #e6e6e6 !important;
     }
+
+    #search_widget form{
+      margin: 0;
+    }
+    
     #terms {
       margin: auto;
       width: 78%;
