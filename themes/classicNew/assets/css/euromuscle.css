@@ -4075,3 +4075,9 @@ body#checkout section.checkout-step .address-selector {
 #product-comments-list .comment-content p {
   text-align: start !important;
 }
+
+body#checkout section.checkout-step .custom-radio input[type="radio"] {
+  width: 1.25rem;
+  height: 1.25rem;
+  pointer-events: none;
+}
