@@ -4096,7 +4096,7 @@ a:focus {
     top: 0;
     left: 5rem;
     bottom: 0;
-    z-index: -1;
+    z-index: 0;
     max-height: 22.5rem;
     display: flex;
     width: 1px;
