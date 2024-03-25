@@ -171,13 +171,13 @@
             </li>
           {/foreach}
             
-          {foreach from=$categories[1] item=categoryLevel1}
+          {* {foreach from=$categories[1] item=categoryLevel1}
             {foreach from=$categoryLevel1 item=category}
               {if $category.id_category == 18}
                 <a href="/{$category.id_category}-{$category.link_rewrite}">ALL PRODUCTS</a>
               {/if}
             {/foreach}
-          {/foreach}   
+          {/foreach}    *}
             
   
             <div style="border-top:2px solid #103054;border-bottom:2px solid #ee302e;padding-block:1px;width: 100%;
