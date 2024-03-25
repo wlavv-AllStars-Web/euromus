@@ -4086,3 +4086,7 @@ a:focus {
   outline: none !important;
   text-decoration: none !important;
 }
+
+#content-wrapper #content #search_widget {
+  max-width: none !important;
+}
