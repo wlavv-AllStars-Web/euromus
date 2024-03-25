@@ -533,6 +533,11 @@ main {
         text-transform: uppercase;
     }
 
+    #checkout .cart-grid-body .form-informations {
+      display: flex;
+    flex-direction: column;
+    }
+
     #contact .contact-form .form-control-label{
       text-align: start;
     }
