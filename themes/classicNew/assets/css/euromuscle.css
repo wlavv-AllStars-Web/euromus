@@ -284,7 +284,7 @@ main {
     margin: 1rem 0 1rem 0;
   }
   #blockcart-modal .cart-content .cart-content-btn .btn-primary{
-    background: #ee302e !important;
+    background: #103054 !important;
   }
 
 
@@ -1256,6 +1256,11 @@ main {
       }
       #checkout .product-line-grid-right .qty {
         padding: 0 !important;
+      }
+
+      .modal.in .modal-dialog {
+        transform: translate(0, -50%) !important;
+        top: 50%;
       }
 
 }
@@ -4123,7 +4128,7 @@ a:focus {
 
 .modal.in .modal-dialog {
   /* -webkit-transform: translate(0, 0); */
-  transform: translate(0, -25%) !important;
+  transform: translate(0, -25%);
   top: 50%;
   /* LEFT: 50%; */
   /* transform: unset; */
