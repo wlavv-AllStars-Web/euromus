@@ -4081,3 +4081,8 @@ body#checkout section.checkout-step .custom-radio input[type="radio"] {
   height: 1.25rem;
   pointer-events: none;
 }
+
+a:focus {
+  outline: none !important;
+  text-decoration: none !important;
+}
