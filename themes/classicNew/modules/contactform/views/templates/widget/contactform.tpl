@@ -55,8 +55,8 @@
         </div>
 
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="firstname">{l s='Name' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-9">
+          <label class="col-md-2 form-control-label" for="firstname">{l s='Name' d='Shop.Forms.Labels'}</label>
+          <div class="col-md-6">
             <input
               id="firstname"
               class="form-control"
@@ -69,8 +69,8 @@
         </div>
 
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="phone">{l s='Phone' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-9">
+          <label class="col-md-2 form-control-label" for="phone">{l s='Phone' d='Shop.Forms.Labels'}</label>
+          <div class="col-md-6">
             <input
               id="phone"
               class="form-control"
@@ -83,8 +83,8 @@
         </div>
 
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="email">{l s='Email address' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-9">
+          <label class="col-md-2 form-control-label" for="email">{l s='Email address' d='Shop.Forms.Labels'}</label>
+          <div class="col-md-6">
             <input
               id="email"
               class="form-control"
@@ -98,7 +98,7 @@
 
         {if $contact.orders}
           <div class="form-group row">
-            <label class="col-md-3 form-control-label" for="id-order">{l s='Order reference' d='Shop.Forms.Labels'}</label>
+            <label class="col-md-2 form-control-label" for="id-order">{l s='Order reference' d='Shop.Forms.Labels'}</label>
             <div class="col-md-7">
               <select id="id-order" name="id_order" class="form-control form-control-select">
                 <option value="">{l s='Select reference' d='Shop.Forms.Help'}</option>
@@ -117,7 +117,7 @@
 
         {if $contact.allow_file_upload}
           <div class="form-group row">
-            <label class="col-md-3 form-control-label" for="file-upload">{l s='Attachment' d='Shop.Forms.Labels'}</label>
+            <label class="col-md-2 form-control-label" for="file-upload">{l s='Attachment' d='Shop.Forms.Labels'}</label>
             <div class="col-md-6">
               <input id="file-upload" type="file" name="fileUpload" class="filestyle" data-buttonText="{l s='Choose file' d='Shop.Theme.Actions'}">
             </div>
@@ -128,8 +128,8 @@
         {/if}
 
         <div class="form-group row">
-          <label class="col-md-3 form-control-label" for="contactform-message">{l s='Message' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-9">
+          <label class="col-md-2 form-control-label" for="contactform-message">{l s='Message' d='Shop.Forms.Labels'}</label>
+          <div class="col-md-10">
             <textarea
               id="contactform-message"
               class="form-control"
