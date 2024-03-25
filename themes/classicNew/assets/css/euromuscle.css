@@ -1576,7 +1576,7 @@ main {
     #search_widget form{
       margin: 0;
     }
-    
+
     #terms {
       margin: auto;
       width: 78%;
@@ -2427,6 +2427,7 @@ main {
   display: flex;
   gap: 5px;
   padding-bottom: 5px;
+  height: 100%;
 }
 
 #index #wrapper{
