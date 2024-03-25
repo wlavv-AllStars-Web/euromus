@@ -4,7 +4,7 @@ document.addEventListener('DOMContentLoaded', function() {
         const searchBarMobile = document.querySelector('.header-top-right #search_widget');
     
         if (searchIconMobile && searchBarMobile) {
-    
+    alert("")
             searchIconMobile.addEventListener('click', function() {
                 if (!searchBarMobile.style.display || searchBarMobile.style.display === "none") {
                     searchBarMobile.style.display = "block";
