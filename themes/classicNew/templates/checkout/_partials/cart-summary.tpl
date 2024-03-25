@@ -32,9 +32,9 @@
       {include file='checkout/_partials/cart-summary-products.tpl' cart=$cart}
     {/block}
 
-    {block name='cart_summary_subtotals'}
+    {* {block name='cart_summary_subtotals'}
       {include file='checkout/_partials/cart-summary-subtotals.tpl' cart=$cart}
-    {/block}
+    {/block} *}
   </div>
 
   {block name='cart_summary_totals'}

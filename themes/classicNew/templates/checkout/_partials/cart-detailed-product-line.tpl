@@ -128,12 +128,12 @@
 
   <!--  product line right content: actions (quantity, delete), price -->
   <div class="product-line-grid-right product-line-actions col-md-5 col-xs-12 pt-2">
-    <div class="row" style="flex-direction: row;">
+    <div class="row" style="display:flex;">
       
       {* <div class="col-xs-4 hidden-md-up"></div> *}
       <div class="col-md-10 col-xs-10">
         <div class="row shopping-cart-row" style="display: flex;align-items:center;flex-wrap:wrap;flex-direction:row;">
-          <div class="col-md-4 py-1">
+          <div class="col-md-4 col-xs-5 py-1">
             {if $product.stock_quantity >= 5}
               <p style="background: rgb(63, 192, 63);color:#fff;text-align:center;margin-bottom:0;">In Stock</p>
             {else if $product.stock_quantity >= 1}
@@ -142,7 +142,7 @@
               <p style="background: rgb(231, 71, 71);color:#000;text-align:center;margin-bottom:0;">Out of stock</p>
             {/if}
           </div>
-          <div class="col-md-4 col-xs-4 qty">
+          <div class="col-md-4 col-xs-3 qty">
             {if !empty($product.is_gift)}
               <span class="gift-quantity">{$product.quantity}</span>
             {else}
@@ -161,7 +161,7 @@
               />
             {/if}
           </div>
-          <div class="col-md-4 col-xs-2 price">
+          <div class="col-md-4 col-xs-4 price">
             <span class="product-price">
               <strong>
                 {if !empty($product.is_gift)}

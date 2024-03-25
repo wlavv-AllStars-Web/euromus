@@ -1251,6 +1251,12 @@ main {
       .mobile-search {
         background: #0d2540;
       }
+      #checkout .product-line-grid-right .row{
+        flex-direction: row;
+      }
+      #checkout .product-line-grid-right .qty {
+        padding: 0 !important;
+      }
 
 }
 
