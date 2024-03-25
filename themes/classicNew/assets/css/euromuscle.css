@@ -4096,7 +4096,7 @@ a:focus {
     top: 0;
     left: 5rem;
     bottom: 0;
-    z-index: 0;
+    z-index: -1;
     max-height: 22.5rem;
     display: flex;
 }
@@ -4106,5 +4106,17 @@ a:focus {
 }
 .quickview .arrows .arrow-up {
   color: #103054;
+  opacity: 1;
+}
+
+.modal.in .modal-dialog {
+  /* -webkit-transform: translate(0, 0); */
+  transform: translate(0, -25%) !important;
+  top: 50%;
+  /* LEFT: 50%; */
+  /* transform: unset; */
+}
+
+.modal.in .modal-dialog .close{
   opacity: 1;
 }
