@@ -3355,7 +3355,7 @@ justify-content: center;
   padding:0.5rem 1rem;
 }
 .product-add-to-cart.js-product-add-to-cart .product-quantity .qty {
-  width: 15%;
+  width: 20%;
 }
 .product-add-to-cart.js-product-add-to-cart .product-quantity .add {
   width: 90%;
@@ -4089,4 +4089,22 @@ a:focus {
 
 #content-wrapper #content #search_widget {
   max-width: none !important;
+}
+
+.quickview .arrows {
+    position: absolute;
+    top: 0;
+    left: 5rem;
+    bottom: 0;
+    z-index: 0;
+    max-height: 22.5rem;
+    display: flex;
+}
+
+.quickview .images-container {
+  min-height: 23.88rem;
+}
+.quickview .arrows .arrow-up {
+  color: #103054;
+  opacity: 1;
 }
