@@ -2687,10 +2687,10 @@ header.page-header {
 
 
 #blockcart-modal .cart-content-btn .btn-secondary{
-  background: #103054 !important;
+  background: #ee302e !important;
 }
 #blockcart-modal .cart-content-btn .btn-secondary:hover{
-  background: #152639 !important;
+  background: #d32c2a  !important;
 }
 #blockcart-modal .cart-content-btn .btn-primary{
   display: flex;
