@@ -2,14 +2,24 @@ window.onload = function() {
     const searchIconMobile = document.querySelector('.header-nav #_mobile_cart .search');
     const searchBarMobile = document.querySelector('.header-top-right #search_widget');
   
-    if (searchIconMobile) {
-      searchIconMobile.addEventListener('click', () => {
+    if (searchIconMobile && searchBarMobile) {
+        alert("tem")
+        document.addEventListener('click', function(event) {
+            if (event.target.matches('.header-nav #_mobile_cart .search')) {
+                if (!searchBarMobile.style.display || searchBarMobile.style.display === "none") {
+                    searchBarMobile.style.display = "block";
+                  } else {
+                    searchBarMobile.style.display = "none";
+                  }
+            }
+        });
+    //   searchIconMobile.addEventListener('click', () => {
 
-        if (!searchBarMobile.style.display || searchBarMobile.style.display === "none") {
-          searchBarMobile.style.display = "block";
-        } else {
-          searchBarMobile.style.display = "none";
-        }
-      });
+    //     if (!searchBarMobile.style.display || searchBarMobile.style.display === "none") {
+    //       searchBarMobile.style.display = "block";
+    //     } else {
+    //       searchBarMobile.style.display = "none";
+    //     }
+    //   });
     }
   };

@@ -255,21 +255,21 @@ window.onclick = function(event) {
   }
 }
 
-window.onload = function() {
-  const searchIconMobile = document.querySelector('.header-nav #_mobile_cart .search');
-  const searchBarMobile = document.querySelector('.header-top-right #search_widget');
+// window.onload = function() {
+//   const searchIconMobile = document.querySelector('.header-nav #_mobile_cart .search');
+//   const searchBarMobile = document.querySelector('.header-top-right #search_widget');
 
-  if (searchIconMobile) {
-    searchIconMobile.addEventListener('click', () => {
+//   if (searchIconMobile) {
+//     searchIconMobile.addEventListener('click', () => {
 
-      if (!searchBarMobile.style.display || searchBarMobile.style.display === "none") {
-        searchBarMobile.style.display = "block";
-      } else {
-        searchBarMobile.style.display = "none";
-      }
-    });
-  }
-};
+//       if (!searchBarMobile.style.display || searchBarMobile.style.display === "none") {
+//         searchBarMobile.style.display = "block";
+//       } else {
+//         searchBarMobile.style.display = "none";
+//       }
+//     });
+//   }
+// };
 
 const dropdownBrands = document.querySelector('li .dropbtn');
 // const dropdownBrandsCaret = document.querySelector('li.dropdown i');
