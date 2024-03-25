@@ -4099,6 +4099,7 @@ a:focus {
     z-index: -1;
     max-height: 22.5rem;
     display: flex;
+    width: 1px;
 }
 
 .quickview .images-container {
