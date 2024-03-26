@@ -45,7 +45,7 @@
 
         <div class="form-group row" style="display: none;">
           <label class="col-md-3 form-control-label" for="id_contact">{l s='Subject' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-6">
+          <div class="col-md-7">
             <select name="id_contact" id="id_contact" class="form-control form-control-select">
               {foreach from=$contact.contacts item=contact_elt}
                 <option value="{$contact_elt.id_contact}">{$contact_elt.name}</option>
@@ -56,7 +56,7 @@
 
         <div class="form-group row">
           <label class="col-md-2 form-control-label" for="firstname">{l s='Name' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-6">
+          <div class="col-md-7">
             <input
               id="firstname"
               class="form-control"
@@ -70,7 +70,7 @@
 
         <div class="form-group row">
           <label class="col-md-2 form-control-label" for="phone">{l s='Phone' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-6">
+          <div class="col-md-7">
             <input
               id="phone"
               class="form-control"
@@ -84,7 +84,7 @@
 
         <div class="form-group row">
           <label class="col-md-2 form-control-label" for="email">{l s='Email address' d='Shop.Forms.Labels'}</label>
-          <div class="col-md-6">
+          <div class="col-md-7">
             <input
               id="email"
               class="form-control"
@@ -115,7 +115,7 @@
 
         {/if}
 
-        {if $contact.allow_file_upload}
+        {* {if $contact.allow_file_upload}
           <div class="form-group row">
             <label class="col-md-2 form-control-label" for="file-upload">{l s='Attachment' d='Shop.Forms.Labels'}</label>
             <div class="col-md-6">
@@ -125,7 +125,7 @@
               {l s='optional' d='Shop.Forms.Help'}
             </span>
           </div>
-        {/if}
+        {/if} *}
 
         <div class="form-group row">
           <label class="col-md-2 form-control-label" for="contactform-message">{l s='Message' d='Shop.Forms.Labels'}</label>
