@@ -511,7 +511,7 @@
 
             <div class="hidden-md-up"
             style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
-            <div class="hidden-sm-down" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
+            <div class="hidden-sm-down" style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;  background: #fff;"></div>
           <div class="otherCars"
             style="width:100%;display: flex;flex-direction:column;justify-content:center;align-items:center;background:#707c88;">
             {* <div class="titleCars" style="text-align: center;padding:3rem 0">
@@ -545,13 +545,29 @@
           </div>
 
             {* videos *}
-            <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;"></div>
-            
+            <div style="border-top:4px solid #103054;border-bottom:4px solid #ee302e;padding-block:2px;width: 100%;background: #fff;"></div>
+{*             
               <div class="videosContainer">
               {foreach $desktop['icones_videos'] AS $key => $icon}
                 <div class="video3 video">
                   <div onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
                   <img src="{$icon["image_{$currentLanguageIso}"]}" style="min-width: 32vw;" loading="lazy" alt="banner_{$icon.youtube_code}"/>
+                    <div class="play">
+                      <img class="image_play" alt="video player" src="/img/youtube_play.png" loading="lazy" />
+                    </div>
+                  </div>
+                  <div  class="iframeClass"  style="display:none">
+                    <iframe allowfullscreen frameborder="0" src="https://www.youtube.com/embed/{$icon.youtube_code}?autoplay=0&mute=1&rel=0" loading="lazy">
+                    </iframe>
+                  </div>
+                </div>
+              {/foreach}
+                </div> *}
+              <div class="videosContainer">
+              {foreach $desktop['icones_videos'] AS $key => $icon}
+                <div class="video3 video">
+                  <div class="firstDiv" onclick="this.nextElementSibling.style.display='block'; this.style.display='none'">
+                  <img src="{$icon["image_{$currentLanguageIso}"]}" loading="lazy" alt="banner_{$icon.youtube_code}"/>
                     <div class="play">
                       <img class="image_play" alt="video player" src="/img/youtube_play.png" loading="lazy" />
                     </div>
