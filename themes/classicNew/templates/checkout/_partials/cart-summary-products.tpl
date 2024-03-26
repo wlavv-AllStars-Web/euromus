@@ -32,13 +32,14 @@
       <i class="material-icons">expand_more</i>
     </a>
   </p> *}
-
+{* <pre>{$cart.products|print_r}</pre> *}
   {block name='cart_summary_product_list'}
     <div class="" id="cart-summary-product-list">
       <ul class="media-list">
-        {foreach from=$cart.products item=product}
+        {* {foreach from=$cart.products item=product}
           <li class="media">{include file='checkout/_partials/cart-summary-product-line.tpl' product=$product}</li>
-        {/foreach}
+        {/foreach} *}
+        <li class="media">{include file='checkout/_partials/cart-summary-product-line.tpl' product=$cart.products[0]}</li>
       </ul>
     </div>
   {/block}
