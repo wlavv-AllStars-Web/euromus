@@ -43,6 +43,11 @@ main {
   .otherCars .categoryCars .category{
     width: 85vw !important;
   }
+
+  #contact #wrapper .container {
+    margin-right: 1rem ;
+    margin-left: 1rem ;
+  }
 }
 @media screen and (max-width:300px){
   html {
@@ -3694,7 +3699,7 @@ justify-content: center;
 .wrapper_desktop .container {
   width: 100%;
   max-width: 1440px;
-  padding: 0 3rem;
+  padding: 0px 3rem 1rem 3rem;
   background: #fff;
 }
 
