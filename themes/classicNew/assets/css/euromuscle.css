@@ -41,7 +41,7 @@ main {
     padding: 1rem;
   }
   .otherCars .categoryCars .category{
-    width: 100% !important;
+    width: 85vw !important;
   }
 }
 @media screen and (max-width:300px){
