@@ -8750,7 +8750,7 @@ body#checkout
   white-space: nowrap;
 }
 #header .header-nav #_desktop_cart .cart-preview.active {
-  background: #ee302e;
+  background: #f6f6f6;
 }
 #header .header-nav .blockcart.active a:hover,
 #header .header-nav .cart-preview.active a,

@@ -1086,6 +1086,11 @@ main {
         width: 100%;
       }
 
+      .categoryCars .category img {
+        transform: scale(1.15);
+        object-position: center;
+      }
+
 
       .otherCars .categoryCars .category:hover img {
         transform: scale(1.2);
