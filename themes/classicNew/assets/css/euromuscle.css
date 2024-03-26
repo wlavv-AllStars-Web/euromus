@@ -1087,8 +1087,8 @@ main {
       }
 
       .categoryCars .category img {
-        transform: scale(1.15);
-        object-position: center;
+        transform: scale(1.15) !important;
+        object-position: center !important;
       }
 
 
