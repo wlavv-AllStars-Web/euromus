@@ -54,7 +54,7 @@
 
                         {if $currentShop == 1}
                             <div style="display: flex;flex-wrap:wrap;">
-                            <div style="width: 45%;float: left;">
+                            <div style="width: 45%;float: left;display:none;">
                                 <label>Select Parent</label> 
                                 <select id="select_mini_{$icons_33['id']}" inputparentcard="1"  name="link[{$icons_33['id']}]" onclick="setImageText(this, {$icons_33['id']}, 'select_mini_{$icons_33['id']}')" style="padding:5px;">
                                     <option value="">---</option>
@@ -63,10 +63,10 @@
                                     {* {/foreach} *}
                                 </select>
                             </div>
-                            <div style="width: 10%;">
+                            <div style="width: 10%;display:none;">
                                 <div style="color: black; font-weight: bolder; font-size: 1rem; text-transform: uppercase; text-align: center; padding: 15px 15px 0px 15px;" > OR </div>
                             </div>
-                            <div style="width: 45%;">
+                            <div style="width: 100%;">
                                 <label>Select car</label> 
                                 {assign var="compat" value="`$icons_33['brand']`_`$icons_33['model']`_`$icons_33['type']`_`$icons_33['version']`"}
                                 <select id="select_car_{$icons_33['id']}" name="car[{$icons_33['id']}]" onclick="setIdToZero(this, {$icons_33['id']});" style="padding:5px;">
@@ -136,7 +136,7 @@
 
                 
                 <div style="display: flex;flex-wrap:wrap;">
-                <div style="width: 45%;float: left;">
+                <div style="width: 45%;float: left;display:none;">
                     <label>Select Parent</label> 
                     <select id="select_mini_{$icons_33['id']}" inputparentcard="1"  name="link[{$icons_33['id']}]" onclick="setImageText(this, {$icons_33['id']}, 'select_mini_{$icons_33['id']}')" style="padding:5px;">
                         <option value="">---</option>
@@ -145,10 +145,10 @@
                         {* {/foreach} *}
                     </select>
                 </div>
-                <div style="width: 10%;">
+                <div style="width: 10%;display:none;">
                     <div style="color: black; font-weight: bolder; font-size: 1rem; text-transform: uppercase; text-align: center; padding: 15px 15px 0px 15px;" > OR </div>
                 </div>
-                <div style="width: 45%;">
+                <div style="width: 100%;">
                     <label>Select car</label> 
                     {assign var="compat" value="`$icons_33['brand']`_`$icons_33['model']`_`$icons_33['type']`_`$icons_33['version']`"}
                     <select id="select_car_{$icons_33['id']}" name="car[{$icons_33['id']}]" onclick="setIdToZero(this, {$icons_33['id']});" style="padding:5px;">
@@ -217,7 +217,7 @@
 
                 
                 <div style="display: flex;flex-wrap:wrap;">
-                            <div style="width: 45%;float: left;">
+                            <div style="width: 45%;float: left;display:none;">
                                 <label>Select Parent</label> 
                                 <select id="select_mini_{$icons_33['id']}" inputparentcard="1"  name="link[{$icons_33['id']}]" onclick="setImageText(this, {$icons_33['id']}, 'select_mini_{$icons_33['id']}')" style="padding:5px;">
                                     <option value="">---</option>
@@ -226,10 +226,10 @@
                                     {* {/foreach} *}
                                 </select>
                             </div>
-                            <div style="width: 10%;">
+                            <div style="width: 10%;display:none;">
                                 <div style="color: black; font-weight: bolder; font-size: 1rem; text-transform: uppercase; text-align: center; padding: 15px 15px 0px 15px;" > OR </div>
                             </div>
-                            <div style="width: 45%;">
+                            <div style="width: 100%;">
                                 <label>Select car</label> 
                                 {assign var="compat" value="`$icons_33['brand']`_`$icons_33['model']`_`$icons_33['type']`_`$icons_33['version']`"}
                                 <select id="select_car_{$icons_33['id']}" name="car[{$icons_33['id']}]" onclick="setIdToZero(this, {$icons_33['id']});" style="padding:5px;">

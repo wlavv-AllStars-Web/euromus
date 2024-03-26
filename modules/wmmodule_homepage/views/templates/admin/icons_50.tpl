@@ -29,9 +29,10 @@
                         {assign var="compat" value="`$icons_50['brand']`_`$icons_50['model']`_`$icons_50['type']`_`$icons_50['version']`"}
                         <label>Select car</label> 
                         <select id="select_car_{$icons_50['id']}" name="car[{$icons_50['id']}]" onclick="setImageText(this, {$icons_50['id']}, 'select_car_{$icons_50['id']}');">
-                            <option value="">---</option>
+                            {* <option value="">---</option> *}
                             
                             {foreach $cars AS $car}
+                                {* <option value="{implode('_', array_keys($car['filters']))}" {if (implode('_', array_keys($car['filters'])) == $compat)} selected {/if}>{implode(' | ', array_values($car['filters']))}</option> *}
                                 <option value="{implode('_', array_keys($car['filters']))}" {if (implode('_', array_keys($car['filters'])) == $compat)} selected {/if}>{implode(' | ', array_values($car['filters']))}</option>
                             {/foreach}
                         
