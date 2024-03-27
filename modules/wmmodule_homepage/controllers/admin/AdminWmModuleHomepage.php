@@ -453,7 +453,11 @@ class AdminWmModuleHomepageController extends AdminController{
                 foreach($icons_brand AS $icon){
                         $html .= '<div class="image_container">';
                         $html .= '<img src="' . $icon['url_en'] . '" style="width: 100%;" onclick="setImage(' . $zone . ', ' . $id_image  . ', \'' . $icon['url_en'] . '\', ' . $icon['id'] . ', ' . $icon[$field] . ')">';
+                        if($icon[$field]){
                         $html .= '<div class="delete_btn" style="top:0;right:0;background:#ee302e;color:#fff;cursor:pointer;" onclick="deleteImage(' . $zone . ', ' . $id_image  . ', \'' . $icon['url_en'] . '\', ' . $icon['id'] . ', ' . $icon[$field] . ',$(this))"><i class="material-icons">&#xe872;</i></div>';
+                        }else{
+                            $html .= '<div class="delete_btn" style="top:0;right:0;background:#ee302e;color:#fff;cursor:pointer;" onclick="deleteImage(' . $zone . ', ' . $id_image  . ', \'' . $icon['url_en'] . '\', ' . $icon['id'] . ',0,$(this))"><i class="material-icons">&#xe872;</i></div>';
+                        }
                     $html .= '</div>';
                 }
             $html .= '</div>';
