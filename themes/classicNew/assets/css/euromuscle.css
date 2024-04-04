@@ -2730,7 +2730,7 @@ header.page-header {
   object-position: 2px center !important;
 }
 .categoryCars .MERCHANDISING:hover img {
-  transform: scale(1.2) !important;
+  transform: scale(0.85) !important;
 }
 
 .categoryCars .COMERCIALIZACIÓN img
