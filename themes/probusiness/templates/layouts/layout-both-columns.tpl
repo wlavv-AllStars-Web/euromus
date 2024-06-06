@@ -63,7 +63,7 @@
     {/block}
 
     <div style="min-height: 70vh;" id="wrapper">
-      <div style="width: 90vw !important" class="container-fluid">
+      <div class="container-fluid">
 
         {block name='breadcrumb'}
           {include file='_partials/breadcrumb.tpl'}

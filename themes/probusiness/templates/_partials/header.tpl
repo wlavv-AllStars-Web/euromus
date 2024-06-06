@@ -18,186 +18,12 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-{* {if isset($tc_config.YBC_TC_LAYOUT) && $tc_config.YBC_TC_LAYOUT == 'layouthome2'}
-    {include file='_partials/header/header2.tpl'}
-{else if isset($tc_config.YBC_TC_LAYOUT) && $tc_config.YBC_TC_LAYOUT == 'layouthome3'}
-    {include file='_partials/header/header3.tpl'}
-{else} *}
-  
-<style>
-.logtext{
- 
- text-transform: uppercase;
- font-size: 18px;
- font-weight: 600;
 
-}
-
-.whtbl{
-  background-color: white;
-  color:#0273eb;
-  border: 1px solid #d8d8d8;
-}
-.form-control:focus {
-    color: black;
-    border-color: black;
-    outline: 0;
-}
-.linkref{
-    color: #FFF;
-    text-transform: uppercase;
-    font-size: 16px;
-    font-weight: 600;
-    text-align: center;
-    width: 100%;
-    display: block;
-    line-height: 50px;
-    cursor: pointer;
-}
-.headerline{
-  width: 100%;
-  margin: 0 ;
-  background-color:#333333;
-  line-height: 45px; 
-  text-align: center; 
-  border-bottom: 4px solid #0273eb;
-  display: flex ;
-  justify-content: center;
- 
-}
-
-.headerline a:hover{
-  color: #FFF !important;
-  background-color: #0273eb;
-}
-
-.cart_total_header {
-  width: calc(100% - 70px);
-  background-color: #FFFFFF;
-  float: left;
-  height: 35px;
-  border-top: 1px solid #777;
-  border-bottom: 1px solid #777;
-  text-align: center;
-  color: #333;
-  font-size: 22px;
-  padding: 5px 8px;
-}
-
-#searchbox #search_query_top {
-  margin: 0px;
-  height: 34px;
-  line-height: 20px;
-  background: none;
-  padding: 0 0 0px 12px;
-  width: 100%;
-  position: relative;
-  vertical-align: middle;
-  border: none;
-  box-shadow: none;
-  outline: none;
-  -webkit-tap-highlight-color: transparent;
-  -webkit-user-modify: read-write-plaintext-only;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-}
-
-
-#searchbox .btn.button-search {
-  background: #0273EB;
-  color: white;
-  -moz-box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.1);
-  -webkit-box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.1);
-  box-shadow: inset 0 3px 4px rgba(0, 0, 0, 0.1);
-  -moz-border-radius: 0 20px 20px 0;
-  -webkit-border-radius: 0;
-  border-radius: 0 20px 20px 0;
-  display: block;
-  width: 37px;
-  height: 34px;
-  text-align: center;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  -webkit-transition: all 0.3s ease;
-  transition: all 0.3s ease;
-  padding: 0;
-  border: none;
-}
-
-#navigation > a > i {
-    font-size: 20px;
-    color: white;
-    line-height: 22px;
-    -moz-transition: all 0.3s ease;
-    -o-transition: all 0.3s ease;
-    -webkit-transition: all 0.3s ease;
-    transition: all 0.3s ease;
-}
-
-#sender:hover{
-  color: white !important;
-  background-color: #0273EB !important;
-  font-weight: 600;
-}
-
-@media (max-width: 1200px){
-  .wdth{
-    width: 80% !important;
-  }
-
-  .wdth .cart_total_header{
-    width: 65% !important;
-  }
-
-  .wdth .search_query{
-    width:65% !important;
-  }  
-}
-
-@media (min-width: 900px){
-  
-  .margbot{
-    margin-bottom: -5px;
-  }
-}
-
-@media (max-width: 900px){
-
-  .formula{
-    display: none !important;
-  }
-  .centrar{
-    justify-content: center;
-  }
-  .img-big{
-    max-width: 100vw !important;
-    height: 130px;
-    width: 350px;
-  }
-
-  .bortextalign{
-    text-align: start !important;
-    border-top: 1px solid gray;
-    
-  }
-
-  .mxsz{
-    width: 100vw !important;
-  }
-
-  .hlfsz{
-    justify-content: space-between;
-  }
-  
-}
-</style>
 <div class="header_content">
   {block name='header_nav'}
-    <nav style="background-color: #333333; display: flex; justify-content: center " class="header-nav">
-      <div  style="width: 80%; display: flex;">
-        <div id="navigation" style="width: 50%; display: flex; justify-content: start; align-self: self-end">
+    <nav class="header-nav">
+      <div class="header-nav-container">
+        <div id="navigation">
         {if Context::getContext()->customer->logged}
           <a class="logout" href="/?mylogout=" rel="nofollow" title="Log me out"> <i class="fa fa-unlock"></i> </a>
         {/if}
@@ -210,13 +36,30 @@
   
   {block name='header_top'}
     <div class="header-top">
-      <div style="padding-bottom: 15px;max-width: 1337px !important; width: 90vw !important; " class="container">
-        <div style="margin:0;  display: flex; align-items: center;" class="row centrar">
-          <div style="margin: 0; padding: 0; width:30%" id="_desktop_logo" class="col-md-4 col-sm-12">
-            <a style="display: flex; justify-content:center" href="{$urls.base_url|escape:'html':'UTF-8'}">
-              <img style="width: 250px; margin: 0 " class="logo img-flud img-big" src="{if isset($tc_dev_mode) && $tc_dev_mode && isset($logo_url)&&$logo_url}{$logo_url|escape:'html':'UTF-8'}{else}{$shop.logo|escape:'html':'UTF-8'}{/if}" alt="{$shop.name|escape:'html':'UTF-8'}">
+      <div class="container" style="padding-bottom: 15px;max-width: 1337px !important; width: 90vw !important; " >
+        <div  class="row centrar" style="margin:0;  display: flex; align-items: center;">
+          <div  id="_desktop_logo" class="col-md-4 col-sm-12" style="margin: 0; padding: 0; width:30%">
+            <a  href="/" style="display: flex; justify-content:center">
+              <img  class="logo img-flud img-big" src="/img/asd/logo_asd.webp" alt="{$shop.name|escape:'html':'UTF-8'}" style="width: 250px; margin: 0 ">
             </a>
           </div>
+          {if Context::getContext()->customer->logged}  
+          <div class="wdth mobile" style="width: 50%;">
+            <a href="/order">
+              <div  style="cursor: pointer; width: 100%">
+                <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container ">
+                  <div style="width:33px; background-color: #333;float: left;border-radius: 0.25rem 0 0 0.25rem; color: white;display:flex;align-items:center;justify-content:center;border-right: 2px solid #0273eb;"> 
+                    <i class="fa fa-shopping-cart" style="font-size: 17px;"></i>
+                  </div>
+                  <div class="cart_total_header"> {l s="Total"} <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
+                  <div class="products_total_header">
+                    <div style="width:33px; height:100%; background-color: #333;border-radius: 0px 0.25rem 0.25rem 0px; color: white; font-size: 1.25rem;text-align:center;display:flex;justify-content:center;align-items:center;border-left:2px solid #0273eb;font-weight:600;" >{$cart.products_count}</div>
+                  </div>
+                </div>
+              </div>
+              </a>
+            </div>
+          {/if}
           <div  class=" formula" style="display: flex; justify-content:center; margin-left: 50px; width:70%">
            {if Context::getContext()->customer->logged}  
             {* shooping cart bar*}
@@ -224,12 +67,12 @@
             <a href="/order">
               <div  style="cursor: pointer; width: 100%">
                 <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container ">
-                  <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;"> 
-                    <i class="fa fa-shopping-cart" style="font-size: 21px; padding: 6px 6px;"></i>
+                  <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;display:flex;align-items:center;justify-content:center;"> 
+                    <i class="fa fa-shopping-cart" style="font-size: 17px;"></i>
                   </div>
-                  <div style="width:40%; height:35px; border: 1px solid #777" class="cart_total_header"> {l s="Total"} <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
+                  <div style="height:35px; border: 1px solid #777" class="cart_total_header"> {l s="Total"} <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
                   <div class="products_total_header">
-                    <div style="width:33px; height:35px; background-color: #0273eb;float: left;border-radius: 0px 20px 20px 0px;border: 1px solid #777; color: white; font-size: 20px; padding: 4px 5px 4px 5px;text-align:center;" >{$cart.products_count}</div>
+                    <div style="width:33px; height:35px; background-color: #0273eb;border-radius: 0px 20px 20px 0px;border: 1px solid #777; color: white; font-size: 18px;text-align:center;display:flex;justify-content:center;align-items:center;" >{$cart.products_count}</div>
                   </div>
                 </div>
               </div>
@@ -248,15 +91,19 @@
             
              {else} 
 
-            <form style="display:flex; flex-direction: row ; justify-content:space-around; width:100%; gap:20px" id="login-form" action="/login" method="post">   
+            <form id="login-form" action="/login" method="post">   
                 <div style="display:flex; width:30%; height: min-content;" class="form-group col">
-                <input type="hidden" name="back" value="my-account">
-                  <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
+                  <div class="email_icon header-icon">
+                    <input type="hidden" name="back" value="my-account">
+                    <i class="fa fa-user"></i>
+                  </div>
                   <input class="form-control whtbl" name="email" type="email" value="" required placeholder="{l s="Email"}">
                 </div>
                 <div style="margin-bottom:0 ;  display: flex; flex-direction: column ; width: 30%" class="form-group col">
                   <div style="display:flex; flex-direction: row">
-                    <i class="fa fa-unlock" style="font-size: 25px; padding: 5px 7px;  background-color: #0273eb; color: white "></i>
+                    <div class="unlock_icon header-icon">
+                      <i class="fa fa-unlock"></i>
+                    </div>
                     <input class="form-control js-child-focus js-visible-password whtbl" name="password" type="password" value="" required placeholder="{l s="Password"}">                 
                   </div>
                   <div>
@@ -265,9 +112,9 @@
                     </a>
                   </div>
                 </div>             
-                <div style="width: 50%" class="form-group col" >
+                <div class="form-group col" >
                   <input type="hidden" name="submitLogin" value="1">           
-                  <button id="sender" style=" width: 50%; " class="btn btn-primary form-control-submit whtbl" data-link-action="sign-in" type="submit">
+                  <button id="sender" class="btn btn-primary form-control-submit whtbl" data-link-action="sign-in" type="submit">
                   {l s="Login"}
                   </button>                
                 </div>          
@@ -282,7 +129,14 @@
         </div>
       </div>    
     </div>
+
+
+    {* mobile header top *}
+
+
   {/block}
+
+
 </div>
 
 

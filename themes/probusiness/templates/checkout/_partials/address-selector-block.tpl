@@ -1,46 +1,59 @@
-{*
-* 2007-2022 ETS-Soft
-*
-* NOTICE OF LICENSE
-*
-* This file is not open source! Each license that you purchased is only available for 1 wesite only.
-* If you want to use this file on more websites (or projects), you need to purchase additional licenses. 
-* You are not allowed to redistribute, resell, lease, license, sub-license or offer our resources to any third party.
-* 
-* DISCLAIMER
-*
-* Do not edit or add to this file if you wish to upgrade PrestaShop to newer
-* versions in the future. If you wish to customize PrestaShop for your
-* needs, please contact us for extra customization service at an affordable price
-*
-*  @author ETS-Soft <etssoft.jsc@gmail.com>
-*  @copyright  2007-2022 ETS-Soft
-*  @license    Valid for 1 website (or project) for each purchase of license
-*  International Registered Trademark & Property of ETS-Soft
-*}
+{**
+ * Copyright since 2007 PrestaShop SA and Contributors
+ * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
+ * that is bundled with this package in the file LICENSE.md.
+ * It is also available through the world-wide-web at this URL:
+ * https://opensource.org/licenses/AFL-3.0
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@prestashop.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
+ * versions in the future. If you wish to customize PrestaShop for your
+ * needs please refer to https://devdocs.prestashop.com/ for more information.
+ *
+ * @author    PrestaShop SA and Contributors <contact@prestashop.com>
+ * @copyright Since 2007 PrestaShop SA and Contributors
+ * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
+ *}
 {block name='address_selector_blocks'}
+  <div class="accordion" id="{$name|classname}">
   {foreach $addresses as $address}
-    <article
-      class="address-item{if $address.id == $selected} selected{/if}"
-      id="{$name|classname}-address-{$address.id|escape:'html':'UTF-8'}"
-    >
-      <header class="h4">
-        <label class="radio-block">
-          <span class="custom-radio">
+    <div class="card js-address-item address-item{if $address.id == $selected} selected{/if}"
+      id="{$name|classname}-address-{$address.id}">
+      <div class="card-header" id="heading{$address.id}" >
+        
+          <label class="radio-block" onclick="checkIfChecked(this)">
+          <span class="custom-radio" data-target="#collapse_{$name|classname}_{$address.id}" 
+          data-toggle="collapse" >
             <input
               type="radio"
-              name="{$name|escape:'html':'UTF-8'}"
-              value="{$address.id|escape:'html':'UTF-8'}"
+              name="{$name}"
+              value="{$address.id}"
+              id="{$address.id}"
               {if $address.id == $selected}checked{/if}
+                
             >
             <span></span>
           </span>
-          <span class="address-alias h4">{$address.alias|escape:'html':'UTF-8'}</span>
-          <div class="address">{$address.formatted nofilter}</div>
+          <span class="address-alias h4">{$address.alias}</span>
+
         </label>
-      </header>
-      <hr>
-      <footer class="address-footer">
+        
+      </div>
+
+      <div id="collapse_{$name|classname}_{$address.id}"  class="collapse" aria-labelledby="heading{$address.id}" data-parent="#{$name|classname}">
+        <div class="card-body">
+          {$address.formatted nofilter}      
+        </div>
+
+        <footer class="address-footer">
         {if $interactive}
           <a
             class="edit-address text-muted"
@@ -58,11 +71,30 @@
           </a>
         {/if}
       </footer>
-    </article>
+
+      </div>
+    </div>
   {/foreach}
-  {if $interactive}
-    <p>
-      <button class="ps-hidden-by-js form-control-submit center-block" type="submit">{l s='Save' d='Shop.Theme.Actions'}</button>
-    </p>
-  {/if}
+  </div>
+{if $interactive}
+  <p>
+    <button class="ps-hidden-by-js form-control-submit center-block" type="submit">{l s='Save' d='Shop.Theme.Actions'}</button>
+  </p>
+{/if}
+
+
 {/block}
+<script>
+
+
+  function checkIfChecked(element){
+    // const elementId = element.getAttribute("id")
+    const radioButton = element.querySelector("input[type=radio]")
+    const isChecked = true;
+    radioButton.checked = true;
+
+  }
+
+
+
+</script>

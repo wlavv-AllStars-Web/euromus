@@ -34,4 +34,7 @@
     var {$var_name|escape:'html':'UTF-8'} = {$var_value|json_encode nofilter};
     {/foreach}
   </script>
+
+<script type="text/javascript" src="/themes/probusiness/assets/js/distribution.js"></script>
+
 {/if}

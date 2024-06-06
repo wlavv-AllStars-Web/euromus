@@ -28,7 +28,1188 @@
   <section id="content" class="page-content page-cms page-cms-{$cms.id|escape:'html':'UTF-8'}">
 
     {block name='cms_content'}
-      {$cms.content nofilter}
+      {if $cms.id === 8}
+        <div id="cms_container_8">
+          <div><img src="https://www.all-stars-distribution.com/img/cms/AllStars/top_image_short.jpg" alt="top_image_short.jpg" /></div>
+          <div class="profile_container_cms">
+          <div class="profile_style">Profile</div>
+          <div class="profile_container_text" id="profile_container_text">Supplying over 30 top class brands to automotive performance professionals worldwide, All Stars Distribution is a European wholesaler of performance and design parts, known as one of the largest in the market due to his distribution network size but also due to his massive inventory, ranking the company as the largest European performance parts multi-brand stockist. Dedicated only to wholesale All Stars Distribution uses their automatized warehouses to deliver in a minimum of time all the parts required by their customers / partners ( workshops, tuners or e-dealers) to achieve the end consumers projects.</div>
+          <div id="profile_container_text1 hidden-md-up" class="card_view_more" onclick="viewMore(this)">View More</div>
+          </div>
+          <div>
+            <img class="desktop" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/badge_lg.jpg" alt="badge_lg.jpg" />
+            <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/badge_xs.jpg" alt="badge_lg.jpg" />
+          </div>
+          <div>
+            <img class="desktop" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/lg_en.jpg" alt="lg_en.jpg" />
+            <img class="mobile" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/xs_en.jpg" alt="lg_en.jpg" />
+          </div>
+        </div>
+      {else if $cms.id === 14}
+        <div id="cms_container_14">
+          <div>
+            <img src="https://www.all-stars-distribution.com/img/dealers/headers/become_dealer.jpg" />
+          </div>
+          <div class="choose_us_btn">
+            <h5 class="cms_shadow_button">Why choose us ?</h5>
+          </div>
+          <p class="become_dealer_text">
+          European leader in the Automotive Distribution Industry, All Stars Distribution supplies daily hundreds specialized professionals around the world. 
+          <br>
+          <br>
+          Betting on long-term partnership, we're very selective and approve new accounts only for companies matching with our requirements
+          </p>
+          <div class="requirements_container">
+            <h1 class="requirements">> NEW ACCOUNT REQUIREMENTS <</h1>
+          </div>
+          <div class="become_cards">
+            <div class="become_card_requirement">
+              <div class="card_title">Business</div>
+              <div class="card_content">
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Storefront</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Workshop</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Tuner</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>E-dealer</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Trader</div>
+              </div>
+            </div>
+            <div class="become_card_requirement">
+              <div class="card_title">Admin</div>
+              <div class="card_content">
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Valid VAT number</div>
+                <div class="card_content_option option_plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Valid business license</div>
+                <div class="card_content_option option_plus"><i class="fa-solid fa-plus"></i></div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Valid bank account</div>
+              </div>
+            </div>
+            <div class="become_card_requirement">
+              <div class="card_title">Visibility</div>
+              <div class="card_content">
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Active website</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Active social media</div>
+              </div>
+            </div>
+            <div class="become_card_requirement">
+              <div class="card_title">Activity</div>
+              <div class="card_content">
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Aftermarket parts</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Performance parts</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>Tuning / building</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="form-become-dealer" style="margin: 5rem 0;">
+            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> Fill out the become a dealer enquiry form <span style="color: #0273EB;"><</span></h1>
+            
+            <form>
+              <div class="form-row">
+                <div class="form-group col-md-2">
+                  <label for="inputEmail4">Name</label>
+                  <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputPassword4">Surname</label>
+                  <input type="text" class="form-control" id="inputPassword4">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputEmail4">Company</label>
+                  <input type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="form-group col-md-4">
+                  <label for="inputPassword4">VAT Number (if applicable)</label>
+                  <input type="text" class="form-control" id="inputPassword4">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputEmail4">Email</label>
+                  <input type="email" class="form-control" id="inputEmail4">
+                </div>
+                <div class="form-group col-md-8">
+                  <label for="inputAddress">Address</label>
+                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputAddress2">Phone</label>
+                  <input type="tel" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-group col-md-8">
+                  <label for="inputAddress2">Address 2</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputAddress2">Website</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-group col-md-6">
+                  <label for="inputAddress2">City</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+                <div class="form-group col-md-2">
+                  <label for="inputAddress2">Zip Code</label>
+                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                </div>
+              </div>
+
+              <div class="form-row">
+                <div class="form-group col-md-4">
+                  <label for="inputCity">Social Media Link</label>
+                  <input type="text" class="form-control" id="inputCity">
+                </div>
+                <div class="form-group col-md-8">
+                  <label for="inputState">Country</label>
+                  <select id="inputState" class="form-control">
+                    <option selected>Please Select...</option>
+                    <option>...</option>
+                  </select>
+                </div>
+              </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-3">
+                <div class="title-suppliers">Business Type (Check all that apply)</div>
+                <div class="col-sm-12 check-form">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                      Storefront
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Installer
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    E-dealer
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Dyno Shop
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Market Place Seller
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Wholesaler
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Other
+                    </label>
+                  </div>
+                </div>
+              </div>
+              <div class="form-group col-md-3">
+                <div class="title-suppliers">Main Market</div>
+                <div class="col-sm-12 check-form">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Euro
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    JDM
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Muscle
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Classics
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Offroad
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Diesel
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <label class="form-check-label" for="gridCheck1">
+                    Other
+                    </label>
+                  </div>
+                  
+                </div>
+              </div>
+
+              <div class="form-group col-md-3">
+                <div class="title-suppliers">Annual sales volume</div>
+                <div class="col-sm-10 check-form">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <label class="form-check-label" for="gridRadios1">
+                    Under 100K€
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <label class="form-check-label" for="gridRadios2">
+                    100K to 500K€
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                    <label class="form-check-label" for="gridRadios3">
+                    500K€ to 1M€
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                    <label class="form-check-label" for="gridRadios3">
+                    1M€ +
+                    </label>
+                  </div>
+                </div>
+              </div>
+
+              <div class="form-row col-md-3">
+                <div class="form-row">
+                    <div class="col-md-12 title-suppliers current_suplier">Main current suppliers</div>
+                    <div class="form-group col-md-12 current_suplier">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Current Supplier 1">
+                    </div>
+                    <div class="form-group col-md-12 current_suplier">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Current Supplier 2">
+                    </div>
+                    <div class="form-group col-md-12 current_suplier">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Current Supplier 3">
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            <div class="form-row col-md-12">
+              <div class="form-group col-md-4">
+                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+              </div>
+              <div class="form-group col-md-4 signature">
+                <label for="canvas4">Signature</label>
+                <canvas id="canvas4" width=400 height=140></canvas>
+                <div class="btn" id="clearButton">Reset</div>
+              </div>
+              <div class="form-group col-md-4">
+              
+              <label for="important_notice" style="color: #ee302e;">Important notice:</label>
+              <div id="important_notice">
+                By my signature, I certify the information I provided on and in connection with this form is true and correct to the best of my knowledge. I also understand that any false statements or deliberate omissions on this form may subject me to legal actions for fraudulent misrepresentation.
+              </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group col-md-12" style="display: flex;justify-content:center;">
+                <button type="submit" class="btn send-form">Submit</button>
+              </div>
+            </div>
+            </form>
+          </div>
+
+
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            var signaturePad4 = new SignaturePad(document.querySelector("#canvas4"));
+
+            document.getElementById('clearButton').addEventListener('click', function() {
+                signaturePad4.clear();
+            });
+          });
+        </script>
+
+
+      {else if  $cms.id === 15}
+
+
+        <div id="cms_container_15">
+          <div class="banner_supplier">
+            <img src="https://www.all-stars-distribution.com/img/dealers/headers/become_supplier.jpg" />
+          </div>
+
+          <p class="become_supplier_text">
+          European leader in performance auto parts distribution, All Stars Distribution bets on long-term relationships with world-class suppliers. 
+          <br>
+          <br>
+          In order to offer our customers the best products and services, we are extremely selective when choosing our suppliers or our products and intend to work only with manufacturers sharing our values and our ethic.
+          </p>
+          <div class="commitments_container">
+            <h1 class="commitments ">> Our 4 key commitments <</h1>
+          </div>
+          <div class="become_cards">
+            <div class="become_card_requirement">
+              <div class="card_title">Communication</div>
+              <div class="card_content">
+                <div class="card-text">
+                Key element of a business relationship, we attach great importance to the quality of our communication with our customers. The quick and clear transmission of informations is an asset that we must maintain and apply on a daily basis with our suppliers.
+                </div>
+              </div>
+            </div>
+            <div class="become_card_requirement">
+              <div class="card_title">Technology</div>
+              <div class="card_content">
+                <div class="card-text">
+                Management and control tools development is an extremely important part of our daily work, so we expect our suppliers to have the same interest and the same commitment to technological research and development.
+                </div>
+              </div>
+            </div>
+            <div class="become_card_requirement">
+              <div class="card_title">Marketing</div>
+              <div class="card_content">
+                <div class="card-text">
+                Investing big money and time in developing the visibility and the fame of the brands we distribute, we expect our suppliers to be part of our efforts, supporting our projects and being involved in their own brand promotion.
+                </div>
+              </div>
+            </div>
+            <div class="become_card_requirement">
+              <div class="card_title">Deontology</div>
+              <div class="card_content">
+                <div class="card-text">
+                In order to preserve a fair market for all players in the industry, All Stars Distribution has no relationship with marketplaces or gray market players. Above all, we want our suppliers to be partners and not competitors for our customers and therefore expect our suppliers to show the same respect for this ethics.
+                </div>
+              </div>
+            </div>
+          </div>
+
+
+          <div class="form-become-supplier" style="margin: 5rem 0;">
+            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> Submit an enquiry<span style="color: #0273EB;"><</span></h1>
+            
+            <form>
+              <div class="form-row">
+
+                <div class="col-md-6">
+                    <div class="form-group col-md-6">
+                      <div class="form-group">
+                        <label for="inputEmail4">Company</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail4">Phone</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail4">Website</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                      <div class="form-group">
+                        <label for="inputEmail4">Social media</label>
+                        <input type="text" class="form-control" id="inputEmail4">
+                      </div>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <div class="form-group">
+                        <label for="inputPassword4">Email</label>
+                        <input type="text" class="form-control" id="inputPassword4">
+                      </div>
+                      <div class="form-group">
+                        <label for="exampleFormControlTextarea1">Comment</label>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                      </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                  <div class="form-group col-md-12">
+                    <label for="inputEmail4">Address</label>
+                    <input type="text" class="form-control" id="inputEmail4">
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="inputEmail4">Address line 2</label>
+                    <input type="text" class="form-control" id="inputEmail4">
+                  </div>
+                  <div class="form-group col-md-12 rm-b">
+                    <div class="form-group col-md-8 city">
+                      <label for="inputEmail4">City</label>
+                      <input type="text" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="form-group col-md-4 zip_code">
+                      <label for="inputEmail4">Zip Code</label>
+                      <input type="text" class="form-control" id="inputEmail4">
+                    </div>
+                  </div>
+                  <div class="form-group col-md-12">
+                    <label for="inputState">Country</label>
+                    <select id="inputState" class="form-control">
+                      <option selected>Please Select...</option>
+                      <option>...</option>
+                    </select>
+                  </div>
+                </div>
+              </div>
+
+            
+
+
+              <div class="form-row">
+                <div class="form-group col-md-12" style="display: flex;justify-content:center;">
+                  <button type="submit" class="btn send-form">Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+
+        </div>
+      {elseif $cms.id === 7}
+        <div class="cms-privacy">
+          <div class="privacy-banner">
+            <img src="https://www.allstarsmotorsport.fr/img/cms/Header_pages/privacypolicy.jpg" />
+          </div>
+          <div class="privacy-content">
+            <h1>{l s='Privacy policy' d='Shop.Theme.Privacy'}</h1>
+            <p>{l s='We respect your privacy and are committed to protecting it through our compliance with this privacy policy (“Policy”). This Policy describes the types of information we may collect from you or that you may provide (“Personal Information”) on the all-stars-distribution.com website (“Website” or “Service”) and any of its related products and services (collectively, “Services”), and our practices for collecting, using, maintaining, protecting, and disclosing that Personal Information. It also describes the choices available to you regarding our use of your Personal Information and how you can access and update it.' d='Shop.Theme.Privacy'}</p>
+            <p>{l s='This Policy is a legally binding agreement between you (“User”, “you” or “your”) and All Stars Distribution Lda (“All Stars Distribution Lda”, “we”, “us” or “our”). If you are entering into this agreement on behalf of a business or other legal entity, you represent that you have the authority to bind such entity to this agreement, in which case the terms “User”, “you” or “your” shall refer to such entity. If you do not have such authority, or if you do not agree with the terms of this agreement, you must not accept this agreement and may not access and use the Website and Services. By accessing and using the Website and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Policy. This Policy does not apply to the practices of companies that we do not own or control, or to individuals that we do not employ or manage.' d='Shop.Theme.Privacy'}</p>
+            <h2 class="table-contents">{l s='Table of contents' d='Shop.Theme.Privacy'}</h2>
+            <ul class="contents-list">
+                <li>  <a href="{$link->getCMSLink(7)}#Collection">{l s='Collection of personal information' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="{$link->getCMSLink(7)}#children">{l s='Privacy of children' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="{$link->getCMSLink(7)}#collected">{l s='Use and processing of collected information' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Payment"  onclick="anchorLink(this)">{l s='Payment processing' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Managing">{l s='Managing information' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Disclosure">{l s='Disclosure of information' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Retention">{l s='Retention of information' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Transfer">{l s='Transfer of information' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#protection">{l s='Data protection rights under the GDPR' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#rights">{l s='How to exercise your rights' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Cookies">{l s='Cookies' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#analytics">{l s='Data analytics' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#signals">{l s='Do Not Track signals' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Social">{l s='Social media features' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Email">{l s='Email marketing' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Links">{l s='Links to other resources' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Information">{l s='Information security' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Data-breach">{l s='Data breach' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Changes">{l s='Changes and amendments' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Acceptance">{l s='Acceptance of this policy' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Contacting">{l s='Contacting us' d='Shop.Theme.Privacy'}</a></li>
+            </ul>
+
+            <h1 id="Collection">{l s='Collection of personal information' d='Shop.Theme.Privacy'}</h1>
+            <p>{l s='You can access and use the Website and Services without telling us who you are or revealing any information by which someone could identify you as a specific, identifiable individual. If, however, you wish to use some of the features offered on the Website, you may be asked to provide certain Personal Information (for example, your name and e-mail address).' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='We receive and store any information you knowingly provide to us when you create an account, make a purchase, or fill any forms on the Website. When required, this information may include the following:' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='Account details (such as user name, unique user ID, password, etc)' d='Shop.Theme.Privacy'}<br>
+              Contact information (such as email address, phone number, etc)<br>
+              Basic personal information (such as name, country of residence, etc)<br>
+              Payment information (such as credit card details, bank details, etc)<br>
+
+              You can choose not to provide us with your Personal Information, but then you may not be able to take advantage of some of the features on the Website. Users who are uncertain about what information is mandatory are welcome to contact us.
+            </p>
+
+            <h1 id="children">{l s='Privacy of children' d='Shop.Theme.Privacy'}</h1>
+
+            <p>{l s='We do not knowingly collect any Personal Information from children under the age of 18. If you are under the age of 18, please do not submit any Personal Information through the Website and Services. If you have reason to believe that a child under the age of 18 has provided Personal Information to us through the Website and Services, please contact us to request that we delete that child’s Personal Information from our Services.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='We encourage parents and legal guardians to monitor their children’s Internet usage and to help enforce this Policy by instructing their children never to provide Personal Information through the Website and Services without their permission. We also ask that all parents and legal guardians overseeing the care of children take the necessary precautions to ensure that their children are instructed to never give out Personal Information when online without their permission.' d='Shop.Theme.Privacy'}</p>
+
+            <h1 id="collected">{l s='Use and processing of collected information' d='Shop.Theme.Privacy'}</h1>
+
+            <p>{l s='We act as a data controller and a data processor in terms of the GDPR when handling Personal Information, unless we have entered into a data processing agreement with you in which case you would be the data controller and we would be the data processor.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='Our role may also differ depending on the specific situation involving Personal Information. We act in the capacity of a data controller when we ask you to submit your Personal Information that is necessary to ensure your access and use of the Website and Services. In such instances, we are a data controller because we determine the purposes and means of the processing of Personal Information and we comply with data controllers’ obligations set forth in the GDPR.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='We act in the capacity of a data processor in situations when you submit Personal Information through the Website and Services. We do not own, control, or make decisions about the submitted Personal Information, and such Personal Information is processed only in accordance with your instructions. In such instances, the User providing Personal Information acts as a data controller in terms of the GDPR.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='In order to make the Website and Services available to you, or to meet a legal obligation, we may need to collect and use certain Personal Information. If you do not provide the information that we request, we may not be able to provide you with the requested products or services. Any of the information we collect from you may be used for the following purposes:' d='Shop.Theme.Privacy'}</p><br>
+
+            <p>{l s='Create and manage user accounts' d='Shop.Theme.Privacy'}</p>
+            <p>{l s='Fulfill and manage orders' d='Shop.Theme.Privacy'}</p>
+            <p>{l s='Deliver products or services' d='Shop.Theme.Privacy'}</p>
+            <p>{l s='Respond to inquiries and offer support' d='Shop.Theme.Privacy'}</p>
+            <p>{l s='Run and operate the Website and Services' d='Shop.Theme.Privacy'}</p><br>
+
+            <p>{l s='Processing your Personal Information depends on how you interact with the Website and Services, where you are located in the world and if one of the following applies: (i) you have given your consent for one or more specific purposes; this, however, does not apply, whenever the processing of Personal Information is subject to European data protection law; (ii) provision of information is necessary for the performance of an agreement with you and/or for any pre-contractual obligations thereof; (iii) processing is necessary for compliance with a legal obligation to which you are subject; (iv) processing is related to a task that is carried out in the public interest or in the exercise of official authority vested in us; (v) processing is necessary for the purposes of the legitimate interests pursued by us or by a third party.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='We rely on user’s consent as a legal base as defined in the GDPR upon which we collect and process your Personal Information.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='Note that under some legislations we may be allowed to process information until you object to such processing by opting out, without having to rely on consent or any other of the legal bases above. In any case, we will be happy to clarify the specific legal basis that applies to the processing, and in particular whether the provision of Personal Information is a statutory or contractual requirement, or a requirement necessary to enter into a contract.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Payment">{l s='Payment processing' d='Shop.Theme.Privacy'}</h1>
+
+            <p>{l s='In case of Services requiring payment, you may need to provide your credit card details or other payment account information, which will be used solely for processing payments. We use third-party payment processors (“Payment Processors”) to assist us in processing your payment information securely.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='Payment Processors adhere to the latest security standards as managed by the PCI Security Standards Council, which is a joint effort of brands like Visa, MasterCard, American Express and Discover. Sensitive and private data exchange happens over a SSL secured communication channel and is encrypted and protected with digital signatures, and the Website and Services are also in compliance with strict vulnerability standards in order to create as secure of an environment as possible for Users. We will share payment data with the Payment Processors only to the extent necessary for the purposes of processing your payments, refunding such payments, and dealing with complaints and queries related to such payments and refunds.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='Please note that the Payment Processors may collect some Personal Information from you, which allows them to process your payments (e.g., your email address, address, credit card details, and bank account number) and handle all the steps in the payment process through their systems, including data collection and data processing. The Payment Processors’ use of your Personal Information is governed by their respective privacy policies which may or may not contain privacy protections as protective as this Policy. We suggest that you review their respective privacy policies.' d='Shop.Theme.Privacy'}</p>
+            
+            
+            <h1 id="Managing">{l s='Managing information' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='You are able to delete certain Personal Information we have about you. The Personal Information you can delete may change as the Website and Services change. When you delete Personal Information, however, we may maintain a copy of the unrevised Personal Information in our records for the duration necessary to comply with our obligations to our affiliates and partners, and for the purposes described below. If you would like to delete your Personal Information or permanently delete your account, you can do so on the settings page of your account on the Website or simply by contacting us.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Disclosure">{l s='Disclosure of information' d='Shop.Theme.Privacy'}</h1>
+            
+
+            <p>{l s='Depending on the requested Services or as necessary to complete any transaction or provide any Service you have requested, we may share your information with our affiliates, contracted companies, and service providers (collectively, “Service Providers”) we rely upon to assist in the operation of the Website and Services available to you and whose privacy policies are consistent with ours or who agree to abide by our policies with respect to Personal Information. We will not share any personally identifiable information with third parties and will not share any information with unaffiliated third parties.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='Service Providers are not authorized to use or disclose your information except as necessary to perform services on our behalf or comply with legal requirements. Service Providers are given the information they need only in order to perform their designated functions, and we do not authorize them to use or disclose any of the provided information for their own marketing or other purposes.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Retention">{l s='Retention of information' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='We will retain and use your Personal Information for the period necessary as long as your user account remains active, to enforce our agreements, resolve disputes, and unless a longer retention period is required or permitted by law.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='We may use any aggregated data derived from or incorporating your Personal Information after you update or delete it, but not in a manner that would identify you personally. Once the retention period expires, Personal Information shall be deleted. Therefore, the right to access, the right to erasure, the right to rectification, and the right to data portability cannot be enforced after the expiration of the retention period.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Transfer">{l s='Transfer of information' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='Depending on your location, data transfers may involve transferring and storing your information in a country other than your own. However, this will not include countries outside the European Union and European Economic Area. If any such transfer takes place, you can find out more by checking the relevant sections of this Policy or inquire with us using the information provided in the contact section.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="protection">{l s='Data protection rights under the GDPR' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='If you are a resident of the European Economic Area (“EEA”), you have certain data protection rights and we aim to take reasonable steps to allow you to correct, amend, delete, or limit the use of your Personal Information. If you wish to be informed what Personal Information we hold about you and if you want it to be removed from our systems, please contact us. In certain circumstances, you have the following data protection rights:' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='(i) You have the right to withdraw consent where you have previously given your consent to the processing of your Personal Information. To the extent that the legal basis for our processing of your Personal Information is consent, you have the right to withdraw that consent at any time. Withdrawal will not affect the lawfulness of processing before the withdrawal.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='(ii) You have the right to learn if your Personal Information is being processed by us, obtain disclosure regarding certain aspects of the processing, and obtain a copy of your Personal Information undergoing processing.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='(iii) You have the right to verify the accuracy of your information and ask for it to be updated or corrected. You also have the right to request us to complete the Personal Information you believe is incomplete.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='(iv) You have the right to object to the processing of your information if the processing is carried out on a legal basis other than consent. Where Personal Information is processed for the public interest, in the exercise of an official authority vested in us, or for the purposes of the legitimate interests pursued by us, you may object to such processing by providing a ground related to your particular situation to justify the objection.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='(v) You have the right, under certain circumstances, to restrict the processing of your Personal Information. These circumstances include: the accuracy of your Personal Information is contested by you and we must verify its accuracy; the processing is unlawful, but you oppose the erasure of your Personal Information and request the restriction of its use instead; we no longer need your Personal Information for the purposes of processing, but you require it to establish, exercise or defend your legal claims; you have objected to processing pending the verification of whether our legitimate grounds override your legitimate grounds. Where processing has been restricted, such Personal Information will be marked accordingly and, with the exception of storage, will be processed only with your consent or for the establishment, to exercise or defense of legal claims, for the protection of the rights of another natural, or legal person or for reasons of important public interest.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='(vi) You have the right, under certain circumstances, to obtain the erasure of your Personal Information from us. These circumstances include: the Personal Information is no longer necessary in relation to the purposes for which it was collected or otherwise processed; you withdraw consent to consent-based processing; you object to the processing under certain rules of applicable data protection law; the processing is for direct marketing purposes; and the personal data have been unlawfully processed. However, there are exclusions of the right to erasure such as where processing is necessary: for exercising the right of freedom of expression and information; for compliance with a legal obligation; or for the establishment, to exercise or defense of legal claims.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='(vii) You have the right to receive your Personal Information that you have provided to us in a structured, commonly used, and machine-readable format and, if technically feasible, to have it transmitted to another controller without any hindrance from us, provided that such transmission does not adversely affect the rights and freedoms of others.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='(viii) You have the right to complain to a data protection authority about our collection and use of your Personal Information. If you are not satisfied with the outcome of your complaint directly with us, you have the right to lodge a complaint with your local data protection authority. For more information, please contact your local data protection authority in the EEA. This provision is applicable provided that your Personal Information is processed by automated means and that the processing is based on your consent, on a contract which you are part of, or on pre-contractual obligations thereof.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="rights">{l s='How to exercise your rights' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='Any requests to exercise your rights can be directed to us through the contact details provided in this document. Please note that we may ask you to verify your identity before responding to such requests. Your request must provide sufficient information that allows us to verify that you are the person you are claiming to be or that you are the authorized representative of such person. If we receive your request from an authorized representative, we may request evidence that you have provided such an authorized representative with power of attorney or that the authorized representative otherwise has valid written authority to submit requests on your behalf.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='You must include sufficient details to allow us to properly understand the request and respond to it. We cannot respond to your request or provide you with Personal Information unless we first verify your identity or authority to make such a request and confirm that the Personal Information relates to you.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Cookies">{l s='Cookies' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='Our Website and Services use “cookies” to help personalize your online experience. A cookie is a text file that is placed on your hard disk by a web page server. Cookies cannot be used to run programs or deliver viruses to your computer. Cookies are uniquely assigned to you, and can only be read by a web server in the domain that issued the cookie to you. If you choose to decline cookies, you may not be able to fully experience the features of the Website and Services.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='We may use cookies to collect, store, and track information for security and personalization, to operate the Website and Services, and for statistical purposes. Please note that you have the ability to accept or decline cookies. Most web browsers automatically accept cookies by default, but you can modify your browser settings to decline cookies if you prefer.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="analytics">{l s='Data analytics' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='Our Website and Services may use third-party analytics tools that use cookies, web beacons, or other similar information-gathering technologies to collect standard internet activity and usage information. The information gathered is used to compile statistical reports on User activity such as how often Users visit our Website and Services, what pages they visit and for how long, etc. We use the information obtained from these analytics tools to monitor the performance and improve our Website and Services. We do not use third-party analytics tools to track or to collect any personally identifiable information of our Users and we will not associate any information gathered from the statistical reports with any individual User.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="signals">{l s='Do Not Track signals' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='Some browsers incorporate a Do Not Track feature that signals to websites you visit that you do not want to have your online activity tracked. Tracking is not the same as using or collecting information in connection with a website. For these purposes, tracking refers to collecting personally identifiable information from consumers who use or visit a website or online service as they move across different websites over time. How browsers communicate the Do Not Track signal is not yet uniform. As a result, the Website and Services are not yet set up to interpret or respond to Do Not Track signals communicated by your browser. Even so, as described in more detail throughout this Policy, we limit our use and collection of your Personal Information.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Social">{l s='Social media features' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='Our Website and Services may include social media features, such as the Facebook and Twitter buttons, Share This buttons, etc (collectively, “Social Media Features”). These Social Media Features may collect your IP address, what page you are visiting on our Website and Services, and may set a cookie to enable Social Media Features to function properly. Social Media Features are hosted either by their respective providers or directly on our Website and Services. Your interactions with these Social Media Features are governed by the privacy policy of their respective providers.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Email">{l s='Email marketing' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='We offer electronic newsletters to which you may voluntarily subscribe at any time. We are committed to keeping your e-mail address confidential and will not disclose your email address to any third parties except as allowed in the information use and processing section. We will maintain the information sent via e-mail in accordance with applicable laws and regulations.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='In compliance with the CAN-SPAM Act, all e-mails sent from us will clearly state who the e-mail is from and provide clear information on how to contact the sender. You may choose to stop receiving our newsletter or marketing emails by following the unsubscribe instructions included in these emails or by contacting us. However, you will continue to receive essential transactional emails.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Links">{l s='Links to other resources' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='The Website and Services contain links to other resources that are not owned or controlled by us. Please be aware that we are not responsible for the privacy practices of such other resources or third parties. We encourage you to be aware when you leave the Website and Services and to read the privacy statements of each and every resource that may collect Personal Information.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Information">{l s='Information security' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='We secure information you provide on computer servers in a controlled, secure environment, protected from unauthorized access, use, or disclosure. We maintain reasonable administrative, technical, and physical safeguards in an effort to protect against unauthorized access, use, modification, and disclosure of Personal Information in our control and custody. However, no data transmission over the Internet or wireless network can be guaranteed.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='Therefore, while we strive to protect your Personal Information, you acknowledge that (i) there are security and privacy limitations of the Internet which are beyond our control; (ii) the security, integrity, and privacy of any and all information and data exchanged between you and the Website and Services cannot be guaranteed; and (iii) any such information and data may be viewed or tampered with in transit by a third party, despite best efforts.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='As the security of Personal Information depends in part on the security of the device you use to communicate with us and the security you use to protect your credentials, please take appropriate measures to protect this information.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Data-breach">{l s='Data breach' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='In the event we become aware that the security of the Website and Services has been compromised or Users’ Personal Information has been disclosed to unrelated third parties as a result of external activity, including, but not limited to, security attacks or fraud, we reserve the right to take reasonably appropriate measures, including, but not limited to, investigation and reporting, as well as notification to and cooperation with law enforcement authorities. In the event of a data breach, we will make reasonable efforts to notify affected individuals if we believe that there is a reasonable risk of harm to the User as a result of the breach or if notice is otherwise required by law. When we do, we will post a notice on the Website, send you an email.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Changes">{l s='Changes and amendments' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='We reserve the right to modify this Policy or its terms related to the Website and Services at any time at our discretion. When we do, we will post a notification on the main page of the Website. We may also provide notice to you in other ways at our discretion, such as through the contact information you have provided.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='An updated version of this Policy will be effective immediately upon the posting of the revised Policy unless otherwise specified. Your continued use of the Website and Services after the effective date of the revised Policy (or such other act specified at that time) will constitute your consent to those changes. However, we will not, without your consent, use your Personal Information in a manner materially different than what was stated at the time your Personal Information was collected.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Acceptance">{l s='Acceptance of this policy' d='Shop.Theme.Privacy'}</h1>
+            
+            <p>{l s='You acknowledge that you have read this Policy and agree to all its terms and conditions. By accessing and using the Website and Services and submitting your information you agree to be bound by this Policy. If you do not agree to abide by the terms of this Policy, you are not authorized to access or use the Website and Services.' d='Shop.Theme.Privacy'}</p>
+            
+            <h1 id="Contacting">{l s='Contacting us' d='Shop.Theme.Privacy'}</h1>
+
+            <p>{l s='If you have any other questions, concerns, or complaints regarding this Policy, we encourage you to contact us using the details below:' d='Shop.Theme.Privacy'}</p>
+
+            <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a>
+
+            <p>{l s='We will attempt to resolve complaints and disputes and make every reasonable effort to honor your wish to exercise your rights as quickly as possible and in any event, within the timescales provided by applicable data protection laws.' d='Shop.Theme.Privacy'}</p>
+
+            <p>{l s='This document was last updated on August 25, 2022' d='Shop.Theme.Privacy'}</p>
+
+          </div>
+        </div>
+      {elseif $cms.id === 10}
+        <div class="cms-legal">
+          <div class="legal-banner">
+            <img class="desktop" src="https://www.all-stars-distribution.com/img/cms/Content_pages/legalnotices/legal_notices_en_lg.jpg" />
+            <img class="mobile" src="https://www.all-stars-distribution.com/img/cms/Content_pages/legalnotices/legal_notices_en_xs.jpg" />
+          </div>
+          <div class="legal-content">
+          </div>
+        </div>
+      {elseif $cms.id === 9}
+        
+        <div class="banner_cms_partners" style="margin-bottom: 3rem;">
+          <div class="partners-banner">
+            <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/partners.jpg" />
+          </div>
+          <div class="rte">
+            <div id="cms-partners">
+            <div class="spacer-20"></div>
+            <div class="row cards">
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+              <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/dpd_logo.jpg" alt="santander_logo.jpg?v=1" /></div>
+              <div class="text_partners">{l s='' d='Shop.Theme.Partners'}DPD group is the largest parcel delivery network in Europe, carrying worldwide about 5.3 million parcels daily via 77000 workers through their 4 different brands DPD, Chronopost, SEUR and BRT.​</div>
+              <div class="button_container_partners"><a href="https://www.santander.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+              </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+              <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/sema_logo.jpg" alt="allstars_web_logo.jpg?v=1" /></div>
+              <div class="text_partners">The SEMA SHOW held annually during the first week of November at the Las Vegas Convention Center in conjunction with the Automotive Aftermarket Industry Weekend. The Sema show is the world largest automotive convention, joining over 100.000 buyers from 100 countries, 2000 companies and more than 1000 exclusive show cars</div>
+              <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+              </div>
+              </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/ingenico_logo.jpg" alt="transcar_logo.jpg?v=1" /></div>
+            <div class="text_partners">Ingenico is a France-based company, whose business is to provide the technology involved in secure electronic transactions. Its traditional business is based on the manufacture of point of sale (POS) payment terminals, but it also includes complete payment software and related services, also software for merchants.</div>
+            <div class="button_container_partners"><a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/adobe_logo.jpg" alt="paypal_logo.jpg?v=1" /></div>
+            <div class="text_partners">Adobe Inc is an American multinational computer software company focused upon the creation on multimedia and creativity software products, with a more recent foray into digital marketing software. Adobe is best known for its Adobe Flash web software, Photoshop image editing software, Adobe Illustrator graphics editor and Acrobat Reader.</div>
+            <div class="button_container_partners"><a href="https://www.paypal.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/braga_logo.jpg" alt="ingenico_logo.jpg?v=1" /></div>
+            <div class="text_partners">The Braga Motorshow is the largest Portuguese car show and the 6th largest outdoor independant car show in Europe. Held annually during the second week end of August at the Braga Vasco Sameiro track, this event drew in about 50.000 visitors in 2018 to see Drift, Drag, roll race and stunt shows !</div>
+            <div class="button_container_partners"><a href="https://ingenico.com/en" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/fedex_logo.jpg" alt="alma_logo.jpg?v=1" /></div>
+            <div class="text_partners">FedEx Corporation is an American multinational delivery services known for its overnight shipping service and pioneering a system that could track packages and provide real-time updates on package location, a feature that has now been implemented by most other carrier services. </div>
+            <div class="button_container_partners"><a href="https://almapay.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+                <div class="image_container_partners">
+                  <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/norton_logo.jpg" alt="dpd_logo.jpg?v=1" />
+                </div>
+                <div class="text_partners">
+                  Norton or Norton by Symantec, is a division of NortonLifeLock based in California and offering a variety of products and services related to digital security. In 2014, it was announced that Norton's parent company Symantec would split its business into two units - one focused on security, and one focused on information management, with Norton being placed in the unit focused on security.
+                </div>
+                <div class="button_container_partners">
+                  <a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+                <div class="image_container_partners">
+                  <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/transcar_logo.jpg" alt="tnt_logo.jpg?v=1" />
+                </div>
+                <div class="text_partners">
+                  Vehicles transport specialist, TrancarPremium uses state-of-the-art logistics tools, allowing the team to offer unparalleled quality of service and great management flexibility. Based in Portugal, the company offers different premium solutions for shipping supercars, racing cars, classics or exotics throughout Europe.
+                </div>
+                <div class="button_container_partners">
+                  <a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a>
+                </div>
+              </div>
+            </div>
+
+            
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+              <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/tnt_logo.jpg" alt="santander_logo.jpg?v=1" /></div>
+              <div class="text_partners">TNT Express is an international courier delivery services company founded in the Netherlands in 2011 and now a subsidiary of FedEx. TNT offers road and air delivery services in Europe, the region of the Asia Pacific, the Americas, the Middle East, and Africa. </div>
+              <div class="button_container_partners"><a href="https://www.santander.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+              </div>
+              </div>
+
+              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+              <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/asw_logo.jpg" alt="allstars_web_logo.jpg?v=1" /></div>
+              <div class="text_partners">All Stars Web Solutions is a top range web agency specializing in website design and development, software and application creation, digital marketing, and SEO. Offering the latest technologies IT tools for warehouse management (ERP), cybersecurity, front and back end with optimal ergonomics, they make the management of a website accessible to everyone.</div>
+              <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+              </div>
+              </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/bcp_logo.jpg" alt="transcar_logo.jpg?v=1" /></div>
+            <div class="text_partners">Banco Comercial Português (BCP) is a Portuguese bank, member of the PSI-20 index and the Next 150. It is present in Portugal as Millenium BCP and in Belgium and Luxembourg as Banque BCP. It is also present in other countries and is listed on the Euronext stock exchange. Banque BCP was born in 2001 from the merger of the French branches of the oldest Portuguese financial establishments.</div>
+            <div class="button_container_partners"><a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/digi_logo.jpg" alt="paypal_logo.jpg?v=1" /></div>
+            <div class="text_partners">Since 2003, the company DIGISERVICES is a reliable supplier of high quality and customized tuning software files. French leader with more than 30 auto centers in France, more than 6000 vehicles visit their workshops each year.</div>
+            <div class="button_container_partners"><a href="https://www.paypal.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/shiftech_logo.jpg" alt="ingenico_logo.jpg?v=1" /></div>
+            <div class="text_partners">Since 2008, ShifTech has been a specialist in custom tuning software that offers the perfect combination of increased engine power and more economical fuel consumption. Present in France, Belgium and Luxembourg, it is a reference in the market due to its quality of service and its experience.</div>
+            <div class="button_container_partners"><a href="https://ingenico.com/en" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/brperformance_logo.jpg" alt="alma_logo.jpg?v=1" /></div>
+            <div class="text_partners">Key partner of the biggest brands in the performance automotive industry, BR-Performance is a key player in the custom tuning software market thanks to solid knowledges and state-of-the-art equipment.</div>
+            <div class="button_container_partners"><a href="https://almapay.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+                <div class="image_container_partners">
+                  <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/asm_logo.jpg" alt="dpd_logo.jpg?v=1" />
+                </div>
+                <div class="text_partners">
+                European platform, founded in 2013 and established in 3 countries, All Stars Motorsport has quickly become a key player in aftermarket automotive performance and design industry. Reseller of the most famous brands, All Stars Motorsport offers the best products at the best prices to allow to offer everyone their own vision of the automobile.
+                </div>
+                <div class="button_container_partners">
+                  <a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+                <div class="image_container_partners">
+                  <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/maersk_logo.jpg" alt="tnt_logo.jpg?v=1" />
+                </div>
+                <div class="text_partners">
+                A.P. Møller-Mærsk, also known simply as Maersk is a Danish shipping and logistics company founded in 1904 by Arnold Peter Møller and Peter Mærsk Møller. Maersk's business activities include shipping, port operation, supply chain management and warehousing. The company is based in Copenhagen, Denmark, with subsidiaries and offices across 130 countries and 108.000 employees worldwide.
+                </div>
+                <div class="button_container_partners">
+                  <a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a>
+                </div>
+              </div>
+            </div>
+
+
+            </div>
+            <div class="spacer-20"></div>
+          </div>
+        </div>
+
+      {elseif $cms.id === 11}
+        <div class="rte">
+          <div class="text-center">
+            <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/payment.jpg" alt="All Stars Distribution" class="img-fluid cms_header_image">
+          </div>
+          
+          <p class="cms_title_center" style="color: black; font-weight: bolder; font-size: 23px;">{l s='' d='Shop.Theme.Payment'}ALL STARS DISTRIBUTION offers two methods of payment :</p>
+          <div class="spacer-20"></div>
+          <div class="row content-payment">
+          <div class="row-payment">
+            <div class="col-lg-8"><b>CREDIT CARD : </b> <br><br> Visa and Mastercard are the accepted bank cards for the payment of an order on our online platform.<br><br> In the interest of security and confidentiality, all data communicated during the payment procedure is encrypted and only entered on the page of our financial partner Ingenico. <br><br> In order to validate the payment of an order, the name of the cardholder, its 16-digit number, its expiry date and its cryptogram will be requested by no other organisation other than our online payment service provider Ingenico.<br><br> The total amount paid will be debited immediately and the rest of the process and the update of the order status will be instantaneous. A confirmation will then be sent to you by email as a digital archive.
+            </div>
+            <div class="col-lg-4" style="text-align: center;">
+              <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/payment/creditcard.png?t=112" style="width: 250px;">
+            </div>
+          </div>
+
+          <div class="row-payment" >
+            <div class="col-lg-8" style="margin-top: 70px;"><b>BANK TRANSFER : </b> <br><br> Once you have selected payment by bank transfer on our website, you will receive a confirmation email with the details of our bank account, to which the payment should be made.Please note that these details must be exclusively in the name of ALL STARS DISTRIBUTION and based in Portugal.<br><br> Payments by bank transfer must be made within 72 hours after the order has been confirmed. If the payment is not made within this period, your order will be automatically cancelled.<br><br> Please note that payment by bank transfer will result in additional processing time for the dispatch of an order as it will only be dispatched once payment has been received in our bank account.<br><br>Please also note that no items are reserved until payment for the order has been confirmed in our bank account.
+            </div>
+            <div class="col-lg-4" style="text-align: center;">
+              <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/payment/bankwire.png?t=113" style="width: 250px;">
+            </div>
+          </div>
+
+            <div class="col-lg-12" style="margin-top: 30px;"></div>
+          </div>
+        </div>
+      {elseif $cms.id === 12}
+        <div class="cms-career">
+          <div class="career-banner">
+            <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/career.jpg" />
+          </div>
+          <div class="career-content">
+            <h1>{l s='> OPEN POSITIONS <' d='Shop.Theme.Career'}</h1>
+            
+
+            <div id="why_us_anchor">
+                  <div class="why_card">
+                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/design.jpg" />
+                    <div id="thumb_data_1" class="card_text text-career" >
+                      <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
+                      {l s='The graphic designer creates visual communications to convey messages in an effective and aesthetically pleasing manner.
+                      This incorporates several tasks and responsibilities such as illustrations, banners, logos and marketing contents creation.
+                      The graphic designer, with a strong creative presence and artistic flair, shapes the visual aspect of our websites; products, marketing supports, exhibitions and more ! ' d='Shop.Theme.Career'}
+                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
+                      <p>{l s='- High school graphic diploma or strong portfolio' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- 2 years working experience as graphic designer in company' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Fluency with design softwares like Lightroom, Illustrator, Dreamweaver, Photoshop' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Familiar with video edition softwares such as Premiere, AfterFX, Finalcut...' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Foreign language spoken / written English or french' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Ability to work harmoniously with diverse range of people' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Knowledge in the automotive industry appreciated' d='Shop.Theme.Career'}</p>
+                    </div>
+                    <div id="card_expand1" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
+                  </div>
+
+                  <div class="why_card">
+                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/webmaster.jpg" />
+                    <div id="thumb_data_2" class="card_text text-career">
+                      <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
+                      {l s='The web programmers or web developers use a variety of programming languages to create web applications, online tools and resources mainly database-driven.
+                      They work closely with project managers and designers to create, maintain attractive, safe and user-friendly our differents websites.
+                      They develop our back office programs and interfaces using the best practices and are responsibile for maintaining, expanding, and scaling our sites while staying plugged into emerging technologies / industry trends. ' d='Shop.Theme.Career'}
+                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
+                      <p>{l s='- High School IT / coding / web design diploma' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- 3 years working experience as web developer / programmer in company' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Top-notch programming skills and in-depth knowledge of HTML, CSS, JavaScript, PHP,and other coding languages' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Fluency in one of these languages : English or French' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Knowledge of relational database systems, Object Oriented Programming and web applications development' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Knowledge of Search Engine Optimization process' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Aggressive problem diagnosis and creative problem solving skills' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Proficient organizational skills, detail-oriented, multitasking, good under pressure' d='Shop.Theme.Career'}</p>
+                    </div>
+                    <div id="card_expand2" class="card_view_more" onclick="viewMore(this)">View More</div>
+                  </div>
+
+                  <div class="why_card">
+                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/support.jpg" />
+                    <div id="thumb_data_3" class="card_text text-career">
+                    <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
+                        {l s='The customer service representative helps customers, giving them precious information about products or services, following their orders and return / warranty processes.
+                        The representative schedule is splitted between answering customers questions via e-mail and working closely with the purchase and marketing departments to elaborate products descriptions and online resources in various languages.' d='Shop.Theme.Career'}  
+                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
+                      <p>{l s='- Absolute fluency in one of these languages (French, Spanish, English, German)' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- High school diploma, general education degree or equivalent.' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Proficient with using computers and basic office softwares' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Excellent proofreading skills to identify grammar, spelling or punctuation errors' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Ability to stay calm, organized and focused' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Knowledge in the automotive industry appreciated' d='Shop.Theme.Career'}</p>
+                    </div>
+                    <div id="card_expand3" class="card_view_more" onclick="viewMore(this)">View More</div>
+                  </div>
+
+                  <div class="why_card">
+                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/picker.jpg" />
+                    <div id="thumb_data_4" class="card_text text-career">
+                    <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
+                    {l s='The Picker is part of the order preparation process, using various digital and mechanical tools to pick a wide variety of items and bring them to the preparation area.
+                    The Picker will also participate in products reception, physical inventories and report quality variances while assuming daily maintenance tasks in the warehouse.
+                    The picker will operate a drivable vertical mast lift, a forklift and will perform duties up to 30kgs. ' d='Shop.Theme.Career'}
+                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
+                      <p>{l s='- Proficient with using computers / electronic devices' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Excellent verbal and written communication skills' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Ability to work harmoniously with diverse range of people' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Physically agile and dexterous' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Proficient organizational skills' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Forklift licence appreciated' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Foreign language spoken highly appreciated' d='Shop.Theme.Career'}</p>
+                    </div>
+                    <div id="card_expand4" class="card_view_more" onclick="viewMore(this)">View More</div>
+                  </div>
+
+                  <div class="why_card">
+                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/packer.jpg" />
+                    <div id="thumb_data_5" class="card_text text-career">
+                    <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
+                    {l s='The warehouse associate uses various digital and mechanical tools to pack and ship the orders accurately.
+                    He participates in products reception, physical inventories, safety check, warehouse management software setting while organizing the warehouse space
+                    The warehouse associate may operate a drivable vertical mast lift, a forklift and perform duties up to 30kgs.' d='Shop.Theme.Career'} 
+                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
+                      <p>{l s='- Proficient with using computers / electronic devices' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Excellent verbal and written communication skills' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Proficient organizational skills' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Warehouse experience or high school diploma required' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Forklift licence appreciated' d='Shop.Theme.Career'}</p>
+                      <p>{l s='- Foreign language spoken highly appreciated' d='Shop.Theme.Career'}</p>
+                    </div>
+                    <div id="card_expand5" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
+                  </div>
+
+                  <div class="why_card">
+                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/others.jpg" />
+                    <div id="thumb_data_6" class="card_text text-career">
+                    <b>{l s='General application' d='Shop.Theme.Career'}</b>
+                    {l s='No open position matching with your skills at the moment ?
+                    No problem, apply anyway, maybe we can find something for you...' d='Shop.Theme.Career'}
+                    </div>
+                    <div id="card_expand6" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
+                  </div>
+
+              </div>
+
+              <div class="form-career-container" style="margin: 5rem 0;">
+                <h1 style="text-align: center;color:#000;margin-bottom:2rem;">JOB APPLICATION</h1>
+                
+                <form class="form-career">
+                  <div class="form-row radio-btns-form  col-lg-12">
+                    <div class="form-check col-md-1">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
+                      <label class="form-check-label" for="gridRadios1">
+                      Mr.
+                      </label>
+                    </div>
+                    <div class="form-check  col-md-1">
+                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <label class="form-check-label" for="gridRadios2">
+                      Mrs.
+                      </label>
+                    </div>
+                  </div>
+                  
+
+                  <div class="form-row ">
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">Name<span style="color:#ee302e;">*</span></label>
+                      <input type="text" class="form-control" id="inputEmail4">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputPassword4">Surname<span style="color:#ee302e;">*</span></label>
+                      <input type="text" class="form-control" id="inputPassword4">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputEmail4">Email<span style="color:#ee302e;">*</span></label>
+                      <input type="email" class="form-control" id="inputEmail4">
+                    </div>
+                  </div>
+    
+                  <div class="form-row ">
+                    <div class="form-group col-md-2">
+                      <label for="inputState">Phone<span style="color:#ee302e;">*</span></label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Please Select...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-2">
+                      <label for="inputEmail4">Phone Number</label>
+                      <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputAddress">How do you prefer to be contacted?<span style="color:#ee302e;">*</span></label>
+                      <input type="text" class="form-control" id="inputAddress" placeholder="">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputState">Country<span style="color:#ee302e;">*</span></label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Please Select...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                  </div>
+    
+                  <div class="form-row  ">
+                    <div class="form-group col-md-4">
+                      <label for="inputState">Which position are you applying to<span style="color:#ee302e;">*</span></label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Please Select...</option>
+                        <option>...</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputAddress2">Address Line 1<span style="color:#ee302e;">*</span></label>
+                      <input type="tel" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputAddress2">Address Line 2</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                  </div>
+    
+                  <div class="form-row ">
+                    <div class="form-group col-md-4">
+                      <label for="inputAddress2">City</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputAddress2">Zip Code<span style="color:#ee302e;">*</span></label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                    <div class="form-group col-md-4">
+                      <label for="inputAddress2">How did you know about this job position?</label>
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                    </div>
+                  </div>
+    
+                <div class="form-row ">
+                  <div class="form-group col-md-4">
+                    <label for="exampleFormControlFile1">Upload your CV ( only PDF files ) <span style="color:#ee302e;">*</span></label>
+                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                  </div>
+                </div>
+
+                <div class="form-row ">
+                  <div class="form-group col-md-4">
+                    <div class="form-check col-md-12">
+                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <label class="form-check-label" for="gridCheck">
+                        <a href="https://www.all-stars-distribution.com/en/content/20-terms-and-conditions">You agree with our conditions terms</a> <span style="color:#ee302e;">*</span>
+                      </label>
+                    </div>
+                  </div>
+                </div>
+    
+                  <div class="form-row ">
+                    <div class="form-group col-md-2" style="display: flex;justify-content:start;">
+                      <button type="submit" class="btn send-form col-md-2">Send</button>
+                    </div>
+                  </div>
+                </form>
+              </div>
+
+
+          </div>
+        </div>
+      {elseif $cms.id === 13}
+        <div class="cms-terms">
+          <div class="banner-terms">
+            <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/generalSalesConditions.jpg" />
+          </div>
+          <div class="terms-content">
+            <h1>GENERAL CONDITIONS OF SALE</h1>
+            <p>These general terms and conditions of sale apply, without restriction or reservation, to all sales concluded on the website <a>https://all-stars-distribution.com</a></p>
+            <h1>ARTICLE 1: MANDATORY INFORMATION</h1>
+            <p>The website <a href="https://all-stars-distribution.com">https://all-stars-distribution.com</a> is the property of :</p>
+            <p style="margin-top: 2rem;">ALL STARS DISTRIBUTION LDA </p>
+            <p>ZONA INDUSTRIAL DE GANDRA S/N </p>
+            <p>4930-311 GANDRA – VALENCA </p>
+            <p>PORTUGAL</p>
+            <p>PT513881387</p>
+            <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a>
+            <h1>ARTICLE 2: PRODUCTS</h1>
+            <p>The website www.all-stars-ditribution.com offers for sale spare parts, accessories and consumables for vehicles and cars. ALL STARS DISTRIBUTION is specialised in the sale of performance spare parts. </p>
+            <p>The customer declares to have read and accepted the general conditions of sale prior to the validation of their order.</p>
+            <h1>ARTICLE 3: PRICE</h1>
+            <p>The prices of the products present on the site www.all-stars-distribution.com are indicated in euros excluding taxes (HT).
+            In the case of an order delivered to a country outside the European Union, the customer, being the importer of the products purchased, is solely responsible for the declaration and payment of any customs duties or other taxes that may be due in his country upon delivery of the order.
+            Delivery costs are not included in the prices displayed; they will be visible in a summary sent by email to the customer following the validation of his online order before making the payment.</p>
+            <h1>ARTICLE 4: AVAILABILITY OF PRODUCTS</h1>
+            <p>The available products appear on our site accompanied by the mention "In stock". In order to best meet the expectations of our customers, the availability of our products is regularly updated. </p>
+            <p>If you have ordered a product that is unavailable after the validation of your order, you will be informed immediately. We will proceed with the cancellation of your order and you will be refunded immediately if payment for the order has already been made.</p>
+            <h1>ARTICLE 5: ORDERING</h1>
+            <p>You can order our products directly on our website if you have a customer account. If you do not have one, you can request one via the following link: <a href="https://www.all-stars-distribution.com/en/content/7-becomedealer">https://www.all-stars-distribution.com/en/content/7-becomedealer</a></p>
+            <p>A reply will be sent to you within 48 hours of receiving your request. </p>
+            <p>To place an order on our site, choose your items and add them to the basket. Confirm the contents of your basket, choose your payment method and tick the box "acceptance of the T&Cs". </p>
+            <p>You will receive an order confirmation email to the email address you provided when you created your customer account. Check the details and the amount of your order. Correct any errors in advance before making your payment. </p>
+            <p>The transfer of ownership of the product will only take place upon full payment of your order.</p>
+            <h1>ARTICLE 6: DELIVERY</h1>
+            <p>We deliver worldwide with the carrier of our choice. The delivery takes place at the address indicated by the buyer at the time of the validation of the order.</p>
+            <p>The amount of the delivery costs is calculated once your order is registered, according to the characteristics of the products purchased and the delivery address given. A confirmation email will be sent to you with the amount of the delivery costs to be expected for your order in order to proceed with the payment of the latter. </p>
+            <p>Delivery times are given for information purposes only and may change due to various factors beyond our control.</p>
+            <p>Parcels are entrusted to external service providers for their delivery (TNT, DPD, GLS, etc.). ALL STARS DISTRIBUTION cannot under any circumstances be held responsible for a dispute about the delivery of a package.</p>
+            <p>Orders are shipped from our European warehouses, provided with a specific tracking number that can be checked online at any moment through the carrier's website.</p>
+            <p>We strongly recommend checking the packages condition directly with the driver during the delivery to ensure that there are no visible damages.</p>
+            <p>In case of any issues such as damaged packaging, missing or damaged products, reservations must be reported on the delivery slip to support any claim. It will also be necessary to provide pictures of the visible damages as well as the transport label showing tracking number and recipient's information. If this verification cannot be carried out directly with the driver, a written complaint must be sent to the carrier as soon as the damages are noted.</p>
+            <p>Any complaint must be communicated to our customer service by e-mail within 48 hours (business days) following order’s delivery date, beyond which no complaint will be accepted by the carrier. In all cases of complaints, original packaging must be kept.</p>
+            <p>In case of a parcel lost, a claim will be opened with the carrier to carry out in-depth research that may take up to 3 weeks before receiving the confirmation of the parcel loss. Once the loss confirmed by the carrier, a new shipment will be automatically scheduled depending on stock level. No refund will be issued in any case of parcel loss.</p>
+            <h1>ARTICLE 7: TERMS OF PAYMENT</h1>
+            <p>We offer two methods of payment on our site: </p>
+            <br>
+            <p><b>BANK CARD : </b>Visa and Mastercard are the bank cards accepted for the payment of an order on our online platform. </p>
+            <p>In the interest of security and confidentiality, all data communicated during the payment procedure is encrypted entered exclusively on the page of our financial partner Ingenico. </p>
+            <p>In order to validate the payment of an order, the name of the cardholder, its 16-digit number, its expiry date and its cryptogram will be requested by no other organisation other than our online payment service provider Ingenico and only they will have access to it. </p>
+            <p>
+            The total amount paid will be debited immediately and the rest of the process and the order status will be updated instantly. A confirmation will then be sent to you by email as a digital archive. </p>
+            <br>
+            <p><b>BANK TRANSFER : </b></p>
+            <p>Once the payment by bank transfer has been selected on our website, you will receive a confirmation email with the details of our bank account, to which the payment must be made. Please note that these details must be exclusively in the name of ALL STARS DISTRIBUTION based in Portugal. </p>
+            <p>Payments by bank transfer must be made within 72 hours after the order has been confirmed. If the payment is not made within this period, your order will be automatically cancelled. </p>
+            <p>Please note that payment by bank transfer will result in additional processing time for the dispatch of an order as it will only be dispatched once payment has been received in our bank account. </p>
+            <p>Please also note that no items are reserved until payment for the order has been confirmed in our bank account.</p>
+            <h1>ARTICLE 8: WARRANTY:</h1>
+            <p>The company All Stars Distribution ensures the guarantee of the hidden defects under the legal conditions, the purchaser has a deadline of eight days from the discovery of the hidden defect to notify his reservations by email. </p>
+            <p>All warranty claims must be sent by email to sales@all-stars-distribution.com together with photos or videos showing the problem. As the guarantee is taken over directly by the supplier, the shipping costs for sending and returning the product will be at the customer's expense, with the supplier only covering the costs of repairing or replacing the product concerned by the warranty. If the supplier finds that the problem encountered is not covered by the conditions of the guarantee, the shipping costs for the return of the product remain the responsibility of the customer. </p>
+            <p>Under no circumstances can a warranty claim be made due to a problem encountered with a product following a faulty installation. In this case, the buyer must contact the professional who installed the product in question. </p>
+            <p>For any warranty claim which will require the sending of the product to our premises in order to verify it, All Stars Distribution will reimburse the buyer for the shipping costs of the product if the warranty coverage by the supplier is confirmed, otherwise all shipping costs will be borne by the latter.</p>
+            <p>In no case will it be possible to request a refund for the product concerned from the company All Stars Distribution as part of a warranty claim.</p>
+            <h1>ARTICLE 9: PRODUCT RETURNS</h1>
+            <p>All sales made on our site are final, they cannot in any case give rise to the return of a product (except in the context of a guarantee, see article 8).</p>
+            <h1>ARTICLE 10: CONDITIONS AND DEADLINES FOR REIMBURSEMENT</h1>
+            <p>Cancellation of an order is possible as long as the order has not been shipped from our warehouse. Any cancellation request made after the order has been shipped will not be accepted. </p>
+            <p>If cancellation of the order is possible, we will refund the order via the payment method originally used by the buyer within 30 days.</p>
+            <h1>ARTICLE 11: PERSONAL DATA</h1>
+            <p>Certain customer information will be passed on to delivery and / or payment service providers (i.e., surname, first name, address, postal code and telephone number) in order to allow the processing and delivery of the products ordered. </p>
+            <p>The commercial offers of the site will be sent to the customer by e-mail if no objection has been made. The customer may object at any time by logging into his personal space or by sending an email to our customer service department. </p>
+            <p>The site ensures that the customer's personal information is collected and processed in compliance with law n°78-17 of January 6, 1978 relating to information technology, files and freedom. </p>
+            <p>In accordance with articles 39 and 40 of the law dated 6 January 1978, the customer has the right to access, rectify, delete and oppose his personal data. The customer can exercise this right via : </p>
+            <br>
+            <p>- His personal space </p>
+            <p>- By e-mail to <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a></p>
+            <p style="margin:3rem 0 2rem 0;text-align:center;">This document was last updated on November 21, 2022</p>
+          </div>
+        </div>
+      {else}
+
+        {$cms.content nofilter}
+      {/if}
     {/block}
 
     {block name='hook_cms_dispute_information'}

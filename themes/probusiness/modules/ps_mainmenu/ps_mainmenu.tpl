@@ -105,26 +105,77 @@
     </ul>
   {/if}
 {/function}
+  {* <pre>{$categories[2]|print_r}</pre> *}
+<div style="width: 80vw;" class="menu js-top-menu position-static formula row" id="_desktop_top_menu_desktop">
+  {if Context::getContext()->customer->logged}
+    <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:5px" class="top-menu colu" id="top-menu" data-depth="0">
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-23">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('myaccount', true)}" data-depth="0">
+          My Account
+          </a>
+      </li>
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-24">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('new-products', true)}" data-depth="0">
+          News
+          </a>
+      </li>
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('manufacturer')}" data-depth="0">
+          Brands
+          </a>
+      </li>
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('catalog', true)}" data-depth="0">
+          Catalogs
+          </a>
+      </li>
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-25">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCategoryLink(16)|escape:'html':'UTF-8'}" data-depth="0">
+          Clearence
+          </a>
+      </li>
 
-<div style="width: 90vw;" class="menu js-top-menu position-static formula row" id="_desktop_top_menu_desktop">
-  {menu nodes=$menu.children}
+    </ul>
+  {else}
+    <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:5px" class="top-menu colu" id="top-menu" data-depth="0">
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-23">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(8)}" data-depth="0">
+          About Us
+          </a>
+      </li>
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-24">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(14)}" data-depth="0">
+          Become a dealer
+          </a>
+      </li>
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-25">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(15)}" data-depth="0">
+          Become a suplier
+          </a>
+      </li>
+
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('manufacturer')}" data-depth="0">
+          Brands
+          </a>
+      </li>
+    </ul>
+  {/if}
   <div class="clearfix"></div>
 </div>
 
 
 <div style="width: 100vw; display: flex; flex-direction: column" class="deformula ">
   <div style="width:100vw;" class="menu js-top-menu position-static row" id="_desktop_top_mobile">
-    <button style="float: left; padding-left:24px" class="navbar-toggler" type="button" data-toggle="collapse"
+    <button style="float: left; " class="navbar-toggler" type="button" data-toggle="collapse"
       data-target="#_desktop_top_menu" aria-controls="_desktop_top_menu" aria-expanded="false"
       aria-label="Toggle mobile menu">
       <i style="color: white; float:left; font-size:xx-large;" class="material-icons">&#xE5D2;</i>
     </button>
     {if Context::getContext()->customer->logged}
 
-      <a style="margin-right: 20px; color: white; float:right ; padding-top: 12px" class="logout" href="/?mylogout="
-        rel="nofollow" title="Log me out">
-        <span class="logtext">{l s='Logout' d='Shop.Theme.Actions'}</span>
-      </a>
+      {hook h='displaySearch'}
+
     {else}
       <button style="float: right; padding-left:24px; padding-top: 15px; color: white " class="navbar-toggler"
         type="button" data-toggle="collapse" data-target="#login_block" aria-controls="login_block" aria-expanded="false"
@@ -133,17 +184,74 @@
       </button>
     {/if}
   </div>
+  {if Context::getContext()->customer->logged}
+    <div style="margin: 0; width: 100vw;" class="js-top-menu collapse navbar-collapse row" id="_desktop_top_menu">
+      <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:5px" class="top-menu colu" id="top-menu" data-depth="0">
+        <li style="width: 100%" class="mxsz cms-page" id="cms-page-23">
+            <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('myaccount', true)}" data-depth="0">
+            My Account
+            </a>
+        </li>
+        <li style="width: 100%" class="mxsz cms-page" id="cms-page-24">
+            <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('new-products', true)}" data-depth="0">
+            News
+            </a>
+        </li>
+        <li style="width: 100%" class="mxsz cms-page" id="cms-page-25">
+            <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('manufacturer')}" data-depth="0">
+            Brands
+            </a>
+        </li>
+
+        <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
+            <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCategoryLink(16)|escape:'html':'UTF-8'}" data-depth="0">
+            Clearence
+            </a>
+        </li>
+        <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
+            <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('catalog', true)}" data-depth="0">
+            Catalogs
+            </a>
+        </li>
+      </ul>
+      <div class="clearfix"></div>
+    </div>
+  {else}
   <div style="margin: 0; width: 100vw;" class="js-top-menu collapse navbar-collapse row" id="_desktop_top_menu">
-    {menu nodes=$menu.children}
+    <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:5px" class="top-menu colu" id="top-menu" data-depth="0">
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-23">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(8)}" data-depth="0">
+          About Us
+          </a>
+      </li>
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-24">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(14)}" data-depth="0">
+          Become a dealer
+          </a>
+      </li>
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-25">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(15)}" data-depth="0">
+          Become a suplier
+          </a>
+      </li>
+
+      <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('manufacturer')}" data-depth="0">
+          Brands
+          </a>
+      </li>
+    </ul>
     <div class="clearfix"></div>
   </div>
+  {/if}
   {* Login Dropdown Menu *}
 
 
   <div
     style="text-align: end; padding-top: 12px; width: 100% !important; padding-left: 25px; padding-right: 25px; background-color:white"
     id="login_block" class="collapse navbar-collapse mxsz">
-    <form style="display:flex;flex-direction: column; width: 100%" id="login-form" action="/login" method="post">
+
+    <form style="display:flex;flex-direction: column; width: 100%" id="login-form" action="{$link->getPageLink('authentication', true)}" method="post">
       <div style="display:flex; width:100%; height: min-content" class="form-group col">
         <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
         <input type="text" class="form-control whtbl" id="email" name="email" placeholder="{l s="Email"}">
@@ -168,5 +276,9 @@
         <button style=" width: 100%; " type="submit" class="btn whtbl">{l s="Login"}</button>
       </div>
     </form>
+
   </div>
 </div>
+
+
+{* {hook h='displayTop' mod='ps_customersignin' } *}

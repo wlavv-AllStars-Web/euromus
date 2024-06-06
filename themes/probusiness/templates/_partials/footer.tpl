@@ -29,9 +29,7 @@
     <div style="padding-top: 25px ;" class="col-md-12" >
       <p class="text-sm-center" >
         {block name='copyright_link'}
-          <a style="color: white " href="https://www.prestashop-project.org/" target="_blank" rel="noopener noreferrer nofollow">
-            {l s='%copyright% %year% - Ecommerce software by %prestashop%' sprintf=['%prestashop%' => 'PrestaShop™', '%year%' => 'Y'|date, '%copyright%' => '©'] d='Shop.Theme.Global'}
-          </a>
+          @ 2024 All Stars Distribution. All Rights Reserved.
         {/block}
       </p>
     </div>

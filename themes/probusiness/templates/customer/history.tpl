@@ -26,7 +26,7 @@
 
 {block name='page_content'}
   <h6>{l s='Here are the orders you\'ve placed since your account was created.' d='Shop.Theme.Actions'}</h6>
-
+  
   {if $orders}
     <table class="table table-striped table-bordered table-labeled hidden-sm-down">
       <thead class="thead-default">

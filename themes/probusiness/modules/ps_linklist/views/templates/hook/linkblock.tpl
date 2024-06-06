@@ -48,7 +48,7 @@
     display: unset;
   }
 </style>
-<div style="padding-top: 25px;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
+<div style="padding: 25px 7rem 0 7rem;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
   <div class="row alignment ">
     {foreach $linkBlocks as $linkBlock}
       <div class="col-md-3 col-sm-10 wrapper">
@@ -63,16 +63,15 @@
         </div>
         <ul id="footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}" class="collapse">
           {foreach $linkBlock.links as $link}
-
+            
+            {* <pre>{$linkBlock|print_r}</pre> *}
             <li style="list-style-type: none !important;">
               {if $link.title == "Facebook"}
-                <i style="color: #0273eb ; font-size:large; margin-right: 5px; margin-left: 5px"
-                  class="footer_link_list_a fa fa-facebook-square"></i>
+                <img class="left_icon_footer" src="/img/asd/facebook.png" width="24" alt="facebook">
               {elseif $link.title == "Instagram"}
-                <i style="color: #0273eb; font-size:large; margin-right: 5px; margin-left: 5px"
-                  class="footer_link_list_a fa fa-instagram "></i>
+                <img class="left_icon_footer" src="/img/asd/instagram.png" width="24" alt="instagram">
               {else}
-                <img class="left_icon_footer" src="/img/ASD_footer_ima.png" alt="Star">
+                <img class="left_icon_footer" src="/img/asd/ASD_footer_ima.png" alt="Star">
               {/if}
               <a id="{$link.id|escape:'html':'UTF-8'}-{$linkBlock.id|escape:'html':'UTF-8'}"
                 class="text {$link.class|escape:'html':'UTF-8'}" href="{$link.url|escape:'html':'UTF-8'}"
@@ -93,7 +92,7 @@
       <ul id="footer_sub_menu_4" class="collapse">
         <li>
           <a target="_blank" href="{$homepage_footer['link_footer']}">
-            <img src="/img/media_images/Events/main_250x100.webp?updated={rand()}"
+            <img src="https://www.all-stars-distribution.com/img/media_images/Events/main_250x100.webp?updated=104794782"
               title="{$homepage_footer['alt_footer']}" id="footer_event_image"
               style="max-width: 200px;max-height: 80px;" class="img-responsive">
           </a>

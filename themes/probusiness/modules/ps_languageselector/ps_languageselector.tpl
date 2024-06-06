@@ -56,8 +56,9 @@
        <ul class="dropdown-menu" style="background-color:#333333; color: white " aria-labelledby="language-selector-label ">
          {foreach from=$languages item=language}
            <li style="display: flex; " class=" selector {if $language.id_lang == $current_language.id_lang} current  {/if}">
-             <img src="/img/tmp/lang_mini_{$language.id_lang}_3.jpg?time=1699550058" style="width:16px; height:11px" class="languageimg">
-             <a style="margin-left: 15px; background-color:#333333; border: 0; color: white" href="{url entity='language' id=$language.id_lang}" class="dropdown-item" data-iso-code="{$language.iso_code}">{$language.name_simple}</a>
+             {* <img src="/img/tmp/lang_mini_{$language.id_lang}_3.jpg?time=1699550058" style="width:16px; height:11px" class="languageimg"> *}
+             <img src="/img/flags/{$language.iso_code}.jpg?time=1699550058" style="width:16px; height:11px" class="languageimg">
+             <a style="margin-left: 15px;border: 0; color: white" href="{url entity='language' id=$language.id_lang}" class="dropdown-item" data-iso-code="{$language.iso_code}">{$language.name_simple}</a>
            </li>
          {/foreach}
        </ul>

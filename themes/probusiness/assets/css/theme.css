@@ -5217,16 +5217,18 @@ fieldset[disabled] a.btn {
   background-color: #666666;
   border: 1px solid #666666;
   color: #FFFFFF;
+  border-radius: 0.25rem;
 }
   .btn-primary:hover {
     color: #fff;
-    background-color: #ec4249;
+    background-color: #0273EB;
     border-color: transparent; 
+    border-radius: 0.25rem;
   }
   .btn-primary:active, .btn-primary.active,
   .open > .btn-primary.dropdown-toggle {
     color: #fff;
-    background-color: #ec4249;
+    background-color: #0273EB;
     border-color: transparent;
     background-image: none; }
     .btn-primary:active:hover, .btn-primary:active:focus, .btn-primary:active.focus, .btn-primary.active:hover, .btn-primary.active:focus, .btn-primary.active.focus,
@@ -5237,10 +5239,10 @@ fieldset[disabled] a.btn {
       background-color: #1e788c;
       border-color: transparent; }
   .btn-primary.disabled:focus, .btn-primary.disabled.focus, .btn-primary:disabled:focus, .btn-primary:disabled.focus {
-    background-color: #ec4249;
+    background-color: #0273EB;
     border-color: transparent; }
   .btn-primary.disabled:hover, .btn-primary:disabled:hover {
-    background-color: #ec4249;
+    background-color: #0273EB;
     border-color: transparent; }
 #mywishlist {
   margin: 0 -15px;
