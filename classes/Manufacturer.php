@@ -64,6 +64,9 @@ class ManufacturerCore extends ObjectModel
     /** @var bool active */
     public $active;
 
+    /** @var bool active */
+    public $bike_parts;
+
     /**
      * @see ObjectModel::$definition
      */
@@ -76,6 +79,7 @@ class ManufacturerCore extends ObjectModel
             'active' => ['type' => self::TYPE_BOOL],
             'date_add' => ['type' => self::TYPE_DATE],
             'date_upd' => ['type' => self::TYPE_DATE],
+            'bike_parts' => ['type' => self::TYPE_INT],
 
             /* Lang fields */
             'description' => ['type' => self::TYPE_HTML, 'lang' => true, 'validate' => 'isCleanHtml'],
@@ -386,6 +390,18 @@ class ManufacturerCore extends ObjectModel
             $context = Context::getContext();
         }
 
+        // paulo ------------> **
+
+        $id_category = null;
+        if(Tools::getValue('id_category', 0) != 0) $id_category = Tools::getValue('id_category');
+        $sql_category = ' AND p.`id_category_default` NOT IN(16, 17)';
+
+        if($id_category == 17){
+            $sql_category = ' AND p.`id_category_default`=17';
+        }elseif($id_category == 16){
+            $sql_category = ' AND p.`id_category_default`=16';
+        }
+
         $front = true;
         if (!in_array($context->controller->controller_type, ['front', 'modulefront'])) {
             $front = false;
@@ -419,6 +435,7 @@ class ManufacturerCore extends ObjectModel
 				WHERE p.id_manufacturer = ' . (int) $idManufacturer
                 . ($active ? ' AND product_shop.`active` = 1' : '') . '
 				' . ($front ? ' AND product_shop.`visibility` IN ("both", "catalog")' : '') . '
+                '.$sql_category.'
 				AND EXISTS (
 					SELECT 1
 					FROM `' . _DB_PREFIX_ . 'category_group` cg
@@ -452,7 +469,7 @@ class ManufacturerCore extends ObjectModel
         $sql = 'SELECT p.*, product_shop.*, stock.out_of_stock, IFNULL(stock.quantity, 0) as quantity'
             . (Combination::isFeatureActive() ? ', product_attribute_shop.minimal_quantity AS product_attribute_minimal_quantity, IFNULL(product_attribute_shop.`id_product_attribute`,0) id_product_attribute' : '') . '
 			, pl.`description`, pl.`description_short`, pl.`link_rewrite`, pl.`meta_description`, pl.`meta_keywords`,
-			pl.`meta_title`, pl.`name`, pl.`available_now`, pl.`available_later`, image_shop.`id_image` id_image, il.`legend`, m.`name` AS manufacturer_name,
+			pl.`meta_title`, pl.`name`, pl.`available_now`, pl.`available_later`, image_shop.`id_image` id_image, il.`legend`, m.`name` AS manufacturer_name,m.`bike_parts`,
 				DATEDIFF(
 					product_shop.`date_add`,
 					DATE_SUB(
@@ -473,7 +490,7 @@ class ManufacturerCore extends ObjectModel
 			LEFT JOIN `' . _DB_PREFIX_ . 'manufacturer` m
 				ON (m.`id_manufacturer` = p.`id_manufacturer`)
 			' . Product::sqlStock('p', 0);
-
+                        
         if (Group::isFeatureActive() || $activeCategory) {
             $sql .= 'JOIN `' . _DB_PREFIX_ . 'category_product` cp ON (p.id_product = cp.id_product)';
             if (Group::isFeatureActive()) {
@@ -488,6 +505,7 @@ class ManufacturerCore extends ObjectModel
 				WHERE p.`id_manufacturer` = ' . (int) $idManufacturer . '
 				' . ($active ? ' AND product_shop.`active` = 1' : '') . '
 				' . ($front ? ' AND product_shop.`visibility` IN ("both", "catalog")' : '') . '
+                '.$sql_category.'
 				GROUP BY p.id_product';
 
         if ($orderBy !== 'price') {
@@ -496,8 +514,10 @@ class ManufacturerCore extends ObjectModel
 				LIMIT ' . (((int) $p - 1) * (int) $n) . ',' . (int) $n;
         }
 
-        $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
 
+        $result = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
+// echo '<pre>'.print_r($result,1).'</pre>';
+// exit;
         if (!$result) {
             return false;
         }

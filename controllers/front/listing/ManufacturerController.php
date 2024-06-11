@@ -82,9 +82,12 @@ class ManufacturerControllerCore extends ProductListingFrontController
      */
     public function initContent()
     {
+        
         if (Configuration::get('PS_DISPLAY_MANUFACTURERS')) {
             parent::initContent();
-
+            if(Tools::getValue('id_category', 0) != 0) $this->context->smarty->assign('id_category', Tools::getValue('id_category', 0));
+        // echo Tools::getValue('id_category', 0);
+        // exit;
             if (Validate::isLoadedObject($this->manufacturer) && $this->manufacturer->active && $this->manufacturer->isAssociatedToShop()) {
                 $this->assignManufacturer();
                 $this->label = $this->trans(
@@ -94,6 +97,7 @@ class ManufacturerControllerCore extends ProductListingFrontController
                     ],
                     'Shop.Theme.Catalog'
                 );
+
                 $this->doProductSearch(
                     'catalog/listing/manufacturer',
                     ['entity' => 'manufacturer', 'id' => $this->manufacturer->id]
@@ -203,10 +207,12 @@ class ManufacturerControllerCore extends ProductListingFrontController
         $manufacturers = Manufacturer::getManufacturers(true, $this->context->language->id);
         $manufacturers_for_display = [];
 
+
+
         foreach ($manufacturers as $manufacturer) {
             $manufacturers_for_display[$manufacturer['id_manufacturer']] = $manufacturer;
             $manufacturers_for_display[$manufacturer['id_manufacturer']]['text'] = $manufacturer['short_description'];
-            $manufacturers_for_display[$manufacturer['id_manufacturer']]['image'] = $this->context->link->getManufacturerImageLink($manufacturer['id_manufacturer'], 'small_default');
+            $manufacturers_for_display[$manufacturer['id_manufacturer']]['image'] = $this->context->link->getManufacturerImageLink($manufacturer['id_manufacturer'], 'medium_default');
             $manufacturers_for_display[$manufacturer['id_manufacturer']]['url'] = $this->context->link->getManufacturerLink($manufacturer['id_manufacturer']);
             $manufacturers_for_display[$manufacturer['id_manufacturer']]['nb_products'] = $manufacturer['nb_products'] > 1 ? ($this->trans('%number% products', ['%number%' => $manufacturer['nb_products']], 'Shop.Theme.Catalog')) : $this->trans('%number% product', ['%number%' => $manufacturer['nb_products']], 'Shop.Theme.Catalog');
         }
@@ -224,7 +230,7 @@ class ManufacturerControllerCore extends ProductListingFrontController
         $breadcrumb = parent::getBreadcrumbLinks();
         $breadcrumb['links'][] = [
             'title' => $this->getTranslator()->trans('Brands', [], 'Shop.Theme.Global'),
-            'url' => $this->context->link->getPageLink('manufacturer', true),
+            'url' => $this->context->link->getPageLink('manufacturer'),
         ];
 
         if (!empty($this->manufacturer)) {
