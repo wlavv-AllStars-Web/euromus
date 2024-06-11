@@ -57,7 +57,7 @@ function moveQuantityInput() {
 }
 
 // Call the function when DOM content is loaded
-// document.addEventListener("DOMContentLoaded", moveQuantityInput);
+document.addEventListener("DOMContentLoaded", moveQuantityInput);
 
 // function addInputBootstrap(){
 //     var newHtml = '<div class="input-group bootstrap-touchspin"><span class="input-group-addon bootstrap-touchspin-prefix" style="display: none;"></span><input type="number" name="qty" id="quantity_wanted" inputmode="numeric" pattern="[0-9]*" value="1" min="1" class="input-group form-control" aria-label="Quantity" style="display: block;"><span class="input-group-addon bootstrap-touchspin-postfix" style="display: none;"></span><span class="input-group-btn-vertical"><button class="btn btn-touchspin js-touchspin bootstrap-touchspin-up" type="button"><i class="material-icons touchspin-up"></i></button><button class="btn btn-touchspin js-touchspin bootstrap-touchspin-down" type="button"><i class="material-icons touchspin-down"></i></button></span></div>';
