@@ -394,10 +394,10 @@ class ManufacturerCore extends ObjectModel
 
         $id_category = null;
         if(Tools::getValue('id_category', 0) != 0) $id_category = Tools::getValue('id_category');
-        $sql_category = ' AND p.`id_category_default` NOT IN(16, 17)';
+        $sql_category = ' AND p.`id_category_default` NOT IN(16, 18)';
 
-        if($id_category == 17){
-            $sql_category = ' AND p.`id_category_default`=17';
+        if($id_category == 18){
+            $sql_category = ' AND p.`id_category_default`=18';
         }elseif($id_category == 16){
             $sql_category = ' AND p.`id_category_default`=16';
         }
