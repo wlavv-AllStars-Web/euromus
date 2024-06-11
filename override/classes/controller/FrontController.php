@@ -268,6 +268,7 @@ class FrontControllerCore extends Controller
             ]
         );
 
+
         /*
          * Globals are DEPRECATED as of version 1.5.0.1
          * Use the Context object to access objects instead.
@@ -374,7 +375,8 @@ class FrontControllerCore extends Controller
             Tools::redirect(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null);
         } elseif (isset($_GET['mylogout'])) {
             $this->context->customer->mylogout();
-            Tools::redirect(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null);
+            // Tools::redirect(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null);
+            Tools::redirect('/');
         }
 
         /*

@@ -153,8 +153,12 @@ class MyAccountController extends MyAccountControllerCore
             'lastYearOrdersTotal' => array_reverse(self::lastYearOrders($idCustomer)['total']),
             'lastYearOrdersColor' => self::random_hexcolor(),
             'ordersByBrand' => self::ordersByBrand($idCustomer),
+            'ordersByBrandColors' => self::lastYearOrders($idCustomer)['colors'],
+            'ordersByBrandBrands' => self::lastYearOrders($idCustomer)['brands'],
         ));
 
+        // echo '<pre>'. print_r(self::ordersByBrand($idCustomer)['brands'],1) .'</pre>';
+        // exit;
         // echo '<pre>'.print_r($this->getTemplateVarOrders(),1).'</pre>';
         // exit;
 
@@ -257,7 +261,7 @@ class MyAccountController extends MyAccountControllerCore
             }
         }
         
-        return ['brands' => $brands, 'totals' => $totals, 'colors' => $colors];
+        return ['brands' => explode(',',$brands), 'totals' => explode(',',$totals), 'colors' => explode(',',$colors)];
 
     }
     
