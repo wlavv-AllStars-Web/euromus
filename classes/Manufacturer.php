@@ -181,6 +181,7 @@ class ManufacturerCore extends ObjectModel
         );
     }
 
+    
     /**
      * Return manufacturers.
      *
