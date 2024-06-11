@@ -27,12 +27,12 @@
 {assign var="currentLanguageIso" value=Context::getContext()->language->iso_code}
 {assign var="currentLanguage" value=Context::getContext()->language->id}
 {assign var="categories" value=Category::getCategories($currentLanguage)}
-{assign var="versionsFordMustang" value=IndexControllerCore::getCarsOfBrand("Ford","Mustang",$currentLanguage)}
-{assign var="versionsChevroletCamaro" value=IndexControllerCore::getCarsOfBrand("Chevrolet","Camaro",$currentLanguage)}
-{assign var="versionsChevroletCorvette" value=IndexControllerCore::getCarsOfBrand("Chevrolet","Corvette",$currentLanguage)}
-{assign var="versionsDodgeChallenger" value=IndexControllerCore::getCarsOfBrand("Dodge","Challenger",$currentLanguage)}
-{assign var="versionsRamTrx" value=IndexControllerCore::getCarsOfBrand("Ram","Trx",$currentLanguage)}
-{assign var="versionsFordBronco" value=IndexControllerCore::getCarsOfBrand("Ford","Bronco",$currentLanguage)}
+{assign var="versionsFordMustang" value=IndexController::getCarsOfBrand("Ford","Mustang",$currentLanguage)}
+{assign var="versionsChevroletCamaro" value=IndexController::getCarsOfBrand("Chevrolet","Camaro",$currentLanguage)}
+{assign var="versionsChevroletCorvette" value=IndexController::getCarsOfBrand("Chevrolet","Corvette",$currentLanguage)}
+{assign var="versionsDodgeChallenger" value=IndexController::getCarsOfBrand("Dodge","Challenger",$currentLanguage)}
+{assign var="versionsRamTrx" value=IndexController::getCarsOfBrand("Ram","Trx",$currentLanguage)}
+{assign var="versionsFordBronco" value=IndexController::getCarsOfBrand("Ford","Bronco",$currentLanguage)}
 
 
 {extends file='page.tpl'}

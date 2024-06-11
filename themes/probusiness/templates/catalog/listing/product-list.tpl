@@ -30,12 +30,15 @@
 
 {block name='content'}
   <section id="main">
-
+{* <pre>{$layout|print_r}</pre> *}
+{* {$listing.label} *}
     {block name='product_list_header'}
       {* <h1 id="js-product-list-header" class="h2">{$listing.label}</h1> *}
+      {if $listing.label === 'New products'}
       <div style="max-width:1350px;margin:auto;">
         <img src="https://www.allstarsmotorsport.fr/img/cms/Header_pages/news.jpg" style="width: 100%;"/>
       </div>
+      {/if}
     {/block}
 
     {block name='subcategory_list'}
@@ -60,7 +63,7 @@
         {/block}
 
         {block name='product_list'}
-          {include file='catalog/_partials/products.tpl' listing=$listing productClass="col-xs-12 col-sm-6 col-xl-6"}
+          {include file='catalog/_partials/products.tpl' listing=$listing productClass="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"}
         {/block}
 
         {block name='product_list_bottom'}

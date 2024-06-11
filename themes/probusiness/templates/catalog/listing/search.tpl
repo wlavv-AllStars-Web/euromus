@@ -10,5 +10,5 @@
 {/block}
 
 {block name='product_list'}
-  {include file='catalog/_partials/products.tpl' listing=$listing productClass="col-xs-12 col-sm-6 col-xl-3"}
+  {include file='catalog/_partials/products.tpl' listing=$listing productClass="col-xs-12 col-sm-12 col-md-12 col-lg-6 col-xl-6"}
 {/block}

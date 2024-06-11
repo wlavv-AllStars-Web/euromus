@@ -19,7 +19,7 @@
 *  International Registered Trademark & Property of ETS-Soft
 *}
 <style>
-  @media (min-width: 900px) {
+  @media (min-width: 901px) {
     .deformula {
       display: none !important;
     }

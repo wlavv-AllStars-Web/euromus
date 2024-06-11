@@ -29,7 +29,7 @@
 
     <div class="thumbnail-container" style="display: flex;align-items:center;">
 
-      <div class="thumbnail-top col-lg-4" style="display: flex !important;" >
+      <div class="thumbnail-top col-lg-3 col-md-6" style="display: flex !important;" >
         {block name='product_thumbnail'}
           {if $product.cover}
             <a href="{$product.url}" class="thumbnail product-thumbnail">
@@ -43,7 +43,7 @@
                   data-full-size-image-url="{$product.cover.large.url}"
                   width="{$product.cover.bySize.home_default.width}"
                   height="{$product.cover.bySize.home_default.height}"
-                  style="height: max-content;width:125px;height:125px;"
+                  style="height: max-content;"
                 />
               </picture>
             </a>
@@ -84,9 +84,9 @@
           <div class="brand-product">{$product.manufacturer_name}</div>
           {block name='product_name'}
             {if $page.page_name == 'index'}
-              <h3 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 600;">{$product.name}</a></h3>
+              <h3 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 600;" title="{$product.name}">{$product.name}</a></h3>
             {else}
-              <h2 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 600;">{$product.name}</a></h2>
+              <h2 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 600;" title="{$product.name}">{$product.name}</a></h2>
             {/if}
           {/block}
           {if ($product.quantity == 1) }

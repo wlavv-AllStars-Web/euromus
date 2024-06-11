@@ -51,12 +51,12 @@
 <div style="padding: 25px 7rem 0 7rem;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
   <div class="row alignment ">
     {foreach $linkBlocks as $linkBlock}
-      <div class="col-md-3 col-sm-10 wrapper">
+      <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
 
         {assign var=_expand_id value=10|mt_rand:100000}
         <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}"
           data-toggle="collapse">
-          <span class="text h3">{$linkBlock.title|escape:'html':'UTF-8'}</span>
+          <span class="text h3" onclick="$('#footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}').toggle('slow')">{$linkBlock.title|escape:'html':'UTF-8'}</span>
           <span class="pull-xs-right">
             
           </span>
@@ -84,7 +84,7 @@
 
       </div>
     {/foreach}
-    <div class="col-md-3 col-sm-10 wrapper">
+    <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
       <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_4"
         data-toggle="collapse">
         <span class="text h3">{l s="Event"}</span>

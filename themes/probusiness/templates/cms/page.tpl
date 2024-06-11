@@ -686,8 +686,8 @@
       {elseif $cms.id === 10}
         <div class="cms-legal">
           <div class="legal-banner">
-            <img class="desktop" src="https://www.all-stars-distribution.com/img/cms/Content_pages/legalnotices/legal_notices_en_lg.jpg" />
-            <img class="mobile" src="https://www.all-stars-distribution.com/img/cms/Content_pages/legalnotices/legal_notices_en_xs.jpg" />
+            <img class="desktop-banner" src="https://www.all-stars-distribution.com/img/cms/Content_pages/legalnotices/legal_notices_en_lg.jpg" />
+            <img class="mobile-banner" src="https://www.all-stars-distribution.com/img/cms/Content_pages/legalnotices/legal_notices_en_xs.jpg" />
           </div>
           <div class="legal-content">
           </div>
@@ -1027,87 +1027,81 @@
                   
 
                   <div class="form-row ">
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-lg-4 col-md-6 ">
                       <label for="inputEmail4">Name<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="inputEmail4">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-lg-4 col-md-6">
                       <label for="inputPassword4">Surname<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="inputPassword4">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group  col-lg-4 col-md-6">
                       <label for="inputEmail4">Email<span style="color:#ee302e;">*</span></label>
                       <input type="email" class="form-control" id="inputEmail4">
                     </div>
-                  </div>
-    
-                  <div class="form-row ">
-                    <div class="form-group col-md-2">
+                  
+                    <div class="form-group col-lg-2 col-md-3">
                       <label for="inputState">Phone<span style="color:#ee302e;">*</span></label>
                       <select id="inputState" class="form-control">
                         <option selected>Please Select...</option>
                         <option>...</option>
                       </select>
                     </div>
-                    <div class="form-group col-md-2">
+                    <div class="form-group col-lg-2 col-md-3">
                       <label for="inputEmail4">Phone Number</label>
                       <input type="text" class="form-control" id="inputEmail4" placeholder="">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-lg-4 col-md-6">
                       <label for="inputAddress">How do you prefer to be contacted?<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="inputAddress" placeholder="">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-lg-4 col-md-6">
                       <label for="inputState">Country<span style="color:#ee302e;">*</span></label>
                       <select id="inputState" class="form-control">
                         <option selected>Please Select...</option>
                         <option>...</option>
                       </select>
                     </div>
-                  </div>
-    
-                  <div class="form-row  ">
-                    <div class="form-group col-md-4">
+                  
+                    <div class="form-group col-lg-4 col-md-6">
                       <label for="inputState">Which position are you applying to<span style="color:#ee302e;">*</span></label>
                       <select id="inputState" class="form-control">
                         <option selected>Please Select...</option>
                         <option>...</option>
                       </select>
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-lg-4 col-md-6">
                       <label for="inputAddress2">Address Line 1<span style="color:#ee302e;">*</span></label>
                       <input type="tel" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-lg-4  col-md-6">
                       <label for="inputAddress2">Address Line 2</label>
                       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
-                  </div>
-    
-                  <div class="form-row ">
-                    <div class="form-group col-md-4">
+                  
+                    <div class="form-group col-lg-4 col-md-6">
                       <label for="inputAddress2">City</label>
                       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-lg-4 col-md-6">
                       <label for="inputAddress2">Zip Code<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
-                    <div class="form-group col-md-4">
+                    <div class="form-group col-lg-4 col-md-6">
                       <label for="inputAddress2">How did you know about this job position?</label>
                       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
                   </div>
     
                 <div class="form-row ">
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-lg-4 col-md-6">
                     <label for="exampleFormControlFile1">Upload your CV ( only PDF files ) <span style="color:#ee302e;">*</span></label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1">
                   </div>
                 </div>
 
                 <div class="form-row ">
-                  <div class="form-group col-md-4">
+                  <div class="form-group col-lg-4 col-md-6">
                     <div class="form-check col-md-12">
                       <input class="form-check-input" type="checkbox" id="gridCheck">
                       <label class="form-check-label" for="gridCheck">

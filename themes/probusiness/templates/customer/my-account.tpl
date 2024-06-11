@@ -162,14 +162,14 @@
       <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">  
         <div class="col-sm-12 text-center">
             <div class="row statistics_container" style="max-width: 1350px; margin: 0 auto;display:flex;">
-              <div class="col-lg-5">
+              <div class="col-lg-8 col-md-8">
                     <div>{l s='Total purchases per month'}</div>
-                    <canvas id="myChart" width="400" height="400"></canvas>
+                    <canvas id="myChart" width="664" height="332"></canvas>
                 </div>
                 <div class="col-lg-2"></div>
-              <div class="col-lg-5">
+              <div class="col-lg-4">
                   <div>{l s='Total purchases by brand (€)'}</div>
-                    <canvas id="chart-area" class="chartjs-render-monitor"></canvas>
+                    <canvas id="chart-area" height="332" class="chartjs-render-monitor"></canvas>
                 </div>
             </div>
         </div>
@@ -214,14 +214,14 @@
                   <h1 style="text-align: center;">Your Personal Information</h1>
                   <p style="text-align: center;">Please be sure to update your personal information if changed.</p>
                 </div>
-                <div class="radio-btns-form-personal  col-lg-12">
-                  <div class="form-check col-md-1 col-xs-6" style="text-align: center;">
+                <div class="radio-btns-form-personal  col-lg-12 col-md-6">
+                  <div class="form-check col-md-3 col-xs-6" style="text-align: center;">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
                     <label class="form-check-label" for="gridRadios1">
                     Mr.
                     </label>
                   </div>
-                  <div class="form-check  col-md-1 col-xs-6" style="text-align: center;">
+                  <div class="form-check  col-md-3 col-xs-6" style="text-align: center;">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                     <label class="form-check-label" for="gridRadios2">
                     Mrs.
@@ -230,23 +230,23 @@
                 </div>
 
               {* <div class="form-row "> *}
-                <div class="form-group col-lg-9 col-md-4 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="firstname">First Name</label>
                   <input type="text" class="form-control" id="firstname" value="{$smarty.post.firstname}">
                 </div>
-                <div class="form-group col-lg-9 col-md-4 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="lastname">Last Name</label>
                   <input type="text" class="form-control" id="lastname" value="{$smarty.post.lastname}">
                 </div>
-                <div class="form-group col-lg-9 col-md-4 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="email">Email</label>
                   <input type="email" class="form-control" id="email" value="{$smarty.post.email}">
                 </div>
-              <div class="form-row">
-                <div class="form-group col-lg-12 col-md-2 col-xs-12">
+              <div class="form-row col-lg-9 col-md-7 ">
+                <div class="form-group col-lg-12 col-md-12 col-xs-12 mx-0">
                   <label>Date of Birth</label>
                 </div>
-                <div class="form-group col-lg-3 col-md-2 col-xs-4">
+                <div class="form-group col-lg-4 col-md-4 col-xs-4 pl-0">
                   <select id="inputState" class="form-control">
                     <option selected>Day</option>
                     <option>...</option>
@@ -255,7 +255,7 @@
                     {/foreach}
                   </select>
                 </div>
-                <div class="form-group col-lg-3 col-md-2 col-xs-4">
+                <div class="form-group col-lg-4 col-md-4 col-xs-4 p-0">
                   <select id="inputState" class="form-control">
                     <option selected>Month</option>
                     <option>...</option>
@@ -264,7 +264,7 @@
                     {/foreach}
                   </select>
                 </div>
-                <div class="form-group col-lg-3 col-md-2 col-xs-4">
+                <div class="form-group col-lg-4 col-md-4 col-xs-4 pr-0">
                   <select id="inputState" class="form-control">
                     <option selected>Year</option>
                     <option>...</option>
@@ -274,20 +274,20 @@
                   </select>
                 </div>
               </div>
-                <div class="form-group col-lg-9 col-md-4 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="old_passwd ">Current Password</label>
                   <input type="password" class="form-control is_required validate" name="old_passwd" id="old_passwd" data-validate="isPasswd">
                 </div>
-                <div class="form-group col-lg-9 col-md-4 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="passwd">New Password</label>
                   <input type="password" class="form-control is_required validate" name="passwd" id="passwd" data-validate="isPasswd">
                 </div>
-                <div class="form-group col-lg-9 col-md-4 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="confirmation">New Password Confirmation</label>
                   <input type="password" class="form-control is_required validate" name="confirmation" id="confirmation" data-validate="isPasswd">
                 </div>
                 {* {if $newsletter} *}
-                <div class="form-group col-lg-12 col-md-4 col-xs-12">
+                <div class="form-group col-lg-12 col-md-7 col-xs-12">
                   <div class="form-check col-md-12">
                       <input class="form-check-input" type="checkbox" id="gridCheck">
                       <label class="form-check-label" for="gridCheck">
@@ -303,17 +303,17 @@
 
             <div class="form-row company-info-personal" style="padding-top: 2rem;"> *}
             <div class="right-form-personal  col-lg-6 col-xs-12">
-              <div class="form-group col-lg-12 col-md-4 col-xs-12" style="padding-top: 2rem;">
+              <div class="form-group col-lg-12 col-md-7 col-xs-12" style="padding-top: 2rem;">
               <h1 style="text-align: center;">Your Company Information</h1>
               </div>
               {* </div>
 
               <div class="form-row "> *}
-                <div class="form-group col-lg-9 col-md-4 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="inputEmail4">Company Name</label>
                   <input type="text" class="form-control" id="inputEmail4">
                 </div>
-                <div class="form-group col-lg-9 col-md-4 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="inputPassword4">Vat Number</label>
                   <input type="text" class="form-control" id="inputPassword4">
                 </div>
@@ -369,12 +369,7 @@
     </div>
 
 
-    
-
-    
-
-
-
+  
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
     <script>
@@ -404,16 +399,17 @@
 
     /** PIE CHART **/
 
+
 	window.myPie = new Chart(document.getElementById('chart-area').getContext('2d'), 
 	    {
     		type: 'pie',
     		data: {
     			datasets: [{
-    				data: ['{foreach from=$ordersByBrand['totals'] item=totalbrand key=key name=name}{$totalbrand}{/foreach}'],
-    				backgroundColor: ['{foreach from=$ordersByBrand['colors'] item=color key=key name=name}{$color}{/foreach}'],
+    				data: [{foreach from=$ordersByBrand['totals'] item=totalbrand key=key name=name}{$totalbrand},{/foreach}],
+    				backgroundColor: '{$ordersByBrandColors}',
     				label: 'Dataset 1'
     			}],
-    			labels: ['{foreach from=$ordersByBrand['brands'] item=brand key=key name=name}{$brand}{/foreach}']
+    			labels: [{foreach from=$ordersByBrand['brands'] item=brand key=key name=name}'{$brand}',{/foreach}]
     		},
     		options: {
     			responsive: true

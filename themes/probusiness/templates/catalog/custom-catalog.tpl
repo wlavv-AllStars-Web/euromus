@@ -8,7 +8,7 @@
 </div>
 
 <div class="spacer-20"></div>
-<table id="cms_catalog_main_table" style="max-width: 1350px;overflow-x:auto;display:flex;">
+<table id="cms_catalog_main_table" style="max-width: 1350px;">
 	<tbody>
 		<tr class="cms_catalog_table_header">
 			<td class="header_label">{l s='Brand'}       </td>
