@@ -120,6 +120,11 @@
     $("#select_mini_32").on("change",  function () { setModal(32, 3, $(this), 'miniature' ) });
     $("#select_mini_33").on("change",  function () { setModal(33, 3, $(this), 'miniature' ) });
     $("#select_mini_34").on("change",  function () { setModal(34, 3, $(this), 'miniature' ) });
+
+    // teste asm
+    $("#select_mini_43").on("change",  function () { setModal(43, 3, $(this), 'miniature' ) });
+    $("#select_mini_44").on("change",  function () { setModal(44, 3, $(this), 'miniature' ) });
+    $("#select_mini_45").on("change",  function () { setModal(45, 3, $(this), 'miniature' ) });
     
     $(document).on("click","#uploadSubmitButton", function(){
         var dataForm = new FormData($('#uploadForm')[0]);
@@ -163,6 +168,9 @@
                 if(id_image == 16) id_element = 1;
                 if(id_image == 17) id_element = 2;
                 if(id_image == 18) id_element = 3;
+                if(id_image == 46) id_element = 1;
+                if(id_image == 47) id_element = 2;
+                if(id_image == 48) id_element = 3;
             }
         }else if(element === 'manufacturer'){
             document.getElementById('select_car_' + id_image).selectedIndex = 0;

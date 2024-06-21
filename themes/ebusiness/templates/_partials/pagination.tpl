@@ -66,16 +66,16 @@
     border: 1px solid #999;
 }
 .pagination li a:hover{
-  color: var(--color-red)!important;
+  color: var(--asm-color)!important;
 }
 
 .pagination .current a  {
     background-color: #fff !important;
-    color: red !important;
+    color: var(--asm-color) !important;
     margin: 2px !important;
     font-size: 14px !important;
     font-weight: bold;
-    border: 1px solid red;
+    border: 1px solid var(--asm-color);
 }
 
 .pagination .current a:hover{

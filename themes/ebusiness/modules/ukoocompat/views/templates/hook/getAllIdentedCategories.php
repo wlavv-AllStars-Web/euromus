@@ -12,10 +12,10 @@ function getAllFather($id_lang)
     $html = '';
 
     $sql = "SELECT *
-        FROM ps_category 
-        INNER JOIN ps_category_lang
-        ON ps_category_lang.id_category = ps_category.id_category 
-        WHERE ps_category.active = 1  AND ps_category_lang.id_lang=" . $id_lang . " AND ps_category.id_parent=2";
+        FROM "._DB_PREFIX_."category 
+        INNER JOIN "._DB_PREFIX_."category_lang
+        ON "._DB_PREFIX_."category_lang.id_category = "._DB_PREFIX_."category.id_category 
+        WHERE "._DB_PREFIX_."category.active = 1  AND "._DB_PREFIX_."category_lang.id_lang=" . $id_lang . " AND "._DB_PREFIX_."category.id_parent=2";
 
     $conn = getConn();
     $result = $conn->query($sql);
@@ -40,12 +40,12 @@ function getAllFather($id_lang)
 function getSons($id_lang, $id_parent, $html = '')
 {
     $sql = "SELECT *
-        FROM ps_category 
-        INNER JOIN ps_category_lang
-        ON ps_category_lang.id_category = ps_category.id_category 
-        INNER JOIN ps_ukoocompat_criterion
-        ON ps_ukoocompat_criterion.idCategory = ps_category.id_category 
-        WHERE ps_category.active = 1  AND ps_category_lang.id_lang=" . $id_lang . " AND ps_category.id_parent=" . $id_parent;
+        FROM "._DB_PREFIX_."category 
+        INNER JOIN "._DB_PREFIX_."category_lang
+        ON "._DB_PREFIX_."category_lang.id_category = "._DB_PREFIX_."category.id_category 
+        INNER JOIN "._DB_PREFIX_."ukoocompat_criterion
+        ON "._DB_PREFIX_."ukoocompat_criterion.idCategory = "._DB_PREFIX_."category.id_category 
+        WHERE "._DB_PREFIX_."category.active = 1  AND "._DB_PREFIX_."category_lang.id_lang=" . $id_lang . " AND "._DB_PREFIX_."category.id_parent=" . $id_parent;
 
     $conn = getConn();
     $result = $conn->query($sql);

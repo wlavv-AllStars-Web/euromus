@@ -2,11 +2,11 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Import finished
+Importul s-a terminat
 
-The file {filename} has been successfully imported to your store.
+Fisierul {filename} a fost importat in magazinul tau.
 
 [{shop_name}]({shop_url})
 

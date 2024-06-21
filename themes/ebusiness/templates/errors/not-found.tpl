@@ -45,6 +45,6 @@
     text-align: center;
   }
   #manufacturer main #wrapper #content h1 {
-    color: var(--color-red);
+    color: var(--asm-color);
   }
 </style>

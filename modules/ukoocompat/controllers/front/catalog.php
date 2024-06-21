@@ -32,8 +32,8 @@ class UkooCompatCatalogModuleFrontController extends ModuleFrontController
 
         // on récupère les informations de la recherche
         $search = new UkooCompatSearch((int)Tools::getValue('id_search'), (int)$this->context->language->id);
-        echo $search;
-        exit;
+        // echo $search;
+        // exit;
         $search->current_id_lang = (int)$this->context->language->id;
         $search->filters = $search->getFilters((int)$this->context->language->id);
        

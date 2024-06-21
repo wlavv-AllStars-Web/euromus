@@ -4,9 +4,9 @@ namespace PrestaShop\Module\PsEventbus\Api;
 
 use GuzzleHttp\Psr7\Request;
 use PrestaShop\Module\PsEventbus\Config\Config;
+use PrestaShop\Module\PsEventbus\Service\PsAccountsAdapterService;
 use Prestashop\ModuleLibGuzzleAdapter\ClientFactory;
 use Prestashop\ModuleLibGuzzleAdapter\Interfaces\HttpClientInterface;
-use PrestaShop\PsAccountsInstaller\Installer\Facade\PsAccounts;
 
 class SyncApiClient
 {
@@ -35,15 +35,15 @@ class SyncApiClient
     private $shopId;
 
     /**
-     * @param PsAccounts $psAccounts
      * @param string $syncApiUrl
      * @param \Ps_eventbus $module
+     * @param PsAccountsAdapterService $psAccountsAdapterService
      */
-    public function __construct($psAccounts, $syncApiUrl, $module)
+    public function __construct(string $syncApiUrl, \Ps_eventbus $module, PsAccountsAdapterService $psAccountsAdapterService)
     {
         $this->module = $module;
-        $this->jwt = $psAccounts->getPsAccountsService()->getOrRefreshToken();
-        $this->shopId = $psAccounts->getPsAccountsService()->getShopUuid();
+        $this->jwt = $psAccountsAdapterService->getOrRefreshToken();
+        $this->shopId = $psAccountsAdapterService->getShopUuid();
         $this->syncApiUrl = $syncApiUrl;
     }
 
@@ -58,7 +58,7 @@ class SyncApiClient
     {
         return (new ClientFactory())->getClient([
             'allow_redirects' => true,
-            'connect_timeout' => 3,
+            'connect_timeout' => 10,
             'http_errors' => false,
             'timeout' => $timeout,
         ]);
@@ -71,7 +71,7 @@ class SyncApiClient
      */
     public function validateJobId($jobId)
     {
-        $rawResponse = $this->getClient()->sendRequest(
+        $response = $this->getClient()->sendRequest(
             new Request(
                 'GET',
                 $this->syncApiUrl . '/job/' . $jobId,
@@ -84,21 +84,21 @@ class SyncApiClient
         );
 
         return [
-            'status' => substr((string) $rawResponse->getStatusCode(), 0, 1) === '2',
-            'httpCode' => $rawResponse->getStatusCode(),
+            'status' => substr((string) $response->getStatusCode(), 0, 1) === '2',
+            'httpCode' => $response->getStatusCode(),
         ];
     }
 
     /**
-     * @param array $shopContents
+     * @param array $shopContent
      * @param int $shopContentId
      * @param string $action
      *
      * @return array
      */
-    public function liveSync($shopContents, $shopContentId, $action)
+    public function liveSync($shopContent, $shopContentId, $action)
     {
-        $rawResponse = $this->getClient(3)->sendRequest(
+        $response = $this->getClient(3)->sendRequest(
             new Request(
                 'POST',
                 $this->syncApiUrl . '/notify/' . $this->shopId,
@@ -108,14 +108,14 @@ class SyncApiClient
                     'User-Agent' => 'ps-eventbus/' . $this->module->version,
                     'Content-Type' => 'application/json',
                 ],
-                '{"shopContents":' . json_encode($shopContents) . ', "shopContentId": ' . $shopContentId . ', "action": "' . $action . '"}'
+                '{"shopContents":' . json_encode($shopContent) . ', "shopContentId": ' . $shopContentId . ', "action": "' . $action . '"}'
             )
         );
 
         return [
-            'status' => substr((string) $rawResponse->getStatusCode(), 0, 1) === '2',
-            'httpCode' => $rawResponse->getStatusCode(),
-            'body' => $rawResponse->getBody(),
+            'status' => substr((string) $response->getStatusCode(), 0, 1) === '2',
+            'httpCode' => $response->getStatusCode(),
+            'body' => $response->getBody(),
         ];
     }
 }

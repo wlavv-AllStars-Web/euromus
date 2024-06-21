@@ -24,7 +24,12 @@
  *}  
 
 {* <pre>{print_r($brand,1)}</pre> *}
-<div id="js-product-list-top" class="row products-selection">
+<div class="btn-toggleFilters mobile" onclick="toggleFilters()">
+  <span><i class="fa-solid fa-filter"></i></span>
+  <span>Apply Filters</span>
+</div>
+<div id="js-product-list-top" class="products-selection">
+
   {* <div class="col-md-6 hidden-sm-down total-products"> *}
     {*if $listing.products|count > 1}
       <p>{l s='There are %product_count% products.' d='Shop.Theme.Catalog' sprintf=['%product_count%' => $listing.products|count]}</p>
@@ -68,22 +73,22 @@
   {assign var="categories" value=Category::getCategories()}
   {* {assign var="attribute_groups" value=AttributeGroup::getAttributesGroups()} *}
 
-{* <select name="category_id">
-  {foreach from=$categories item=category}
-      <option value="{$category.id_category}">{$category.name}</option>
-  {/foreach}
-</select> *}
+  {* <select name="category_id">
+    {foreach from=$categories item=category}
+        <option value="{$category.id_category}">{$category.name}</option>
+    {/foreach}
+  </select> *}
 
 
-{* <pre>{print_r($attribute_groups,1)}</pre> *}
+  {* <pre>{print_r($attribute_groups,1)}</pre> *}
   {* bycategory *}
   <div class="box-sortby col-md-3">
     <div class="row sort-by-row">
-      <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
+      {* <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
         <button id="search_filter_toggler" class="btn btn-secondary">
           {l s='Filter' d='Shop.Theme.Actions'}
         </button>
-      </div>
+      </div> *}
 
       <div class="{*if !empty($listing.rendered_facets)}col-sm-9 col-xs-8{else}col-sm-12 col-xs-12{/if*} products-sort-order dropdown">
         <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -112,11 +117,11 @@
   {* bybrand *}
   <div class=" box-sortby col-md-3">
     <div class="row sort-by-row">
-      <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
+      {* <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
         <button id="search_filter_toggler" class="btn btn-secondary">
           {l s='Filter' d='Shop.Theme.Actions'}
         </button>
-      </div>
+      </div> *}
 
       <div class="{*if !empty($listing.rendered_facets)}col-sm-9 col-xs-8{else}col-sm-12 col-xs-12{/if*} products-sort-order dropdown">
         <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -139,15 +144,15 @@
     </div>
   </div>
 
-{* SortBy *}
+  {* SortBy *}
   <div class="box-sortby col-md-3">
     <div class="row sort-by-row">
       {if !empty($listing.rendered_facets)}
-        <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
+        {* <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
           <button id="search_filter_toggler" class="btn btn-secondary">
             {l s='Filter' d='Shop.Theme.Actions'}
           </button>
-        </div>
+        </div> *}
       {/if}
       {block name='sort_by'}
         {include file='catalog/_partials/sort-orders.tpl' sort_orders=$listing.sort_orders}
@@ -158,11 +163,11 @@
   {* bypage *}
   <div class="box-sortby col-md-3">
     <div class="row sort-by-row">
-      <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
+      {* <div class="col-sm-3 col-xs-4 hidden-md-up filter-button">
         <button id="search_filter_toggler" class="btn btn-secondary">
           {l s='Filter' d='Shop.Theme.Actions'}
         </button>
-      </div>
+      </div> *}
 
       <div class="{*if !empty($listing.rendered_facets)}col-sm-9 col-xs-8{else}col-sm-12 col-xs-12{/if*} products-sort-order dropdown">
         <a class="select-title" rel="nofollow" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -192,44 +197,44 @@
     '%total%' => $listing.pagination.total_items
     ]}
   </div> *}
-</div>
-<style>
-  #manufacturer .products-selection {
-    display: flex;
-    justify-content: center;
-  }
+  </div>
+  <style>
+    #manufacturer .products-selection {
+      display: flex;
+      justify-content: center;
+    }
 
-  #manufacturer .select-title{
-    color: var(--color-red);
-    font-size: 14px;
-    padding: 0.425rem;
-  }
-  #manufacturer .sort-by-row {
-    display: flex;
-    justify-content:center;
-  }
+    #manufacturer .select-title{
+      color: var(--asm-color)
+      font-size: 14px;
+      padding: 0.425rem;
+    }
+    #manufacturer .sort-by-row {
+      display: flex;
+      justify-content:center;
+    }
 
-  #manufacturer .products-sort-order {
-    width: 400px;
-    height: 32px;
-    text-align: center;
-  }
-  #manufacturer .products-sort-order:hover .select-title{
-    color: black;
-  }
+    #manufacturer .products-sort-order {
+      width: 400px;
+      height: 32px;
+      text-align: center;
+    }
+    #manufacturer .products-sort-order:hover .select-title{
+      color: black;
+    }
 
-  #manufacturer .box-sortby{
-    max-width: 400px;
-  }
+    #manufacturer .box-sortby{
+      max-width: 400px;
+    }
 
-  #manufacturer .products-sort-order .dropdown-menu {
-    width: 100%;
-    border: 1px solid #d0d0d0;
-  }
+    #manufacturer .products-sort-order .dropdown-menu {
+      width: 100%;
+      border: 1px solid #d0d0d0;
+    }
 
-  #manufacturer .products-sort-order .select-list:hover{
-    background: var(--color-red);
-  }
+    #manufacturer .products-sort-order .select-list:hover{
+      background: var(--asm-color)
+    }
 
-  
-</style>
+    
+  </style>

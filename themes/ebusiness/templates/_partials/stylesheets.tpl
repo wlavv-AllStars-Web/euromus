@@ -25,24 +25,12 @@
 {foreach $stylesheets.external as $stylesheet}
   <link rel="stylesheet" href="{$stylesheet.uri}" type="text/css" media="{$stylesheet.media}" />
 {/foreach}
-{*
-<link rel="stylesheet" href="{$urls.css_url}owl/owl.carousel.css" type="text/css" media="all" />
-<link rel="stylesheet" href="{$urls.css_url}owl/owl.theme.css" type="text/css" media="all" />
-<link rel="stylesheet" href="{$urls.css_url}owl/owl.transitions.css" type="text/css" media="all" />*}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <link rel="stylesheet" href="{$urls.css_url}font-elegant.css" type="text/css" media="all" />
 <link rel="stylesheet" href="{$urls.css_url}mycss.css" type="text/css" media="all" />
 <link href="{$urls.css_url}cmsASM.css" rel="stylesheet" type="text/css" media="all"/>
 
   
-{if isset($tc_config.YBC_TC_FONT1_DATA) && $tc_config.YBC_TC_FONT1_DATA != ''}
-    <link rel="stylesheet" href="{$tc_config.YBC_TC_FONT1_DATA}" media="all" />
-{/if}
-{if isset($tc_config.YBC_TC_FONT2_DATA) && $tc_config.YBC_TC_FONT2_DATA != ''}
-    <link rel="stylesheet" href="{$tc_config.YBC_TC_FONT2_DATA}" media="all" />
-{/if}
-{if isset($tc_config.YBC_TC_FONT3_DATA) && $tc_config.YBC_TC_FONT3_DATA != ''}
-    <link rel="stylesheet" href="{$tc_config.YBC_TC_FONT3_DATA}" media="all" />
-{/if}
 {foreach $stylesheets.inline as $stylesheet}
   <style>
     {$stylesheet.content}

@@ -27,7 +27,7 @@
   var productCommentAbuseReportErrorMessage = '{l|escape:'javascript' s='Sorry, your abuse report cannot be sent.' d='Modules.Productcomments.Shop'}';
 </script>
 
-<div class="product-comments-list-header-block">
+{* <div class="product-comments-list-header-block">
   <div class="col-md-12 col-sm-12" id="product-comments-list-header">
     <div class="comments-nb">
       <i class="material-icons" data-icon="chat"></i>
@@ -35,7 +35,7 @@
     </div>
     {include file='module:productcomments/views/templates/hook/average-grade-stars.tpl' grade=$average_grade}
   </div>
-</div>
+</div> *}
 
 {include file='module:productcomments/views/templates/hook/product-comment-item-prototype.tpl' assign="comment_prototype"}
 {include file='module:productcomments/views/templates/hook/empty-product-comment.tpl'}
@@ -48,17 +48,17 @@
        data-comment-item-prototype="{$comment_prototype|escape:'html'}">
   </div>
 </div>
-<div class="product-comments-list-footer-block">
+{* <div class="product-comments-list-footer-block">
   <div class="col-md-12 col-sm-12" id="product-comments-list-footer">
     <div id="product-comments-list-pagination"></div>
     {if $post_allowed && $nb_comments != 0}
-      <button class="btn btn-comment btn-comment-big post-product-comment">
+      <a class="btn btn-comment btn-comment-big post-product-comment">
         <i class="material-icons" data-icon="edit"></i>
         {l s='Write your review' d='Modules.Productcomments.Shop'}
-      </button>
+      </a>
     {/if}
   </div>
-</div>
+</div> *}
 
 {* Appreciation post error modal *}
 {include file='module:productcomments/views/templates/hook/alert-modal.tpl'

@@ -21,7 +21,7 @@
 
 
 
-<form id="ukoocompat_search_block_form_1" action="/{$lang_iso}/module/ukoocompat/listing" method="POST"> 
+<form id="ukoocompat_search_block_form_1" action="/en/module/ukoocompat/listing" method="POST" style="display: none;"> 
 
 <input type="hidden" id="temp_multiFilter_news" name="temp_news_compats" value="{$news_compats}"/>
 <input type="hidden" id="temp_multiFilter_order_by" name="orderby" value="{$order_by_compats}"/>
@@ -149,7 +149,7 @@
             
             {* <pre>{print_r($pagination,1)}</pre> *}
             
-            {include file="themes/classic/templates/catalog/listing/product-list.tpl" listing=$listing}
+            {include file="themes/ebusiness/templates/catalog/listing/product-list.tpl" listing=$listing products=$products}
 
 
         {else}
@@ -159,7 +159,7 @@
         {if $products}
             <div class="content_sortPagiBar">
                 {* <div class="bottom-pagination-content clearfix"> {include file="$tpl_dir./pagination.tpl" paginationId='top'} </div> *}
-                {* <div class="bottom-pagination-content clearfix"> {include file="file:themes/classic/templates/_partials/pagination.tpl" paginationId='top'} </div> *}
+                {* <div class="bottom-pagination-content clearfix"> {include file="file:themes/ebusiness/templates/_partials/pagination.tpl" paginationId='top'} </div> *}
 
             </div>
         {/if}
@@ -174,7 +174,7 @@
             {* <span> {include file="themes/theme1164/mobile/wm_top_filter.tpl"} </span> *}
         </div>
 
-		{include file="themes/classic/templates/catalog/listing/product-list.tpl" listing=$listing}
+		{include file="themes/ebusiness/templates/catalog/listing/product-list.tpl" listing=$listing}
 		<div class="content_sortPagiBar">
 			<div class="bottom-pagination-content clearfix">
 				{* {include file="$tpl_dir./mobile/pagination.tpl" paginationId='bottom'} *}
@@ -184,7 +184,8 @@
 {else}
     {if !Context::getContext()->isMobile()}
         <div class="content_sortPagiBar">
-            {include file="$tpl_dir./wm_top_filter.tpl"}
+            {* {include file="$tpl_dir./wm_top_filter.tpl"} *}
+            {include file="themes/ebusiness/templates/catalog/listing/product-list.tpl" listing=$listing}
             {if $products}<div class="top-pagination-content clearfix"> {include file="file:themes/classic/templates/_partials/pagination.tpl"} </div>{/if}
         </div>
     {else}
@@ -193,7 +194,8 @@
             <span>{${"apply_filter_$lang_iso"}}</span>
         </div>
         <div class="content_sortPagiBar" id="filters_holder" style="display: none;">
-            <span> {include file="themes/theme1164/mobile/wm_top_filter.tpl"} </span>
+            {* <span> {include file="themes/theme1164/mobile/wm_top_filter.tpl"} </span> *}
+            {include file="themes/ebusiness/templates/catalog/listing/product-list.tpl" listing=$listing}
         </div>
     {/if}
     <div class="spacer-15"></div>

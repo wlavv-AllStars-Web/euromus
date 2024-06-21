@@ -22,7 +22,7 @@
       <div class="card-block">
         <div class="row">
           <div class="col-md-12">
-            <h3 class="h1 card-title">
+            <h3 class="h3 card-title">
                 {$translations.blockTitle|escape:'html':'UTF-8'}
             </h3>
 
@@ -30,19 +30,30 @@
               <dl>
                 <dt>{$translations.fundingSource|escape:'html':'UTF-8'}</dt>
                 <dd>{$orderPayPalFundingSourceTranslated|escape:'html':'UTF-8'}</dd>
-                  {if $orderPayPalTransactionId}
-                    <dt>{$translations.transactionIdentifier|escape:'html':'UTF-8'}</dt>
-                    <dd>{$orderPayPalTransactionId|escape:'html':'UTF-8'}</dd>
-                    <dt>{$translations.transactionStatus|escape:'html':'UTF-8'}</dt>
-                    <dd>{$orderPayPalTransactionStatusTranslated|escape:'html':'UTF-8'}</dd>
-                    <dt>{$translations.amountPaid|escape:'html':'UTF-8'}</dt>
-                    <dd>{$orderPayPalTransactionAmount|escape:'html':'UTF-8'}</dd>
+                {if $vault}
+                <dt>{$translations.paymentMethodStatus|escape:'html':'UTF-8'}</dt>
+                <dd>
+                  {$tokenIdentifier|escape:'html':'UTF-8'}
+                  {if $isTokenSaved}
+                    {$translations.paymentTokenSaved|escape:'html':'UTF-8'}
                   {else}
-                    <dt>{$translations.orderIdentifier|escape:'html':'UTF-8'}</dt>
-                    <dd>{$orderPayPalId|escape:'html':'UTF-8'}</dd>
-                    <dt>{$translations.orderStatus|escape:'html':'UTF-8'}</dt>
-                    <dd>{$orderPayPalStatus|escape:'html':'UTF-8'}</dd>
+                    {$translations.paymentTokenNotSaved|escape:'html':'UTF-8'}
                   {/if}
+                </dd>
+                {/if}
+                {if $orderPayPalTransactionId}
+                  <dt>{$translations.transactionIdentifier|escape:'html':'UTF-8'}</dt>
+                  <dd>{$orderPayPalTransactionId|escape:'html':'UTF-8'}</dd>
+                  <dt>{$translations.transactionStatus|escape:'html':'UTF-8'}</dt>
+                  <dd>{$orderPayPalTransactionStatusTranslated|escape:'html':'UTF-8'}</dd>
+                  <dt>{$translations.amountPaid|escape:'html':'UTF-8'}</dt>
+                  <dd>{$orderPayPalTransactionAmount|escape:'html':'UTF-8'}</dd>
+                {else}
+                  <dt>{$translations.orderIdentifier|escape:'html':'UTF-8'}</dt>
+                  <dd>{$orderPayPalId|escape:'html':'UTF-8'}</dd>
+                  <dt>{$translations.orderStatus|escape:'html':'UTF-8'}</dt>
+                  <dd>{$orderPayPalStatus|escape:'html':'UTF-8'}</dd>
+                {/if}
               </dl>
             </div>
               {if $approvalLink && $orderPayPalStatus === 'PENDING_APPROVAL'}

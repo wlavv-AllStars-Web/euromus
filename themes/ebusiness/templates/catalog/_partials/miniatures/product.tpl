@@ -22,71 +22,43 @@
  * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
  * International Registered Trademark & Property of PrestaShop SA
  *}
-<style>
-
-.thumbnail-container{
-  width: 456px !important;
-  border: 2px solid white; 
-}
-
-.thumbnail-container:hover {
-  border: 2px solid var(--color-red)!important;
-}
-
-.add_to_cart_button .btn-primary i {
-  transform: rotate(0);
-  color: var(--color-red);
-}
-
-.add_to_cart_button .btn.btn-primary {
-  transform: rotate(0);
-  border: solid 1px #d8d8d8;
-  width: 48px;
-  height: 48px;
-  margin-bottom: 0;
-  margin-top: 1rem;
-}
-
-.add_to_cart_button .btn.btn-primary:hover{
-  background: var(--color-red);
-  border: solid 1px var(--color-red);
-}
-
-.add_to_cart_button .btn.btn-primary:hover ~ .add_to_cart i::before {
-  color: white !important;
-}
-
-
-.add_to_cart i::before{
-font-size: 24px !important;
-}
-
-.product-miniature {
-  width: fit-content;
-  padding: 0 !important;
-}
-
-.product-description .product-title a:hover {
-  color: #dd1312;
-}
-
-
-#products .product-title{
-  margin-bottom: 0;
-}
-
-</style>
 {* <pre>{print_r($product['category'],1)}</pre> *}
-
+{* <pre>{$ur|print_r}</pre> *}
+{* <pre>{$product|print_r}</pre> *}
 <article class="product-miniature js-product-miniature d-flex justify-content-center col-lg-3" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" itemscope itemtype="http://schema.org/Product">
   <div class="thumbnail-container" style="width: 526px;height:349px;display:flex;flex-direction:column;justify-content:center;align-items:center;position:relative">
     <div class="image_item_product" style="border: 0;">
-        {block name='product_thumbnail'}
-          <a href="{$product.url}" class="thumbnail product-thumbnail">
-            <img src = "{$product.cover.bySize.home_default.url}" alt = "{$product.cover.legend}"
-              data-full-size-image-url = "{$product.cover.large.url}" width="300" height="200" />
-          </a>
-        {/block}
+    {block name='product_thumbnail'}
+      {if $product.cover_image_id}
+        <a href="{$product.link}" class="thumbnail product-thumbnail">
+          <picture>
+            {* {if !empty($product.cover.bySize.home_default.sources.avif)}<source srcset="{$product.cover.bySize.home_default.sources.avif}" type="image/avif">{/if}
+            {if !empty($product.cover.bySize.home_default.sources.webp)}<source srcset="{$product.cover.bySize.home_default.sources.webp}" type="image/webp">{/if} *}
+            <img
+            src="{if !empty($product.cover.bySize.home_default.url)}{$product.cover.bySize.home_default.url}{else}{$link->getImageLink($product.link_rewrite, $product.cover_image_id, 'home_default')}{/if}"
+              alt="{if !empty($product.cover.legend)}{$product.cover.legend}{else}{$product.name|truncate:30:'...'}{/if}"
+              loading="lazy"
+              data-full-size-image-url="{$product.cover.large.url}"
+              width="{$product.cover.bySize.home_default.width}"
+              height="{$product.cover.bySize.home_default.height}"
+            />
+          </picture>
+        </a>
+      {else}
+        <a href="{$product.url}" class="thumbnail product-thumbnail">
+          <picture>
+            {if !empty($urls.no_picture_image.bySize.home_default.sources.avif)}<source srcset="{$urls.no_picture_image.bySize.home_default.sources.avif}" type="image/avif">{/if}
+            {if !empty($urls.no_picture_image.bySize.home_default.sources.webp)}<source srcset="{$urls.no_picture_image.bySize.home_default.sources.webp}" type="image/webp">{/if}
+            <img
+              src="{$urls.no_picture_image.bySize.home_default.url}"
+              loading="lazy"
+              width="{$urls.no_picture_image.bySize.home_default.width}"
+              height="{$urls.no_picture_image.bySize.home_default.height}"
+            />
+          </picture>
+        </a>
+      {/if}
+    {/block}
         {* <div class="highlighted-informationsif !$product.main_variants} no-variants{/if"> *}
           {* <div class="add_to_cart_button"> *}
 {*              <form action="{$urls.pages.cart}" method="post">*}
@@ -113,32 +85,57 @@ font-size: 24px !important;
             {/if}
         {/block}
     </div>
-    
-    {block name='product_price_and_shipping'}
-      {if $product.show_price}
-        <div class="product_pricebox" style="width: 100%;display:flex;">
-          <div class="product-price-and-shipping" style="width: fit-content;height:31px;background:var(--color-red);border-radius:0 50px 50px 0;display:flex;align-items:center;min-width:200px;">
-            {hook h='displayProductPriceBlock' product=$product type="before_price"}
+    {if isset($filter_1)}
+      {block name='product_price_and_shipping'}
+        {if $product.show_price}
+          <div class="product_pricebox" style="width: 100%;display:flex;">
+            <div class="product-price-and-shipping" style="width: fit-content;height:31px;background:var(--asm-color);border-radius:0 50px 50px 0;display:flex;align-items:center;min-width:200px;">
+              {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
-            <span itemprop="price" class="price" style="color: white;padding:0 0rem 0 1rem;font: 600 21px/26px 'Open Sans', sans-serif;margin-right:0;">{$product.price}</span>
-            
-            {if $product.has_discount}
-              {hook h='displayProductPriceBlock' product=$product type="old_price"}
+              <span itemprop="price" class="price" style="color: white;padding:0 0rem 0 1rem;font: 600 21px/26px 'Open Sans', sans-serif;margin-right:0;">{$product.price}€</span>
+              
+              {if $product.has_discount}
+                {hook h='displayProductPriceBlock' product=$product type="old_price"}
 
-              <span class="regular-price" style="color: #131313;font-weight:600;font-size:19px;padding-top:4px;">{$product.regular_price}</span>
-              {*if $product.discount_type === 'percentage'}
-                <span class="discount-percentage">{$product.discount_percentage}</span>
-              {/if*}
-            {/if}
-            
-            {hook h='displayProductPriceBlock' product=$product type='unit_price'}
+                <span class="regular-price" style="color: #131313;font-weight:600;font-size:19px;padding-top:4px;">{$product.regular_price}€</span>
+                {*if $product.discount_type === 'percentage'}
+                  <span class="discount-percentage">{$product.discount_percentage}</span>
+                {/if*}
+              {/if}
+              
+              {hook h='displayProductPriceBlock' product=$product type='unit_price'}
 
-            {hook h='displayProductPriceBlock' product=$product type='weight'}
+              {hook h='displayProductPriceBlock' product=$product type='weight'}
+            </div>
           </div>
-        </div>
-      {/if}
-    {/block}
+        {/if}
+      {/block}
+    {else}
+      {block name='product_price_and_shipping'}
+        {if $product.show_price}
+          <div class="product_pricebox" style="width: 100%;display:flex;">
+            <div class="product-price-and-shipping" style="width: fit-content;height:31px;background:var(--asm-color);border-radius:0 50px 50px 0;display:flex;align-items:center;min-width:200px;">
+              {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
+              <span itemprop="price" class="price" style="color: white;padding:0 0rem 0 1rem;font: 600 21px/26px 'Open Sans', sans-serif;margin-right:0;">{$product.price}</span>
+              
+              {if $product.has_discount}
+                {hook h='displayProductPriceBlock' product=$product type="old_price"}
+
+                <span class="regular-price" style="color: #131313;font-weight:600;font-size:19px;padding-top:4px;">{$product.regular_price}</span>
+                {*if $product.discount_type === 'percentage'}
+                  <span class="discount-percentage">{$product.discount_percentage}</span>
+                {/if*}
+              {/if}
+              
+              {hook h='displayProductPriceBlock' product=$product type='unit_price'}
+
+              {hook h='displayProductPriceBlock' product=$product type='weight'}
+            </div>
+          </div>
+        {/if}
+      {/block}
+    {/if}
     <div class="product-description" style="color: black;">
     
       {block name='product_name'}
@@ -146,18 +143,28 @@ font-size: 24px !important;
         <div style="display:flex;align-items:flex-start;justify-content: space-between;">
           <h4 class="h3 product-title"  itemprop="name" style="max-width: 382px;text-align:start;padding:0 0.5rem; margin-top:11px;"><a style="color: #131313;font-size:14px;text-transform:uppercase;" href="{$product.url}">{$product.name}</a></h4>
           <div class="add_to_cart_button" style="margin-right: 1rem;">
-  {*              <form action="{$urls.pages.cart}" method="post">*}
-                <div>
-                      <input type="hidden" name="token" value="{$static_token}" />
-                      <input type="hidden" value="{$product.id_product}" name="id_product" />
-                      <input type="hidden" class="input-group form-control atc_qty" name="qty" value="1">
-  {*                    <button data-button-action="add-to-cart" class="btn btn-primary" {if $product.quantity <= 0}disabled="disabled"{/if}>*}
-                    <button class="add_to_cart btn btn-primary" onclick="mypresta_productListCart.add({literal}$(this){/literal});">
-                          {*l s='Buy Now' d='Shop.Theme.Actions'*}
-                          <i class="fa fa-shopping-cart"></i>
-                      </button>
+
+          <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
+                  <input type="hidden" name="token" value="{$static_token}">
+                  <input type="hidden" name="id_product" value="{$product.id_product}" id="product_page_product_id">
+                  <input type="hidden" name="id_customization" value="{$product.id_customization}" id="product_customization_id" class="js-product-customization-id">
+
+                  <div class="add">
+                  <button
+                    class="btn btn-primary add-to-cart"
+                    data-button-action="add-to-cart"
+                    data-dismiss="modal"
+                    type="submit"
+                    {* {if !$product.add_to_cart_url}
+                      disabled
+                    {/if} *}
+                  >
+                    <i class="material-icons shopping-cart">&#xE547;</i>
+    
+                  </button>
                 </div>
-  {*             </form>*}
+          </form>
+
           </div>
          </div>
       {/block}
@@ -170,7 +177,7 @@ font-size: 24px !important;
 	  </div>
 
     {if count($product['attributes']) > 0}
-    <div class="variantionsProductList" style="color: red;text-align:center;display: block;line-height: 17px;color: red;text-align: center;font-size: 14px;margin-top: 5px;">
+    <div class="variantionsProductList" style="color: var(--asm-color);text-align:center;display: block;line-height: 17px;color: var(--asm-color);text-align: center;font-size: 14px;margin-top: 5px;">
       {l s='More variations available' d='Shop.Theme.Actions'}
     </div>
     {else}
@@ -179,7 +186,7 @@ font-size: 24px !important;
     
 
     {if str_contains($product['category'] ,'clearance')}
-      <div style="position: absolute;top:1rem; left:0; width: fit-content;height:31px;background:var(--color-red);border-radius:0 50px 50px 0;display:flex;align-items:center;gap:0.5rem;min-width:200px;font-weight:600;font-size:18px;padding:0 0.5rem;">
+      <div style="position: absolute;top:1rem; left:0; width: fit-content;height:31px;background:var(--asm-color);border-radius:0 50px 50px 0;display:flex;align-items:center;gap:0.5rem;min-width:200px;font-weight:600;font-size:18px;padding:0 0.5rem;">
       <span style="color: #131313;font-weight:700">CLEARANCE</span>  
       <span style="color: white;"> - 25%</span>  
      
@@ -213,23 +220,23 @@ font-size: 24px !important;
 </article>
 
 <script>
-document.addEventListener('DOMContentLoaded', function() {
-  var addButton = document.querySelectorAll('.add_to_cart_button .btn.btn-primary');
+// document.addEventListener('DOMContentLoaded', function() {
+//   var addButton = document.querySelectorAll('.add_to_cart_button .btn.btn-primary');
   
 
-  addButton.forEach((item) => {
-    var icon = item.querySelector('.add_to_cart i');
+//   addButton.forEach((item) => {
+//     var icon = item.querySelector('.add_to_cart i');
 
-    item.addEventListener('mouseover', function() {
-      icon.style.color = 'white';
-    });
+//     item.addEventListener('mouseover', function() {
+//       icon.style.color = 'white';
+//     });
 
-    item.addEventListener('mouseout', function() {
-      icon.style.color = ''; // Revert to the default color or remove this line if not needed
-    });
-  })
+//     item.addEventListener('mouseout', function() {
+//       icon.style.color = ''; // Revert to the default color or remove this line if not needed
+//     });
+//   })
 
   
-});
+// });
 
 </script>

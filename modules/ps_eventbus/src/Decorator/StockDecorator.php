@@ -2,26 +2,8 @@
 
 namespace PrestaShop\Module\PsEventbus\Decorator;
 
-use PrestaShop\Module\PsEventbus\Repository\ConfigurationRepository;
-
 class StockDecorator
 {
-    /**
-     * @var ConfigurationRepository
-     */
-    private $configurationRepository;
-    /**
-     * @var string
-     */
-    private $timezone;
-
-    public function __construct(
-        ConfigurationRepository $configurationRepository
-    ) {
-        $this->configurationRepository = $configurationRepository;
-        $this->timezone = (string) $this->configurationRepository->get('PS_TIMEZONE');
-    }
-
     /**
      * @param array $stocks
      *
@@ -51,8 +33,6 @@ class StockDecorator
         $stock['reserved_quantity'] = (int) $stock['reserved_quantity'];
         $stock['depends_on_stock'] = (bool) $stock['depends_on_stock'];
         $stock['out_of_stock'] = (bool) $stock['out_of_stock'];
-        $stock['created_at'] = (new \DateTime($stock['created_at'], new \DateTimeZone($this->timezone)))->format('Y-m-d\TH:i:sO');
-        $stock['updated_at'] = (new \DateTime($stock['updated_at'], new \DateTimeZone($this->timezone)))->format('Y-m-d\TH:i:sO');
     }
 
     /**
@@ -74,7 +54,7 @@ class StockDecorator
      */
     private function castStockMvtPropertyValues(array &$stockMvt)
     {
-        $date = (new \DateTime($stockMvt['date_add'], new \DateTimeZone($this->timezone)))->format('Y-m-d\TH:i:sO');
+        $date = $stockMvt['date_add'];
 
         $stockMvt['id_stock_mvt'] = (int) $stockMvt['id_stock_mvt'];
         $stockMvt['id_stock'] = (int) $stockMvt['id_stock'];
@@ -92,6 +72,5 @@ class StockDecorator
         $stockMvt['referer'] = (int) $stockMvt['referer'];
         $stockMvt['deleted'] = (bool) $stockMvt['deleted'];
         $stockMvt['created_at'] = $date;
-        $stockMvt['updated_at'] = $date;
     }
 }

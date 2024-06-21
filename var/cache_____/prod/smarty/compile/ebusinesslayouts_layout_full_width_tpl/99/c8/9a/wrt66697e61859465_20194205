@@ -1,0 +1,143 @@
+<?php
+/* Smarty version 4.3.4, created on 2024-06-12 11:54:25
+  from 'C:\xampp\htdocs\euromus\themes\ebusiness\templates\_partials\header.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.4',
+  'unifunc' => 'content_66697e61858589_84741256',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '99c89a17eae900125669492dbcbfd535563f96e1' => 
+    array (
+      0 => 'C:\\xampp\\htdocs\\euromus\\themes\\ebusiness\\templates\\_partials\\header.tpl',
+      1 => 1718181408,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_66697e61858589_84741256 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+$_smarty_tpl->_assignInScope('currentLanguage', Context::getContext()->language);?>
+<div class="header_content">
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_24499707366697e61846733_30451410', 'header_nav');
+?>
+
+
+<?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4567844066697e6184fab2_40705685', 'header_top');
+?>
+
+</div>
+<?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayMLS'),$_smarty_tpl ) );?>
+
+<?php }
+/* {block 'header_nav'} */
+class Block_24499707366697e61846733_30451410 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'header_nav' => 
+  array (
+    0 => 'Block_24499707366697e61846733_30451410',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+  <nav class="header-nav d-none d-lg-block" style="margin-bottom:0;background:linear-gradient(to bottom, #969696,#282828);">
+    <div class="container-fluid">
+        <div class="nav" style="display: flex;justify-content:space-between;width:100%;align-items:center;margin-top: -2px;">
+            <div class="left-nav">
+             <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayNav1'),$_smarty_tpl ) );?>
+
+            </div>
+            <div class="right-nav" style="display: flex;gap:1rem;align-items:center;">
+              <?php if ($_smarty_tpl->tpl_vars['currentLanguage']->value->iso_code == 'es') {?>
+              <a href="/es/content/5-pagamentos" style="font-size:14px;font-weight:500;padding: 0px 10px;color: white; text-transform: uppercase; margin: 0 auto;line-height: 2;float: right;">PAGO EN 3X / 4X CON TARJETA - MAS INFO</a>
+              <?php } elseif ($_smarty_tpl->tpl_vars['currentLanguage']->value->iso_code == 'fr') {?>
+              <a href="/fr/content/5-paiement" style="font-size:14px;font-weight:500;padding: 0px 10px;color: white; text-transform: uppercase; margin: 0 auto;line-height: 2;float: right;">MON COMPTEPAIEMENT EN 3X / 4X PAR CB - EN SAVOIR PLUS</a>
+              <?php } elseif ($_smarty_tpl->tpl_vars['currentLanguage']->value->iso_code == 'en') {?>  
+              <a href="/en/content/5-payment" style="font-size:14px;font-weight:500;padding: 0px 10px;color: white; text-transform: uppercase; margin: 0 auto;line-height: 2;float: right;">PAY IN 3 / 4 INSTALLMENTS BY CREDIT CARD - LEARN MORE</a>
+              <?php }?>
+              <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayNav2'),$_smarty_tpl ) );?>
+
+            </div>
+        </div>
+    </div>
+  </nav>
+  
+  <nav class="header-nav mobile d-lg-none" style="margin-bottom:0;background: #111111;height: 43px;">
+    <div class="container-fluid">
+        <div class="nav" style="display: flex;justify-content:space-between;width:100%;align-items:center;padding-top: 5px;">
+            <div class="left-nav col-4 d-flex justify-content-start align-items-center">
+              <i onclick="dropdownSearch()" class="fa-solid fa-magnifying-glass" style="cursor:pointer;padding-right: 12px;"></i>
+              <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayLanguageSelector'),$_smarty_tpl ) );?>
+
+            </div>
+            <div class="col-4 d-flex justify-content-center">
+              <img width="32" height="32" src="/img/eum.png" />
+            </div>
+            <div class="right-nav  col-4" style="display: flex;align-items:center;justify-content: end;">
+                <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayMyAccountBlock'),$_smarty_tpl ) );?>
+
+            </div>
+        </div>
+    </div>
+  </nav>
+
+<?php
+}
+}
+/* {/block 'header_nav'} */
+/* {block 'header_top'} */
+class Block_4567844066697e6184fab2_40705685 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'header_top' => 
+  array (
+    0 => 'Block_4567844066697e6184fab2_40705685',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
+  <div class="header-top" style="background:  #282828;padding:0.5rem 0;margin:0;">
+    <div class="container-fluid">
+       <div class="row">
+        <div class="col-xs-12 col-lg-4 d-flex justify-content-sm-center justify-content-lg-start p-0" id="_desktop_logo">
+          <a href="<?php echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['urls']->value['base_url'], ENT_QUOTES, 'UTF-8');?>
+">
+            <img class="logo img-responsive" src="<?php if ((isset($_smarty_tpl->tpl_vars['tc_dev_mode']->value)) && $_smarty_tpl->tpl_vars['tc_dev_mode']->value && (isset($_smarty_tpl->tpl_vars['logo_url']->value)) && $_smarty_tpl->tpl_vars['logo_url']->value) {
+echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['logo_url']->value, ENT_QUOTES, 'UTF-8');
+} else {
+echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['shop']->value['logo'], ENT_QUOTES, 'UTF-8');
+}?>" alt="<?php echo htmlspecialchars((string) $_smarty_tpl->tpl_vars['shop']->value['name'], ENT_QUOTES, 'UTF-8');?>
+" style="max-width: 180px;
+              padding: 0px;
+              margin: 20px 45px;">
+          </a>
+        </div>
+        <div class="col-md-4  d-none d-lg-flex justify-content-center align-items-center" >
+        <img width="90" height="90" src="/img/eu.png" />
+        </div>
+        <div class="col-md-4 d-none d-lg-flex justify-content-end align-items-center" style="position: relative;z-index:1;padding-right: 3rem;">
+            <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displaySearch'),$_smarty_tpl ) );?>
+
+            <div class="clearfix"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <?php echo call_user_func_array( $_smarty_tpl->smarty->registered_plugins[Smarty::PLUGIN_FUNCTION]['hook'][0], array( array('h'=>'displayNavFullWidth'),$_smarty_tpl ) );?>
+
+<?php
+}
+}
+/* {/block 'header_top'} */
+}

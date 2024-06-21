@@ -2,15 +2,15 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Order ID {order_name} - Refund processed
+Comanda nr. {order_name} - Restituire procesata
 
-We have processed your refund for your order with the reference {order_name} from {shop_name}.
+Am procesat rambursarea pentru comanda ta cu codul {order_name} de la {shop_name}.
 
-Follow your order and download your invoice on our store, go to the [Order history and details]({history_url}) section of your customer account.
+Pentru a urmari comanda si a descarca factura, mergi la sectiunea [Istoric si detalii ale comenzilor]({history_url}) a contului tau de client.
 
-If you have a guest account, you can follow your order via the [Guest Tracking]({guest_tracking_url}) section on our shop.
+Daca ai un cont de oaspete, poti urmari comanda in sectiunea [Urmarirea comenzii instant]({guest_tracking_url}) din magazinul nostru.
 
 [{shop_name}]({shop_url})
 

@@ -1,12 +1,13 @@
 {**
- * 2007-2016 PrestaShop
+ * Copyright since 2007 PrestaShop SA and Contributors
+ * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the Open Software License (OSL 3.0)
- * that is bundled with this package in the file LICENSE.txt.
+ * This source file is subject to the Academic Free License 3.0 (AFL-3.0)
+ * that is bundled with this package in the file LICENSE.md.
  * It is also available through the world-wide-web at this URL:
- * http://opensource.org/licenses/osl-3.0.php
+ * https://opensource.org/licenses/AFL-3.0
  * If you did not receive a copy of the license and are unable to
  * obtain it through the world-wide-web, please send an email
  * to license@prestashop.com so we can send you a copy immediately.
@@ -15,148 +16,98 @@
  *
  * Do not edit or add to this file if you wish to upgrade PrestaShop to newer
  * versions in the future. If you wish to customize PrestaShop for your
- * needs please refer to http://www.prestashop.com for more information.
+ * needs please refer to https://devdocs.prestashop.com/ for more information.
  *
- * @author    PrestaShop SA <contact@prestashop.com>
- * @copyright 2007-2016 PrestaShop SA
- * @license   http://opensource.org/licenses/osl-3.0.php Open Software License (OSL 3.0)
- * International Registered Trademark & Property of PrestaShop SA
+ * @author    PrestaShop SA and Contributors <contact@prestashop.com>
+ * @copyright Since 2007 PrestaShop SA and Contributors
+ * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-{if isset($tc_config.YBC_TC_PRODUCT_LAYOUT) && $tc_config.YBC_TC_PRODUCT_LAYOUT != 'layout3'}
-    <div class="images-container{if $tc_config.YBC_TC_PRODUCT_LAYOUT == 'layout1'} vertical_thum_left{else} vertical_thum_right{/if}">
-        {block name='product_cover'}
-            <div class="product-cover{if (isset($tc_config.YBC_TC_JQZOOM) && $tc_config.YBC_TC_JQZOOM == 1)} product-cover-zoom{/if}">
-                <img class="js-qv-product-cover" src="{$product.cover.bySize.large_default.url}"
-                     alt="{$product.cover.legend}" title="{$product.cover.legend}" style="width:100%;" itemprop="image">
-                <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                    <i class="material-icons material-icons-zoom_in"></i>
-                </div>
-                {block name='product_flags'}
-                    <ul class="product-flags">
-                        {foreach from=$product.flags item=flag}
-                            <li class="product-flag {$flag.type}">{$flag.label}</li>
-                        {/foreach}
-                    </ul>
-                {/block}
-            </div>
-        {/block}
 
-        {block name='product_images'}
-            <div class="js-qv-mask mask">
-                <ul class="product-images js-qv-product-images">
-                    {foreach from=$product.images item=image}
-                        <li class="thumb-container">
-                            <img class="thumb js-thumb {if $image.id_image == $product.cover.id_image} selected {/if}"
-                                 data-image-medium-src="{$image.bySize.medium_default.url}"
-                                 data-image-large-src="{$image.bySize.large_default.url}"
-                                 src="{$image.bySize.home_default.url}" alt="{$image.legend}" title="{$image.legend}"
-                                 width="100" itemprop="image">
-                        </li>
-                    {/foreach}
-                </ul>
-            </div>
-        {/block}
-    </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            setTimeout(function () {
-                if ($('div:not(.quickview) .product_thumb_horizontal .product-cover.product-cover-zoom').length > 0) {
-                    var img = $('div:not(.quickview) .product_thumb_horizontal .product-cover.product-cover-zoom'),
-                        img_src = $('div:not(.quickview) .product_thumb_horizontal .product-cover.product-cover-zoom').data('src');
-                    img.zoom({
-                        touch: false,
-                        url: img_src
-                    });
-                }
-            }, 200);
-        });
-    </script>
-    {*-----------------------------------------------------------------------------------*}
-    {*------------------------------LAYOUT HORIZONTAL------------------------------------*}
-    {*-----------------------------------------------------------------------------------*}
-{elseif (isset($tc_config.YBC_TC_PRODUCT_LAYOUT) && $tc_config.YBC_TC_PRODUCT_LAYOUT == 'layout3')}
-    <div class="images-container product_thumb_horizontal">
-        {block name='product_cover'}
-            <div class="product-cover{if (isset($tc_config.YBC_TC_JQZOOM) && $tc_config.YBC_TC_JQZOOM == 1)} product-cover-zoom{/if}">
-                <img class="js-qv-product-cover" src="{$product.cover.bySize.large_default.url}"
-                     alt="{$product.cover.legend}" title="{$product.cover.legend}" style="width:100%;" itemprop="image">
-                <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
-                    <i class="material-icons material-icons-zoom_in"></i>
-                </div>
-                {block name='product_flags'}
-                    <ul class="product-flags">
-                        {foreach from=$product.flags item=flag}
-                            <li class="product-flag {$flag.type}">{$flag.label}</li>
-                        {/foreach}
-                    </ul>
-                {/block}
-            </div>
-        {/block}
+ <div class="images-container js-images-container" >
+ {block name='product_cover'}
+   <div class="product-cover">
+     {if $product.default_image}
+       <picture>
+         {if !empty($product.default_image.bySize.large_default.sources.avif)}<source srcset="{$product.default_image.bySize.large_default.sources.avif}" type="image/avif">{/if}
+         {if !empty($product.default_image.bySize.large_default.sources.webp)}<source srcset="{$product.default_image.bySize.large_default.sources.webp}" type="image/webp">{/if}
+         <img
+           class="js-qv-product-cover img-fluid"
+           src="{$product.default_image.bySize.large_default.url}"
+           {if !empty($product.default_image.legend)}
+             alt="{$product.default_image.legend}"
+             title="{$product.default_image.legend}"
+           {else}
+             alt="{$product.name}"
+           {/if}
+           loading="lazy"
+           width="{$product.default_image.bySize.large_default.width}"
+           height="{$product.default_image.bySize.large_default.height}"
+          
+         >
+       </picture>
+       <div class="layer hidden-sm-down" data-toggle="modal" data-target="#product-modal">
+         <i class="material-icons zoom-in">search</i>
+       </div>
+     {else}
+       <picture>
+         {if !empty($urls.no_picture_image.bySize.large_default.sources.avif)}<source srcset="{$urls.no_picture_image.bySize.large_default.sources.avif}" type="image/avif">{/if}
+         {if !empty($urls.no_picture_image.bySize.large_default.sources.webp)}<source srcset="{$urls.no_picture_image.bySize.large_default.sources.webp}" type="image/webp">{/if}
+         <img
+           class="img-fluid"
+           src="{$urls.no_picture_image.bySize.large_default.url}"
+           loading="lazy"
+           width="{$urls.no_picture_image.bySize.large_default.width}"
+           height="{$urls.no_picture_image.bySize.large_default.height}"
+         >
+       </picture>
+     {/if}
 
-        {block name='product_images'}
-            <div class="js-qv-mask mask">
-                <ul class="product-images js-qv-product-images">
-                    {foreach from=$product.images item=image}
-                        <li class="thumb-container">
-                            <img
-                                    class="thumb js-thumb {if $image.id_image == $product.cover.id_image} selected {/if}"
-                                    data-image-medium-src="{$image.bySize.medium_default.url}"
-                                    data-image-large-src="{$image.bySize.large_default.url}"
-                                    src="{$image.bySize.home_default.url}"
-                                    alt="{$image.legend}"
-                                    title="{$image.legend}"
-                                    width="100"
-                                    itemprop="image">
-                        </li>
-                    {/foreach}
-                </ul>
-            </div>
-        {/block}
+     {if str_contains($product['category'] ,'clearance')}
+      <div style="position: absolute;top:1rem; right:0; width: fit-content;height:31px;background:var(--asm-color);border-radius:50px 0 0 50px;display:flex;align-items:center;gap:0.5rem;min-width:200px;font-weight:600;font-size:18px;padding:0 0.5rem;justify-content: end;">
+      <span style="color: #131313;font-weight:700">CLEARANCE</span>  
+      <span style="color: white;"> - 25%</span>  
+     
+      </div>
+    {/if}
+
+    <div class="real-picture" >
+      Real Picture
     </div>
-    <script type="text/javascript">
-        $(document).ready(function () {
-            setTimeout(function () {
-                if ($('.product_thumb_horizontal').length != '') {
-                    $('.product_thumb_horizontal .product-images').owlCarousel({
-                        items: 4,
-                        responsive: {
-                            // breakpoint from 0 up
-                            0: {
-                                items: 3,
-                                margin: 10,
-                            },
-                            // breakpoint from 480 up
-                            480: {
-                                items: 4,
-                                margin: 10,
-                            },
-                            // breakpoint from 768 up
-                            768: {
-                                items: 4
-                            },
-                            992: {
-                                items: 4
-                            }
-                        },
-                        nav: true,
-                        loop: false,
-                        rewindNav: false,
-                        margin: 20,
-                        dots: false,
-                        navText: ['', ''],
-                        callbacks: true,
-                    });
-                }
-                ;
-                if ($('div:not(.quickview) .product_thumb_horizontal .product-cover.product-cover-zoom').length > 0) {
-                    var img = $('div:not(.quickview) .product_thumb_horizontal .product-cover.product-cover-zoom'),
-                        img_src = $('div:not(.quickview) .product_thumb_horizontal .product-cover.product-cover-zoom').data('src');
-                    img.zoom({
-                        touch: false,
-                        url: img_src
-                    });
-                }
-            }, 200);
-        });
-    </script>
-{/if}
+   </div>
+ {/block}
+
+ {block name='product_images'}
+   <div class="js-qv-mask mask">
+     <ul class="product-images js-qv-product-images" >
+       {foreach from=$product.images item=image key=key}
+         {if $key < 5}
+         <li class="thumb-container js-thumb-container">
+           <picture>
+             {if !empty($image.bySize.small_default.sources.avif)}<source srcset="{$image.bySize.small_default.sources.avif}" type="image/avif">{/if}
+             {if !empty($image.bySize.small_default.sources.webp)}<source srcset="{$image.bySize.small_default.sources.webp}" type="image/webp">{/if}
+             <img
+               class="thumb js-thumb {if $image.id_image == $product.default_image.id_image} selected js-thumb-selected {/if}"
+               data-image-medium-src="{$image.bySize.large_default.url}"
+               {if !empty($image.bySize.large_default.sources)}data-image-medium-sources="{$image.bySize.large_default.sources|@json_encode}"{/if}
+               data-image-large-src="{$image.bySize.large_default.url}"
+               {if !empty($image.bySize.large_default.sources)}data-image-large-sources="{$image.bySize.large_default.sources|@json_encode}"{/if}
+               src="{$image.bySize.small_default.url}"
+               {if !empty($image.legend)}
+                 alt="{$image.legend}"
+                 title="{$image.legend}"
+               {else}
+                 alt="{$product.name}"
+               {/if}
+               loading="lazy"
+               width="{$product.default_image.bySize.small_default.width}"
+               height="{$product.default_image.bySize.small_default.height}"
+             >
+           </picture>
+         </li>
+         {/if}
+       {/foreach}
+     </ul>
+   </div>
+ {/block}
+{hook h='displayAfterProductThumbs' product=$product}
+</div>

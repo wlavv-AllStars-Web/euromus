@@ -31,7 +31,7 @@
 
 /* partners */
 #cms-partners {
-  display:flex;flex-direction:column;background-color:#eee;max-width:1440px;font-family:Roboto;font-size:16px;margin:0 auto;
+  display:flex;flex-direction:column;background-color:#eee;max-width:1440px;font-family:Roboto;font-size:16px;margin:0 auto;font-family: Arial, Helvetica, sans-serif;
 }
 
 #cms-partners .cards {
@@ -148,11 +148,17 @@
   #legal .legal-footer-header img {
     width: 200px; margin: 0 auto;
   }
+  #legal .legal-line {
+    color: #101010;
+    font-family: Arial, Helvetica, sans-serif;
+  }
   #legal .legal-line .col-3 {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
+    color: #101010;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   #legal .legal-line .col-3 a {
@@ -172,6 +178,8 @@
     display: flex;
     flex-direction: column;
     gap: 2rem;
+    color: #101010;
+    font-family: Arial, Helvetica, sans-serif;
   }
   
   #legal .legal-content b {
@@ -192,11 +200,11 @@
   /* about us */
 
   #about-us .about-header {
-    background-color: #eee; font-family: Roboto; width: 1440px; margin: 0 auto;
+    background-color: #eee; font-family: Arial, Helvetica, sans-serif; width: 1440px; margin: 0 auto;
   }
 
   #about-us .about-content {
-    background-color: #eee; font-family: Roboto; width: 1440px; font-size: 16px; margin: 0 auto;
+    background-color: #eee; font-family: Arial, Helvetica, sans-serif; width: 1440px; font-size: 16px; margin: 0 auto;
   }
 
   #about-us .about-content .about-content-imgs {
@@ -208,14 +216,14 @@
   }
 
   #about-us .about-content-text {
-    margin: 30px; text-align: center; width: 730px;
+    margin: 30px; text-align: center; width: 730px;color: #101010;
   }
   #about-us .about-content-text div{
     padding: 20px 40px;
   }
 
   #about-us  .about-content-cards {
-    background-color: #eee; font-family: Roboto; width: 1440px; text-align: center; padding: 40px 0 0 0; font-size: 16px; margin: 0 auto;
+    background-color: #eee; font-family: Arial, Helvetica, sans-serif; width: 1440px; text-align: center; padding: 40px 0 0 0; font-size: 16px; margin: 0 auto;color: #101010;
   }
   #about-us .about-content-cards .card{
     width: 33%;
@@ -251,11 +259,11 @@
 
   #cms_shipping .shipping-content {
     display: flex;
-    background-color: #eee; font-family: Roboto; width: 1440px; margin: 0 auto; text-align: center; padding: 20px 0 0 0; font-size: 16px;
+    background-color: #eee; font-family: Roboto; width: 1440px; margin: 0 auto; text-align: center; padding: 20px 0 0 0; font-size: 16px;color: #101010;font-family: Arial, Helvetica, sans-serif;
   }
 
   #cms_shipping .shipping-content-title {
-    color: #dd170e; padding: 5px;text-transform: uppercase;
+    color: #dd170e; padding: 5px;text-transform: uppercase;font-family: Arial, Helvetica, sans-serif;
   }
 
   #cms_shipping .shipping-content-left-text span {
@@ -291,7 +299,7 @@
   /* payment */
 
   #cms-payment {
-    background-color: #eee; width: 1440px; font-family: Roboto; font-size: 16px; margin: 0 auto;text-align: justify;
+    background-color: #eee; width: 1440px; font-family: Roboto; font-size: 16px; margin: 0 auto;text-align: justify;font-family: Arial, Helvetica, sans-serif;color: #101010;
   }
 
   #cms-payment .payment {
@@ -331,7 +339,7 @@
 
   /* user help */
 
-  #user-help{
+  /* #user-help{
     max-width: 1440px; margin: 2rem auto;padding: 0;
   }
 
@@ -386,8 +394,71 @@
     background: url("/img/youtube_play.png");
   position: absolute !important;
   
-  }
+  } */
 
+
+  #user-help{
+    width: 100%;
+    max-width: 1440px;
+    margin: auto;
+}
+#user-help .user-help-content{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1rem;
+}
+#user-help .user-help-content .card-user{
+    flex: 1;
+    position: relative;
+    cursor: pointer;
+    min-width: 469px;
+    max-width: 32%;
+    outline: 1px solid #101010;
+}
+#user-help .user-help-content div a img{
+    width: 100%;
+}
+#user-help .user-help-content .card-user .play img{
+    width: 90px;
+}
+
+#user-help .play{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+#user-help .card-description{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background: red;
+    width: 100%;
+    outline: 1px solid #101010;
+}
+#user-help .card-description h2{
+    font-size: 1.5rem;
+    margin: 0;
+    padding: 0.5rem 1rem;
+    text-align: center;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+#user-help .iframeClass {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+#user-help .iframeClass iframe{
+  width: 100%;
+  height: 100%;
+  min-height: 351.55px;
+}
 
 
   /* about us mobile */
@@ -666,4 +737,10 @@ width: 100%;
   #events-mobile p{
     text-align: center;
     color: #333;
+  }
+
+  /* contact form */
+
+  .contact-form {
+    font-family: Arial, Helvetica, sans-serif;
   }

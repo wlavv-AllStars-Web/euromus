@@ -122,7 +122,7 @@
     </div><!-- /.modal-content -->
   </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
-<script type="text/javascript">
+{* <script type="text/javascript">
     $(document).ready(function(){
        setTimeout(function(){
            if ($('.images_thumb_slider').length != '' )
@@ -159,4 +159,4 @@
           };
    	},200);	
 });
-</script>    
+</script>     *}

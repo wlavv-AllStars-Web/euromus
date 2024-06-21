@@ -19,6 +19,13 @@ function getConn()
         define('_DB_PASSWD_', '');
         define('_DB_NAME_', 'euromus');
         return new mysqli("localhost", "root", "", "euromus");
+
+    } elseif(substr($currentUrl, 0, 3) === 'asm') {
+        define('_DB_SERVER_', 'localhost');
+        define('_DB_USER_', 'root');
+        define('_DB_PASSWD_', '');
+        define('_DB_NAME_', 'euromus');
+        return new mysqli("localhost", "root", "", "euromus");
         // URL does not start with '/beta'
     } else {
         define('_DB_SERVER_', 'localhost');

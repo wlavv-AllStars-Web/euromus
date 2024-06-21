@@ -22,7 +22,8 @@
  * @copyright Since 2007 PrestaShop SA and Contributors
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
-
+{* {assign var="language_id" value=Context::getContext->language}
+<pre>{$language_id|print_r}</pre> *}
 <section class="contact-form" style="width:100%;max-width:1440px;">
   <div align="center" style="background-color: #d3d3d3;">
     <img alt="contact" src="/img/cms/contact_{$language.iso_code}.jpg" class="img-responsive" style="margin:0 auto;width:100%">
@@ -147,7 +148,7 @@
                 placeholder="{l s='How can we help?' d='Shop.Forms.Help'}"
                 rows="3">{if $contact.message}{$contact.message}{/if}</textarea>
             </div>
-            <span class="col-12" style="font-size: small;text-align:start">{l s='(max 500 chars)'}</span>
+            <span class="col-md-12" style="font-size: small;text-align:start;color:#333;">{l s='(max 500 chars)'}</span>
           </div>
 
           {if isset($id_module)}
@@ -160,7 +161,7 @@
 
         </section>
 
-        <footer class="form-footer text-sm-left" style="padding-inline: 15px;">
+        <footer class="form-footer text-sm-left" style="padding-inline: 15px;display:flex;justify-content:space-between;">
           <style>
             input[name=url] {
               display: none !important;
@@ -170,6 +171,53 @@
           <input type="hidden" name="token" value="{$token}" />
           <div style="width: fit-content; height: fit-content; position: relative; padding-bottom: 1rem;">
               <input class="btn" type="submit" name="submitMessage" value="{l s='SEND' d='Shop.Theme.Actions'}" style="background: white; color: var(--color-red); margin-bottom: 1rem;">
+          </div>
+
+          <div class="whatsapp-contancts desktop">
+            <div style="display:flex;align-items:center;justify-content:end;">
+              <div style="display:flex;align-items:center;justify-content:center;margin-right:1rem;">
+                  <img src="https://www.all-stars-motorsport.com/img/whatsapp_search.png" style="width: 50px; height: 50px;padding:3px;margin-left:1rem;" alt="Whatsapp">
+              <!--    <h3 style="margin: 0;font-weight:bolder;"><span style="color: #007a12;">Whatsapp</span></h3> -->
+              </div>
+              
+              <div style="padding: 1rem;display:flex;">
+                  <a class="social-icon-whatsapp-number" style="margin-right: 8px;display:flex;align-items:center;gap:0.5rem;padding: 0.5rem 8px;" href="https://wa.me/+351912201753" target="_blank">
+                      <img src="https://www.all-stars-motorsport.com/img/en_flag_emails.jpg" width="34" height="auto" style="border-radius:5px;" alt="Whatsapp">
+                      <p class="number_whatsapp_header" style="width:fit-content;margin:0;font-weight:bold;color: #282828;font-size:1rem;margin-left:1rem;text-decoration: 2px underline #282828;">+351 912 201 753</p>
+                  </a>
+                  
+                  <a class="social-icon-whatsapp-number" style="margin-right: 8px;display:flex;align-items:center;gap:0.5rem;padding: 0.5rem 8px;" href="https://wa.me/+34691161570" target="_blank">
+                      <img src="https://www.all-stars-motorsport.com/img/es_flag_emails.jpg" width="34" height="auto" style="border-radius:5px;" alt="Whatsapp">
+                      <p class="number_whatsapp_header" style="width:fit-content;margin:0;font-weight:bold;color: #282828;font-size:1rem;margin-left:1rem;text-decoration: 2px underline #282828;">+34 691 16 15 70</p>
+                  </a>
+                  
+                  <a class="social-icon-whatsapp-number" style="margin-right: 8px;display:flex;align-items:center;gap:0.5rem;padding: 0.5rem 8px;" href="https://wa.me/+330651871788" target="_blank">
+                      
+                      <img src="https://www.all-stars-motorsport.com/img/fr_flag_emails.jpg" width="34" height="auto" style="border-radius:5px;" alt="Whatsapp">
+                      <p class="number_whatsapp_header" style="width:fit-content;margin:0;font-weight:bold;color: #282828;font-size:1rem;margin-left:1rem;text-decoration: 2px underline #282828;">+33 0651871788</p>
+                  </a>
+              </div>
+            </div>
+          </div>
+
+          <div class=" whatsapp-mobile mobile">
+            <div>
+              <a class="social-icon-whatsapp-number" style="margin-right: 8px;display:flex;align-items:center;gap:0.5rem;padding: 0.5rem 8px;" href="https://wa.me/+351912201753" target="_blank">
+                  <img src="https://www.all-stars-motorsport.com/img/en_flag_emails.jpg" width="34" height="auto" style="border-radius:5px;" alt="Whatsapp">
+                  <p class="number_whatsapp_header" style="width:fit-content;margin:0;font-weight:bold;color: #282828;font-size:1rem;margin-left:1rem;text-decoration: 2px underline #282828;">+351 912 201 753</p>
+              </a>
+              
+              <a class="social-icon-whatsapp-number" style="margin-right: 8px;display:flex;align-items:center;gap:0.5rem;padding: 0.5rem 8px;" href="https://wa.me/+34691161570" target="_blank">
+                  <img src="https://www.all-stars-motorsport.com/img/es_flag_emails.jpg" width="34" height="auto" style="border-radius:5px;" alt="Whatsapp">
+                  <p class="number_whatsapp_header" style="width:fit-content;margin:0;font-weight:bold;color: #282828;font-size:1rem;margin-left:1rem;text-decoration: 2px underline #282828;">+34 691 16 15 70</p>
+              </a>
+              
+              <a class="social-icon-whatsapp-number" style="margin-right: 8px;display:flex;align-items:center;gap:0.5rem;padding: 0.5rem 8px;" href="https://wa.me/+330651871788" target="_blank">
+                  
+                  <img src="https://www.all-stars-motorsport.com/img/fr_flag_emails.jpg" width="34" height="auto" style="border-radius:5px;" alt="Whatsapp">
+                  <p class="number_whatsapp_header" style="width:fit-content;margin:0;font-weight:bold;color: #282828;font-size:1rem;margin-left:1rem;text-decoration: 2px underline #282828;">+33 0651871788</p>
+              </a>
+            </div>
           </div>
 
         </footer>

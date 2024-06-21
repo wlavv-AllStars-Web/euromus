@@ -67,6 +67,7 @@ function get_id_ukoocompat_compat($id_product, $id_ukoocompat_criterion_1, $id_u
     $conn = getConn();
     $result2 = $conn->query($sql2);
     if ($result2->num_rows > 0) {
+        // nada
     }else{
 
         insert_data_into_ps_ukoocompat_compat_asm((int)$_POST['select_1'], (int)$_POST['select_2'], (int)$_POST['select_3'], (int)$_POST['select_4']);

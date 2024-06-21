@@ -26,7 +26,7 @@
 <div id="scrollToTopBtn" onclick="scrollToTop()" >
             <i class="fa-solid fa-arrow-up"></i>
     </div>
-    <div class="container-fluid">
+    <div class="container-fluid onlyIndex">
             <div class="footer_top">
                 {hook h='displayFooter'}
             </div> 
@@ -79,10 +79,10 @@
     justify-content: center;
     align-items: center;
     position: fixed;
-    bottom:7rem;
+    bottom:2rem;
     right:2rem;
     font-size: 1.5rem;
-    background:red;
+    background: var(--asm-color);
     color: #fff;
     border: none;
     border-radius: 10px;

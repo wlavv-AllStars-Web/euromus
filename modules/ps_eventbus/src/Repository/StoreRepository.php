@@ -15,9 +15,9 @@ class StoreRepository
      */
     private $context;
 
-    public function __construct(\Db $db, \Context $context)
+    public function __construct(\Context $context)
     {
-        $this->db = $db;
+        $this->db = \Db::getInstance();
         $this->context = $context;
     }
 
@@ -28,15 +28,23 @@ class StoreRepository
      */
     public function getBaseQuery($langIso)
     {
+        if ($this->context->shop === null) {
+            throw new \PrestaShopException('No shop context');
+        }
+
         $shopId = (int) $this->context->shop->id;
         $langId = (int) \Language::getIdByIso($langIso);
 
         $query = new \DbQuery();
-        $query->from(self::STORES_TABLE, 's')
-            ->leftJoin('store_lang', 'sl', 's.id_store = sl.id_store')
-            ->leftJoin('store_shop', 'ss', 's.id_store = ss.id_store')
-            ->where('ss.id_shop = ' . (int) $shopId)
-            ->where('sl.id_lang = ' . (int) $langId);
+        if (version_compare(_PS_VERSION_, '1.7', '>=')) {
+            $query->from(self::STORES_TABLE, 's')
+                ->leftJoin('store_lang', 'sl', 's.id_store = sl.id_store')
+                ->leftJoin('store_shop', 'ss', 's.id_store = ss.id_store')
+                ->where('ss.id_shop = ' . (int) $shopId)
+                ->where('sl.id_lang = ' . (int) $langId);
+        } else {
+            $query->from(self::STORES_TABLE, 's');
+        }
 
         return $query;
     }
@@ -102,13 +110,41 @@ class StoreRepository
     }
 
     /**
+     * @param int $offset
+     * @param int $limit
+     * @param string $langIso
+     *
+     * @return array
+     *
+     * @throws \PrestaShopDatabaseException
+     */
+    public function getQueryForDebug($offset, $limit, $langIso)
+    {
+        $query = $this->getBaseQuery($langIso);
+
+        $this->addSelectParameters($query);
+
+        $query->limit($limit, $offset);
+
+        $queryStringified = preg_replace('/\s+/', ' ', $query->build());
+
+        return array_merge(
+            (array) $query,
+            ['queryStringified' => $queryStringified]
+        );
+    }
+
+    /**
      * @param \DbQuery $query
      *
      * @return void
      */
     private function addSelectParameters(\DbQuery $query)
     {
-        $query->select('s.id_store, s.id_country, s.id_state, s.city, s.postcode, s.active, s.date_add as created_at, s.date_upd as updated_at,
-        sl.id_lang, sl.name, sl.address1, sl.address2, sl.hours, ss.id_shop');
+        if (version_compare(_PS_VERSION_, '1.7', '>=')) {
+            $query->select('s.id_store, s.id_country, s.id_state, s.city, s.postcode, s.active, s.date_add as created_at, s.date_upd as updated_at, sl.id_lang, sl.name, sl.address1, sl.address2, sl.hours, ss.id_shop');
+        } else {
+            $query->select('s.id_store, s.id_country, s.id_state, s.city, s.postcode, s.active, s.date_add as created_at, s.date_upd as updated_at');
+        }
     }
 }

@@ -1,39 +1,36 @@
 const gulp = require('gulp');
-
-gulp.task('default', gulp.parallel('serve:asm', 'serve:asd', 'serve:euromus'));
-
-gulp.task('serve:asm', (done) => {
-  const bs = require('browser-sync').create();
-  bs.init({
-    proxy: 'http://asm.local',
-    port: 3001,
-    host: '192.168.1.64',
-  });
-
-  gulp.watch('themes/ebusiness/**/*.*').on('change', bs.reload);
-  done();
-});
+const browserSync = require('browser-sync').create();
 
 gulp.task('serve:euromus', (done) => {
-  const bs = require('browser-sync').create();
-  bs.init({
+  browserSync.init({
     proxy: 'http://euromus.local',
-    port: 5001,
+    port: 6001,
     host: '192.168.1.64',
   });
 
-  gulp.watch('themes/classic/**/*.*').on('change', bs.reload);
+  gulp.watch('themes/classicNew/**/*.*').on('change', browserSync.reload);
   done();
 });
 
+
 gulp.task('serve:asd', (done) => {
-  const bs = require('browser-sync').create();
-  bs.init({
+  browserSync.init({
     proxy: 'http://asd.local',
-    port: 4001,
+    port: 6001,
     host: '192.168.1.64',
   });
 
-  gulp.watch('themes/probusiness/**/*.*').on('change', bs.reload);
+  gulp.watch('themes/probusiness/**/*.*').on('change', browserSync.reload);
+  done();
+});
+
+gulp.task('serve:asm', (done) => {
+  browserSync.init({
+    proxy: 'http://asm.local',
+    port: 6001,
+    host: '192.168.1.64',
+  });
+
+  gulp.watch('themes/ebusiness/**/*.*').on('change', browserSync.reload);
   done();
 });

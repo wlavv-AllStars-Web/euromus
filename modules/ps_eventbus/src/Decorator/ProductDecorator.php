@@ -36,6 +36,11 @@ class ProductDecorator
      */
     private $bundleRepository;
 
+    /**
+     * @var int
+     */
+    private $shopId;
+
     public function __construct(
         \Context $context,
         LanguageRepository $languageRepository,
@@ -50,6 +55,12 @@ class ProductDecorator
         $this->categoryRepository = $categoryRepository;
         $this->arrayFormatter = $arrayFormatter;
         $this->bundleRepository = $bundleRepository;
+
+        if ($this->context->shop === null) {
+            throw new \PrestaShopException('No shop context');
+        }
+
+        $this->shopId = (int) $this->context->shop->id;
     }
 
     /**
@@ -59,7 +70,7 @@ class ProductDecorator
      *
      * @return void
      *
-     * @throws \PrestaShopDatabaseException
+     * @@throws \PrestaShopDatabaseException
      */
     public function decorateProducts(array &$products, $langIso, $langId)
     {
@@ -104,13 +115,17 @@ class ProductDecorator
     private function addLink(array &$product)
     {
         try {
+            if ($this->context->link === null) {
+                throw new \PrestaShopException('No link context');
+            }
+
             $product['link'] = $this->context->link->getProductLink(
                 $product,
                 null,
                 null,
                 null,
                 $this->languageRepository->getLanguageIdByIsoCode($product['iso_code']),
-                $this->context->shop->id,
+                $this->shopId,
                 $product['id_attribute']
             );
         } catch (\PrestaShopException $e) {
@@ -175,12 +190,10 @@ class ProductDecorator
      */
     private function addCategoryTree(array &$product)
     {
-        /** @var int $shopId */
-        $shopId = $this->context->shop->id;
         $categoryPaths = $this->categoryRepository->getCategoryPaths(
             $product['id_category_default'],
             $this->languageRepository->getLanguageIdByIsoCode($product['iso_code']),
-            $shopId
+            $this->shopId
         );
 
         $product['category_path'] = $categoryPaths['category_path'];
@@ -260,7 +273,7 @@ class ProductDecorator
      *
      * @return void
      *
-     * @throws \PrestaShopDatabaseException
+     * @@throws \PrestaShopDatabaseException
      */
     private function addFeatureValues(array &$products, $langId)
     {
@@ -278,7 +291,7 @@ class ProductDecorator
      *
      * @return void
      *
-     * @throws \PrestaShopDatabaseException
+     * @@throws \PrestaShopDatabaseException
      */
     private function addAttributeValues(array &$products, $langId)
     {
@@ -295,7 +308,7 @@ class ProductDecorator
      *
      * @return void
      *
-     * @throws \PrestaShopDatabaseException
+     * @@throws \PrestaShopDatabaseException
      */
     private function addImages(array &$products)
     {
@@ -340,15 +353,26 @@ class ProductDecorator
 
             $productImageIds = array_diff($productImageIds, [$coverImageId]);
 
+            if ($this->context->link === null) {
+                throw new \PrestaShopException('No link context');
+            }
+
+            $link = $this->context->link;
+
+            /*
+            Ici pour certaines boutique on aurait un comporterment qui pourrait être adapté.
+            et aller chercher dans une table des images le bon libellé pour appeler ce que le marchand a.
+            */
+
             $product['images'] = $this->arrayFormatter->arrayToString(
-                array_map(function ($imageId) use ($product) {
-                    return $this->context->link->getImageLink($product['link_rewrite'], (string) $imageId);
+                array_map(function ($imageId) use ($product, $link) {
+                    return $link->getImageLink($product['link_rewrite'], (string) $imageId);
                 }, $productImageIds)
             );
 
             $product['cover'] = $coverImageId == '0' ?
                 '' :
-                $this->context->link->getImageLink($product['link_rewrite'], (string) $coverImageId);
+                $link->getImageLink($product['link_rewrite'], (string) $coverImageId);
         }
     }
 }

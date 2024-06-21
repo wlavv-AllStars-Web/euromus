@@ -2,13 +2,13 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Order return #{id_order_return} - Update
+Returnarea #{id_order_return} a comenzii - Actualizare
 
-We have updated the progress on your return #{id_order_return}, the new status is: "{state_order_return}".
+Am actualizat stadiul returnarii #{id_order_return}, noul stadiu este: "{state_order_return}".
 
-Follow your order and download your invoice on our store, go to the [Order history and details]({history_url}) section of your customer account.
+Pentru a urmari comanda si a descarca factura, mergi la sectiunea [Istoric si detalii ale comenzilor]({history_url}) a contului tau de client.
 
 [{shop_name}]({shop_url})
 

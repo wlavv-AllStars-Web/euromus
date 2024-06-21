@@ -288,8 +288,10 @@ class FrontControllerCore extends Controller
             $useSSL = true;
         }
 
-        // Redirect to SSL variant of the page if required and visited in non-ssl mode
-        $this->sslRedirection();
+        // Redirect to SSL variant of the page if required and visited in non-ssl mode and not in cli context
+        if (!Tools::isPHPCLI()) {
+            $this->sslRedirection();
+        }
 
         if ($this->ajax) {
             $this->display_header = false;
@@ -370,7 +372,7 @@ class FrontControllerCore extends Controller
 
         if (isset($_GET['logout']) || ($this->context->customer->logged && Customer::isBanned($this->context->customer->id))) {
             $this->context->customer->logout();
-
+            
             Tools::redirect(isset($_SERVER['HTTP_REFERER']) ? $_SERVER['HTTP_REFERER'] : null);
         } elseif (isset($_GET['mylogout'])) {
             $this->context->customer->mylogout();
@@ -476,19 +478,24 @@ class FrontControllerCore extends Controller
                 $cart->id_address_delivery = 0;
                 $cart->id_address_invoice = 0;
             }
-
-            // Needed if the merchant want to give a free product to every visitors
             $this->context->cart = $cart;
-            CartRule::autoAddToCart($this->context);
         } else {
             $this->context->cart = $cart;
             $this->context->cart->checkAndUpdateAddresses();
         }
 
+        /*
+         * We also need to run automatic cart rule actions.
+         * autoAddToCart is required to automatically assigning newly created cart rules with no code (automatic).
+         * autoRemoveFromCart is needed to verify, if the cart rules already in a cart are still valid.
+         */
+        CartRule::autoRemoveFromCart($this->context);
+        CartRule::autoAddToCart($this->context);
+
         $this->context->smarty->assign('request_uri', Tools::safeOutput(urldecode($_SERVER['REQUEST_URI'])));
 
         // Automatically redirect to the canonical URL if needed
-        if (!empty($this->php_self) && !Tools::getValue('ajax')) {
+        if (!empty($this->php_self) && !Tools::getValue('ajax') && !Tools::isPHPCLI()) {
             $this->canonicalRedirection($this->context->link->getPageLink($this->php_self, $this->ssl, $this->context->language->id));
         }
 
@@ -500,13 +507,13 @@ class FrontControllerCore extends Controller
             $this->context->country = $country;
         }
 
-        $this->displayMaintenancePage();
-
-        if (Country::GEOLOC_FORBIDDEN == $this->restrictedCountry) {
-            $this->displayRestrictedCountryPage();
+        if (!Tools::isPHPCLI()) {
+            $this->displayMaintenancePage();
         }
 
-        $this->context->cart = $cart;
+        if (!Tools::isPHPCLI() && Country::GEOLOC_FORBIDDEN == $this->restrictedCountry) {
+            $this->displayRestrictedCountryPage();
+        }
 
         Hook::exec(
             'actionFrontControllerInitAfter',
@@ -891,7 +898,7 @@ class FrontControllerCore extends Controller
      */
     protected function geolocationManagement($defaultCountry)
     {
-        if (!in_array(Tools::getRemoteAddr(), ['127.0.0.1', '::1'])) {
+        if (!in_array(Tools::getRemoteAddr(), ['127.0.0.1', '::1']) && !Tools::isPHPCLI()) {
             /* Check if Maxmind Database exists */
             if (@filemtime(_PS_GEOIP_DIR_ . _PS_GEOIP_CITY_FILE_)) {
                 if (!isset($this->context->cookie->iso_code_country) || (isset($this->context->cookie->iso_code_country) && !in_array(strtoupper($this->context->cookie->iso_code_country), explode(';', Configuration::get('PS_ALLOWED_COUNTRIES'))))) {
@@ -1350,9 +1357,7 @@ class FrontControllerCore extends Controller
      */
     public function setTemplate($template, $params = [], $locale = null)
     {
-
         parent::setTemplate(
-            
             $this->getTemplateFile($template, $params, $locale)
         );
     }
@@ -1564,7 +1569,7 @@ class FrontControllerCore extends Controller
                 'js_url' => _THEME_JS_DIR_,
                 'pic_url' => _THEME_PROD_PIC_DIR_,
                 'theme_assets' => _THEME_DIR_ . 'assets/',
-                'theme_dir' => $this->getThemeDir(),
+                'theme_dir' => _THEME_DIR_,
             ];
 
             $themeAssetsConfig = $this->context->shop->theme->get('assets', false);
@@ -1594,17 +1599,17 @@ class FrontControllerCore extends Controller
             ];
             foreach ($p as $page_name) {
                 $index = str_replace('-', '_', $page_name);
-                $pages[$index] = $this->context->link->getPageLink($page_name, $this->ssl);
+                $pages[$index] = $this->context->link->getPageLink($page_name);
             }
             $pages['brands'] = $pages['manufacturer'];
-            $pages['register'] = $this->context->link->getPageLink('registration', true);
-            $pages['order_login'] = $this->context->link->getPageLink('order', true, null, ['login' => '1']);
+            $pages['register'] = $this->context->link->getPageLink('registration');
+            $pages['order_login'] = $this->context->link->getPageLink('order', null, null, ['login' => '1']);
             $urls['pages'] = $pages;
 
             $urls['alternative_langs'] = $this->getAlternativeLangsUrl();
 
             $urls['actions'] = [
-                'logout' => $this->context->link->getPageLink('index', true, null, 'mylogout'),
+                'logout' => $this->context->link->getPageLink('index', null, null, 'mylogout'),
             ];
 
             $imageRetriever = new ImageRetriever($this->context->link);
@@ -1868,7 +1873,7 @@ class FrontControllerCore extends Controller
 
         $breadcrumb['links'][] = [
             'title' => $this->getTranslator()->trans('Home', [], 'Shop.Theme.Global'),
-            'url' => $this->context->link->getPageLink('index', true),
+            'url' => $this->context->link->getPageLink('index'),
         ];
 
         return $breadcrumb;
@@ -1888,7 +1893,7 @@ class FrontControllerCore extends Controller
     {
         return [
             'title' => $this->getTranslator()->trans('Your account', [], 'Shop.Theme.Customeraccount'),
-            'url' => $this->context->link->getPageLink('my-account', true),
+            'url' => $this->context->link->getPageLink('my-account'),
         ];
     }
 

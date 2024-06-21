@@ -44,7 +44,7 @@
   }
 
   #login-form .forgot-password a:hover{
-    color: var(--color-red)!important;
+    color: var(--asm-color)!important;
   }
   
   .register_form .register_form_cell a.button-to-register-form{
@@ -59,7 +59,7 @@
   }
 
   .register_form .register_form_cell a[data-link-action="display-register-form"]:hover{
-    color: var(--color-red);
+    color: var(--asm-color);
   }
   
   .login_page_content input{

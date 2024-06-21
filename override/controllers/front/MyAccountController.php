@@ -5,7 +5,7 @@ class MyAccountController extends MyAccountControllerCore
 {
     public $auth = true;
     // public $php_self = 'my-account';
-    // public $authRedirection = 'my-account';
+    public $authRedirection = 'my-account';
     // public $ssl = true;
     // public function setMedia()
     // {
@@ -26,6 +26,21 @@ class MyAccountController extends MyAccountControllerCore
 
     public function postProcess(){
         $origin_newsletter = (bool)$this->customer->newsletter;
+
+        if(Tools::getValue('action') == 'check_vat'){
+            $has_address = $this->context->customer->getAddresses($this->context->language->id);
+            $country = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS("SELECT iso_code FROM eu_country WHERE id_country=" . $has_address[0]['id_country'] . " Limit 1 ");
+
+            $iso_code = $country[0]['iso_code'];
+            
+            $vat_iso_code = substr(Tools::getValue('vatnumber',0), 0, 2);;
+    
+            $vat_iso_code = ($vat_iso_code == 'GR') ? 'EL' : $vat_iso_code;
+            $iso_code = ($iso_code == 'GR') ? 'EL' : $iso_code;
+
+            echo ($vat_iso_code != $iso_code) ? 0 : 1;
+            exit;
+        }
 
         if (Tools::isSubmit('submitIdentity')) {
             $email = trim(Tools::getValue('email'));
@@ -116,6 +131,7 @@ class MyAccountController extends MyAccountControllerCore
 
         /* Generate years, months and days */
         $this->context->smarty->assign(array(
+            'has_customer_an_address' => empty($has_address),
             'years' => Tools::dateYears(),
             'sl_year' => $birthday[0],
             'months' => Tools::dateMonths(),

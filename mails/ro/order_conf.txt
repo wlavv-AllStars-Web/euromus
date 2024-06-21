@@ -2,42 +2,42 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Thank you for shopping on {shop_name}!
+Iti multumim pentru ca ai cumparat de la {shop_name}!
 
-Order details
+Detalii comanda
 
-Order: {order_name} Placed on {date}
+Comanda: {order_name} Plasata pe {date}
 
-Payment: {payment}
+Plata: {payment}
 
-Reference	Product	Unit price	Quantity	Total price  {products_txt} {discounts_txt}
-Products	{total_products}
-Discounts	{total_discounts}
-Shipping	{total_shipping}
-Including total tax	{total_tax_paid}
-Total paid	{total_paid}
+Cod	Produs	Pret unitar	Cantitate	Pret total  {products_txt} {discounts_txt}
+Produse	{total_products}
+Reduceri	{total_discounts}
+Livrare	{total_shipping}
+Incluzand TVA	{total_tax_paid}
+Total platit	{total_paid}
 
-Shipping
+Livrare
 
-Carrier: {carrier}
+Curier: {carrier}
 
-Payment: {payment}
+Plata: {payment}
 
-Recycled packaging: {recycled_packaging_label}
+Ambalaj reciclabil: {recycled_packaging_label}
 
-Delivery address
+Adresa de livrare
 
 {delivery_block_txt}
 
-Billing address
+Adresa de facturare
 
 {invoice_block_txt}
 
-Follow your order and download your invoice on our store, go to the [Order history and details]({history_url}) section of your customer account.
+Pentru a urmari comanda si a descarca factura, mergi la sectiunea [Istoric si detalii ale comenzilor]({history_url}) a contului tau de client.
 
-If you have a guest account, you can follow your order via the [Guest Tracking]({guest_tracking_url}) section on our shop.
+Daca ai un cont de oaspete, poti urmari comanda in sectiunea [Urmarirea comenzii instant]({guest_tracking_url}) din magazinul nostru.
 
 [{shop_name}]({shop_url})
 

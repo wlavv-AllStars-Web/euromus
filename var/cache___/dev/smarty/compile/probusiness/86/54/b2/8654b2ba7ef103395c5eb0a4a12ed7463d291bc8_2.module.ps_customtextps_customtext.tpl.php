@@ -1,0 +1,30 @@
+<?php
+/* Smarty version 4.3.4, created on 2024-06-05 15:58:18
+  from 'module:ps_customtextps_customtext.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '4.3.4',
+  'unifunc' => 'content_66607d0a5ac891_96941769',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '8654b2ba7ef103395c5eb0a4a12ed7463d291bc8' => 
+    array (
+      0 => 'module:ps_customtextps_customtext.tpl',
+      1 => 1702297374,
+      2 => 'module',
+    ),
+  ),
+  'includes' => 
+  array (
+  ),
+),false)) {
+function content_66607d0a5ac891_96941769 (Smarty_Internal_Template $_smarty_tpl) {
+?><!-- begin C:\xampp\htdocs\euromus/modules/ps_customtext/ps_customtext.tpl -->
+<div id="custom-text">
+  <?php echo $_smarty_tpl->tpl_vars['cms_infos']->value['text'];?>
+
+</div>
+<!-- end C:\xampp\htdocs\euromus/modules/ps_customtext/ps_customtext.tpl --><?php }
+}

@@ -81,7 +81,7 @@
   .show-more {
     border: 0;
     background: none;
-    color: red;
+    color: var(--asm-color);
     margin: 1rem 0;
     font-size: 1rem;
   }

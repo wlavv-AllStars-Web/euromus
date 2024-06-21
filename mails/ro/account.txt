@@ -2,27 +2,27 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Thank you for creating a customer account at {shop_name}.
+Iti multumim ca ti-ai creat cont la {shop_name}.
 
-Your login details on {shop_name}
+Datele de autentificare in {shop_name}
 
-Here are your login details:
+Ai aici datele tale de autentificare:
 
-Email address: {email}
+Adresa de email: {email}
 
-Important Security Tips:
+Sfaturi importante de securitate:
 
-1. Always keep your account details safe.
+1. Pastreaza-ti intotdeauna datele in siguranta.
 
-2. Never disclose your login details to anyone.
+2. Nu da nimanui datele de autentificare.
 
-3. Change your password regularly.
+3. Schimba parola in mod regulat.
 
-4. Should you suspect someone is using your account illegally, please notify us immediately.
+4. Daca banuiesti ca altcineva foloseste contul tau in mod ilegitim, te rugam sa ne anunti imediat.
 
-You can now place orders on our store: [{shop_name}]({shop_url})
+Poti plasa acum comenzi in magazinul nostru: [{shop_name}]({shop_url})
 
 [{shop_name}]({shop_url})
 

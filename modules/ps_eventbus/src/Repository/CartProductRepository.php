@@ -13,9 +13,9 @@ class CartProductRepository
      */
     private $context;
 
-    public function __construct(\Db $db, \Context $context)
+    public function __construct(\Context $context)
     {
-        $this->db = $db;
+        $this->db = \Db::getInstance();
         $this->context = $context;
     }
 
@@ -24,10 +24,16 @@ class CartProductRepository
      */
     public function getBaseQuery()
     {
+        if ($this->context->shop === null) {
+            throw new \PrestaShopException('No shop context');
+        }
+
+        $shopId = (int) $this->context->shop->id;
+
         $query = new \DbQuery();
 
         $query->from('cart_product', 'cp')
-            ->where('cp.id_shop = ' . (int) $this->context->shop->id);
+            ->where('cp.id_shop = ' . $shopId);
 
         return $query;
     }

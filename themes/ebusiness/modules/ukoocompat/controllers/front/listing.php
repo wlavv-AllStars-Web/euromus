@@ -60,6 +60,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         // echo '<pre>' . print_r($sortOrders, true) . '</pre>';
         // exit;
         parent::initContent();
+
  
         // $this->productSort();
 
@@ -128,7 +129,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'label' => 'Relevance',
                 'urlParameter' => 'product.position.asc',
                 'current' => 1,
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.position.asc',
+                'url' => '/en/brand/17-mishimoto?order=product.position.asc',
             ],
             [
                 'entity' => 'product',
@@ -137,7 +138,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'label' => 'Name, A to Z',
                 'urlParameter' => 'product.name.asc',
                 'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.name.asc',
+                'url' => '/en/brand/17-mishimoto?order=product.name.asc',
             ],
             [
                 'entity' => 'product',
@@ -146,7 +147,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'label' => 'Name, Z to A',
                 'urlParameter' => 'product.name.desc',
                 'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.name.desc',
+                'url' => '/en/brand/17-mishimoto?order=product.name.desc',
             ],
             [
                 'entity' => 'product',
@@ -155,7 +156,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'label' => 'Price, low to high',
                 'urlParameter' => 'product.price.asc',
                 'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.price.asc',
+                'url' => '/en/brand/17-mishimoto?order=product.price.asc',
             ],
             [
                 'entity' => 'product',
@@ -164,7 +165,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'label' => 'Price, high to low',
                 'urlParameter' => 'product.price.desc',
                 'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.price.desc',
+                'url' => '/en/brand/17-mishimoto?order=product.price.desc',
             ],
             [
                 'entity' => 'product',
@@ -173,7 +174,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'label' => 'Reference, A to Z',
                 'urlParameter' => 'product.reference.asc',
                 'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.reference.asc',
+                'url' => '/en/brand/17-mishimoto?order=product.reference.asc',
             ],
             [
                 'entity' => 'product',
@@ -182,7 +183,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
                 'label' => 'Reference, Z to A',
                 'urlParameter' => 'product.reference.desc',
                 'current' => '',
-                'url' => 'http://euromus.local/en/brand/17-mishimoto?order=product.reference.desc',
+                'url' => '/en/brand/17-mishimoto?order=product.reference.desc',
             ],
         ];
         $sort_selected = null;
@@ -376,8 +377,6 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             $id_row = Db::getInstance()->getValue("Select id FROM eu_ASM_ukoo_customer WHERE id_brand = " . $getData['filters1'] . " AND id_model = " . $getData['filters2'] . " AND id_type = " . $getData['filters3'] . " AND id_version = " . $getData['filters4'] . " AND id_customer = " . $this->context->customer->id);
         }
 
-        // echo '<pre>'.print_r($products,1).'</pre>';
-        // exit;
         
         
         if($getData['filters1'] == 0){

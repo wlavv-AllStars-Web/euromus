@@ -45,7 +45,7 @@ class ProductDataProvider implements PaginatedApiDataProviderInterface
      *
      * @return array
      *
-     * @throws \PrestaShopDatabaseException
+     * @@throws \PrestaShopDatabaseException
      */
     public function getFormattedData($offset, $limit, $langIso)
     {
@@ -80,7 +80,7 @@ class ProductDataProvider implements PaginatedApiDataProviderInterface
      *
      * @return int
      *
-     * @throws \PrestaShopDatabaseException
+     * @@throws \PrestaShopDatabaseException
      */
     public function getRemainingObjectsCount($offset, $langIso)
     {
@@ -96,7 +96,7 @@ class ProductDataProvider implements PaginatedApiDataProviderInterface
      *
      * @return array
      *
-     * @throws \PrestaShopDatabaseException
+     * @@throws \PrestaShopDatabaseException
      */
     public function getFormattedDataIncremental($limit, $langIso, $objectIds)
     {
@@ -123,5 +123,21 @@ class ProductDataProvider implements PaginatedApiDataProviderInterface
         }, $products);
 
         return array_merge($products, $bundles, $productSuppliers);
+    }
+
+    /**
+     * @param int $offset
+     * @param int $limit
+     * @param string $langIso
+     *
+     * @return array
+     *
+     * @@throws \PrestaShopDatabaseException
+     */
+    public function getQueryForDebug($offset, $limit, $langIso)
+    {
+        $langId = $this->languageRepository->getLanguageIdByIsoCode($langIso);
+
+        return $this->productRepository->getQueryForDebug($offset, $limit, $langId);
     }
 }

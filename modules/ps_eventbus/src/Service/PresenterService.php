@@ -2,43 +2,45 @@
 
 namespace PrestaShop\Module\PsEventbus\Service;
 
-use PrestaShop\AccountsAuth\Service\PsAccountsService;
+use PrestaShop\Module\PsEventbus\Helper\ModuleHelper;
 use PrestaShop\PrestaShop\Core\Addon\Module\ModuleManagerBuilder;
 
 class PresenterService
 {
     /**
-     * @var PsAccountsService|null
+     * @var PsAccountsAdapterService
      */
-    private $psAccountsService = null;
+    private $psAccountsAdapterService;
 
     public function __construct()
     {
-        $moduleManager = ModuleManagerBuilder::getInstance();
-        if (!$moduleManager) {
+        $moduleManagerBuilder = ModuleManagerBuilder::getInstance();
+        if (!$moduleManagerBuilder) {
             return;
         }
-        $moduleManager = $moduleManager->build();
+        $moduleManager = $moduleManagerBuilder->build();
         if ($moduleManager->isInstalled('ps_accounts')) {
-            $accountsModule = \Module::getInstanceByName('ps_accounts');
-            /* @phpstan-ignore-next-line */
-            $accountService = $accountsModule->getService('PrestaShop\Module\PsAccounts\Service\PsAccountsService');
-            $this->psAccountsService = $accountService;
+            $psEventbus = \Module::getInstanceByName('ps_eventbus');
+            $psAccountsAdapterService = $psEventbus->getService('PrestaShop\Module\PsEventbus\Service\PsAccountsAdapterService');
+
+            $this->psAccountsAdapterService = $psAccountsAdapterService;
         } else {
-            $this->initPsAccount();
+            $this->installPsAccount();
         }
     }
 
     /**
      * @return void
      */
-    public function initPsAccount()
+    public function installPsAccount()
     {
-        $moduleManager = ModuleManagerBuilder::getInstance();
-        if (!$moduleManager) {
+        $moduleManagerBuilder = ModuleManagerBuilder::getInstance();
+
+        if (!$moduleManagerBuilder) {
             return;
         }
-        $moduleManager = $moduleManager->build();
+
+        $moduleManager = $moduleManagerBuilder->build();
 
         if (!$moduleManager->isInstalled('ps_accounts')) {
             $moduleManager->install('ps_accounts');
@@ -73,23 +75,6 @@ class PresenterService
     }
 
     /**
-     * @param array $consents
-     *
-     * @return array
-     */
-    private function enforceMandatoryConsents($consents)
-    {
-        $mandatories = ['info', 'modules', 'themes'];
-        foreach ($mandatories as $consent) {
-            if (!in_array($consent, $consents)) {
-                array_unshift($consents, $consent);
-            }
-        }
-
-        return $consents;
-    }
-
-    /**
      * @param \ModuleCore $module
      * @param array $requiredConsents
      * @param array $optionalConsents
@@ -98,12 +83,26 @@ class PresenterService
      */
     public function expose(\ModuleCore $module, $requiredConsents = [], $optionalConsents = [])
     {
-        $requiredConsents = $this->enforceMandatoryConsents($requiredConsents);
-        if ($this->psAccountsService == null) {
+        /** @var \Ps_eventbus $psEventbusModule */
+        $psEventbusModule = \Module::getInstanceByName('ps_eventbus');
+
+        /** @var ModuleHelper $moduleHelper */
+        $moduleHelper = $psEventbusModule->getService('ps_eventbus.helper.module');
+
+        if (!in_array('info', $requiredConsents)) {
+            array_unshift($requiredConsents, 'info');
+        }
+        if ($this->psAccountsAdapterService == null) {
             return [];
         } else {
+            $language = \Context::getContext()->language;
+
+            if ($language == null) {
+                throw new \PrestaShopException('No language context');
+            }
+
             return [
-                'jwt' => $this->psAccountsService->getOrRefreshToken(),
+                'jwt' => $this->psAccountsAdapterService->getOrRefreshToken(),
                 'requiredConsents' => $requiredConsents,
                 'optionalConsents' => $optionalConsents,
                 'module' => array_merge([
@@ -111,12 +110,20 @@ class PresenterService
                 ], $this->convertObjectToArray($module)),
                 'shop' => [
                     /* @phpstan-ignore-next-line */
-                    'id' => $this->psAccountsService->getShopUuid(),
+                    'id' => $this->psAccountsAdapterService->getShopUuid(),
                     'name' => \Configuration::get('PS_SHOP_NAME'),
                     'url' => \Tools::getHttpHost(true),
-                    'lang' => \Context::getContext()->language->iso_code,
+                    'lang' => $language->iso_code,
                 ],
                 'psEventbusModule' => $this->convertObjectToArray(\Module::getInstanceByName('ps_eventbus')),
+                'modulesInformation' => [
+                    'psEventbus' => $moduleHelper->buildModuleInformation(
+                        'ps_eventbus'
+                    ),
+                    'psMbo' => $moduleHelper->buildModuleInformation(
+                        'ps_mbo'
+                    ),
+                ],
             ];
         }
     }

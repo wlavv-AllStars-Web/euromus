@@ -24,8 +24,6 @@
  * @license   https://opensource.org/licenses/OSL-3.0 Open Software License (OSL 3.0)
  */
 use PrestaShop\PrestaShop\Core\Domain\Product\Stock\ValueObject\OutOfStockType;
-use PrestaShop\PrestaShop\Core\Foundation\Templating\RenderableProxy;
-use OrderControllerCore;
 
 class CartControllerCore extends FrontController
 {
@@ -37,7 +35,6 @@ class CartControllerCore extends FrontController
     protected $id_address_delivery;
     protected $customization_id;
     protected $qty;
-    // protected $checkoutProcessCart;
     /**
      * To specify if you are in the preview mode or not.
      *
@@ -82,16 +79,6 @@ class CartControllerCore extends FrontController
         $this->id_address_delivery = (int) Tools::getValue('id_address_delivery');
         $this->preview = ('1' === Tools::getValue('preview'));
 
-        // $checkoutProcessT = new OrderControllerCore();
-        // $this->checkoutProcessCart = $checkoutProcessT->getCheckoutProcess();
-        // echo '<pre>'.print_r($checkoutProcess->getCheckoutProcess(),1).'</pre>';
-        // exit;
-        // $this->context->smarty->assign([
-        //     'checkout_process' => new RenderableProxy($checkoutProcess->getCheckoutProcess()),
-        // ]);
-
-
-
         /* Check if the products in the cart are available */
         if ('show' === Tools::getValue('action')) {
             $isAvailable = $this->areProductsAvailable();
@@ -123,7 +110,6 @@ class CartControllerCore extends FrontController
 
         if ($this->context->cart->hasProducts()) {
             $this->setTemplate('checkout/cart');
-            // Tools::redirect($this->context->link->getPageLink('order'));
         } else {
             $this->context->smarty->assign([
                 'allProductsLink' => $this->context->link->getCategoryLink(
@@ -444,10 +430,12 @@ class CartControllerCore extends FrontController
 
         // Check product quantity availability
         if ('update' !== $mode && $this->shouldAvailabilityErrorBeRaised($product, $qty_to_check)) {
-            $availableProductQuantity = StockAvailable::getQuantityAvailableByProduct(
-                $this->id_product,
-                $this->id_product_attribute
-            );
+            /*
+             * If the product can't be in the cart in this quantity, we raise an error.
+             * For the purpose of this error message, we must get the real quantity in stock.
+             * No subtracting of quantity in the cart here.
+             */
+            $availableProductQuantity = Product::getQuantity($this->id_product, $this->id_product_attribute);
             $this->errors[] = $this->trans(
                 'You can only buy %quantity% "%product%". Please adjust the quantity in your cart to continue.',
                 [
@@ -535,10 +523,12 @@ class CartControllerCore extends FrontController
                     'Shop.Notifications.Error'
                 );
             } elseif ($this->shouldAvailabilityErrorBeRaised($product, $qty_to_check)) {
-                $availableProductQuantity = StockAvailable::getQuantityAvailableByProduct(
-                    $this->id_product,
-                    $this->id_product_attribute
-                );
+                /*
+                 * If the product can't be in the cart in this quantity, we raise an error.
+                 * For the purpose of this error message, we must get the real quantity in stock.
+                 * No subtracting of quantity in the cart here.
+                 */
+                $availableProductQuantity = Product::getQuantity($this->id_product, $this->id_product_attribute);
                 $this->{$ErrorKey}[] = $this->trans(
                     'You can only buy %quantity% "%product%". Please adjust the quantity in your cart to continue.',
                     [
@@ -550,6 +540,7 @@ class CartControllerCore extends FrontController
             }
         }
 
+        // Check validity of all cart rules in cart and check if there are some automatic ones that should be applied
         CartRule::autoRemoveFromCart();
         CartRule::autoAddToCart();
 
@@ -613,11 +604,10 @@ class CartControllerCore extends FrontController
             return false;
         }
 
-        // Check if this product is out-of-stock
-        $availableProductQuantity = StockAvailable::getQuantityAvailableByProduct(
-            $this->id_product,
-            $this->id_product_attribute
-        );
+        /*
+         * We check if this product is out-of-stock.
+         */
+        $availableProductQuantity = Product::getQuantity($this->id_product, $this->id_product_attribute);
         if ($availableProductQuantity < $qtyToCheck) {
             return true;
         }
@@ -637,6 +627,8 @@ class CartControllerCore extends FrontController
 
     /**
      * Check if the products in the cart are available.
+     * This is a general check that is handy when you want to check whole cart,
+     * for example when loading the cart or order page.
      *
      * @return bool|string
      */

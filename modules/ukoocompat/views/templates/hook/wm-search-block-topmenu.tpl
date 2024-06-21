@@ -66,7 +66,7 @@
                             
                         </div>
                     {/if}
-
+                    {Context::getContext()->language->id|escape:'html':'UTF-8'}
             <div  class="filterLogo" >
             {foreach from=$search->filters item=filter}
             	    

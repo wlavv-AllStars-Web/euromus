@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Copyright since 2007 PrestaShop SA and Contributors
  * PrestaShop is an International Registered Trademark & Property of PrestaShop SA
@@ -21,61 +20,120 @@
 
 namespace PrestaShop\Module\PrestashopCheckout\PayPal\Order\Command;
 
-use PrestaShop\Module\PrestashopCheckout\PayPal\Order\Exception\PayPalOrderException;
-use PrestaShop\Module\PrestashopCheckout\PayPal\Order\ValueObject\PayPalOrderId;
+use PrestaShop\Module\PrestashopCheckout\Cart\ValueObject\CartId;
+use PrestaShop\Module\PrestashopCheckout\PayPal\PaymentToken\ValueObject\PaymentTokenId;
 
 class SavePayPalOrderCommand
 {
     /**
-     * @var PayPalOrderId
+     * @var array
      */
-    private $orderPayPalId;
+    private $order;
+    /**
+     * @var CartId|null
+     */
+    private $cartId;
+    /**
+     * @var string|null
+     */
+    private $paymentMode;
+    /**
+     * @var array
+     */
+    private $customerIntent;
+    /**
+     * @var bool|null
+     */
+    private $isExpressCheckout;
+    /**
+     * @var bool|null
+     */
+    private $isCardFields;
+    /**
+     * @var null
+     */
+    private $fundingSource;
+    /**
+     * @var PaymentTokenId|null
+     */
+    private $paymentTokenId;
 
     /**
-     * @var string
+     * @param array $order
      */
-    private $orderPayPalStatus;
-
-    /**
-     * @var array;
-     */
-    private $orderPayPal;
-
-    /**
-     * @param string $orderPayPalId
-     * @param string $orderPayPalStatus
-     * @param array $orderPayPal
-     *
-     * @throws PayPalOrderException
-     */
-    public function __construct($orderPayPalId, $orderPayPalStatus, array $orderPayPal)
+    public function __construct($order, CartId $cartId = null, $fundingSource = null, $paymentMode = null, $customerIntent = [], $isExpressCheckout = null, $isCardFields = null, $paymentTokenId = null)
     {
-        $this->orderPayPalId = new PayPalOrderId($orderPayPalId);
-        $this->orderPayPalStatus = $orderPayPalStatus;
-        $this->orderPayPal = $orderPayPal;
-    }
-
-    /**
-     * @return PayPalOrderId
-     */
-    public function getOrderPayPalId()
-    {
-        return $this->orderPayPalId;
-    }
-
-    /**
-     * @return string
-     */
-    public function getOrderPaypalStatus()
-    {
-        return $this->orderPayPalStatus;
+        $this->order = $order;
+        $this->cartId = $cartId;
+        $this->paymentMode = $paymentMode;
+        $this->customerIntent = $customerIntent;
+        $this->isExpressCheckout = $isExpressCheckout;
+        $this->isCardFields = $isCardFields;
+        $this->fundingSource = $fundingSource;
+        $this->paymentTokenId = $paymentTokenId;
     }
 
     /**
      * @return array
      */
-    public function getOrderPayPal()
+    public function getOrder()
     {
-        return $this->orderPayPal;
+        return $this->order;
+    }
+
+    /**
+     * @return CartId|null
+     */
+    public function getCartId()
+    {
+        return $this->cartId;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getPaymentMode()
+    {
+        return $this->paymentMode;
+    }
+
+    /**
+     * @return array
+     */
+    public function getCustomerIntent()
+    {
+        return $this->customerIntent;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function isExpressCheckout()
+    {
+        return $this->isExpressCheckout;
+    }
+
+    /**
+     * @return bool|null
+     */
+    public function isCardFields()
+    {
+        return $this->isCardFields;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getFundingSource()
+    {
+        return $this->fundingSource;
+    }
+
+    /**
+     * @return PaymentTokenId|null
+     */
+    public function getPaymentTokenId()
+    {
+        return $this->paymentTokenId;
     }
 }

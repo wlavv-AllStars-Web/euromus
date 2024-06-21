@@ -4176,6 +4176,17 @@ a:focus {
   width: 524px;
 }
 
+.videosContainer .image_play{
+  max-width: 100px !important;
+  position: absolute !important;
+  pointer-events: none;
+  width: 100%;
+  object-fit: contain;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  }
+
 .firstDiv {
   width: 524px; /* Each column takes up one-third of the width */
   min-width: 524px;
@@ -4193,16 +4204,7 @@ a:focus {
   height: 295px;
 }
 
-.videosContainer .image_play{
-max-width: 100px !important;
-position: absolute !important;
-pointer-events: none;
-width: 100%;
-object-fit: contain;
-top: 50%;
-left: 50%;
-transform: translate(-50%,-50%);
-}
+
 
 @media screen and (min-width:1920px) {
   .videosContainer {

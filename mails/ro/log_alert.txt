@@ -2,13 +2,13 @@
 
 {shop_url}
 
-Hi,
+Buna,
 
-New alert message saved
+A fost salvata o alerta noua
 
-WARNING: you have received a new log alert in your back office.
+ATENTIE: a fost inregistrata o alerta noua in jurnalul din Back Office.
 
-You can check for it in the Advanced Parameters > Logs section of your back office.
+Poti verifica in sectiunea Parametri avansati > Jurnal din Back Office.
 
 [{shop_name}]({shop_url})
 

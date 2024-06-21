@@ -33,8 +33,7 @@ class PayPalConfiguration
     const PS_ROUND_TYPE = 'PS_ROUND_TYPE';
     const PS_PRICE_ROUND_MODE = 'PS_PRICE_ROUND_MODE';
     const INTEGRATION_DATE = 'PS_CHECKOUT_INTEGRATION_DATE';
-    const HOSTED_FIELDS_3DS_DISABLED = 'PS_CHECKOUT_3DS_DISABLED';
-    const HOSTED_FIELDS_CONTINGENCIES = 'PS_CHECKOUT_HOSTEDFIELDS_CONTINGENCIES';
+    const HOSTED_FIELDS_CONTINGENCIES = 'PS_CHECKOUT_HOSTED_FIELDS_CONTINGENCIES';
     const CSP_NONCE = 'PS_CHECKOUT_CSP_NONCE';
     const PS_CHECKOUT_PAYPAL_CB_INLINE = 'PS_CHECKOUT_PAYPAL_CB_INLINE';
     const PS_CHECKOUT_PAYPAL_BUTTON = 'PS_CHECKOUT_PAYPAL_BUTTON';
@@ -46,6 +45,10 @@ class PayPalConfiguration
     const PS_CHECKOUT_PAYPAL_PAYMENT_STATUS = 'PS_CHECKOUT_PAYPAL_PAYMENT_STATUS';
     const PS_CHECKOUT_CARD_HOSTED_FIELDS_STATUS = 'PS_CHECKOUT_CARD_PAYMENT_STATUS';
     const PS_CHECKOUT_CARD_HOSTED_FIELDS_ENABLED = 'PS_CHECKOUT_CARD_PAYMENT_ENABLED';
+
+    const PS_CHECKOUT_DISPLAY_LOGO_PRODUCT = 'PS_CHECKOUT_DISPLAY_LOGO_PRODUCT';
+    const PS_CHECKOUT_DISPLAY_LOGO_CART = 'PS_CHECKOUT_DISPLAY_LOGO_CART';
+    const PS_CHECKOUT_VAULTING = 'PS_CHECKOUT_VAULTING';
 
     /**
      * @var PrestaShopConfiguration
@@ -234,7 +237,7 @@ class PayPalConfiguration
      */
     public function is3dSecureEnabled()
     {
-        return false === (bool) $this->configuration->get(static::HOSTED_FIELDS_3DS_DISABLED);
+        return $this->getHostedFieldsContingencies() !== 'NONE';
     }
 
     /**
@@ -427,5 +430,15 @@ class PayPalConfiguration
         return $this->configuration->get('PS_TIMEZONE', [
             'default' => date_default_timezone_get(),
         ]);
+    }
+
+    /**
+     * Merchant can disable vaulting in module configuration
+     *
+     * @return bool
+     */
+    public function isVaultingEnabled()
+    {
+        return (bool) $this->configuration->get(static::PS_CHECKOUT_VAULTING);
     }
 }

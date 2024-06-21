@@ -2,15 +2,15 @@
 
 {shop_url}
 
-Message from a {shop_name} customer
+Mesaj de la un client al {shop_name}
 
-Customer Email Address: {email}
+Adresa de e-mail a clientului: {email}
 
-Order ID #:  {order_name}
+ID comanda:  {order_name}
 
-Attached file: {attached_file}
+Fisier atasat: {attached_file}
 
-Customer message:
+Mesajul clientului:
 
 {message}
 

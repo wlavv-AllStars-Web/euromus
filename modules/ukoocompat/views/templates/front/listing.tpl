@@ -17,9 +17,9 @@
     ]}
     {* 'catalog_link' => $this->context->link->getModuleLink('ukoocompat', 'catalog', $params),
     
-{* <pre>{print_r($products,1)}</pre> *}
+    *}
 
-{* {print_r($name_1)} *}
+
 
 <form id="ukoocompat_search_block_form_1" action="/{$lang_iso}/module/ukoocompat/listing" method="POST"> 
 
@@ -204,7 +204,4 @@
 <style>
     div#center_column{ padding: 5px 0; }
 </style>
-<script>
-    // let search =
-    // $('.breadcrumb').replaceWith('<div class="breadcrumb"><a class="home" href="https://development.local/" title="Return to Home"><i class="fa fa-home"></i></a> <i style="margin:5px 10px;" class="fa fa-caret-right"></i><span id="tag_filter"></span></div>');
-</script>
+

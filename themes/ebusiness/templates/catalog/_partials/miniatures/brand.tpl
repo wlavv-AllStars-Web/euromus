@@ -23,17 +23,17 @@
  * International Registered Trademark & Property of PrestaShop SA
  *}
 {block name='brand'}
-  <li class="brand col-md-4 col-sm-6 col-xs-12">
+  <li class="brand col-md-4 col-sm-6 col-xs-6">
     <div class="brand_content_item">
         <div class="brand-img"><a href="{$brand.url}"><img src="{$brand.image}" alt="{$brand.name}"></a></div>
-        <div class="brand-infos">
+        {* <div class="brand-infos">
           <h3><a href="{$brand.url}">{$brand.name}</a></h3>
           {$brand.text nofilter}
-        </div>
-        <div class="brand-products">
+        </div> *}
+        {* <div class="brand-products">
           <a class="brand-count-products" href="{$brand.url}">{$brand.nb_products}</a>
           <a class="brand-view-products" href="{$brand.url}">{l s='View products' d='Shop.Theme.Actions'}</a>
-        </div>
+        </div> *}
     </div>
   </li>
 {/block}

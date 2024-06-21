@@ -14,23 +14,26 @@ class StockRepository
      */
     private $context;
 
-    public function __construct(\Db $db, \Context $context)
+    public function __construct(\Context $context)
     {
-        $this->db = $db;
+        $this->db = \Db::getInstance();
         $this->context = $context;
     }
 
     /**
-     * @param int $shopId
-     *
      * @return \DbQuery
      */
-    public function getBaseQuery($shopId)
+    public function getBaseQuery()
     {
+        if ($this->context->shop === null) {
+            throw new \PrestaShopException('No shop context');
+        }
+
+        $shopId = (int) $this->context->shop->id;
+
         $query = new \DbQuery();
         $query->from('stock_available', 'sa')
-        ->innerJoin('product', 'p', 'p.id_product = sa.id_product')
-        ->where('sa.id_shop = ' . (int) $shopId);
+            ->where('sa.id_shop = ' . (int) $shopId);
 
         return $query;
     }
@@ -45,9 +48,7 @@ class StockRepository
      */
     public function getStocks($offset, $limit)
     {
-        /** @var int $shopId */
-        $shopId = $this->context->shop->id;
-        $query = $this->getBaseQuery($shopId);
+        $query = $this->getBaseQuery();
 
         $this->addSelectParameters($query);
 
@@ -63,9 +64,7 @@ class StockRepository
      */
     public function getRemainingStocksCount($offset)
     {
-        /** @var int $shopId */
-        $shopId = $this->context->shop->id;
-        $query = $this->getBaseQuery($shopId)
+        $query = $this->getBaseQuery()
             ->select('(COUNT(sa.id_stock_available) - ' . (int) $offset . ') as count');
 
         return (int) $this->db->getValue($query);
@@ -81,9 +80,7 @@ class StockRepository
      */
     public function getStocksIncremental($limit, $productIds)
     {
-        /** @var int $shopId */
-        $shopId = $this->context->shop->id;
-        $query = $this->getBaseQuery($shopId);
+        $query = $this->getBaseQuery();
 
         $this->addSelectParameters($query);
 
@@ -94,14 +91,37 @@ class StockRepository
     }
 
     /**
+     * @param int $offset
+     * @param int $limit
+     *
+     * @return array
+     *
+     * @throws \PrestaShopDatabaseException
+     */
+    public function getQueryForDebug($offset, $limit)
+    {
+        $query = $this->getBaseQuery();
+
+        $this->addSelectParameters($query);
+
+        $query->limit($limit, $offset);
+
+        $queryStringified = preg_replace('/\s+/', ' ', $query->build());
+
+        return array_merge(
+            (array) $query,
+            ['queryStringified' => $queryStringified]
+        );
+    }
+
+    /**
      * @param \DbQuery $query
      *
      * @return void
      */
     private function addSelectParameters(\DbQuery $query)
     {
-        $query->select('sa.id_stock_available, sa.id_product, sa.id_product_attribute, sa.id_shop, sa.id_shop_group,
-        sa.quantity, sa.physical_quantity, sa.reserved_quantity, sa.depends_on_stock, sa.out_of_stock, sa.location,
-        p.date_add AS created_at, p.date_upd as updated_at');
+        $query->select('sa.id_stock_available, sa.id_product, sa.id_product_attribute, sa.id_shop, sa.id_shop_group');
+        $query->select('sa.quantity, sa.physical_quantity, sa.reserved_quantity, sa.depends_on_stock, sa.out_of_stock, sa.location');
     }
 }

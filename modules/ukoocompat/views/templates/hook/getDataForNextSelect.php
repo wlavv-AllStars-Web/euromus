@@ -27,7 +27,7 @@ $result = $conn->query($sql);
 $count = 0;
 
 $html='<select name="id_ukoocompat_criterion_select_groups_[' . $nextSelect . ']" id="id_ukoocompat_criterion_select_groups_' . $nextSelect . '" onchange="call_ajax_fill_selects(' . $nextSelect . ')">';
-$html.='<option value="0">Todas</option>';
+$html.='<option value="0">All</option>';
 // echo '<pre>'.print_r( $result->fetch_assoc(),1).'</pre>';
 // exit;
 while ($row = $result->fetch_assoc()) {

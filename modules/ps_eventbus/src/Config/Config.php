@@ -6,6 +6,7 @@ class Config
 {
     public const SYNC_API_MAX_TIMEOUT = 5;
     public const COLLECTOR_MAX_TIMEOUT = 30;
+    public const COLLECTOR_MULTIPART_BOUNDARY = 'ps_eventbus_boundary';
     public const REFRESH_TOKEN_ERROR_CODE = 452;
     public const ENV_MISCONFIGURED_ERROR_CODE = 453;
     public const DATABASE_QUERY_ERROR_CODE = 454;
@@ -56,6 +57,10 @@ class Config
     public const COLLECTION_SUPPLIERS = 'suppliers';
     public const COLLECTION_PRODUCT_SUPPLIERS = 'product_suppliers';
     public const COLLECTION_LANGUAGES = 'languages';
+    public const COLLECTION_EMPLOYEES = 'employees';
+    public const COLLECTION_TRANSLATIONS = 'translations';
+    public const COLLECTION_IMAGES = 'images';
+    public const COLLECTION_IMAGE_TYPES = 'image_types';
 
     /**
      * @param mixed $message

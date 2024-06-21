@@ -9,9 +9,9 @@ class WishlistProductRepository
      */
     private $db;
 
-    public function __construct(\Db $db)
+    public function __construct()
     {
-        $this->db = $db;
+        $this->db = \Db::getInstance();
     }
 
     /**
@@ -51,7 +51,7 @@ class WishlistProductRepository
      */
     private function addSelectParameters(\DbQuery $query)
     {
-        $query->select('wp.id_wishlist_product, wp.id_wishlist, wp.id_product, wp.id_product_attribute,
-      wp.quantity, wp.priority');
+        $query->select('wp.id_wishlist_product, wp.id_wishlist, wp.id_product, wp.id_product_attribute');
+        $query->select('wp.quantity, wp.priority');
     }
 }

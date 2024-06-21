@@ -2,13 +2,13 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Voucher code has been generated
+Codul cuponului a fost generat
 
-Here is your new voucher code: {voucher_num}
+Iata codul noului tau cupon: {voucher_num}
 
-In order to use it, just copy/paste this code during check out.
+Pentru a-l folosi, este suficient sa copiezi si sa lipesti acest cod in timpul finalizarii comenzii.
 
 [{shop_name}]({shop_url})
 

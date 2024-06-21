@@ -72,7 +72,6 @@
     
     <script>
         function openNewsletterEmails(id){
-            
             $('.newsletter_container').css('display', 'none');
             $('#' + id ).css('display', 'block');
         }

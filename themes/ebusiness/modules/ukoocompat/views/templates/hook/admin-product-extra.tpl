@@ -9,6 +9,7 @@
  *}
  {assign var="context" value=Context::getContext()}
  {assign var="idLang" value=(int)$context->language->id}
+
 {if isset($id_product) && $id_product|intval != 0}
 
     <div class="panel product-tab">
@@ -17,6 +18,7 @@
         <input type="hidden" id="id_lang" name="id_lang" value="{$idLang}" />
 
         <div class="row">
+        {* <pre>{$filters|print_r}</pre> *}
             {foreach from=$filters item=filter}
                 <div style="width: 20%;float: left;padding: 0 10px;">
                     {include file='./ASM_select_groups.tpl'}

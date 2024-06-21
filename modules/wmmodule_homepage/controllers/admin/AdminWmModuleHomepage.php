@@ -607,6 +607,10 @@ class AdminWmModuleHomepageController extends AdminController{
     
     public function setVideoCode()
     {
-        return Db::getInstance()->execute("UPDATE "._DB_PREFIX_."asm_homepage_temp SET youtube_code='" . Tools::getValue('code') . "' WHERE id=" . (Tools::getValue('position')+16));
+        if($this->id_shop === 1){
+            return Db::getInstance()->execute("UPDATE "._DB_PREFIX_."asm_homepage_temp SET youtube_code='" . Tools::getValue('code') . "' WHERE id=" . (Tools::getValue('position')+16));
+        }elseif($this->id_shop === 2){
+            return Db::getInstance()->execute("UPDATE "._DB_PREFIX_."asm_homepage_temp SET youtube_code='" . Tools::getValue('code') . "' WHERE id=" . (Tools::getValue('position')+46));
+        }
     }
 }

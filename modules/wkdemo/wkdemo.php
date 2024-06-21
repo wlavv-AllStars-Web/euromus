@@ -30,7 +30,10 @@ class WkDemo extends Module
      */
     public function install()
     {
-        return parent::install() && $this->registerHook(['actionProductFormBuilderModifier']) && $this->registerHook(['actionProductSave']);
+        return parent::install() &&
+            $this->registerHook(['displayHome']) &&
+            $this->registerHook(['actionProductFormBuilderModifier']) &&
+            $this->registerHook(['actionProductSave']);
     }
     
     /**
@@ -58,4 +61,5 @@ class WkDemo extends Module
             'youtube_code' => pSQL($youtube_code),
         ], 'id_product = ' . $idWkProduct);
     }
+
 }

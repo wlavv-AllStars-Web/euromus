@@ -211,7 +211,8 @@ class UkooCompatCriterion extends ObjectModel
                         WHERE cp.`id_category` IN ('.pSQL(implode(', ', $id_categories)).')
                     )';
             }
-            
+            echo $sql;
+            exit;
             $criteria = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
 
             // Si on récupère un 0 ça signifie que tous les critères de ce filtre doivent être affichés
@@ -332,6 +333,7 @@ class UkooCompatCriterion extends ObjectModel
      */
     public static function getCriterionNameFromId($id_criterion, $id_lang)
     {
+
         return Db::getInstance(_PS_USE_SQL_SLAVE_)->getValue('
             SELECT ucl.`value`
             FROM `'._DB_PREFIX_.'ukoocompat_criterion_lang` ucl

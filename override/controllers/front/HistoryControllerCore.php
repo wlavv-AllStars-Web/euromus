@@ -37,6 +37,7 @@ class HistoryControllerCore extends FrontController
     public $ssl = true;
     /** @var OrderPresenter|null */
     public $order_presenter;
+    public $id_shop;
 
     /**
      * Assign template vars related to page content.
@@ -48,6 +49,8 @@ class HistoryControllerCore extends FrontController
         if (Configuration::isCatalogMode()) {
             Tools::redirect('index.php');
         }
+
+        $this->id_shop = (int)Context::getContext()->shop->id;
 
         if ($this->order_presenter === null) {
             $this->order_presenter = new OrderPresenter();
@@ -62,7 +65,13 @@ class HistoryControllerCore extends FrontController
         ]);
 
         parent::initContent();
-        $this->setTemplate('customer/my-account');
+
+        if($this->id_shop === 3){
+            $this->setTemplate('customer/my-account');
+        }else{
+            $this->setTemplate('customer/history');
+        }
+
     }
 
     public function getTemplateVarOrders()

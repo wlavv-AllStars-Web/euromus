@@ -16,10 +16,6 @@ services:
     class: PrestaShop\Module\PsEventbus\Formatter\ArrayFormatter
     public: true
 
-  PrestaShop\Module\PsEventbus\Formatter\DateFormatter:
-    class: PrestaShop\Module\PsEventbus\Formatter\DateFormatter
-    public: true
-
   PrestaShop\Module\PsEventbus\Service\CacheService:
     class: PrestaShop\Module\PsEventbus\Service\CacheService
     public: true
@@ -61,6 +57,7 @@ services:
     arguments:
       - '@PrestaShop\Module\PsEventbus\Repository\EventbusSyncRepository'
       - '@PrestaShop\Module\PsEventbus\Repository\IncrementalSyncRepository'
+      - '@PrestaShop\Module\PsEventbus\Repository\LiveSyncRepository'
       - '@PrestaShop\Module\PsEventbus\Service\ProxyServiceInterface'
       - '@PrestaShop\Module\PsEventbus\Decorator\PayloadDecorator'
 

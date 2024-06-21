@@ -102,7 +102,10 @@ class Ps_CustomerSignIn extends Module implements WidgetInterface
             /*
             * @deprecated
             */
-            'my_account_url' => $link->getPageLink('my-account', true),
+            // 'my_account_url' => $link->getPageLink('my-account', true),
+            // 'my_account_url' => $link->getPageLink('authentication', true,),
+            'login_url' => $link->getPageLink('index', true, null,null),
+
         ];
     }
 

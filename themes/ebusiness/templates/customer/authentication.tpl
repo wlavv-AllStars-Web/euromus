@@ -51,7 +51,7 @@
     </div>
     <style>
   .container-login .breadcrumb{
-    border-top: 3px solid var(--color-red);
+    border-top: 3px solid var(--asm-color)
     margin-bottom: 0;
   }
 
@@ -63,7 +63,7 @@
     color: var(--color-text);
   }
   .container-login .breadcrumb a span:hover {
-    color: var(--color-red);
+    color: var(--asm-color)
   }
 
   .container-login .breadcrumb .fa-house {
@@ -71,7 +71,7 @@
   }
 
   .container-login .breadcrumb .fa-house:hover {
-    color: var(--color-red);
+    color: var(--asm-color)
   }
 
 </style>

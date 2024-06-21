@@ -20,7 +20,7 @@
             <input type="hidden" id="multiFilter_root_page" name="root_page" value=""/>
 -->
                     <div style="display: none;">
-                        <form id="ukoocompat_my_cars_custom_form" action="/{$lang_iso}/module/ukoocompat/listing" method="POST"> 
+                        <form id="ukoocompat_my_cars_custom_form" action="/en/module/ukoocompat/listing" method="POST"> 
                             <input type="hidden" name="id_search" value="1"> 
                             <input type="hidden" name="id_search3" value="1"> 
                             <input type="hidden" name="id_lang" value="{Context::getContext()->language->id|escape:'html':'UTF-8'}">
@@ -41,10 +41,10 @@
                         </form>
                     </div>
                     
-                    {if $page_name =='index'}
+                    {* {if $page_name =='index'} *}
                         <div style="display: none;">
                             
-                            <form id="ukoocompat_clear_my_cars_custom_form" action="/{$lang_iso}/module/ukoocompat/listing" method="POST"> 
+                            <form id="ukoocompat_clear_my_cars_custom_form" action="/en/module/ukoocompat/listing" method="POST"> 
                                 <input type="hidden" name="id_search" value="1"> 
                                 <input type="hidden" name="id_search3" value="1"> 
                                 <input type="hidden" name="id_lang" value="{Context::getContext()->language->id|escape:'html':'UTF-8'}">
@@ -65,8 +65,9 @@
                             </form>    
                             
                         </div>
-                    {/if}
-
+                    {* {/if} *}
+{* {debug} *}
+{* {$page.page_name} *}
             <div  class="filterLogo" >
             {foreach from=$search->filters item=filter}
             	    
@@ -112,7 +113,7 @@
                     <span>{l s='Search' d='Modules.Ukoocompat.Block-topmenu'}</span>
                 </button>
             </div>
-            <input type="hidden" id="ukoocompat_page_name" name="page_name" value="{$page_name|escape:'htmlall':'UTF-8'}"/>
+            <input type="hidden" id="ukoocompat_page_name" name="page_name" value="{$page.page_name}"/>
             
             {if !$is_rewrite_active}
                 <input type="hidden" name="fc" value="module"/>
@@ -196,10 +197,19 @@
 
 </script>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+{* <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+
+*}
 <style>
     
     @media screen and (max-width:560px){
+
+    
+        .show {
+            height: unset !important;
+            flex-direction: column;
+        }
        
         .page-content-container{
          overflow:hidden;

@@ -2,11 +2,11 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-A new order has been generated on your behalf.
+A fost creata o comanda in numele tau.
 
-Please go on {order_link} to complete the payment.
+Te rugam sa deschizi {order_link} pentru a finaliza plata.
 
 [{shop_name}]({shop_url})
 

@@ -83,7 +83,7 @@
     color: var(--color-text);
   }
   .breadcrumb_wrapper a span:hover {
-    color: var(--color-red);
+    color: var(--asm-color)
   }
 
   .breadcrumb_wrapper .fa-house {
@@ -91,12 +91,12 @@
   }
 
   .breadcrumb_wrapper .fa-house:hover {
-    color: var(--color-red);
+    color: var(--asm-color)
   }
 
   @media screen and (min-width:992px){
     .breadcrumb_wrapper{
-    border-top: 3px solid var(--color-red);
+    border-top: 3px solid var(--asm-color)
     padding-bottom: 0;
     margin-bottom: 0;
   }

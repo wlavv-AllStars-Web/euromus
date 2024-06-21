@@ -12247,8 +12247,8 @@ body#index .maincontent_v1 .mls_pag_button:not(.active) {
 }
     #header .header-nav .cart-preview .shopping-cart {
       vertical-align: middle; }
-    #header .header-nav .cart-preview .body {
-      display: none; }
+    /* #header .header-nav .cart-preview .body {
+      display: none; } */
 #header .header-nav .blockcart a:hover {
   color: #ec4249; 
 }

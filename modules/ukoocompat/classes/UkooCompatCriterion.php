@@ -138,7 +138,7 @@ class UkooCompatCriterion extends ObjectModel
         );
     }
 
-
+ 
     /**
      * Retourne une liste de critères ordonnée selon le filtre et la sélection soumis
      * @param null $id_filter
@@ -211,6 +211,8 @@ class UkooCompatCriterion extends ObjectModel
                         WHERE cp.`id_category` IN ('.pSQL(implode(', ', $id_categories)).')
                     )';
             }
+
+            
             
             $criteria = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
 
@@ -265,6 +267,7 @@ class UkooCompatCriterion extends ObjectModel
                 $criteria = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sql);
             }
         } else {
+
             $criteria = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS(
                 'SELECT DISTINCT uc.`id_ukoocompat_criterion` AS id, uc.`id_ukoocompat_filter`'.
                 ($order_by == 'position' ? ', uc.`position`' : '').'

@@ -93,7 +93,9 @@
         </a>
       {/if}
 
-      <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="identity-link" href="{$urls.pages.identity}">
+      {* {debug} *}
+
+      <a class="col-lg-4 col-md-6 col-sm-6 col-xs-6" id="identity-link" href="{$urls.pages.my_cars}">
         <span class="link-item">
           <i class="fa-solid fa-car"></i>
           {l s='My Cars' d='Shop.Theme.CustomerAccount'}
@@ -113,12 +115,12 @@
       align-items: center;
       box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);width:100%;">
         <h3>{l s='TVA number (Only for companies)' d='Shop.Theme.CustomerAccount'} :</h3>
-        <div class="input-group" style="display:flex;flex-wrap: nowrap;padding-left: 0px;padding-right:0px;">
-          <input type="text" class="form-control" placeholder="TVA number" aria-label="TVA number" aria-describedby="basic-addon2">
+        <form method="post" class="input-group" style="display:flex;flex-wrap: nowrap;padding-left: 0px;padding-right:0px;gap:0.5rem;">
+          <input type="text" name="vat_number" class="form-control" placeholder="TVA number" aria-label="TVA number" aria-describedby="basic-addon2">
           <div class="input-group-append">
-            <button class="btn btn-secondary" type="button">{l s='Save' d='Shop.Theme.CustomerAccount'}</button>
+            <button class="btn" type="submit" value="save" style="border-radius: 0.25rem;">{l s='Save' d='Shop.Theme.CustomerAccount'}</button>
           </div>
-        </div>
+        </form>
         <small style="text-align: start;">{l s='(Ex: FR99999999999 / GR999999999)' d='Shop.Theme.CustomerAccount'}</small>
       </div>
       </div>
@@ -129,7 +131,9 @@
       {/block}
 
       <div class="col-lg-4 col-md-6 col-sm-6 col-xs-12" style="display:flex;justify-content:center;align-items:center;margin-bottom: 1.875rem;">
-        <button type="button" class="btn btn-outline-danger" style="width: 200px;height:60px">{l s='Back to homepage' d='Shop.Theme.CustomerAccount'}</button>
+        <div class="link-item" style="box-shadow: 2px 2px 11px 0px rgba(0, 0, 0, 0.1);width:100%;height:100%;display:flex;justify-content:center;align-items:center;">
+          <button type="button" class="btn" style="width: 200px;height:60px;border-radius:0.5rem;">{l s='Back to homepage' d='Shop.Theme.CustomerAccount'}</button>
+        </div>
       </div>
 
     </div>
@@ -148,3 +152,40 @@
   {/block}
 {/block}
 
+
+{* {if $has_customer_an_address != 1} *}
+
+  {$HOOK_CUSTOMER_IDENTITY_FORM}
+
+  <script>
+    $('input[name="vat_number"]').next('input').prop('disabled', true);
+
+    $('input[name="vat_number"]').focusout(function(){
+        
+    $.ajax({
+            type: "POST",
+            dataType: 'text',
+            headers: { "cache-control": "no-cache" },
+            url: "/index.php?controller=addresses",
+            data: {
+                'action' : 'check_vat',
+                'vatnumber' : $('input[name="vat_number"]').val()
+            },
+            success: function(msg){
+                
+              if(msg == 1){
+                  $('input[name="vat_number"]').css('border-color', 'black'); 
+                  $('input[name="vat_number"]').next('input').prop('disabled', false);
+              }else{
+                  $('input[name="vat_number"]').css('border-color', 'red'); 
+                  alert("Inserted VAT Number is invalid for your country, please verify!");
+                  $('input[name="vat_number"]').next('input').prop('disabled', true);   
+                  $('input[name="vat_number"]').value = "";   
+                  $('input[name="vat_number"]').attr('value', '');  
+              }
+            }
+          });
+    });
+  </script>
+
+{* {/if} *}

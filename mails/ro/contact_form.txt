@@ -2,17 +2,17 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Your message has been sent successfully, thank you for taking the time to write!
+Mesajul tau a fost trimis, iti multumim pentru ca ti-ai facut timp sa ne scrii!
 
-Order ID #:  {order_name}
+ID comanda:  {order_name}
 
-Product:  {product_name}
+Produs:  {product_name}
 
-Attached file: {attached_file}
+Fisier atasat: {attached_file}
 
-We will reply as soon as possible.
+Vom raspunde cat mai curand posibil.
 
 [{shop_name}]({shop_url})
 

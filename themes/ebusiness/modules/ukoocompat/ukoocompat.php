@@ -240,6 +240,7 @@ class UkooCompat extends Module
     public $order_way;
     public $link_to_product;
     public $import_status;
+    public $id_shop;
 
     public function __construct()
     {
@@ -257,6 +258,8 @@ class UkooCompat extends Module
         ];
         $this->context = Context::getContext();
         parent::__construct();
+
+        $this->id_shop = (int)Context::getContext()->shop->id;
 
         $this->displayName = $this->trans('Search products by compatibility');
         $this->description = $this->trans('Allow your customers to find your products compatible with their.');
@@ -476,8 +479,8 @@ class UkooCompat extends Module
         $id_cache = '|' . implode('|', $id_cache);
         $id_cache = $this->getCacheId('ukoocompat' . $id_cache);
 
-        if (!$this->isCached('wm-search-block-topmenu.tpl', $id_cache))
-        {
+        // if (!$this->isCached('wm-search-block-topmenu.tpl', $id_cache))
+        // {
             // On récupère les critères pour chaque filtre
             foreach ($search->filters as $k => $filter)
             {
@@ -540,13 +543,19 @@ class UkooCompat extends Module
                 'catalog_link' => $this->context->link->getModuleLink('ukoocompat', 'catalog', $params),
                 'listing_link' => $this->context->link->getModuleLink('ukoocompat', 'listing', $params),
                 'alias_link' => $this->context->link->getModuleLink('ukoocompat', 'alias')));
+        // }
+
+        if($this->id_shop === 1){
+            if( Context::getContext()->isMobile() ){
+                $output .= $this->display(__FILE__, 'wm-search-block-topmenu.tpl' , $id_cache);
+            }else{
+                $output .= $this->display(__FILE__, 'wm-search-block-home-topmenu.tpl' , $id_cache);
+            }
         }
 
-	    if( Context::getContext()->isMobile() ){
-		    $output .= $this->display(__FILE__, 'wm-search-block-topmenu.tpl' , $id_cache);
-	    }else{
-            $output .= $this->display(__FILE__, 'wm-search-block-home-topmenu.tpl' , $id_cache);
-	    }
+        if($this->id_shop === 2){
+            $output .= $this->display(__FILE__, 'wm-search-block-topmenu.tpl' , $id_cache);
+        }
 			    
 
         return $output;
@@ -664,6 +673,8 @@ class UkooCompat extends Module
             return;
         }
 
+
+
         // Si la variable "$params['hookDisplay']" n'est pas encore définie,
         // c'est la colonne de gauche qui est appelée
         if (!isset($params['hookDisplay'])) {
@@ -725,7 +736,7 @@ class UkooCompat extends Module
                 $id_cache = '|'.implode('|', $id_cache);
                 $id_cache = $this->getCacheId('ukoocompat'.$id_cache);
 
-                if (!$this->isCached('search-block.tpl', $id_cache)) {
+                // if (!$this->isCached('search-block.tpl', $id_cache)) {
                     // On récupère les critères pour chaque filtre
                     foreach ($search->filters as $k => $filter) {
                         // si le critères est déjà sélectionné, on ne charge pas l'ensemble des filtres
@@ -780,8 +791,8 @@ class UkooCompat extends Module
                         'catalog_link' => $this->context->link->getModuleLink('ukoocompat', 'catalog', $params),
                         'listing_link' => $this->context->link->getModuleLink('ukoocompat', 'listing', $params),
                         'alias_link' => $this->context->link->getModuleLink('ukoocompat', 'alias')));
-                }
-                $output .= $this->display(__FILE__, 'search-block.tpl', $id_cache);
+                // }
+                $output .= $this->display(__FILE__, 'wm-search-block-topmenu.tpl', $id_cache);
             }
         }
 
@@ -1012,6 +1023,8 @@ class UkooCompat extends Module
             }
         }
 
+        // echo '<pre>'.print_r(UkooCompatFilter::getFilters((int)$this->context->language->id, true),1).'</pre>';
+        //     exit;
         // echo '<pre>'.print_r($compatTab,1).'</pre>';
         //     exit;
         $this->context->smarty->assign(array(
@@ -1519,7 +1532,7 @@ class UkooCompat extends Module
             $id_cache[] = 'searchblock|ajax';
             $id_cache = '|'.implode('|', $id_cache);
             $id_cache = $this->getCacheId('ukoocompat'.$id_cache);
-            if (!$this->isCached('search-block.tpl', $id_cache)) {
+            // if (!$this->isCached('search-block.tpl', $id_cache)) {
 
                 foreach ($search->filters as $filter) {
                     $filters_order[(int)$filter->id_ukoocompat_filter]['order_way'] = $filter->order_way;
@@ -1619,7 +1632,7 @@ class UkooCompat extends Module
                     'listing_link' => $this->context->link->getModuleLink('ukoocompat', 'listing', array(
                         'id_search' => $search->id,
                         'filters' => $search->selected_criteria))));
-            }
+            // }
 			//webmaster so mostra na pagina index
 
 			if( Tools::getValue('page_name')=='index'){
@@ -1631,7 +1644,7 @@ class UkooCompat extends Module
 			    }
 			}
 			else{
-				 echo $this->display(__FILE__, 'search-block.tpl', $id_cache);
+				 echo $this->display(__FILE__, 'wm-search-block-topmenu.tpl', $id_cache);
 			}
 
         } else {
@@ -1876,8 +1889,8 @@ class UkooCompat extends Module
         $id_cache = '|' . implode('|', $id_cache);
         $id_cache = $this->getCacheId('ukoocompat' . $id_cache);
 
-        if (!$this->isCached('search-block-topmenu.tpl', $id_cache))
-        {
+        // if (!$this->isCached('search-block-topmenu.tpl', $id_cache))
+        // {
             // On récupère les critères pour chaque filtre
             foreach ($search->filters as $k => $filter)
             {
@@ -1943,7 +1956,7 @@ class UkooCompat extends Module
                 'catalog_link' => $this->context->link->getModuleLink('ukoocompat', 'catalog', $params),
                 'listing_link' => $this->context->link->getModuleLink('ukoocompat', 'listing', $params),
                 'alias_link' => $this->context->link->getModuleLink('ukoocompat', 'alias')));
-        }
+        // }
 
         $output .= $this->display(__FILE__, 'search-block-topmenu.tpl', $id_cache);
 

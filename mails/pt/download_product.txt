@@ -12,7 +12,7 @@ Tem {nbProducts} produto(s) disponível(is) para transferir, utilizando a(s) seg
 
 {virtualProductsTxt}
 
-Siga a sua encomenda e transfira a sua fatura na nossa loja, vá para a secção [Histórico de encomendas e detalhes]({history_url}) da sua conta de cliente.
+Follow your order and download your invoice on our store, go to the [Histórico de encomendas e detalhes]({history_url}) section of your customer account.
 
 Se tem uma conta de convidado, pode seguir a sua encomenda na secção [Rastreio de Visitantes]({guest_tracking_url}) na nossa loja.
 

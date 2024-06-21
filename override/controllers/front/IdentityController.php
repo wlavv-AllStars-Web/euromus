@@ -35,6 +35,7 @@ class IdentityControllerCore extends FrontController
     public $ssl = true;
 
     public $passwordRequired = true;
+    public $id_shop;
 
     /**
      * Assign template vars related to page content.
@@ -48,6 +49,7 @@ class IdentityControllerCore extends FrontController
 
         $customer_form = $this->makeCustomerForm()->setPasswordRequired($this->passwordRequired);
         $customer = new Customer();
+        $this->id_shop = (int)Context::getContext()->shop->id;
 
         $customer_form->getFormatter()
             ->setAskForNewPassword(true)
@@ -78,7 +80,11 @@ class IdentityControllerCore extends FrontController
         }
 
         parent::initContent();
-        $this->setTemplate('customer/my-account');
+        if($this->id_shop === 3){
+            $this->setTemplate('customer/my-account');
+        }else{
+            $this->setTemplate('customer/identity');
+        }
     }
 
     public function getBreadcrumbLinks()

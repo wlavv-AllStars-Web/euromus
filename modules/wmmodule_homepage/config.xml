@@ -3,7 +3,7 @@
     <name>wmmodule_homepage</name>
     <displayName><![CDATA[Homepage editor]]></displayName>
     <version><![CDATA[1.0.0]]></version>
-    <description><![CDATA[Professional]]></description>
+    <description><![CDATA[Homepage manager and slider to your site.]]></description>
     <author><![CDATA[AllStars WEB]]></author>
     <tab><![CDATA[front_office_features]]></tab>
     <is_configurable>0</is_configurable>

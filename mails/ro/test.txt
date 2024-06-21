@@ -2,11 +2,11 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Here is a test email from your shop.
+Acesta este un e-mail de test trimis de magazinul tau.
 
-If you can read this, it means the test is successful!
+Daca poti citi acest mesaj, inseamna ca testul a avut succes!
 
 [{shop_name}]({shop_url})
 

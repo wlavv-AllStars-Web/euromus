@@ -2,11 +2,11 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
 {reply}
 
-Please do not reply directly to this email, we will not receive it. In order to reply, click on the following link: {link}
+Te rugam sa nu replici acestui e-mail, aceasta adresa de e-mail nu poate primi mesaje. Pentru a raspunde, te rugam sa urmezi urmatorul link: {link}
 
 [{shop_name}]({shop_url})
 

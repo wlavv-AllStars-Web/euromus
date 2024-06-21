@@ -66,6 +66,76 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
     private $isPatch;
 
     /**
+     * @var bool
+     */
+    private $isCard = false;
+
+    /**
+     * @var string
+     */
+    private $fundingSource;
+
+    /**
+     * @var string
+     */
+    private $paypalCustomerId;
+
+    /**
+     * @var string
+     */
+    private $paypalVaultId;
+
+    /**
+     * @var bool
+     */
+    private $savePaymentMethod;
+
+    /**
+     * @var bool
+     */
+    private $vault = false;
+
+    /**
+     * @param bool $savePaymentMethod
+     */
+    public function setSavePaymentMethod($savePaymentMethod)
+    {
+        $this->savePaymentMethod = $savePaymentMethod;
+    }
+
+    /**
+     * @param string $fundingSource
+     */
+    public function setFundingSource($fundingSource)
+    {
+        $this->fundingSource = $fundingSource;
+    }
+
+    /**
+     * @param string $paypalCustomerId
+     */
+    public function setPaypalCustomerId($paypalCustomerId)
+    {
+        $this->paypalCustomerId = $paypalCustomerId;
+    }
+
+    /**
+     * @param string $paypalVaultId
+     */
+    public function setPaypalVaultId($paypalVaultId)
+    {
+        $this->paypalVaultId = $paypalVaultId;
+    }
+
+    /**
+     * @param bool $vault
+     */
+    public function setVault($vault)
+    {
+        $this->vault = $vault;
+    }
+
+    /**
      * @param array $cart
      * @param bool $isPatch
      */
@@ -102,6 +172,15 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
         if (false === $this->isUpdate) {
             $this->buildApplicationContextNode();
         }
+
+        if ($this->isCard) {
+            $this->buildCardPaymentSourceNode();
+            $this->buildSupplementaryDataNode();
+        }
+
+        if ($this->fundingSource === 'paypal') {
+            $this->buildPayPalPaymentSourceNode();
+        }
     }
 
     /**
@@ -128,6 +207,11 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
         if (false === $this->isUpdate) {
             $this->buildApplicationContextNode();
         }
+
+        if ($this->isCard) {
+            $this->buildCardPaymentSourceNode();
+            $this->buildSupplementaryDataNode();
+        }
     }
 
     /**
@@ -138,9 +222,9 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
         /** @var \Ps_checkout $module */
         $module = \Module::getInstanceByName('ps_checkout');
         /** @var PrestaShopConfiguration $configuration */
-        $configuration = $module->getService('ps_checkout.configuration');
+        $configuration = $module->getService(PrestaShopConfiguration::class);
         /** @var PayPalConfiguration $paypalConfiguration */
-        $paypalConfiguration = $module->getService('ps_checkout.paypal.configuration');
+        $paypalConfiguration = $module->getService(PayPalConfiguration::class);
 
         $shopName = $configuration->get('PS_SHOP_NAME');
         $merchantId = $paypalConfiguration->getMerchantId();
@@ -160,17 +244,8 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
             'payee' => [
                 'merchant_id' => $merchantId,
             ],
+            'vault' => $this->vault,
         ];
-
-        $psCheckoutCartCollection = new \PrestaShopCollection('PsCheckoutCart');
-        $psCheckoutCartCollection->where('id_cart', '=', (int) Context::getContext()->cart->id);
-
-        /** @var \PsCheckoutCart|false $psCheckoutCart */
-        $psCheckoutCart = $psCheckoutCartCollection->getFirst();
-
-        if (false === $this->isPatch && false !== $psCheckoutCart && false === empty($psCheckoutCart->paypal_token)) {
-            $node['token'] = $psCheckoutCart->paypal_token;
-        }
 
         if (true === $this->isUpdate) {
             $node['id'] = $this->paypalOrderId;
@@ -190,9 +265,6 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
      */
     public function buildShippingNode()
     {
-        $countryCodeMatrice = new PaypalCountryCodeMatrice();
-        $shippingCountryIsoCode = $this->getCountryIsoCodeById($this->cart['addresses']['shipping']->id_country);
-
         $gender = new \Gender($this->cart['customer']->id_gender, $this->cart['language']->id);
         $genderName = $gender->name;
 
@@ -200,14 +272,7 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
             'name' => [
                 'full_name' => $genderName . ' ' . $this->cart['addresses']['shipping']->lastname . ' ' . $this->cart['addresses']['shipping']->firstname,
             ],
-            'address' => [
-                'address_line_1' => (string) $this->cart['addresses']['shipping']->address1,
-                'address_line_2' => (string) $this->cart['addresses']['shipping']->address2,
-                'admin_area_1' => (string) $this->getStateNameById($this->cart['addresses']['shipping']->id_state),
-                'admin_area_2' => (string) $this->cart['addresses']['shipping']->city,
-                'country_code' => (string) $countryCodeMatrice->getPaypalIsoCode($shippingCountryIsoCode),
-                'postal_code' => (string) $this->cart['addresses']['shipping']->postcode,
-            ],
+            'address' => $this->getAddressPortable('shipping'),
         ];
 
         $this->getPayload()->addAndMergeItems($node);
@@ -218,7 +283,6 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
      */
     public function buildPayerNode()
     {
-        $countryCodeMatrice = new PaypalCountryCodeMatrice();
         $payerCountryIsoCode = $this->getCountryIsoCodeById($this->cart['addresses']['invoice']->id_country);
         /** @var \Ps_checkout $module */
         $module = \Module::getInstanceByName('ps_checkout');
@@ -228,16 +292,12 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
                 'given_name' => (string) $this->cart['addresses']['invoice']->firstname,
                 'surname' => (string) $this->cart['addresses']['invoice']->lastname,
             ],
-            'email_address' => (string) $this->cart['customer']->email,
-            'address' => [
-                'address_line_1' => (string) $this->cart['addresses']['invoice']->address1,
-                'address_line_2' => (string) $this->cart['addresses']['invoice']->address2,
-                'admin_area_1' => (string) $this->getStateNameById($this->cart['addresses']['invoice']->id_state), //The highest level sub-division in a country, which is usually a province, state, or ISO-3166-2 subdivision.
-                'admin_area_2' => (string) $this->cart['addresses']['invoice']->city, // A city, town, or village. Smaller than admin_area_level_1
-                'country_code' => (string) $countryCodeMatrice->getPaypalIsoCode($payerCountryIsoCode),
-                'postal_code' => (string) $this->cart['addresses']['invoice']->postcode,
-            ],
+            'address' => $this->getAddressPortable('invoice'),
         ];
+
+        if (\Validate::isEmail($this->cart['customer']->email)) {
+            $node['payer']['email_address'] = (string) $this->cart['customer']->email;
+        }
 
         // Add optional birthdate if provided
         if (!empty($this->cart['customer']->birthday) && $this->cart['customer']->birthday !== '0000-00-00') {
@@ -295,7 +355,7 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
         /** @var \Ps_checkout $module */
         $module = \Module::getInstanceByName('ps_checkout');
         /** @var Router $router */
-        $router = $module->getService('ps_checkout.prestashop.router');
+        $router = $module->getService(Router::class);
         $node['application_context'] = [
             'brand_name' => \Configuration::get(
                 'PS_SHOP_NAME',
@@ -305,6 +365,7 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
             ),
             'shipping_preference' => $this->expressCheckout ? 'GET_FROM_FILE' : 'SET_PROVIDED_ADDRESS',
             'return_url' => $router->getCheckoutValidateLink(),
+            'cancel_url' => $router->getCheckoutCancelLink(),
         ];
 
         $this->getPayload()->addAndMergeItems($node);
@@ -406,6 +467,93 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
         $this->getPayload()->addAndMergeItems($node);
     }
 
+    private function buildCardPaymentSourceNode()
+    {
+        /** @var \Ps_checkout $module */
+        $module = \Module::getInstanceByName('ps_checkout');
+        /** @var PayPalConfiguration $paypalConfiguration */
+        $paypalConfiguration = $module->getService(PayPalConfiguration::class);
+
+        $node = [
+            'payment_source' => [
+                'card' => [
+                    'name' => $this->cart['addresses']['invoice']->firstname . ' ' . $this->cart['addresses']['invoice']->lastname,
+                    'billing_address' => $this->getAddressPortable('invoice'),
+                ],
+            ],
+        ];
+
+        if ($paypalConfiguration->is3dSecureEnabled()) {
+            $node['payment_source']['card']['attributes']['verification']['method'] = $paypalConfiguration->getHostedFieldsContingencies();
+        }
+
+        if ($this->paypalVaultId) {
+            unset($node['payment_source']['card']['billing_address']);
+            $node['payment_source']['card']['vault_id'] = $this->paypalVaultId;
+        }
+
+        if ($this->paypalCustomerId) {
+            $node['payment_source']['card']['attributes']['customer'] = [
+                'id' => $this->paypalCustomerId,
+            ];
+        }
+
+        if ($this->savePaymentMethod) {
+            $node['payment_source']['card']['attributes']['vault'] = [
+                'store_in_vault' => 'ON_SUCCESS',
+            ];
+        }
+
+        $this->getPayload()->addAndMergeItems($node);
+    }
+
+    private function buildSupplementaryDataNode()
+    {
+        $payload = $this->getPayload()->getArray();
+        $node = [
+            'supplementary_data' => [
+                'card' => [
+                    'level_2' => [
+                        'tax_total' => $payload['amount']['breakdown']['tax_total'],
+                    ],
+                    'level_3' => [
+                        'shipping_amount' => $payload['amount']['breakdown']['shipping'],
+                        'duty_amount' => [
+                            'currency_code' => $payload['amount']['currency_code'],
+                            'value' => $payload['amount']['value'],
+                        ],
+                        'discount_amount' => $payload['amount']['breakdown']['discount'],
+                        'shipping_address' => $this->getAddressPortable('shipping'),
+                        'line_items' => $payload['items'],
+                    ],
+                ],
+            ],
+        ];
+
+        $this->getPayload()->addAndMergeItems($node);
+    }
+
+    /**
+     * @param "shipping"|"invoice" $addressType
+     *
+     * @return string[]
+     */
+    private function getAddressPortable($addressType)
+    {
+        $countryCodeMatrice = new PaypalCountryCodeMatrice();
+        $address = $this->cart['addresses'][$addressType];
+        $payerCountryIsoCode = $this->getCountryIsoCodeById($address->id_country);
+
+        return array_filter([
+            'address_line_1' => $address->address1,
+            'address_line_2' => $address->address2,
+            'admin_area_1' => $this->getStateNameById($address->id_state),
+            'admin_area_2' => $address->city,
+            'country_code' => $countryCodeMatrice->getPaypalIsoCode($payerCountryIsoCode),
+            'postal_code' => $address->postcode,
+        ]);
+    }
+
     /**
      * Function that allow to truncate fields to match the
      * paypal api requirements
@@ -447,7 +595,7 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
      */
     private function formatAmount($amount)
     {
-        return sprintf("%01.{$this->getNbDecimalToRound()}f", $amount);
+        return sprintf("%01.{$this->getNbDecimalToRound()}F", $amount);
     }
 
     /**
@@ -515,6 +663,22 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
     }
 
     /**
+     * @return bool
+     */
+    public function isCard()
+    {
+        return $this->isCard;
+    }
+
+    /**
+     * @param bool $isCard
+     */
+    public function setIsCard($isCard)
+    {
+        $this->isCard = $isCard;
+    }
+
+    /**
      * Getter $paypalOrderId
      */
     public function getPaypalOrderId()
@@ -528,5 +692,43 @@ class OrderPayloadBuilder extends Builder implements PayloadBuilderInterface
     public function getExpressCheckout()
     {
         return $this->expressCheckout;
+    }
+
+    private function buildPayPalPaymentSourceNode()
+    {
+        $data = [];
+
+        if ($this->paypalVaultId) {
+            return;
+            // $data['vault_id'] = $this->paypalVaultId;
+        }
+
+        if ($this->paypalCustomerId) {
+            $data['attributes']['customer'] = [
+                'id' => $this->paypalCustomerId,
+            ];
+        }
+
+        if ($this->savePaymentMethod) {
+            $data['attributes']['vault'] = [
+                'store_in_vault' => 'ON_SUCCESS',
+                'usage_pattern' => 'IMMEDIATE',
+                'usage_type' => 'MERCHANT',
+                'customer_type' => 'CONSUMER',
+                'permit_multiple_payment_tokens' => true,
+            ];
+        }
+
+        if (empty($data)) {
+            return;
+        }
+
+        $node = [
+            'payment_source' => [
+                'paypal' => $data,
+            ],
+        ];
+
+        $this->getPayload()->addAndMergeItems($node);
     }
 }

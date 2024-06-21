@@ -2,15 +2,15 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Customer Service - Discussion Forwarded
+Asistenta pentru clienti - Inregistrarea discutiei
 
-{employee} wanted to forward this discussion to you.
+{employee} a dorit sa iti trimitem inregistrarea aceastei discutii.
 
-Discussion history: {messages}
+Istoricul discutiilor: {messages}
 
-{employee} added {comment}
+{employee} a adaugat {comment}
 
 [{shop_name}]({shop_url})
 

@@ -2,15 +2,15 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-{product} is almost out of stock.
+{product} ramane fara stoc.
 
-There are now less than {last_qty} items in stock.
+Ai acum in stoc mai putin de {last_qty} unitati.
 
-Remaining stock: {qty}
+Stoc disponibil: {qty}
 
-Replenish your inventory, go to the Catalog > Stocks section of your back office to manage your stock.
+Reimprospateaza-ti inventarul, intra in sectiunea Catalog > Stocuri din Back Office pentru a administra stocurile.
 
 [{shop_name}]({shop_url})
 

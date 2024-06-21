@@ -27,6 +27,7 @@ return array(
     'Psr\\Http\\Client\\' => array($vendorDir . '/psr/http-client/src'),
     'Psr\\Container\\' => array($vendorDir . '/psr/container/src'),
     'Psr\\Cache\\' => array($vendorDir . '/psr/cache/src'),
+    'Prestashop\\ModuleLibMboInstaller\\' => array($vendorDir . '/prestashop/module-lib-mbo-installer/src'),
     'Prestashop\\ModuleLibGuzzleAdapter\\' => array($vendorDir . '/prestashop/module-lib-guzzle-adapter/src'),
     'PrestaShop\\PsAccountsInstaller\\' => array($vendorDir . '/prestashop/prestashop-accounts-installer/src'),
     'PrestaShop\\Module\\PrestashopCheckout\\' => array($baseDir . '/src'),

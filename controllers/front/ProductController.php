@@ -515,6 +515,7 @@ class ProductControllerCore extends ProductPresentingFrontControllerCore
         $this->ajaxRender(json_encode([
             'product_prices' => $this->render('catalog/_partials/product-prices'),
             'product_cover_thumbnails' => $this->render('catalog/_partials/product-cover-thumbnails'),
+            'product_cover_thumbnails1' => $this->render('catalog/_partials/miniatures/product'),
             'product_customization' => $this->render(
                 'catalog/_partials/product-customization',
                 [

@@ -157,7 +157,6 @@ class UkooCompatSearchFilter extends ObjectModel
             ($active === 'all' ? '' : ' AND `active` = '.(int)(bool)$active).'
             ORDER BY `position` ASC'
         );
-
         // pour chaque filtre, on instancie l'objet
         $filters = array();
         foreach ($id_filters as $key => $filter) {

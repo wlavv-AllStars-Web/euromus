@@ -21,11 +21,22 @@ class IncrementalSyncRepository
      */
     private $errorHandler;
 
-    public function __construct(\Db $db, \Context $context, ErrorHandlerInterface $errorHandler)
+    /**
+     * @var int
+     */
+    private $shopId;
+
+    public function __construct(\Context $context, ErrorHandlerInterface $errorHandler)
     {
-        $this->db = $db;
+        $this->db = \Db::getInstance();
         $this->context = $context;
         $this->errorHandler = $errorHandler;
+
+        if ($this->context->shop === null) {
+            throw new \PrestaShopException('No shop context');
+        }
+
+        $this->shopId = (int) $this->context->shop->id;
     }
 
     /**
@@ -74,7 +85,7 @@ class IncrementalSyncRepository
         return $this->db->delete(
             self::INCREMENTAL_SYNC_TABLE,
             'type = "' . pSQL($type) . '"
-            AND id_shop = ' . (int) $this->context->shop->id . '
+            AND id_shop = ' . $this->shopId . '
             AND id_object IN(' . implode(',', array_map('intval', $objectIds)) . ')
             AND lang_iso = "' . pSQL($langIso) . '"'
         );
@@ -96,7 +107,7 @@ class IncrementalSyncRepository
         $query->select('id_object')
             ->from(self::INCREMENTAL_SYNC_TABLE)
             ->where('lang_iso = "' . pSQL($langIso) . '"')
-            ->where('id_shop = "' . (int) $this->context->shop->id . '"')
+            ->where('id_shop = "' . $this->shopId . '"')
             ->where('type = "' . pSQL($type) . '"')
             ->limit($limit);
 
@@ -124,7 +135,7 @@ class IncrementalSyncRepository
         $query->select('COUNT(id_object) as count')
             ->from(self::INCREMENTAL_SYNC_TABLE)
             ->where('lang_iso = "' . pSQL($langIso) . '"')
-            ->where('id_shop = "' . (int) $this->context->shop->id . '"')
+            ->where('id_shop = "' . $this->shopId . '"')
             ->where('type = "' . pSQL($type) . '"');
 
         return (int) $this->db->getValue($query);
@@ -141,8 +152,37 @@ class IncrementalSyncRepository
         return $this->db->delete(
             self::INCREMENTAL_SYNC_TABLE,
             'type = "' . pSQL($type) . '"
-            AND id_shop = ' . (int) $this->context->shop->id . '
+            AND id_shop = ' . $this->shopId . '
             AND id_object = ' . (int) $objectId
+        );
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return int
+     */
+    public function getIncrementalSyncObjectCountByType($type)
+    {
+        $query = new \DbQuery();
+
+        $query->select('COUNT(type) as count')
+            ->from(self::INCREMENTAL_SYNC_TABLE)
+            ->where('type = "' . psql($type) . '"');
+
+        return (int) $this->db->getValue($query);
+    }
+
+    /**
+     * @param string $type
+     *
+     * @return bool
+     */
+    public function removeIncrementaSyncObjectByType($type)
+    {
+        return $this->db->delete(
+            self::INCREMENTAL_SYNC_TABLE,
+            'type = "' . pSQL($type) . '"'
         );
     }
 }

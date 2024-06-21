@@ -2,18 +2,18 @@
 
 {shop_url}
 
-Hi {firstname} {lastname},
+Buna {firstname} {lastname},
 
-Your guest account has been turned into a customer account
+Contul tau instant a fost transformat in unul de client
 
-Congratulations, your guest account for {shop_name} has been turned into a customer account!
+Felicitari, contul tau instant la {shop_name} a fost transformat intr-un cont de client!
 
-Email address: {email}
+Adresa de email: {email}
 
-Click on the following link to set up your password:
+Fa clic pe urmatorul link pentru a actualiza parola:
 {url}
 
-You can access your customer account on our store: [{shop_name}]({shop_url})
+Poti accesa contul de client din magazinul nostru: [{shop_name}]({shop_url})
 
 [{shop_name}]({shop_url})
 

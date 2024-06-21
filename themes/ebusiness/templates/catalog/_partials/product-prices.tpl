@@ -30,7 +30,12 @@
       <div class="product-price h5 {if $product.has_discount}has-discount{/if}" itemprop="offers" itemscope itemtype="https://schema.org/Offer" >
         <link itemprop="availability" href="https://schema.org/InStock"/>
         <meta itemprop="priceCurrency" content="{$currency.iso_code}">
-
+        {block name='product_discount'}
+          {if $product.has_discount}
+              {hook h='displayProductPriceBlock' product=$product type="old_price"}
+              <span class="regular-price">{$product.regular_price}</span>
+          {/if}
+        {/block}
         <div class="current-price">
           <span itemprop="price" content="{$product.price_amount}">{$product.price}</span>
 
@@ -44,12 +49,7 @@
             {/if}
           {/if*}
         </div>
-        {block name='product_discount'}
-          {if $product.has_discount}
-              {hook h='displayProductPriceBlock' product=$product type="old_price"}
-              <span class="regular-price">{$product.regular_price}</span>
-          {/if}
-        {/block}
+        
         {block name='product_unit_price'}
           {if $displayUnitPrice}
             <p class="product-unit-price sub">{l s='(%unit_price%)' d='Shop.Theme.Catalog' sprintf=['%unit_price%' => $product.unit_price_full]}</p>

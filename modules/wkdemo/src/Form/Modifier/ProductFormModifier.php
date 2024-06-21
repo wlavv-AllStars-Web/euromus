@@ -6,10 +6,15 @@ namespace PrestaShop\Module\WkDemo\Form\Modifier;
 use Configuration;
 use PrestaShop\PrestaShop\Core\Domain\Product\ValueObject\ProductId;
 use PrestaShopBundle\Form\FormBuilderModifier;
+use PrestaShopBundle\Form\Admin\Sell\Product\ReferencesType;
+use PrestaShopBundle\Form\Admin\Type\TranslatorAwareType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Contracts\Translation\TranslatorInterface;
 use Db;
+use PrestaShop\PrestaShop\Core\ConstraintValidator\Constraints\TypedRegex;
+use Symfony\Component\Validator\Constraints\Length;
+use PrestaShop\PrestaShop\Core\Domain\Product\ValueObject\Reference;
 
 
     class ProductFormModifier
@@ -109,7 +114,6 @@ use Db;
                 'form_theme' => '@PrestaShop/Admin/TwigTemplateForm/prestashop_ui_kit_base.html.twig',
             ]
         );
-        
         // $pricingTabFormBuilder = $productFormBuilder->get('pricing');
         // $this->formBuilderModifier->addAfter(
         //     $pricingTabFormBuilder,

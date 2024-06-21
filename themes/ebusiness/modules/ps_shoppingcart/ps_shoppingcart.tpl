@@ -74,13 +74,14 @@
 
 
   <div id="_desktop_cart">
-  <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url|escape:'html':'UTF-8'}">
+  <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" {if $cart.products_count > 0} onmouseover="hoverCart(this)" onmouseout="hoverCart(this)" {/if}  data-refresh-url="{$refresh_url|escape:'html':'UTF-8'}">
     <div class="header">
-      <a rel="nofollow" href="{$cart_url|escape:'html':'UTF-8'}">
-      <i class="fa-solid fa-cart-shopping"></i>
+      <a rel="nofollow" href="{$order_url|escape:'html':'UTF-8'}">
+        <i class="fa-solid fa-cart-shopping"></i>
         {* <span class="cart-products-label">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</span> *}
         {* <span class="cart-products-count">{$cart.products_count|escape:'html':'UTF-8'} {if $cart.products_count > 1}{l s=' Items' d='Shop.Theme.Checkout'}{else}{l s=' Item' d='Shop.Theme.Checkout'}{/if} - {$cart.totals.total.value|escape:'html':'UTF-8'} </span> *}
-        <span class="cart-products-count cart-products-count-absolution">{$cart.products_count|escape:'html':'UTF-8'}</span>
+        <span class="cart-products-label">{$cart.products_count|escape:'html':'UTF-8'}</span>
+        {* <span class="cart-products-label desktop">{l s='Product' d='Shop.Theme.Asm'}</span> *}
       </a>
 
       <div class="body cart-hover-content">
@@ -107,15 +108,15 @@
           {/if}
         {/if}
         <div class="cart-wishlist-action">
-          <a class="cart-wishlist-checkout" href="{$cart_url|escape:'html':'UTF-8'}">{l s='Check Out' d='Shop.Theme.Actions'}</a>
+          <a class="cart-wishlist-checkout" href="{$order_url|escape:'html':'UTF-8'}">{l s='Check Out' d='Shop.Theme.Actions'}</a>
         </div>
       </div>
     </div>
   </div>
 </div>
 <style>
-.cart-preview .cart-products-count {
-  /* background-color: #EC4249; */
+/* .cart-preview .cart-products-count {
+
   background-color: transparent !important;
     border-radius: 50% 50% 50% 50%;
     color: #FFFFFF;
@@ -130,6 +131,19 @@
     text-align: center;
     display: flex;
     justify-content: center;
+} */
+/* .right-nav{
+  display: flex;
+  flex: 1;
+} */
+
+/* #_desktop_cart{
+  display: flex;
+  flex:1;
+} */
+
+.cart-products-label{
+  font-weight: 600;
 }
 
 #_desktop_cart .fa-cart-shopping{

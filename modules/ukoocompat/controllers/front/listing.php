@@ -21,6 +21,7 @@ use PrestaShop\PrestaShop\Adapter\Presenter\Product\ProductListingLazyArray;
 class UkooCompatListingModuleFrontController extends ModuleFrontController
 {
     public $display_column_left = true;
+    public $nb_products_total;
 
     public function __construct()
     {
@@ -75,6 +76,9 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $search->selected_criteria[3] = Tools::getValue('filters3', Tools::getValue('filter3'));
         $search->selected_criteria[4] = Tools::getValue('filters4', Tools::getValue('filter4'));
 
+        // echo '<pre>'.print_r($search->selected_criteria,1).'</pre>';
+        // exit;
+
         // on assigne la catégorie courante à la recherche
       
         // $search->category = new Category(
@@ -87,7 +91,8 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $search->tags = UkooCompatCompat::getTags($search->selected_criteria, (int)$this->context->language->id);
         $search->replaceSEOTags();
         
-        
+        // echo '<pre>'.print_r($search->tags,1).'</pre>';
+        // exit;
         // on récupère les informations de l'alias pour affichage
         // $id_alias = (int)UkooCompatAlias::getAliasFromSelectedCriteria($search->selected_criteria);
         // if ($id_alias != 0) {
@@ -252,7 +257,18 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             null,
             true
         );
+        // echo '<pre>'.print_r($nb_products,1).'</pre>';
+        // exit;
         
+        // foreach($products as $product){
+        //     $product_covers [] = Product::getCover($product['id_product']);
+        // }
+
+        // echo '<pre>'.print_r(Product::getCover($product['id_product']),1).'</pre>';
+        // exit;
+        
+
+        $this->nb_products_total = $nb_products;
 
         // $itemsPerPage = Configuration::get('PS_PRODUCTS_PER_PAGE');
 
@@ -379,22 +395,26 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         //     $id_row = Db::getInstance()->getValue("Select id FROM eu_ASM_ukoo_customer WHERE id_brand = " . $getData['filters1'] . " AND id_model = " . $getData['filters2'] . " AND id_type = " . $getData['filters3'] . " AND id_version = " . $getData['filters4'] . " AND id_customer = " . $this->context->customer->id);
         // }
 
-        // echo '<pre>'.print_r($products,1).'</pre>';
+        // echo '<pre>'.print_r($getData,1).'</pre>';
         // exit;
         
-        
-        // if($getData['filters1'] == 0){
-        //     $params['filters1'] = 0;
-        //     $params['filters2'] = 0;
-        //     $params['filters3'] = 0;
-        //     $params['filters4'] = 0;
-            
-        //     $filters = self::getUrlFiltersForCookie();
+        if((int)Context::getContext()->shop->id === 2){
 
-        //     $this->context->cookie->__set('ukoocompat_search_'.(int)$search->id, serialize($filters));
+        
+        if($getData['filters1'] == 0){
+            $params['filters1'] = 0;
+            $params['filters2'] = 0;
+            $params['filters3'] = 0;
+            $params['filters4'] = 0;
             
-        //     Tools::redirect('/?open=yourCar');
-        // }else{
+            $filters = self::getUrlFiltersForCookie();
+
+            $this->context->cookie->__set('ukoocompat_search_'.(int)$search->id, serialize($filters));
+            
+            Tools::redirect('/?open=yourCar');
+        }else{
+        }
+
             $this->context->smarty->assign(array(
                 'ukoodata' => $ukooData,
                 // 'blockLayered' => $data,
@@ -454,8 +474,9 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             // $this->setTemplate('listing.tpl');
             // $this->setTemplate('module:ukoocompact/views/templates/front/listing.tpl');
 
-
-        // }
+            // if((int)Context::getContext()->shop->id === 2){
+            // }
+            }
     }
 
     private function getTemplateVarPagination(
@@ -471,7 +492,12 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
             )
         ;
 
-        $totalItems = $result->getTotalProductsCount();
+
+        // echo '<pre>'.print_r($pagination,1).'</pre>';
+        // exit;
+
+        $totalItems = $this->nb_products_total;
+        // $totalItems = $result->getTotalProductsCount();
         $itemsShownFrom = ($query->getResultsPerPage() * ($query->getPage() - 1)) + 1;
         $itemsShownTo = $query->getResultsPerPage() * $query->getPage();
 
