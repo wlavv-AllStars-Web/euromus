@@ -18,10 +18,11 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
+
 <div id="_desktop_cart">
   <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url|escape:'html':'UTF-8'}">
     <div class="header">
-      <a rel="nofollow" href="{$cart_url|escape:'html':'UTF-8'}">
+      <a rel="nofollow" href="{$order_url|escape:'html':'UTF-8'}">
         <i class="icon icon_cart_alt"></i>
         <span class="cart-products-label">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</span>
         <span class="cart-products-count">{$cart.products_count|escape:'html':'UTF-8'} {if $cart.products_count > 1}{l s=' Items' d='Shop.Theme.Checkout'}{else}{l s=' Item' d='Shop.Theme.Checkout'}{/if} - {$cart.totals.total.value|escape:'html':'UTF-8'} </span>
@@ -52,7 +53,7 @@
           {/if}
         {/if}
         <div class="cart-wishlist-action">
-          <a class="cart-wishlist-checkout" href="{$cart_url|escape:'html':'UTF-8'}">{l s='Check Out' d='Shop.Theme.Actions'}</a>
+          <a class="cart-wishlist-checkout" href="{$order_url|escape:'html':'UTF-8'}">{l s='Check Out' d='Shop.Theme.Actions'}</a>
         </div>
       </div>
     </div>

@@ -882,6 +882,13 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
   display: none !important;
 }
 
+#checkout #js-checkout-summary{
+  width: 100% !important;
+}
+
+#js-product-list-top .total-products{
+  text-align: center;
+}
 
 .product-miniature{
   padding: 0;
@@ -1403,6 +1410,14 @@ body#checkout #cart-summary-product-list img{
 }
 
 /* address */
+#addresses #main {
+  display: flex;
+  flex-direction: column;
+}
+#addresses .page-footer {
+  display: flex;
+  justify-content: center;
+}
 
 #checkout #delivery-addresses .card-body {
   padding: 1rem;

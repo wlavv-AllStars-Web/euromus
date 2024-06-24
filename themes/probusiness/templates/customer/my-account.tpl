@@ -48,9 +48,9 @@
       {* <li class="nav-item">
         <a class="nav-link" id="stats-tab" data-toggle="tab" href="#stats" role="tab" aria-controls="stats" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-bar-chart-o website_blue font-size-40"></i></a>
       </li> *}
-      <li class="nav-item">
+      {* <li class="nav-item">
         <a class="nav-link" id="addresses-tab" data-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-building website_blue font-size-40"></i></a>
-      </li>
+      </li> *}
       <li class="nav-item">
         <a class="nav-link" id="shipping-tab" data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-truck website_blue font-size-40"></i></a>
       </li>

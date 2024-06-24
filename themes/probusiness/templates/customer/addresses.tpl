@@ -25,7 +25,7 @@
 {/block}
 
 {block name='page_content'}
-  <div class="row">
+  {* <div class="row">
       {foreach $customer.addresses as $address}
         <div class="col-lg-4 col-md-6 col-sm-6">
             {block name='customer_address'}
@@ -39,5 +39,18 @@
     <a class="btn btn-primary" href="{$urls.pages.address|escape:'html':'UTF-8'}" data-link-action="add-address">
       <span>{l s='Create new address' d='Shop.Theme.Actions'}</span>
     </a>
-  </div>
+  </div> *}
+<div class="col-sm-12 text-center">
+  {if isset($multipleAddresses) && $multipleAddresses}
+    <div style="max-width: 1350px; margin: 20px auto 0 auto;text-align: center;">
+      <p class="alert alert-warning">{l s='Unavailable page!'} </p>    
+    </div>
+  {else}
+    <div style="max-width: 1350px; margin: 20px auto 0 auto;text-align: center;">
+        <p class="alert alert-warning">{l s='No addresses are available.'}&nbsp;
+            <a href="{$link->getPageLink('address', true)|escape:'html':'UTF-8'}" title="{l s='Add a new address'}">{l s='Add a new address'}</a>
+          </p>    
+      </div>
+  {/if}
+</div>
 {/block}
