@@ -86,6 +86,7 @@ class IdentityControllerCore extends FrontController
             $this->setTemplate('customer/identity');
         }
     }
+    
 
     public function getBreadcrumbLinks()
     {

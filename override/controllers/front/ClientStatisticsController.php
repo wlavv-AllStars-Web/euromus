@@ -21,6 +21,7 @@ class ClientStatisticsControllerCore extends FrontController{
         
         $average = $totalOfOrders / $numberOfOrders;
 
+        
         $this->context->smarty->assign(array(
             'customer' => $this->context->customer,
             'company_name' => $this->context->customer->company,

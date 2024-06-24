@@ -258,6 +258,7 @@ class IndexController extends IndexControllerCore
                                 $html .='<div class="model-cars">';
                             }
                         
+                            
                                                                
                                                                     
                                                                     $html .= '<div class="car_item_holder">';

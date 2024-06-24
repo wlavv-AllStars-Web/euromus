@@ -22,6 +22,7 @@ class CatalogControllerCore extends FrontController{
         $this->setTemplate('catalog/custom-catalog.tpl');
     }
     
+    
     public function setUpdated($manufacturers){
         
         $today = date('Y-m-d');

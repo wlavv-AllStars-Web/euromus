@@ -7336,6 +7336,7 @@ class ProductCore extends ObjectModel
             ORDER BY i.`position`');
     }
 
+    
     /**
      * Webservice getter : Get StockAvailable identifier and Attribute identifier
      *

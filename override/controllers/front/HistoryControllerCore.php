@@ -72,6 +72,7 @@ class HistoryControllerCore extends FrontController
             $this->setTemplate('customer/history');
         }
 
+        
     }
 
     public function getTemplateVarOrders()

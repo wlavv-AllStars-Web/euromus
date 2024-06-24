@@ -1613,6 +1613,7 @@ class FrontControllerCore extends Controller
 
             $this->urls = $urls;
         }
+        
 
         return $this->urls;
     }
