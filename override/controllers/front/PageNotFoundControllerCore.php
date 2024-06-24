@@ -43,8 +43,8 @@ class PageNotFoundControllerCore extends FrontController
         header('Status: 404 Not Found');
         $this->context->cookie->disallowWriting();
         parent::initContent();
-        // $this->setTemplate('errors/404');
-        $this->setTemplate('index');
+        $this->setTemplate('errors/404');
+        // $this->setTemplate('index');
     }
 
     protected function canonicalRedirection($canonical_url = '')
