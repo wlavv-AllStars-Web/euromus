@@ -33,7 +33,9 @@
         </div>
     </nav>
   {/block}
-  
+  {* <pre>{$urls|print_r}</pre> *}
+  {* <pre>{$cart['products']|count}</pre> *}
+  {* {debug} *}
   {block name='header_top'}
     <div class="header-top">
       <div class="container" style="padding-bottom: 15px;max-width: 1337px !important; width: 90vw !important; " >
@@ -45,9 +47,11 @@
           </div>
           {if Context::getContext()->customer->logged}  
           <div class="wdth mobile" style="width: 50%;">
-            <a href="/order">
+            
+            <a href="/order" {if $cart['products']|count > 0} class="cart_empty" {/if}>
+            
               <div  style="cursor: pointer; width: 100%">
-                <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container ">
+                <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container  {if $cart['products']|count < 1} cart_empty{/if}">
                   <div style="width:33px; background-color: #333;float: left;border-radius: 0.25rem 0 0 0.25rem; color: white;display:flex;align-items:center;justify-content:center;border-right: 2px solid #0273eb;"> 
                     <i class="fa fa-shopping-cart" style="font-size: 17px;"></i>
                   </div>
@@ -57,7 +61,9 @@
                   </div>
                 </div>
               </div>
+              {if $cart.products|count > 0}
               </a>
+            {/if}
             </div>
           {/if}
           <div  class=" formula" style="display: flex; justify-content:center; margin-left: 50px; width:70%">
@@ -66,7 +72,7 @@
             <div class="wdth" style="width: 50%;">
             <a href="/order">
               <div  style="cursor: pointer; width: 100%">
-                <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container ">
+                <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container  {if $cart['products']|count < 1} cart_empty{/if}">
                   <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;display:flex;align-items:center;justify-content:center;"> 
                     <i class="fa fa-shopping-cart" style="font-size: 17px;"></i>
                   </div>

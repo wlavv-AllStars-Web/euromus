@@ -31,6 +31,20 @@
     background-color: #7e7e7e;
   }
   /*  */
+  .cart-grid-right{
+    display: flex;
+    justify-content:end;
+  }
+  /* cart empty */
+  .cart_empty{
+    display: none;
+  }
+
+
+  #main .cart-grid{
+    text-align: center;
+  }
+  /*  */
    
    .whtbl{
      background-color: white;
@@ -863,6 +877,11 @@ Roboto, Oxygen-Sans, Ubuntu, Cantarell,
 #new-products .products {
   margin-top: 2rem;
 }
+
+.product-cover .layer {
+  display: none !important;
+}
+
 
 .product-miniature{
   padding: 0;
@@ -3314,6 +3333,7 @@ grid-template-columns: 1fr 1fr;
 #products .product-miniature .thumbnail-container .information-product .list-name{
   justify-content: center;
 }
+
 
 /* categories product page mobile */
 

@@ -47,7 +47,7 @@
       </div>
 
       <!-- Right Block: cart subtotal & cart total -->
-      <div class="cart-grid-right col-lg-12 mb-3" style="display: flex;justify-content:end;">
+      <div class="cart-grid-right col-lg-12 mb-3  {if $cart['products']|count < 1} cart_empty{/if}" >
         <!-- shipping informations -->
         <div class="col-lg-3 p-0" style="background: #fff;">
         {block name='hook_shopping_cart_footer'}
