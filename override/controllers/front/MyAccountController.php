@@ -4,7 +4,7 @@ use PrestaShop\PrestaShop\Adapter\Presenter\Order\OrderPresenter;
 class MyAccountController extends MyAccountControllerCore
 {
     public $auth = true;
-    // public $php_self = 'my-account';
+    public $php_self = 'my-account';
     public $authRedirection = 'my-account';
     // public $ssl = true;
     // public function setMedia()
@@ -14,7 +14,7 @@ class MyAccountController extends MyAccountControllerCore
     //     $this->addJS('https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js');
     // }
 
-    
+
     public $order_presenter;
     protected $customer;
 

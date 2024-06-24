@@ -251,7 +251,12 @@
     style="text-align: end; padding-top: 12px; width: 100% !important; padding-left: 25px; padding-right: 25px; background-color:white"
     id="login_block" class="collapse navbar-collapse mxsz">
 
-    <form style="display:flex;flex-direction: column; width: 100%" id="login-form" action="{$link->getPageLink('authentication', true)}" method="post">
+    <form style="display:flex;flex-direction: column; width: 100%" id="login-form" action="{$link->getPageLink('authentication', true)}" method="post"
+    name="continue"
+    data-link-action="sign-in"
+    type="submit"
+    value="1">
+    
       <div style="display:flex; width:100%; height: min-content" class="form-group col">
         <i class="fa fa-user" style="font-size: 25px; padding: 5px 7px; background-color: #0273eb; color: white"></i>
         <input type="text" class="form-control whtbl" id="email" name="email" placeholder="{l s="Email"}">

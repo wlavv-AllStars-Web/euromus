@@ -2,6 +2,8 @@
 
 class MyCarsControllerCore extends FrontController
 {
+    public $auth=true;
+    public $authRedirection = 'my-account';
     public $php_self = 'my-cars';
 
     public function initContent()
@@ -10,7 +12,7 @@ class MyCarsControllerCore extends FrontController
         
         if(Tools::getValue('delete') == true){
             
-            
+
             $my_cars = Db::getInstance()->executes("DELETE FROM "._DB_PREFIX_."ASM_ukoo_customer WHERE id = " . Tools::getValue('id'));
             
             $my_cars = Db::getInstance()->executes("Select * FROM "._DB_PREFIX_."ASM_ukoo_customer WHERE email = '" . $this->context->customer->email . "'");

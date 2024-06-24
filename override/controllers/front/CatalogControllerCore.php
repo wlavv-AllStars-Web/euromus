@@ -2,6 +2,7 @@
 
 class CatalogControllerCore extends FrontController{
     public $auth = true;
+    public $authRedirection = 'my-account';
     public $php_self = 'catalog';
 
     public function initContent(){
@@ -22,7 +23,7 @@ class CatalogControllerCore extends FrontController{
         $this->setTemplate('catalog/custom-catalog.tpl');
     }
     
-    
+
     public function setUpdated($manufacturers){
         
         $today = date('Y-m-d');
