@@ -705,159 +705,173 @@
             <div class="spacer-20"></div>
             <div class="row cards">
 
+            {* dpd *}
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/dpd_logo.jpg" alt="santander_logo.jpg?v=1" /></div>
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/dpd_logo.jpg" alt="dpd_logo" /></div>
               <div class="text_partners">{l s='DPD group is the largest parcel delivery network in Europe, carrying worldwide about 5.3 million parcels daily via 77000 workers through their 4 different brands DPD, Chronopost, SEUR and BRT.' d='Shop.Theme.Partners'}​</div>
-              <div class="button_container_partners"><a href="https://www.santander.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a></div>
+              <div class="button_container_partners"><a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a></div>
               </div>
               </div>
 
+              {* ups *}
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/sema_logo.jpg" alt="allstars_web_logo.jpg?v=1" /></div>
-              <div class="text_partners">{l s='The SEMA SHOW held annually during the first week of November at the Las Vegas Convention Center in conjunction with the Automotive Aftermarket Industry Weekend. The Sema show is the world largest automotive convention, joining over 100.000 buyers from 100 countries, 2000 companies and more than 1000 exclusive show cars' d='Shop.Theme.Partners'}</div>
-              <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/ups_logo.webp" alt="ups_logo.jpg?v=1" /></div>
+              <div class="text_partners">{l s='UPS' d='Shop.Theme.Partners'}</div>
+              <div class="button_container_partners"><a href="https://www.ups.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
               </div>
               </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
-            <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/ingenico_logo.jpg" alt="transcar_logo.jpg?v=1" /></div>
-            <div class="text_partners">{l s='Ingenico is a France-based company, whose business is to provide the technology involved in secure electronic transactions. Its traditional business is based on the manufacture of point of sale (POS) payment terminals, but it also includes complete payment software and related services, also software for merchants.' d='Shop.Theme.Partners'}</div>
-            <div class="button_container_partners"><a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
-            </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
-            <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/adobe_logo.jpg" alt="paypal_logo.jpg?v=1" /></div>
-            <div class="text_partners">{l s='Adobe Inc is an American multinational computer software company focused upon the creation on multimedia and creativity software products, with a more recent foray into digital marketing software. Adobe is best known for its Adobe Flash web software, Photoshop image editing software, Adobe Illustrator graphics editor and Acrobat Reader.' d='Shop.Theme.Partners'}</div>
-            <div class="button_container_partners"><a href="https://www.paypal.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
-            </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
-            <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/braga_logo.jpg" alt="ingenico_logo.jpg?v=1" /></div>
-            <div class="text_partners">{l s='The Braga Motorshow is the largest Portuguese car show and the 6th largest outdoor independant car show in Europe. Held annually during the second week end of August at the Braga Vasco Sameiro track, this event drew in about 50.000 visitors in 2018 to see Drift, Drag, roll race and stunt shows !' d='Shop.Theme.Partners'}</div>
-            <div class="button_container_partners"><a href="https://ingenico.com/en" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
-            </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
-            <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/fedex_logo.jpg" alt="alma_logo.jpg?v=1" /></div>
-            <div class="text_partners">{l s='FedEx Corporation is an American multinational delivery services known for its overnight shipping service and pioneering a system that could track packages and provide real-time updates on package location, a feature that has now been implemented by most other carrier services. ' d='Shop.Theme.Partners'}</div>
-            <div class="button_container_partners"><a href="https://almapay.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
-            </div>
-            </div>
-
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              {* tnt *}
+              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/tnt_logo.jpg" alt="tnt_logo" /></div>
+              <div class="text_partners">{l s='TNT Express is an international courier delivery services company founded in the Netherlands in 2011 and now a subsidiary of FedEx. TNT offers road and air delivery services in Europe, the region of the Asia Pacific, the Americas, the Middle East, and Africa.' d='Shop.Theme.Partners'}</div>
+              <div class="button_container_partners"><a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
+              </div>
+              </div>
+
+              {* maersk *}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
                 <div class="image_container_partners">
-                  <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/norton_logo.jpg" alt="dpd_logo.jpg?v=1" />
+                  <img class="image_partners" src="/img/asd/Content_pages/partners/maersk_logo.jpg" alt="maersk_logo" />
                 </div>
                 <div class="text_partners">
-                  {l s="Norton or Norton by Symantec, is a division of NortonLifeLock based in California and offering a variety of products and services related to digital security. In 2014, it was announced that Norton's parent company Symantec would split its business into two units - one focused on security, and one focused on information management, with Norton being placed in the unit focused on security." d='Shop.Theme.Partners'}
+                {l s="A.P. Møller-Mærsk, also known simply as Maersk is a Danish shipping and logistics company founded in 1904 by Arnold Peter Møller and Peter Mærsk Møller. Maersk's business activities include shipping, port operation, supply chain management and warehousing. The company is based in Copenhagen, Denmark, with subsidiaries and offices across 130 countries and 108.000 employees worldwide." d='Shop.Theme.Partners'}
                 </div>
                 <div class="button_container_partners">
-                  <a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a>
+                  <a href="https://www.maersk.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              {* transcar *}
+              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
                 <div class="image_container_partners">
-                  <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/transcar_logo.jpg" alt="tnt_logo.jpg?v=1" />
+                  <img class="image_partners" src="/img/asd/Content_pages/partners/transcar_logo.jpg" alt="transcar_logo.jpg?v=1" />
                 </div>
                 <div class="text_partners">
                   {l s='Vehicles transport specialist, TrancarPremium uses state-of-the-art logistics tools, allowing the team to offer unparalleled quality of service and great management flexibility. Based in Portugal, the company offers different premium solutions for shipping supercars, racing cars, classics or exotics throughout Europe.' d='Shop.Theme.Partners'}
                 </div>
                 <div class="button_container_partners">
-                  <a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
+                  <a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
+                </div>
+              </div>
+              </div>
+
+            {* ingenico *}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/ingenico_logo.jpg" alt="ingenico" /></div>
+            <div class="text_partners">{l s='Ingenico is a France-based company, whose business is to provide the technology involved in secure electronic transactions. Its traditional business is based on the manufacture of point of sale (POS) payment terminals, but it also includes complete payment software and related services, also software for merchants.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://ingenico.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
+            </div>
+            </div>
+
+            {* Millenium *}
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/bcp_logo.jpg" alt="bcp_logo.jpg?v=1" /></div>
+            <div class="text_partners">{l s='Banco Comercial Português (BCP) is a Portuguese bank, member of the PSI-20 index and the Next 150. It is present in Portugal as Millenium BCP and in Belgium and Luxembourg as Banque BCP. It is also present in other countries and is listed on the Euronext stock exchange. Banque BCP was born in 2001 from the merger of the French branches of the oldest Portuguese financial establishments.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://www.millenniumbcp.pt/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/adobe_logo.jpg" alt="adobe_logo.jpg?v=1" /></div>
+            <div class="text_partners">{l s='Adobe Inc is an American multinational computer software company focused upon the creation on multimedia and creativity software products, with a more recent foray into digital marketing software. Adobe is best known for its Adobe Flash web software, Photoshop image editing software, Adobe Illustrator graphics editor and Acrobat Reader.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://www.adobe.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/smurfit_logo.webp" alt="smurfit_logo" /></div>
+            <div class="text_partners">{l s='Smurfit Kappa' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://www.smurfitkappa.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+            <div class="card_partners">
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/sonic_logo.webp" alt="sonic_logo" /></div>
+            <div class="text_partners">{l s='Sonic Tools' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://sonictoolsusa.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
+            </div>
+            </div>
+
+            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
+              <div class="card_partners">
+                <div class="image_container_partners">
+                  <img class="image_partners" src="/img/asd/Content_pages/partners/norton_logo.jpg" alt="dpd_logo.jpg?v=1" />
+                </div>
+                <div class="text_partners">
+                  {l s="Norton or Norton by Symantec, is a division of NortonLifeLock based in California and offering a variety of products and services related to digital security. In 2014, it was announced that Norton's parent company Symantec would split its business into two units - one focused on security, and one focused on information management, with Norton being placed in the unit focused on security." d='Shop.Theme.Partners'}
+                </div>
+                <div class="button_container_partners">
+                  <a href="https://norton.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a>
                 </div>
               </div>
             </div>
 
             
 
-              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
-              <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/tnt_logo.jpg" alt="santander_logo.jpg?v=1" /></div>
-              <div class="text_partners">{l s='TNT Express is an international courier delivery services company founded in the Netherlands in 2011 and now a subsidiary of FedEx. TNT offers road and air delivery services in Europe, the region of the Asia Pacific, the Americas, the Middle East, and Africa.' d='Shop.Theme.Partners'}</div>
-              <div class="button_container_partners"><a href="https://www.santander.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
-              </div>
-              </div>
+            
+              
 
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/asw_logo.jpg" alt="allstars_web_logo.jpg?v=1" /></div>
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/asw_logo.jpg" alt="allstars_web_logo.jpg?v=1" /></div>
               <div class="text_partners">{l s='All Stars Web Solutions is a top range web agency specializing in website design and development, software and application creation, digital marketing, and SEO. Offering the latest technologies IT tools for warehouse management (ERP), cybersecurity, front and back end with optimal ergonomics, they make the management of a website accessible to everyone.' d='Shop.Theme.Partners'}</div>
               <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
               </div>
               </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
-            <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/bcp_logo.jpg" alt="transcar_logo.jpg?v=1" /></div>
-            <div class="text_partners">{l s='Banco Comercial Português (BCP) is a Portuguese bank, member of the PSI-20 index and the Next 150. It is present in Portugal as Millenium BCP and in Belgium and Luxembourg as Banque BCP. It is also present in other countries and is listed on the Euronext stock exchange. Banque BCP was born in 2001 from the merger of the French branches of the oldest Portuguese financial establishments.' d='Shop.Theme.Partners'}</div>
-            <div class="button_container_partners"><a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
-            </div>
-            </div>
+            
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/digi_logo.jpg" alt="paypal_logo.jpg?v=1" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/digi_logo.jpg" alt="digi_logo.jpg?v=1" /></div>
             <div class="text_partners">{l s='Since 2003, the company DIGISERVICES is a reliable supplier of high quality and customized tuning software files. French leader with more than 30 auto centers in France, more than 6000 vehicles visit their workshops each year.' d='Shop.Theme.Partners'}</div>
-            <div class="button_container_partners"><a href="https://www.paypal.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
+            <div class="button_container_partners"><a href="https://www.digiservices.fr/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/shiftech_logo.jpg" alt="ingenico_logo.jpg?v=1" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/shiftech_logo.jpg" alt="shiftech_logo.jpg?v=1" /></div>
             <div class="text_partners">{l s='Since 2008, ShifTech has been a specialist in custom tuning software that offers the perfect combination of increased engine power and more economical fuel consumption. Present in France, Belgium and Luxembourg, it is a reference in the market due to its quality of service and its experience.' d='Shop.Theme.Partners'}</div>
-            <div class="button_container_partners"><a href="https://ingenico.com/en" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
+            <div class="button_container_partners"><a href="https://www.shiftech.eu" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/brperformance_logo.jpg" alt="alma_logo.jpg?v=1" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/brperformance_logo.jpg" alt="alma_logo.jpg?v=1" /></div>
             <div class="text_partners">{l s='Key partner of the biggest brands in the performance automotive industry, BR-Performance is a key player in the custom tuning software market thanks to solid knowledges and state-of-the-art equipment.' d='Shop.Theme.Partners'}</div>
-            <div class="button_container_partners"><a href="https://almapay.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
+            <div class="button_container_partners"><a href="https://www.br-performance.fr" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
                 <div class="image_container_partners">
-                  <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/asm_logo.jpg" alt="dpd_logo.jpg?v=1" />
+                  <img class="image_partners" src="/img/asd/Content_pages/partners/asm_logo.webp" alt="asm_logo" />
                 </div>
                 <div class="text_partners">
                 {l s='European platform, founded in 2013 and established in 3 countries, All Stars Motorsport has quickly become a key player in aftermarket automotive performance and design industry. Reseller of the most famous brands, All Stars Motorsport offers the best products at the best prices to allow to offer everyone their own vision of the automobile.' d='Shop.Theme.Partners'}
                 </div>
                 <div class="button_container_partners">
-                  <a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
+                  <a href="https://www.all-stars-motorsport.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
                 </div>
               </div>
             </div>
 
-            <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
-              <div class="card_partners">
-                <div class="image_container_partners">
-                  <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/maersk_logo.jpg" alt="tnt_logo.jpg?v=1" />
-                </div>
-                <div class="text_partners">
-                {l s="A.P. Møller-Mærsk, also known simply as Maersk is a Danish shipping and logistics company founded in 1904 by Arnold Peter Møller and Peter Mærsk Møller. Maersk's business activities include shipping, port operation, supply chain management and warehousing. The company is based in Copenhagen, Denmark, with subsidiaries and offices across 130 countries and 108.000 employees worldwide." d='Shop.Theme.Partners'}
-                </div>
-                <div class="button_container_partners">
-                  <a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
-                </div>
-              </div>
-            </div>
+            
 
 
             </div>
