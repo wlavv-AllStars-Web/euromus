@@ -30,19 +30,19 @@
     {block name='cms_content'}
       {if $cms.id === 8}
         <div id="cms_container_8">
-          <div><img src="https://www.all-stars-distribution.com/img/cms/AllStars/top_image_short.jpg" alt="top_image_short.jpg" /></div>
+          <div><img src="/img/asd/Content_pages/aboutus/top_image_short.jpg" alt="top_image_short.jpg" /></div>
           <div class="profile_container_cms">
           <div class="profile_style">{l s='Profile' d='Shop.Theme.About'}</div>
           <div class="profile_container_text" id="profile_container_text">{l s='Supplying over 30 top of the line brands to automotive performance professionals worldwide, All Stars Distribution is one of the largest European wholesalers of performance and design parts. Dedicated to serving shops, tuners, e-dealers and other resellers, All Stars Distribution is committed to employing the best of inventory management and distribution practices to get our customers the performance parts they need to satisfy their customers.' d='Shop.Theme.About'}</div>
           <div id="profile_container_text1 hidden-md-up" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.About'}</div>
           </div>
           <div>
-            <img class="desktop" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/badge_lg.jpg" alt="badge_lg.jpg" />
-            <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/badge_xs.jpg" alt="badge_lg.jpg" />
+            <img class="desktop" src="/img/asd/Content_pages/aboutus/badge_lg.jpg" alt="badge_lg.jpg" />
+            <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="/img/asd/Content_pages/aboutus/badge_xs.jpg" alt="badge_xs.jpg" />
           </div>
           <div>
-            <img class="desktop" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/lg_en.jpg" alt="lg_en.jpg" />
-            <img class="mobile" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/xs_en.jpg" alt="lg_en.jpg" />
+            <img class="desktop" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.jpg" alt="lg_{$language.iso_code}.jpg" />
+            <img class="mobile" src="/img/asd/Content_pages/aboutus/xs_{$language.iso_code}.jpg" alt="lg_{$language.iso_code}.jpg" />
           </div>
         </div>
       {else if $cms.id === 14}
