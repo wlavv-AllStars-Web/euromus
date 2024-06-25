@@ -649,11 +649,11 @@
     border: 0;
     margin-top: 2rem;
   }
-  #manufacturer .brand_content_item .brand-img img{
+  /* #manufacturer .brand_content_item .brand-img img{
     width: 250px;
     height: 110px;
     object-fit: cover;
-  }
+  } */
   #manufacturer .brand_content_item .brand-infos{
     flex: 1;
     text-align: start;
