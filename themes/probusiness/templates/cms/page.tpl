@@ -51,124 +51,124 @@
             <img src="https://www.all-stars-distribution.com/img/dealers/headers/become_dealer.jpg" />
           </div>
           <div class="choose_us_btn">
-            <h5 class="cms_shadow_button">Why choose us ?</h5>
+            <h5 class="cms_shadow_button">{l s='Why choose us ?' d='Shop.Theme.BecomeDealer'}</h5>
           </div>
           <p class="become_dealer_text">
-          European leader in the Automotive Distribution Industry, All Stars Distribution supplies daily hundreds specialized professionals around the world. 
+          {l s='European leader in the Automotive Distribution Industry, All Stars Distribution supplies daily hundreds specialized professionals around the world. ' d='Shop.Theme.HomepageLogout'}
           <br>
           <br>
-          Betting on long-term partnership, we're very selective and approve new accounts only for companies matching with our requirements
+          {l s="Betting on long-term partnership, we're very selective and approve new accounts only for companies matching with our requirements" d='Shop.Theme.HomepageLogout'}
           </p>
           <div class="requirements_container">
-            <h1 class="requirements">> NEW ACCOUNT REQUIREMENTS <</h1>
+            <h1 class="requirements">{l s='> NEW ACCOUNT REQUIREMENTS <' d='Shop.Theme.HomepageLogout'}</h1>
           </div>
           <div class="become_cards">
             <div class="become_card_requirement">
-              <div class="card_title">Business</div>
+              <div class="card_title">{l s='Business' d='Shop.Theme.HomepageLogout'}</div>
               <div class="card_content">
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Storefront</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Workshop</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Tuner</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>E-dealer</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Trader</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Storefront' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Workshop' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Tuner' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='E-dealer' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Trader' d='Shop.Theme.HomepageLogout'}</div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">Admin</div>
+              <div class="card_title">{l s='Admin' d='Shop.Theme.HomepageLogout'}</div>
               <div class="card_content">
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Valid VAT number</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid VAT number' d='Shop.Theme.HomepageLogout'}</div>
                 <div class="card_content_option option_plus"><i class="fa-solid fa-plus"></i></div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Valid business license</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid business license' d='Shop.Theme.HomepageLogout'}</div>
                 <div class="card_content_option option_plus"><i class="fa-solid fa-plus"></i></div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Valid bank account</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid bank account' d='Shop.Theme.HomepageLogout'}</div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">Visibility</div>
+              <div class="card_title">{l s='Visibility' d='Shop.Theme.HomepageLogout'}</div>
               <div class="card_content">
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Active website</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Active social media</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Active website' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Active social media' d='Shop.Theme.HomepageLogout'}</div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">Activity</div>
+              <div class="card_title">{l s='Activity' d='Shop.Theme.HomepageLogout'}</div>
               <div class="card_content">
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Aftermarket parts</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Performance parts</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>Tuning / building</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Aftermarket parts' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Performance parts' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Tuning / building' d='Shop.Theme.HomepageLogout'}</div>
               </div>
             </div>
           </div>
 
           <div class="form-become-dealer" style="margin: 5rem 0;">
-            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> Fill out the become a dealer enquiry form <span style="color: #0273EB;"><</span></h1>
+            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Fill out the become a dealer enquiry form' d='Shop.Theme.HomepageLogout'} <span style="color: #0273EB;"><</span></h1>
             
             <form>
               <div class="form-row">
                 <div class="form-group col-md-2">
-                  <label for="inputEmail4">Name</label>
+                  <label for="inputEmail4">{l s='Name' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputEmail4">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputPassword4">Surname</label>
+                  <label for="inputPassword4">{l s='Surname' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputPassword4">
                 </div>
                 <div class="form-group col-md-4">
-                  <label for="inputEmail4">Company</label>
+                  <label for="inputEmail4">{l s='Company' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputEmail4">
                 </div>
                 <div class="form-group col-md-4">
-                  <label for="inputPassword4">VAT Number (if applicable)</label>
+                  <label for="inputPassword4">{l s='VAT Number (if applicable)' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputPassword4">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputEmail4">Email</label>
+                  <label for="inputEmail4">{l s='Email' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="email" class="form-control" id="inputEmail4">
                 </div>
                 <div class="form-group col-md-8">
-                  <label for="inputAddress">Address</label>
+                  <label for="inputAddress">{l s='Address' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputAddress2">Phone</label>
+                  <label for="inputAddress2">{l s='Phone' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="tel" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                 </div>
                 <div class="form-group col-md-8">
-                  <label for="inputAddress2">Address 2</label>
+                  <label for="inputAddress2">{l s='Address 2' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputAddress2">Website</label>
+                  <label for="inputAddress2">{l s='Website' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="inputAddress2">City</label>
+                  <label for="inputAddress2">{l s='City' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputAddress2">Zip Code</label>
+                  <label for="inputAddress2">{l s='Zip Code' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputCity">Social Media Link</label>
+                  <label for="inputCity">{l s='Social Media Link' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="inputCity">
                 </div>
                 <div class="form-group col-md-8">
-                  <label for="inputState">Country</label>
+                  <label for="inputState">{l s='Country' d='Shop.Theme.FormBecomedealer'}</label>
                   <select id="inputState" class="form-control">
-                    <option selected>Please Select...</option>
+                    <option selected>{l s='Please Select...' d='Shop.Theme.FormBecomedealer'}</option>
                     <option>...</option>
                   </select>
                 </div>
@@ -176,95 +176,95 @@
 
             <div class="form-row">
               <div class="form-group col-md-3">
-                <div class="title-suppliers">Business Type (Check all that apply)</div>
+                <div class="title-suppliers">{l s='Business Type (Check all that apply)' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-12 check-form">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                      Storefront
+                      {l s='Storefront' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Installer
+                    {l s='Installer' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    E-dealer
+                    {l s='E-dealer' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Dyno Shop
+                    {l s='Dyno Shop' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Market Place Seller
+                    {l s='Market Place Seller' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Wholesaler
+                    {l s='Wholesaler' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Other
+                    {l s='Other' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                 </div>
               </div>
               <div class="form-group col-md-3">
-                <div class="title-suppliers">Main Market</div>
+                <div class="title-suppliers">{l s='Main Market' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-12 check-form">
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Euro
+                    {l s='Euro' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    JDM
+                    {l s='JDM' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Muscle
+                    {l s='Muscle' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Classics
+                    {l s='Classics' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Offroad
+                    {l s='Offroad' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Diesel
+                    {l s='Diesel' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="checkbox" id="gridCheck1">
                     <label class="form-check-label" for="gridCheck1">
-                    Other
+                    {l s='Other' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   
@@ -272,30 +272,30 @@
               </div>
 
               <div class="form-group col-md-3">
-                <div class="title-suppliers">Annual sales volume</div>
+                <div class="title-suppliers">{l s='Annual sales volume' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-10 check-form">
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
                     <label class="form-check-label" for="gridRadios1">
-                    Under 100K€
+                    {l s='Under 100K€' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                     <label class="form-check-label" for="gridRadios2">
-                    100K to 500K€
+                    {l s='100K to 500K€' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
                     <label class="form-check-label" for="gridRadios3">
-                    500K€ to 1M€
+                    {l s='500K€ to 1M€' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
                     <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
                     <label class="form-check-label" for="gridRadios3">
-                    1M€ +
+                    {l s='1M€ +' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                 </div>
@@ -303,15 +303,15 @@
 
               <div class="form-row col-md-3">
                 <div class="form-row">
-                    <div class="col-md-12 title-suppliers current_suplier">Main current suppliers</div>
+                    <div class="col-md-12 title-suppliers current_suplier">{l s='Main current suppliers' d='Shop.Theme.FormBecomedealer'}</div>
                     <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Current Supplier 1">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 1' d='Shop.Theme.FormBecomedealer'}">
                     </div>
                     <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Current Supplier 2">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 2' d='Shop.Theme.FormBecomedealer'}">
                     </div>
                     <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Current Supplier 3">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 3' d='Shop.Theme.FormBecomedealer'}">
                     </div>
                   </div>
                 </div>
@@ -319,26 +319,27 @@
 
             <div class="form-row col-md-12">
               <div class="form-group col-md-4">
-                <label for="exampleFormControlTextarea1">Example textarea</label>
+                <label for="exampleFormControlTextarea1">{l s='Comment' d='Shop.Theme.FormBecomedealer'}</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
               </div>
               <div class="form-group col-md-4 signature">
-                <label for="canvas4">Signature</label>
+                <label for="canvas4">{l s='Signature' d='Shop.Theme.FormBecomedealer'}</label>
                 <canvas id="canvas4" width=400 height=140></canvas>
-                <div class="btn" id="clearButton">Reset</div>
+                <div class="btn" id="clearButton">{l s='Reset' d='Shop.Theme.FormBecomedealer'}</div>
               </div>
               <div class="form-group col-md-4">
               
-              <label for="important_notice" style="color: #ee302e;">Important notice:</label>
+              <label for="important_notice" style="color: #ee302e;">{l s='Important notice:' d='Shop.Theme.FormBecomedealer'}</label>
               <div id="important_notice">
-                By my signature, I certify the information I provided on and in connection with this form is true and correct to the best of my knowledge. I also understand that any false statements or deliberate omissions on this form may subject me to legal actions for fraudulent misrepresentation.
+              {l s='By my signature, I certify the information I provided on and in connection with this form is true and correct to the best of my knowledge. I also understand that any false statements or deliberate omissions on this form may subject me to legal actions for fraudulent misrepresentation.' d='Shop.Theme.FormBecomedealer'}
+                
               </div>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group col-md-12" style="display: flex;justify-content:center;">
-                <button type="submit" class="btn send-form">Submit</button>
+                <button type="submit" class="btn send-form">{l s='Submit' d='Shop.Theme.FormBecomedealer'}</button>
               </div>
             </div>
             </form>
