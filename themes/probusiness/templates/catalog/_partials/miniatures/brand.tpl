@@ -40,7 +40,7 @@
     <li class="brand col-md-12">
       <div class="brand_content_item">
           <div class="brand-img" style="max-width: 250px;overflow:hidden;">
-            <a href="{$brand.url|escape:'html':'UTF-8'}"><img src="{$brand.image|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}"></a>
+            <a href="{$brand.url|escape:'html':'UTF-8'}"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}"></a>
           </div>
           <div class="brand-infos">
             <h3>{$brand.name|escape:'html':'UTF-8'}</h3>
