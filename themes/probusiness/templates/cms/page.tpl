@@ -54,54 +54,54 @@
             <h5 class="cms_shadow_button">{l s='Why choose us ?' d='Shop.Theme.BecomeDealer'}</h5>
           </div>
           <p class="become_dealer_text">
-          {l s='European leader in the Automotive Distribution Industry, All Stars Distribution supplies daily hundreds specialized professionals around the world. ' d='Shop.Theme.HomepageLogout'}
+          {l s='European leader in the Automotive Distribution Industry, All Stars Distribution supplies daily hundreds specialized professionals around the world. ' d='Shop.Theme.BecomeDealer'}
           <br>
           <br>
-          {l s="Betting on long-term partnership, we're very selective and approve new accounts only for companies matching with our requirements" d='Shop.Theme.HomepageLogout'}
+          {l s="Betting on long-term partnership, we're very selective and approve new accounts only for companies matching with our requirements" d='Shop.Theme.BecomeDealer'}
           </p>
           <div class="requirements_container">
-            <h1 class="requirements">{l s='> NEW ACCOUNT REQUIREMENTS <' d='Shop.Theme.HomepageLogout'}</h1>
+            <h1 class="requirements">{l s='> NEW ACCOUNT REQUIREMENTS <' d='Shop.Theme.BecomeDealer'}</h1>
           </div>
           <div class="become_cards">
             <div class="become_card_requirement">
-              <div class="card_title">{l s='Business' d='Shop.Theme.HomepageLogout'}</div>
+              <div class="card_title">{l s='Business' d='Shop.Theme.BecomeDealer'}</div>
               <div class="card_content">
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Storefront' d='Shop.Theme.HomepageLogout'}</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Workshop' d='Shop.Theme.HomepageLogout'}</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Tuner' d='Shop.Theme.HomepageLogout'}</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='E-dealer' d='Shop.Theme.HomepageLogout'}</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Trader' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Storefront' d='Shop.Theme.BecomeDealer'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Workshop' d='Shop.Theme.BecomeDealer'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Tuner' d='Shop.Theme.BecomeDealer'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='E-dealer' d='Shop.Theme.BecomeDealer'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Trader' d='Shop.Theme.BecomeDealer'}</div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">{l s='Admin' d='Shop.Theme.HomepageLogout'}</div>
+              <div class="card_title">{l s='Admin' d='Shop.Theme.BecomeDealer'}</div>
               <div class="card_content">
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid VAT number' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid VAT number' d='Shop.Theme.BecomeDealer'}</div>
                 <div class="card_content_option option_plus"><i class="fa-solid fa-plus"></i></div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid business license' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid business license' d='Shop.Theme.BecomeDealer'}</div>
                 <div class="card_content_option option_plus"><i class="fa-solid fa-plus"></i></div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid bank account' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Valid bank account' d='Shop.Theme.BecomeDealer'}</div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">{l s='Visibility' d='Shop.Theme.HomepageLogout'}</div>
+              <div class="card_title">{l s='Visibility' d='Shop.Theme.BecomeDealer'}</div>
               <div class="card_content">
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Active website' d='Shop.Theme.HomepageLogout'}</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Active social media' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Active website' d='Shop.Theme.BecomeDealer'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Active social media' d='Shop.Theme.BecomeDealer'}</div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">{l s='Activity' d='Shop.Theme.HomepageLogout'}</div>
+              <div class="card_title">{l s='Activity' d='Shop.Theme.BecomeDealer'}</div>
               <div class="card_content">
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Aftermarket parts' d='Shop.Theme.HomepageLogout'}</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Performance parts' d='Shop.Theme.HomepageLogout'}</div>
-                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Tuning / building' d='Shop.Theme.HomepageLogout'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Aftermarket parts' d='Shop.Theme.BecomeDealer'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Performance parts' d='Shop.Theme.BecomeDealer'}</div>
+                <div class="card_content_option"><i class="fa-solid fa-check"></i>{l s='Tuning / building' d='Shop.Theme.BecomeDealer'}</div>
               </div>
             </div>
           </div>
 
           <div class="form-become-dealer" style="margin: 5rem 0;">
-            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Fill out the become a dealer enquiry form' d='Shop.Theme.HomepageLogout'} <span style="color: #0273EB;"><</span></h1>
+            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Fill out the become a dealer enquiry form' d='Shop.Theme.BecomeDealer'} <span style="color: #0273EB;"><</span></h1>
             
             <form>
               <div class="form-row">
