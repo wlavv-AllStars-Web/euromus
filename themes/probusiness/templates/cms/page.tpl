@@ -32,9 +32,9 @@
         <div id="cms_container_8">
           <div><img src="https://www.all-stars-distribution.com/img/cms/AllStars/top_image_short.jpg" alt="top_image_short.jpg" /></div>
           <div class="profile_container_cms">
-          <div class="profile_style">Profile</div>
-          <div class="profile_container_text" id="profile_container_text">Supplying over 30 top class brands to automotive performance professionals worldwide, All Stars Distribution is a European wholesaler of performance and design parts, known as one of the largest in the market due to his distribution network size but also due to his massive inventory, ranking the company as the largest European performance parts multi-brand stockist. Dedicated only to wholesale All Stars Distribution uses their automatized warehouses to deliver in a minimum of time all the parts required by their customers / partners ( workshops, tuners or e-dealers) to achieve the end consumers projects.</div>
-          <div id="profile_container_text1 hidden-md-up" class="card_view_more" onclick="viewMore(this)">View More</div>
+          <div class="profile_style">{l s='Profile' d='Shop.Theme.About'}</div>
+          <div class="profile_container_text" id="profile_container_text">{l s='Profile' d='Shop.Theme.About'}</div>
+          <div id="profile_container_text1 hidden-md-up" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.About'}</div>
           </div>
           <div>
             <img class="desktop" src="https://www.all-stars-distribution.com/img/cms/Content_pages/aboutus/badge_lg.jpg" alt="badge_lg.jpg" />
@@ -368,44 +368,44 @@
           </div>
 
           <p class="become_supplier_text">
-          European leader in performance auto parts distribution, All Stars Distribution bets on long-term relationships with world-class suppliers. 
+          {l s='European leader in performance auto parts distribution, All Stars Distribution bets on long-term relationships with world-class suppliers.' d='Shop.Theme.Becomesupplier'} 
           <br>
           <br>
-          In order to offer our customers the best products and services, we are extremely selective when choosing our suppliers or our products and intend to work only with manufacturers sharing our values and our ethic.
+          {l s='In order to offer our customers the best products and services, we are extremely selective when choosing our suppliers or our products and intend to work only with manufacturers sharing our values and our ethic.' d='Shop.Theme.Becomesupplier'}
           </p>
           <div class="commitments_container">
-            <h1 class="commitments ">> Our 4 key commitments <</h1>
+            <h1 class="commitments ">{l s='> Our 4 key commitments <' d='Shop.Theme.Becomesupplier'}</h1>
           </div>
           <div class="become_cards">
             <div class="become_card_requirement">
-              <div class="card_title">Communication</div>
+              <div class="card_title">{l s='Communication' d='Shop.Theme.Becomesupplier'}</div>
               <div class="card_content">
                 <div class="card-text">
-                Key element of a business relationship, we attach great importance to the quality of our communication with our customers. The quick and clear transmission of informations is an asset that we must maintain and apply on a daily basis with our suppliers.
+                {l s='Key element of a business relationship, we attach great importance to the quality of our communication with our customers. The quick and clear transmission of informations is an asset that we must maintain and apply on a daily basis with our suppliers.' d='Shop.Theme.Becomesupplier'}
                 </div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">Technology</div>
+              <div class="card_title">{l s='Technology' d='Shop.Theme.Becomesupplier'}</div>
               <div class="card_content">
                 <div class="card-text">
-                Management and control tools development is an extremely important part of our daily work, so we expect our suppliers to have the same interest and the same commitment to technological research and development.
+                {l s='Management and control tools development is an extremely important part of our daily work, so we expect our suppliers to have the same interest and the same commitment to technological research and development.' d='Shop.Theme.Becomesupplier'}
                 </div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">Marketing</div>
+              <div class="card_title">{l s='Marketing' d='Shop.Theme.Becomesupplier'}</div>
               <div class="card_content">
                 <div class="card-text">
-                Investing big money and time in developing the visibility and the fame of the brands we distribute, we expect our suppliers to be part of our efforts, supporting our projects and being involved in their own brand promotion.
+                {l s='Investing big money and time in developing the visibility and the fame of the brands we distribute, we expect our suppliers to be part of our efforts, supporting our projects and being involved in their own brand promotion.' d='Shop.Theme.Becomesupplier'}
                 </div>
               </div>
             </div>
             <div class="become_card_requirement">
-              <div class="card_title">Deontology</div>
+              <div class="card_title">{l s='Deontology' d='Shop.Theme.Becomesupplier'}</div>
               <div class="card_content">
                 <div class="card-text">
-                In order to preserve a fair market for all players in the industry, All Stars Distribution has no relationship with marketplaces or gray market players. Above all, we want our suppliers to be partners and not competitors for our customers and therefore expect our suppliers to show the same respect for this ethics.
+                {l s='In order to preserve a fair market for all players in the industry, All Stars Distribution has no relationship with marketplaces or gray market players. Above all, we want our suppliers to be partners and not competitors for our customers and therefore expect our suppliers to show the same respect for this ethics.' d='Shop.Theme.Becomesupplier'}
                 </div>
               </div>
             </div>
@@ -413,7 +413,7 @@
 
 
           <div class="form-become-supplier" style="margin: 5rem 0;">
-            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> Submit an enquiry<span style="color: #0273EB;"><</span></h1>
+            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Submit an enquiry' d='Shop.Theme.Becomesupplier'}<span style="color: #0273EB;"><</span></h1>
             
             <form>
               <div class="form-row">
@@ -421,29 +421,29 @@
                 <div class="col-md-6">
                     <div class="form-group col-md-6">
                       <div class="form-group">
-                        <label for="inputEmail4">Company</label>
+                        <label for="inputEmail4">{l s='Company' d='Shop.Theme.FormBecomesupplier'}</label>
                         <input type="text" class="form-control" id="inputEmail4">
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail4">Phone</label>
+                        <label for="inputEmail4">{l s='Phone' d='Shop.Theme.FormBecomesupplier'}</label>
                         <input type="text" class="form-control" id="inputEmail4">
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail4">Website</label>
+                        <label for="inputEmail4">{l s='Website' d='Shop.Theme.FormBecomesupplier'}</label>
                         <input type="text" class="form-control" id="inputEmail4">
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail4">Social media</label>
+                        <label for="inputEmail4">{l s='Social media' d='Shop.Theme.FormBecomesupplier'}</label>
                         <input type="text" class="form-control" id="inputEmail4">
                       </div>
                     </div>
                     <div class="form-group col-md-6">
                       <div class="form-group">
-                        <label for="inputPassword4">Email</label>
+                        <label for="inputPassword4">{l s='Email' d='Shop.Theme.FormBecomesupplier'}</label>
                         <input type="text" class="form-control" id="inputPassword4">
                       </div>
                       <div class="form-group">
-                        <label for="exampleFormControlTextarea1">Comment</label>
+                        <label for="exampleFormControlTextarea1">{l s='Comment' d='Shop.Theme.FormBecomesupplier'}</label>
                         <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
                       </div>
                     </div>
@@ -451,27 +451,27 @@
 
                 <div class="col-md-6">
                   <div class="form-group col-md-12">
-                    <label for="inputEmail4">Address</label>
+                    <label for="inputEmail4">{l s='Address' d='Shop.Theme.FormBecomesupplier'}</label>
                     <input type="text" class="form-control" id="inputEmail4">
                   </div>
                   <div class="form-group col-md-12">
-                    <label for="inputEmail4">Address line 2</label>
+                    <label for="inputEmail4">{l s='Address line 2' d='Shop.Theme.FormBecomesupplier'}</label>
                     <input type="text" class="form-control" id="inputEmail4">
                   </div>
                   <div class="form-group col-md-12 rm-b">
                     <div class="form-group col-md-8 city">
-                      <label for="inputEmail4">City</label>
+                      <label for="inputEmail4">{l s='City' d='Shop.Theme.FormBecomesupplier'}</label>
                       <input type="text" class="form-control" id="inputEmail4">
                     </div>
                     <div class="form-group col-md-4 zip_code">
-                      <label for="inputEmail4">Zip Code</label>
+                      <label for="inputEmail4">{l s='Zip Code' d='Shop.Theme.FormBecomesupplier'}</label>
                       <input type="text" class="form-control" id="inputEmail4">
                     </div>
                   </div>
                   <div class="form-group col-md-12">
-                    <label for="inputState">Country</label>
+                    <label for="inputState">{l s='Country' d='Shop.Theme.FormBecomesupplier'}</label>
                     <select id="inputState" class="form-control">
-                      <option selected>Please Select...</option>
+                      <option selected>{l s='Please Select...' d='Shop.Theme.FormBecomesupplier'}</option>
                       <option>...</option>
                     </select>
                   </div>
@@ -483,7 +483,7 @@
 
               <div class="form-row">
                 <div class="form-group col-md-12" style="display: flex;justify-content:center;">
-                  <button type="submit" class="btn send-form">Submit</button>
+                  <button type="submit" class="btn send-form">{l s='Submit' d='Shop.Theme.FormBecomesupplier'}</button>
                 </div>
               </div>
             </form>
@@ -531,11 +531,12 @@
             <p>{l s='We receive and store any information you knowingly provide to us when you create an account, make a purchase, or fill any forms on the Website. When required, this information may include the following:' d='Shop.Theme.Privacy'}</p>
 
             <p>{l s='Account details (such as user name, unique user ID, password, etc)' d='Shop.Theme.Privacy'}<br>
-              Contact information (such as email address, phone number, etc)<br>
-              Basic personal information (such as name, country of residence, etc)<br>
-              Payment information (such as credit card details, bank details, etc)<br>
+              {l s='Contact information (such as email address, phone number, etc)' d='Shop.Theme.Privacy'}<br>
+              {l s='Basic personal information (such as name, country of residence, etc)' d='Shop.Theme.Privacy'}<br>
+              {l s='Payment information (such as credit card details, bank details, etc)' d='Shop.Theme.Privacy'}<br>
 
-              You can choose not to provide us with your Personal Information, but then you may not be able to take advantage of some of the features on the Website. Users who are uncertain about what information is mandatory are welcome to contact us.
+              {l s='You can choose not to provide us with your Personal Information, but then you may not be able to take advantage of some of the features on the Website. Users who are uncertain about what information is mandatory are welcome to contact us.' d='Shop.Theme.Privacy'}
+              
             </p>
 
             <h1 id="children">{l s='Privacy of children' d='Shop.Theme.Privacy'}</h1>
@@ -707,48 +708,48 @@
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
               <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/dpd_logo.jpg" alt="santander_logo.jpg?v=1" /></div>
-              <div class="text_partners">{l s='' d='Shop.Theme.Partners'}DPD group is the largest parcel delivery network in Europe, carrying worldwide about 5.3 million parcels daily via 77000 workers through their 4 different brands DPD, Chronopost, SEUR and BRT.​</div>
-              <div class="button_container_partners"><a href="https://www.santander.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+              <div class="text_partners">{l s='DPD group is the largest parcel delivery network in Europe, carrying worldwide about 5.3 million parcels daily via 77000 workers through their 4 different brands DPD, Chronopost, SEUR and BRT.' d='Shop.Theme.Partners'}​</div>
+              <div class="button_container_partners"><a href="https://www.santander.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a></div>
               </div>
               </div>
 
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
               <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/sema_logo.jpg" alt="allstars_web_logo.jpg?v=1" /></div>
-              <div class="text_partners">The SEMA SHOW held annually during the first week of November at the Las Vegas Convention Center in conjunction with the Automotive Aftermarket Industry Weekend. The Sema show is the world largest automotive convention, joining over 100.000 buyers from 100 countries, 2000 companies and more than 1000 exclusive show cars</div>
-              <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+              <div class="text_partners">{l s='The SEMA SHOW held annually during the first week of November at the Las Vegas Convention Center in conjunction with the Automotive Aftermarket Industry Weekend. The Sema show is the world largest automotive convention, joining over 100.000 buyers from 100 countries, 2000 companies and more than 1000 exclusive show cars' d='Shop.Theme.Partners'}</div>
+              <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
               </div>
               </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
             <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/ingenico_logo.jpg" alt="transcar_logo.jpg?v=1" /></div>
-            <div class="text_partners">Ingenico is a France-based company, whose business is to provide the technology involved in secure electronic transactions. Its traditional business is based on the manufacture of point of sale (POS) payment terminals, but it also includes complete payment software and related services, also software for merchants.</div>
-            <div class="button_container_partners"><a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            <div class="text_partners">{l s='Ingenico is a France-based company, whose business is to provide the technology involved in secure electronic transactions. Its traditional business is based on the manufacture of point of sale (POS) payment terminals, but it also includes complete payment software and related services, also software for merchants.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
             <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/adobe_logo.jpg" alt="paypal_logo.jpg?v=1" /></div>
-            <div class="text_partners">Adobe Inc is an American multinational computer software company focused upon the creation on multimedia and creativity software products, with a more recent foray into digital marketing software. Adobe is best known for its Adobe Flash web software, Photoshop image editing software, Adobe Illustrator graphics editor and Acrobat Reader.</div>
-            <div class="button_container_partners"><a href="https://www.paypal.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            <div class="text_partners">{l s='Adobe Inc is an American multinational computer software company focused upon the creation on multimedia and creativity software products, with a more recent foray into digital marketing software. Adobe is best known for its Adobe Flash web software, Photoshop image editing software, Adobe Illustrator graphics editor and Acrobat Reader.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://www.paypal.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
             <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/braga_logo.jpg" alt="ingenico_logo.jpg?v=1" /></div>
-            <div class="text_partners">The Braga Motorshow is the largest Portuguese car show and the 6th largest outdoor independant car show in Europe. Held annually during the second week end of August at the Braga Vasco Sameiro track, this event drew in about 50.000 visitors in 2018 to see Drift, Drag, roll race and stunt shows !</div>
-            <div class="button_container_partners"><a href="https://ingenico.com/en" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            <div class="text_partners">{l s='The Braga Motorshow is the largest Portuguese car show and the 6th largest outdoor independant car show in Europe. Held annually during the second week end of August at the Braga Vasco Sameiro track, this event drew in about 50.000 visitors in 2018 to see Drift, Drag, roll race and stunt shows !' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://ingenico.com/en" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
             <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/fedex_logo.jpg" alt="alma_logo.jpg?v=1" /></div>
-            <div class="text_partners">FedEx Corporation is an American multinational delivery services known for its overnight shipping service and pioneering a system that could track packages and provide real-time updates on package location, a feature that has now been implemented by most other carrier services. </div>
-            <div class="button_container_partners"><a href="https://almapay.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            <div class="text_partners">{l s='FedEx Corporation is an American multinational delivery services known for its overnight shipping service and pioneering a system that could track packages and provide real-time updates on package location, a feature that has now been implemented by most other carrier services. ' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://almapay.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
             </div>
 
@@ -758,10 +759,10 @@
                   <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/norton_logo.jpg" alt="dpd_logo.jpg?v=1" />
                 </div>
                 <div class="text_partners">
-                  Norton or Norton by Symantec, is a division of NortonLifeLock based in California and offering a variety of products and services related to digital security. In 2014, it was announced that Norton's parent company Symantec would split its business into two units - one focused on security, and one focused on information management, with Norton being placed in the unit focused on security.
+                  {l s="Norton or Norton by Symantec, is a division of NortonLifeLock based in California and offering a variety of products and services related to digital security. In 2014, it was announced that Norton's parent company Symantec would split its business into two units - one focused on security, and one focused on information management, with Norton being placed in the unit focused on security." d='Shop.Theme.Partners'}
                 </div>
                 <div class="button_container_partners">
-                  <a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a>
+                  <a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a>
                 </div>
               </div>
             </div>
@@ -772,10 +773,10 @@
                   <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/transcar_logo.jpg" alt="tnt_logo.jpg?v=1" />
                 </div>
                 <div class="text_partners">
-                  Vehicles transport specialist, TrancarPremium uses state-of-the-art logistics tools, allowing the team to offer unparalleled quality of service and great management flexibility. Based in Portugal, the company offers different premium solutions for shipping supercars, racing cars, classics or exotics throughout Europe.
+                  {l s='Vehicles transport specialist, TrancarPremium uses state-of-the-art logistics tools, allowing the team to offer unparalleled quality of service and great management flexibility. Based in Portugal, the company offers different premium solutions for shipping supercars, racing cars, classics or exotics throughout Europe.' d='Shop.Theme.Partners'}
                 </div>
                 <div class="button_container_partners">
-                  <a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a>
+                  <a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
                 </div>
               </div>
             </div>
@@ -785,48 +786,48 @@
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
               <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/tnt_logo.jpg" alt="santander_logo.jpg?v=1" /></div>
-              <div class="text_partners">TNT Express is an international courier delivery services company founded in the Netherlands in 2011 and now a subsidiary of FedEx. TNT offers road and air delivery services in Europe, the region of the Asia Pacific, the Americas, the Middle East, and Africa. </div>
-              <div class="button_container_partners"><a href="https://www.santander.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+              <div class="text_partners">{l s='TNT Express is an international courier delivery services company founded in the Netherlands in 2011 and now a subsidiary of FedEx. TNT offers road and air delivery services in Europe, the region of the Asia Pacific, the Americas, the Middle East, and Africa.' d='Shop.Theme.Partners'}</div>
+              <div class="button_container_partners"><a href="https://www.santander.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
               </div>
               </div>
 
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
               <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/asw_logo.jpg" alt="allstars_web_logo.jpg?v=1" /></div>
-              <div class="text_partners">All Stars Web Solutions is a top range web agency specializing in website design and development, software and application creation, digital marketing, and SEO. Offering the latest technologies IT tools for warehouse management (ERP), cybersecurity, front and back end with optimal ergonomics, they make the management of a website accessible to everyone.</div>
-              <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+              <div class="text_partners">{l s='All Stars Web Solutions is a top range web agency specializing in website design and development, software and application creation, digital marketing, and SEO. Offering the latest technologies IT tools for warehouse management (ERP), cybersecurity, front and back end with optimal ergonomics, they make the management of a website accessible to everyone.' d='Shop.Theme.Partners'}</div>
+              <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
               </div>
               </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
             <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/bcp_logo.jpg" alt="transcar_logo.jpg?v=1" /></div>
-            <div class="text_partners">Banco Comercial Português (BCP) is a Portuguese bank, member of the PSI-20 index and the Next 150. It is present in Portugal as Millenium BCP and in Belgium and Luxembourg as Banque BCP. It is also present in other countries and is listed on the Euronext stock exchange. Banque BCP was born in 2001 from the merger of the French branches of the oldest Portuguese financial establishments.</div>
-            <div class="button_container_partners"><a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            <div class="text_partners">{l s='Banco Comercial Português (BCP) is a Portuguese bank, member of the PSI-20 index and the Next 150. It is present in Portugal as Millenium BCP and in Belgium and Luxembourg as Banque BCP. It is also present in other countries and is listed on the Euronext stock exchange. Banque BCP was born in 2001 from the merger of the French branches of the oldest Portuguese financial establishments.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://transcarpremium.com/en/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
             <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/digi_logo.jpg" alt="paypal_logo.jpg?v=1" /></div>
-            <div class="text_partners">Since 2003, the company DIGISERVICES is a reliable supplier of high quality and customized tuning software files. French leader with more than 30 auto centers in France, more than 6000 vehicles visit their workshops each year.</div>
-            <div class="button_container_partners"><a href="https://www.paypal.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            <div class="text_partners">{l s='Since 2003, the company DIGISERVICES is a reliable supplier of high quality and customized tuning software files. French leader with more than 30 auto centers in France, more than 6000 vehicles visit their workshops each year.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://www.paypal.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
             <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/shiftech_logo.jpg" alt="ingenico_logo.jpg?v=1" /></div>
-            <div class="text_partners">Since 2008, ShifTech has been a specialist in custom tuning software that offers the perfect combination of increased engine power and more economical fuel consumption. Present in France, Belgium and Luxembourg, it is a reference in the market due to its quality of service and its experience.</div>
-            <div class="button_container_partners"><a href="https://ingenico.com/en" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            <div class="text_partners">{l s='Since 2008, ShifTech has been a specialist in custom tuning software that offers the perfect combination of increased engine power and more economical fuel consumption. Present in France, Belgium and Luxembourg, it is a reference in the market due to its quality of service and its experience.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://ingenico.com/en" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
             </div>
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
             <div class="image_container_partners"><img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/brperformance_logo.jpg" alt="alma_logo.jpg?v=1" /></div>
-            <div class="text_partners">Key partner of the biggest brands in the performance automotive industry, BR-Performance is a key player in the custom tuning software market thanks to solid knowledges and state-of-the-art equipment.</div>
-            <div class="button_container_partners"><a href="https://almapay.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a></div>
+            <div class="text_partners">{l s='Key partner of the biggest brands in the performance automotive industry, BR-Performance is a key player in the custom tuning software market thanks to solid knowledges and state-of-the-art equipment.' d='Shop.Theme.Partners'}</div>
+            <div class="button_container_partners"><a href="https://almapay.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
             </div>
 
@@ -836,10 +837,10 @@
                   <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/asm_logo.jpg" alt="dpd_logo.jpg?v=1" />
                 </div>
                 <div class="text_partners">
-                European platform, founded in 2013 and established in 3 countries, All Stars Motorsport has quickly become a key player in aftermarket automotive performance and design industry. Reseller of the most famous brands, All Stars Motorsport offers the best products at the best prices to allow to offer everyone their own vision of the automobile.
+                {l s='European platform, founded in 2013 and established in 3 countries, All Stars Motorsport has quickly become a key player in aftermarket automotive performance and design industry. Reseller of the most famous brands, All Stars Motorsport offers the best products at the best prices to allow to offer everyone their own vision of the automobile.' d='Shop.Theme.Partners'}
                 </div>
                 <div class="button_container_partners">
-                  <a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a>
+                  <a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
                 </div>
               </div>
             </div>
@@ -850,10 +851,10 @@
                   <img class="image_partners" src="https://www.all-stars-distribution.com/img/cms/Content_pages/partners/maersk_logo.jpg" alt="tnt_logo.jpg?v=1" />
                 </div>
                 <div class="text_partners">
-                A.P. Møller-Mærsk, also known simply as Maersk is a Danish shipping and logistics company founded in 1904 by Arnold Peter Møller and Peter Mærsk Møller. Maersk's business activities include shipping, port operation, supply chain management and warehousing. The company is based in Copenhagen, Denmark, with subsidiaries and offices across 130 countries and 108.000 employees worldwide.
+                {l s="A.P. Møller-Mærsk, also known simply as Maersk is a Danish shipping and logistics company founded in 1904 by Arnold Peter Møller and Peter Mærsk Møller. Maersk's business activities include shipping, port operation, supply chain management and warehousing. The company is based in Copenhagen, Denmark, with subsidiaries and offices across 130 countries and 108.000 employees worldwide." d='Shop.Theme.Partners'}
                 </div>
                 <div class="button_container_partners">
-                  <a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener"> Website </a>
+                  <a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a>
                 </div>
               </div>
             </div>
@@ -874,7 +875,11 @@
           <div class="spacer-20"></div>
           <div class="row content-payment">
           <div class="row-payment">
-            <div class="col-lg-8"><b>CREDIT CARD : </b> <br><br> Visa and Mastercard are the accepted bank cards for the payment of an order on our online platform.<br><br> In the interest of security and confidentiality, all data communicated during the payment procedure is encrypted and only entered on the page of our financial partner Ingenico. <br><br> In order to validate the payment of an order, the name of the cardholder, its 16-digit number, its expiry date and its cryptogram will be requested by no other organisation other than our online payment service provider Ingenico.<br><br> The total amount paid will be debited immediately and the rest of the process and the update of the order status will be instantaneous. A confirmation will then be sent to you by email as a digital archive.
+            <div class="col-lg-8"><b>{l s='CREDIT CARD :' d='Shop.Theme.Payment'} </b> 
+            <br><br> {l s='Visa and Mastercard are the accepted bank cards for the payment of an order on our online platform.' d='Shop.Theme.Payment'}
+            <br><br>{l s='In the interest of security and confidentiality, all data communicated during the payment procedure is encrypted and only entered on the page of our financial partner Ingenico.' d='Shop.Theme.Payment'}  
+            <br><br>{l s='In order to validate the payment of an order, the name of the cardholder, its 16-digit number, its expiry date and its cryptogram will be requested by no other organisation other than our online payment service provider Ingenico.' d='Shop.Theme.Payment'}
+            <br><br>{l s='The total amount paid will be debited immediately and the rest of the process and the update of the order status will be instantaneous. A confirmation will then be sent to you by email as a digital archive.' d='Shop.Theme.Payment'} 
             </div>
             <div class="col-lg-4" style="text-align: center;">
               <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/payment/creditcard.png?t=112" style="width: 250px;">
@@ -882,7 +887,11 @@
           </div>
 
           <div class="row-payment" >
-            <div class="col-lg-8" style="margin-top: 70px;"><b>BANK TRANSFER : </b> <br><br> Once you have selected payment by bank transfer on our website, you will receive a confirmation email with the details of our bank account, to which the payment should be made.Please note that these details must be exclusively in the name of ALL STARS DISTRIBUTION and based in Portugal.<br><br> Payments by bank transfer must be made within 72 hours after the order has been confirmed. If the payment is not made within this period, your order will be automatically cancelled.<br><br> Please note that payment by bank transfer will result in additional processing time for the dispatch of an order as it will only be dispatched once payment has been received in our bank account.<br><br>Please also note that no items are reserved until payment for the order has been confirmed in our bank account.
+            <div class="col-lg-8" style="margin-top: 70px;"><b>{l s='BANK TRANSFER :' d='Shop.Theme.Payment'} </b> 
+            <br><br>{l s='Once you have selected payment by bank transfer on our website, you will receive a confirmation email with the details of our bank account, to which the payment should be made.Please note that these details must be exclusively in the name of ALL STARS DISTRIBUTION and based in Portugal.' d='Shop.Theme.Payment'} 
+            <br><br>{l s='Payments by bank transfer must be made within 72 hours after the order has been confirmed. If the payment is not made within this period, your order will be automatically cancelled.' d='Shop.Theme.Payment'} 
+            <br><br>{l s='Please note that payment by bank transfer will result in additional processing time for the dispatch of an order as it will only be dispatched once payment has been received in our bank account.' d='Shop.Theme.Payment'} 
+            <br><br>{l s='Please also note that no items are reserved until payment for the order has been confirmed in our bank account.' d='Shop.Theme.Payment'}
             </div>
             <div class="col-lg-4" style="text-align: center;">
               <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/payment/bankwire.png?t=113" style="width: 250px;">
@@ -938,7 +947,7 @@
                       <p>{l s='- Aggressive problem diagnosis and creative problem solving skills' d='Shop.Theme.Career'}</p>
                       <p>{l s='- Proficient organizational skills, detail-oriented, multitasking, good under pressure' d='Shop.Theme.Career'}</p>
                     </div>
-                    <div id="card_expand2" class="card_view_more" onclick="viewMore(this)">View More</div>
+                    <div id="card_expand2" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
                   </div>
 
                   <div class="why_card">
@@ -955,7 +964,7 @@
                       <p>{l s='- Ability to stay calm, organized and focused' d='Shop.Theme.Career'}</p>
                       <p>{l s='- Knowledge in the automotive industry appreciated' d='Shop.Theme.Career'}</p>
                     </div>
-                    <div id="card_expand3" class="card_view_more" onclick="viewMore(this)">View More</div>
+                    <div id="card_expand3" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
                   </div>
 
                   <div class="why_card">
@@ -974,7 +983,7 @@
                       <p>{l s='- Forklift licence appreciated' d='Shop.Theme.Career'}</p>
                       <p>{l s='- Foreign language spoken highly appreciated' d='Shop.Theme.Career'}</p>
                     </div>
-                    <div id="card_expand4" class="card_view_more" onclick="viewMore(this)">View More</div>
+                    <div id="card_expand4" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
                   </div>
 
                   <div class="why_card">
@@ -1008,20 +1017,20 @@
               </div>
 
               <div class="form-career-container" style="margin: 5rem 0;">
-                <h1 style="text-align: center;color:#000;margin-bottom:2rem;">JOB APPLICATION</h1>
+                <h1 style="text-align: center;color:#000;margin-bottom:2rem;">{l s='JOB APPLICATION' d='Shop.Theme.Career'}</h1>
                 
                 <form class="form-career">
                   <div class="form-row radio-btns-form  col-lg-12">
                     <div class="form-check col-md-1">
                       <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
                       <label class="form-check-label" for="gridRadios1">
-                      Mr.
+                      {l s='Mr.' d='Shop.Theme.Career'}
                       </label>
                     </div>
                     <div class="form-check  col-md-1">
                       <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
                       <label class="form-check-label" for="gridRadios2">
-                      Mrs.
+                      {l s='Mrs.' d='Shop.Theme.Career'}
                       </label>
                     </div>
                   </div>
@@ -1029,74 +1038,74 @@
 
                   <div class="form-row ">
                     <div class="form-group col-lg-4 col-md-6 ">
-                      <label for="inputEmail4">Name<span style="color:#ee302e;">*</span></label>
+                      <label for="inputEmail4">{l s='Name' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="inputEmail4">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputPassword4">Surname<span style="color:#ee302e;">*</span></label>
+                      <label for="inputPassword4">{l s='Surname' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="inputPassword4">
                     </div>
                     <div class="form-group  col-lg-4 col-md-6">
-                      <label for="inputEmail4">Email<span style="color:#ee302e;">*</span></label>
+                      <label for="inputEmail4">{l s='Email' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <input type="email" class="form-control" id="inputEmail4">
                     </div>
                   
                     <div class="form-group col-lg-2 col-md-3">
-                      <label for="inputState">Phone<span style="color:#ee302e;">*</span></label>
+                      <label for="inputState">{l s='Phone' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <select id="inputState" class="form-control">
-                        <option selected>Please Select...</option>
+                        <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         <option>...</option>
                       </select>
                     </div>
                     <div class="form-group col-lg-2 col-md-3">
-                      <label for="inputEmail4">Phone Number</label>
+                      <label for="inputEmail4">{l s='Phone Number' d='Shop.Theme.Career'}</label>
                       <input type="text" class="form-control" id="inputEmail4" placeholder="">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress">How do you prefer to be contacted?<span style="color:#ee302e;">*</span></label>
+                      <label for="inputAddress">{l s='How do you prefer to be contacted?' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="inputAddress" placeholder="">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputState">Country<span style="color:#ee302e;">*</span></label>
+                      <label for="inputState">{l s='Country' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <select id="inputState" class="form-control">
-                        <option selected>Please Select...</option>
+                        <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         <option>...</option>
                       </select>
                     </div>
                   
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputState">Which position are you applying to<span style="color:#ee302e;">*</span></label>
+                      <label for="inputState">{l s='Which position are you applying to' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <select id="inputState" class="form-control">
-                        <option selected>Please Select...</option>
+                        <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         <option>...</option>
                       </select>
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress2">Address Line 1<span style="color:#ee302e;">*</span></label>
+                      <label for="inputAddress2">{l s='Address Line 1' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <input type="tel" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
                     <div class="form-group col-lg-4  col-md-6">
-                      <label for="inputAddress2">Address Line 2</label>
+                      <label for="inputAddress2">{l s='Address Line 2' d='Shop.Theme.Career'}</label>
                       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
                   
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress2">City</label>
+                      <label for="inputAddress2">{l s='City' d='Shop.Theme.Career'}</label>
                       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress2">Zip Code<span style="color:#ee302e;">*</span></label>
+                      <label for="inputAddress2">{l s='Zip Code' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress2">How did you know about this job position?</label>
+                      <label for="inputAddress2">{l s='How did you know about this job position?' d='Shop.Theme.Career'}</label>
                       <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
                     </div>
                   </div>
     
                 <div class="form-row ">
                   <div class="form-group col-lg-4 col-md-6">
-                    <label for="exampleFormControlFile1">Upload your CV ( only PDF files ) <span style="color:#ee302e;">*</span></label>
+                    <label for="exampleFormControlFile1">{l s='Upload your CV ( only PDF files )' d='Shop.Theme.Career'} <span style="color:#ee302e;">*</span></label>
                     <input type="file" class="form-control-file" id="exampleFormControlFile1">
                   </div>
                 </div>
@@ -1106,7 +1115,7 @@
                     <div class="form-check col-md-12">
                       <input class="form-check-input" type="checkbox" id="gridCheck">
                       <label class="form-check-label" for="gridCheck">
-                        <a href="https://www.all-stars-distribution.com/en/content/20-terms-and-conditions">You agree with our conditions terms</a> <span style="color:#ee302e;">*</span>
+                        <a href="https://www.all-stars-distribution.com/en/content/20-terms-and-conditions">{l s='You agree with our conditions terms' d='Shop.Theme.Career'}</a> <span style="color:#ee302e;">*</span>
                       </label>
                     </div>
                   </div>
@@ -1114,7 +1123,7 @@
     
                   <div class="form-row ">
                     <div class="form-group col-md-2" style="display: flex;justify-content:start;">
-                      <button type="submit" class="btn send-form col-md-2">Send</button>
+                      <button type="submit" class="btn send-form col-md-2">{l s='Send' d='Shop.Theme.Career'}</button>
                     </div>
                   </div>
                 </form>
@@ -1129,76 +1138,77 @@
             <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/generalSalesConditions.jpg" />
           </div>
           <div class="terms-content">
-            <h1>GENERAL CONDITIONS OF SALE</h1>
-            <p>These general terms and conditions of sale apply, without restriction or reservation, to all sales concluded on the website <a>https://all-stars-distribution.com</a></p>
-            <h1>ARTICLE 1: MANDATORY INFORMATION</h1>
-            <p>The website <a href="https://all-stars-distribution.com">https://all-stars-distribution.com</a> is the property of :</p>
+            <h1>{l s='GENERAL CONDITIONS OF SALE' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='These general terms and conditions of sale apply, without restriction or reservation, to all sales concluded on the website' d='Shop.Theme.Terms'} <a>https://all-stars-distribution.com</a></p>
+            <h1>{l s='ARTICLE 1: MANDATORY INFORMATION' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='The website' d='Shop.Theme.Terms'} <a href="https://all-stars-distribution.com">https://all-stars-distribution.com</a> {l s='is the property of :' d='Shop.Theme.Terms'}</p>
             <p style="margin-top: 2rem;">ALL STARS DISTRIBUTION LDA </p>
             <p>ZONA INDUSTRIAL DE GANDRA S/N </p>
             <p>4930-311 GANDRA – VALENCA </p>
             <p>PORTUGAL</p>
             <p>PT513881387</p>
             <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a>
-            <h1>ARTICLE 2: PRODUCTS</h1>
-            <p>The website www.all-stars-ditribution.com offers for sale spare parts, accessories and consumables for vehicles and cars. ALL STARS DISTRIBUTION is specialised in the sale of performance spare parts. </p>
-            <p>The customer declares to have read and accepted the general conditions of sale prior to the validation of their order.</p>
-            <h1>ARTICLE 3: PRICE</h1>
-            <p>The prices of the products present on the site www.all-stars-distribution.com are indicated in euros excluding taxes (HT).
+            <h1>{l s='ARTICLE 2: PRODUCTS' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='The website www.all-stars-ditribution.com offers for sale spare parts, accessories and consumables for vehicles and cars. ALL STARS DISTRIBUTION is specialised in the sale of performance spare parts.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='The customer declares to have read and accepted the general conditions of sale prior to the validation of their order.' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 3: PRICE' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='The prices of the products present on the site www.all-stars-distribution.com are indicated in euros excluding taxes (HT).
             In the case of an order delivered to a country outside the European Union, the customer, being the importer of the products purchased, is solely responsible for the declaration and payment of any customs duties or other taxes that may be due in his country upon delivery of the order.
-            Delivery costs are not included in the prices displayed; they will be visible in a summary sent by email to the customer following the validation of his online order before making the payment.</p>
-            <h1>ARTICLE 4: AVAILABILITY OF PRODUCTS</h1>
-            <p>The available products appear on our site accompanied by the mention "In stock". In order to best meet the expectations of our customers, the availability of our products is regularly updated. </p>
-            <p>If you have ordered a product that is unavailable after the validation of your order, you will be informed immediately. We will proceed with the cancellation of your order and you will be refunded immediately if payment for the order has already been made.</p>
-            <h1>ARTICLE 5: ORDERING</h1>
-            <p>You can order our products directly on our website if you have a customer account. If you do not have one, you can request one via the following link: <a href="https://www.all-stars-distribution.com/en/content/7-becomedealer">https://www.all-stars-distribution.com/en/content/7-becomedealer</a></p>
-            <p>A reply will be sent to you within 48 hours of receiving your request. </p>
-            <p>To place an order on our site, choose your items and add them to the basket. Confirm the contents of your basket, choose your payment method and tick the box "acceptance of the T&Cs". </p>
-            <p>You will receive an order confirmation email to the email address you provided when you created your customer account. Check the details and the amount of your order. Correct any errors in advance before making your payment. </p>
-            <p>The transfer of ownership of the product will only take place upon full payment of your order.</p>
-            <h1>ARTICLE 6: DELIVERY</h1>
-            <p>We deliver worldwide with the carrier of our choice. The delivery takes place at the address indicated by the buyer at the time of the validation of the order.</p>
-            <p>The amount of the delivery costs is calculated once your order is registered, according to the characteristics of the products purchased and the delivery address given. A confirmation email will be sent to you with the amount of the delivery costs to be expected for your order in order to proceed with the payment of the latter. </p>
-            <p>Delivery times are given for information purposes only and may change due to various factors beyond our control.</p>
-            <p>Parcels are entrusted to external service providers for their delivery (TNT, DPD, GLS, etc.). ALL STARS DISTRIBUTION cannot under any circumstances be held responsible for a dispute about the delivery of a package.</p>
-            <p>Orders are shipped from our European warehouses, provided with a specific tracking number that can be checked online at any moment through the carrier's website.</p>
-            <p>We strongly recommend checking the packages condition directly with the driver during the delivery to ensure that there are no visible damages.</p>
-            <p>In case of any issues such as damaged packaging, missing or damaged products, reservations must be reported on the delivery slip to support any claim. It will also be necessary to provide pictures of the visible damages as well as the transport label showing tracking number and recipient's information. If this verification cannot be carried out directly with the driver, a written complaint must be sent to the carrier as soon as the damages are noted.</p>
-            <p>Any complaint must be communicated to our customer service by e-mail within 48 hours (business days) following order’s delivery date, beyond which no complaint will be accepted by the carrier. In all cases of complaints, original packaging must be kept.</p>
-            <p>In case of a parcel lost, a claim will be opened with the carrier to carry out in-depth research that may take up to 3 weeks before receiving the confirmation of the parcel loss. Once the loss confirmed by the carrier, a new shipment will be automatically scheduled depending on stock level. No refund will be issued in any case of parcel loss.</p>
-            <h1>ARTICLE 7: TERMS OF PAYMENT</h1>
-            <p>We offer two methods of payment on our site: </p>
+            Delivery costs are not included in the prices displayed; they will be visible in a summary sent by email to the customer following the validation of his online order before making the payment.' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 4: AVAILABILITY OF PRODUCTS' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='The available products appear on our site accompanied by the mention "In stock". In order to best meet the expectations of our customers, the availability of our products is regularly updated.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='If you have ordered a product that is unavailable after the validation of your order, you will be informed immediately. We will proceed with the cancellation of your order and you will be refunded immediately if payment for the order has already been made.' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 5: ORDERING' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='You can order our products directly on our website if you have a customer account. If you do not have one, you can request one via the following link:' d='Shop.Theme.Terms'} <a href="https://www.all-stars-distribution.com/en/content/7-becomedealer">https://www.all-stars-distribution.com/en/content/7-becomedealer</a></p>
+            <p>{l s='A reply will be sent to you within 48 hours of receiving your request.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='To place an order on our site, choose your items and add them to the basket. Confirm the contents of your basket, choose your payment method and tick the box "acceptance of the T&Cs".' d='Shop.Theme.Terms'} </p>
+            <p>{l s='You will receive an order confirmation email to the email address you provided when you created your customer account. Check the details and the amount of your order. Correct any errors in advance before making your payment.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='The transfer of ownership of the product will only take place upon full payment of your order.' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 6: DELIVERY' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='We deliver worldwide with the carrier of our choice. The delivery takes place at the address indicated by the buyer at the time of the validation of the order.' d='Shop.Theme.Terms'}</p>
+            <p>{l s='The amount of the delivery costs is calculated once your order is registered, according to the characteristics of the products purchased and the delivery address given. A confirmation email will be sent to you with the amount of the delivery costs to be expected for your order in order to proceed with the payment of the latter.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='Delivery times are given for information purposes only and may change due to various factors beyond our control.' d='Shop.Theme.Terms'}</p>
+            <p>{l s='Parcels are entrusted to external service providers for their delivery (TNT, DPD, GLS, etc.). ALL STARS DISTRIBUTION cannot under any circumstances be held responsible for a dispute about the delivery of a package.' d='Shop.Theme.Terms'}</p>
+            <p>{l s="Orders are shipped from our European warehouses, provided with a specific tracking number that can be checked online at any moment through the carrier's website." d='Shop.Theme.Terms'}</p>
+            <p>{l s='We strongly recommend checking the packages condition directly with the driver during the delivery to ensure that there are no visible damages.' d='Shop.Theme.Terms'}</p>
+            <p>{l s="In case of any issues such as damaged packaging, missing or damaged products, reservations must be reported on the delivery slip to support any claim. It will also be necessary to provide pictures of the visible damages as well as the transport label showing tracking number and recipient's information. If this verification cannot be carried out directly with the driver, a written complaint must be sent to the carrier as soon as the damages are noted." d='Shop.Theme.Terms'}</p>
+            <p>{l s='Any complaint must be communicated to our customer service by e-mail within 48 hours (business days) following order’s delivery date, beyond which no complaint will be accepted by the carrier. In all cases of complaints, original packaging must be kept.' d='Shop.Theme.Terms'}</p>
+            <p>{l s='In case of a parcel lost, a claim will be opened with the carrier to carry out in-depth research that may take up to 3 weeks before receiving the confirmation of the parcel loss. Once the loss confirmed by the carrier, a new shipment will be automatically scheduled depending on stock level. No refund will be issued in any case of parcel loss.' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 7: TERMS OF PAYMENT' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='We offer two methods of payment on our site:' d='Shop.Theme.Terms'} </p>
             <br>
-            <p><b>BANK CARD : </b>Visa and Mastercard are the bank cards accepted for the payment of an order on our online platform. </p>
-            <p>In the interest of security and confidentiality, all data communicated during the payment procedure is encrypted entered exclusively on the page of our financial partner Ingenico. </p>
-            <p>In order to validate the payment of an order, the name of the cardholder, its 16-digit number, its expiry date and its cryptogram will be requested by no other organisation other than our online payment service provider Ingenico and only they will have access to it. </p>
+            <p><b>{l s='BANK CARD :' d='Shop.Theme.Terms'} </b>
+            {l s='Visa and Mastercard are the bank cards accepted for the payment of an order on our online platform.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='In the interest of security and confidentiality, all data communicated during the payment procedure is encrypted entered exclusively on the page of our financial partner Ingenico.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='In order to validate the payment of an order, the name of the cardholder, its 16-digit number, its expiry date and its cryptogram will be requested by no other organisation other than our online payment service provider Ingenico and only they will have access to it.' d='Shop.Theme.Terms'} </p>
             <p>
-            The total amount paid will be debited immediately and the rest of the process and the order status will be updated instantly. A confirmation will then be sent to you by email as a digital archive. </p>
+            {l s='The total amount paid will be debited immediately and the rest of the process and the order status will be updated instantly. A confirmation will then be sent to you by email as a digital archive.' d='Shop.Theme.Terms'} </p>
             <br>
-            <p><b>BANK TRANSFER : </b></p>
-            <p>Once the payment by bank transfer has been selected on our website, you will receive a confirmation email with the details of our bank account, to which the payment must be made. Please note that these details must be exclusively in the name of ALL STARS DISTRIBUTION based in Portugal. </p>
-            <p>Payments by bank transfer must be made within 72 hours after the order has been confirmed. If the payment is not made within this period, your order will be automatically cancelled. </p>
-            <p>Please note that payment by bank transfer will result in additional processing time for the dispatch of an order as it will only be dispatched once payment has been received in our bank account. </p>
-            <p>Please also note that no items are reserved until payment for the order has been confirmed in our bank account.</p>
-            <h1>ARTICLE 8: WARRANTY:</h1>
-            <p>The company All Stars Distribution ensures the guarantee of the hidden defects under the legal conditions, the purchaser has a deadline of eight days from the discovery of the hidden defect to notify his reservations by email. </p>
-            <p>All warranty claims must be sent by email to sales@all-stars-distribution.com together with photos or videos showing the problem. As the guarantee is taken over directly by the supplier, the shipping costs for sending and returning the product will be at the customer's expense, with the supplier only covering the costs of repairing or replacing the product concerned by the warranty. If the supplier finds that the problem encountered is not covered by the conditions of the guarantee, the shipping costs for the return of the product remain the responsibility of the customer. </p>
-            <p>Under no circumstances can a warranty claim be made due to a problem encountered with a product following a faulty installation. In this case, the buyer must contact the professional who installed the product in question. </p>
-            <p>For any warranty claim which will require the sending of the product to our premises in order to verify it, All Stars Distribution will reimburse the buyer for the shipping costs of the product if the warranty coverage by the supplier is confirmed, otherwise all shipping costs will be borne by the latter.</p>
-            <p>In no case will it be possible to request a refund for the product concerned from the company All Stars Distribution as part of a warranty claim.</p>
-            <h1>ARTICLE 9: PRODUCT RETURNS</h1>
-            <p>All sales made on our site are final, they cannot in any case give rise to the return of a product (except in the context of a guarantee, see article 8).</p>
-            <h1>ARTICLE 10: CONDITIONS AND DEADLINES FOR REIMBURSEMENT</h1>
-            <p>Cancellation of an order is possible as long as the order has not been shipped from our warehouse. Any cancellation request made after the order has been shipped will not be accepted. </p>
-            <p>If cancellation of the order is possible, we will refund the order via the payment method originally used by the buyer within 30 days.</p>
-            <h1>ARTICLE 11: PERSONAL DATA</h1>
-            <p>Certain customer information will be passed on to delivery and / or payment service providers (i.e., surname, first name, address, postal code and telephone number) in order to allow the processing and delivery of the products ordered. </p>
-            <p>The commercial offers of the site will be sent to the customer by e-mail if no objection has been made. The customer may object at any time by logging into his personal space or by sending an email to our customer service department. </p>
-            <p>The site ensures that the customer's personal information is collected and processed in compliance with law n°78-17 of January 6, 1978 relating to information technology, files and freedom. </p>
-            <p>In accordance with articles 39 and 40 of the law dated 6 January 1978, the customer has the right to access, rectify, delete and oppose his personal data. The customer can exercise this right via : </p>
+            <p><b>{l s='BANK TRANSFER :' d='Shop.Theme.Terms'} </b></p>
+            <p>{l s='Once the payment by bank transfer has been selected on our website, you will receive a confirmation email with the details of our bank account, to which the payment must be made. Please note that these details must be exclusively in the name of ALL STARS DISTRIBUTION based in Portugal.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='Payments by bank transfer must be made within 72 hours after the order has been confirmed. If the payment is not made within this period, your order will be automatically cancelled.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='Please note that payment by bank transfer will result in additional processing time for the dispatch of an order as it will only be dispatched once payment has been received in our bank account.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='Please also note that no items are reserved until payment for the order has been confirmed in our bank account.' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 8: WARRANTY:' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='The company All Stars Distribution ensures the guarantee of the hidden defects under the legal conditions, the purchaser has a deadline of eight days from the discovery of the hidden defect to notify his reservations by email.' d='Shop.Theme.Terms'} </p>
+            <p>{l s="All warranty claims must be sent by email to sales@all-stars-distribution.com together with photos or videos showing the problem. As the guarantee is taken over directly by the supplier, the shipping costs for sending and returning the product will be at the customer's expense, with the supplier only covering the costs of repairing or replacing the product concerned by the warranty. If the supplier finds that the problem encountered is not covered by the conditions of the guarantee, the shipping costs for the return of the product remain the responsibility of the customer." d='Shop.Theme.Terms'} </p>
+            <p>{l s='Under no circumstances can a warranty claim be made due to a problem encountered with a product following a faulty installation. In this case, the buyer must contact the professional who installed the product in question.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='For any warranty claim which will require the sending of the product to our premises in order to verify it, All Stars Distribution will reimburse the buyer for the shipping costs of the product if the warranty coverage by the supplier is confirmed, otherwise all shipping costs will be borne by the latter.' d='Shop.Theme.Terms'}</p>
+            <p>{l s='In no case will it be possible to request a refund for the product concerned from the company All Stars Distribution as part of a warranty claim.' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 9: PRODUCT RETURNS' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='All sales made on our site are final, they cannot in any case give rise to the return of a product (except in the context of a guarantee, see article 8).' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 10: CONDITIONS AND DEADLINES FOR REIMBURSEMENT' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='Cancellation of an order is possible as long as the order has not been shipped from our warehouse. Any cancellation request made after the order has been shipped will not be accepted.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='If cancellation of the order is possible, we will refund the order via the payment method originally used by the buyer within 30 days.' d='Shop.Theme.Terms'}</p>
+            <h1>{l s='ARTICLE 11: PERSONAL DATA' d='Shop.Theme.Terms'}</h1>
+            <p>{l s='Certain customer information will be passed on to delivery and / or payment service providers (i.e., surname, first name, address, postal code and telephone number) in order to allow the processing and delivery of the products ordered.' d='Shop.Theme.Terms'} </p>
+            <p>{l s='The commercial offers of the site will be sent to the customer by e-mail if no objection has been made. The customer may object at any time by logging into his personal space or by sending an email to our customer service department.' d='Shop.Theme.Terms'} </p>
+            <p>{l s="The site ensures that the customer's personal information is collected and processed in compliance with law n°78-17 of January 6, 1978 relating to information technology, files and freedom." d='Shop.Theme.Terms'} </p>
+            <p>{l s='In accordance with articles 39 and 40 of the law dated 6 January 1978, the customer has the right to access, rectify, delete and oppose his personal data. The customer can exercise this right via :' d='Shop.Theme.Terms'} </p>
             <br>
-            <p>- His personal space </p>
-            <p>- By e-mail to <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a></p>
-            <p style="margin:3rem 0 2rem 0;text-align:center;">This document was last updated on November 21, 2022</p>
+            <p>{l s='- His personal space' d='Shop.Theme.Terms'} </p>
+            <p>{l s='- By e-mail to ' d='Shop.Theme.Terms'}<a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a></p>
+            <p style="margin:3rem 0 2rem 0;text-align:center;">{l s='This document was last updated on November 21, 2022' d='Shop.Theme.Terms'}</p>
           </div>
         </div>
       {else}
