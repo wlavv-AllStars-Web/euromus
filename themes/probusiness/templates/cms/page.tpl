@@ -33,7 +33,7 @@
           <div><img src="https://www.all-stars-distribution.com/img/cms/AllStars/top_image_short.jpg" alt="top_image_short.jpg" /></div>
           <div class="profile_container_cms">
           <div class="profile_style">{l s='Profile' d='Shop.Theme.About'}</div>
-          <div class="profile_container_text" id="profile_container_text">{l s='Profile' d='Shop.Theme.About'}</div>
+          <div class="profile_container_text" id="profile_container_text">{l s='Supplying over 30 top of the line brands to automotive performance professionals worldwide, All Stars Distribution is one of the largest European wholesalers of performance and design parts. Dedicated to serving shops, tuners, e-dealers and other resellers, All Stars Distribution is committed to employing the best of inventory management and distribution practices to get our customers the performance parts they need to satisfy their customers.' d='Shop.Theme.About'}</div>
           <div id="profile_container_text1 hidden-md-up" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.About'}</div>
           </div>
           <div>
