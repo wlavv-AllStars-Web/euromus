@@ -11,6 +11,10 @@
   max-width: 1350px;
   margin: auto;
 }
+#index #content{
+  max-width: 1700px;
+  margin: auto;
+}
 
   /* shopping cart modal */
   #_desktop_cart {
@@ -386,6 +390,10 @@
     }
     .cms-id-8 .page-header{
         display: none;
+    }
+
+    .cms-id-8 #content {
+      max-width: 1700px;
     }
 
      /* cms become a dealer*/
