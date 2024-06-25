@@ -885,7 +885,7 @@
             <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/payment.jpg" alt="All Stars Distribution" class="img-fluid cms_header_image">
           </div>
           
-          <p class="cms_title_center" style="color: black; font-weight: bolder; font-size: 23px;">{l s='' d='Shop.Theme.Payment'}ALL STARS DISTRIBUTION offers two methods of payment :</p>
+          <p class="cms_title_center" style="color: black; font-weight: bolder; font-size: 23px;">{l s='ALL STARS DISTRIBUTION offers two methods of payment :' d='Shop.Theme.Payment'}</p>
           <div class="spacer-20"></div>
           <div class="row content-payment">
           <div class="row-payment">
