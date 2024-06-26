@@ -376,7 +376,25 @@ class CmsControllerCore extends FrontController
                 $this->context->smarty->assign(array( 'form_error' => 6 ));
                 $error = 1;
             }else{
-                Mail::Send($this->context->language->id, 'become_dealer', 'BECOME A DEALER', $var_list, 'pauloallstarsweb@gmail.com', 'Sales', null, null, null, null, _PS_MAIL_DIR_, false, null, null);
+                Mail::Send(
+                    $this->context->language->id, 
+                    'become_dealer', 
+                    'BECOME A DEALER', 
+                    $var_list, 
+                    'pauloallstarsweb@gmail.com', 
+                    'Sales', 
+                    null, 
+                    'pauloallstarsweb@gmail.com', 
+                    null, 
+                    null, 
+                    null, 
+                    _PS_MAIL_DIR_, 
+                    false, 
+                    null, 
+                    null, 
+                    null, 
+                    null
+                );
                 $this->context->smarty->assign(array( 'email_sent' => 1 ));
             }
     
