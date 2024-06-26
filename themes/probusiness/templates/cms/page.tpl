@@ -342,7 +342,7 @@
 
             <div class="form-row">
               <div class="form-group col-md-12" style="display: flex;justify-content:center;">
-                <button type="submit" class="btn send-form">{l s='Submit' d='Shop.Theme.FormBecomedealer'}</button>
+                <button type="submit" class="btn send-form" onclick="validateForm()">{l s='Submit' d='Shop.Theme.FormBecomedealer'}</button>
               </div>
             </div>
             </form>
@@ -362,12 +362,12 @@
 
           function validateForm() {
         
-              var empty = $("#become_dealer_form").find('input[required]').filter(function() {
+              var empty = $(".form-become-dealer").find('input[required]').filter(function() {
                   return this.value == '';
               });
               
               if (empty.length) {
-                  $("#become_dealer_form").find('input[required]').css('border', '1px solid red');
+                  $(".form-become-dealer").find('input[required]').css('border', '1px solid red');
                   alert("{$fill_all}");
                   return false;
               }
@@ -407,12 +407,54 @@
               } 
               
               if(error == 0){
-                  $('#become_dealer_form').submit();
+                  $('.form-become-dealer').submit();
               }else{
                   return false;
               }
 
           } 
+
+          function ValidateEmail() {
+        
+              let message = "{$error_4}";
+              const validatorString = /\S+@\S+\.\S+/;
+              
+              if($('#email').val().indexOf(' ') >= 0){
+                  alert(message);
+                  return (false);
+              }
+              
+              if ( !validatorString.test($('#email').val()) ){
+                  alert(message);
+                  return (false); 
+              }
+              
+              return true;
+          }
+
+          function ValidateURL(tipoURL) {
+        
+              let message = "{$error_6}";
+              if(tipoURL == 1) message = "{$error_5}";
+              
+              let url = $('#social').val();
+              if(tipoURL == 1) url = $('#site').val();
+                
+              if(url.indexOf(' ') >= 0){
+                  alert(message);
+                  return (false);
+              } 
+              var validatorString = /((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/g;
+
+              if ( validatorString.test(url) ){
+                  return (true);
+              }else{
+                  alert(message);
+                  return (false);        
+              }
+          }
+
+
         </script>
 
 
