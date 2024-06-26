@@ -444,7 +444,7 @@
                       </div>
                       <div class="form-group">
                         <label for="exampleFormControlTextarea1">{l s='Comment' d='Shop.Theme.FormBecomesupplier'}</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
                       </div>
                     </div>
                 </div>

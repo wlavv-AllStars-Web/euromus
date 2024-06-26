@@ -1569,6 +1569,11 @@ textarea {
   max-width: 601px;
 }
 
+.form-become-supplier textarea{
+  height: 100%;
+  min-height: 210px;
+}
+
 
 @media (min-width: 1200px) and (max-width:1400px){
   #footer .footer-container .row{
