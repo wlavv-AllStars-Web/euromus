@@ -103,73 +103,76 @@
           <div class="form-become-dealer" style="margin: 5rem 0;">
             <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Fill out the become a dealer enquiry form' d='Shop.Theme.BecomeDealer'} <span style="color: #0273EB;"><</span></h1>
             
-            <form>
+            <form action="/en/content/14-become-a-dealer" method="post" name="become_dealer_form">
+              <input type="hidden" id="type" name="type" value="becomedealer">
               <div class="form-row">
                 <div class="form-group col-md-2">
-                  <label for="inputEmail4">{l s='Name' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputEmail4">
+                  <label for="name">{l s='Name' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="name" name="name">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputPassword4">{l s='Surname' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputPassword4">
+                  <label for="surname">{l s='Surname' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="surname" name="surname">
                 </div>
                 <div class="form-group col-md-4">
-                  <label for="inputEmail4">{l s='Company' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputEmail4">
+                  <label for="company">{l s='Company' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="company" name="company">
                 </div>
                 <div class="form-group col-md-4">
-                  <label for="inputPassword4">{l s='VAT Number (if applicable)' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputPassword4">
+                  <label for="company_tva">{l s='VAT Number (if applicable)' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="company_tva" name="company_tva">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputEmail4">{l s='Email' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="email" class="form-control" id="inputEmail4">
+                  <label for="email">{l s='Email' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="email" class="form-control" id="email" name="email">
                 </div>
                 <div class="form-group col-md-8">
-                  <label for="inputAddress">{l s='Address' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                  <label for="adresse_line_1">{l s='Address' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="adresse_line_1" placeholder="1234 Main St" name="adresse_line_1">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputAddress2">{l s='Phone' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="tel" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  <label for="phone">{l s='Phone' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="tel" class="form-control" id="phone" placeholder="Apartment, studio, or floor" name="phone">
                 </div>
                 <div class="form-group col-md-8">
-                  <label for="inputAddress2">{l s='Address 2' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  <label for="adresse_line_2">{l s='Address 2' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="adresse_line_2" placeholder="Apartment, studio, or floor" name="adresse_line_2">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputAddress2">{l s='Website' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  <label for="site">{l s='Website' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="site" placeholder="Website" name="site">
                 </div>
                 <div class="form-group col-md-6">
-                  <label for="inputAddress2">{l s='City' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  <label for="city">{l s='City' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="city" placeholder="City" name="city">
                 </div>
                 <div class="form-group col-md-2">
-                  <label for="inputAddress2">{l s='Zip Code' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                  <label for="postal_code">{l s='Zip Code' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="postal_code" placeholder="Zip Code" name="postal_code">
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
-                  <label for="inputCity">{l s='Social Media Link' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="inputCity">
+                  <label for="social">{l s='Social Media Link' d='Shop.Theme.FormBecomedealer'}</label>
+                  <input type="text" class="form-control" id="social" name="social">
                 </div>
                 <div class="form-group col-md-8">
-                  <label for="inputState">{l s='Country' d='Shop.Theme.FormBecomedealer'}</label>
-                  <select id="inputState" class="form-control">
+                  <label for="country">{l s='Country' d='Shop.Theme.FormBecomedealer'}</label>
+                  <select id="country" class="form-control" name="country">
                     <option selected>{l s='Please Select...' d='Shop.Theme.FormBecomedealer'}</option>
-                    <option>...</option>
+                    {foreach $countries as $country}
+                      <option value="{$country['name']}">{substr($country["name"],0,24)}{(strlen($country["name"])>25)?'...':''}</option>
+                    {/foreach}
                   </select>
                 </div>
               </div>
@@ -179,43 +182,43 @@
                 <div class="title-suppliers">{l s='Business Type (Check all that apply)' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-12 check-form">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Storefront">
                     <label class="form-check-label" for="gridCheck1">
                       {l s='Storefront' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Installer">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Installer' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="E-dealer">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='E-dealer' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Dyno Shop">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Dyno Shop' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Market Place Seller">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Market Place Seller' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Wholesaler">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Wholesaler' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Other">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Other' d='Shop.Theme.FormBecomedealer'}
                     </label>
@@ -226,43 +229,43 @@
                 <div class="title-suppliers">{l s='Main Market' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-12 check-form">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Euro">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Euro' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="JDM">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='JDM' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Muscle">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Muscle' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Classics">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Classics' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Offroad">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Offroad' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Diesel">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Diesel' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Other">
                     <label class="form-check-label" for="gridCheck1">
                     {l s='Other' d='Shop.Theme.FormBecomedealer'}
                     </label>
@@ -275,25 +278,25 @@
                 <div class="title-suppliers">{l s='Annual sales volume' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-10 check-form">
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="Under 100K" name="annual_sales[]" checked>
                     <label class="form-check-label" for="gridRadios1">
                     {l s='Under 100K€' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="100K to 500K€" name="annual_sales[]">
                     <label class="form-check-label" for="gridRadios2">
                     {l s='100K to 500K€' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="500K€ to 1M€" name="annual_sales[]">
                     <label class="form-check-label" for="gridRadios3">
                     {l s='500K€ to 1M€' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="1M€ +" name="annual_sales[]">
                     <label class="form-check-label" for="gridRadios3">
                     {l s='1M€ +' d='Shop.Theme.FormBecomedealer'}
                     </label>
@@ -305,13 +308,13 @@
                 <div class="form-row">
                     <div class="col-md-12 title-suppliers current_suplier">{l s='Main current suppliers' d='Shop.Theme.FormBecomedealer'}</div>
                     <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 1' d='Shop.Theme.FormBecomedealer'}">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 1' d='Shop.Theme.FormBecomedealer'}" name="supplier_1">
                     </div>
                     <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 2' d='Shop.Theme.FormBecomedealer'}">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 2' d='Shop.Theme.FormBecomedealer'}" name="supplier_2">
                     </div>
                     <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 3' d='Shop.Theme.FormBecomedealer'}">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 3' d='Shop.Theme.FormBecomedealer'}" name="supplier_3">
                     </div>
                   </div>
                 </div>
@@ -320,7 +323,7 @@
             <div class="form-row col-md-12">
               <div class="form-group col-md-4">
                 <label for="exampleFormControlTextarea1">{l s='Comment' d='Shop.Theme.FormBecomedealer'}</label>
-                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+                <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="observations"></textarea>
               </div>
               <div class="form-group col-md-4 signature">
                 <label for="canvas4">{l s='Signature' d='Shop.Theme.FormBecomedealer'}</label>
@@ -356,6 +359,60 @@
                 signaturePad4.clear();
             });
           });
+
+          function validateForm() {
+        
+              var empty = $("#become_dealer_form").find('input[required]').filter(function() {
+                  return this.value == '';
+              });
+              
+              if (empty.length) {
+                  $("#become_dealer_form").find('input[required]').css('border', '1px solid red');
+                  alert("{$fill_all}");
+                  return false;
+              }
+                  
+                  
+              let error = 0;
+              let site = $('#site').val();
+              let social = $('#social').val();
+              let business_type = document.querySelectorAll('input[name="business_type[]"]:checked').length;
+              let main_market   = document.querySelectorAll('input[name="main_market[]"]:checked').length;
+
+              if( ($('#site').val() == '') && ($('#social').val() == '')){
+                  alert("{$error_1}"); 
+                  error = 1;
+              }
+              
+              if(business_type == 0){
+                  alert("{$error_2}"); 
+                  error = 1;
+              }
+              
+              if(main_market == 0){
+                  alert("{$error_3}"); 
+                  error = 1;
+              } 
+              
+              if(!ValidateEmail()){
+                  error = 1;
+              }
+              
+              if((site != '') && (!ValidateURL(1))){
+                  error = 1;
+              } 
+              
+              if((social != '') && (!ValidateURL(2))){
+                  error = 1;
+              } 
+              
+              if(error == 0){
+                  $('#become_dealer_form').submit();
+              }else{
+                  return false;
+              }
+
+          } 
         </script>
 
 
