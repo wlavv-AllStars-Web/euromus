@@ -357,29 +357,29 @@ class CmsControllerCore extends FrontController
 
 
         if (Tools::getValue('type') == 'becomedealer') {
-            if ( (Tools::getValue('site') == '') && (Tools::getValue('social') == '') ) {
-                $this->context->smarty->assign(array( 'form_error' => 1 ));
-                $error = 1;
-            }elseif ( strlen($var_list['{business_type}']) < 1) {
-                $this->context->smarty->assign(array( 'form_error' => 2 ));
-                $error = 1;
-            }elseif ( strlen($var_list['{main_market}']) < 1) {
-                $this->context->smarty->assign(array( 'form_error' => 3 ));
-                $error = 1;
-            }elseif (!filter_var(Tools::getValue('email'), FILTER_VALIDATE_EMAIL)) {
-                $this->context->smarty->assign(array( 'form_error' => 4 ));
-                $error = 1;
-            }elseif ((Tools::getValue('site') != '') && (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",Tools::getValue('site')))) {
-                $this->context->smarty->assign(array( 'form_error' => 5 ));
-                $error = 1;
-            }elseif ((Tools::getValue('social') != '') &&  (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",Tools::getValue('social')))) {
-                $this->context->smarty->assign(array( 'form_error' => 6 ));
-                $error = 1;
-            }else{
+            // if ( (Tools::getValue('site') == '') && (Tools::getValue('social') == '') ) {
+            //     $this->context->smarty->assign(array( 'form_error' => 1 ));
+            //     $error = 1;
+            // }elseif ( strlen($var_list['{business_type}']) < 1) {
+            //     $this->context->smarty->assign(array( 'form_error' => 2 ));
+            //     $error = 1;
+            // }elseif ( strlen($var_list['{main_market}']) < 1) {
+            //     $this->context->smarty->assign(array( 'form_error' => 3 ));
+            //     $error = 1;
+            // }elseif (!filter_var(Tools::getValue('email'), FILTER_VALIDATE_EMAIL)) {
+            //     $this->context->smarty->assign(array( 'form_error' => 4 ));
+            //     $error = 1;
+            // }elseif ((Tools::getValue('site') != '') && (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",Tools::getValue('site')))) {
+            //     $this->context->smarty->assign(array( 'form_error' => 5 ));
+            //     $error = 1;
+            // }elseif ((Tools::getValue('social') != '') &&  (!preg_match("/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i",Tools::getValue('social')))) {
+            //     $this->context->smarty->assign(array( 'form_error' => 6 ));
+            //     $error = 1;
+            // }else{
                 Mail::Send($this->context->language->id, 'become_dealer', 'BECOME A DEALER', $var_list,  'pauloallstarsweb@gmail.com', 'BECOME A DEALER', null, null, null, null, _PS_MAIL_DIR_, false, null, null, $var_list['{email}']);
                 $this->context->smarty->assign(array( 'email_sent' => 1 ));
                 exit;
-            }
+            // }
     
         }elseif (Tools::getValue('type') == 'becomesupplier') {
             Mail::Send($this->context->language->id, 'become_supplier', 'BECOME A SUPPLIER', $var_list, 'pauloallstarsweb@gmail.com', 'Sales', null, null, null, null, _PS_MAIL_DIR_, false, null, null);
