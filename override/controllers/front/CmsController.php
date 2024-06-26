@@ -378,11 +378,13 @@ class CmsControllerCore extends FrontController
             }else{
                 Mail::Send($this->context->language->id, 'become_dealer', 'BECOME A DEALER', $var_list,  'pauloallstarsweb@gmail.com', 'BECOME A DEALER', null, null, null, null, _PS_MAIL_DIR_, false, null, null, $var_list['{email}']);
                 $this->context->smarty->assign(array( 'email_sent' => 1 ));
+                exit;
             }
     
         }elseif (Tools::getValue('type') == 'becomesupplier') {
             Mail::Send($this->context->language->id, 'become_supplier', 'BECOME A SUPPLIER', $var_list, 'pauloallstarsweb@gmail.com', 'Sales', null, null, null, null, _PS_MAIL_DIR_, false, null, null);
             $this->context->smarty->assign(array( 'email_sent' => 1 ));
+            
         }else{
             $this->context->smarty->assign(array( 'email_sent' => 0 ));
         } 
