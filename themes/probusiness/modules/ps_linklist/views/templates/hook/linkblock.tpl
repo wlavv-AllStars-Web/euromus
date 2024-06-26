@@ -92,7 +92,7 @@
       <ul id="footer_sub_menu_4" class="collapse">
         <li>
           <a target="_blank" href="{$homepage_footer['link_footer']}">
-            <img src="https://www.all-stars-distribution.com/img/media_images/Events/main_250x100.webp?updated=104794782"
+            <img src="/img/asd/Events/main_250x100.webp?{rand()}"
               title="{$homepage_footer['alt_footer']}" id="footer_event_image"
               style="max-width: 200px;max-height: 80px;" class="img-responsive">
           </a>

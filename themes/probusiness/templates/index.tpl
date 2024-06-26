@@ -31,7 +31,9 @@
             {else} *}
               <div class="not_logged_homepage">
                 <div class="banner_home hidden-md-down">
-                  <img src="https://www.all-stars-distribution.com/img/media_images/Homepage/main.webp?361972609" style="width: 100%;" />
+                <a href="{$homepage_footer['link_banner']}">
+                  <img src="/img/asd/homepage/main.webp?{rand()}" alt="{$homepage_footer['alt_banner']}" style="width: 100%;" />
+                </a>
                 </div>
 
                 <div class="profile_container_homepage">

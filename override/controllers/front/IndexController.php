@@ -74,7 +74,10 @@ class IndexController extends IndexControllerCore
             }
         }
 
+        $homepage_footer = Db::getInstance()->getRow('SELECT * FROM eu_ASD_homepage WHERE id=1');
+
         $this->context->smarty->assign([
+            'homepage_footer'    => $homepage_footer,
             'HOOK_HOME' => Hook::exec('displayHome'),
             'HOOK_HOME_TAB' => Hook::exec('displayHomeTab'),
             'HOOK_HOME_TAB_CONTENT' => Hook::exec('displayHomeTabContent')
