@@ -287,7 +287,7 @@ class CmsControllerCore extends FrontController
         
         if(Tools::getValue('action_job') == "form_job"){
             
-            $var_list['{gender}'] = Tools::getValue('gender') == "1" ? "Male" : (Tools::getValue('gender') == "2" ? "Female" : "Nonbinary");
+            $var_list['{gender}'] = Tools::getValue('gender') == "1" ? "Male" :"Female";
             $var_list['{name}'] = Tools::getValue('first_name');
             $var_list['{surname}'] = Tools::getValue('last_name');
             $var_list['{email}'] = Tools::getValue('email_job');
@@ -317,7 +317,7 @@ class CmsControllerCore extends FrontController
                 $var_list['{cv}'] = '/upload/' . $filename;
             }
 
-            Mail::Send($this->context->language->id, 'job_candidate', 'JOB APPLICATION', $var_list,  'bruno.fernandes.asm@gmail.com', 'Job Application', null, null, null, null, _PS_MAIL_DIR_, false, null, null);
+            Mail::Send($this->context->language->id, 'job_candidate', 'JOB APPLICATION', $var_list,  'pauloallstarsweb@gmail.com', 'Job Application', null, null, null, null, _PS_MAIL_DIR_, false, null, null, $var_list['{email}']);
             $this->context->smarty->assign(array( 'email_sent' => 2 ));
             
         }else{

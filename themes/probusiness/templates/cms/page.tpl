@@ -1079,16 +1079,17 @@
               <div class="form-career-container" style="margin: 5rem 0;">
                 <h1 style="text-align: center;color:#000;margin-bottom:2rem;">{l s='JOB APPLICATION' d='Shop.Theme.Career'}</h1>
                 
-                <form class="form-career">
+                <form class="form-career" action_job="form_job" method="post" name="application__form">
+                  <input type="hidden" name="action_job" value="form_job">
                   <div class="form-row radio-btns-form  col-lg-12">
                     <div class="form-check col-md-1">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                      <label class="form-check-label" for="gridRadios1">
+                      <input class="form-check-input" type="radio" name="gender" id="gender" value="1">
+                      <label class="form-check-label" for="gender">
                       {l s='Mr.' d='Shop.Theme.Career'}
                       </label>
                     </div>
                     <div class="form-check  col-md-1">
-                      <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
+                      <input class="form-check-input" type="radio" name="gender" id="gender" value="2">
                       <label class="form-check-label" for="gridRadios2">
                       {l s='Mrs.' d='Shop.Theme.Career'}
                       </label>
@@ -1098,82 +1099,82 @@
 
                   <div class="form-row ">
                     <div class="form-group col-lg-4 col-md-6 ">
-                      <label for="inputEmail4">{l s='Name' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="text" class="form-control" id="inputEmail4">
+                      <label for="name">{l s='Name' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <input type="text" class="form-control" id="name" name="first_name">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputPassword4">{l s='Surname' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="text" class="form-control" id="inputPassword4">
+                      <label for="surname">{l s='Surname' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <input type="text" class="form-control" id="surname" name="last_name">
                     </div>
                     <div class="form-group  col-lg-4 col-md-6">
-                      <label for="inputEmail4">{l s='Email' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="email" class="form-control" id="inputEmail4">
+                      <label for="email">{l s='Email' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <input type="email" class="form-control" id="email" name="email_job">
                     </div>
                   
                     <div class="form-group col-lg-2 col-md-3">
-                      <label for="inputState">{l s='Phone' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <select id="inputState" class="form-control">
+                      <label for="country_code">{l s='Phone' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <select id="country_code" class="form-control" name="country_code">
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         <option>...</option>
                       </select>
                     </div>
                     <div class="form-group col-lg-2 col-md-3">
-                      <label for="inputEmail4">{l s='Phone Number' d='Shop.Theme.Career'}</label>
-                      <input type="text" class="form-control" id="inputEmail4" placeholder="">
+                      <label for="phone_number">{l s='Phone Number' d='Shop.Theme.Career'}</label>
+                      <input type="text" class="form-control" id="phone_number" placeholder="" name="phone_number">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress">{l s='How do you prefer to be contacted?' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="text" class="form-control" id="inputAddress" placeholder="">
+                      <label for="contact_preference">{l s='How do you prefer to be contacted?' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <input type="text" class="form-control" id="contact_preference" placeholder="" name="contact_preference">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputState">{l s='Country' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <select id="inputState" class="form-control">
+                      <label for="country">{l s='Country' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <select id="country" class="form-control" name="country">
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         <option>...</option>
                       </select>
                     </div>
                   
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputState">{l s='Which position are you applying to' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <select id="inputState" class="form-control">
+                      <label for="position">{l s='Which position are you applying to' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <select id="position" class="form-control" name="position">
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         <option>...</option>
                       </select>
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress2">{l s='Address Line 1' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="tel" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                      <label for="address_line_1">{l s='Address Line 1' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <input type="tel" class="form-control" id="address_line_1" placeholder="Apartment, studio, or floor" name="address_line_1">
                     </div>
                     <div class="form-group col-lg-4  col-md-6">
-                      <label for="inputAddress2">{l s='Address Line 2' d='Shop.Theme.Career'}</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                      <label for="address_line_2">{l s='Address Line 2' d='Shop.Theme.Career'}</label>
+                      <input type="text" class="form-control" id="address_line_2" placeholder="Apartment, studio, or floor" name="address_line_2">
                     </div>
                   
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress2">{l s='City' d='Shop.Theme.Career'}</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                      <label for="city">{l s='City' d='Shop.Theme.Career'}</label>
+                      <input type="text" class="form-control" id="city"  name="city">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress2">{l s='Zip Code' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                      <label for="post_code">{l s='Zip Code' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
+                      <input type="text" class="form-control" id="post_code" name="post_code">
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
-                      <label for="inputAddress2">{l s='How did you know about this job position?' d='Shop.Theme.Career'}</label>
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                      <label for="from_where">{l s='How did you know about this job position?' d='Shop.Theme.Career'}</label>
+                      <input type="text" class="form-control" id="from_where" name="from_where">
                     </div>
                   </div>
     
                 <div class="form-row ">
                   <div class="form-group col-lg-4 col-md-6">
-                    <label for="exampleFormControlFile1">{l s='Upload your CV ( only PDF files )' d='Shop.Theme.Career'} <span style="color:#ee302e;">*</span></label>
-                    <input type="file" class="form-control-file" id="exampleFormControlFile1">
+                    <label for="fileUpload">{l s='Upload your CV ( only PDF files )' d='Shop.Theme.Career'} <span style="color:#ee302e;">*</span></label>
+                    <input type="file" class="form-control-file" id="fileUpload" name="fileUpload">
                   </div>
                 </div>
 
                 <div class="form-row ">
                   <div class="form-group col-lg-4 col-md-6">
                     <div class="form-check col-md-12">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
+                      <input class="form-check-input" type="checkbox" id="gridCheck" required>
                       <label class="form-check-label" for="gridCheck">
                         <a href="https://www.all-stars-distribution.com/en/content/20-terms-and-conditions">{l s='You agree with our conditions terms' d='Shop.Theme.Career'}</a> <span style="color:#ee302e;">*</span>
                       </label>
