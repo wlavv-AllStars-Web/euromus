@@ -358,7 +358,7 @@
             document.getElementById('clearButton').addEventListener('click', function() {
                 signaturePad4.clear();
             });
-          });
+          
 
           function validateForm() {
         
@@ -454,7 +454,7 @@
               }
           }
 
-
+          });
         </script>
 
 
