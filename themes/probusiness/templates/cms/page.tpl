@@ -140,7 +140,7 @@
           <div class="form-become-dealer" style="margin: 5rem 0;">
             <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Fill out the become a dealer enquiry form' d='Shop.Theme.BecomeDealer'} <span style="color: #0273EB;"><</span></h1>
             
-            <form action="/en/content/14-become-a-dealer" method="post" name="become_dealer_form">
+            <form action="/{$language.iso_code}/content/14-become-a-dealer" method="post" name="become_dealer_form">
               <input type="hidden" id="type" name="type" value="becomedealer" >
               <div class="form-row">
                 <div class="form-group col-md-2">
@@ -457,7 +457,7 @@
           <div class="form-become-supplier" style="margin: 5rem 0;">
             <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Submit an enquiry' d='Shop.Theme.Becomesupplier'}<span style="color: #0273EB;"><</span></h1>
             
-            <form action="/en/content/15-become-a-supplier" method="post" name="become_dealer_form">
+            <form action="/{$language.iso_code}/content/15-become-a-supplier" method="post" name="become_dealer_form">
             <input type="hidden" id="type" name="type" value="becomesupplier">
               <div class="form-row">
 
