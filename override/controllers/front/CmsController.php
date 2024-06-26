@@ -283,8 +283,6 @@ class CmsControllerCore extends FrontController
 
     public function postProcess()
     {
-        echo Tools::getValue('type');
-        exit;
         $error = 0;
         
         if(Tools::getValue('action_job') == "form_job"){
@@ -378,6 +376,7 @@ class CmsControllerCore extends FrontController
             //     $this->context->smarty->assign(array( 'form_error' => 6 ));
             //     $error = 1;
             // }else{
+            echo "entrou";
                 Mail::Send($this->context->language->id, 'become_dealer', 'BECOME A DEALER', $var_list,  'pauloallstarsweb@gmail.com', 'BECOME A DEALER', null, null, null, null, _PS_MAIL_DIR_, false, null, null, $var_list['{email}']);
                 $this->context->smarty->assign(array( 'email_sent' => 1 ));
                 exit;
