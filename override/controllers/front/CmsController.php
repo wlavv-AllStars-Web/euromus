@@ -317,7 +317,7 @@ class CmsControllerCore extends FrontController
                 $var_list['{cv}'] = '/upload/' . $filename;
             }
 
-            Mail::Send($this->context->language->id, 'job_candidate', 'JOB APPLICATION', $var_list,  'bruno.fernandes.asm@gmail.com', 'Job Application', null, null, null, null, _PS_MAIL_DIR_, false, null, null, $from=null);
+            Mail::Send($this->context->language->id, 'job_candidate', 'JOB APPLICATION', $var_list,  'bruno.fernandes.asm@gmail.com', 'Job Application', null, null, null, null, _PS_MAIL_DIR_, false, null, null);
             $this->context->smarty->assign(array( 'email_sent' => 2 ));
             
         }else{
@@ -376,12 +376,12 @@ class CmsControllerCore extends FrontController
                 $this->context->smarty->assign(array( 'form_error' => 6 ));
                 $error = 1;
             }else{
-                Mail::Send($this->context->language->id, 'become_dealer', 'BECOME A DEALER', $var_list, 'pauloallstarsweb@gmail.com', 'Sales', null, null, null, null, _PS_MAIL_DIR_, false, null, null, $from=null);
+                Mail::Send($this->context->language->id, 'become_dealer', 'BECOME A DEALER', $var_list, 'pauloallstarsweb@gmail.com', 'Sales', null, null, null, null, _PS_MAIL_DIR_, false, null, null);
                 $this->context->smarty->assign(array( 'email_sent' => 1 ));
             }
     
         }elseif (Tools::getValue('type') == 'becomesupplier') {
-            Mail::Send($this->context->language->id, 'become_supplier', 'BECOME A SUPPLIER', $var_list, 'pauloallstarsweb@gmail.com', 'Sales', null, null, null, null, _PS_MAIL_DIR_, false, null, null, $from=null);
+            Mail::Send($this->context->language->id, 'become_supplier', 'BECOME A SUPPLIER', $var_list, 'pauloallstarsweb@gmail.com', 'Sales', null, null, null, null, _PS_MAIL_DIR_, false, null, null);
             $this->context->smarty->assign(array( 'email_sent' => 1 ));
         }else{
             $this->context->smarty->assign(array( 'email_sent' => 0 ));
