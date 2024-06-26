@@ -283,6 +283,8 @@ class CmsControllerCore extends FrontController
 
     public function postProcess()
     {
+        echo Tools::getValue('type');
+        exit;
         $error = 0;
         
         if(Tools::getValue('action_job') == "form_job"){
