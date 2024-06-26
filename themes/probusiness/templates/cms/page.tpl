@@ -27,7 +27,31 @@
 {block name='page_content_container'}
   <section id="content" class="page-content page-cms page-cms-{$cms.id|escape:'html':'UTF-8'}">
 
-  
+    {if isset($email_sent) && ($email_sent == 1)}
+      <div class="spacer-20"></div>
+      <div class="alert alert-success" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
+          {l s='Your enquiry  has been successfully sent and a sales representative will respond to you shortly' d='Shop.Theme.FormBecomedealer'}
+      </div>
+    {/if}
+    {if isset($email_sent) && ($email_sent == 2)}
+        <div class="spacer-20"></div>
+        <div class="alert alert-success" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
+            {l s='Your request has been successfully sent and a human resources representative will respond to you shortly' d='Shop.Theme.FormBecomedealer'}!
+        </div>
+    {/if}
+
+    {if isset($form_error) && ($form_error > 0 )}
+        <div class="spacer-20"></div>
+        <div class="alert alert-warning" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
+            {if $form_error == 1 }     {l s='You must fill in at least one of the "Site" or "Social Networks" fields' d='Shop.Theme.FormBecomedealer'} 
+            {elseif $form_error == 2 } {l s='You must select at least one "Business type"' d='Shop.Theme.FormBecomedealer'} 
+            {elseif $form_error == 3 } {l s='You must select at least one "Primary Market"' d='Shop.Theme.FormBecomedealer'} 
+            {elseif $form_error == 4 } {l s='The email entered is not valid. Please verify.' d='Shop.Theme.FormBecomedealer'} 
+            {elseif $form_error == 5 } {l s='The URL entered for the "Site" field is not valid. Please verify.'} 
+            {elseif $form_error == 6 } {l s='The URL entered for the "Social Networks" field is not valid. Please verify.' d='Shop.Theme.FormBecomedealer'} 
+            {/if}
+        </div>
+    {/if}
 
     {block name='cms_content'}
       {if $cms.id === 8}
@@ -57,31 +81,7 @@
         {assign var="error_5" value="{l s='form_error_message_5' js='1'}"}
         {assign var="error_6" value="{l s='form_error_message_6' js='1'}"}
 
-        {if isset($email_sent) && ($email_sent == 1)}
-          <div class="spacer-20"></div>
-          <div class="alert alert-success" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
-              {l s='Your enquiry  has been successfully sent and a sales representative will respond to you shortly' d='Shop.Theme.FormBecomedealer'}
-          </div>
-        {/if}
-        {if isset($email_sent) && ($email_sent == 2)}
-            <div class="spacer-20"></div>
-            <div class="alert alert-success" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
-                {l s='Your request has been successfully sent and a human resources representative will respond to you shortly' d='Shop.Theme.FormBecomedealer'}!
-            </div>
-        {/if}
-      
-        {if isset($form_error) && ($form_error > 0 )}
-            <div class="spacer-20"></div>
-            <div class="alert alert-warning" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
-                {if $form_error == 1 }     {l s='You must fill in at least one of the "Site" or "Social Networks" fields' d='Shop.Theme.FormBecomedealer'} 
-                {elseif $form_error == 2 } {l s='You must select at least one "Business type"' d='Shop.Theme.FormBecomedealer'} 
-                {elseif $form_error == 3 } {l s='You must select at least one "Primary Market"' d='Shop.Theme.FormBecomedealer'} 
-                {elseif $form_error == 4 } {l s='The email entered is not valid. Please verify.' d='Shop.Theme.FormBecomedealer'} 
-                {elseif $form_error == 5 } {l s='The URL entered for the "Site" field is not valid. Please verify.'} 
-                {elseif $form_error == 6 } {l s='The URL entered for the "Social Networks" field is not valid. Please verify.' d='Shop.Theme.FormBecomedealer'} 
-                {/if}
-            </div>
-        {/if}
+        
 
         <div id="cms_container_14">
           <div>
@@ -457,7 +457,7 @@
           <div class="form-become-supplier" style="margin: 5rem 0;">
             <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Submit an enquiry' d='Shop.Theme.Becomesupplier'}<span style="color: #0273EB;"><</span></h1>
             
-            <form action="/en/content/8-becomesupplier" method="post" name="become_dealer_form">
+            <form action="/en/content/15-become-a-supplier" method="post" name="become_dealer_form">
             <input type="hidden" id="type" name="type" value="becomesupplier">
               <div class="form-row">
 
