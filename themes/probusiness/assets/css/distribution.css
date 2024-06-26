@@ -1,3 +1,11 @@
+@font-face {
+  font-family: 'LemonMilk';
+  src: url("/themes/probusiness/assets/fonts/LemonMilk.otf");
+  font-display: swap;
+  font-weight: normal;
+  font-style: normal; 
+}
+  
   html,body{
     scroll-behavior: smooth;
   }
@@ -239,7 +247,7 @@
         line-height: 28px;
    }
    .profile_container_homepage .profile_style{
-    font-family: sans-serif;
+    font-family: LemonMilk;
     font-size: 70px;
     color: #FFF;
     text-align: center;
@@ -374,7 +382,7 @@
     }
 
     .profile_container_cms .profile_style{
-    font-family: sans-serif;
+    font-family: LemonMilk;
     font-size: 70px;
     color: #FFF;
     text-align: center;
