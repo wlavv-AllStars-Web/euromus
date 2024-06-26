@@ -457,64 +457,67 @@
           <div class="form-become-supplier" style="margin: 5rem 0;">
             <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Submit an enquiry' d='Shop.Theme.Becomesupplier'}<span style="color: #0273EB;"><</span></h1>
             
-            <form>
+            <form action="/en/content/8-becomesupplier" method="post" name="become_dealer_form">
+            <input type="hidden" id="type" name="type" value="becomesupplier">
               <div class="form-row">
 
                 <div class="col-md-6">
                     <div class="form-group col-md-6">
                       <div class="form-group">
-                        <label for="inputEmail4">{l s='Company' d='Shop.Theme.FormBecomesupplier'}</label>
-                        <input type="text" class="form-control" id="inputEmail4">
+                        <label for="company">{l s='Company' d='Shop.Theme.FormBecomesupplier'}</label>
+                        <input type="text" class="form-control" id="company" required name="company">
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail4">{l s='Phone' d='Shop.Theme.FormBecomesupplier'}</label>
-                        <input type="text" class="form-control" id="inputEmail4">
+                        <label for="phone">{l s='Phone' d='Shop.Theme.FormBecomesupplier'}</label>
+                        <input type="text" class="form-control" id="phone" required name="phone">
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail4">{l s='Website' d='Shop.Theme.FormBecomesupplier'}</label>
-                        <input type="text" class="form-control" id="inputEmail4">
+                        <label for="site">{l s='Website' d='Shop.Theme.FormBecomesupplier'}</label>
+                        <input type="text" class="form-control" id="site" name="site" >
                       </div>
                       <div class="form-group">
-                        <label for="inputEmail4">{l s='Social media' d='Shop.Theme.FormBecomesupplier'}</label>
-                        <input type="text" class="form-control" id="inputEmail4">
+                        <label for="social">{l s='Social media' d='Shop.Theme.FormBecomesupplier'}</label>
+                        <input type="text" class="form-control" id="social" name="social" >
                       </div>
                     </div>
                     <div class="form-group col-md-6">
                       <div class="form-group">
-                        <label for="inputPassword4">{l s='Email' d='Shop.Theme.FormBecomesupplier'}</label>
-                        <input type="text" class="form-control" id="inputPassword4">
+                        <label for="email">{l s='Email' d='Shop.Theme.FormBecomesupplier'}</label>
+                        <input type="email" class="form-control" id="email" name="email" required>
                       </div>
                       <div class="form-group">
-                        <label for="exampleFormControlTextarea1">{l s='Comment' d='Shop.Theme.FormBecomesupplier'}</label>
-                        <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+                        <label for="observations">{l s='Comment' d='Shop.Theme.FormBecomesupplier'}</label>
+                        <textarea class="form-control" id="observations" rows="5" name="observations"></textarea>
                       </div>
                     </div>
                 </div>
 
                 <div class="col-md-6">
                   <div class="form-group col-md-12">
-                    <label for="inputEmail4">{l s='Address' d='Shop.Theme.FormBecomesupplier'}</label>
-                    <input type="text" class="form-control" id="inputEmail4">
+                    <label for="adresse_line_1">{l s='Address' d='Shop.Theme.FormBecomesupplier'}</label>
+                    <input type="text" class="form-control" id="adresse_line_1" name="adresse_line_1" required>
                   </div>
                   <div class="form-group col-md-12">
-                    <label for="inputEmail4">{l s='Address line 2' d='Shop.Theme.FormBecomesupplier'}</label>
-                    <input type="text" class="form-control" id="inputEmail4">
+                    <label for="adresse_line_2">{l s='Address line 2' d='Shop.Theme.FormBecomesupplier'}</label>
+                    <input type="text" class="form-control" id="adresse_line_2" name="adresse_line_2">
                   </div>
                   <div class="form-group col-md-12 rm-b">
                     <div class="form-group col-md-8 city">
-                      <label for="inputEmail4">{l s='City' d='Shop.Theme.FormBecomesupplier'}</label>
-                      <input type="text" class="form-control" id="inputEmail4">
+                      <label for="city">{l s='City' d='Shop.Theme.FormBecomesupplier'}</label>
+                      <input type="text" class="form-control" id="city" name="city" required>
                     </div>
                     <div class="form-group col-md-4 zip_code">
-                      <label for="inputEmail4">{l s='Zip Code' d='Shop.Theme.FormBecomesupplier'}</label>
-                      <input type="text" class="form-control" id="inputEmail4">
+                      <label for="postal_code">{l s='Zip Code' d='Shop.Theme.FormBecomesupplier'}</label>
+                      <input type="text" class="form-control" id="postal_code" required name="postal_code">
                     </div>
                   </div>
                   <div class="form-group col-md-12">
                     <label for="inputState">{l s='Country' d='Shop.Theme.FormBecomesupplier'}</label>
-                    <select id="inputState" class="form-control">
+                    <select id="country" class="form-control" required name="country">
                       <option selected>{l s='Please Select...' d='Shop.Theme.FormBecomesupplier'}</option>
-                      <option>...</option>
+                      {foreach $countries as $country}
+                        <option value="{$country['name']}">{substr($country["name"],0,24)}{(strlen($country["name"])>25)?'...':''}</option>
+                      {/foreach}
                     </select>
                   </div>
                 </div>
