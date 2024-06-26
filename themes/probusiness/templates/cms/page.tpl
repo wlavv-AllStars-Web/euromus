@@ -27,6 +27,32 @@
 {block name='page_content_container'}
   <section id="content" class="page-content page-cms page-cms-{$cms.id|escape:'html':'UTF-8'}">
 
+  {if isset($email_sent) && ($email_sent == 1)}
+    <div class="spacer-20"></div>
+    <div class="alert alert-success" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
+        {l s='Your enquiry  has been successfully sent and a sales representative will respond to you shortly'}
+    </div>
+  {/if}
+  {if isset($email_sent) && ($email_sent == 2)}
+      <div class="spacer-20"></div>
+      <div class="alert alert-success" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
+          {l s='Your request has been successfully sent and a human resources representative will respond to you shortly'}!
+      </div>
+  {/if}
+
+  {if isset($form_error) && ($form_error > 0 )}
+      <div class="spacer-20"></div>
+      <div class="alert alert-warning" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
+          {if $form_error == 1 }     {l s='form_error_message_1'} 
+          {elseif $form_error == 2 } {l s='form_error_message_2'} 
+          {elseif $form_error == 3 } {l s='form_error_message_3'} 
+          {elseif $form_error == 4 } {l s='form_error_message_4'} 
+          {elseif $form_error == 5 } {l s='form_error_message_5'} 
+          {elseif $form_error == 6 } {l s='form_error_message_6'} 
+          {/if}
+      </div>
+  {/if}
+
     {block name='cms_content'}
       {if $cms.id === 8}
         <div id="cms_container_8">
@@ -46,6 +72,15 @@
           </div>
         </div>
       {else if $cms.id === 14}
+
+        {assign var="fill_all" value="{l s='Please fill all required field!' js='1'}"}
+        {assign var="error_1" value="{l s='form_error_message_1' js='1'}"}
+        {assign var="error_2" value="{l s='form_error_message_2' js='1'}"}
+        {assign var="error_3" value="{l s='form_error_message_3' js='1'}"}
+        {assign var="error_4" value="{l s='form_error_message_4' js='1'}"}
+        {assign var="error_5" value="{l s='form_error_message_5' js='1'}"}
+        {assign var="error_6" value="{l s='form_error_message_6' js='1'}"}
+
         <div id="cms_container_14">
           <div>
             <img src="https://www.all-stars-distribution.com/img/dealers/headers/become_dealer.jpg" />
@@ -104,45 +139,45 @@
             <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Fill out the become a dealer enquiry form' d='Shop.Theme.BecomeDealer'} <span style="color: #0273EB;"><</span></h1>
             
             <form action="/en/content/14-become-a-dealer" method="post" name="become_dealer_form">
-              <input type="hidden" id="type" name="type" value="becomedealer">
+              <input type="hidden" id="type" name="type" value="becomedealer" >
               <div class="form-row">
                 <div class="form-group col-md-2">
                   <label for="name">{l s='Name' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="name" name="name">
+                  <input type="text" class="form-control" id="name" name="name" required>
                 </div>
                 <div class="form-group col-md-2">
                   <label for="surname">{l s='Surname' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="surname" name="surname">
+                  <input type="text" class="form-control" id="surname" name="surname" required>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="company">{l s='Company' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="company" name="company">
+                  <input type="text" class="form-control" id="company" name="company" required>
                 </div>
                 <div class="form-group col-md-4">
                   <label for="company_tva">{l s='VAT Number (if applicable)' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="company_tva" name="company_tva">
+                  <input type="text" class="form-control" id="company_tva" name="company_tva" required>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="email">{l s='Email' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="email" class="form-control" id="email" name="email">
+                  <input type="email" class="form-control" id="email" name="email" required>
                 </div>
                 <div class="form-group col-md-8">
                   <label for="adresse_line_1">{l s='Address' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="adresse_line_1" placeholder="1234 Main St" name="adresse_line_1">
+                  <input type="text" class="form-control" id="adresse_line_1" placeholder="1234 Main St" name="adresse_line_1" required>
                 </div>
               </div>
 
               <div class="form-row">
                 <div class="form-group col-md-4">
                   <label for="phone">{l s='Phone' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="tel" class="form-control" id="phone" placeholder="Apartment, studio, or floor" name="phone">
+                  <input type="tel" class="form-control" id="phone" placeholder="Apartment, studio, or floor" name="phone" required>
                 </div>
                 <div class="form-group col-md-8">
                   <label for="adresse_line_2">{l s='Address 2' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="adresse_line_2" placeholder="Apartment, studio, or floor" name="adresse_line_2">
+                  <input type="text" class="form-control" id="adresse_line_2" placeholder="Apartment, studio, or floor" name="adresse_line_2" required>
                 </div>
               </div>
 
@@ -153,11 +188,11 @@
                 </div>
                 <div class="form-group col-md-6">
                   <label for="city">{l s='City' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="city" placeholder="City" name="city">
+                  <input type="text" class="form-control" id="city" placeholder="City" name="city" required>
                 </div>
                 <div class="form-group col-md-2">
                   <label for="postal_code">{l s='Zip Code' d='Shop.Theme.FormBecomedealer'}</label>
-                  <input type="text" class="form-control" id="postal_code" placeholder="Zip Code" name="postal_code">
+                  <input type="text" class="form-control" id="postal_code" placeholder="Zip Code" name="postal_code" required>
                 </div>
               </div>
 
@@ -168,7 +203,7 @@
                 </div>
                 <div class="form-group col-md-8">
                   <label for="country">{l s='Country' d='Shop.Theme.FormBecomedealer'}</label>
-                  <select id="country" class="form-control" name="country">
+                  <select id="country" class="form-control" name="country" required>
                     <option selected>{l s='Please Select...' d='Shop.Theme.FormBecomedealer'}</option>
                     {foreach $countries as $country}
                       <option value="{$country['name']}">{substr($country["name"],0,24)}{(strlen($country["name"])>25)?'...':''}</option>
@@ -308,7 +343,7 @@
                 <div class="form-row">
                     <div class="col-md-12 title-suppliers current_suplier">{l s='Main current suppliers' d='Shop.Theme.FormBecomedealer'}</div>
                     <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 1' d='Shop.Theme.FormBecomedealer'}" name="supplier_1">
+                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 1' d='Shop.Theme.FormBecomedealer'}" name="supplier_1" required>
                     </div>
                     <div class="form-group col-md-12 current_suplier">
                       <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 2' d='Shop.Theme.FormBecomedealer'}" name="supplier_2">
@@ -359,100 +394,6 @@
                 signaturePad4.clear();
             });
           
-
-          function validateForm() {
-        
-              var empty = $(".form-become-dealer").find('input[required]').filter(function() {
-                  return this.value == '';
-              });
-              
-              if (empty.length) {
-                  $(".form-become-dealer").find('input[required]').css('border', '1px solid red');
-                  alert("{$fill_all}");
-                  return false;
-              }
-                  
-                  
-              let error = 0;
-              let site = $('#site').val();
-              let social = $('#social').val();
-              let business_type = document.querySelectorAll('input[name="business_type[]"]:checked').length;
-              let main_market   = document.querySelectorAll('input[name="main_market[]"]:checked').length;
-
-              if( ($('#site').val() == '') && ($('#social').val() == '')){
-                  alert("{$error_1}"); 
-                  error = 1;
-              }
-              
-              if(business_type == 0){
-                  alert("{$error_2}"); 
-                  error = 1;
-              }
-              
-              if(main_market == 0){
-                  alert("{$error_3}"); 
-                  error = 1;
-              } 
-              
-              if(!ValidateEmail()){
-                  error = 1;
-              }
-              
-              if((site != '') && (!ValidateURL(1))){
-                  error = 1;
-              } 
-              
-              if((social != '') && (!ValidateURL(2))){
-                  error = 1;
-              } 
-              
-              if(error == 0){
-                  $('.form-become-dealer').submit();
-              }else{
-                  return false;
-              }
-
-          } 
-
-          function ValidateEmail() {
-        
-              let message = "{$error_4}";
-              const validatorString = /\S+@\S+\.\S+/;
-              
-              if($('#email').val().indexOf(' ') >= 0){
-                  alert(message);
-                  return (false);
-              }
-              
-              if ( !validatorString.test($('#email').val()) ){
-                  alert(message);
-                  return (false); 
-              }
-              
-              return true;
-          }
-
-          function ValidateURL(tipoURL) {
-        
-              let message = "{$error_6}";
-              if(tipoURL == 1) message = "{$error_5}";
-              
-              let url = $('#social').val();
-              if(tipoURL == 1) url = $('#site').val();
-                
-              if(url.indexOf(' ') >= 0){
-                  alert(message);
-                  return (false);
-              } 
-              var validatorString = /((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/g;
-
-              if ( validatorString.test(url) ){
-                  return (true);
-              }else{
-                  alert(message);
-                  return (false);        
-              }
-          }
 
           });
         </script>
