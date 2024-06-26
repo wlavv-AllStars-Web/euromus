@@ -678,10 +678,11 @@
             <p>{l s='If you have any other questions, concerns, or complaints regarding this Policy, we encourage you to contact us using the details below:' d='Shop.Theme.Privacy'}</p>
 
             <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a>
-
+            <br>
+            <br>
             <p>{l s='We will attempt to resolve complaints and disputes and make every reasonable effort to honor your wish to exercise your rights as quickly as possible and in any event, within the timescales provided by applicable data protection laws.' d='Shop.Theme.Privacy'}</p>
 
-            <p>{l s='This document was last updated on August 25, 2022' d='Shop.Theme.Privacy'}</p>
+            <p>{l s='This document was last updated on June, 2024' d='Shop.Theme.Privacy'}</p>
 
           </div>
         </div>
