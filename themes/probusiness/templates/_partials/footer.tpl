@@ -29,7 +29,7 @@
     <div style="padding-top: 25px ;" class="col-md-12" >
       <p class="text-sm-center" >
         {block name='copyright_link'}
-          @ 2024 All Stars Distribution. All Rights Reserved.
+          {l s='@ 2024 All Stars Distribution. All Rights Reserved.' d='Shop.Theme.Copyrights'}
         {/block}
       </p>
     </div>
