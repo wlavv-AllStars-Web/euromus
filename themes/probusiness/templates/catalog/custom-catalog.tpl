@@ -4,7 +4,7 @@
 {block name='content'}
 	<section id="main" style="display: flex;flex-direction:column;">
 <div class="text-center" style="max-width: 1350px;margin:auto;">
-	<img src="https://www.allstarsmotorsport.fr/img/cms/Header_pages/catalog.jpg" alt="All Stars Distribution" class="img-fluid cms_header_image" />
+	<img src="/img/asd/Content_pages/catalog/catalog.jpg" alt="All Stars Distribution" class="img-fluid cms_header_image" />
 </div>
 
 <div class="spacer-20"></div>
@@ -25,12 +25,12 @@
         	<tr class="cms_catalog_tr_separator">
 
     			<td class="cms_catalog_table_brand_td">
-    				<img src="{$base_dir}/img/m/{$manufacturer.id_manufacturer}.jpg" class="cms_catalog_table_brand_td_image" />
+    				<img src="{$base_dir}/img/m/{$manufacturer.id_manufacturer}.jpg" class="cms_catalog_table_brand_td_image" alt="brand_logo"/>
     			</td>
 
     			<td class="cms_catalog_right_line">
     				<a href="/img/brands/{$manufacturer.name|replace:' ':''}/{$manufacturer.name|replace:' ':''}.csv" download="{$manufacturer.name|replace:' ':''}.csv">
-    					<img class="cms_catalog_image" src="/img/cms/Content_pages/catalog/icons/csv{if $manufacturer.csv == 1}_updated{elseif $manufacturer.csv == 2}_none{elseif $manufacturer.csv == 3}_commingSoon{/if}.png" />
+    					<img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/csv{if $manufacturer.csv == 1}_updated{elseif $manufacturer.csv == 2}_none{elseif $manufacturer.csv == 3}_commingSoon{/if}.png" alt="csv_{$manufacturer.name|replace:' ':''}"/>
     				</a>
     			</td>
 
@@ -40,31 +40,31 @@
     			    {else}
         				<a href="/img/brands/{$manufacturer.name|replace:' ':''}/{$manufacturer.name|replace:' ':''}.xlsx" download="{$manufacturer.name|replace:' ':''}.xlsx">
     			    {/if}
-    			    	<img class="cms_catalog_image" src="/img/cms/Content_pages/catalog/icons/xlsx{if $manufacturer.xlsx == 1}_updated{elseif $manufacturer.xlsx == 2}_none{elseif $manufacturer.xlsx == 3}_commingSoon{/if}.png" />
+    			    	<img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/xlsx{if $manufacturer.xlsx == 1}_updated{elseif $manufacturer.xlsx == 2}_none{elseif $manufacturer.xlsx == 3}_commingSoon{/if}.png" alt="xlsx_{$manufacturer.name|replace:' ':''}"/>
     				</a>
     			</td>
 
     			<td class="cms_catalog_right_line">
     				<a href="/img/brands/{$manufacturer.name|replace:' ':''}/{$manufacturer.name|replace:' ':''}_images.zip" download="{$manufacturer.name|replace:' ':''}_IMAGES.zip">
-    					<img class="cms_catalog_image" src="/img/cms/Content_pages/catalog/icons/zip{if $manufacturer.pictures == 1}_updated{elseif $manufacturer.pictures == 2}_none{elseif $manufacturer.pictures == 3}_commingSoon{/if}.png" />
+    					<img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/zip{if $manufacturer.pictures == 1}_updated{elseif $manufacturer.pictures == 2}_none{elseif $manufacturer.pictures == 3}_commingSoon{/if}.png" alt="pictures_{$manufacturer.name|replace:' ':''}"/>
     				</a>
     			</td>
 
     			<td class="cms_catalog_right_line">
     				<a href="/img/brands/{$manufacturer.name|replace:' ':''}/{$manufacturer.name|replace:' ':''}_logos.zip" download="{$manufacturer.name|replace:' ':''}_LOGOS.zip">
-    					<img class="cms_catalog_image" src="/img/cms/Content_pages/catalog/icons/jpg{if $manufacturer.logos == 1}_updated{elseif $manufacturer.logos == 2}_none{/if}.png" />
+    					<img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/jpg{if $manufacturer.logos == 1}_updated{elseif $manufacturer.logos == 2}_none{/if}.png" alt="logos_{$manufacturer.name|replace:' ':''}"/>
     				</a>
     			</td>
 
     			<td class="cms_catalog_right_line">
     				<a href="{$manufacturer.facebook_url}" target="_blank">
-    					<img class="cms_catalog_image" src="/img/cms/Content_pages/catalog/icons/facebook{if $manufacturer.facebook == 1}_updated{elseif $manufacturer.facebook == 2 }_none{/if}.png" />
+    					<img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/facebook{if $manufacturer.facebook == 1}_updated{elseif $manufacturer.facebook == 2 }_none{/if}.png" alt="facebook_{$manufacturer.name|replace:' ':''}"/>
     				</a>
     			</td>
 
     			<td class="cms_catalog_right_line">
     				<a href="{$manufacturer.site_url}" target="_blank">
-    					<img class="cms_catalog_image" src="/img/cms/Content_pages/catalog/icons/website{if $manufacturer.site ==1}_updated{elseif $manufacturer.site == 2 }_none{/if}.png" />
+    					<img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/website{if $manufacturer.site ==1}_updated{elseif $manufacturer.site == 2 }_none{/if}.png" alt="site_{$manufacturer.name|replace:' ':''}"/>
     				</a>
     			</td>
 
@@ -73,7 +73,7 @@
     					<tbody>
     						<tr>
     							<td class="no_padding_text_center">
-    								<img class="cms_catalog_image" src="/img/cms/Content_pages/catalog/icons/stopwatch{if $manufacturer.info == 1}_updated{/if}.png" />
+    								<img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/stopwatch{if $manufacturer.info == 1}_updated{/if}.png" alt="info_{$manufacturer.name|replace:' ':''}"/>
     							</td>
     						</tr>
     						<tr>

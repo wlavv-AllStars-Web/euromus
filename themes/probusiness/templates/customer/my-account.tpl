@@ -27,7 +27,7 @@
 {block name='page_content'}
   <div class="row myaccount-container">
     <div class="col-lg-12 banner-myaccount">
-      <img src="https://www.allstarsmotorsport.fr/img/cms/Header_pages/myaccount.jpg" />
+      <img src="/img/asd/Content_pages/account/myaccount.jpg" alt="account_banner" />
     </div>
 
 
@@ -200,7 +200,7 @@
       </div>
 
       <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
-          <img src="https://www.allstarsmotorsport.fr/img/cms/Content_pages/shipping/ShipRates.jpg" style="max-width: 1000px;"/>
+          <img src="/img/asd/Content_pages/account/ShipRates.jpg" alt="shipping_rates" style="max-width: 1000px;"/>
       </div>
       
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">

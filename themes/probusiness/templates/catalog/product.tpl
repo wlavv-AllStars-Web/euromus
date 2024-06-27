@@ -271,12 +271,12 @@
 
         <div class="right_column_product">
           {if ($product->id_manufacturer == 11) || ($product->id_manufacturer == 20) }
-          <a href="https://www.all-stars-distribution.com/img/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.pdf" download="{$product->manufacturer_name|replace:' ':''}.pdf">
+          <a href="/img/asd/Content_pages/catalog/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.pdf" download="{$product->manufacturer_name|replace:' ':''}.pdf">
           {else}
-          <a href="https://www.all-stars-distribution.com/img/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.xlsx" download="{$product->manufacturer_name|replace:' ':''}.xlsx">
+          <a href="/img/asd/Content_pages/catalog/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.xlsx" download="{$product->manufacturer_name|replace:' ':''}.xlsx">
           {/if}
                   <div class="right_text" >{l s='CATALOG'}</div>
-                  <div class="right_logos"><img class="cms_catalog_image" src="https://www.all-stars-distribution.com/img/cms/Content_pages/catalog/icons/xlsx_updated.png" style=" height: 50px; width: 55px; max-width: 55px;"></div>
+                  <div class="right_logos"><img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/xlsx_updated.png" style=" height: 50px; width: 55px; max-width: 55px;"></div>
           </a>
         </div>
 

@@ -539,7 +539,7 @@
       {elseif $cms.id === 7}
         <div class="cms-privacy">
           <div class="privacy-banner">
-            <img src="https://www.allstarsmotorsport.fr/img/cms/Header_pages/privacypolicy.jpg" />
+            <img src="/img/asd/Content_pages/privacy/privacypolicy.jpg" alt="privacy_banner"/>
           </div>
           <div class="privacy-content">
             {* <h1>{l s='Privacy policy' d='Shop.Theme.Privacy'}</h1> *}
@@ -734,8 +734,8 @@
       {elseif $cms.id === 10}
         <div class="cms-legal">
           <div class="legal-banner">
-            <img class="desktop-banner" src="https://www.all-stars-distribution.com/img/cms/Content_pages/legalnotices/legal_notices_en_lg.jpg" />
-            <img class="mobile-banner" src="https://www.all-stars-distribution.com/img/cms/Content_pages/legalnotices/legal_notices_en_xs.jpg" />
+            <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.jpg" />
+            <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.jpg" />
           </div>
           <div class="legal-content">
           </div>
@@ -744,7 +744,7 @@
         
         <div class="banner_cms_partners" style="margin-bottom: 3rem;">
           <div class="partners-banner">
-            <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/partners.jpg" />
+            <img src="/img/asd/Content_pages/partners/partners.jpg" />
           </div>
           <div class="rte">
             <div id="cms-partners">
@@ -928,7 +928,7 @@
       {elseif $cms.id === 11}
         <div class="rte">
           <div class="text-center">
-            <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/payment.jpg" alt="All Stars Distribution" class="img-fluid cms_header_image">
+            <img src="/img/asd/Content_pages/payment/payment.jpg" alt="All Stars Distribution" class="img-fluid cms_header_image">
           </div>
           
           <p class="cms_title_center" style="color: black; font-weight: bolder; font-size: 23px;">{l s='ALL STARS DISTRIBUTION offers two methods of payment :' d='Shop.Theme.Payment'}</p>
@@ -942,7 +942,7 @@
             <br><br>{l s='The total amount paid will be debited immediately and the rest of the process and the update of the order status will be instantaneous. A confirmation will then be sent to you by email as a digital archive.' d='Shop.Theme.Payment'} 
             </div>
             <div class="col-lg-4" style="text-align: center;">
-              <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/payment/creditcard.png?t=112" style="width: 250px;">
+              <img src="/img/asd/Content_pages/payment/creditcard.png?t=112" style="width: 250px;">
             </div>
           </div>
 
@@ -954,7 +954,7 @@
             <br><br>{l s='Please also note that no items are reserved until payment for the order has been confirmed in our bank account.' d='Shop.Theme.Payment'}
             </div>
             <div class="col-lg-4" style="text-align: center;">
-              <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/payment/bankwire.png?t=113" style="width: 250px;">
+              <img src="/img/asd/Content_pages/payment/bankwire.png?t=113" style="width: 250px;">
             </div>
           </div>
 
@@ -1209,7 +1209,7 @@
       {elseif $cms.id === 13}
         <div class="cms-terms">
           <div class="banner-terms">
-            <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/generalSalesConditions.jpg" />
+            <img src="/img/asd/Content_pages/terms/generalSalesConditions.jpg" />
           </div>
           <div class="terms-content">
             <h1>{l s='GENERAL CONDITIONS OF SALE' d='Shop.Theme.Terms'}</h1>

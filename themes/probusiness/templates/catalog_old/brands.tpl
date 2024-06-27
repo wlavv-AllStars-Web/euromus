@@ -24,7 +24,7 @@
   <section id="main">
     <div id="brands-page">
       <div class="brands_banner">
-        <img src="https://www.all-stars-distribution.com/img/dealers/headers/brands.jpg" />
+        <img src="/img/asd/dealers/headers/brands.jpg" alt="brands_banner"/>
       </div>
     {block name='brand_miniature'}
       <ul class="list_manu row">

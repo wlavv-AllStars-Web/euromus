@@ -27,7 +27,7 @@
         <div class="block-category card card-block">
             {if $category.id === 16}
             <div class="clearance_banner" style="max-width: 1350px;margin:auto;">
-                <img src="https://www.allstarsmotorsport.fr/img/cms/Header_pages/clearence.jpg" style="width: 100%;"/>
+                <img src="/img/asd/Content_pages/clearance/clearence.jpg" style="width: 100%;" alt="clearance_banner"/>
             </div>
             {/if}
             <h1 class="h1">{$category.name}</h1>
