@@ -103,14 +103,14 @@
                     <input type="hidden" name="back" value="my-account">
                     <i class="fa fa-user"></i>
                   </div>
-                  <input class="form-control whtbl" name="email" type="email" value="" required placeholder="{l s="Email"}">
+                  <input class="form-control whtbl" name="email" type="email" value="" required placeholder="{l s="Email" d='Shop.Theme.Actions'}">
                 </div>
                 <div style="margin-bottom:0 ;  display: flex; flex-direction: column ; width: 30%" class="form-group col">
                   <div style="display:flex; flex-direction: row">
                     <div class="unlock_icon header-icon">
                       <i class="fa fa-unlock"></i>
                     </div>
-                    <input class="form-control js-child-focus js-visible-password whtbl" name="password" type="password" value="" required placeholder="{l s="Password"}">                 
+                    <input class="form-control js-child-focus js-visible-password whtbl" name="password" type="password" value="" required placeholder="{l s="Password" d='Shop.Theme.Actions'}">                 
                   </div>
                   <div>
                     <a href="/forgotpassword" rel="nofollow" style="color: #0273EB">
@@ -121,7 +121,7 @@
                 <div class="form-group col" >
                   <input type="hidden" name="submitLogin" value="1">           
                   <button id="sender" class="btn btn-primary form-control-submit whtbl" data-link-action="sign-in" type="submit">
-                  {l s="Login"}
+                  {l s="Login" d='Shop.Theme.Actions'}
                   </button>                
                 </div>          
               </form>   
