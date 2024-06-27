@@ -85,7 +85,7 @@
 
         <div id="cms_container_14">
           <div>
-            <img src="https://www.all-stars-distribution.com/img/dealers/headers/become_dealer.jpg" />
+            <img src="/img/asd/dealers/headers/become_dealer.jpg" />
           </div>
           <div class="choose_us_btn">
             <h5 class="cms_shadow_button">{l s='Why choose us ?' d='Shop.Theme.BecomeDealer'}</h5>
@@ -225,38 +225,38 @@
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Installer">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck2" name="business_type[]" value="Installer">
+                    <label class="form-check-label" for="gridCheck2">
                     {l s='Installer' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="E-dealer">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck3" name="business_type[]" value="E-dealer">
+                    <label class="form-check-label" for="gridCheck3">
                     {l s='E-dealer' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Dyno Shop">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck4" name="business_type[]" value="Dyno Shop">
+                    <label class="form-check-label" for="gridCheck4">
                     {l s='Dyno Shop' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Market Place Seller">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck5" name="business_type[]" value="Market Place Seller">
+                    <label class="form-check-label" for="gridCheck5">
                     {l s='Market Place Seller' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Wholesaler">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck6" name="business_type[]" value="Wholesaler">
+                    <label class="form-check-label" for="gridCheck6">
                     {l s='Wholesaler' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="business_type[]" value="Other">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck7" name="business_type[]" value="Other">
+                    <label class="form-check-label" for="gridCheck7">
                     {l s='Other' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
@@ -266,44 +266,44 @@
                 <div class="title-suppliers">{l s='Main Market' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-12 check-form">
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Euro">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck8" name="main_market[]" value="Euro">
+                    <label class="form-check-label" for="gridCheck8">
                     {l s='Euro' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="JDM">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck9" name="main_market[]" value="JDM">
+                    <label class="form-check-label" for="gridCheck9">
                     {l s='JDM' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Muscle">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck10" name="main_market[]" value="Muscle">
+                    <label class="form-check-label" for="gridCheck10">
                     {l s='Muscle' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Classics">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck11" name="main_market[]" value="Classics">
+                    <label class="form-check-label" for="gridCheck11">
                     {l s='Classics' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Offroad">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck12" name="main_market[]" value="Offroad">
+                    <label class="form-check-label" for="gridCheck12">
                     {l s='Offroad' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Diesel">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck13" name="main_market[]" value="Diesel">
+                    <label class="form-check-label" for="gridCheck13">
                     {l s='Diesel' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="checkbox" id="gridCheck1" name="main_market[]" value="Other">
-                    <label class="form-check-label" for="gridCheck1">
+                    <input class="form-check-input" type="checkbox" id="gridCheck14" name="main_market[]" value="Other">
+                    <label class="form-check-label" for="gridCheck14">
                     {l s='Other' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
@@ -333,8 +333,8 @@
                     </label>
                   </div>
                   <div class="form-check">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="1M€ +" name="annual_sales[]">
-                    <label class="form-check-label" for="gridRadios3">
+                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios4" value="1M€ +" name="annual_sales[]">
+                    <label class="form-check-label" for="gridRadios4">
                     {l s='1M€ +' d='Shop.Theme.FormBecomedealer'}
                     </label>
                   </div>
@@ -406,7 +406,7 @@
 
         <div id="cms_container_15">
           <div class="banner_supplier">
-            <img src="https://www.all-stars-distribution.com/img/dealers/headers/become_supplier.jpg" />
+            <img src="/img/asd/dealers/headers/become_supplier.jpg" />
           </div>
 
           <p class="become_supplier_text">
@@ -455,7 +455,7 @@
 
 
           <div class="form-become-supplier" style="margin: 5rem 0;">
-            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Submit an enquiry' d='Shop.Theme.Becomesupplier'}<span style="color: #0273EB;"><</span></h1>
+            <h1 style="text-align: center;color:#111;margin-bottom:2rem;font-size:20px;text-transform:uppercase;font-weight: normal;"><span style="color: #0273EB;">></span> {l s='Submit an enquiry' d='Shop.Theme.Becomesupplier'} <span style="color: #0273EB;"><</span></h1>
             
             <form action="/{$language.iso_code}/content/15-become-a-supplier" method="post" name="become_dealer_form">
             <input type="hidden" id="type" name="type" value="becomesupplier">
@@ -964,7 +964,7 @@
       {elseif $cms.id === 12}
         <div class="cms-career">
           <div class="career-banner">
-            <img src="https://www.all-stars-distribution.com/img/cms/Header_pages/career.jpg" />
+            <img src="/img/asd/Content_pages/career/career.jpg" />
           </div>
           <div class="career-content">
             <h1>{l s='> OPEN POSITIONS <' d='Shop.Theme.Career'}</h1>
@@ -972,7 +972,7 @@
 
             <div id="why_us_anchor">
                   <div class="why_card">
-                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/design.jpg" />
+                    <img src="/img/asd/Content_pages/career/design.jpg" />
                     <div id="thumb_data_1" class="card_text text-career" >
                       <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
                       {l s='The graphic designer creates visual communications to convey messages in an effective and aesthetically pleasing manner.
@@ -991,7 +991,7 @@
                   </div>
 
                   <div class="why_card">
-                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/webmaster.jpg" />
+                    <img src="/img/asd/Content_pages/career/webmaster.jpg" />
                     <div id="thumb_data_2" class="card_text text-career">
                       <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
                       {l s='The web programmers or web developers use a variety of programming languages to create web applications, online tools and resources mainly database-driven.
@@ -1011,7 +1011,7 @@
                   </div>
 
                   <div class="why_card">
-                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/support.jpg" />
+                    <img src="/img/asd/Content_pages/career/support.jpg" />
                     <div id="thumb_data_3" class="card_text text-career">
                     <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
                         {l s='The customer service representative helps customers, giving them precious information about products or services, following their orders and return / warranty processes.
@@ -1028,7 +1028,7 @@
                   </div>
 
                   <div class="why_card">
-                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/picker.jpg" />
+                    <img src="/img/asd/Content_pages/career/picker.jpg" />
                     <div id="thumb_data_4" class="card_text text-career">
                     <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
                     {l s='The Picker is part of the order preparation process, using various digital and mechanical tools to pick a wide variety of items and bring them to the preparation area.
@@ -1047,7 +1047,7 @@
                   </div>
 
                   <div class="why_card">
-                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/packer.jpg" />
+                    <img src="/img/asd/Content_pages/career/packer.jpg" />
                     <div id="thumb_data_5" class="card_text text-career">
                     <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
                     {l s='The warehouse associate uses various digital and mechanical tools to pack and ship the orders accurately.
@@ -1065,7 +1065,7 @@
                   </div>
 
                   <div class="why_card">
-                    <img src="https://www.all-stars-distribution.com/img/cms/Content_pages/career/others.jpg" />
+                    <img src="/img/asd/Content_pages/career/others.jpg" />
                     <div id="thumb_data_6" class="card_text text-career">
                     <b>{l s='General application' d='Shop.Theme.Career'}</b>
                     {l s='No open position matching with your skills at the moment ?
@@ -1089,7 +1089,7 @@
                       </label>
                     </div>
                     <div class="form-check  col-md-1">
-                      <input class="form-check-input" type="radio" name="gender" id="gender" value="2">
+                      <input class="form-check-input" type="radio" name="gender" id="gridRadios2" value="2">
                       <label class="form-check-label" for="gridRadios2">
                       {l s='Mrs.' d='Shop.Theme.Career'}
                       </label>
@@ -1097,7 +1097,7 @@
                   </div>
                   
 
-                  <div class="form-row ">
+                  <div class="form-row " style="display: flex;flex-wrap:wrap;">
                     <div class="form-group col-lg-4 col-md-6 ">
                       <label for="name">{l s='Name' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <input type="text" class="form-control" id="name" name="first_name">
@@ -1180,7 +1180,7 @@
                 <div class="form-row ">
                   <div class="form-group col-lg-4 col-md-6">
                     <label for="fileUpload">{l s='Upload your CV ( only PDF files )' d='Shop.Theme.Career'} <span style="color:#ee302e;">*</span></label>
-                    <input type="file" class="form-control-file" id="fileUpload" name="fileUpload">
+                    <input type="file" class="form-control-file" id="fileUpload" name="fileUpload" style="background: #fff;width:100%;padding:6px 0.5rem;">
                   </div>
                 </div>
 
