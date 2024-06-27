@@ -273,7 +273,7 @@
     grid-column-gap: 2rem;
     grid-row-gap: 3rem;
     margin-bottom: 2rem;
-    place-items: center;
+    
    }
    .why_card{
     width: 100%;
@@ -1969,7 +1969,20 @@ textarea {
   .deformula {
   display: flex;
   }
+
+
+
   
+}
+
+
+@media (max-width:991px){
+  .header-top .centrar{
+    flex-direction: column;
+  }
+  .header-top .centrar .formula{
+    width: 100%;
+  }
 }
 
 
@@ -2093,7 +2106,7 @@ textarea {
   grid-template-columns: 1fr 1fr;
   margin-bottom: 2rem;
   gap: 1rem;
-  place-items: center;
+  
 }
 
 #why_us_anchor .card_text{
@@ -2232,7 +2245,7 @@ textarea {
 'shipping online'
 'catalogue resources' ;
 grid-template-columns: 1fr 1fr;
-place-items: center;
+
 
   margin-bottom: 2rem;
   gap: 1rem;
@@ -2307,7 +2320,7 @@ grid-template-columns: 1fr 1fr;
   grid-template-areas: none;
   margin-bottom: 2rem;
   gap: 1rem;
-  place-items: center;
+  
 }
 
 .cms-id-8 .desktop{
@@ -2958,7 +2971,7 @@ grid-template-columns: 1fr 1fr;
     'catalogue'
     'resources';
     grid-template-columns: 1fr;
-    place-items: center;
+    
     }
 
     #why_card {
