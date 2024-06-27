@@ -8,6 +8,7 @@
   
   html,body{
     scroll-behavior: smooth;
+    font-family: open-sans, sans-serif;
   }
   .logtext{
   text-transform: uppercase;
@@ -281,22 +282,22 @@
    }
 
    .why_card:nth-child(1){
-    grid-area: 'stock';
+    grid-area: stock;
    }
    .why_card:nth-child(2){
-    grid-area: 'logistic';
+    grid-area: logistic;
    }
    .why_card:nth-child(3){
-    grid-area: 'shipping';
+    grid-area: shipping;
    }
    .why_card:nth-child(4){
-    grid-area: 'online';
+    grid-area: online;
    }
    .why_card:nth-child(5){
-    grid-area: 'catalogue';
+    grid-area: catalogue;
    }
    .why_card:nth-child(6){
-    grid-area: 'resources';
+    grid-area: resources;
    }
 
    .card_text {
