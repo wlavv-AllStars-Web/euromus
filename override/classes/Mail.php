@@ -581,8 +581,8 @@ class MailCore extends ObjectModel
             );
             $templateVars['{color}'] = Tools::safeOutput(Configuration::get('PS_MAIL_COLOR', null, null, $idShop));
 
-            $template_vars['{header}'] = file_get_contents($_SERVER['DOCUMENT_ROOT'] .'/mails/en/header.html'); 
-            $template_vars['{footer}'] = file_get_contents($_SERVER['DOCUMENT_ROOT'] .'/mails/en/footer.html'); 
+            $templateVars['{header}'] = file_get_contents($_SERVER['DOCUMENT_ROOT'] .'/mails/en/header.html'); 
+            $templateVars['{footer}'] = file_get_contents($_SERVER['DOCUMENT_ROOT'] .'/mails/en/footer.html'); 
             // Get extra template_vars
             $extraTemplateVars = [];
 
