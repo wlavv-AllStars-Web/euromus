@@ -308,7 +308,7 @@
 
    .card_text {
     overflow: hidden;
-    height: 76px;
+    height: 114px;
     transition: all ease-in-out 250ms;
     padding: 20px;
     font-size: 18px;
@@ -683,6 +683,7 @@
   #manufacturer .brand_content_item .brand-infos{
     flex: 1;
     text-align: start;
+    color: #333;
   }
   #manufacturer .brand_content_item .brand-infos h3{
     color: #0273EB;
@@ -2601,8 +2602,8 @@ grid-template-columns: 1fr 1fr;
   width: 100%;
 }
 .privacy-content{
-  max-width: 1160px;
-  margin: 5rem auto;
+  max-width: 1200px;
+  margin: 3rem auto;
 }
 
 .privacy-content h1 {
@@ -2622,7 +2623,7 @@ grid-template-columns: 1fr 1fr;
   color: #111;
   margin: 2rem 0;
   font-weight: 600;
-  font-size: 24px;
+  font-size: 18px;
 }
 
 .contents-list a {
@@ -2684,7 +2685,7 @@ grid-template-columns: 1fr 1fr;
   color: #000;
 }
 .cms-id-11 .rte b{
-  font-size: 1.25rem;
+  font-size: 18px;
   font-weight: 600;
 }
 
