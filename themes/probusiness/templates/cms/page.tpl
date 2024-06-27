@@ -63,12 +63,14 @@
           <div id="profile_container_text1 hidden-md-up" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.About'}</div>
           </div>
           <div>
-            <img class="desktop" src="/img/asd/Content_pages/aboutus/badge_lg.jpg" alt="badge_lg.jpg" />
-            <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="/img/asd/Content_pages/aboutus/badge_xs.jpg" alt="badge_xs.jpg" />
+            <img class="desktop" src="/img/asd/Content_pages/aboutus/badge_lg.jpg" alt="badge_lg" />
+            <img class="tablet" src="/img/asd/Content_pages/aboutus/badge_sm.jpg" alt="badge_sm" />
+            <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="/img/asd/Content_pages/aboutus/badge_xs.jpg" alt="badge_xs" />
           </div>
           <div>
             <img class="desktop" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.jpg" alt="lg_{$language.iso_code}.jpg" />
-            <img class="mobile" src="/img/asd/Content_pages/aboutus/xs_{$language.iso_code}.jpg" alt="lg_{$language.iso_code}.jpg" />
+            <img class="tablet" src="/img/asd/Content_pages/aboutus/sm_{$language.iso_code}.jpg" alt="sm_{$language.iso_code}.jpg" />
+            <img class="mobile" src="/img/asd/Content_pages/aboutus/xs_{$language.iso_code}.jpg" alt="sm_{$language.iso_code}.jpg" />
           </div>
         </div>
       {else if $cms.id === 14}

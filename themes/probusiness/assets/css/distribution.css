@@ -269,13 +269,15 @@
     grid-template-areas: 
     'stock logistic shipping'
     'online catalogue resources';
+    grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 2rem;
     grid-row-gap: 3rem;
     margin-bottom: 2rem;
+    place-items: center;
    }
    .why_card{
     width: 100%;
-    max-width: 428px;
+    /* max-width: 428px; */
     border: 2px solid #0273EB;
     height: fit-content;
     box-shadow: rgba(119, 119, 119, 0.467) -10px 10px 15px 0px;
@@ -1625,6 +1627,11 @@ textarea {
 
 
 @media (min-width: 1730px){
+
+.header-nav-container{
+  max-width: 1337px;
+  width: 100%;
+}
   
 .cms-id-8 #wrapper{
   max-width: 1730px;
@@ -1789,10 +1796,12 @@ textarea {
 .cms-id-11 .cms_title_center {
   text-align: center;
   text-transform: uppercase;
+  margin-bottom: 4rem;
 }
 
 .cms-id-11 .rte {
-  color: #000;
+  color: #111;
+  font-size: 18px;
 }
 .cms-id-11 .rte b{
   font-size: 1.25rem;
@@ -1913,6 +1922,16 @@ textarea {
 }
 
 @media (min-width: 900px){
+
+  .cms-id-8 .desktop{
+    display: flex !important;
+  }
+  .cms-id-8 .tablet{
+    display: none !important;
+  }
+  .cms-id-8 .mobile{
+    display: none !important;
+  }
   
   .margbot{
     margin-bottom: -5px;
@@ -2037,10 +2056,16 @@ textarea {
 }
 #footer .footer-container .row .footer_linklist .alignment .wrapper{
   padding: 0;
+  margin-bottom: 2rem;
 }
 #footer .footer-container .row .footer_linklist .alignment .wrapper li a{
   font-size: 0.85rem !important;
 }
+
+.footer-container .footer_linklist .wrapper:nth-child(4) #footer_sub_menu_4 li{
+  justify-content: start;
+}
+
 /*  */
 
 /* become dealer */
@@ -2065,8 +2090,10 @@ textarea {
   'stock    logistic ' 
   'online   catalogue' 
   'shipping resources';
+  grid-template-columns: 1fr 1fr;
   margin-bottom: 2rem;
   gap: 1rem;
+  place-items: center;
 }
 
 #why_us_anchor .card_text{
@@ -2135,6 +2162,16 @@ textarea {
   display: none !important;
 }
 
+.cms-id-8 .desktop{
+  display: none !important;
+}
+.cms-id-8 .tablet{
+  display: flex !important;
+}
+.cms-id-8 .mobile{
+  display: none !important;
+}
+
 #footer .footer-container .row .footer_linklist .alignment .wrapper{
   display: flex;
   margin-bottom: 2rem;
@@ -2193,7 +2230,9 @@ textarea {
   grid-template-areas:
 'stock  logistic' 
 'shipping online'
-'catalogue resources';
+'catalogue resources' ;
+grid-template-columns: 1fr 1fr;
+place-items: center;
 
   margin-bottom: 2rem;
   gap: 1rem;
@@ -2260,14 +2299,25 @@ textarea {
   /* career */
 #why_us_anchor {
   display: grid;
-  /* grid-template-areas:
-'stock  logistic' 
+  grid-template-areas:
+'stock logistic' 
 'shipping online'
-'catalogue resources'; */
+'catalogue resources' !important;
 grid-template-columns: 1fr 1fr;
   grid-template-areas: none;
   margin-bottom: 2rem;
   gap: 1rem;
+  place-items: center;
+}
+
+.cms-id-8 .desktop{
+  display: none !important;
+}
+.cms-id-8 .tablet{
+  display: flex !important;
+}
+.cms-id-8 .mobile{
+  display: none !important;
 }
 
 .cms-id-12 .text-career{
@@ -2518,6 +2568,8 @@ grid-template-columns: 1fr 1fr;
 
 @media screen and (min-width:541px) {
 
+
+
 /* cms privacy */
 
 .cms-id-7 .breadcrumb{
@@ -2731,6 +2783,18 @@ grid-template-columns: 1fr 1fr;
 }
 
 @media (max-width: 540px){
+
+  .cms-id-8 .desktop{
+    display: none !important;
+  }
+  .cms-id-8 .tablet{
+    display: none !important;
+  }
+  .cms-id-8 .mobile{
+    display: flex !important;
+  }
+
+
 #order_history .order .status{
   padding: 0.25rem 0 0.5rem 0;
 }
@@ -2894,6 +2958,7 @@ grid-template-columns: 1fr 1fr;
     'catalogue'
     'resources';
     grid-template-columns: 1fr;
+    place-items: center;
     }
 
     #why_card {
