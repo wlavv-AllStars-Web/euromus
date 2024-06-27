@@ -1115,7 +1115,9 @@
                       <label for="country_code">{l s='Phone' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <select id="country_code" class="form-control" name="country_code">
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
-                        <option>...</option>
+                        {foreach $countries as $country}
+                          <option value="{$country['call_prefix']}">{substr($country["name"],0,24)} (+{$country['call_prefix']}) </option>
+                        {/foreach}
                       </select>
                     </div>
                     <div class="form-group col-lg-2 col-md-3">
@@ -1124,13 +1126,19 @@
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="contact_preference">{l s='How do you prefer to be contacted?' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="text" class="form-control" id="contact_preference" placeholder="" name="contact_preference">
+                      <select id="contact_preference" class="form-control" name="contact_preference">
+                        <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
+                        <option value="email">{l s='Email' d='Shop.Theme.Career'}</option>
+                        <option value="phone">{l s='Phone' d='Shop.Theme.Career'}</option>
+                      </select>
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="country">{l s='Country' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <select id="country" class="form-control" name="country">
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
-                        <option>...</option>
+                        {foreach $countries as $country}
+                          <option value="{$country['name']}">{substr($country["name"],0,24)}{(strlen($country["name"])>25)?'...':''}</option>
+                        {/foreach}
                       </select>
                     </div>
                   
@@ -1138,7 +1146,12 @@
                       <label for="position">{l s='Which position are you applying to' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
                       <select id="position" class="form-control" name="position">
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
-                        <option>...</option>
+                        <option value="Graphic Designer">Graphic Designer</option>
+                        <option value="Webmaster">Webmaster</option>
+                        <option value="Customer Support">Customer Support</option>
+                        <option value="Warehouse Picker">Warehouse Picker</option>
+                        <option value="Warehouse Associate">Warehouse Associate</option>
+                        <option value="General Application">General Application</option>
                       </select>
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
