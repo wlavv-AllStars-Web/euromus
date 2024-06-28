@@ -268,3 +268,13 @@ function openShippingtab(url){
 
     // add login of wait for page load here
 }
+
+
+function toggleAddress(e) {
+    const checkbox = e.checked;
+    document.getElementById("form_deliver_address").style.display = checkbox === true ? "block" : "none";
+}
+function togglePayment(e) {
+    const checkbox = e.checked;
+    document.getElementById("payment_checkout").style.display = checkbox === true ? "block" : "none";
+}

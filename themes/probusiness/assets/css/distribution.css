@@ -1275,6 +1275,14 @@ input[type="number"] {
   padding-left: 50px;
 }
 
+#contact #content{
+  display: flex;
+  margin: auto !important;
+}
+#contact .breadcrumb {
+  display: none;
+  
+}
 
 #product .right_column_product.column-right-stock{
   display: flex;
