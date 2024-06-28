@@ -854,6 +854,9 @@
 }
 .form-career .form-group{
   text-align: start !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
 }
 
 .form-check a:hover{
