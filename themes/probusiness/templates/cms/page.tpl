@@ -970,10 +970,25 @@
           </div>
           <div class="career-content">
             <h1>{l s='> OPEN POSITIONS <' d='Shop.Theme.Career'}</h1>
-            
-
+            {debug}
+            {* <pre>{print_r($allcms,1)}</pre> *}
+            {* {$allcms[17]['content'] nofilter} *}
             <div id="why_us_anchor">
-                  <div class="why_card">
+            {* <pre>{print_r($Graphic,1)}</pre> *}
+                {* {foreach from=$allcms  item=careercms}
+                  <pre>{print_r($Graphic,1)}</pre>
+                  {if $careercms.id_cms === 55}
+                    {$careercms.content nofilter}
+                  {/if}
+                {/foreach} *}
+                {$Graphic.content nofilter}
+                {$Web.content nofilter}
+                {$Customer.content nofilter}
+                {$Picker.content nofilter}
+                {$Associate.content nofilter}
+                {$General.content nofilter}
+
+                  {* <div class="why_card">
                     <img src="/img/asd/Content_pages/career/design.jpg" />
                     <div id="thumb_data_1" class="card_text text-career" >
                       <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
@@ -1074,7 +1089,7 @@
                     No problem, apply anyway, maybe we can find something for you...' d='Shop.Theme.Career'}
                     </div>
                     <div id="card_expand6" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
-                  </div>
+                  </div> *}
 
               </div>
 

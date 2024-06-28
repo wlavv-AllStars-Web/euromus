@@ -608,6 +608,7 @@ class FrontControllerCore extends Controller
     {
         $this->assignGeneralPurposeVariables();
         $this->getCategories();
+        $this->getAllCMS();
         $this->process();
 
         if (!isset($this->context->cart)) {
@@ -2259,5 +2260,33 @@ class FrontControllerCore extends Controller
         $lang = (int)Context::getContext()->language->id;
 		$cats = Category::getCategories($lang);				
 		$this->context->smarty->assign('categories', $cats);		
+    }
+
+    public function getAllCMS()
+    {
+        $lang = (int)Context::getContext()->language->id;
+        $shop = (int)Context::getContext()->shop->id;
+        $Allcms = CMS::getCMSPages($lang,null,true,$shop);
+       
+        foreach ($Allcms as $cms) {
+            if($cms['id_cms'] === 58){
+                $this->context->smarty->assign('Graphic', $cms);	
+            }
+            if($cms['id_cms'] === 59){
+                $this->context->smarty->assign('Web', $cms);	
+            }
+            if($cms['id_cms'] === 60){
+                $this->context->smarty->assign('Customer', $cms);	
+            }
+            if($cms['id_cms'] === 61){
+                $this->context->smarty->assign('Picker', $cms);	
+            }
+            if($cms['id_cms'] === 62){
+                $this->context->smarty->assign('Associate', $cms);	
+            }
+            if($cms['id_cms'] === 63){
+                $this->context->smarty->assign('General', $cms);	
+            }
+        }
     }
 }

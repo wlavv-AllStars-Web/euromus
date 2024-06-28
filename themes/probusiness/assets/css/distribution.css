@@ -306,6 +306,9 @@
     grid-area: resources;
    }
 
+   #index .card_text{
+    height: 84px;
+   }
    .card_text {
     overflow: hidden;
     height: 114px;

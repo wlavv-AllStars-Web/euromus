@@ -1,29 +1,39 @@
-function viewMore(e){
-
-    const button = e; 
-    console.log(button.innerText)
+document.addEventListener('DOMContentLoaded', function () {
+    const careerBtns = document.querySelectorAll("#why_us_anchor .card_view_more")
     
-    if (button.innerText === "VIEW LESS") {
-        button.innerText = "VIEW MORE";
-        const dataElement = button.previousElementSibling;
-        dataElement.classList.remove("active_card");
-    } else {
-        
-        const card_texts = document.querySelectorAll(".card_text");
-        card_texts.forEach((item) => {
-            if (item.classList.contains("active_card")) {
-                item.classList.remove("active_card");
-                item.nextElementSibling.innerText = "VIEW MORE";
-            }
-        });
-
-        button.innerText = "VIEW LESS";
-        const dataElement = button.previousElementSibling;
-        dataElement.classList.add("active_card");
+    if(careerBtns){
+        careerBtns.forEach(item => {
+            item.addEventListener("click", viewMore)
+        })
     }
     
+    function viewMore(event){
     
-}
+        const button = event.target; 
+        
+        if (button.innerText === "VIEW LESS") {
+            button.innerText = "VIEW MORE";
+            const dataElement = button.previousElementSibling;
+            dataElement.classList.remove("active_card");
+        } else {
+            
+            const card_texts = document.querySelectorAll(".card_text");
+            card_texts.forEach((item) => {
+                if (item.classList.contains("active_card")) {
+                    item.classList.remove("active_card");
+                    item.nextElementSibling.innerText = "VIEW MORE";
+                }
+            });
+    
+            button.innerText = "VIEW LESS";
+            const dataElement = button.previousElementSibling;
+            dataElement.classList.add("active_card");
+        }
+        
+        
+    }
+});
+
 
 function anchorLink(e) {
     e.preventDefault();
