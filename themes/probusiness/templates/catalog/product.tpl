@@ -244,7 +244,7 @@
       <div class="col-md-2 right-column-container">
         <div class="right_column_product" style="height: 24%;">
             <a target="_blank" href="{$product_brand_url}" id_manufactrurer="{$product->id_manufacturer}">
-                <img src="/img/m/{$product->id_manufacturer}.jpg" class="brand_logo">
+                <img src="/img/m/{$product->id_manufacturer}.jpg" class="brand_logo" width="125" height="auto">
             </a>
         </div>
 
@@ -263,7 +263,7 @@
         </div>
 
         <div class="right_column_product">
-            <a target="_blank" href="https://www.all-stars-distribution.com/shipping-rates">
+            <a target="_blank" onclick="openShippingtab('{$urls.pages.my_account}')">
                 <div class="right_text" >{l s='SHIPPING'}</div>
                 <div class="right_logos"><i class="fa fa-truck"></i></div>
             </a>
@@ -310,6 +310,8 @@
       {hook h='displayFooterProduct' product=$product category=$category}
     {/block} *}
 
+
+
     {block name='product_images_modal'}
       {include file='catalog/_partials/product-images-modal.tpl'}
     {/block}
@@ -324,3 +326,5 @@
   </section>
 
 {/block}
+
+

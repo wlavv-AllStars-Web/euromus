@@ -258,3 +258,13 @@ function ValidateURL(tipoURL) {
         return (false);        
     }
 }
+
+
+
+
+function openShippingtab(url){
+    const modifiedUrl = `${url}?tab=shipping`;
+    window.location.href = modifiedUrl;
+
+    // add login of wait for page load here
+}

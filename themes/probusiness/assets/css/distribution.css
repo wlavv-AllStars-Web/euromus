@@ -1132,6 +1132,10 @@ input[type="number"] {
   align-items: center;
   
 }
+
+#product .product-prices div{
+  font-size: 22px;
+}
 #product .product-prices .product-discount {
   display: flex;
   flex-direction: column;
@@ -1264,21 +1268,23 @@ input[type="number"] {
 
 #product .right_column_product{
   display: flex;
-  justify-content: center;
-  
+  justify-content: start;
+}
+
+#product .right_column_product:nth-child(1) a{
+  padding-left: 50px;
 }
 
 
 #product .right_column_product.column-right-stock{
   display: flex;
-  justify-content: center;
   flex-direction: row-reverse;
   align-items: center;
   gap: 1rem;
 }
 
 #product .right_column_product.column-right-stock .right_text{
-  width: 100px;
+  width: fit-content;
   font-size: 18px;
   text-align: start;
   font-weight: 600;
@@ -1332,10 +1338,18 @@ input[type="number"] {
 
 #product .right_column_product .right_logos .fa-truck{
   font-size: 30px !important;
+  color: #0273EB;
+  transform: rotateY(180deg);
 }
 #product .right_column_product .right_logos .fa-youtube{
   font-size: 35px !important;
+  color: #0273EB;
 }
+#product .right_column_product .right_logos .fa-times{
+  font-size: 35px !important;
+  color: #ff0000;
+}
+
 
 /* checkout */
 
