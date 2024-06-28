@@ -858,6 +858,9 @@
   flex-direction: column;
   justify-content: end;
 }
+.form-career .form-group label{
+  text-align: start !important;
+}
 
 .form-check a:hover{
   color: #0273EB;
