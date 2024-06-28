@@ -44,6 +44,7 @@ class MyAccountController extends MyAccountControllerCore
         }
 
         if (Tools::isSubmit('submitIdentity')) {
+            
             $email = trim(Tools::getValue('email'));
             
 
@@ -58,12 +59,13 @@ class MyAccountController extends MyAccountControllerCore
             if (Tools::getIsset('old_passwd')) {
                 $old_passwd = trim(Tools::getValue('old_passwd'));
             }
-
+            // echo $this->context->cookie->passwd;
+            // exit;
             if (!Validate::isEmail($email)) {
                 $this->errors[] = Tools::displayError('This email address is not valid');
             } elseif ($this->customer->email != $email && Customer::customerExists($email, true)) {
                 $this->errors[] = Tools::displayError('An account using this email address has already been registered.');
-            } elseif (!Tools::getIsset('old_passwd') || (Tools::encrypt($old_passwd) != $this->context->cookie->passwd)) {
+            } elseif (!$old_passwd || !password_verify($old_passwd, $this->context->cookie->passwd)) {
                 $this->errors[] = Tools::displayError('The password you entered is incorrect.');
             } elseif (Tools::getValue('passwd') != Tools::getValue('confirmation')) {
                 $this->errors[] = Tools::displayError('The password and confirmation do not match.');
@@ -282,10 +284,12 @@ class MyAccountController extends MyAccountControllerCore
 
     }
     
-    function random_color() { return str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT); }
+    public function random_color() { return str_pad( dechex( mt_rand( 0, 255 ) ), 2, '0', STR_PAD_LEFT); }
     
-    function random_hexcolor() {
+    public function random_hexcolor() {
         return '#' . self::random_color() . self::random_color() . self::random_color();
     }
 
+
+    
 }

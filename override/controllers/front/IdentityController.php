@@ -37,13 +37,23 @@ class IdentityControllerCore extends FrontController
     public $passwordRequired = true;
     public $id_shop;
 
+    /** @var Customer */
+    protected $customer;
     /**
      * Assign template vars related to page content.
      *
      * @see FrontController::initContent()
      */
+
+    public function init()
+    {
+        parent::init();
+        $this->customer = $this->context->customer;
+    }
+
     public function initContent()
     {
+
 
         $should_redirect = false;
 
@@ -80,11 +90,9 @@ class IdentityControllerCore extends FrontController
         }
 
         parent::initContent();
-        if($this->id_shop === 3){
-            $this->setTemplate('customer/my-account');
-        }else{
-            $this->setTemplate('customer/identity');
-        }
+
+        $this->setTemplate('customer/identity');
+        
     }
     
 

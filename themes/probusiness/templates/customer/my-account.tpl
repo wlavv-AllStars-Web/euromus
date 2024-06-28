@@ -204,50 +204,47 @@
       </div>
       
       <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-      
+      {* {include file="customer/identity.tpl" } *}
+      {* {render file='customer/_partials/customer-form.tpl' ui=$customer_form} *}
         <div class="form-personal-info" style="padding-top: 2rem;">
           
-          
-          <form action="{$link->getPageLink('my-account', true)|escape:'html':'UTF-8'}" method="post" class="std">
+        {* <pre>{$customerData|print_r}</pre> *}
+          <form action="{$urls.pages.my_account}" method="post" class="std">
               <div class="left-form-personal col-lg-6 col-xs-12">
                 <div class="form-group col-lg-9">
                   <h1 style="text-align: center;">Your Personal Information</h1>
                   <p style="text-align: center;">Please be sure to update your personal information if changed.</p>
                 </div>
                 <div class="radio-btns-form-personal  col-lg-12 col-md-6">
+                {foreach from=$genders key=k item=gender}
                   <div class="form-check col-md-3 col-xs-6" style="text-align: center;">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1">
-                    <label class="form-check-label" for="gridRadios1">
-                    Mr.
+                    <input class="form-check-input" type="radio" name="id_gender" id="id_gender{$gender->id}" value="{$gender->id|intval}" {if isset($smarty.post.id_gender) && $smarty.post.id_gender == $gender->id} checked="checked"{/if}>
+                    <label class="form-check-label" for="id_gender{$gender->id}">
+                      {$gender->name}
                     </label>
                   </div>
-                  <div class="form-check  col-md-3 col-xs-6" style="text-align: center;">
-                    <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                    <label class="form-check-label" for="gridRadios2">
-                    Mrs.
-                    </label>
-                  </div>
+                {/foreach}
                 </div>
 
-              {* <div class="form-row "> *}
+              
                 <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="firstname">First Name</label>
-                  <input type="text" class="form-control" id="firstname" value="{$smarty.post.firstname}">
+                  <input type="text" class="form-control" id="firstname" name="firstname" value="{$smarty.post.firstname}">
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="lastname">Last Name</label>
-                  <input type="text" class="form-control" id="lastname" value="{$smarty.post.lastname}">
+                  <input type="text" class="form-control" id="lastname" name="lastname" value="{$smarty.post.lastname}">
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="email">Email</label>
-                  <input type="email" class="form-control" id="email" value="{$smarty.post.email}">
+                  <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
                 </div>
               <div class="form-row col-lg-9 col-md-7 ">
                 <div class="form-group col-lg-12 col-md-12 col-xs-12 mx-0">
                   <label>Date of Birth</label>
                 </div>
                 <div class="form-group col-lg-4 col-md-4 col-xs-4 pl-0">
-                  <select id="inputState" class="form-control">
+                  <select id="days" name="days" class="form-control">
                     <option selected>Day</option>
                     <option>...</option>
                     {foreach from=$days item=v}
@@ -256,7 +253,7 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-4 col-md-4 col-xs-4 p-0">
-                  <select id="inputState" class="form-control">
+                  <select id="months" name="months" class="form-control">
                     <option selected>Month</option>
                     <option>...</option>
                     {foreach from=$months key=k item=v}
@@ -265,7 +262,7 @@
                   </select>
                 </div>
                 <div class="form-group col-lg-4 col-md-4 col-xs-4 pr-0">
-                  <select id="inputState" class="form-control">
+                  <select id="years" name="years" class="form-control">
                     <option selected>Year</option>
                     <option>...</option>
                     {foreach from=$years item=v}
@@ -274,23 +271,24 @@
                   </select>
                 </div>
               </div>
+              {* <pre>{$smarty.post|print_r}</pre> *}
                 <div class="form-group col-lg-9 col-md-7 col-xs-12">
-                  <label for="old_passwd ">Current Password</label>
-                  <input type="password" class="form-control is_required validate" name="old_passwd" id="old_passwd" data-validate="isPasswd">
+                  <label for="old_passwd">Current Password</label>
+                  <input type="password" class="form-control " name="old_passwd" id="old_passwd" required data-validate="isPasswd" >
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="passwd">New Password</label>
-                  <input type="password" class="form-control is_required validate" name="passwd" id="passwd" data-validate="isPasswd">
+                  <input type="password" class="form-control " name="passwd" id="passwd" data-validate="isPasswd">
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-xs-12">
                   <label for="confirmation">New Password Confirmation</label>
-                  <input type="password" class="form-control is_required validate" name="confirmation" id="confirmation" data-validate="isPasswd">
+                  <input type="password" class="form-control " name="confirmation" id="confirmation" data-validate="isPasswd">
                 </div>
                 {* {if $newsletter} *}
                 <div class="form-group col-lg-12 col-md-7 col-xs-12">
                   <div class="form-check col-md-12">
-                      <input class="form-check-input" type="checkbox" id="gridCheck">
-                      <label class="form-check-label" for="gridCheck">
+                      <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" value="1" {if isset($smarty.post.newsletter) && $smarty.post.newsletter == 1} checked="checked"{/if}>
+                      <label class="form-check-label" for="newsletter">
                         <a href="https://www.all-stars-distribution.com/en/content/20-terms-and-conditions">Sign up for our newsletter!</a>
                       </label>
                     
@@ -310,19 +308,19 @@
 
               <div class="form-row "> *}
                 <div class="form-group col-lg-9 col-md-7 col-xs-12">
-                  <label for="inputEmail4">Company Name</label>
-                  <input type="text" class="form-control" id="inputEmail4">
+                  <label for="company">Company Name</label>
+                  <input type="text" class="form-control" id="company" name="company" value="{if isset($smarty.post.company)}{$smarty.post.company}{/if}" >
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-xs-12">
-                  <label for="inputPassword4">Vat Number</label>
-                  <input type="text" class="form-control" id="inputPassword4">
+                  <label for="siret">Vat Number</label>
+                  <input type="text" class="form-control" id="siret" name="siret" value="{if isset($smarty.post.siret)}{$smarty.post.siret}{/if}">
                 </div>
                 
               {* </div>
 
               <div class="form-row"> *}
                 <div class="form-group col-lg-12 col-md-4 col-xs-12" style="text-align: center;padding-bottom:2rem;">
-                  <button class="btn btn-primary" type="submitIdentity" style="background:#0273eb;">Submit form</button>
+                  <button class="btn btn-primary" type="submit" name="submitIdentity" data-link-action="save-customer" style="background:#0273eb;">Submit form</button>
                 </div>
               {* </div>
 
@@ -422,8 +420,6 @@
 
     document.addEventListener('DOMContentLoaded', function () {
 
-      console.log("paulo")
-  
       const urlParams = new URLSearchParams(window.location.search);
       const tab = urlParams.get('tab');
       if (tab) {
