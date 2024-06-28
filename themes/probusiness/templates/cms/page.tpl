@@ -970,7 +970,7 @@
           </div>
           <div class="career-content">
             <h1>{l s='> OPEN POSITIONS <' d='Shop.Theme.Career'}</h1>
-            {debug}
+            {* {debug} *}
             {* <pre>{print_r($allcms,1)}</pre> *}
             {* {$allcms[17]['content'] nofilter} *}
             <div id="why_us_anchor">
