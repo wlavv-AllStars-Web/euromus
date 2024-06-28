@@ -96,8 +96,9 @@
             </div>
             
              {else} 
-
-            <form id="login-form" action="/login" method="post">   
+              {* <pre>{$urls|print_r}</pre> *}
+              
+            <form id="login-form" action="{$urls.pages.authentication}" method="post">   
                 <div style="display:flex; width:30%; height: min-content;" class="form-group col">
                   <div class="email_icon header-icon">
                     <input type="hidden" name="back" value="my-account">
