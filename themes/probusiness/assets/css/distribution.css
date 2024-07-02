@@ -1844,6 +1844,18 @@ textarea {
 
 @media (min-width: 1730px){
 
+  .language-selector.open .dropdown-menu{
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: unset;
+    padding: 0.5rem 1rem;
+  }
+  .language-selector .dropdown-menu .dropdown-item{
+    font-size: 13px;
+  }
+
+
   #search_query_top{
     min-width: 242px;
   }
@@ -2142,6 +2154,17 @@ textarea {
 }
 
 @media (min-width: 900px){
+  .language-selector.open .dropdown-menu{
+    display: flex !important;
+    flex-direction: column;
+    gap: 1rem;
+    min-width: unset;
+    padding: 0.5rem 1rem;
+  }
+  .language-selector .dropdown-menu .dropdown-item{
+    font-size: 13px;
+  }
+
 
   .cms-id-8 .desktop{
     display: flex !important;
