@@ -551,9 +551,9 @@
             <p>{l s='This Policy is a legally binding agreement between you (“User”, “you” or “your”) and All Stars Distribution Lda (“All Stars Distribution Lda”, “we”, “us” or “our”). If you are entering into this agreement on behalf of a business or other legal entity, you represent that you have the authority to bind such entity to this agreement, in which case the terms “User”, “you” or “your” shall refer to such entity. If you do not have such authority, or if you do not agree with the terms of this agreement, you must not accept this agreement and may not access and use the Website and Services. By accessing and using the Website and Services, you acknowledge that you have read, understood, and agree to be bound by the terms of this Policy. This Policy does not apply to the practices of companies that we do not own or control, or to individuals that we do not employ or manage.' d='Shop.Theme.Privacy'}</p>
             <h2 class="table-contents">{l s='Table of contents' d='Shop.Theme.Privacy'}</h2>
             <ul class="contents-list">
-                <li>  <a href="{$link->getCMSLink(7)}#Collection">{l s='Collection of personal information' d='Shop.Theme.Privacy'}</a></li>
-                <li>  <a href="{$link->getCMSLink(7)}#children">{l s='Privacy of children' d='Shop.Theme.Privacy'}</a></li>
-                <li>  <a href="{$link->getCMSLink(7)}#collected">{l s='Use and processing of collected information' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#Collection">{l s='Collection of personal information' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#children">{l s='Privacy of children' d='Shop.Theme.Privacy'}</a></li>
+                <li>  <a href="#collected">{l s='Use and processing of collected information' d='Shop.Theme.Privacy'}</a></li>
                 <li>  <a href="#Payment"  onclick="anchorLink(this)">{l s='Payment processing' d='Shop.Theme.Privacy'}</a></li>
                 <li>  <a href="#Managing">{l s='Managing information' d='Shop.Theme.Privacy'}</a></li>
                 <li>  <a href="#Disclosure">{l s='Disclosure of information' d='Shop.Theme.Privacy'}</a></li>
