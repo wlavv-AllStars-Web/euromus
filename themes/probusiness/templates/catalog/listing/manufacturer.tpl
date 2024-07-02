@@ -40,7 +40,7 @@
 </style>
 {* <pre>{print_r($manufacturer,1)}</pre> *}
 
-{if $manufacturer.bike_parts === 1}
+{if $manufacturer.bike_parts == 1}
 <div style="display: flex;width: 100%; text-align: center;margin: 0 auto; background-color: #fff;">
 
 {* {$link->getCategoryLink($id_category)|escape:'html':'UTF-8'} *}
