@@ -74,13 +74,7 @@ class IndexController extends IndexControllerCore
             }
         }
 
-        if($this->id_shop === 3){
-            $homepage_footer = Db::getInstance()->getRow('SELECT * FROM '._DB_PREFIX_.'asd_homepage WHERE id=1');
-            
-            $this->context->smarty->assign([
-                'homepage_footer'    => $homepage_footer,
-            ]);
-        }
+
 
 
         $this->context->smarty->assign([

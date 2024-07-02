@@ -268,7 +268,15 @@ class FrontControllerCore extends Controller
             ]
         );
 
+        $id_shop = (int)Context::getContext()->shop->id;
 
+        if($id_shop === 3){
+            $homepage_footer = Db::getInstance()->getRow('SELECT * FROM '._DB_PREFIX_.'asd_homepage WHERE id=1');
+            
+            $this->context->smarty->assign([
+                'homepage_footer'    => $homepage_footer,
+            ]);
+        }
         /*
          * Globals are DEPRECATED as of version 1.5.0.1
          * Use the Context object to access objects instead.
