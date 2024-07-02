@@ -2954,6 +2954,7 @@ grid-template-columns: 1fr 1fr;
   margin: 15px auto; 
   text-align: justify; 
   margin-top: 30px;
+  line-height: 25px;
 }
 
 .cms-id-11 .row-payment {
