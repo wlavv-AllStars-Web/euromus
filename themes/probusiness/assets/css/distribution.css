@@ -8,7 +8,7 @@
   
   html,body{
     scroll-behavior: smooth;
-    font-family: open-sans, sans-serif;
+    font-family: 'Open Sans', sans-serif;
     line-height: 18px;
   }
   .logtext{
@@ -841,7 +841,7 @@
   flex-direction:column;
   /* background-color:#f6f6f6; */
   /* max-width:1440px; */
-  font-family: open-sans, sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size:16px;
   margin:0 auto;
   border-radius: 0 0 10px 10px;
@@ -876,7 +876,7 @@
     font-size: 18px;
     border-radius: 5px;
     border: 2px solid #0273eb;
-    font-family: open-sans, sans-serif;
+    font-family: 'Open Sans', sans-serif;
 }
 
 .button_partners:hover {
@@ -914,7 +914,7 @@
   max-width: 300px;
 }
 .text_partners {
-  font-family: open-sans, sans-serif;
+  font-family: 'Open Sans', sans-serif;
     padding: 20px 10px 10px 10px;
     min-height: 19px;
     line-height: 1.3;
@@ -1687,7 +1687,39 @@ textarea {
   border-left:1px solid #ebebeb;
 } */
 .product-line-grid-left .lixo{
+  display: flex;align-items:center;justify-content:center;width: 70px;
+}
+.product-line-grid-left .lixo a{
   display: flex;align-items:center;justify-content:center;
+}
+.product-line-grid-left .product-thumb{
+  /* border-inline: 1px solid #dedede; */
+}
+
+.checkout-product-info{
+  /* height: 100px; */
+}
+
+.checkout-product-info .product-line-info {
+  padding-inline: 0 1rem;
+  /* border-right: 1px solid #dedede; */
+  /* height: 100px; */
+  justify-content: center;
+  flex: 1;
+}
+
+.product-line-grid-right .qty{
+  /* height: 100px; */
+  display: flex;
+  align-items: center;
+  /* border-right: 1px solid #dedede; */
+  flex: 1;
+}
+.product-line-grid-right .price{
+  /* height: 100px; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .shopping-cart-row {
