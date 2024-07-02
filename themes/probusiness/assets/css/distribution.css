@@ -2863,35 +2863,37 @@ grid-template-columns: 1fr 1fr;
   margin: 3rem auto;
 }
 
+.privacy-content .table-contents{
+  font-size: 24px;
+}
+
+.privacy-content a {
+  font-size: 18px;
+  color: dodgerblue !important;
+  line-height: 28.8px;
+}
+
 .privacy-content h1 {
   text-align: center;
-  color: #0273EB;
+  color: dodgerblue;
   font-size: 30px;
   font-weight: normal;
   margin-bottom: 1rem;
   margin-top: 2rem;
 }
 .privacy-content p {
-  font-size: 1.1rem;
+  font-size: 18px;
   color: #111;
+  line-height: 25px;
 }
 
 .privacy-content .table-contents {
   color: #111;
   margin: 2rem 0;
   font-weight: 600;
-  font-size: 18px;
+  font-size: 22px;
 }
 
-.contents-list a {
-  color: #0273EB !important;
-  font-size: 1rem;
-}
-
-.privacy-content a {
-  font-size: 1.1rem;
-  color: #0273EB;
-}
 
 /* cms legal notice */
 
@@ -3432,6 +3434,15 @@ grid-template-columns: 1fr 1fr;
   text-wrap: wrap;
   padding: 1rem;
 }
+.privacy-content .table-contents{
+  font-size: 24px;
+}
+
+.privacy-content a {
+  font-size: 18px;
+  color: dodgerblue;
+  line-height: 28.8px;
+}
 
 .privacy-content h1 {
   text-align: center;
@@ -3458,10 +3469,7 @@ grid-template-columns: 1fr 1fr;
   font-size: 1rem;
 }
 
-.privacy-content a {
-  font-size: 1.1rem;
-  color: #0273EB;
-}
+
 
 /* cms legal notice mobile */
 
