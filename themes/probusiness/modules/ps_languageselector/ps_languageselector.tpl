@@ -49,7 +49,7 @@
   {*   <span style="color: white;" id="language-selector-label" class="hidden-md-up">{l s='Language:' d='Shop.Theme.Global'}</span> *}
      <div class="language-selector dropdown js-dropdown">
        <button style="background-color: #333333; border: 0" data-toggle="dropdown" class=" btn-unstyle lang" aria-haspopup="true" aria-expanded="false" aria-label="{l s='Language dropdown' d='Shop.Theme.Global'}">
-       <img style="width:16px; height:11px" src="/img/tmp/lang_mini_{$current_language.id_lang}_3.jpg?time=1699550058">
+       <img style="width:16px; height:11px" src="/img/asd/flags/{$language.iso_code}.jpg?time=1699550058">
        <span class="lang expand-more">{strtoupper($current_language.iso_code)}</span>
          <i class="material-icons expand-more">&#xE5C5;</i>
        </button>
@@ -57,7 +57,7 @@
          {foreach from=$languages item=language}
            <li style="display: flex; " class=" selector {if $language.id_lang == $current_language.id_lang} current  {/if}">
              {* <img src="/img/tmp/lang_mini_{$language.id_lang}_3.jpg?time=1699550058" style="width:16px; height:11px" class="languageimg"> *}
-             <img src="/img/flags/{$language.iso_code}.jpg?time=1699550058" style="width:16px; height:11px" class="languageimg">
+             <img src="/img/asd/flags/{$language.iso_code}.jpg?time=1699550058" style="width:16px; height:11px" class="languageimg">
              <a style="margin-left: 15px;border: 0; color: white" href="{url entity='language' id=$language.id_lang}" class="dropdown-item" data-iso-code="{$language.iso_code}">{$language.name_simple}</a>
            </li>
          {/foreach}
