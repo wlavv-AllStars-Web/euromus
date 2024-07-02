@@ -2269,22 +2269,22 @@ class FrontControllerCore extends Controller
         $Allcms = CMS::getCMSPages($lang,null,true,$shop);
        
         foreach ($Allcms as $cms) {
-            if($cms['id_cms'] === 58){
+            if($cms['id_cms'] == 58){
                 $this->context->smarty->assign('Graphic', $cms);	
             }
-            if($cms['id_cms'] === 59){
+            if($cms['id_cms'] == 59){
                 $this->context->smarty->assign('Web', $cms);	
             }
-            if($cms['id_cms'] === 60){
+            if($cms['id_cms'] == 60){
                 $this->context->smarty->assign('Customer', $cms);	
             }
-            if($cms['id_cms'] === 61){
+            if($cms['id_cms'] == 61){
                 $this->context->smarty->assign('Picker', $cms);	
             }
-            if($cms['id_cms'] === 62){
+            if($cms['id_cms'] == 62){
                 $this->context->smarty->assign('Associate', $cms);	
             }
-            if($cms['id_cms'] === 63){
+            if($cms['id_cms'] == 63){
                 $this->context->smarty->assign('General', $cms);	
             }
         }
