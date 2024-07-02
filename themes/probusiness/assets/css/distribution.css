@@ -3017,6 +3017,7 @@ grid-template-columns: 1fr 1fr;
 }
 .cms-terms .banner-terms img{
   width: 100%;
+  padding-bottom: 18px;
 }
 
 .cms-terms .terms-content h1 {
