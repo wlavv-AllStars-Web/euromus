@@ -3024,7 +3024,7 @@ grid-template-columns: 1fr 1fr;
 .cms-terms .terms-content h1 {
   text-align: center;
   margin: 2rem 0;
-  color: #0273EB;
+  color: dodgerblue;
   font-size: 34px;
   font-weight: 500;
 }
@@ -3036,13 +3036,13 @@ grid-template-columns: 1fr 1fr;
 
 .cms-terms .terms-content a {
   font-size: 1.15rem;
-  color: #0273EB;
+  color: dodgerblue;
   cursor: pointer;
 }
 
 .cms-terms .terms-content a:hover {
   font-size: 1.15rem;
-  color: #0273EB;
+  color: dodgerblue;
   cursor: pointer;
 }
 
@@ -3595,7 +3595,7 @@ grid-template-columns: 1fr 1fr;
 .cms-terms .terms-content h1 {
   text-align: center;
   margin: 2rem 0;
-  color: #0273EB;
+  color: dodgerblue;
   font-size: 1.5rem;
   font-weight: 500;
 }
@@ -3607,13 +3607,13 @@ grid-template-columns: 1fr 1fr;
 
 .cms-terms .terms-content a {
   font-size: 1rem;
-  color: #0273EB;
+  color: dodgerblue;
   cursor: pointer;
 }
 
 .cms-terms .terms-content a:hover {
   font-size: 1rem;
-  color: #0273EB;
+  color: dodgerblue;
   cursor: pointer;
 }
 
