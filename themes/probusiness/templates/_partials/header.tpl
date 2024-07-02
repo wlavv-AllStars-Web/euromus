@@ -38,7 +38,7 @@
   {* {debug} *}
   {block name='header_top'}
     <div class="header-top">
-      <div class="container" style="padding-bottom: 15px;max-width: 1337px !important; width: 90vw !important; " >
+      <div class="container" style="padding-bottom: 10px;max-width: 1337px !important; width: 90vw !important;padding-top:9px" >
         <div  class="row centrar" style="margin:0;  display: flex; align-items: center;">
           <div  id="_desktop_logo" class="col-md-4 col-sm-12" style="margin: 0; padding: 0; width:30%">
             <a  href="/" style="display: flex; justify-content:center">
@@ -47,8 +47,8 @@
           </div>
           {if Context::getContext()->customer->logged}  
           <div class="wdth mobile" style="width: 50%;">
-            
-            <a href="/order" {if $cart['products']|count > 0} class="cart_empty" {/if}>
+           {hook h="displayNav2" mod="ps_shoppingcart"}
+            {* <a href="/order" {if $cart['products']|count > 0} class="cart_empty" {/if}>
             
               <div  style="cursor: pointer; width: 100%">
                 <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container  {if $cart['products']|count < 1} cart_empty{/if}">
@@ -63,27 +63,16 @@
               </div>
               {if $cart.products|count > 0}
               </a>
-            {/if}
+              {/if} *}
             </div>
           {/if}
           <div  class=" formula" style="display: flex; justify-content:center; margin-left: 50px; width:70%">
            {if Context::getContext()->customer->logged}  
             {* shooping cart bar*}
-            <div class="wdth" style="width: 50%;">
-            <a href="/order">
-              <div  style="cursor: pointer; width: 100%">
-                <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container  {if $cart['products']|count < 1} cart_empty{/if}">
-                  <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;display:flex;align-items:center;justify-content:center;"> 
-                    <i class="fa fa-shopping-cart" style="font-size: 17px;"></i>
-                  </div>
-                  <div style="height:35px; border: 1px solid #777" class="cart_total_header"> {l s="Total"} <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
-                  <div class="products_total_header">
-                    <div style="width:33px; height:35px; background-color: #0273eb;border-radius: 0px 20px 20px 0px;border: 1px solid #777; color: white; font-size: 18px;text-align:center;display:flex;justify-content:center;align-items:center;" >{$cart.products_count}</div>
-                  </div>
-                </div>
-              </div>
-              </a>
+            <div style="width: 50%;">
+              {hook h="displayNav2" mod="ps_shoppingcart"}
             </div>
+
             {* search bar *}
             <div class="wdth" style="width: 50%">
               <form style="display:flex; justify-content:center" method="get" action="{$search_controller_url|escape:'html':'UTF-8'}" id="searchbox">
@@ -104,7 +93,7 @@
                     <input type="hidden" name="back" value="my-account">
                     <i class="fa fa-user"></i>
                   </div>
-                  <input class="form-control whtbl" name="email" type="email" value="" required placeholder="{l s="Email" d='Shop.Theme.Actions'}">
+                  <input class="form-control whtbl" name="email" type="email" value="{$smarty.post.email}" required placeholder="{l s="Email" d='Shop.Theme.Actions'}">
                 </div>
                 <div style="margin-bottom:0 ;  display: flex; flex-direction: column ; width: 30%" class="form-group col">
                   <div style="display:flex; flex-direction: row">
@@ -114,7 +103,7 @@
                     <input class="form-control js-child-focus js-visible-password whtbl" name="password" type="password" value="" required placeholder="{l s="Password" d='Shop.Theme.Actions'}">                 
                   </div>
                   <div>
-                    <a href="/forgotpassword" rel="nofollow" style="color: #0273EB">
+                    <a href="/forgotpassword" rel="nofollow" style="color: #0273EB;font-size:12px;line-height:18px;">
                       {l s='Forgot your password?' d='Shop.Theme.Actions'}
                     </a>
                   </div>
@@ -132,7 +121,7 @@
       </div>
       <div style="padding-left: 0; line-height: normal"  class="row headerline alinhamento-mobile hlfsz">
         <div class="margbot">
-            {hook h='displayNav2'}
+            {hook h='displayNav2' mod="ps_mainmenu"}
         </div>
       </div>    
     </div>

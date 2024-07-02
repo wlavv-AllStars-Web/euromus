@@ -1,18 +1,46 @@
 document.addEventListener('DOMContentLoaded', function () {
     const careerBtns = document.querySelectorAll("#why_us_anchor .card_view_more")
+    const profileBtns = document.querySelectorAll(".profile_container_cms .card_view_more")
     
     if(careerBtns){
         careerBtns.forEach(item => {
             item.addEventListener("click", viewMore)
         })
     }
+    if(profileBtns){
+        profileBtns.forEach(item => {
+            item.addEventListener("click", viewMore)
+        })
+    }
     
     function viewMore(event){
-    
-        const button = event.target; 
         
-        if (button.innerText === "VIEW LESS") {
-            button.innerText = "VIEW MORE";
+        const lang = document.querySelector("html").getAttribute("lang");
+        const button = event.target; 
+
+        let translateMore = '';
+        let translateLess = '';
+
+        if(lang === "en"){
+            translateMore = "VIEW MORE";
+            translateLess = "VIEW LESS";
+        }else if(lang === "pt"){
+            translateMore = "VER MAIS";
+            translateLess = "VER MENOS";
+        }else if(lang === "fr"){
+            translateMore = "VOIR PLUS";
+            translateLess = "VOIR MOINS";
+        }else if(lang === "es"){
+            translateMore = "VER MÁS";
+            translateLess = "VER MENOS";
+        }else if(lang === "it"){
+            translateMore = "VEDI ALTRO";
+            translateLess = "VISUALIZZA MENO";
+        }
+        
+        if (button.innerText === "VIEW LESS" ||button.innerText === "VER MENOS" ||button.innerText === "VOIR MOINS" ||button.innerText === "VISUALIZZA MENO" ) {
+            
+            button.innerText = translateMore;
             const dataElement = button.previousElementSibling;
             dataElement.classList.remove("active_card");
         } else {
@@ -25,13 +53,14 @@ document.addEventListener('DOMContentLoaded', function () {
                 }
             });
     
-            button.innerText = "VIEW LESS";
+            button.innerText = translateLess;
             const dataElement = button.previousElementSibling;
             dataElement.classList.add("active_card");
         }
         
         
     }
+    
 });
 
 

@@ -42,7 +42,6 @@
         {include file='checkout/_partials/cart-summary.tpl' cart=$cart}
       {/block}
 
-
     {* {hook h='displayReassurance'} *}
       </div>
       {* {block name='continue_shopping'}
@@ -57,6 +56,7 @@
         {/block}
       </div> *}
       {* <pre>{$urls.pages|print_r}</pre> *}
+  
       <div class="col-lg-12 px-0">
         <div class="billing_address col-lg-6 px-0">
           <h3 class="page-subheading col-lg-12" style="border: 0px solid #123;margin:2rem 0;">Billing address</h3>
@@ -167,8 +167,8 @@
       <div class="col-lg-12" style="display:flex;justify-content:center;align-items:center;flex-direction:column;margin:2rem 0;">
         <div class="accept_privacy_policy">
           <div class="form-group col-lg-12 col-md-7 col-xs-12 px-0" style="margin:2rem 0 28px 0;">
-            <input class="form-check-input" type="checkbox" id="deliverAddress" onchange="togglePayment(this)">
-            <label class="form-check-label" for="deliverAddress">
+            <input class="form-check-input" type="checkbox" id="acceptPrivacy" onchange="togglePayment(this)">
+            <label class="form-check-label" for="acceptPrivacy">
             I declare that I have read and accept the privacy policies in force. To view the privacy policies, please click on:Privacy policies
             </label>
           </div>

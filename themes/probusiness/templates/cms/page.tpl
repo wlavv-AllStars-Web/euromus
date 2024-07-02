@@ -60,7 +60,7 @@
           <div class="profile_container_cms">
           <div class="profile_style">{l s='Profile' d='Shop.Theme.About'}</div>
           <div class="profile_container_text" id="profile_container_text">{l s='Supplying over 30 top of the line brands to automotive performance professionals worldwide, All Stars Distribution is one of the largest European wholesalers of performance and design parts. Dedicated to serving shops, tuners, e-dealers and other resellers, All Stars Distribution is committed to employing the best of inventory management and distribution practices to get our customers the performance parts they need to satisfy their customers.' d='Shop.Theme.About'}</div>
-          <div id="profile_container_text1 hidden-md-up" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.About'}</div>
+          <div id="profile_container_text1 hidden-md-up" class="card_view_more">{l s='View More' d='Shop.Theme.About'}</div>
           </div>
           <div>
             <img class="desktop" src="/img/asd/Content_pages/aboutus/badge_lg.jpg" alt="badge_lg" />
@@ -140,7 +140,7 @@
           </div>
 
           <div class="form-become-dealer" style="margin: 5rem 0;">
-            <h1 style="text-align: center;color:#000;margin-bottom:2rem;"><span style="color: #0273EB;">></span> {l s='Fill out the become a dealer enquiry form' d='Shop.Theme.BecomeDealer'} <span style="color: #0273EB;"><</span></h1>
+            <h1><span style="color: #0273EB;">></span> {l s='Fill out the become a dealer enquiry form' d='Shop.Theme.BecomeDealer'} <span style="color: #0273EB;"><</span></h1>
             
             <form action="/{$language.iso_code}/content/14-become-a-dealer" method="post" name="become_dealer_form">
               <input type="hidden" id="type" name="type" value="becomedealer" >
@@ -365,13 +365,15 @@
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="observations"></textarea>
               </div>
               <div class="form-group col-md-4 signature">
-                <label for="canvas4">{l s='Signature' d='Shop.Theme.FormBecomedealer'}</label>
+                <div style="display: flex;align-items:center;justify-content:space-between;">
+                  <label for="canvas4">{l s='Signature' d='Shop.Theme.FormBecomedealer'}</label>
+                  <div class="btn" id="clearButton">{l s='Reset' d='Shop.Theme.FormBecomedealer'}</div>
+                </div>
                 <canvas id="canvas4" width=400 height=140></canvas>
-                <div class="btn" id="clearButton">{l s='Reset' d='Shop.Theme.FormBecomedealer'}</div>
               </div>
               <div class="form-group col-md-4">
               
-              <label for="important_notice" style="color: #ee302e;">{l s='Important notice:' d='Shop.Theme.FormBecomedealer'}</label>
+              <label for="important_notice" style="color: red;padding:0 10px;text-transform:uppercase;font-weight:500;">{l s='Important notice:' d='Shop.Theme.FormBecomedealer'}</label>
               <div id="important_notice">
               {l s='By my signature, I certify the information I provided on and in connection with this form is true and correct to the best of my knowledge. I also understand that any false statements or deliberate omissions on this form may subject me to legal actions for fraudulent misrepresentation.' d='Shop.Theme.FormBecomedealer'}
                 
@@ -456,8 +458,8 @@
           </div>
 
 
-          <div class="form-become-supplier" style="margin: 5rem 0;">
-            <h1 style="text-align: center;color:#111;margin-bottom:2rem;font-size:20px;text-transform:uppercase;font-weight: normal;"><span style="color: #0273EB;">></span> {l s='Submit an enquiry' d='Shop.Theme.Becomesupplier'} <span style="color: #0273EB;"><</span></h1>
+          <div class="form-become-supplier">
+            <h1><span style="color: #0273EB;">></span> {l s='Submit an enquiry' d='Shop.Theme.Becomesupplier'} <span style="color: #0273EB;"><</span></h1>
             
             <form action="/{$language.iso_code}/content/15-become-a-supplier" method="post" name="become_dealer_form">
             <input type="hidden" id="type" name="type" value="becomesupplier">

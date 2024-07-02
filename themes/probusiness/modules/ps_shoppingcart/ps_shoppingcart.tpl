@@ -20,13 +20,43 @@
 *}
 
 <div id="_desktop_cart">
-  <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url|escape:'html':'UTF-8'}">
+  <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
     <div class="header">
       <a rel="nofollow" href="{$order_url|escape:'html':'UTF-8'}">
-        <i class="icon icon_cart_alt"></i>
-        <span class="cart-products-label">{l s='Shopping Cart' d='Shop.Theme.Checkout'}</span>
-        <span class="cart-products-count">{$cart.products_count|escape:'html':'UTF-8'} {if $cart.products_count > 1}{l s=' Items' d='Shop.Theme.Checkout'}{else}{l s=' Item' d='Shop.Theme.Checkout'}{/if} - {$cart.totals.total.value|escape:'html':'UTF-8'} </span>
-        <span class="cart-products-count cart-products-count-absolution">{$cart.products_count|escape:'html':'UTF-8'}</span>
+        <div  style="cursor: pointer; width: 100%">
+          <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container  {if $cart['products']|count < 1} cart_empty{/if}">
+            <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;display:flex;align-items:center;justify-content:center;"> 
+              <i class="fa fa-shopping-cart" style="font-size: 17px;"></i>
+            </div>
+            <div style="height:35px; border: 1px solid #777" class="cart_total_header"> {l s="Total"} <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
+            <div class="products_total_header">
+              <div style="width:33px; height:35px; background-color: #0273eb;border-radius: 0px 20px 20px 0px;border: 1px solid #777; color: white; font-size: 18px;text-align:center;display:flex;justify-content:center;align-items:center;" >{$cart.products_count}</div>
+            </div>
+          </div>
+        </div>
+      </a>
+    </div>
+  </div>
+</div>
+
+
+
+
+{* <div id="_desktop_cart"> *}
+  {* <div class="blockcart cart-preview {if $cart.products_count > 0}active{else}inactive{/if}" data-refresh-url="{$refresh_url}">
+    <div class="header">
+      <a rel="nofollow" href="{$order_url|escape:'html':'UTF-8'}">
+        <div  style="cursor: pointer; width: 100%">
+          <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container  {if $cart['products']|count < 1} cart_empty{/if}">
+            <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;display:flex;align-items:center;justify-content:center;"> 
+              <i class="fa fa-shopping-cart" style="font-size: 17px;"></i>
+            </div>
+            <div style="height:35px; border: 1px solid #777" class="cart_total_header"> {l s="Total"} <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
+            <div class="products_total_header">
+              <div style="width:33px; height:35px; background-color: #0273eb;border-radius: 0px 20px 20px 0px;border: 1px solid #777; color: white; font-size: 18px;text-align:center;display:flex;justify-content:center;align-items:center;" >{$cart.products_count}</div>
+            </div>
+          </div>
+        </div>
       </a>
 
       <div class="body cart-hover-content">
@@ -57,5 +87,22 @@
         </div>
       </div>
     </div>
+  </div> *}
+{* </div> *}
+
+
+{* <div class="wdth blockcart cart-preview" style="width: 50%;" data-refresh-url="{$refresh_url}">
+<a href="/order">
+  <div  style="cursor: pointer; width: 100%">
+    <div style=" display: flex; flex-direction: row; justify-content:center" class="cart-container  {if $cart['products']|count < 1} cart_empty{/if}">
+      <div style="width:33px; background-color: #0273eb;float: left;border-radius: 20px 0 0 20px;border: 1px solid #777; color: white;display:flex;align-items:center;justify-content:center;"> 
+        <i class="fa fa-shopping-cart" style="font-size: 17px;"></i>
+      </div>
+      <div style="height:35px; border: 1px solid #777" class="cart_total_header"> {l s="Total"} <span class="productsValue">{$cart.totals.total_excluding_tax.value}</span></div>
+      <div class="products_total_header">
+        <div style="width:33px; height:35px; background-color: #0273eb;border-radius: 0px 20px 20px 0px;border: 1px solid #777; color: white; font-size: 18px;text-align:center;display:flex;justify-content:center;align-items:center;" >{$cart.products_count}</div>
+      </div>
+    </div>
   </div>
-</div>
+</a>
+</div> *}

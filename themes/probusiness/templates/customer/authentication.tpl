@@ -46,7 +46,7 @@
     
     {block name='login_form_container'}
     <div class="row">
-        <div class="flex login_page_content">
+        <div class="flex login_page_content" style="justify-content: center;">
               <div class="col-xs-12 col-sm-6">
                   <div class="login-form">
                     {render file='customer/_partials/login-form.tpl' ui=$login_form}
@@ -55,7 +55,7 @@
                     {hook h='displayCustomerLoginFormAfter'}
                   {/block}
               </div>
-              <div class="col-xs-12 col-sm-6">
+              {* <div class="col-xs-12 col-sm-6">
                   <div class="no-account register_form">
                     <div class="register_form_cell">
                         <a href="{$urls.pages.register|escape:'html':'UTF-8'}" data-link-action="display-register-form">
@@ -67,7 +67,7 @@
                         </a>
                     </div>
                   </div>
-              </div>
+              </div> *}
           </div>
       </div>
     {/block}

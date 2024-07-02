@@ -9,6 +9,7 @@
   html,body{
     scroll-behavior: smooth;
     font-family: open-sans, sans-serif;
+    line-height: 18px;
   }
   .logtext{
   text-transform: uppercase;
@@ -27,7 +28,23 @@
 
   /* shopping cart modal */
   #_desktop_cart {
-    display: none !important;
+    display: flex !important;
+    position: unset;
+    margin-top: 0;
+    justify-content: center;
+    float: unset;
+    color: #333;
+  }
+  #_desktop_cart .cart_total_header {
+    color: #333 !important;
+  }
+  #_desktop_cart .cart_total_header span{
+    color: #333 !important;
+  }
+
+  #_desktop_cart .header a i{
+    position: unset;
+    font-size: 18px;
   }
 
   #blockcart-modal .modal-header{
@@ -109,6 +126,10 @@
      color: #333;
      font-size: 22px;
      padding: 5px 1rem;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     gap:1rem;
    }
    
    #searchbox #search_query_top {
@@ -162,12 +183,25 @@
        -webkit-transition: all 0.3s ease;
        transition: all 0.3s ease;
    }
+
+   #_desktop_top_menu_desktop #top-menu li {
+    height: 50px;
+   }
+   #_desktop_top_menu_desktop #top-menu li a{
+    padding-top: 0;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   }
    
    .header-top #sender {
     /* max-width: 232px; */
     width: 232px;
     height: 35px;
     transition: all ease-in-out 150ms;
+    font-size: 14px;
+    font-weight: 600;
    }
 
    .header-top #sender:hover{
@@ -180,13 +214,14 @@
     background-color: #333333 !important; 
     display: flex; 
     justify-content: center;
+    height: 30px;
    }
 
    .header-nav #navigation {
     width: 50%; 
     display: flex; 
     justify-content: start; 
-    align-self: self-end
+    /* align-self: self-end */
    }
 
    .header-nav-container{
@@ -242,7 +277,7 @@
 
    .profile_container_homepage{
         position: relative;
-        margin: 4rem 0;
+        margin: 3.6rem 0 3.2rem 0;
         padding: 30px;
         font-size: 20px;
         text-align: center;
@@ -270,8 +305,8 @@
     'stock logistic shipping'
     'online catalogue resources';
     grid-template-columns: 1fr 1fr 1fr;
-    grid-column-gap: 2rem;
-    grid-row-gap: 3rem;
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 4rem;
     margin-bottom: 2rem;
     
    }
@@ -338,7 +373,7 @@
    .btns_homepage{
     display: flex;
     gap: 1rem;
-    margin-bottom: 2rem;
+    margin: 2.5rem 0;
    }
    .button_half{
     flex: 1;
@@ -388,13 +423,16 @@
    .profile_container_cms{
     position: relative;
     margin:0 0 1rem 0;
-    padding: 30px;
+    padding: 30px 30px 3rem 30px;
     font-size: 20px;
     text-align: center;
     color: white;
     background-color: #333;
     border: 3px solid #0273EB;
     line-height: 28px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     }
 
     .profile_container_cms .profile_style{
@@ -417,7 +455,10 @@
     }
 
     .cms-id-8 #content {
-      max-width: 1700px;
+      max-width: 1730px;
+    }
+    .cms-id-8 #wrapper .container-fluid {
+      padding: 0;
     }
 
      /* cms become a dealer*/
@@ -468,11 +509,13 @@
  
     #cms_container_14 .requirements_container{
         width: 100%;
-        margin: 4rem 0;
+        margin: 4rem 0 6rem 0;
     }
     #cms_container_14 .requirements{
         text-align: center;
-        color: #ee202e;
+        color: #ff0000;
+        font-size: 20px;
+        line-height: 28px;
     }
 
     #cms_container_14 .become_cards {
@@ -494,6 +537,7 @@
         font-weight: bold;
         font-size: 18px;
         padding: 5px 15px;
+        line-height: 25px;
     }
 
     #cms_container_14 .become_cards .become_card_requirement .card_content{
@@ -522,15 +566,52 @@
       position: relative;
       column-width: 450px;
     }
+    .signature #clearButton{
+      padding: 0;
+      height: 24px;
+    }
     .signature canvas{
       display: block;
       background-color: #f6f6f6;
       border: 1px solid black;
       margin-bottom: 10px;
+      width: 100%;
     }
 
     #canvas4 {
       cursor: url(http://icons.iconarchive.com/icons/designcontest/vintage/32/Patent-Pen-icon.png) 0 30, progress;
+    }
+
+    .form-control{
+      background: #f9f9f9;
+    }
+
+    .form-become-dealer h1{
+      font-size: 20px;
+      line-height: 28px;
+      text-transform: uppercase;
+      font-weight: 500;
+      margin-bottom: 3rem;
+      text-align: center;
+      color: #111;
+    }
+
+    .form-become-dealer .form-group{
+      margin-bottom: 1.5rem;
+    }
+
+    .form-become-dealer form .send-form {
+      background: #fff;
+      color: #0273EB;
+      border: 1px solid #0273EB;
+      max-width: 400px;
+    }
+    .form-become-dealer form .send-form:hover {
+      background: #0273EB;
+      color: #fff;
+      border: 1px solid #0273EB;
+      max-width: 400px;
+      box-shadow: none;
     }
 
     form .send-form {
@@ -542,7 +623,7 @@
       font-size: 18px;
       text-transform: uppercase;
       font-weight: normal;
-      padding: 0.5rem 2rem;
+      padding: 0.35rem 2rem;
     }
 
     form .send-form:hover{
@@ -598,9 +679,10 @@
     #cms_container_15 .become_supplier_text {
       text-align: center;
       font-size: 18px;
+      line-height: 25px;
       max-width: 800px;
       margin: 4rem auto 0 auto;
-      color: #222;
+      color: #111;
   }
 
   #cms_container_15 .commitments_container{
@@ -609,7 +691,7 @@
   }
   #cms_container_15 .commitments {
       text-align: center;
-      color: #ee202e;
+      color: #ff0000;
       font-size: 20px;
       text-transform: uppercase;
   }
@@ -633,13 +715,15 @@
       font-weight: bold;
       font-size: 18px;
       padding: 5px 15px;
+      line-height: 25px;
   }
 
   #cms_container_15 .become_cards .become_card_requirement .card_content .card-text{
-      padding: 1rem;
+      padding: 15px;
       color: #222;
-      font-size: 16px;
+      font-size: 18px;
       text-align: center;
+      line-height: 25px;
   }
 
   #cms_container_15 form .city{
@@ -686,14 +770,24 @@
   #manufacturer .brand_content_item .brand-infos{
     flex: 1;
     text-align: start;
-    color: #333;
+    color: #111;
   }
   #manufacturer .brand_content_item .brand-infos h3{
     color: #0273EB;
+    font-size: 17px;
+    line-height: 23px;
   }
 
-  #index #wrapper .container-fluid {
+  /* #manufacturer .brand_content_item .brand-img img{
+    width: 125px;
+    } */
+
+  /* #index #wrapper .container-fluid {
     width: 90vw;
+  } */
+
+  #content-wrapper{
+    margin-top: 20px;
   }
 
   .desktop {
@@ -706,6 +800,21 @@
 
    .n-float{
     float: unset !important;
+   }
+
+   /* login */
+
+   #login-form .btn-primary{
+    color: #0273EB;
+    border: 1px solid #dedede;
+    background: #fff;
+    text-align: center;
+    min-width: 140px;
+   }
+   #login-form .btn-primary:hover{
+    color: #fff;
+    border: 1px solid #dedede;
+    background: #0273EB;
    }
 
 /* cms partners */
@@ -1620,11 +1729,86 @@ textarea {
   max-width: 601px;
 }
 
-.form-become-supplier textarea{
-  height: 100%;
-  min-height: 210px;
+.form-become-supplier{
+  margin: 5rem 0 2rem 0;
+}
+.form-become-supplier form{
+  display: flex;
+  flex-direction: column;
+
 }
 
+.form-become-supplier h1 {
+  text-align: center;
+  color: #111;
+  margin-bottom: 3rem;
+  font-size: 20px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.form-become-supplier form label{
+  font-size: 18px;
+  color: #111;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+.form-become-supplier textarea{
+  height: 100%;
+  min-height: 190px;
+}
+.form-become-supplier form .send-form{
+  background: #fff;
+  color: #0273EB;
+  border: 1px solid #0273EB;
+  max-width: 400px;
+}
+.form-become-supplier form .send-form:hover{
+  background: #0273EB;
+  color: #fff;
+  border: 1px solid #0273EB;
+  box-shadow: none;
+}
+
+.form-become-dealer form label{
+  font-size: 18px;
+  color: #111;
+  font-weight: 600;
+  margin-bottom: 0;
+}
+.form-become-dealer .title-suppliers{
+  font-size: 18px;
+  color: #111;
+  font-weight: 600;
+  text-align: left;
+  text-wrap: nowrap;
+}
+.form-become-dealer form .check-form label{
+  font-size: 18px;
+  color: #111;
+  font-weight: 500;
+}
+
+.form-become-dealer #important_notice{
+  font-size: 16px;
+  padding: 0 10px;
+  text-align: justify;
+  color: #555;
+  line-height: 22px;
+}
+
+.active_card{
+  height: auto !important;
+}
+
+#footer .footer-container .row{
+  margin: 0;
+}
+
+
+.cart-empty .cart-grid a:hover {
+  color: #0273EB !important;
+}
 
 @media (min-width: 1200px) and (max-width:1400px){
   #footer .footer-container .row{
@@ -1659,6 +1843,10 @@ textarea {
 
 
 @media (min-width: 1730px){
+
+  #search_query_top{
+    min-width: 242px;
+  }
 
 .header-nav-container{
   max-width: 1337px;
@@ -1909,7 +2097,7 @@ textarea {
 .cms-terms .terms-content h1 {
   text-align: center;
   margin: 2rem 0;
-  color: #0273EB;
+  color: dodgerblue;
   font-size: 34px;
   font-weight: 500;
 }
@@ -2196,8 +2384,7 @@ textarea {
   padding: 2rem;
 }
 .header-top .centrar .wdth .cart-container .cart_total_header{
-  background: #4d4d4d;
-  color: #fff;
+  background: #fff;
 }
 
 .mobile{
@@ -2335,6 +2522,23 @@ grid-template-columns: 1fr 1fr;
 }
 
 @media screen and (min-width:541px) and (max-width:767px) {
+#new-products #wrapper .container-fluid{
+  padding: 0;
+}
+#new-products #wrapper .container-fluid #content-wrapper{
+  margin-top: 0;
+}
+#category #wrapper .container-fluid{
+  padding: 0;
+}
+#category #wrapper .container-fluid #content-wrapper{
+  margin-top: 0;
+}
+
+
+
+/* ate aqui */
+
 #index #wrapper .container-fluid{
   width: 100vw;
 }
@@ -2456,8 +2660,11 @@ grid-template-columns: 1fr 1fr;
   display: block !important;
 }
 .header-top .centrar .wdth .cart-container .cart_total_header{
-  background-color: #4d4d4d;
-  color: #fff;
+  background-color: #fff;
+}
+
+.mobile .cart-container {
+  padding: 20px 0;
 }
 /* legal */
 .cms-id-10 #wrapper .container-fluid{
@@ -2824,10 +3031,29 @@ grid-template-columns: 1fr 1fr;
   display: none !important;
 }
 
+.profile_container_cms{
+  height: unset;
+}
+
+#_desktop_cart .header a{
+  padding-left: 0;
+}
+
+.blockcart.cart-preview{
+  padding-left: 0;
+}
 
 }
 
 @media (max-width: 540px){
+
+  #_desktop_cart .header a{
+    padding-left: 0;
+  }
+
+  .blockcart.cart-preview{
+    padding-left: 0;
+  }
 
   .cms-id-8 .desktop{
     display: none !important;
@@ -3154,6 +3380,7 @@ grid-template-columns: 1fr 1fr;
     align-items: center;
     gap: 1rem;
     }
+
     #manufacturer .brand_content_item .brand-infos{
     text-align: center;
     }
@@ -3623,10 +3850,9 @@ grid-template-columns: 1fr 1fr;
 
 .cart_total_header {
   width: fit-content;
-  background-color: #333333de;
+  background-color: #fff;
   float: left;
   text-align: center;
-  color: #fff;
   font-size: 22px;
   padding: 5px 1rem;
 }

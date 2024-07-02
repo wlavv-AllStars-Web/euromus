@@ -152,6 +152,7 @@
                 </form> *}
 
                 {* <pre>{$urls.pages|print_r}</pre> *}
+                <div class="product-add-to-cart js-product-add-to-cart">
                  <form action="{$urls.pages.cart}" method="post" id="add-to-cart-or-refresh">
                   <input type="hidden" name="token" value="{$static_token}">
                   <input type="hidden" name="id_product" value="{$product.id}" id="product_page_product_id">
@@ -198,6 +199,7 @@
 
                   {block name='product_refresh'}{/block}
                 </form>
+                </div>
                 {* <form action="{$urls.pages.cart}" method="post" class="mini-form-add">
                     <input type="hidden" name="token" value="{$static_token}">
                     <input type="hidden" value="{$product.id_product}" name="id_product">

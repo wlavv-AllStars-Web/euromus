@@ -22,9 +22,8 @@
   .text {
     color: white !important;
     text-transform: uppercase;
-    font-weight: bold !important;
+    font-weight: 600;
     font-size: 16px !important;
-    font-family: "Open Sans", sans-serif;
   }
 
   .footer-container .links li a:before {
@@ -48,7 +47,7 @@
     display: unset;
   }
 </style>
-<div style="padding: 25px 7rem 0 7rem;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
+<div style="padding: 20px 5.5rem 0 5.5rem;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
   <div class="row alignment ">
     {foreach $linkBlocks as $linkBlock}
       <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
@@ -65,11 +64,11 @@
           {foreach $linkBlock.links as $link}
             
             {* <pre>{$linkBlock|print_r}</pre> *}
-            <li style="list-style-type: none !important;">
+            <li style="list-style-type: none !important;display:flex;align-items:center;gap: 0.25rem;">
               {if $link.title == "Facebook"}
-                <img class="left_icon_footer" src="/img/asd/facebook.png" width="24" alt="facebook">
+                <img class="left_icon_footer" src="/img/asd/facebook.svg" width="24" alt="facebook">
               {elseif $link.title == "Instagram"}
-                <img class="left_icon_footer" src="/img/asd/instagram.png" width="24" alt="instagram">
+                <img class="left_icon_footer" src="/img/asd/instagram.svg" width="24" alt="instagram">
               {else}
                 <img class="left_icon_footer" src="/img/asd/ASD_footer_ima.png" alt="Star">
               {/if}

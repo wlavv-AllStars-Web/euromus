@@ -28,7 +28,7 @@
 {* {assign var="shipping" value=ShippingData::shippingInfo($cart)}
 <pre>{print_r($shipping,1)}</pre> *}
   <section id="main">
-    <div class="cart-grid row">
+<div class="cart-grid row" {if !$cart.products}style="max-width:1350px;margin:auto;padding-top:1rem;"{/if}>
 
       <!-- Left Block: cart product informations & shipping -->
       <div class="cart-grid-body col-lg-12 mb-0">

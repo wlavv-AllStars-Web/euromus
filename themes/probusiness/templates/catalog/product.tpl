@@ -243,8 +243,8 @@
       </div>
       <div class="col-md-2 right-column-container">
         <div class="right_column_product" style="height: 24%;">
-            <a target="_blank" href="{$product_brand_url}" id_manufactrurer="{$product->id_manufacturer}">
-                <img src="/img/m/{$product->id_manufacturer}.jpg" class="brand_logo" width="125" height="auto">
+            <a target="_blank" href="{$product_brand_url}" id_manufactrurer="{$product.id_manufacturer}">
+                <img src="/img/m/{$product.id_manufacturer}.jpg" class="brand_logo" width="125" height="auto">
             </a>
         </div>
 
