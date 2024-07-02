@@ -3014,6 +3014,7 @@ grid-template-columns: 1fr 1fr;
   width: 100%;
   margin: auto;
   max-width: 1350px;
+  line-height: 25px;
 }
 .cms-terms .banner-terms img{
   width: 100%;
