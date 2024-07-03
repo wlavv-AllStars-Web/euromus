@@ -56,21 +56,21 @@
     {block name='cms_content'}
       {if $cms.id === 8}
         <div id="cms_container_8">
-          <div><img src="/img/asd/Content_pages/aboutus/top_image_short.jpg" alt="top_image_short.jpg" /></div>
+          <div><img src="/img/asd/Content_pages/aboutus/top_image_short.webp" alt="top_image_short" width="1350" height="300" /></div>
           <div class="profile_container_cms">
           <div class="profile_style">{l s='Profile' d='Shop.Theme.About'}</div>
           <div class="profile_container_text" id="profile_container_text">{l s='Supplying over 30 top of the line brands to automotive performance professionals worldwide, All Stars Distribution is one of the largest European wholesalers of performance and design parts. Dedicated to serving shops, tuners, e-dealers and other resellers, All Stars Distribution is committed to employing the best of inventory management and distribution practices to get our customers the performance parts they need to satisfy their customers.' d='Shop.Theme.About'}</div>
           <div id="profile_container_text1 hidden-md-up" class="card_view_more">{l s='View More' d='Shop.Theme.About'}</div>
           </div>
           <div>
-            <img class="desktop" src="/img/asd/Content_pages/aboutus/badge_lg.jpg" alt="badge_lg" />
-            <img class="tablet" src="/img/asd/Content_pages/aboutus/badge_sm.jpg" alt="badge_sm" />
-            <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="/img/asd/Content_pages/aboutus/badge_xs.jpg" alt="badge_xs" />
+            <img class="desktop" src="/img/asd/Content_pages/aboutus/badge_lg.webp" alt="badge_lg" width="1700" height="196"/>
+            <img class="tablet" src="/img/asd/Content_pages/aboutus/badge_sm.webp" alt="badge_sm" width="1134" height="196"/>
+            <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="/img/asd/Content_pages/aboutus/badge_xs.jpg" alt="badge_xs" width="567" height="107"/>
           </div>
           <div>
-            <img class="desktop" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.jpg" alt="lg_{$language.iso_code}.jpg" />
-            <img class="tablet" src="/img/asd/Content_pages/aboutus/sm_{$language.iso_code}.jpg" alt="sm_{$language.iso_code}.jpg" />
-            <img class="mobile" src="/img/asd/Content_pages/aboutus/xs_{$language.iso_code}.jpg" alt="sm_{$language.iso_code}.jpg" />
+            <img class="desktop" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.webp" alt="lg_{$language.iso_code}" width="1700" height="7747" />
+            <img class="tablet" src="/img/asd/Content_pages/aboutus/sm_{$language.iso_code}.webp" alt="sm_{$language.iso_code}" width="1139" height="11086" />
+            <img class="mobile" src="/img/asd/Content_pages/aboutus/xs_{$language.iso_code}.jpg" alt="sm_{$language.iso_code}" width="575" height="20721"/>
           </div>
         </div>
       {else if $cms.id === 14}
