@@ -333,6 +333,7 @@
 
    .why_card img{
         width: 100%;
+        height: auto;
    }
 
    .why_card:nth-child(1){
@@ -688,6 +689,7 @@
 
     #cms_container_15 img {
       width: 100%;
+      height: auto;
     }
 
     #cms_container_15 .become_supplier_text {
@@ -768,6 +770,7 @@
 
   #brands_banner img {
     width: 100%;
+    height: auto;
   }
 
   #manufacturer .brand_content_item{
@@ -848,6 +851,7 @@
 .partners-banner img {
   width: 100%;
   margin: auto;
+  height: auto;
 }
 
 #cms-partners {
@@ -1000,6 +1004,7 @@
 
 #my-account .banner-myaccount img{
   width: 100%;
+  height: auto;
 }
 
 #my-account #addresses.active.in{
@@ -1764,15 +1769,18 @@ textarea {
 }
 .brands_banner img {
   width: 100%;
+  height: auto;
 }
 
 .btnCar img {
   width: 100%;
   max-width: 601px;
+  height: auto;
 }
 .btnBike img {
   width: 100%;
   max-width: 601px;
+  height: auto;
 }
 
 .form-become-supplier{
@@ -1948,6 +1956,7 @@ textarea {
 }
 .privacy-banner img{
   width: 100%;
+  height: auto;
 }
 .privacy-content{
   max-width: 1200px;
@@ -2000,6 +2009,7 @@ textarea {
 }
 .legal-banner img{
   width: 100%;
+  height: auto;
 }
 .legal-content{
   max-width: 1200px;
@@ -2113,6 +2123,7 @@ textarea {
 
 .cms-id-12 .career-banner img {
   width: 100%;
+  height: auto;
 }
 
 .cms-id-12 .career-content {
@@ -2178,6 +2189,7 @@ textarea {
 
 .product-miniature .product-thumbnail img {
   width: 125px;
+  height: auto;
 }
 
 }
@@ -2280,6 +2292,7 @@ textarea {
 
 #myTabContent #shipping img {
   width: 100%;
+  height: auto;
 }
 
 /* product list */
@@ -2294,6 +2307,7 @@ textarea {
 
 .product-miniature .product-thumbnail img {
   width: 110px;
+  height: auto;
 }
 
 #footer .footer-container .row{
@@ -2402,6 +2416,7 @@ textarea {
 /* shipping */
 #shipping img {
   width: 100%;
+  height: auto;
 }
 
 .left-form-personal {
@@ -2425,6 +2440,7 @@ textarea {
 
 #shipping img {
   width: 100%;
+  height: auto;
 }
 
 /* header */
@@ -2876,6 +2892,7 @@ grid-template-columns: 1fr 1fr;
 
 #shipping img {
   width: 100%;
+  height: auto;
 }
 
 #addresses .row{
@@ -2903,6 +2920,7 @@ grid-template-columns: 1fr 1fr;
 }
 .privacy-banner img{
   width: 100%;
+  height: auto;
 }
 .privacy-content{
   max-width: 1200px;
@@ -2957,6 +2975,7 @@ grid-template-columns: 1fr 1fr;
 }
 .legal-banner img{
   width: 100%;
+  height: auto;
 }
 .legal-content{
   max-width: 1200px;
@@ -3024,6 +3043,7 @@ grid-template-columns: 1fr 1fr;
 
 .cms-id-12 .career-banner img {
   width: 100%;
+  height: auto;
 }
 
 .cms-id-12 .career-content {
@@ -3065,6 +3085,7 @@ grid-template-columns: 1fr 1fr;
 .cms-terms .banner-terms img{
   width: 100%;
   padding-bottom: 18px;
+  height: auto;
 }
 
 .cms-terms .terms-content h1 {
@@ -3117,6 +3138,13 @@ grid-template-columns: 1fr 1fr;
 
 @media (max-width: 540px){
 
+  #index .profile_container_homepage .profile_container_text{
+    height: auto !important;
+  }
+  #index .profile_container_homepage .card_view_more{
+    display: none;
+  }
+
   #_desktop_cart .header a{
     padding-left: 0;
   }
@@ -3142,6 +3170,8 @@ grid-template-columns: 1fr 1fr;
   #cms_container_14 .requirements_container{
     margin: 4rem 0 3rem 0;
   }
+
+
 
 #order_history .order .status{
   padding: 0.25rem 0 0.5rem 0;
@@ -3450,6 +3480,7 @@ grid-template-columns: 1fr 1fr;
 
     #manufacturer .brands_banner img {
     width: 100%;
+    height: auto;
     }
 
     #manufacturer .brand_content_item{
@@ -3482,6 +3513,7 @@ grid-template-columns: 1fr 1fr;
 }
 .privacy-banner img{
   width: 100%;
+  height: auto;
 }
 .privacy-content{
   margin: 0;
@@ -3547,6 +3579,7 @@ grid-template-columns: 1fr 1fr;
 }
 .legal-banner img{
   width: 100%;
+  height: auto;
 }
 .legal-content{
   max-width: 1200px;
@@ -3597,6 +3630,7 @@ grid-template-columns: 1fr 1fr;
 
 .cms-id-12 .career-banner img {
   width: 100%;
+  height: auto;
 }
 
 .cms-id-12 .career-content{
@@ -3639,6 +3673,7 @@ grid-template-columns: 1fr 1fr;
 
 .cms-id-13 .banner-terms img {
   width: 100%;
+  height: auto;
 }
 
 .cms-terms .terms-content{
@@ -3747,6 +3782,7 @@ grid-template-columns: 1fr 1fr;
 /* shipping tab mobile */
 #shipping img {
   width: 100%;
+  height: auto;
 }
 
 /* logout mobile tab */
