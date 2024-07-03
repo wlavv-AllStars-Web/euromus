@@ -31,7 +31,7 @@
             <h3 style="text-align: center;background:#0273eb;color:#fff;padding: 0.5rem 1rem">{$brand.name|escape:'html':'UTF-8'}</h3>
           </div>
           <div class="brand-img" >
-            <a href="{$brand.url|escape:'html':'UTF-8'}" style="display:flex;justify-content:center;align-items:center;"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}" style="width: 100%;max-width:125px;"></a>
+            <a href="{$brand.url|escape:'html':'UTF-8'}" style="display:flex;justify-content:center;align-items:center;"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}" style="width: 100%;max-width:125px;" width="125" height="125"></a>
           </div>
           
       </div>
@@ -40,7 +40,7 @@
     <li class="brand col-md-12">
       <div class="brand_content_item">
           <div class="brand-img" style="max-width: 250px;overflow:hidden;">
-            <a href="{$brand.url|escape:'html':'UTF-8'}"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}"></a>
+            <a href="{$brand.url|escape:'html':'UTF-8'}"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}" width="125" height="125"></a>
           </div>
           <div class="brand-infos">
             <h3>{$brand.name|escape:'html':'UTF-8'}</h3>
