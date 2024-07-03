@@ -32,6 +32,12 @@
   gap: 0.25rem;
 }
 
+.alinhamento-mobile{
+  margin: 0 !important;
+}
+
+
+
   /* shopping cart modal */
   #_desktop_cart {
     display: flex !important;
@@ -3129,6 +3135,13 @@ grid-template-columns: 1fr 1fr;
     display: flex !important;
   }
 
+  #login-form .btn{
+    border: 1px solid #dedede;
+  }
+
+  #cms_container_14 .requirements_container{
+    margin: 4rem 0 3rem 0;
+  }
 
 #order_history .order .status{
   padding: 0.25rem 0 0.5rem 0;
