@@ -18,11 +18,11 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
+<link rel="stylesheet" href="/themes/probusiness/assets/css/distribution.css" type="text/css" media="{$stylesheet.media}" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {foreach $stylesheets.external as $stylesheet}
   <link rel="stylesheet" href="{$stylesheet.uri|escape:'html':'UTF-8'}" type="text/css" media="{$stylesheet.media|escape:'html':'UTF-8'}">
 {/foreach}
-<link rel="stylesheet" href="/themes/probusiness/assets/css/distribution.css" type="text/css" media="{$stylesheet.media}" />
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 {foreach $stylesheets.inline as $stylesheet}
   <style>
     {$stylesheet.content|escape:'html':'UTF-8'}
