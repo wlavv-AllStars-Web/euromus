@@ -47,7 +47,7 @@
 
                 <div id="why_us_anchor">
                   <div class="why_card">
-                    <img src="/img/asd/homepage/stock.webp"  alt="stock" loading="lazy" width="600" height="300"/>
+                    <img src="/img/asd/homepage/stock.webp"  alt="stock" width="600" height="300"/>
                     <div id="thumb_data_1" class="card_text" >
                     {l s='As a wholesaler, the importance of inventory, having it and managing it, cannot be overstated. All Stars Distribution places the highest priority on maintaining the depth and breadth of our inventory all year round. To quickly supply a wide range of specialized products, often manufactured in small quantities to serve the just-in-time market, WE STOCK 98% of our partner manufacturers’ product lines. By choosing All Stars Distribution as a supplier for your performance parts, you will have a direct access to the largest stock of niche market products in Europe, without any financial, human or logistical constraints! Our Warehouse Management and Enterprise Resource Planning Systems, developed in-house by our Information Technology Team, allow us to limit stockouts as much as possible using extremely reliable purchasing algorithms for quick order fulfillment!' d='Shop.Theme.HomepageLogout'}
                     
