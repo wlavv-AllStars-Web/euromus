@@ -411,7 +411,8 @@
 
         <div id="cms_container_15">
           <div class="banner_supplier">
-            <img src="/img/asd/dealers/headers/become_supplier.webp"  alt="banner become supplier" width="1350" height="300" />
+            <img class="desktop" src="/img/asd/dealers/headers/become_supplier.webp"  alt="banner become supplier" width="1350" height="300" />
+            <img class="mobile" src="/img/asd/dealers/headers/become_supplier.webp"  alt="banner become supplier" width="394" height="90" />
           </div>
 
           <p class="become_supplier_text">
