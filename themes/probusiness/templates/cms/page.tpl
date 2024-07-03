@@ -87,7 +87,7 @@
 
         <div id="cms_container_14">
           <div>
-            <img src="/img/asd/dealers/headers/become_dealer.jpg" />
+            <img src="/img/asd/dealers/headers/become_dealer.jpg" alt="banner_becomedealer" width="1350" height="300" />
           </div>
           <div class="choose_us_btn">
             <h5 class="cms_shadow_button">{l s='Why choose us ?' d='Shop.Theme.BecomeDealer'}</h5>
@@ -410,7 +410,7 @@
 
         <div id="cms_container_15">
           <div class="banner_supplier">
-            <img src="/img/asd/dealers/headers/become_supplier.jpg" />
+            <img src="/img/asd/dealers/headers/become_supplier.jpg"  alt="banner become supplier" width="1350" height="300" />
           </div>
 
           <p class="become_supplier_text">
@@ -543,7 +543,7 @@
       {elseif $cms.id === 7}
         <div class="cms-privacy">
           <div class="privacy-banner">
-            <img src="/img/asd/Content_pages/privacy/privacypolicy.jpg" alt="privacy_banner"/>
+            <img src="/img/asd/Content_pages/privacy/privacypolicy.jpg" alt="privacy_banner" width="1350" height="300"/>
           </div>
           <div class="privacy-content">
             {* <h1>{l s='Privacy policy' d='Shop.Theme.Privacy'}</h1> *}
@@ -738,8 +738,8 @@
       {elseif $cms.id === 10}
         <div class="cms-legal">
           <div class="legal-banner">
-            <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.jpg" />
-            <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.jpg" />
+            <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.jpg" alt="legal image"  width="1350" height="1385"/>
+            <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.jpg"  alt="legal image mobile"  width="575" height="789" />
           </div>
           <div class="legal-content">
           </div>
@@ -748,7 +748,7 @@
         
         <div class="banner_cms_partners" style="margin-bottom: 3rem;">
           <div class="partners-banner">
-            <img src="/img/asd/Content_pages/partners/partners.jpg" />
+            <img src="/img/asd/Content_pages/partners/partners.jpg" alt="banner partners" width="1350" height="300" />
           </div>
           <div class="rte">
             <div id="cms-partners">
@@ -758,7 +758,7 @@
             {* dpd *}
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/dpd_logo.jpg" alt="dpd_logo" /></div>
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/dpd_logo.jpg" alt="dpd_logo"  width="300" height="240"/></div>
               <div class="text_partners">{l s='DPD group is the largest parcel delivery network in Europe, carrying worldwide about 5.3 million parcels daily via 77000 workers through their 4 different brands DPD, Chronopost, SEUR and BRT.' d='Shop.Theme.Partners'}​</div>
               <div class="button_container_partners"><a href="https://www.dpd.com" target="_blank" class="button_partners" rel="noreferrer noopener">{l s='Website' d='Shop.Theme.Partners'}</a></div>
               </div>
@@ -767,7 +767,7 @@
               {* ups *}
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/ups_logo.webp" alt="ups_logo.jpg?v=1" /></div>
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/ups_logo.webp" alt="ups_logo.jpg?v=1" width="300" height="240" /></div>
               <div class="text_partners">{l s='UPS' d='Shop.Theme.Partners'}</div>
               <div class="button_container_partners"><a href="https://www.ups.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
               </div>
@@ -776,7 +776,7 @@
               {* tnt *}
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/tnt_logo.jpg" alt="tnt_logo" /></div>
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/tnt_logo.jpg" alt="tnt_logo" width="300" height="240" /></div>
               <div class="text_partners">{l s='TNT Express is an international courier delivery services company founded in the Netherlands in 2011 and now a subsidiary of FedEx. TNT offers road and air delivery services in Europe, the region of the Asia Pacific, the Americas, the Middle East, and Africa.' d='Shop.Theme.Partners'}</div>
               <div class="button_container_partners"><a href="https://www.tnt.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
               </div>
@@ -786,7 +786,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
                 <div class="image_container_partners">
-                  <img class="image_partners" src="/img/asd/Content_pages/partners/maersk_logo.jpg" alt="maersk_logo" />
+                  <img class="image_partners" src="/img/asd/Content_pages/partners/maersk_logo.jpg" alt="maersk_logo" loading="lazy" width="300" height="240" />
                 </div>
                 <div class="text_partners">
                 {l s="A.P. Møller-Mærsk, also known simply as Maersk is a Danish shipping and logistics company founded in 1904 by Arnold Peter Møller and Peter Mærsk Møller. Maersk's business activities include shipping, port operation, supply chain management and warehousing. The company is based in Copenhagen, Denmark, with subsidiaries and offices across 130 countries and 108.000 employees worldwide." d='Shop.Theme.Partners'}
@@ -801,7 +801,7 @@
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
                 <div class="image_container_partners">
-                  <img class="image_partners" src="/img/asd/Content_pages/partners/transcar_logo.jpg" alt="transcar_logo.jpg?v=1" />
+                  <img class="image_partners" src="/img/asd/Content_pages/partners/transcar_logo.jpg" alt="transcar_logo.jpg?v=1"  loading="lazy" width="300" height="240" />
                 </div>
                 <div class="text_partners">
                   {l s='Vehicles transport specialist, TrancarPremium uses state-of-the-art logistics tools, allowing the team to offer unparalleled quality of service and great management flexibility. Based in Portugal, the company offers different premium solutions for shipping supercars, racing cars, classics or exotics throughout Europe.' d='Shop.Theme.Partners'}
@@ -815,7 +815,7 @@
             {* ingenico *}
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/ingenico_logo.jpg" alt="ingenico" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/ingenico_logo.jpg" alt="ingenico"  loading="lazy" width="300" height="240" /></div>
             <div class="text_partners">{l s='Ingenico is a France-based company, whose business is to provide the technology involved in secure electronic transactions. Its traditional business is based on the manufacture of point of sale (POS) payment terminals, but it also includes complete payment software and related services, also software for merchants.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://ingenico.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
@@ -824,7 +824,7 @@
             {* Millenium *}
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/bcp_logo.jpg" alt="bcp_logo.jpg?v=1" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/bcp_logo.jpg" alt="bcp_logo.jpg?v=1"  loading="lazy" width="300" height="240" /></div>
             <div class="text_partners">{l s='Banco Comercial Português (BCP) is a Portuguese bank, member of the PSI-20 index and the Next 150. It is present in Portugal as Millenium BCP and in Belgium and Luxembourg as Banque BCP. It is also present in other countries and is listed on the Euronext stock exchange. Banque BCP was born in 2001 from the merger of the French branches of the oldest Portuguese financial establishments.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.millenniumbcp.pt/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
@@ -832,7 +832,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/adobe_logo.jpg" alt="adobe_logo.jpg?v=1" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/adobe_logo.jpg" alt="adobe_logo.jpg?v=1" loading="lazy" width="300" height="240"  /></div>
             <div class="text_partners">{l s='Adobe Inc is an American multinational computer software company focused upon the creation on multimedia and creativity software products, with a more recent foray into digital marketing software. Adobe is best known for its Adobe Flash web software, Photoshop image editing software, Adobe Illustrator graphics editor and Acrobat Reader.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.adobe.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
@@ -840,7 +840,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/smurfit_logo.webp" alt="smurfit_logo" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/smurfit_logo.webp" alt="smurfit_logo"  loading="lazy" width="300" height="240" /></div>
             <div class="text_partners">{l s='Smurfit Kappa' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.smurfitkappa.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
@@ -848,7 +848,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/sonic_logo.webp" alt="sonic_logo" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/sonic_logo.webp" alt="sonic_logo" loading="lazy" width="300" height="240"  /></div>
             <div class="text_partners">{l s='Sonic Tools' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://sonictoolsusa.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
@@ -857,7 +857,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
                 <div class="image_container_partners">
-                  <img class="image_partners" src="/img/asd/Content_pages/partners/norton_logo.jpg" alt="dpd_logo.jpg?v=1" />
+                  <img class="image_partners" src="/img/asd/Content_pages/partners/norton_logo.jpg" alt="dpd_logo.jpg?v=1"  loading="lazy" width="300" height="240" />
                 </div>
                 <div class="text_partners">
                   {l s="Norton or Norton by Symantec, is a division of NortonLifeLock based in California and offering a variety of products and services related to digital security. In 2014, it was announced that Norton's parent company Symantec would split its business into two units - one focused on security, and one focused on information management, with Norton being placed in the unit focused on security." d='Shop.Theme.Partners'}
@@ -875,7 +875,7 @@
 
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/asw_logo.jpg" alt="allstars_web_logo.jpg?v=1" /></div>
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/asw_logo.jpg" alt="allstars_web_logo.jpg?v=1"  loading="lazy" width="300" height="240" /></div>
               <div class="text_partners">{l s='All Stars Web Solutions is a top range web agency specializing in website design and development, software and application creation, digital marketing, and SEO. Offering the latest technologies IT tools for warehouse management (ERP), cybersecurity, front and back end with optimal ergonomics, they make the management of a website accessible to everyone.' d='Shop.Theme.Partners'}</div>
               <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
               </div>
@@ -885,7 +885,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/digi_logo.jpg" alt="digi_logo.jpg?v=1" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/digi_logo.jpg" alt="digi_logo.jpg?v=1" loading="lazy" width="300" height="240"  /></div>
             <div class="text_partners">{l s='Since 2003, the company DIGISERVICES is a reliable supplier of high quality and customized tuning software files. French leader with more than 30 auto centers in France, more than 6000 vehicles visit their workshops each year.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.digiservices.fr/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
@@ -893,7 +893,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/shiftech_logo.jpg" alt="shiftech_logo.jpg?v=1" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/shiftech_logo.jpg" alt="shiftech_logo.jpg?v=1" loading="lazy" width="300" height="240"  /></div>
             <div class="text_partners">{l s='Since 2008, ShifTech has been a specialist in custom tuning software that offers the perfect combination of increased engine power and more economical fuel consumption. Present in France, Belgium and Luxembourg, it is a reference in the market due to its quality of service and its experience.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.shiftech.eu" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
@@ -901,7 +901,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/brperformance_logo.jpg" alt="alma_logo.jpg?v=1" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/brperformance_logo.jpg" alt="alma_logo.jpg?v=1"  loading="lazy" width="300" height="240" /></div>
             <div class="text_partners">{l s='Key partner of the biggest brands in the performance automotive industry, BR-Performance is a key player in the custom tuning software market thanks to solid knowledges and state-of-the-art equipment.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.br-performance.fr" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
@@ -910,7 +910,7 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
                 <div class="image_container_partners">
-                  <img class="image_partners" src="/img/asd/Content_pages/partners/asm_logo.webp" alt="asm_logo" />
+                  <img class="image_partners" src="/img/asd/Content_pages/partners/asm_logo.webp" alt="asm_logo"  loading="lazy" width="300" height="240" />
                 </div>
                 <div class="text_partners">
                 {l s='European platform, founded in 2013 and established in 3 countries, All Stars Motorsport has quickly become a key player in aftermarket automotive performance and design industry. Reseller of the most famous brands, All Stars Motorsport offers the best products at the best prices to allow to offer everyone their own vision of the automobile.' d='Shop.Theme.Partners'}
@@ -932,7 +932,7 @@
       {elseif $cms.id === 11}
         <div class="rte">
           <div class="text-center">
-            <img src="/img/asd/Content_pages/payment/payment.jpg" alt="All Stars Distribution" class="img-fluid cms_header_image">
+            <img src="/img/asd/Content_pages/payment/payment.jpg" alt="All Stars Distribution Payment" class="img-fluid cms_header_image" width="1350" height="300">
           </div>
           
           <p class="cms_title_center" style="color: black; font-weight: bolder; font-size: 23px;">{l s='ALL STARS DISTRIBUTION offers two methods of payment :' d='Shop.Theme.Payment'}</p>
@@ -946,7 +946,7 @@
             <br><br>{l s='The total amount paid will be debited immediately and the rest of the process and the update of the order status will be instantaneous. A confirmation will then be sent to you by email as a digital archive.' d='Shop.Theme.Payment'} 
             </div>
             <div class="col-lg-4" style="text-align: center;">
-              <img src="/img/asd/Content_pages/payment/creditcard.png?t=112" style="width: 250px;">
+              <img src="/img/asd/Content_pages/payment/creditcard.png?t=112" style="width: 250px;" alt="creditcard option" width="250" height="250">
             </div>
           </div>
 
@@ -958,7 +958,7 @@
             <br><br>{l s='Please also note that no items are reserved until payment for the order has been confirmed in our bank account.' d='Shop.Theme.Payment'}
             </div>
             <div class="col-lg-4" style="text-align: center;">
-              <img src="/img/asd/Content_pages/payment/bankwire.png?t=113" style="width: 250px;">
+              <img src="/img/asd/Content_pages/payment/bankwire.png?t=113" style="width: 250px;" alt="bankwire option" width="250" height="190">
             </div>
           </div>
 
@@ -968,7 +968,7 @@
       {elseif $cms.id === 12}
         <div class="cms-career">
           <div class="career-banner">
-            <img src="/img/asd/Content_pages/career/career.jpg" />
+            <img src="/img/asd/Content_pages/career/career.jpg" alt="career banner" width="1350" height="300"/>
           </div>
           <div class="career-content">
             <h1>{l s='> OPEN POSITIONS <' d='Shop.Theme.Career'}</h1>
@@ -1228,7 +1228,7 @@
       {elseif $cms.id === 13}
         <div class="cms-terms">
           <div class="banner-terms">
-            <img src="/img/asd/Content_pages/terms/generalSalesConditions.jpg" />
+            <img src="/img/asd/Content_pages/terms/generalSalesConditions.jpg" alt="terms banner" width="1350" height="300" />
           </div>
           <div class="terms-content">
             <h1>{l s='GENERAL CONDITIONS OF SALE' d='Shop.Theme.Terms'}</h1>
