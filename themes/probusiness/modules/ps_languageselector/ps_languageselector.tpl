@@ -49,7 +49,7 @@
   {*   <span style="color: white;" id="language-selector-label" class="hidden-md-up">{l s='Language:' d='Shop.Theme.Global'}</span> *}
      <div class="language-selector dropdown js-dropdown">
        <button style="background-color: #333333; border: 0" data-toggle="dropdown" class=" btn-unstyle lang" aria-haspopup="true" aria-expanded="false" aria-label="{l s='Language dropdown' d='Shop.Theme.Global'}">
-       <img style="width:16px; height:11px" src="/img/asd/flags/{$language.iso_code}.jpg?time=1699550058">
+       <img style="width:16px; height:11px" src="/img/asd/flags/{$language.iso_code}.jpg?time=1699550058" alt="img_{$language.iso_code}" width="16" height="11">
        <span class="lang expand-more">{strtoupper($current_language.iso_code)}</span>
          <i class="material-icons expand-more">&#xE5C5;</i>
        </button>
