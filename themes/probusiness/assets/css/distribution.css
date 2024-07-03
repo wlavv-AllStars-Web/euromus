@@ -259,6 +259,7 @@
 
    .header-top .form-control{
     height: 35px;
+    border: 1px solid #dedede;
    }
 
    .footer-container .footer_linklist .wrapper ul{
