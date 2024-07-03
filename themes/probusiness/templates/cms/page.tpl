@@ -391,7 +391,7 @@
 
 
         </div>
-        <script src="https://cdn.jsdelivr.net/npm/signature_pad@4.1.7/dist/signature_pad.umd.min.js"></script>
+        <script src="/themes/probusiness/assets/js/signature_pad.umd.min.js"></script>
         <script>
           document.addEventListener('DOMContentLoaded', function() {
             var signaturePad4 = new SignaturePad(document.querySelector("#canvas4"));
