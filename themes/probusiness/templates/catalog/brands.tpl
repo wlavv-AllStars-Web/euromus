@@ -28,7 +28,8 @@
    <section id="main">
      <div id="brands-page">
        <div class="brands_banner">
-         <img src="/img/asd/dealers/headers/brands.webp" alt="brands_banner" width="1350" height="300" />
+         <img class="desktop" src="/img/asd/dealers/headers/brands.webp" alt="brands_banner" width="1350" height="300" />
+         <img class="mobile" src="/img/asd/dealers/headers/brands.webp" alt="brands_banner" width="390" height="90" />
        </div>
      {block name='brand_miniature'}
        <ul class="list_manu row">
