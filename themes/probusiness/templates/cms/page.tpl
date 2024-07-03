@@ -834,7 +834,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/adobe_logo.jpg" alt="adobe_logo.jpg?v=1" loading="lazy" width="300" height="240"  /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/adobe_logo.webp" alt="adobe_logo.jpg?v=1" loading="lazy" width="300" height="240"  /></div>
             <div class="text_partners">{l s='Adobe Inc is an American multinational computer software company focused upon the creation on multimedia and creativity software products, with a more recent foray into digital marketing software. Adobe is best known for its Adobe Flash web software, Photoshop image editing software, Adobe Illustrator graphics editor and Acrobat Reader.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.adobe.com/" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'}</a></div>
             </div>
@@ -877,7 +877,7 @@
 
               <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
               <div class="card_partners">
-              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/asw_logo.jpg" alt="allstars_web_logo.jpg?v=1"  loading="lazy" width="300" height="240" /></div>
+              <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/asw_logo.webp" alt="allstars_web_logo.jpg?v=1"  loading="lazy" width="300" height="240" /></div>
               <div class="text_partners">{l s='All Stars Web Solutions is a top range web agency specializing in website design and development, software and application creation, digital marketing, and SEO. Offering the latest technologies IT tools for warehouse management (ERP), cybersecurity, front and back end with optimal ergonomics, they make the management of a website accessible to everyone.' d='Shop.Theme.Partners'}</div>
               <div class="button_container_partners"><a href="https://www.allstars-web.com" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
               </div>
@@ -895,7 +895,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/shiftech_logo.jpg" alt="shiftech_logo.jpg?v=1" loading="lazy" width="300" height="240"  /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/shiftech_logo.webp" alt="shiftech_logo.jpg?v=1" loading="lazy" width="300" height="240"  /></div>
             <div class="text_partners">{l s='Since 2008, ShifTech has been a specialist in custom tuning software that offers the perfect combination of increased engine power and more economical fuel consumption. Present in France, Belgium and Luxembourg, it is a reference in the market due to its quality of service and its experience.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.shiftech.eu" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
@@ -903,7 +903,7 @@
 
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12 p-3">
             <div class="card_partners">
-            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/brperformance_logo.jpg" alt="alma_logo.jpg?v=1"  loading="lazy" width="300" height="240" /></div>
+            <div class="image_container_partners"><img class="image_partners" src="/img/asd/Content_pages/partners/brperformance_logo.webp" alt="alma_logo.jpg?v=1"  loading="lazy" width="300" height="240" /></div>
             <div class="text_partners">{l s='Key partner of the biggest brands in the performance automotive industry, BR-Performance is a key player in the custom tuning software market thanks to solid knowledges and state-of-the-art equipment.' d='Shop.Theme.Partners'}</div>
             <div class="button_container_partners"><a href="https://www.br-performance.fr" target="_blank" class="button_partners" rel="noreferrer noopener"> {l s='Website' d='Shop.Theme.Partners'} </a></div>
             </div>
@@ -1230,7 +1230,7 @@
       {elseif $cms.id === 13}
         <div class="cms-terms">
           <div class="banner-terms">
-            <img src="/img/asd/Content_pages/terms/generalSalesConditions.jpg" alt="terms banner" width="1350" height="300" />
+            <img src="/img/asd/Content_pages/terms/generalSalesConditions.webp" alt="terms banner" width="1350" height="300" />
           </div>
           <div class="terms-content">
             <h1>{l s='GENERAL CONDITIONS OF SALE' d='Shop.Theme.Terms'}</h1>
