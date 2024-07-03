@@ -934,7 +934,7 @@
       {elseif $cms.id === 11}
         <div class="rte">
           <div class="text-center">
-            <img src="/img/asd/Content_pages/payment/payment.jpg" alt="All Stars Distribution Payment" class="img-fluid cms_header_image" width="1350" height="300">
+            <img src="/img/asd/Content_pages/payment/payment.webp" alt="All Stars Distribution Payment" class="img-fluid cms_header_image" width="1350" height="300">
           </div>
           
           <p class="cms_title_center" style="color: black; font-weight: bolder; font-size: 23px;">{l s='ALL STARS DISTRIBUTION offers two methods of payment :' d='Shop.Theme.Payment'}</p>
@@ -948,7 +948,7 @@
             <br><br>{l s='The total amount paid will be debited immediately and the rest of the process and the update of the order status will be instantaneous. A confirmation will then be sent to you by email as a digital archive.' d='Shop.Theme.Payment'} 
             </div>
             <div class="col-lg-4" style="text-align: center;">
-              <img src="/img/asd/Content_pages/payment/creditcard.png?t=112" style="width: 250px;" alt="creditcard option" width="250" height="250">
+              <img src="/img/asd/Content_pages/payment/creditcard.webp?t=112" style="width: 250px;" alt="creditcard option" width="250" height="250">
             </div>
           </div>
 
@@ -970,7 +970,7 @@
       {elseif $cms.id === 12}
         <div class="cms-career">
           <div class="career-banner">
-            <img src="/img/asd/Content_pages/career/career.jpg" alt="career banner" width="1350" height="300"/>
+            <img src="/img/asd/Content_pages/career/career.webp" alt="career banner" width="1350" height="300"/>
           </div>
           <div class="career-content">
             <h1>{l s='> OPEN POSITIONS <' d='Shop.Theme.Career'}</h1>
