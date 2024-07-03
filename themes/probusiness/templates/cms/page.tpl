@@ -87,7 +87,8 @@
 
         <div id="cms_container_14">
           <div>
-            <img src="/img/asd/dealers/headers/become_dealer.webp" alt="banner_becomedealer" width="1350" height="300" />
+            <img class="desktop" src="/img/asd/dealers/headers/become_dealer.webp" alt="banner_becomedealer" width="1350" height="300" />
+            <img class="mobile"  src="/img/asd/dealers/headers/become_dealer.webp" alt="banner_becomedealer" width="394" height="90" />
           </div>
           <div class="choose_us_btn">
             <h5 class="cms_shadow_button">{l s='Why choose us ?' d='Shop.Theme.BecomeDealer'}</h5>
