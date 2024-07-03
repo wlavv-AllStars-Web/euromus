@@ -5,7 +5,7 @@
   font-weight: normal;
   font-style: normal; 
 }
-  
+
   html,body{
     scroll-behavior: smooth;
     font-family: 'Open Sans', sans-serif;
@@ -24,6 +24,12 @@
 #index #content{
   max-width: 1700px;
   margin: auto;
+}
+
+#_desktop_language_selector .language-selector button{
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
 }
 
   /* shopping cart modal */
