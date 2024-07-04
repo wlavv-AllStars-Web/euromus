@@ -109,8 +109,11 @@
 
 
   {block name='javascript_bottom'}
+    <script type="text/javascript" src="/themes/probusiness/assets/js/distribution.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     {include file="_partials/javascript.tpl" javascript=$javascript.bottom}
   {/block}
+
   {block name='hook_before_body_closing_tag'}
     {hook h='displayBeforeBodyClosingTag'}
   {/block}
