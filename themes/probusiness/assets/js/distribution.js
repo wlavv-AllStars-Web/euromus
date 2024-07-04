@@ -194,59 +194,59 @@ document.addEventListener("DOMContentLoaded", moveQuantityInput);
 
 
 
-function validateForm() {
+// function validateForm() {
         
-    var empty = $(".form-become-dealer").find('input[required]').filter(function() {
-        return this.value == '';
-    });
+//     var empty = $(".form-become-dealer").find('input[required]').filter(function() {
+//         return this.value == '';
+//     });
     
-    if (empty.length) {
-        $(".form-become-dealer").find('input[required]').css('border', '1px solid red');
-        alert("{$fill_all}");
-        return false;
-    }
+//     if (empty.length) {
+//         $(".form-become-dealer").find('input[required]').css('border', '1px solid red');
+//         alert("{$fill_all}");
+//         return false;
+//     }
         
         
-    let error = 0;
-    let site = $('#site').val();
-    let social = $('#social').val();
-    let business_type = document.querySelectorAll('input[name="business_type[]"]:checked').length;
-    let main_market   = document.querySelectorAll('input[name="main_market[]"]:checked').length;
+//     let error = 0;
+//     let site = $('#site').val();
+//     let social = $('#social').val();
+//     let business_type = document.querySelectorAll('input[name="business_type[]"]:checked').length;
+//     let main_market   = document.querySelectorAll('input[name="main_market[]"]:checked').length;
 
-    if( ($('#site').val() == '') && ($('#social').val() == '')){
-        alert("{$error_1}"); 
-        error = 1;
-    }
+//     if( ($('#site').val() == '') && ($('#social').val() == '')){
+//         alert("{$error_1}"); 
+//         error = 1;
+//     }
     
-    if(business_type == 0){
-        alert("{$error_2}"); 
-        error = 1;
-    }
+//     if(business_type == 0){
+//         alert("{$error_2}"); 
+//         error = 1;
+//     }
     
-    if(main_market == 0){
-        alert("{$error_3}"); 
-        error = 1;
-    } 
+//     if(main_market == 0){
+//         alert("{$error_3}"); 
+//         error = 1;
+//     } 
     
-    if(!ValidateEmail()){
-        error = 1;
-    }
+//     if(!ValidateEmail()){
+//         error = 1;
+//     }
     
-    if((site != '') && (!ValidateURL(1))){
-        error = 1;
-    } 
+//     if((site != '') && (!ValidateURL(1))){
+//         error = 1;
+//     } 
     
-    if((social != '') && (!ValidateURL(2))){
-        error = 1;
-    } 
+//     if((social != '') && (!ValidateURL(2))){
+//         error = 1;
+//     } 
     
-    if(error == 0){
-        $('.form-become-dealer').submit();
-    }else{
-        return false;
-    }
+//     if(error == 0){
+//         $('.form-become-dealer').submit();
+//     }else{
+//         return false;
+//     }
 
-} 
+// } 
 
 function ValidateEmail() {
 
@@ -266,27 +266,27 @@ function ValidateEmail() {
     return true;
 }
 
-function ValidateURL(tipoURL) {
+// function ValidateURL(tipoURL) {
 
-    let message = "{$error_6}";
-    if(tipoURL == 1) message = "{$error_5}";
+//     let message = "{$error_6}";
+//     if(tipoURL == 1) message = "{$error_5}";
     
-    let url = $('#social').val();
-    if(tipoURL == 1) url = $('#site').val();
+//     let url = $('#social').val();
+//     if(tipoURL == 1) url = $('#site').val();
       
-    if(url.indexOf(' ') >= 0){
-        alert(message);
-        return (false);
-    } 
-    var validatorString = /((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/g;
+//     if(url.indexOf(' ') >= 0){
+//         alert(message);
+//         return (false);
+//     } 
+//     var validatorString = /((http|https)\:\/\/)?[a-zA-Z0-9\.\/\?\:@\-_=#]+\.([a-zA-Z0-9\&\.\/\?\:@\-_=#])*/g;
 
-    if ( validatorString.test(url) ){
-        return (true);
-    }else{
-        alert(message);
-        return (false);        
-    }
-}
+//     if ( validatorString.test(url) ){
+//         return (true);
+//     }else{
+//         alert(message);
+//         return (false);        
+//     }
+// }
 
 
 
