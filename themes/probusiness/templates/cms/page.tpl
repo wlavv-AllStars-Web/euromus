@@ -1015,128 +1015,35 @@
           </div>
           <div class="career-content">
             <h1>{l s='> OPEN POSITIONS <' d='Shop.Theme.Career'}</h1>
-            {* {debug} *}
-            {* <pre>{print_r($allcms,1)}</pre> *}
-            {* {$allcms[17]['content'] nofilter} *}
             <div id="why_us_anchor">
-            {* <pre>{print_r($Graphic,1)}</pre> *}
-                {* {foreach from=$allcms  item=careercms}
-                  <pre>{print_r($Graphic,1)}</pre>
-                  {if $careercms.id_cms === 55}
-                    {$careercms.content nofilter}
-                  {/if}
-                {/foreach} *}
                 {$Graphic.content nofilter}
                 {$Web.content nofilter}
                 {$Customer.content nofilter}
                 {$Picker.content nofilter}
                 {$Associate.content nofilter}
                 {$General.content nofilter}
-
-                  {* <div class="why_card">
-                    <img src="/img/asd/Content_pages/career/design.jpg" />
-                    <div id="thumb_data_1" class="card_text text-career" >
-                      <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
-                      {l s='The graphic designer creates visual communications to convey messages in an effective and aesthetically pleasing manner.
-                      This incorporates several tasks and responsibilities such as illustrations, banners, logos and marketing contents creation.
-                      The graphic designer, with a strong creative presence and artistic flair, shapes the visual aspect of our websites; products, marketing supports, exhibitions and more ! ' d='Shop.Theme.Career'}
-                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
-                      <p>{l s='- High school graphic diploma or strong portfolio' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- 2 years working experience as graphic designer in company' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Fluency with design softwares like Lightroom, Illustrator, Dreamweaver, Photoshop' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Familiar with video edition softwares such as Premiere, AfterFX, Finalcut...' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Foreign language spoken / written English or french' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Ability to work harmoniously with diverse range of people' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Knowledge in the automotive industry appreciated' d='Shop.Theme.Career'}</p>
-                    </div>
-                    <div id="card_expand1" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
-                  </div>
-
-                  <div class="why_card">
-                    <img src="/img/asd/Content_pages/career/webmaster.jpg" />
-                    <div id="thumb_data_2" class="card_text text-career">
-                      <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
-                      {l s='The web programmers or web developers use a variety of programming languages to create web applications, online tools and resources mainly database-driven.
-                      They work closely with project managers and designers to create, maintain attractive, safe and user-friendly our differents websites.
-                      They develop our back office programs and interfaces using the best practices and are responsibile for maintaining, expanding, and scaling our sites while staying plugged into emerging technologies / industry trends. ' d='Shop.Theme.Career'}
-                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
-                      <p>{l s='- High School IT / coding / web design diploma' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- 3 years working experience as web developer / programmer in company' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Top-notch programming skills and in-depth knowledge of HTML, CSS, JavaScript, PHP,and other coding languages' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Fluency in one of these languages : English or French' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Knowledge of relational database systems, Object Oriented Programming and web applications development' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Knowledge of Search Engine Optimization process' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Aggressive problem diagnosis and creative problem solving skills' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Proficient organizational skills, detail-oriented, multitasking, good under pressure' d='Shop.Theme.Career'}</p>
-                    </div>
-                    <div id="card_expand2" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
-                  </div>
-
-                  <div class="why_card">
-                    <img src="/img/asd/Content_pages/career/support.jpg" />
-                    <div id="thumb_data_3" class="card_text text-career">
-                    <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
-                        {l s='The customer service representative helps customers, giving them precious information about products or services, following their orders and return / warranty processes.
-                        The representative schedule is splitted between answering customers questions via e-mail and working closely with the purchase and marketing departments to elaborate products descriptions and online resources in various languages.' d='Shop.Theme.Career'}  
-                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
-                      <p>{l s='- Absolute fluency in one of these languages (French, Spanish, English, German)' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- High school diploma, general education degree or equivalent.' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Proficient with using computers and basic office softwares' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Excellent proofreading skills to identify grammar, spelling or punctuation errors' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Ability to stay calm, organized and focused' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Knowledge in the automotive industry appreciated' d='Shop.Theme.Career'}</p>
-                    </div>
-                    <div id="card_expand3" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
-                  </div>
-
-                  <div class="why_card">
-                    <img src="/img/asd/Content_pages/career/picker.jpg" />
-                    <div id="thumb_data_4" class="card_text text-career">
-                    <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
-                    {l s='The Picker is part of the order preparation process, using various digital and mechanical tools to pick a wide variety of items and bring them to the preparation area.
-                    The Picker will also participate in products reception, physical inventories and report quality variances while assuming daily maintenance tasks in the warehouse.
-                    The picker will operate a drivable vertical mast lift, a forklift and will perform duties up to 30kgs. ' d='Shop.Theme.Career'}
-                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
-                      <p>{l s='- Proficient with using computers / electronic devices' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Excellent verbal and written communication skills' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Ability to work harmoniously with diverse range of people' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Physically agile and dexterous' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Proficient organizational skills' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Forklift licence appreciated' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Foreign language spoken highly appreciated' d='Shop.Theme.Career'}</p>
-                    </div>
-                    <div id="card_expand4" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
-                  </div>
-
-                  <div class="why_card">
-                    <img src="/img/asd/Content_pages/career/packer.jpg" />
-                    <div id="thumb_data_5" class="card_text text-career">
-                    <b>{l s='Full Time - Valenca, PT' d='Shop.Theme.Career'}</b>
-                    {l s='The warehouse associate uses various digital and mechanical tools to pack and ship the orders accurately.
-                    He participates in products reception, physical inventories, safety check, warehouse management software setting while organizing the warehouse space
-                    The warehouse associate may operate a drivable vertical mast lift, a forklift and perform duties up to 30kgs.' d='Shop.Theme.Career'} 
-                      <b>{l s='- REQUIREMENTS -' d='Shop.Theme.Career'}</b>
-                      <p>{l s='- Proficient with using computers / electronic devices' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Excellent verbal and written communication skills' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Proficient organizational skills' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Warehouse experience or high school diploma required' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Forklift licence appreciated' d='Shop.Theme.Career'}</p>
-                      <p>{l s='- Foreign language spoken highly appreciated' d='Shop.Theme.Career'}</p>
-                    </div>
-                    <div id="card_expand5" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
-                  </div>
-
-                  <div class="why_card">
-                    <img src="/img/asd/Content_pages/career/others.jpg" />
-                    <div id="thumb_data_6" class="card_text text-career">
-                    <b>{l s='General application' d='Shop.Theme.Career'}</b>
-                    {l s='No open position matching with your skills at the moment ?
-                    No problem, apply anyway, maybe we can find something for you...' d='Shop.Theme.Career'}
-                    </div>
-                    <div id="card_expand6" class="card_view_more" onclick="viewMore(this)">{l s='View More' d='Shop.Theme.Career'}</div>
-                  </div> *}
-
               </div>
+
+              <script>
+            function updateCareerImage() {
+              const careerImage = document.querySelector(".career-banner img");
+              const screenWidth = window.screen.width;
+
+              if (screenWidth > 1140) {
+                careerImage.setAttribute("width", "1350");
+                careerImage.setAttribute("height", "300");
+              } else if (screenWidth > 575) {
+                careerImage.setAttribute("width", "1140");
+                careerImage.setAttribute("height", "1524");
+              } else {
+                careerImage.setAttribute("width", "575");
+                careerImage.setAttribute("height", "790");
+              }
+            }
+            updateCareerImage();
+            // document.addEventListener("DOMContentLoaded", updateLegalImage);
+            window.addEventListener("resize", updateCareerImage);
+        </script>
 
               <div class="form-career-container" style="margin: 5rem 0;">
                 <h1 style="text-align: center;color:#000;margin-bottom:2rem;">{l s='JOB APPLICATION' d='Shop.Theme.Career'}</h1>
