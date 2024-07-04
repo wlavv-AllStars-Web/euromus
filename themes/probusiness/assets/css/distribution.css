@@ -3101,7 +3101,16 @@ grid-template-columns: 1fr 1fr;
   text-align: center;
   margin: 2rem 0;
   color: dodgerblue;
-  font-size: 34px;
+  font-size: 36px;
+  line-height: 40px;
+  font-weight: 500;
+}
+.cms-terms .terms-content h2 {
+  text-align: center;
+  margin: 2rem 0;
+  color: dodgerblue;
+  font-size: 30px;
+  line-height: 32px;
   font-weight: 500;
 }
 
