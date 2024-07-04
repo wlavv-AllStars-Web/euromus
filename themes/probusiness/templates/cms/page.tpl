@@ -742,8 +742,8 @@
       {elseif $cms.id === 10}
         <div class="cms-legal">
           <div class="legal-banner">
-            <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.jpg" alt="legal image"  width="1350" height="1385"/>
-            <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.jpg"  alt="legal image mobile"  width="575" height="789" />
+            <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.webp" alt="legal image"  width="1350" height="1385"/>
+            <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.webp"  alt="legal image mobile"  width="575" height="789" />
           </div>
           <div class="legal-content">
           </div>
