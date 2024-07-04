@@ -1034,10 +1034,10 @@
                 careerImage.setAttribute("height", "300");
               } else if (screenWidth > 575) {
                 careerImage.setAttribute("width", "1140");
-                careerImage.setAttribute("height", "1524");
+                careerImage.setAttribute("height", "190");
               } else {
                 careerImage.setAttribute("width", "575");
-                careerImage.setAttribute("height", "790");
+                careerImage.setAttribute("height", "120");
               }
             }
             updateCareerImage();
