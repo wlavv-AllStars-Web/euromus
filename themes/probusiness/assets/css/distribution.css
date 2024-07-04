@@ -751,7 +751,7 @@
   }
 
   .rm-b{
-    margin-bottom: 0;
+    margin-bottom: 0 !important;
   }
 /* search page */
   #search .breadcrumb{
@@ -1805,12 +1805,13 @@ textarea {
 .form-become-supplier form label{
   font-size: 18px;
   color: #111;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 4px;
+  line-height: 25px;
 }
 .form-become-supplier textarea{
   height: 100%;
-  min-height: 190px;
+  min-height: 199px;
 }
 .form-become-supplier form .send-form{
   background: #fff;
@@ -1828,8 +1829,9 @@ textarea {
 .form-become-dealer form label{
   font-size: 18px;
   color: #111;
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 0;
+  line-height: 25px;
 }
 .form-become-dealer .title-suppliers{
   font-size: 18px;
