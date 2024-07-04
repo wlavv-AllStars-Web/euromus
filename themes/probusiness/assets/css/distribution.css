@@ -2621,6 +2621,9 @@ grid-template-columns: 1fr 1fr;
   margin-top: 0;
 }
 
+.footer_linklist .alignment .text.h3{
+  font-weight: 600;
+}
 
 
 /* ate aqui */
@@ -3190,7 +3193,10 @@ grid-template-columns: 1fr 1fr;
   }
 
 
-
+  .footer_linklist .alignment .text.h3{
+    font-weight: 600;
+  }
+  
 #order_history .order .status{
   padding: 0.25rem 0 0.5rem 0;
 }

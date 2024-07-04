@@ -65,7 +65,8 @@
     {block name='cms_content'}
       {if $cms.id === 8}
         <div id="cms_container_8">
-          <div><img src="/img/asd/Content_pages/aboutus/top_image_short.webp" alt="top_image_short" width="1350" height="300" /></div>
+          <div><img class="desktop" src="/img/asd/Content_pages/aboutus/top_image_short.webp" alt="top_image_short" width="1350" height="300" /></div>
+          <div><img class="mobile" src="/img/asd/Content_pages/aboutus/top_image_short.webp" alt="top_image_short" width="567" height="111" /></div>
           <div class="profile_container_cms">
           <div class="profile_style">{l s='Profile' d='Shop.Theme.About'}</div>
           <div class="profile_container_text" id="profile_container_text">{l s='Supplying over 30 top of the line brands to automotive performance professionals worldwide, All Stars Distribution is one of the largest European wholesalers of performance and design parts. Dedicated to serving shops, tuners, e-dealers and other resellers, All Stars Distribution is committed to employing the best of inventory management and distribution practices to get our customers the performance parts they need to satisfy their customers.' d='Shop.Theme.About'}</div>
