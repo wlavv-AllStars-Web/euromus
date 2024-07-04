@@ -77,9 +77,9 @@
             <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="/img/asd/Content_pages/aboutus/badge_xs.jpg" alt="badge_xs" width="567" height="107"/>
           </div>
           <div>
-            <img class="desktop" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.webp" alt="lg_{$language.iso_code}" width="1700" height="7747" />
-            <img class="tablet" src="/img/asd/Content_pages/aboutus/sm_{$language.iso_code}.webp" alt="sm_{$language.iso_code}" width="1139" height="11086" />
-            <img class="mobile" src="/img/asd/Content_pages/aboutus/xs_{$language.iso_code}.jpg" alt="sm_{$language.iso_code}" width="575" height="20721"/>
+            <img class="desktop" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.webp" alt="lg_{$language.iso_code}" width="1700" height="7747" loading="lazy"/>
+            <img class="tablet" src="/img/asd/Content_pages/aboutus/sm_{$language.iso_code}.webp" alt="sm_{$language.iso_code}" width="1139" height="11086" loading="lazy" />
+            <img class="mobile" src="/img/asd/Content_pages/aboutus/sm_{$language.iso_code}.webp" alt="sm_{$language.iso_code}" width="1139" height="11086" loading="lazy" />
           </div>
         </div>
       {else if $cms.id === 14}
