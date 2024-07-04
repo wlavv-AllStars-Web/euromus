@@ -947,7 +947,7 @@
     text-align: center;
     font-weight: 400;
     min-height: 314px;
-    /* flex: 1; */
+    flex: 1;
 }
 
 .text_partners .title_company {
@@ -3196,7 +3196,7 @@ grid-template-columns: 1fr 1fr;
   .footer_linklist .alignment .text.h3{
     font-weight: 600;
   }
-  
+
 #order_history .order .status{
   padding: 0.25rem 0 0.5rem 0;
 }
