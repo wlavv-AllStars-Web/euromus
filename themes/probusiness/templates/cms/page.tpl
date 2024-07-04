@@ -78,11 +78,35 @@
             <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="/img/asd/Content_pages/aboutus/badge_xs.jpg" alt="badge_xs" width="567" height="107"/>
           </div>
           <div>
-            <img class="desktop" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.webp" alt="lg_{$language.iso_code}" width="1700" height="7747" loading="lazy"/>
-            <img class="tablet" src="/img/asd/Content_pages/aboutus/sm_{$language.iso_code}.webp" alt="sm_{$language.iso_code}" width="1139" height="11086" loading="lazy" />
-            <img class="mobile" src="/img/asd/Content_pages/aboutus/sm_{$language.iso_code}.webp" alt="sm_{$language.iso_code}" width="1139" height="11086" loading="lazy" />
+            <img class="about_content_img" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.webp" alt="lg_{$language.iso_code}" loading="lazy"/>
           </div>
         </div>
+
+
+        <script>
+            function updateAboutImage() {
+              const aboutImage = document.querySelector(".about_content_img");
+              const screenWidth = window.screen.width;
+              const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
+
+              if (screenWidth > 1140) {
+                aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/lg_'+languageCode+'.webp');
+                aboutImage.setAttribute("width", "1700");
+                aboutImage.setAttribute("height", "7747");
+              } else if (screenWidth > 575) {
+                aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/sm_'+languageCode+'.webp');
+                aboutImage.setAttribute("width", "1139");
+                aboutImage.setAttribute("height", "11086");
+              } else {
+                aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'.jpg');
+                aboutImage.setAttribute("width", "575");
+                aboutImage.setAttribute("height", "20721");
+              }
+            }
+            updateAboutImage();
+            // document.addEventListener("DOMContentLoaded", updateLegalImage);
+            window.addEventListener("resize", updateAboutImage);
+        </script>
       {else if $cms.id === 14}
 
         
