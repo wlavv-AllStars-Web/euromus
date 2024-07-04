@@ -2096,7 +2096,7 @@ textarea {
 }
 .cms-id-11 .rte b{
   font-size: 1.25rem;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .cms-id-11 .content-payment {
@@ -2987,6 +2987,9 @@ grid-template-columns: 1fr 1fr;
   margin: 0 auto;
 }
 
+.form-check + .form-check{
+  margin-top: 0 !important;
+}
 
 /* cms payments */
 
@@ -3008,6 +3011,7 @@ grid-template-columns: 1fr 1fr;
 .cms-id-11 .cms_title_center {
   text-align: center;
   text-transform: uppercase;
+  line-height: 32px;
 }
 
 .cms-id-11 .rte {
@@ -3015,7 +3019,7 @@ grid-template-columns: 1fr 1fr;
 }
 .cms-id-11 .rte b{
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .cms-id-11 .content-payment {

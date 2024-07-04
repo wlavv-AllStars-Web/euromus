@@ -1123,20 +1123,20 @@
                   <div class="form-row " style="display: flex;flex-wrap:wrap;">
                     <div class="form-group col-lg-4 col-md-6 ">
                       <label for="name">{l s='Name' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="text" class="form-control" id="name" name="first_name">
+                      <input type="text" class="form-control" id="name" name="first_name" required>
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="surname">{l s='Surname' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="text" class="form-control" id="surname" name="last_name">
+                      <input type="text" class="form-control" id="surname" name="last_name"required>
                     </div>
                     <div class="form-group  col-lg-4 col-md-6">
                       <label for="email">{l s='Email' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="email" class="form-control" id="email" name="email_job">
+                      <input type="email" class="form-control" id="email" name="email_job" required>
                     </div>
                   
                     <div class="form-group col-lg-2 col-md-3">
                       <label for="country_code">{l s='Phone' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <select id="country_code" class="form-control" name="country_code">
+                      <select id="country_code" class="form-control" name="country_code" required>
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         {foreach $countries as $country}
                           <option value="{$country['call_prefix']}">{substr($country["name"],0,24)} (+{$country['call_prefix']}) </option>
@@ -1145,11 +1145,11 @@
                     </div>
                     <div class="form-group col-lg-2 col-md-3">
                       <label for="phone_number">{l s='Phone Number' d='Shop.Theme.Career'}</label>
-                      <input type="text" class="form-control" id="phone_number" placeholder="" name="phone_number">
+                      <input type="text" class="form-control" id="phone_number" placeholder="" name="phone_number" required>
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="contact_preference">{l s='How do you prefer to be contacted?' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <select id="contact_preference" class="form-control" name="contact_preference">
+                      <select id="contact_preference" class="form-control" name="contact_preference" required>
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         <option value="email">{l s='Email' d='Shop.Theme.Career'}</option>
                         <option value="phone">{l s='Phone' d='Shop.Theme.Career'}</option>
@@ -1157,7 +1157,7 @@
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="country">{l s='Country' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <select id="country" class="form-control" name="country">
+                      <select id="country" class="form-control" name="country" required>
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         {foreach $countries as $country}
                           <option value="{$country['name']}">{substr($country["name"],0,24)}{(strlen($country["name"])>25)?'...':''}</option>
@@ -1167,7 +1167,7 @@
                   
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="position">{l s='Which position are you applying to' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <select id="position" class="form-control" name="position">
+                      <select id="position" class="form-control" name="position" required>
                         <option selected>{l s='Please Select...' d='Shop.Theme.Career'}</option>
                         <option value="Graphic Designer">Graphic Designer</option>
                         <option value="Webmaster">Webmaster</option>
@@ -1179,7 +1179,7 @@
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="address_line_1">{l s='Address Line 1' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="tel" class="form-control" id="address_line_1" placeholder="Apartment, studio, or floor" name="address_line_1">
+                      <input type="tel" class="form-control" id="address_line_1" placeholder="Apartment, studio, or floor" name="address_line_1" required>
                     </div>
                     <div class="form-group col-lg-4  col-md-6">
                       <label for="address_line_2">{l s='Address Line 2' d='Shop.Theme.Career'}</label>
@@ -1188,11 +1188,11 @@
                   
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="city">{l s='City' d='Shop.Theme.Career'}</label>
-                      <input type="text" class="form-control" id="city"  name="city">
+                      <input type="text" class="form-control" id="city"  name="city" required>
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="post_code">{l s='Zip Code' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
-                      <input type="text" class="form-control" id="post_code" name="post_code">
+                      <input type="text" class="form-control" id="post_code" name="post_code" required>
                     </div>
                     <div class="form-group col-lg-4 col-md-6">
                       <label for="from_where">{l s='How did you know about this job position?' d='Shop.Theme.Career'}</label>
@@ -1203,7 +1203,7 @@
                 <div class="form-row ">
                   <div class="form-group col-lg-4 col-md-6">
                     <label for="fileUpload">{l s='Upload your CV ( only PDF files )' d='Shop.Theme.Career'} <span style="color:#ee302e;">*</span></label>
-                    <input type="file" class="form-control-file" id="fileUpload" name="fileUpload" style="background: #fff;width:100%;padding:6px 0.5rem;">
+                    <input type="file" class="form-control-file" id="fileUpload" name="fileUpload" style="background: #fff;width:100%;padding:6px 0.5rem;" required>
                   </div>
                 </div>
 
