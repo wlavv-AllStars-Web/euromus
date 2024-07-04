@@ -743,12 +743,37 @@
       {elseif $cms.id === 10}
         <div class="cms-legal">
           <div class="legal-banner">
-            <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.webp" alt="legal image"  width="1350" height="1385" loading="eager" />
-            <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.webp"  alt="legal image mobile"  width="575" height="789" loading="eager" />
+            {* <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.webp" alt="legal image"  width="1350" height="1385"  />
+            <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.webp"  alt="legal image mobile"  width="575" height="789"  /> *}
+            <img class="legal_image" src="" alt="legal image" />
           </div>
           <div class="legal-content">
           </div>
         </div>
+        <script>
+            function updateLegalImage() {
+              const legalImage = document.querySelector(".legal_image");
+              const screenWidth = window.screen.width;
+              const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
+
+              if (screenWidth > 1140) {
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_notices_'+languageCode+'_lg.webp');
+                legalImage.setAttribute("width", "1350");
+                legalImage.setAttribute("height", "1385");
+              } else if (screenWidth > 575) {
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_notices_'+languageCode+'_md.webp');
+                legalImage.setAttribute("width", "1140");
+                legalImage.setAttribute("height", "1524");
+              } else {
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_notices_'+languageCode+'_xs.webp');
+                legalImage.setAttribute("width", "575");
+                legalImage.setAttribute("height", "790");
+              }
+            }
+
+            document.addEventListener("DOMContentLoaded", updateLegalImage);
+            window.addEventListener("resize", updateLegalImage);
+        </script>
       {elseif $cms.id === 9}
         
         <div class="banner_cms_partners" style="margin-bottom: 3rem;">
