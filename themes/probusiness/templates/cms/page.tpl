@@ -745,11 +745,24 @@
           <div class="legal-banner">
             {* <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.webp" alt="legal image"  width="1350" height="1385"  />
             <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.webp"  alt="legal image mobile"  width="575" height="789"  /> *}
-            <img class="legal_image" src="" alt="legal image" />
+            <img class="legal_image" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.webp" alt="legal image" />
           </div>
           <div class="legal-content">
           </div>
         </div>
+        <style>
+        .cms-legal .legal-banner {
+          position: relative;
+          width: 100%; /* Ensuring the banner takes full width */
+        }
+        .cms-legal .legal-banner .legal_image {
+          display: block;
+          width: 100%;
+          height: auto;
+          max-width: 1350px; /* Maximum width of the largest image */
+          margin: 0 auto; /* Centering the image */
+        }
+      </style>
         <script>
             function updateLegalImage() {
               const legalImage = document.querySelector(".legal_image");
