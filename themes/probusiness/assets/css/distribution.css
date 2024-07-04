@@ -41,11 +41,11 @@
   /* shopping cart modal */
   #_desktop_cart {
     display: flex !important;
-    position: unset;
-    margin-top: 0;
+    position: unset !important;
+    margin-top: 0 !important;
     justify-content: center;
-    float: unset;
-    color: #333;
+    float: unset !important;
+    color: #333 !important;
   }
   #_desktop_cart .cart_total_header {
     color: #333 !important;
@@ -55,8 +55,8 @@
   }
 
   #_desktop_cart .header a i{
-    position: unset;
-    font-size: 18px;
+    position: unset !important;
+    font-size: 18px !important;
   }
 
   #blockcart-modal .modal-header{
