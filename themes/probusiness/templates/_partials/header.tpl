@@ -41,7 +41,7 @@
       <div class="container" style="padding-bottom: 10px;max-width: 1337px !important; width: 90vw !important;padding-top:9px" >
         <div  class="row centrar" style="margin:0;  display: flex; align-items: center;">
           <div  id="_desktop_logo" class="col-md-4 col-sm-12" style="margin: 0; padding: 0; width:30%">
-            <a  href="/" style="display: flex; justify-content:center">
+            <a  href="/" style="display: flex; justify-content:start">
               <img  class="logo img-flud img-big" src="/img/asd/logo_asd.webp" alt="{$shop.name|escape:'html':'UTF-8'}" style="width: 250px; margin: 0 ">
             </a>
           </div>
