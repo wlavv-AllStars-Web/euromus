@@ -4075,6 +4075,15 @@ grid-template-columns: 1fr 1fr;
   overflow-x: auto;
 }
 /*  */
+
+
+
+#cms_container_14 .choose_us_btn{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0;
+  }
 }
 
 .px-0{
