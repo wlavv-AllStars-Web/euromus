@@ -811,7 +811,7 @@
   } */
 
   #content-wrapper{
-    margin-top: 25px !important; 
+    margin-top: 30px !important; 
   }
 
   .desktop {
@@ -3709,6 +3709,10 @@ grid-template-columns: 1fr 1fr;
 
 #cms-partners .p-3 {
   width: 90vw;
+}
+
+.cms-id-11 .content-payment{
+  margin: 0 !important;
 }
 
 /* cms payments */
