@@ -114,8 +114,7 @@
 
         <div id="cms_container_14">
           <div>
-            <img class="desktop" src="/img/asd/dealers/headers/become_dealer.webp" alt="banner_becomedealer" width="1350" height="300" />
-            <img class="mobile"  src="/img/asd/dealers/headers/become_dealer.webp" alt="banner_becomedealer" width="394" height="90" />
+            <img class="banner_becomedealer" data-src="/img/asd/dealers/headers/become_dealer.webp" alt="banner_becomedealer" width="1350" height="300" />
           </div>
           <div class="choose_us_btn">
             <h5 class="cms_shadow_button">{l s='Why choose us ?' d='Shop.Theme.BecomeDealer'}</h5>
@@ -431,6 +430,30 @@
 
           });
         </script>
+         <script>
+         function updatedealerImage() {
+           const dealerImage = document.querySelector(".banner_becomedealer");
+           const screenWidth = window.screen.width;
+           const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
+
+           if (screenWidth > 1140) {
+            dealerImage.setAttribute("src", '/img/asd/dealers/headers/become_dealer.webp');
+            dealerImage.setAttribute("width", "1700");
+            dealerImage.setAttribute("height", "7747");
+           } else if (screenWidth > 575) {
+             dealerImage.setAttribute("src", '/img/asd/dealers/headers/become_dealer.webp');
+             dealerImage.setAttribute("width", "575");
+             dealerImage.setAttribute("height", "122");
+           } else {
+             dealerImage.setAttribute("src", '/img/asd/dealers/headers/become_dealer.webp');
+             dealerImage.setAttribute("width", "394");
+             dealerImage.setAttribute("height", "90");
+           }
+         }
+         updatedealerImage();
+         // document.addEventListener("DOMContentLoaded", updateLegalImage);
+         window.addEventListener("resize", updatedealerImage);
+     </script>
 
 
       {else if  $cms.id === 15}
