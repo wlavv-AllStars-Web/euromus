@@ -2751,7 +2751,7 @@ grid-template-columns: 1fr 1fr;
 }
 
 .search-widget form button[type="submit"]{
-  padding-right: 0;
+  padding-right: 0 !important;
 }
 
 .header-top .centrar{
@@ -3304,14 +3304,25 @@ grid-template-columns: 1fr 1fr;
   color: #333;
 }
 
-.search-widget form button[type="submit"]{
-  padding-right: 0;
-}
-
 /*  */
   #_desktop_logo {
     padding-top: 1rem !important;
+    max-width: 100%;
+    width: fit-content !important;
   }
+
+  #_desktop_cart .header a{
+    padding-left: 0 !important;
+  }
+
+  #_desktop_cart .blockcart {
+    padding-left: 0 !important;
+  }
+
+  .search-widget form button[type="submit"]{
+    padding-right: 0 !important;
+  }
+
   #header .header-nav{
     height: 30px;
   }
@@ -3373,7 +3384,7 @@ grid-template-columns: 1fr 1fr;
     'catalogue'
     'resources';
     grid-template-columns: 1fr;
-    
+    padding: 0.5rem;
     }
 
     #why_card {

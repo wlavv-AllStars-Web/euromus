@@ -13,56 +13,56 @@ document.addEventListener('DOMContentLoaded', function () {
         })
     }
     
-    function viewMore(event){
-        
-        const lang = document.querySelector("html").getAttribute("lang");
-        const button = event.target; 
-
-        let translateMore = '';
-        let translateLess = '';
-
-        if(lang === "en"){
-            translateMore = "VIEW MORE";
-            translateLess = "VIEW LESS";
-        }else if(lang === "pt"){
-            translateMore = "VER MAIS";
-            translateLess = "VER MENOS";
-        }else if(lang === "fr"){
-            translateMore = "VOIR PLUS";
-            translateLess = "VOIR MOINS";
-        }else if(lang === "es"){
-            translateMore = "VER MÁS";
-            translateLess = "VER MENOS";
-        }else if(lang === "it"){
-            translateMore = "VEDI ALTRO";
-            translateLess = "VISUALIZZA MENO";
-        }
-        
-        if (button.innerText === "VIEW LESS" ||button.innerText === "VER MENOS" ||button.innerText === "VOIR MOINS" ||button.innerText === "VISUALIZZA MENO" ) {
-            
-            button.innerText = translateMore;
-            const dataElement = button.previousElementSibling;
-            dataElement.classList.remove("active_card");
-        } else {
-            
-            const card_texts = document.querySelectorAll(".card_text");
-            card_texts.forEach((item) => {
-                if (item.classList.contains("active_card")) {
-                    item.classList.remove("active_card");
-                    item.nextElementSibling.innerText = "VIEW MORE";
-                }
-            });
-    
-            button.innerText = translateLess;
-            const dataElement = button.previousElementSibling;
-            dataElement.classList.add("active_card");
-        }
-        
-        
-    }
     
 });
 
+function viewMore(event){
+    
+    const lang = document.querySelector("html").getAttribute("lang");
+    const button = event.target; 
+
+    let translateMore = '';
+    let translateLess = '';
+
+    if(lang === "en"){
+        translateMore = "VIEW MORE";
+        translateLess = "VIEW LESS";
+    }else if(lang === "pt"){
+        translateMore = "VER MAIS";
+        translateLess = "VER MENOS";
+    }else if(lang === "fr"){
+        translateMore = "VOIR PLUS";
+        translateLess = "VOIR MOINS";
+    }else if(lang === "es"){
+        translateMore = "VER MÁS";
+        translateLess = "VER MENOS";
+    }else if(lang === "it"){
+        translateMore = "VEDI ALTRO";
+        translateLess = "VISUALIZZA MENO";
+    }
+    
+    if (button.innerText === "VIEW LESS" ||button.innerText === "VER MENOS" ||button.innerText === "VOIR MOINS" ||button.innerText === "VISUALIZZA MENO" ) {
+        
+        button.innerText = translateMore;
+        const dataElement = button.previousElementSibling;
+        dataElement.classList.remove("active_card");
+    } else {
+        
+        const card_texts = document.querySelectorAll(".card_text");
+        card_texts.forEach((item) => {
+            if (item.classList.contains("active_card")) {
+                item.classList.remove("active_card");
+                item.nextElementSibling.innerText = "VIEW MORE";
+            }
+        });
+
+        button.innerText = translateLess;
+        const dataElement = button.previousElementSibling;
+        dataElement.classList.add("active_card");
+    }
+    
+    
+}
 
 function anchorLink(e) {
     e.preventDefault();
