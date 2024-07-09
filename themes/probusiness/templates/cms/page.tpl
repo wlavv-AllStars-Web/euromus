@@ -73,9 +73,7 @@
           <div id="profile_container_text1 hidden-md-up" class="card_view_more">{l s='View More' d='Shop.Theme.About'}</div>
           </div>
           <div>
-            <img class="desktop" src="/img/asd/Content_pages/aboutus/badge_lg.webp" alt="badge_lg" width="1700" height="196"/>
-            <img class="tablet" src="/img/asd/Content_pages/aboutus/badge_sm.webp" alt="badge_sm" width="1134" height="196"/>
-            <img class="mobile" style="padding: 0 0.5rem;width:100%;" src="/img/asd/Content_pages/aboutus/badge_xs.jpg" alt="badge_xs" width="567" height="107"/>
+            <img class="aboutImageBadge" src="/img/asd/Content_pages/aboutus/badge_lg.webp" alt="badge_lg" width="1700" height="196"/>
           </div>
           <div>
             <img class="about_content_img" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.webp" alt="lg_{$language.iso_code}" loading="lazy"/>
@@ -86,18 +84,29 @@
         <script>
             function updateAboutImage() {
               const aboutImage = document.querySelector(".about_content_img");
+              const aboutImageBadge = document.querySelector(".aboutImageBadge");
               const screenWidth = window.screen.width;
               const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
 
               if (screenWidth > 1140) {
+                aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_lg.webp')
+                aboutImageBadge.setAttribute("width",'1700')
+                aboutImageBadge.setAttribute("height",'196')
                 aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/lg_'+languageCode+'.webp');
                 aboutImage.setAttribute("width", "1700");
                 aboutImage.setAttribute("height", "7747");
               } else if (screenWidth > 575) {
+                aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_sm.webp')
+                aboutImageBadge.setAttribute("width",'1134')
+                aboutImageBadge.setAttribute("height",'196')
                 aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/sm_'+languageCode+'.webp');
                 aboutImage.setAttribute("width", "1139");
                 aboutImage.setAttribute("height", "11086");
               } else {
+                aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_sm.webp')
+                aboutImageBadge.setAttribute("width",'567')
+                aboutImageBadge.setAttribute("height",'107')
+                aboutImageBadge.style.padding = "0.5rem";
                 aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'.jpg');
                 aboutImage.setAttribute("width", "575");
                 aboutImage.setAttribute("height", "20721");
