@@ -3600,6 +3600,10 @@ grid-template-columns: 1fr 1fr;
     font-size: 14px;
     }
 
+    #brands-page{
+      margin-bottom: 2rem;
+    }
+
     #brands-page .list_manu {
     margin: 0;
     display: flex;
