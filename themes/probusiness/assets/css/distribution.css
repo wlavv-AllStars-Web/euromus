@@ -1102,7 +1102,21 @@
   color: #999999;
 }
 .product-price-and-shipping .add-to-cart{
+  background: #fff;
+  border-radius: 0.25rem;
+  border: 1px solid #dedede !important;
+}
+.product-price-and-shipping .add-to-cart i{
+  color: #0273EB !important;
+  height: 100%;
+  font-size: 26px;
+}
+.product-price-and-shipping .add-to-cart:hover{
   background: #0273EB;
+  border-radius: 0.25rem;
+}
+.product-price-and-shipping .add-to-cart:hover i{
+  color: #fff !important;
   border-radius: 0.25rem;
 }
 

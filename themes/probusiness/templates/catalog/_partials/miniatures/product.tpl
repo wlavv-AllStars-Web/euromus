@@ -80,21 +80,21 @@
       </div>
 
       <div class="information-product col-lg-10" onclick="window.location.href='{$product.url}'">
-          <div class="referencia" style="font-weight: 700;">{$product.reference}</div>
-          <div class="brand-product">{$product.manufacturer_name}</div>
+          <div class="referencia" style="font-weight: 700;font-size:16px;line-height:18px;color:#000;">{$product.reference}</div>
+          <div class="brand-product" style="font-weight: 400;font-size:16px;line-height:18px;color:#000;" >{$product.manufacturer_name}</div>
           {block name='product_name'}
             {if $page.page_name == 'index'}
-              <h3 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 600;" title="{$product.name}">{$product.name}</a></h3>
+              <h3 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 400;font-size:16px;line-height:18px;color:#000;" title="{$product.name}">{$product.name}</a></h3>
             {else}
-              <h2 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 600;" title="{$product.name}">{$product.name}</a></h2>
+              <h2 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 400;font-size:16px;line-height:18px;color:#000;" title="{$product.name}">{$product.name}</a></h2>
             {/if}
           {/block}
           {if ($product.quantity == 1) }
-            <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem" class="list-name"><div style="border-radius: 50%; background-color: orange;color: white;width:1rem;height:1rem;"></div><div style="float: left;"> {l s='Limited stock, please contact us'} </div></div>
+            <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: orange;color: white;width:1rem;height:1rem;"></div><div style="float: left;"> {l s='Limited stock, please contact us'} </div></div>
           {elseif ($product.quantity > 1) }
-              <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem" class="list-name"><div style="border-radius: 50%; background-color: green;color: white;width:1rem;height:1rem;"></div><div style="float: left;"> {l s='In stock'} </div></div>
+              <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: green;color: white;width:1rem;height:1rem;"></div><div style="float: left;"> {l s='In stock'} </div></div>
           {elseif $product.quantity < 1 }
-              <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem" class="list-name"><div style="border-radius: 50%; background-color: red;color: white;width:1rem;height:1rem;"></div><div> {l s='Without stock'} </div></div>
+              <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: red;color: white;width:1rem;height:1rem;"></div><div> {l s='Without stock'} </div></div>
           {/if}
 
       </div>
@@ -107,9 +107,9 @@
             <div class="product-price-and-shipping" style="display: flex;flex-direction:column;align-items:end;">
               {if $product.has_discount}
                 {hook h='displayProductPriceBlock' product=$product type="old_price"}
-                <div class="old_price" style="display: flex;align-items:center;gap:0.5rem;">
+                <div class="old_price" style="display: flex;align-items:center;gap:0.5rem;font-size:12px;line-height:21px;font-weight:700;justify-content:center;">
                 RRP / PVP
-                <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}" >{$product.regular_price}</span>
+                <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}" style="font-size: 14px;line-height:21px;font-weight:400;color:#000;margin-bottom:0;text-decoration:unset;">{$product.regular_price}</span>
                 </div>
                 {if $product.discount_type === 'percentage'}
                   <span class="discount-percentage discount-product">{$product.discount_percentage}</span>
@@ -118,10 +118,10 @@
                 {/if}
               {/if}
 
-              <div class="discount">Discount: <span>{$product.discount_percentage}</span></div>
+              <div class="discount" style="font-size: 12px;font-weight:700;line-height:21px;">Discount: <span style="font-size: 14px;font-weight:400;line-height:24px;margin:0;">{$product.discount_percentage}</span></div>
               {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
-              <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}">
+              <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}" style="font-size: 21px;font-weight:700;line-height:26px;margin:0;">
                 {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='products_list'}{/capture}
                 {if '' !== $smarty.capture.custom_price}
                   {$smarty.capture.custom_price nofilter}
