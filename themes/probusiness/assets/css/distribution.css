@@ -2942,6 +2942,9 @@ grid-template-columns: 1fr 1fr;
   padding-left: 0 !important;
 }
 
+#login-form .btn[type="submit"]{
+  border: 1px solid #dedede;
+}
 
 }
 
@@ -3199,6 +3202,11 @@ grid-template-columns: 1fr 1fr;
 }
 
 @media (max-width: 540px){
+
+  #login-form .btn[type="submit"]{
+    border: 1px solid #dedede;
+  }
+  
 
   #index .profile_container_homepage .profile_container_text{
     height: auto !important;
