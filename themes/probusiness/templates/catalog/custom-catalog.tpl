@@ -1,5 +1,5 @@
 {extends file=$layout}
-<pre>{$manufacturers|print_r}</pre>
+{* <pre>{$manufacturers|print_r}</pre> *}
 
 {block name='content'}
 	<section id="main" style="display: flex;flex-direction:column;">
@@ -11,14 +11,14 @@
 <table id="cms_catalog_main_table" style="max-width: 1350px;">
 	<tbody>
 		<tr class="cms_catalog_table_header">
-			<td class="header_label">{l s='Brand'}       </td>
-			<td class="header_label">{l s='Import File'} </td>
-			<td class="header_label">{l s='Catalogue'}   </td>
-			<td class="header_label">{l s='Pictures'}    </td>
-			<td class="header_label">{l s='Logos'}       </td>
-			<td class="header_label">{l s='Facebook'}    </td>
-			<td class="header_label">{l s='Website'}     </td>
-			<td class="header_label">{l s='Updates'}     </td>
+			<td class="header_label"><p>{l s='Brand'}</p></td>
+			<td class="header_label"><p>{l s='Import File'}</p></td>
+			<td class="header_label"><p>{l s='Catalogue'} </p></td>
+			<td class="header_label"><p>{l s='Pictures'}</p></td>
+			<td class="header_label"><p>{l s='Logos'}  </p></td>
+			<td class="header_label"><p>{l s='Facebook'}</p></td>
+			<td class="header_label"><p>{l s='Website'}</p></td>
+			<td class="header_label"><p>{l s='Updates'}</p></td>
 		</tr>
 		
     	{foreach from=$manufacturers item=manufacturer name=manufacturers}
@@ -92,7 +92,7 @@
 	</section>
 	<style>
     .width_100{ width: 100%; }
-    .cms_catalog_table_header{ text-align: center; background-color: #0273EB; color: white; text-transform: uppercase; padding: 10px; font-weight: bold; font-size: 14px;}
+    .cms_catalog_table_header{ text-align: center; background-color: #0273EB; color: white; text-transform: uppercase; padding: 10px; font-weight: 700; font-size: 14px;line-height: 18px;}
     .cms_catalog_tr_separator{ border-top: 1px solid #ddd;}
     .cms_catalog_row{ border: 1px solid #ddd; }
     .cms_catalog_right_line{ border-right: 1px solid #ddd; text-align: center; padding: 0; height: 150px; }
@@ -100,8 +100,10 @@
     .cms_catalog_updated_image{ height:80px; margin: 0px 10px 0px 20px; }
     .cms_catalog_messages{ font-size: 18px; color: #000; line-height: 1.5; float: left; padding: 0 5px; }
     .cms_catalog_updated_messages{ font-size: 18px; color: #0273eb; line-height: 1.5; float: left; padding: 0 5px; }
+	.header_label{ padding: 9px 10px;}
+	.header_label p{ margin: 0;}
     
-    #cms_catalog_main_table{ max-width: 1350px; margin: 0 auto 2rem auto; margin-bottom: 40px;border: 1px solid #ddd; width: 100%; }
+    #cms_catalog_main_table{ max-width: 1350px; margin: 20px auto 2rem auto; margin-bottom: 40px;border: 1px solid #ddd; width: 100%; }
     .cms_catalog_table_brand_td{ border-right: 1px solid #ddd; width: 150px !important; padding: 0; text-align: center; }
     .cms_catalog_table_downloads_td{ width: 1070px; padding: 0 }
     .cms_catalog_table_brand_td_image{ width: 120px; max-width: 120px !important; margin: 10px; }

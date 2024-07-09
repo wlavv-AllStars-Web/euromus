@@ -34,7 +34,7 @@
 {function name="menu" nodes=[] depth=0 parent=null}
   {if $nodes|count}
 
-    <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:4px" class="top-menu colu"
+    <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:4px;overflow:hidden;" class="top-menu colu"
       {if $depth == 0}id="top-menu" {/if} data-depth="{$depth}">
 
       {foreach from=$nodes item=node}
@@ -108,7 +108,7 @@
   {* <pre>{$categories[2]|print_r}</pre> *}
 <div style="width: 80vw;" class="menu js-top-menu position-static formula row" id="_desktop_top_menu_desktop">
   {if Context::getContext()->customer->logged}
-    <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:4px" class="top-menu colu" id="top-menu" data-depth="0">
+    <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:4px;overflow:hidden;" class="top-menu colu" id="top-menu" data-depth="0">
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-23">
           <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getPageLink('myaccount', true)}" data-depth="0">
           {l s='My Account' d='Shop.Theme.Menu'}
