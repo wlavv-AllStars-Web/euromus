@@ -243,7 +243,7 @@
                   <div class="form-group col-lg-12 col-md-12 col-sm-12 px-0 m-0">
                     <label>Date of Birth</label>
                   </div>
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4 pl-0">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4 pl-0 days">
                     <select id="days" name="days" class="form-control">
                       <option selected>Day</option>
                       <option>...</option>
@@ -252,7 +252,7 @@
                       {/foreach}
                     </select>
                   </div>
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4 p-0">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4 p-0 months">
                     <select id="months" name="months" class="form-control">
                       <option selected>Month</option>
                       <option>...</option>
@@ -261,7 +261,7 @@
                       {/foreach}
                     </select>
                   </div>
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4 pr-0">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4 pr-0 years">
                     <select id="years" name="years" class="form-control">
                       <option selected>Year</option>
                       <option>...</option>

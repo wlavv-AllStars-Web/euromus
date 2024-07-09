@@ -811,7 +811,7 @@
   } */
 
   #content-wrapper{
-    margin-top: 20px;
+    margin-top: 25px !important; 
   }
 
   .desktop {
@@ -4076,7 +4076,15 @@ grid-template-columns: 1fr 1fr;
 }
 /*  */
 
+.form-group.days,
+.form-group.months,
+.form-group.years{
+  padding: 0 !important;
+}
 
+.right-form-personal .form-group{
+  width: 100%;
+}
 
 #cms_container_14 .choose_us_btn{
   width: 100%;
