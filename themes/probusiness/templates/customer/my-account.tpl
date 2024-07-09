@@ -210,14 +210,14 @@
           
         {* <pre>{$customerData|print_r}</pre> *}
           <form action="{$urls.pages.my_account}" method="post" class="std">
-              <div class="left-form-personal col-lg-6 col-xs-12">
+              <div class="left-form-personal col-lg-6 col-sm-12">
                 <div class="form-group col-lg-9">
                   <h1 style="text-align: center;">Your Personal Information</h1>
                   <p style="text-align: center;">Please be sure to update your personal information if changed.</p>
                 </div>
                 <div class="radio-btns-form-personal  col-lg-12 col-md-6">
                 {foreach from=$genders key=k item=gender}
-                  <div class="form-check col-md-3 col-xs-6" style="text-align: center;">
+                  <div class="form-check col-md-3 col-sm-6" style="text-align: center;">
                     <input class="form-check-input" type="radio" name="id_gender" id="id_gender{$gender->id}" value="{$gender->id|intval}" {if isset($smarty.post.id_gender) && $smarty.post.id_gender == $gender->id} checked="checked"{/if}>
                     <label class="form-check-label" for="id_gender{$gender->id}">
                       {$gender->name}
@@ -227,65 +227,65 @@
                 </div>
 
               
-                <div class="form-group col-lg-9 col-md-7 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <label for="firstname">First Name</label>
                   <input type="text" class="form-control" id="firstname" name="firstname" value="{$smarty.post.firstname}">
                 </div>
-                <div class="form-group col-lg-9 col-md-7 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <label for="lastname">Last Name</label>
                   <input type="text" class="form-control" id="lastname" name="lastname" value="{$smarty.post.lastname}">
                 </div>
-                <div class="form-group col-lg-9 col-md-7 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <label for="email">Email</label>
                   <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
                 </div>
-              <div class="form-row col-lg-9 col-md-7 ">
-                <div class="form-group col-lg-12 col-md-12 col-xs-12 mx-0">
-                  <label>Date of Birth</label>
+                <div class="form-row col-lg-9 col-md-7 ">
+                  <div class="form-group col-lg-12 col-md-12 col-sm-12 px-0 m-0">
+                    <label>Date of Birth</label>
+                  </div>
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4 pl-0">
+                    <select id="days" name="days" class="form-control">
+                      <option selected>Day</option>
+                      <option>...</option>
+                      {foreach from=$days item=v}
+                        <option value="{$v}" {if ($sl_day == $v)}selected="selected"{/if}>{$v}&nbsp;&nbsp;</option>
+                      {/foreach}
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4 p-0">
+                    <select id="months" name="months" class="form-control">
+                      <option selected>Month</option>
+                      <option>...</option>
+                      {foreach from=$months key=k item=v}
+                          <option value="{$k}" {if ($sl_month == $k)}selected="selected"{/if}>{l s=$v}&nbsp;</option>
+                      {/foreach}
+                    </select>
+                  </div>
+                  <div class="form-group col-lg-4 col-md-4 col-sm-4 pr-0">
+                    <select id="years" name="years" class="form-control">
+                      <option selected>Year</option>
+                      <option>...</option>
+                      {foreach from=$years item=v}
+                          <option value="{$v}" {if ($sl_year == $v)}selected="selected"{/if}>{$v}&nbsp;&nbsp;</option>
+                      {/foreach}
+                    </select>
+                  </div>
                 </div>
-                <div class="form-group col-lg-4 col-md-4 col-xs-4 pl-0">
-                  <select id="days" name="days" class="form-control">
-                    <option selected>Day</option>
-                    <option>...</option>
-                    {foreach from=$days item=v}
-                      <option value="{$v}" {if ($sl_day == $v)}selected="selected"{/if}>{$v}&nbsp;&nbsp;</option>
-                    {/foreach}
-                  </select>
-                </div>
-                <div class="form-group col-lg-4 col-md-4 col-xs-4 p-0">
-                  <select id="months" name="months" class="form-control">
-                    <option selected>Month</option>
-                    <option>...</option>
-                    {foreach from=$months key=k item=v}
-                        <option value="{$k}" {if ($sl_month == $k)}selected="selected"{/if}>{l s=$v}&nbsp;</option>
-                    {/foreach}
-                  </select>
-                </div>
-                <div class="form-group col-lg-4 col-md-4 col-xs-4 pr-0">
-                  <select id="years" name="years" class="form-control">
-                    <option selected>Year</option>
-                    <option>...</option>
-                    {foreach from=$years item=v}
-                        <option value="{$v}" {if ($sl_year == $v)}selected="selected"{/if}>{$v}&nbsp;&nbsp;</option>
-                    {/foreach}
-                  </select>
-                </div>
-              </div>
-              {* <pre>{$smarty.post|print_r}</pre> *}
-                <div class="form-group col-lg-9 col-md-7 col-xs-12">
+                {* <pre>{$smarty.post|print_r}</pre> *}
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <label for="old_passwd">Current Password</label>
                   <input type="password" class="form-control " name="old_passwd" id="old_passwd" required data-validate="isPasswd" >
                 </div>
-                <div class="form-group col-lg-9 col-md-7 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <label for="passwd">New Password</label>
                   <input type="password" class="form-control " name="passwd" id="passwd" data-validate="isPasswd">
                 </div>
-                <div class="form-group col-lg-9 col-md-7 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <label for="confirmation">New Password Confirmation</label>
                   <input type="password" class="form-control " name="confirmation" id="confirmation" data-validate="isPasswd">
                 </div>
                 {* {if $newsletter} *}
-                <div class="form-group col-lg-12 col-md-7 col-xs-12">
+                <div class="form-group col-lg-12 col-md-7 col-sm-12">
                   <div class="form-check col-md-12">
                       <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" value="1" {if isset($smarty.post.newsletter) && $smarty.post.newsletter == 1} checked="checked"{/if}>
                       <label class="form-check-label" for="newsletter">
@@ -300,18 +300,18 @@
             {* </div>
 
             <div class="form-row company-info-personal" style="padding-top: 2rem;"> *}
-            <div class="right-form-personal  col-lg-6 col-xs-12">
-              <div class="form-group col-lg-12 col-md-7 col-xs-12" style="padding-top: 2rem;">
+            <div class="right-form-personal  col-lg-6 col-sm-12">
+              <div class="form-group col-lg-12 col-md-7 col-sm-12" style="padding-top: 2rem;">
               <h1 style="text-align: center;">Your Company Information</h1>
               </div>
               {* </div>
 
               <div class="form-row "> *}
-                <div class="form-group col-lg-9 col-md-7 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <label for="company">Company Name</label>
                   <input type="text" class="form-control" id="company" name="company" value="{if isset($smarty.post.company)}{$smarty.post.company}{/if}" >
                 </div>
-                <div class="form-group col-lg-9 col-md-7 col-xs-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <label for="siret">Vat Number</label>
                   <input type="text" class="form-control" id="siret" name="siret" value="{if isset($smarty.post.siret)}{$smarty.post.siret}{/if}">
                 </div>
@@ -319,7 +319,7 @@
               {* </div>
 
               <div class="form-row"> *}
-                <div class="form-group col-lg-12 col-md-4 col-xs-12" style="text-align: center;padding-bottom:2rem;">
+                <div class="form-group col-lg-12 col-md-4 col-sm-12" style="text-align: center;padding-bottom:2rem;">
                   <button class="btn btn-primary" type="submit" name="submitIdentity" data-link-action="save-customer" style="background:#0273eb;">Submit form</button>
                 </div>
               {* </div>
@@ -369,7 +369,7 @@
 
   
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
+    {* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> *}
     <script>
     
       var myLineChart = new Chart(document.getElementById('myChart').getContext('2d'),

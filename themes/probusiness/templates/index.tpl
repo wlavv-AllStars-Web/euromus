@@ -32,7 +32,7 @@
               <div class="not_logged_homepage">
                 <div class="banner_home hidden-sm-down">
                 <a href="{$homepage_footer['link_banner']}">
-                  <img src="/img/asd/homepage/main.webp?{rand()}" alt="{$homepage_footer['alt_banner']}" style="width: 100%;" width="1920" height="500" />
+                  <img src="/img/asd/homepage/main.webp?{rand()}" alt="{$homepage_footer['alt_banner']}" style="width: 100%;height:auto;" width="1920" height="500" />
                 </a>
                 </div>
 
