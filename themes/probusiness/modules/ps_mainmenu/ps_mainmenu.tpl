@@ -110,27 +110,27 @@
   {if Context::getContext()->customer->logged}
     <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:4px" class="top-menu colu" id="top-menu" data-depth="0">
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-23">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('myaccount', true)}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getPageLink('myaccount', true)}" data-depth="0">
           {l s='My Account' d='Shop.Theme.Menu'}
           </a>
       </li>
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-24">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('new-products', true)}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getPageLink('new-products', true)}" data-depth="0">
           {l s='News' d='Shop.Theme.Menu'}
           </a>
       </li>
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('manufacturer')}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getPageLink('manufacturer')}" data-depth="0">
           {l s='Brands' d='Shop.Theme.Menu'}
           </a>
       </li>
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('catalog', true)}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getPageLink('catalog', true)}" data-depth="0">
           {l s='Catalogs' d='Shop.Theme.Menu'}
           </a>
       </li>
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-25">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCategoryLink(16)|escape:'html':'UTF-8'}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getCategoryLink(16)|escape:'html':'UTF-8'}" data-depth="0">
           {l s='Clearence' d='Shop.Theme.Menu'}
           </a>
       </li>
@@ -139,23 +139,23 @@
   {else}
     <ul style="width:100%; display:flex; justify-content: space-between; margin-bottom:5px" class="top-menu colu" id="top-menu" data-depth="0">
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-23">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(8)}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getCMSLink(8)}" data-depth="0">
           {l s='About Us' d='Shop.Theme.Menu'}
           </a>
       </li>
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-24">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(14)}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getCMSLink(14)}" data-depth="0">
           {l s='Become a dealer' d='Shop.Theme.Menu'}
           </a>
       </li>
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-25">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getCMSLink(15)}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getCMSLink(15)}" data-depth="0">
           {l s='Become a suplier' d='Shop.Theme.Menu'}
           </a>
       </li>
 
       <li style="width: 100%" class="mxsz cms-page" id="cms-page-26">
-          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 600" class="bortextalign dropdown-item" href="{$link->getPageLink('manufacturer')}" data-depth="0">
+          <a style="color: white; text-align:center; padding-top: 6px; font-size: 16px; font-weight: 700;line-height:50;" class="bortextalign dropdown-item" href="{$link->getPageLink('manufacturer')}" data-depth="0">
           {l s='Brands' d='Shop.Theme.Menu'}
           </a>
       </li>

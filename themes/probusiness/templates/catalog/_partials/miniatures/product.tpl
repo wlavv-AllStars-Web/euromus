@@ -43,7 +43,7 @@
                   data-full-size-image-url="{$product.cover.large.url}"
                   width="{$product.cover.bySize.home_default.width}"
                   height="{$product.cover.bySize.home_default.height}"
-                  style="height: max-content;"
+                  style="width:125px;height:auto;"
                 />
               </picture>
             </a>
@@ -57,7 +57,7 @@
                   loading="lazy"
                   width="{$urls.no_picture_image.bySize.home_default.width}"
                   height="{$urls.no_picture_image.bySize.home_default.height}"
-                  style="height: max-content;width:125px;height:125px;"
+                  style="width:125px;height:auto;"
                 />
               </picture>
             </a>
