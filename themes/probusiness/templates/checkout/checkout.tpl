@@ -56,50 +56,54 @@
         {/block}
       </div> *}
       {* <pre>{$urls.pages|print_r}</pre> *}
+      {foreach from=$customer.addresses item=item key=key name=name}
+        {assign var=address value=$item}
+      {/foreach}
+
   
       <div class="col-lg-12 px-0">
         <div class="billing_address col-lg-6 px-0">
           <h3 class="page-subheading col-lg-12" style="border: 0px solid #123;margin:2rem 0;">Billing address</h3>
           <form>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="firstname">First Name</label>
-              <input type="text" class="form-control" id="firstname" name="firstname" value="{$smarty.post.firstname}">
+              <label for="firstnameb">First Name</label>
+              <input type="text" class="form-control" id="firstnameb"  disabled value="{$customer.firstname}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="lastname">Last Name</label>
-              <input type="text" class="form-control" id="lastname" name="lastname" value="{$smarty.post.lastname}">
+              <label for="lastnameb">Last Name</label>
+              <input type="text" class="form-control" id="lastnameb"  disabled  value="{$customer.lastname}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email">Email</label>
-              <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
+              <label for="emailb">Email</label>
+              <input type="email" class="form-control" id="emailb"  disabled  value="{$customer.email}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email">Address</label>
-              <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
+              <label for="emailb">Address</label>
+              <input type="email" class="form-control" id="emailb"  disabled  value="{$address.address1}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email"> Company name </label>
-              <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
+              <label for="emailb"> Company name </label>
+              <input type="email" class="form-control" id="emailb"  disabled  value="{$address.company}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email"> Address (Line 2) </label>
-              <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
+              <label for="emailb"> Address (Line 2) </label>
+              <input type="email" class="form-control" id="emailb"  disabled  value="{$address.address2}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email"> Vat number </label>
-              <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
+              <label for="emailb"> Vat number </label>
+              <input type="email" class="form-control" id="emailb" disabled  value="{$address.vat_number}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email"> Zip/Postal code </label>
-              <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
+              <label for="emailb"> Zip/Postal code </label>
+              <input type="email" class="form-control" id="emailb" disabled  value="{$address.postcode}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email">Country</label>
-              <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
+              <label for="emailb">Country</label>
+              <input type="email" class="form-control" id="emailb"  disabled  value="{$address.country}">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email">City</label>
-              <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
+              <label for="emailb">City</label>
+              <input type="email" class="form-control" id="emailb"  disabled  value="{$address.city}">
             </div>
             <div class="form-group col-lg-12 col-md-7 col-xs-12">
               <a class="btn btn-primary" href="{$urls.pages.contact}" style="width: 100%;color:#0273EB;border:2px solid #0273EB;background:#fff;font-weight:bold;">Contact us to update</a>
@@ -110,30 +114,30 @@
         <div class="deliver_address col-lg-6">
           <div class="form-group col-lg-12 col-md-7 col-xs-12 px-0" style="margin:2rem 0 28px 0;">
                 <input class="form-check-input" type="checkbox" id="deliverAddress" onchange="toggleAddress(this)">
-                <label class="form-check-label" for="deliverAddress">
+                <label class="form-check-label" for="deliverAddress" style="font-size: 16px;">
                 Deliver to a different address?
                 </label>
           </div>
           <form id="form_deliver_address" style="display: none;">
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
               <label for="firstname">First Name</label>
-              <input type="text" class="form-control" id="firstname" name="firstname" value="{$smarty.post.firstname}">
+              <input type="text" class="form-control" id="firstname" name="firstname" value="">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
               <label for="lastname">Last Name</label>
-              <input type="text" class="form-control" id="lastname" name="lastname" value="{$smarty.post.lastname}">
+              <input type="text" class="form-control" id="lastname" name="lastname" value="">
             </div>
             <div class="form-group col-lg-12 col-md-7 col-xs-12">
-              <label for="email"> Company name </label>
-              <input type="email" class="form-control" id="email" name="email">
+              <label for="company"> Company name </label>
+              <input type="text" class="form-control" id="company" name="company">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email">Address</label>
-              <input type="email" class="form-control" id="email" name="email">
+              <label for="address1">Address</label>
+              <input type="text" class="form-control" id="address1" name="address1">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email"> Address (Line 2) </label>
-              <input type="email" class="form-control" id="email" name="email">
+              <label for="address2"> Address (Line 2) </label>
+              <input type="text" class="form-control" id="address2" name="address2">
             </div>
             <div class="form-group col-lg-6 col-md-6">
               <label for="country">{l s='Country' d='Shop.Theme.Career'}<span style="color:#ee302e;">*</span></label>
@@ -145,20 +149,20 @@
               </select>
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email"> Phone (with country code) </label>
-              <input type="email" class="form-control" id="email" name="email">
+              <label for="phone"> Phone (with country code) </label>
+              <input type="number" class="form-control" id="phone" name="phone">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email">City</label>
-              <input type="email" class="form-control" id="email" name="email">
+              <label for="city">City</label>
+              <input type="text" class="form-control" id="city" name="city">
             </div>
             <div class="form-group col-lg-6 col-md-7 col-xs-12">
-              <label for="email"> Zip/Postal code </label>
-              <input type="email" class="form-control" id="email" name="email">
+              <label for="postalcode"> Zip/Postal code </label>
+              <input type="email" class="form-control" id="postalcode" name="postalcode">
             </div>
             <div class="form-group col-lg-12">
-              <label for="exampleFormControlTextarea1">{l s='Additional information' d='Shop.Theme.FormBecomedealer'}</label>
-              <textarea class="form-control" id="exampleFormControlTextarea1" rows="2" name="observations"></textarea>
+              <label for="other">{l s='Additional information' d='Shop.Theme.FormBecomedealer'}</label>
+              <textarea class="form-control" id="other" rows="2" name="other"></textarea>
             </div>
           </form>
         </div>
@@ -168,13 +172,13 @@
         <div class="accept_privacy_policy">
           <div class="form-group col-lg-12 col-md-7 col-xs-12 px-0" style="margin:2rem 0 28px 0;">
             <input class="form-check-input" type="checkbox" id="acceptPrivacy" onchange="togglePayment(this)">
-            <label class="form-check-label" for="acceptPrivacy">
-            I declare that I have read and accept the privacy policies in force. To view the privacy policies, please click on:Privacy policies
+            <label class="form-check-label" for="acceptPrivacy" style="font-size: 16px;">
+            I declare that I have read and accept the privacy policies in force. To view the privacy policies, please click on: <a style="color:#0273EB;" href="{$link->getCMSLink(7)}">Privacy policies</a>
             </label>
           </div>
         </div>
         <div id="payment_checkout" class=" col-lg-12" style="text-align: center;margin:2rem 0;display:none;">
-            <h3 style="margin-bottom: 2rem;">Select your payment method</h3>
+            <h3 style="margin-bottom: 2rem;text-transform:uppercase;">Select your payment method</h3>
             <div class="col-lg-12" style="display: flex;justify-content:center;gap:8rem;">
               
                 <div id="wired_transfer_option" onclick="setWireTransfer();" style="text-align: center; width: fit-content;border-radius: 5px;cursor: pointer;"> 
@@ -201,9 +205,39 @@
         </div>
       </div>
       
+      {hook h="payment" mod="bankwire"}
+
+
+
+
       
     </div>
   </section>
+  <script>
+    
+    function setWireTransfer(){
+        
+        // $('#wired_transfer_option_input').attr('checked', 'checked');
+        // $('#credit_card_option_input').attr('checked', null);
+        // $('#credit_card_option').css('border', '4px solid white');
+        // $('#wired_transfer_option').css('border-bottom', '4px solid #0273EB');
+        // $('#confirm_button').css('display', 'block');
+        document.querySelector("#bankwire_link").click();
+    }
+
+    // function setCreditCard(){
+        
+    //     $('#credit_card_option_input').attr('checked', 'checked');
+    //     $('#wired_transfer_option_input').attr('checked', null);
+    //     $('#credit_card_option').css('border-bottom', '4px solid #0273EB');
+    //     $('#wired_transfer_option').css('border-bottom', '4px solid white');
+    //     $('#confirm_button').css('display', 'block');
+        
+    //     $('#bankwire_link').click();
+
+    // }
+    
+  </script>
 {/block}
 
 {block name='footer'}

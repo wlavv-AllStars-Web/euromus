@@ -25,7 +25,7 @@
  {block name='brand_miniature_item'}
   {* <pre>{$brand|print_r}</pre> *}
   {if Context::getContext()->customer->logged}
-    <li class="brand_logged col-md-3 col-xs-6" style="margin-top: 2rem;">
+    <li class="brand_logged col-md-3 col-sm-6" style="margin-top: 2rem;">
       <div class="brand_content_item_logged" style="border: 1px solid #0273eb;">
           <div class="brand-infos">
             <h3 style="text-align: center;background:#0273eb;color:#fff;padding: 0.5rem 1rem">{$brand.name|escape:'html':'UTF-8'}</h3>
@@ -44,7 +44,7 @@
           </div>
           <div class="brand-infos">
             <h3>{$brand.name|escape:'html':'UTF-8'}</h3>
-            {$brand.description nofilter}
+            <p style="font-size: 14px;line-height:18px;">{$brand.description nofilter}</p>
           </div>
       </div>
     </li>

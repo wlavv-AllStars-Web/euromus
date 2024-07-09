@@ -401,7 +401,7 @@
               </div>
               <div class="form-group col-md-4">
               
-              <label for="important_notice" style="color: red;padding:0 10px;text-transform:uppercase;font-weight:500;">{l s='Important notice:' d='Shop.Theme.FormBecomedealer'}</label>
+              <label for="important_notice" style="font-size: 16px;color: red;padding:0 10px;text-transform:uppercase;font-weight:400;line-height:22px;">{l s='Important notice:' d='Shop.Theme.FormBecomedealer'}</label>
               <div id="important_notice">
               {l s='By my signature, I certify the information I provided on and in connection with this form is true and correct to the best of my knowledge. I also understand that any false statements or deliberate omissions on this form may subject me to legal actions for fraudulent misrepresentation.' d='Shop.Theme.FormBecomedealer'}
                 
@@ -1283,7 +1283,7 @@
         {$cms.content nofilter}
       {/if}
 
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      {* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> *}
 
     <script>
 
