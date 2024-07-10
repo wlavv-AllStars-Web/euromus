@@ -95,6 +95,9 @@ body::-ms-scrollbar-thumb:hover {
   padding: 1rem;
 }
 
+.form-check-input{
+  margin-left: 0 !important;
+}
 
 
   /* shopping cart modal */
@@ -601,13 +604,17 @@ body::-ms-scrollbar-thumb:hover {
 
     #cms_container_14 .become_cards {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         gap: 1rem;
+        flex-wrap: wrap;
     }
 
     #cms_container_14 .become_cards .become_card_requirement{
         flex: 1;
         border: 1px solid #0273EB;
+        min-width: 300px;
+        max-width: 358px;
+        min-height: 237px;
     }
     #cms_container_14 .become_cards .become_card_requirement .card_title{
         width: 100%;
@@ -2342,6 +2349,8 @@ textarea {
 
 @media (max-width: 900px){
 
+
+
   .formula{
     display: none !important;
   }
@@ -2536,6 +2545,12 @@ textarea {
 }
 
 @media screen and (min-width:768px) and (max-width:900px) {
+
+  .form-become-dealer .form-group{
+    width: 50%;
+  }
+
+
 /* person form myaccount */
 .left-form-personal {
   display: flex;
