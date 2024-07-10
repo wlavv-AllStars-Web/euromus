@@ -65,8 +65,7 @@
     {block name='cms_content'}
       {if $cms.id === 8}
         <div id="cms_container_8">
-          <div><img class="desktop" src="/img/asd/Content_pages/aboutus/top_image_short.webp" alt="top_image_short" width="1350" height="300" /></div>
-          <div><img class="mobile" src="/img/asd/Content_pages/aboutus/top_image_short.webp" alt="top_image_short" width="567" height="111" /></div>
+          <div><img class="about_banner" src="/img/asd/Content_pages/aboutus/top_image_short.webp" alt="top_image_short" width="1350" height="300" /></div>
           <div class="profile_container_cms">
           <div class="profile_style">{l s='Profile' d='Shop.Theme.About'}</div>
           <div class="profile_container_text" id="profile_container_text">{l s='Supplying over 30 top of the line brands to automotive performance professionals worldwide, All Stars Distribution is one of the largest European wholesalers of performance and design parts. Dedicated to serving shops, tuners, e-dealers and other resellers, All Stars Distribution is committed to employing the best of inventory management and distribution practices to get our customers the performance parts they need to satisfy their customers.' d='Shop.Theme.About'}</div>
@@ -77,39 +76,57 @@
           </div>
           <div>
             <img class="about_content_img" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.webp" alt="lg_{$language.iso_code}" loading="lazy"/>
+            <img class="about_content_img2" />
           </div>
         </div>
 
 
         <script>
             function updateAboutImage() {
+              const aboutBanner = document.querySelector(".about_banner");
               const aboutImage = document.querySelector(".about_content_img");
               const aboutImageBadge = document.querySelector(".aboutImageBadge");
+              const aboutImage2 = document.querySelector(".about_content_img2");
               const screenWidth = window.screen.width;
               const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
 
               if (screenWidth > 1140) {
+                aboutBanner.setAttribute("src",'/img/asd/Content_pages/aboutus/top_image_short.webp')
+                aboutBanner.setAttribute("width",'1350')
+                aboutBanner.setAttribute("height",'300')
+                aboutImage2.style.display = "none";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_lg.webp')
                 aboutImageBadge.setAttribute("width",'1700')
                 aboutImageBadge.setAttribute("height",'196')
                 aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/lg_'+languageCode+'.webp');
                 aboutImage.setAttribute("width", "1700");
-                aboutImage.setAttribute("height", "7747");
+                aboutImage.setAttribute("height", "7627");
               } else if (screenWidth > 575) {
+                aboutBanner.setAttribute("src",'/img/asd/Content_pages/aboutus/top_image_short.webp')
+                aboutBanner.setAttribute("width",'1139')
+                aboutBanner.setAttribute("height",'196')
+                aboutImage2.style.display = "none";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_sm.webp')
-                aboutImageBadge.setAttribute("width",'1134')
+                aboutImageBadge.setAttribute("width",'1139')
                 aboutImageBadge.setAttribute("height",'196')
                 aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/sm_'+languageCode+'.webp');
                 aboutImage.setAttribute("width", "1139");
                 aboutImage.setAttribute("height", "11086");
               } else {
+                aboutBanner.setAttribute("src",'/img/asd/Content_pages/aboutus/top_image_short.webp')
+                aboutBanner.setAttribute("width",'567')
+                aboutBanner.setAttribute("height",'107')
+                aboutImage2.style.display = "block";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_sm.webp')
                 aboutImageBadge.setAttribute("width",'567')
                 aboutImageBadge.setAttribute("height",'107')
                 aboutImageBadge.style.padding = "0.5rem";
-                aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'.jpg');
+                aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'1.webp');
                 aboutImage.setAttribute("width", "575");
-                aboutImage.setAttribute("height", "20721");
+                aboutImage.setAttribute("height", "10289");
+                aboutImage2.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'2.webp');
+                aboutImage2.setAttribute("width", "575");
+                aboutImage2.setAttribute("height", "10431");
               }
             }
             updateAboutImage();
