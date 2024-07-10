@@ -6,6 +6,60 @@
   font-style: normal; 
 }
 
+/* scrollbar css */
+
+/* WebKit browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 12px; /* Width of the entire scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #2a2a2c; /* Color of the scrollbar track */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #2a2a2c; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded corners */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2a2a2c; /* Color of the scrollbar handle on hover */
+}
+
+/* Firefox */
+html {
+  scrollbar-width: normal; /* Scrollbar width */
+  scrollbar-color: #6a6a6b #2a2a2c; /* Scrollbar handle and track color */
+}
+
+/* Older versions of Internet Explorer and Edge */
+body {
+  -ms-overflow-style: -ms-autohiding-scrollbar; /* Autohiding scrollbar */
+}
+
+body::-ms-scrollbar {
+  width: 12px; /* Width of the scrollbar */
+}
+
+body::-ms-scrollbar-track {
+  background: #2a2a2c; /* Color of the scrollbar track */
+}
+
+body::-ms-scrollbar-thumb {
+  background-color: #2a2a2c; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded corners */
+  border: 3px solid #262627; /* Space around the handle */
+}
+
+body::-ms-scrollbar-thumb:hover {
+  background: #6a6a6b; /* Color of the scrollbar handle on hover */
+}
+
+
+/*  */
+/*  */
+
+
   html,body{
     scroll-behavior: smooth;
     font-family: 'Open Sans', sans-serif;
