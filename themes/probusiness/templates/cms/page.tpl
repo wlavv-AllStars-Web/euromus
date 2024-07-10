@@ -238,67 +238,59 @@
             <form action="/{$language.iso_code}/content/14-become-a-dealer" method="post" name="become_dealer_form" style="display:flex;flex-direction:column;">
               <input type="hidden" id="type" name="type" value="becomedealer" >
               <div class="form-row">
-                <div class="form-group col-md-2">
+                <div class="form-group col-lg-2 col-md-4">
                   <label for="name">{l s='Name' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="name" name="name" required> 
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-lg-2 col-md-4">
                   <label for="surname">{l s='Surname' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="surname" name="surname" required>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-lg-4 col-md-4">
                   <label for="company">{l s='Company' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="company" name="company" required>
                 </div>
-                <div class="form-group col-md-4">
+                <div class="form-group col-lg-4 col-md-4">
                   <label for="company_tva">{l s='VAT Number (if applicable)' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="company_tva" name="company_tva" required>
                 </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-4">
+              
+                <div class="form-group col-lg-4 col-md-4">
                   <label for="email">{l s='Email' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="email" class="form-control" id="email" name="email" required>
                 </div>
-                <div class="form-group col-md-8">
+                <div class="form-group col-lg-8 col-md-4">
                   <label for="adresse_line_1">{l s='Address' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="adresse_line_1" placeholder="1234 Main St" name="adresse_line_1" required>
                 </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-4">
+              
+                <div class="form-group col-lg-4 col-md-4">
                   <label for="phone">{l s='Phone' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="tel" class="form-control" id="phone" placeholder="Apartment, studio, or floor" name="phone" required>
                 </div>
-                <div class="form-group col-md-8">
+                <div class="form-group col-lg-8 col-md-4">
                   <label for="adresse_line_2">{l s='Address 2' d='Shop.Theme.FormBecomedealer'}</label>
                   <input type="text" class="form-control" id="adresse_line_2" placeholder="Apartment, studio, or floor" name="adresse_line_2" >
                 </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-4">
+              
+                <div class="form-group col-lg-4 col-md-4">
                   <label for="site">{l s='Website' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="site" placeholder="Website" name="site" required>
                 </div>
-                <div class="form-group col-md-6">
+                <div class="form-group col-lg-6 col-md-4">
                   <label for="city">{l s='City' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="city" placeholder="City" name="city" required>
                 </div>
-                <div class="form-group col-md-2">
+                <div class="form-group col-lg-2 col-md-4">
                   <label for="postal_code">{l s='Zip Code' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="postal_code" placeholder="Zip Code" name="postal_code" required>
                 </div>
-              </div>
-
-              <div class="form-row">
-                <div class="form-group col-md-4">
+              
+                <div class="form-group col-lg-4 col-md-4">
                   <label for="social">{l s='Social Media Link' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <input type="text" class="form-control" id="social" name="social" required>
                 </div>
-                <div class="form-group col-md-8">
+                <div class="form-group col-lg-8 col-md-4">
                   <label for="country">{l s='Country' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></label>
                   <select id="country" class="form-control" name="country" required style="color: #000;">
                     <option selected>{l s='Please Select...' d='Shop.Theme.FormBecomedealer'}</option>
@@ -310,7 +302,7 @@
               </div>
 
             <div class="form-row">
-              <div class="form-group col-md-3">
+              <div class="form-group col-lg-4 col-md-6">
                 <div class="title-suppliers">{l s='Business Type (Check all that apply)' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></div>
                 <div class="col-sm-12 check-form" required>
                   <div class="form-check">
@@ -357,7 +349,7 @@
                   </div>
                 </div>
               </div>
-              <div class="form-group col-md-3">
+              <div class="form-group col-lg-2 col-md-6">
                 <div class="title-suppliers">{l s='Main Market' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></div>
                 <div class="col-sm-12 check-form">
                   <div class="form-check">
@@ -406,7 +398,7 @@
                 </div>
               </div>
 
-              <div class="form-group col-md-3">
+              <div class="form-group col-lg-3 col-md-6">
                 <div class="title-suppliers">{l s='Annual sales volume' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-10 check-form">
                   <div class="form-check">
@@ -436,46 +428,42 @@
                 </div>
               </div>
 
-              <div class="form-row col-md-3">
-                <div class="form-row">
-                    <div class="col-md-12 title-suppliers current_suplier">{l s='Main current suppliers' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></div>
-                    <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 1' d='Shop.Theme.FormBecomedealer'}" name="supplier_1" required>
-                    </div>
-                    <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 2' d='Shop.Theme.FormBecomedealer'}" name="supplier_2">
-                    </div>
-                    <div class="form-group col-md-12 current_suplier">
-                      <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 3' d='Shop.Theme.FormBecomedealer'}" name="supplier_3">
-                    </div>
+              <div class="form-group col-lg-3 col-md-6">
+                  <div class="col-md-12 title-suppliers current_suplier">{l s='Main current suppliers' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></div>
+                  <div class="form-group col-md-12 current_suplier">
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 1' d='Shop.Theme.FormBecomedealer'}" name="supplier_1" required>
                   </div>
-                </div>
+                  <div class="form-group col-md-12 current_suplier">
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 2' d='Shop.Theme.FormBecomedealer'}" name="supplier_2">
+                  </div>
+                  <div class="form-group col-md-12 current_suplier">
+                    <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 3' d='Shop.Theme.FormBecomedealer'}" name="supplier_3">
+                  </div>
+              </div>
               </div>
 
-            <div class="form-row col-md-12">
-              <div class="form-group col-md-4">
+            <div class="form-row col-lg-12" style="display: flex;flex-wrap:wrap;">
+              <div class="form-group col-lg-4 col-md-6">
                 <label for="exampleFormControlTextarea1">{l s='Comment' d='Shop.Theme.FormBecomedealer'}</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="observations"></textarea>
               </div>
-              <div class="form-group col-md-4 signature">
+              <div class="form-group col-lg-4 col-md-6 signature">
                 <div style="display: flex;align-items:center;justify-content:space-between;">
                   <label for="canvas4">{l s='Signature' d='Shop.Theme.FormBecomedealer'}</label>
                   <div class="btn" id="clearButton">{l s='Reset' d='Shop.Theme.FormBecomedealer'}</div>
                 </div>
                 <canvas id="canvas4" width=400 height=140></canvas>
               </div>
-              <div class="form-group col-md-4">
+              <div class="form-group col-lg-4 col-md-6">
               
-              <label for="important_notice" style="font-size: 16px;color: red;padding:0 10px;text-transform:uppercase;font-weight:400;line-height:22px;">{l s='Important notice:' d='Shop.Theme.FormBecomedealer'}</label>
-              <div id="important_notice">
-              {l s='By my signature, I certify the information I provided on and in connection with this form is true and correct to the best of my knowledge. I also understand that any false statements or deliberate omissions on this form may subject me to legal actions for fraudulent misrepresentation.' d='Shop.Theme.FormBecomedealer'}
-                
+                <label for="important_notice" style="font-size: 16px;color: red;padding:0 10px;text-transform:uppercase;font-weight:400;line-height:22px;">{l s='Important notice:' d='Shop.Theme.FormBecomedealer'}</label>
+                <div id="important_notice">
+                {l s='By my signature, I certify the information I provided on and in connection with this form is true and correct to the best of my knowledge. I also understand that any false statements or deliberate omissions on this form may subject me to legal actions for fraudulent misrepresentation.' d='Shop.Theme.FormBecomedealer'}
+                  
+                </div>
               </div>
-              </div>
-            </div>
-
-            <div class="form-row">
-              <div class="form-group col-md-12" style="display: flex;justify-content:center;">
+            
+              <div class="form-group col-lg-12 col-md-6" style="display: flex;justify-content:center;align-items:center;">
                 <button type="submit" class="btn send-form" onclick="validateForm()">{l s='Submit' d='Shop.Theme.FormBecomedealer'}</button>
               </div>
             </div>
@@ -1511,6 +1499,7 @@
             <p>{l s='These general terms and conditions of sale apply, without restriction or reservation, to all sales concluded on the website' d='Shop.Theme.Terms'} <a>https://all-stars-distribution.com</a></p>
             <h2>{l s='ARTICLE 1: MANDATORY INFORMATION' d='Shop.Theme.Terms'}</h2>
             <p>{l s='The website' d='Shop.Theme.Terms'} <a href="https://all-stars-distribution.com">https://all-stars-distribution.com</a> {l s='is the property of :' d='Shop.Theme.Terms'}</p>
+            <br>
             <p style="margin-top: 2rem;line-height: 29px;">ALL STARS DISTRIBUTION LDA </p>
             <p style="line-height: 29px;">ZONA INDUSTRIAL DE GANDRA S/N </p>
             <p style="line-height: 29px;">4930-311 GANDRA – VALENCA </p>
