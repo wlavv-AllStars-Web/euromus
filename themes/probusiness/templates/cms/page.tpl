@@ -75,7 +75,7 @@
             <img class="aboutImageBadge" src="/img/asd/Content_pages/aboutus/badge_lg.webp" alt="badge_lg"/>
           </div>
           <div>
-            <img class="about_content_img" src="/img/asd/Content_pages/aboutus/lg_{$language.iso_code}.webp" alt="about image" loading="lazy"/>
+            <img class="about_content_img"  alt="about image"/>
             <img class="about_content_img2" loading="lazy"/>
           </div>
         </div>
@@ -113,20 +113,29 @@
                 aboutImage.setAttribute("width", "1139");
                 aboutImage.setAttribute("height", "11086");
               } else {
-                aboutBanner.setAttribute("src",'/img/asd/Content_pages/aboutus/top_image_short.webp')
+                aboutBanner.setAttribute("src",'/img/asd/Content_pages/aboutus/top_image_short_xs.webp')
                 aboutBanner.setAttribute("width",'567')
                 aboutBanner.setAttribute("height",'107')
                 aboutImage2.style.display = "block";
-                aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_sm.webp')
+                aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_xs.webp')
                 aboutImageBadge.setAttribute("width",'567')
                 aboutImageBadge.setAttribute("height",'107')
                 aboutImageBadge.style.padding = "0.5rem";
                 aboutImage.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'1.webp');
                 aboutImage.setAttribute("width", "575");
-                aboutImage.setAttribute("height", "10289");
+                aboutImage.setAttribute("height", "762");
                 aboutImage2.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'2.webp');
                 aboutImage2.setAttribute("width", "575");
-                aboutImage2.setAttribute("height", "10431");
+                aboutImage2.setAttribute("height", "763");
+                aboutImage3.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'3.webp');
+                aboutImage3.setAttribute("width", "575");
+                aboutImage3.setAttribute("height", "763");
+                aboutImage4.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'4.webp');
+                aboutImage4.setAttribute("width", "575");
+                aboutImage4.setAttribute("height", "763");
+                aboutImage5.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'5.webp');
+                aboutImage5.setAttribute("width", "575");
+                aboutImage5.setAttribute("height", "763");
               }
             }
             updateAboutImage();
