@@ -2206,18 +2206,18 @@ textarea {
 }
 
 .cms-terms .terms-content p {
-  font-size: 1.15rem;
+  font-size: 18px;
   color: #000;
 }
 
 .cms-terms .terms-content a {
-  font-size: 1.15rem;
+  font-size: 18px;
   color: #0273EB !important;
   cursor: pointer;
 }
 
 .cms-terms .terms-content a:hover {
-  font-size: 1.15rem;
+  font-size: 18px;
   color: #0273EB;
   cursor: pointer;
 }
