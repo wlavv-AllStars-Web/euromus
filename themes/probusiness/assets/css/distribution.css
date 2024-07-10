@@ -345,7 +345,7 @@ body::-ms-scrollbar-thumb:hover {
    }
    .banner_home img{
     border-bottom: 3px solid #0273EB;
-    /* max-width: 1690px; */
+    max-width: 1690px;
    }
 
    .profile_container_homepage{
