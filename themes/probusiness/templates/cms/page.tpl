@@ -76,11 +76,12 @@
           </div>
           <div>
             <img class="about_content_img"  alt="about image"/>
-            <img class="about_content_img2" loading="lazy"/>
-            <img class="about_content_img3" loading="lazy"/>
-            <img class="about_content_img4" loading="lazy"/>
-            <img class="about_content_img5" loading="lazy"/>
-            <img class="about_content_img6" loading="lazy"/>
+            <img class="about_content_img2" loading="lazy" alt="about image2"/>
+            <img class="about_content_img3" loading="lazy" alt="about image3"/>
+            <img class="about_content_img4" loading="lazy" alt="about image4"/>
+            <img class="about_content_img5" loading="lazy" alt="about image5"/>
+            <img class="about_content_img6" loading="lazy" alt="about image6"/>
+            <img class="about_content_img7" loading="lazy" alt="about image7"/>
           </div>
         </div>
 
@@ -94,7 +95,8 @@
               const aboutImage3 = document.querySelector(".about_content_img3");
               const aboutImage4 = document.querySelector(".about_content_img4");
               const aboutImage5 = document.querySelector(".about_content_img5");
-              const aboutImage6 = document.querySelector(".about_content_img5");
+              const aboutImage6 = document.querySelector(".about_content_img6");
+              const aboutImage7 = document.querySelector(".about_content_img7");
               const screenWidth = window.screen.width;
               const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
 
@@ -107,6 +109,7 @@
                 aboutImage4.style.display = "none";
                 aboutImage5.style.display = "none";
                 aboutImage6.style.display = "none";
+                aboutImage7.style.display = "none";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_lg.webp')
                 aboutImageBadge.setAttribute("width",'1700')
                 aboutImageBadge.setAttribute("height",'196')
@@ -122,6 +125,7 @@
                 aboutImage4.style.display = "none";
                 aboutImage5.style.display = "none";
                 aboutImage6.style.display = "none";
+                aboutImage7.style.display = "none";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_sm.webp')
                 aboutImageBadge.setAttribute("width",'1139')
                 aboutImageBadge.setAttribute("height",'196')
@@ -137,6 +141,7 @@
                 aboutImage4.style.display = "block";
                 aboutImage5.style.display = "block";
                 aboutImage6.style.display = "block";
+                aboutImage7.style.display = "block";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_xs.webp')
                 aboutImageBadge.setAttribute("width",'567')
                 aboutImageBadge.setAttribute("height",'107')
@@ -159,6 +164,9 @@
                 aboutImage6.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'6.webp');
                 aboutImage6.setAttribute("width", "575");
                 aboutImage6.setAttribute("height", "763");
+                aboutImage7.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'7.webp');
+                aboutImage7.setAttribute("width", "575");
+                aboutImage7.setAttribute("height", "763");
               }
             }
             updateAboutImage();
