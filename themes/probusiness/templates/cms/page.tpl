@@ -80,6 +80,7 @@
             <img class="about_content_img3" loading="lazy"/>
             <img class="about_content_img4" loading="lazy"/>
             <img class="about_content_img5" loading="lazy"/>
+            <img class="about_content_img6" loading="lazy"/>
           </div>
         </div>
 
@@ -93,6 +94,7 @@
               const aboutImage3 = document.querySelector(".about_content_img3");
               const aboutImage4 = document.querySelector(".about_content_img4");
               const aboutImage5 = document.querySelector(".about_content_img5");
+              const aboutImage6 = document.querySelector(".about_content_img5");
               const screenWidth = window.screen.width;
               const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
 
@@ -104,6 +106,7 @@
                 aboutImage3.style.display = "none";
                 aboutImage4.style.display = "none";
                 aboutImage5.style.display = "none";
+                aboutImage6.style.display = "none";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_lg.webp')
                 aboutImageBadge.setAttribute("width",'1700')
                 aboutImageBadge.setAttribute("height",'196')
@@ -118,6 +121,7 @@
                 aboutImage3.style.display = "none";
                 aboutImage4.style.display = "none";
                 aboutImage5.style.display = "none";
+                aboutImage6.style.display = "none";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_sm.webp')
                 aboutImageBadge.setAttribute("width",'1139')
                 aboutImageBadge.setAttribute("height",'196')
@@ -132,6 +136,7 @@
                 aboutImage3.style.display = "block";
                 aboutImage4.style.display = "block";
                 aboutImage5.style.display = "block";
+                aboutImage6.style.display = "block";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_xs.webp')
                 aboutImageBadge.setAttribute("width",'567')
                 aboutImageBadge.setAttribute("height",'107')
@@ -151,6 +156,9 @@
                 aboutImage5.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'5.webp');
                 aboutImage5.setAttribute("width", "575");
                 aboutImage5.setAttribute("height", "763");
+                aboutImage6.setAttribute("src", '/img/asd/Content_pages/aboutus/xs_'+languageCode+'6.webp');
+                aboutImage6.setAttribute("width", "575");
+                aboutImage6.setAttribute("height", "763");
               }
             }
             updateAboutImage();
