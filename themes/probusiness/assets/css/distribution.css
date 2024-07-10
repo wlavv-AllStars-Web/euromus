@@ -805,6 +805,7 @@
     line-height: 23px;
   }
 
+
   /* #manufacturer .brand_content_item .brand-img img{
     width: 125px;
     } */
@@ -2211,7 +2212,7 @@ textarea {
 
 .cms-terms .terms-content a {
   font-size: 1.15rem;
-  color: #0273EB;
+  color: #0273EB !important;
   cursor: pointer;
 }
 

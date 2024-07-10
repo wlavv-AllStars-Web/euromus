@@ -1511,31 +1511,43 @@
             <p>{l s='These general terms and conditions of sale apply, without restriction or reservation, to all sales concluded on the website' d='Shop.Theme.Terms'} <a>https://all-stars-distribution.com</a></p>
             <h2>{l s='ARTICLE 1: MANDATORY INFORMATION' d='Shop.Theme.Terms'}</h2>
             <p>{l s='The website' d='Shop.Theme.Terms'} <a href="https://all-stars-distribution.com">https://all-stars-distribution.com</a> {l s='is the property of :' d='Shop.Theme.Terms'}</p>
-            <p style="margin-top: 2rem;">ALL STARS DISTRIBUTION LDA </p>
-            <p>ZONA INDUSTRIAL DE GANDRA S/N </p>
-            <p>4930-311 GANDRA – VALENCA </p>
-            <p>PORTUGAL</p>
-            <p>PT513881387</p>
+            <p style="margin-top: 2rem;line-height: 29px;">ALL STARS DISTRIBUTION LDA </p>
+            <p style="line-height: 29px;">ZONA INDUSTRIAL DE GANDRA S/N </p>
+            <p style="line-height: 29px;">4930-311 GANDRA – VALENCA </p>
+            <p style="line-height: 29px;">PORTUGAL</p>
+            <p style="line-height: 29px;">PT513881387</p>
             <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a>
             <h2>{l s='ARTICLE 2: PRODUCTS' d='Shop.Theme.Terms'}</h2>
             <p>{l s='The website www.all-stars-ditribution.com offers for sale spare parts, accessories and consumables for vehicles and cars. ALL STARS DISTRIBUTION is specialised in the sale of performance spare parts.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='The customer declares to have read and accepted the general conditions of sale prior to the validation of their order.' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 3: PRICE' d='Shop.Theme.Terms'}</h2>
             <p>{l s='The prices of the products present on the site www.all-stars-distribution.com are indicated in euros excluding taxes (HT).
             In the case of an order delivered to a country outside the European Union, the customer, being the importer of the products purchased, is solely responsible for the declaration and payment of any customs duties or other taxes that may be due in his country upon delivery of the order.
             Delivery costs are not included in the prices displayed; they will be visible in a summary sent by email to the customer following the validation of his online order before making the payment.' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 4: AVAILABILITY OF PRODUCTS' d='Shop.Theme.Terms'}</h2>
             <p>{l s='The available products appear on our site accompanied by the mention "In stock". In order to best meet the expectations of our customers, the availability of our products is regularly updated.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='If you have ordered a product that is unavailable after the validation of your order, you will be informed immediately. We will proceed with the cancellation of your order and you will be refunded immediately if payment for the order has already been made.' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 5: ORDERING' d='Shop.Theme.Terms'}</h2>
             <p>{l s='You can order our products directly on our website if you have a customer account. If you do not have one, you can request one via the following link:' d='Shop.Theme.Terms'} <a href="https://www.all-stars-distribution.com/en/content/7-becomedealer">https://www.all-stars-distribution.com/en/content/7-becomedealer</a></p>
+            <br>
             <p>{l s='A reply will be sent to you within 48 hours of receiving your request.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='To place an order on our site, choose your items and add them to the basket. Confirm the contents of your basket, choose your payment method and tick the box "acceptance of the T&Cs".' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='You will receive an order confirmation email to the email address you provided when you created your customer account. Check the details and the amount of your order. Correct any errors in advance before making your payment.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='The transfer of ownership of the product will only take place upon full payment of your order.' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 6: DELIVERY' d='Shop.Theme.Terms'}</h2>
             <p>{l s='We deliver worldwide with the carrier of our choice. The delivery takes place at the address indicated by the buyer at the time of the validation of the order.' d='Shop.Theme.Terms'}</p>
+            <br>
             <p>{l s='The amount of the delivery costs is calculated once your order is registered, according to the characteristics of the products purchased and the delivery address given. A confirmation email will be sent to you with the amount of the delivery costs to be expected for your order in order to proceed with the payment of the latter.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='Delivery times are given for information purposes only and may change due to various factors beyond our control.' d='Shop.Theme.Terms'}</p>
             <p>{l s='Parcels are entrusted to external service providers for their delivery (TNT, DPD, GLS, etc.). ALL STARS DISTRIBUTION cannot under any circumstances be held responsible for a dispute about the delivery of a package.' d='Shop.Theme.Terms'}</p>
             <p>{l s="Orders are shipped from our European warehouses, provided with a specific tracking number that can be checked online at any moment through the carrier's website." d='Shop.Theme.Terms'}</p>
@@ -1543,36 +1555,56 @@
             <p>{l s="In case of any issues such as damaged packaging, missing or damaged products, reservations must be reported on the delivery slip to support any claim. It will also be necessary to provide pictures of the visible damages as well as the transport label showing tracking number and recipient's information. If this verification cannot be carried out directly with the driver, a written complaint must be sent to the carrier as soon as the damages are noted." d='Shop.Theme.Terms'}</p>
             <p>{l s='Any complaint must be communicated to our customer service by e-mail within 48 hours (business days) following order’s delivery date, beyond which no complaint will be accepted by the carrier. In all cases of complaints, original packaging must be kept.' d='Shop.Theme.Terms'}</p>
             <p>{l s='In case of a parcel lost, a claim will be opened with the carrier to carry out in-depth research that may take up to 3 weeks before receiving the confirmation of the parcel loss. Once the loss confirmed by the carrier, a new shipment will be automatically scheduled depending on stock level. No refund will be issued in any case of parcel loss.' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 7: TERMS OF PAYMENT' d='Shop.Theme.Terms'}</h2>
             <p>{l s='We offer two methods of payment on our site:' d='Shop.Theme.Terms'} </p>
             <br>
             <p><b>{l s='BANK CARD :' d='Shop.Theme.Terms'} </b>
             {l s='Visa and Mastercard are the bank cards accepted for the payment of an order on our online platform.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='In the interest of security and confidentiality, all data communicated during the payment procedure is encrypted entered exclusively on the page of our financial partner Ingenico.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='In order to validate the payment of an order, the name of the cardholder, its 16-digit number, its expiry date and its cryptogram will be requested by no other organisation other than our online payment service provider Ingenico and only they will have access to it.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>
             {l s='The total amount paid will be debited immediately and the rest of the process and the order status will be updated instantly. A confirmation will then be sent to you by email as a digital archive.' d='Shop.Theme.Terms'} </p>
             <br>
             <p><b>{l s='BANK TRANSFER :' d='Shop.Theme.Terms'} </b></p>
+            <br>
             <p>{l s='Once the payment by bank transfer has been selected on our website, you will receive a confirmation email with the details of our bank account, to which the payment must be made. Please note that these details must be exclusively in the name of ALL STARS DISTRIBUTION based in Portugal.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='Payments by bank transfer must be made within 72 hours after the order has been confirmed. If the payment is not made within this period, your order will be automatically cancelled.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='Please note that payment by bank transfer will result in additional processing time for the dispatch of an order as it will only be dispatched once payment has been received in our bank account.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='Please also note that no items are reserved until payment for the order has been confirmed in our bank account.' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 8: WARRANTY:' d='Shop.Theme.Terms'}</h2>
             <p>{l s='The company All Stars Distribution ensures the guarantee of the hidden defects under the legal conditions, the purchaser has a deadline of eight days from the discovery of the hidden defect to notify his reservations by email.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s="All warranty claims must be sent by email to sales@all-stars-distribution.com together with photos or videos showing the problem. As the guarantee is taken over directly by the supplier, the shipping costs for sending and returning the product will be at the customer's expense, with the supplier only covering the costs of repairing or replacing the product concerned by the warranty. If the supplier finds that the problem encountered is not covered by the conditions of the guarantee, the shipping costs for the return of the product remain the responsibility of the customer." d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='Under no circumstances can a warranty claim be made due to a problem encountered with a product following a faulty installation. In this case, the buyer must contact the professional who installed the product in question.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='For any warranty claim which will require the sending of the product to our premises in order to verify it, All Stars Distribution will reimburse the buyer for the shipping costs of the product if the warranty coverage by the supplier is confirmed, otherwise all shipping costs will be borne by the latter.' d='Shop.Theme.Terms'}</p>
+            <br>
             <p>{l s='In no case will it be possible to request a refund for the product concerned from the company All Stars Distribution as part of a warranty claim.' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 9: PRODUCT RETURNS' d='Shop.Theme.Terms'}</h2>
             <p>{l s='All sales made on our site are final, they cannot in any case give rise to the return of a product (except in the context of a guarantee, see article 8).' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 10: CONDITIONS AND DEADLINES FOR REIMBURSEMENT' d='Shop.Theme.Terms'}</h2>
             <p>{l s='Cancellation of an order is possible as long as the order has not been shipped from our warehouse. Any cancellation request made after the order has been shipped will not be accepted.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='If cancellation of the order is possible, we will refund the order via the payment method originally used by the buyer within 30 days.' d='Shop.Theme.Terms'}</p>
+            <br>
             <h2>{l s='ARTICLE 11: PERSONAL DATA' d='Shop.Theme.Terms'}</h2>
             <p>{l s='Certain customer information will be passed on to delivery and / or payment service providers (i.e., surname, first name, address, postal code and telephone number) in order to allow the processing and delivery of the products ordered.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='The commercial offers of the site will be sent to the customer by e-mail if no objection has been made. The customer may object at any time by logging into his personal space or by sending an email to our customer service department.' d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s="The site ensures that the customer's personal information is collected and processed in compliance with law n°78-17 of January 6, 1978 relating to information technology, files and freedom." d='Shop.Theme.Terms'} </p>
+            <br>
             <p>{l s='In accordance with articles 39 and 40 of the law dated 6 January 1978, the customer has the right to access, rectify, delete and oppose his personal data. The customer can exercise this right via :' d='Shop.Theme.Terms'} </p>
             <br>
             <p>{l s='- His personal space' d='Shop.Theme.Terms'} </p>
