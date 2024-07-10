@@ -787,13 +787,16 @@ body::-ms-scrollbar-thumb:hover {
 
   #cms_container_15 .become_cards {
       display: flex;
-      justify-content: space-between;
+      justify-content: center;
       gap: 1rem;
+      flex-wrap: wrap;
   }
 
   #cms_container_15 .become_cards .become_card_requirement{
       flex: 1;
       border: 1px solid #0273EB;
+      min-width: 300px;
+      max-width: 350px;
   }
   #cms_container_15 .become_cards .become_card_requirement .card_title{
       width: 100%;
@@ -2762,6 +2765,14 @@ grid-template-columns: 1fr 1fr;
 }
 
 @media screen and (min-width:541px) and (max-width:767px) {
+
+.form-become-supplier .city{
+  padding-right: 0;
+}
+.form-become-supplier .zip_code{
+  padding-left: 0;
+}
+
 #new-products #wrapper .container-fluid{
   padding: 0;
 }
@@ -3494,6 +3505,14 @@ grid-template-columns: 1fr 1fr;
   color: #333;
 }
 
+.form-become-dealer .form-group{
+  width: 100%;
+}
+
+#cms_container_14 .become_cards{
+  align-items: center;
+}
+
 /*  */
   #_desktop_logo {
     padding-top: 1rem !important;
@@ -3667,6 +3686,8 @@ grid-template-columns: 1fr 1fr;
     .become_cards {
     flex-direction: column;
     padding: 1rem;
+    justify-content: center !important;
+    align-items: center;
     }
 
     h1.requirements {

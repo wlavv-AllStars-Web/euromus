@@ -302,7 +302,7 @@
               </div>
 
             <div class="form-row">
-              <div class="form-group col-lg-4 col-md-6">
+              <div class="form-group col-lg-4 col-md-6 col-sm-12">
                 <div class="title-suppliers">{l s='Business Type (Check all that apply)' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></div>
                 <div class="col-sm-12 check-form" required>
                   <div class="form-check">
@@ -349,7 +349,7 @@
                   </div>
                 </div>
               </div>
-              <div class="form-group col-lg-2 col-md-6">
+              <div class="form-group col-lg-2 col-md-6 col-sm-12">
                 <div class="title-suppliers">{l s='Main Market' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></div>
                 <div class="col-sm-12 check-form">
                   <div class="form-check">
@@ -398,7 +398,7 @@
                 </div>
               </div>
 
-              <div class="form-group col-lg-3 col-md-6">
+              <div class="form-group col-lg-3 col-md-6 col-sm-12">
                 <div class="title-suppliers">{l s='Annual sales volume' d='Shop.Theme.FormBecomedealer'}</div>
                 <div class="col-sm-10 check-form">
                   <div class="form-check">
@@ -428,7 +428,7 @@
                 </div>
               </div>
 
-              <div class="form-group col-lg-3 col-md-6">
+              <div class="form-group col-lg-3 col-md-6 col-sm-12">
                   <div class="col-md-12 title-suppliers current_suplier">{l s='Main current suppliers' d='Shop.Theme.FormBecomedealer'}<span style="color: red;">*</span></div>
                   <div class="form-group col-md-12 current_suplier">
                     <input type="text" class="form-control" id="inputAddress2" placeholder="{l s='Current Supplier 1' d='Shop.Theme.FormBecomedealer'}" name="supplier_1" required>
@@ -443,11 +443,11 @@
               </div>
 
             <div class="form-row col-lg-12" style="display: flex;flex-wrap:wrap;">
-              <div class="form-group col-lg-4 col-md-6">
+              <div class="form-group col-lg-4 col-md-6 col-sm-12">
                 <label for="exampleFormControlTextarea1">{l s='Comment' d='Shop.Theme.FormBecomedealer'}</label>
                 <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="observations"></textarea>
               </div>
-              <div class="form-group col-lg-4 col-md-6 signature">
+              <div class="form-group col-lg-4 col-md-6 col-sm-12 signature">
                 <div style="display: flex;align-items:center;justify-content:space-between;">
                   <label for="canvas4">{l s='Signature' d='Shop.Theme.FormBecomedealer'}</label>
                   <div class="btn" id="clearButton">{l s='Reset' d='Shop.Theme.FormBecomedealer'}</div>
@@ -463,7 +463,7 @@
                 </div>
               </div>
             
-              <div class="form-group col-lg-12 col-md-6" style="display: flex;justify-content:center;align-items:center;">
+              <div class="form-group col-lg-12 col-md-6 col-sm-12" style="display: flex;justify-content:center;align-items:center;">
                 <button type="submit" class="btn send-form" onclick="validateForm()">{l s='Submit' d='Shop.Theme.FormBecomedealer'}</button>
               </div>
             </div>
@@ -571,7 +571,7 @@
             <input type="hidden" id="type" name="type" value="becomesupplier">
               <div class="form-row">
 
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-12">
                     <div class="form-group col-md-6">
                       <div class="form-group">
                         <label for="company">{l s='Company' d='Shop.Theme.FormBecomesupplier'}</label>
@@ -602,7 +602,7 @@
                     </div>
                 </div>
 
-                <div class="col-md-6">
+                <div class="col-lg-6 col-md-12">
                   <div class="form-group col-md-12">
                     <label for="adresse_line_1">{l s='Address' d='Shop.Theme.FormBecomesupplier'}</label>
                     <input type="text" class="form-control" id="adresse_line_1" name="adresse_line_1" required>
