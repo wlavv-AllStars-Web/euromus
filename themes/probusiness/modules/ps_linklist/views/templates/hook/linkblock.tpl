@@ -66,11 +66,11 @@
             {* <pre>{$linkBlock|print_r}</pre> *}
             <li style="list-style-type: none !important;display:flex;align-items:center;gap: 0.25rem;">
               {if $link.title == "Facebook"}
-                <img class="left_icon_footer" src="/img/asd/facebook.svg" width="24" alt="facebook">
+                <img class="left_icon_footer" src="/img/asd/facebook.svg" width="24" height="24" alt="facebook">
               {elseif $link.title == "Instagram"}
-                <img class="left_icon_footer" src="/img/asd/instagram.svg" width="24" alt="instagram">
+                <img class="left_icon_footer" src="/img/asd/instagram.svg" width="24" height="24" alt="instagram">
               {else}
-                <img class="left_icon_footer" src="/img/asd/ASD_footer_ima.png" alt="Star">
+                <img class="left_icon_footer" src="/img/asd/ASD_footer_ima.png" alt="Star" width="25" height="25">
               {/if}
               <a id="{$link.id|escape:'html':'UTF-8'}-{$linkBlock.id|escape:'html':'UTF-8'}"
                 class="text {$link.class|escape:'html':'UTF-8'}" href="{$link.url|escape:'html':'UTF-8'}"
@@ -91,7 +91,7 @@
       <ul id="footer_sub_menu_4" class="collapse">
         <li>
           <a target="_blank" href="{$homepage_footer['link_footer']}">
-            <img src="/img/asd/Events/main_250x100.webp?{rand()}"
+            <img src="/img/asd/Events/main_250x100.webp?{rand()}" width="250" height="100"
               title="{$homepage_footer['alt_footer']}" id="footer_event_image"
               style="max-width: 200px;max-height: 80px;" class="img-responsive">
           </a>
