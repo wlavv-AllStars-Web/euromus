@@ -802,7 +802,7 @@
             <img class="legal_image" src="" alt="legal image" />
           </div>
           <div class="legal-content col-lg-12" style="max-width: 1350px;">
-            <div class="legal-company col-lg-6">
+            <div class="legal-company col-lg-6 col-md-12">
               <div class="line-info">
                 <strong>{l s='Company:' d="Shop.Theme.LegalNotice"}</strong>
                 <span>{l s='All Stars Distribution, Lda' d="Shop.Theme.LegalNotice"}</span>
@@ -820,7 +820,7 @@
                 </div>
               </div>
             </div>
-            <div class="legal-server col-lg-6">
+            <div class="legal-server col-lg-6 col-md-12">
               <div class="line-info">
                 <strong>{l s='VAT Number:' d="Shop.Theme.LegalNotice"}</strong>
                 <span>{l s='PT 513881387' d="Shop.Theme.LegalNotice"}</span>
@@ -846,7 +846,7 @@
                 <span>{l s='WebSP, Lda' d="Shop.Theme.LegalNotice"}</span>
               </div>
             </div>
-            <div class="legal-contact col-lg-12">
+            <div class="legal-contact col-lg-12 col-md-12">
               <div class="line-info">
                 <strong>{l s='Contact:' d="Shop.Theme.LegalNotice"}</strong>
               </div>
@@ -864,7 +864,7 @@
               </div>
 
             </div>
-            <div class="legal-info col-lg-12">
+            <div class="legal-info col-lg-12 col-md-12">
               <div class="line-info">
                 <strong>{l s='This website uses cookies for optimal performance and to analyze our traffic.' d="Shop.Theme.LegalNotice"}</strong>
                 </div>
@@ -873,10 +873,10 @@
               </div>
 
             </div>
-            <div class="legal-devices col-lg-12">
+            <div class="legal-devices col-lg-12 col-md-12">
               <img class="devices_img" src="" alt="image devices"/>
             </div>
-            <div class="legal-copyright col-lg-12">
+            <div class="legal-copyright col-lg-12 col-md-12">
               <div class="line-info">
                 <strong>{l s='Copyright 2024 : All Stars Distribution - All Rights Reserved' d="Shop.Theme.LegalNotice"}</strong>
               </div> 
@@ -900,6 +900,11 @@
           padding: 3rem 0 2rem 0;
           color: #000;
           text-align: left;
+        }
+
+        .legal-content img {
+          width: 100%;
+          height: auto;
         }
 
         .legal-content strong{
@@ -973,6 +978,50 @@
           max-width: 50%;
           width: 100%;
         }
+
+        @media screen and (max-width:1340px){
+          .line-info{
+            max-width: 60%;
+            width: 100%;
+          }
+        }
+        @media screen and (max-width:1168px){
+          .line-info{
+            max-width: 80%;
+            width: 100%;
+          }
+        }
+        @media screen and (max-width:992px){
+          .legal-content{
+            max-width: 100vw;
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            padding: 2rem;
+          }
+
+          .line-info{
+            max-width: 323px;
+            width: 100%;
+          }
+        }
+
+        @media screen and (max-width:400px){
+          .legal-content{
+            padding: 2rem 1rem;
+          }
+
+          .line-info{
+            max-width: 323px;
+            width: 100%;
+          }
+
+          .legal-info{
+            gap: 1rem;
+          }
+        }
+
+
       </style>
         <script>
             function updateLegalImage() {
@@ -998,7 +1047,7 @@
                 legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_banner_xs.webp');
                 legalImage.setAttribute("width", "575");
                 legalImage.setAttribute("height", "128");
-                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_lg.webp');
+                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_xs.webp');
                 legalDevicesImage.setAttribute("width", "1350");
                 legalDevicesImage.setAttribute("height", "226");
               }
