@@ -1608,7 +1608,7 @@
             <p>{l s='In accordance with articles 39 and 40 of the law dated 6 January 1978, the customer has the right to access, rectify, delete and oppose his personal data. The customer can exercise this right via :' d='Shop.Theme.Terms'} </p>
             <br>
             <p>{l s='- His personal space' d='Shop.Theme.Terms'} </p>
-            <p>{l s='- By e-mail to ' d='Shop.Theme.Terms'}<a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a></p>
+            <p>{l s='- By e-mail to ' d='Shop.Theme.Terms'} <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a></p>
             <p style="margin:3rem 0 2rem 0;text-align:center;">{l s='This document was last updated on November 21, 2022' d='Shop.Theme.Terms'}</p>
           </div>
         </div>
