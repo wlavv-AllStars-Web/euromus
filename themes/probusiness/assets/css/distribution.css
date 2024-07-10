@@ -3308,6 +3308,7 @@ grid-template-columns: 1fr 1fr;
 .cms-terms .terms-content p {
   font-size: 1.15rem;
   color: #000;
+  margin: 0 !important;
 }
 
 .cms-terms .terms-content a {
