@@ -77,6 +77,9 @@
           <div>
             <img class="about_content_img"  alt="about image"/>
             <img class="about_content_img2" loading="lazy"/>
+            <img class="about_content_img3" loading="lazy"/>
+            <img class="about_content_img4" loading="lazy"/>
+            <img class="about_content_img5" loading="lazy"/>
           </div>
         </div>
 
@@ -87,6 +90,9 @@
               const aboutImage = document.querySelector(".about_content_img");
               const aboutImageBadge = document.querySelector(".aboutImageBadge");
               const aboutImage2 = document.querySelector(".about_content_img2");
+              const aboutImage3 = document.querySelector(".about_content_img3");
+              const aboutImage4 = document.querySelector(".about_content_img4");
+              const aboutImage5 = document.querySelector(".about_content_img5");
               const screenWidth = window.screen.width;
               const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
 
@@ -95,6 +101,9 @@
                 aboutBanner.setAttribute("width",'1350')
                 aboutBanner.setAttribute("height",'300')
                 aboutImage2.style.display = "none";
+                aboutImage3.style.display = "none";
+                aboutImage4.style.display = "none";
+                aboutImage5.style.display = "none";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_lg.webp')
                 aboutImageBadge.setAttribute("width",'1700')
                 aboutImageBadge.setAttribute("height",'196')
@@ -106,6 +115,9 @@
                 aboutBanner.setAttribute("width",'1139')
                 aboutBanner.setAttribute("height",'196')
                 aboutImage2.style.display = "none";
+                aboutImage3.style.display = "none";
+                aboutImage4.style.display = "none";
+                aboutImage5.style.display = "none";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_sm.webp')
                 aboutImageBadge.setAttribute("width",'1139')
                 aboutImageBadge.setAttribute("height",'196')
@@ -117,6 +129,9 @@
                 aboutBanner.setAttribute("width",'567')
                 aboutBanner.setAttribute("height",'107')
                 aboutImage2.style.display = "block";
+                aboutImage3.style.display = "block";
+                aboutImage4.style.display = "block";
+                aboutImage5.style.display = "block";
                 aboutImageBadge.setAttribute("src",'/img/asd/Content_pages/aboutus/badge_xs.webp')
                 aboutImageBadge.setAttribute("width",'567')
                 aboutImageBadge.setAttribute("height",'107')
