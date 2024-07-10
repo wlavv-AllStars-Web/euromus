@@ -2628,6 +2628,21 @@ grid-template-columns: 1fr 1fr;
   color: #333;
 }
 
+#_desktop_top_mobile button:nth-child(2){
+  margin-left: auto;
+}
+
+#login-form{
+  width: 80% !important;
+  margin: auto;
+  text-align: center;
+}
+
+#login_block .btn.whtbl{
+  max-width: 300px;
+  border: 1px solid #0273EB;
+}
+
 #search_widget form button{
   padding-right: 0 !important;
 }
@@ -2642,6 +2657,18 @@ grid-template-columns: 1fr 1fr;
 
 #_desktop_cart .blockcart {
   padding-left: 0 !important;
+}
+
+.cms-id-13 .container-fluid{
+  padding: 0;
+}
+
+#content-wrapper{
+  margin-top: 0 !important;
+}
+
+.terms-content{
+  padding: 0 2rem;
 }
 
 }
@@ -2962,6 +2989,18 @@ grid-template-columns: 1fr 1fr;
 
 #login-form .btn[type="submit"]{
   border: 1px solid #dedede;
+}
+
+.cms-id-13 .container-fluid{
+  padding: 0;
+}
+
+#content-wrapper{
+  margin-top: 0 !important;
+}
+
+.terms-content{
+  padding: 0 2rem;
 }
 
 }
@@ -3807,6 +3846,13 @@ grid-template-columns: 1fr 1fr;
   padding: 1rem;
 }
 
+.cms-terms .terms-content h2{
+  text-align: center;
+  padding: 2rem 0 1rem 0;
+  color: dodgerblue;
+  font-weight: 500;
+}
+
 .cms-terms .terms-content h1 {
   text-align: center;
   margin: 2rem 0;
@@ -3818,6 +3864,7 @@ grid-template-columns: 1fr 1fr;
 .cms-terms .terms-content p {
   font-size: 1rem;
   color: #000;
+  text-align: left;
 }
 
 .cms-terms .terms-content a {
