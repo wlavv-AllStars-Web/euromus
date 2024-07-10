@@ -796,6 +796,8 @@
     text-align: start;
     color: #111;
     text-transform: unset;
+    line-height: 18px;
+    font-size: 14px;
   }
   #manufacturer .brand_content_item .brand-infos h3{
     color: #0273EB;
