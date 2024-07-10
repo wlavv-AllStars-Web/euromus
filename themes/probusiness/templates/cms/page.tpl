@@ -799,11 +799,88 @@
       {elseif $cms.id === 10}
         <div class="cms-legal">
           <div class="legal-banner">
-            {* <img class="desktop-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_lg.webp" alt="legal image"  width="1350" height="1385"  />
-            <img class="mobile-banner" src="/img/asd/Content_pages/legal/legal_notices_{$language.iso_code}_xs.webp"  alt="legal image mobile"  width="575" height="789"  /> *}
             <img class="legal_image" src="" alt="legal image" />
           </div>
-          <div class="legal-content">
+          <div class="legal-content col-lg-12" style="max-width: 1350px;">
+            <div class="legal-company col-lg-6">
+              <div class="line-info">
+                <strong>{l s='Company:' d="Shop.Theme.LegalNotice"}</strong>
+                <span>{l s='All Stars Distribution, Lda' d="Shop.Theme.LegalNotice"}</span>
+              </div>
+              <div class="line-info" style="display: flex;gap:0.25rem;">
+                <div>
+                  <strong>{l s='Address:' d="Shop.Theme.LegalNotice"}</strong>
+                </div>
+                <div>
+                  <span>{l s='Zona Industrial de Gandra SN' d="Shop.Theme.LegalNotice"}</span>
+                  <br>
+                  <span>{l s='Gandra Valença' d="Shop.Theme.LegalNotice"}</span>
+                  <br>
+                  <span>4930-311 Gandra VLN</span>
+                </div>
+              </div>
+            </div>
+            <div class="legal-server col-lg-6">
+              <div class="line-info">
+                <strong>{l s='VAT Number:' d="Shop.Theme.LegalNotice"}</strong>
+                <span>{l s='PT 513881387' d="Shop.Theme.LegalNotice"}</span>
+              </div>
+              <div class="line-info">
+                <strong>{l s='Website:' d="Shop.Theme.LegalNotice"}</strong>
+                <span>{l s='www.all-stars-distribution.com' d="Shop.Theme.LegalNotice"}</span>
+              </div>
+              <div class="line-info">
+                <strong>{l s='Managed by:' d="Shop.Theme.LegalNotice"}</strong>
+                <span>{l s='All Stars Web Solutions' d="Shop.Theme.LegalNotice"}</span>
+              </div>
+              <div class="line-info" style="display: flex;gap:0.25rem;">
+                <div>
+                  <strong>{l s='Address:' d="Shop.Theme.LegalNotice"}</strong>
+                </div>
+                <div>
+                  <span>{l s='Lugar de tuido, 4930-327 Valença' d="Shop.Theme.LegalNotice"}</span>
+                </div>
+              </div>
+              <div class="line-info">
+                <strong>{l s='Hosted by:' d="Shop.Theme.LegalNotice"}</strong>
+                <span>{l s='WebSP, Lda' d="Shop.Theme.LegalNotice"}</span>
+              </div>
+            </div>
+            <div class="legal-contact col-lg-12">
+              <div class="line-info">
+                <strong>{l s='Contact:' d="Shop.Theme.LegalNotice"}</strong>
+              </div>
+              <div class="line-info">
+                <div style="display: flex;align-items:center;gap:0.25rem;">
+                  <i class="fa-solid fa-envelope" style="font-size:22px;"></i>
+                  <span><a href="mailto:sales@all-stars-distribution.com">{l s='sales@all-stars-distribution.com' d="Shop.Theme.LegalNotice"}</a></span>
+                </div>
+              </div>
+              <div class="line-info">
+                <div style="display: flex;align-items:center;gap:0.25rem;">
+                  <i class="fa-solid fa-phone" style="font-size:22px;"></i>
+                  <span><a href="tel:00351 251 096 251">{l s='00351 251 096 251' d="Shop.Theme.LegalNotice"}</a></span>
+                </div>
+              </div>
+
+            </div>
+            <div class="legal-info col-lg-12">
+              <div class="line-info">
+                <strong>{l s='This website uses cookies for optimal performance and to analyze our traffic.' d="Shop.Theme.LegalNotice"}</strong>
+                </div>
+              <div class="line-info">
+                <strong>{l s='We do not share information about your use of our site with any third company.' d="Shop.Theme.LegalNotice"}</strong>
+              </div>
+
+            </div>
+            <div class="legal-devices col-lg-12">
+              <img class="devices_img" src="" alt="image devices"/>
+            </div>
+            <div class="legal-copyright col-lg-12">
+              <div class="line-info">
+                <strong>{l s='Copyright 2024 : All Stars Distribution - All Rights Reserved' d="Shop.Theme.LegalNotice"}</strong>
+              </div> 
+            </div>
           </div>
         </div>
         <style>
@@ -818,25 +895,112 @@
           max-width: 1350px; /* Maximum width of the largest image */
           margin: 0 auto; /* Centering the image */
         }
+
+        .legal-content{
+          padding: 3rem 0 2rem 0;
+          color: #000;
+          text-align: left;
+        }
+
+        .legal-content strong{
+          font-weight: 700;
+          font-size: 18px;
+          line-height: 25px;
+        }
+        .legal-content span{
+          font-weight: 400;
+          font-size: 16px;
+          line-height: 25px;
+        }
+
+        .legal-company{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+        .legal-server{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+        }
+
+        .legal-contact{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding:  3rem 0 2rem 0;
+        }
+
+        .legal-contact .line-info{
+          display: flex;
+          justify-content: center;
+        }
+        .legal-contact a{
+          font-size: 18px;
+        }
+
+        .legal-contact a:hover{
+          color: #0273EB;
+          text-decoration: underline;
+        }
+
+        .legal-info{
+          padding: 1rem 0 2rem 0;
+          display: flex;
+          flex-direction: column;
+          text-align: center;
+        }
+
+        .legal-info .line-info{
+          text-align: center;
+          max-width: unset;
+        }
+
+        .legal-copyright{
+          padding: 3rem 0 2rem 0;
+          font-size: 16px;
+        }
+
+        .legal-copyright .line-info {
+          max-width: unset;
+          text-align: center;
+        }
+
+        .line-info{
+          max-width: 50%;
+          width: 100%;
+        }
       </style>
         <script>
             function updateLegalImage() {
               const legalImage = document.querySelector(".legal_image");
+              const legalDevicesImage = document.querySelector(".devices_img");
               const screenWidth = window.screen.width;
-              const languageCode = "{$language.iso_code}"; // Assuming this is available in your template
 
               if (screenWidth > 1140) {
-                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_notices_'+languageCode+'_lg.webp');
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_banner_lg.webp');
                 legalImage.setAttribute("width", "1350");
-                legalImage.setAttribute("height", "1385");
+                legalImage.setAttribute("height", "300");
+                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_lg.webp');
+                legalDevicesImage.setAttribute("width", "1350");
+                legalDevicesImage.setAttribute("height", "301");
               } else if (screenWidth > 575) {
-                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_notices_'+languageCode+'_md.webp');
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_banner_md.webp');
                 legalImage.setAttribute("width", "1140");
-                legalImage.setAttribute("height", "1524");
+                legalImage.setAttribute("height", "253");
+                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_md.webp');
+                legalDevicesImage.setAttribute("width", "1350");
+                legalDevicesImage.setAttribute("height", "254");
               } else {
-                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_notices_'+languageCode+'_xs.webp');
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_banner_xs.webp');
                 legalImage.setAttribute("width", "575");
-                legalImage.setAttribute("height", "790");
+                legalImage.setAttribute("height", "128");
+                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_lg.webp');
+                legalDevicesImage.setAttribute("width", "1350");
+                legalDevicesImage.setAttribute("height", "226");
               }
             }
             updateLegalImage();

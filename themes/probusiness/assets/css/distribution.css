@@ -795,6 +795,7 @@
     flex: 1;
     text-align: start;
     color: #111;
+    text-transform: unset;
   }
   #manufacturer .brand_content_item .brand-infos h3{
     color: #0273EB;
