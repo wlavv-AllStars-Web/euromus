@@ -90,6 +90,11 @@ body::-ms-scrollbar-thumb:hover {
   margin: 0 !important;
 }
 
+.cms-id-8 #content{
+  width: 100%;
+  padding: 1rem;
+}
+
 
 
   /* shopping cart modal */
@@ -1998,6 +2003,10 @@ textarea {
   }
 
 
+  .cms-id-8 #content .card_view_more{
+    display: none;
+  }
+
   #search_query_top{
     min-width: 242px;
   }
@@ -2297,6 +2306,8 @@ textarea {
   .wdth .search_query{
     width:65% !important;
   }  
+
+
 }
 
 @media (min-width: 900px){
@@ -2307,6 +2318,10 @@ textarea {
   .language-selector .dropdown-menu .dropdown-item{
     font-size: 13px;
     padding: 0.5rem 0;
+  }
+
+  .cms-id-8 #content .card_view_more{
+    display: none;
   }
 
 
@@ -2546,6 +2561,10 @@ textarea {
   margin-right: 1rem;
 }
 
+.cms-id-8 #content .card_view_more{
+  display: none;
+}
+
 /* header */
 .header-top .centrar{
   flex-direction: column;
@@ -2745,6 +2764,9 @@ grid-template-columns: 1fr 1fr;
   font-weight: 600;
 }
 
+.cms-id-8 #content{
+  padding: 0;
+}
 
 /* ate aqui */
 
@@ -3382,6 +3404,10 @@ grid-template-columns: 1fr 1fr;
 .btnBike img {
   width: 189px !important;
   height: auto;
+}
+
+.cms-id-8 #content{
+  padding: 0;
 }
 
 /* legal notice */
