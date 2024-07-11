@@ -1145,6 +1145,8 @@ body::-ms-scrollbar-thumb:hover {
   width: 100% !important;
 }
 
+
+
 #js-product-list-top .total-products{
   text-align: center;
 }
@@ -1974,6 +1976,13 @@ textarea {
   color: #0273EB !important;
 }
 
+@media screen and (min-width: 1920px){
+  #js-product-list {
+    max-width: 1873px;
+    margin: auto;
+  }
+}
+
 @media (min-width: 1200px) and (max-width:1400px){
   #footer .footer-container .row{
     margin: 0;
@@ -2329,6 +2338,10 @@ textarea {
   #canvas4{
     min-height: 140px;
   }
+  .product-miniature .product-description{
+    width: fit-content !important;
+  }
+
 }
 
 @media (min-width: 900px){
@@ -2429,7 +2442,7 @@ textarea {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 110px;
+  /* max-width: 110px; */
   font-size: 0.85rem;
 }
 
@@ -2464,6 +2477,10 @@ textarea {
   font-size: 14px !important;
 }
 
+.product-miniature .information-product{
+  flex: 1;
+}
+
 }
 
 @media (min-width: 901px) and (max-width:992px){
@@ -2479,7 +2496,7 @@ textarea {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100px;
+  max-width: 100%;
   font-size: 0.85rem;
 }
 /*  */
@@ -2556,6 +2573,9 @@ textarea {
 .career-content form label {
   font-size: 14px !important;
 }
+
+
+
 }
 
 @media screen and (min-width:768px) and (max-width:900px) {
@@ -2629,17 +2649,19 @@ textarea {
 }
 
 /* product list */
-/* .product-title-list a{
+.product-title-list a{
   display: inline-block;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  max-width: 100px;
+  max-width: 100%;
   font-size: 0.85rem;
-} */
+}
+
+
   #js-product-list .product{
-  outline: 1px solid#0273EB;
-  margin: 0.5rem 1rem;
+  /* outline: 1px solid#0273EB;
+  margin: 0.5rem 1rem; */
   border-radius: 0.25rem;
   padding: 1rem;
   }
@@ -3408,6 +3430,16 @@ grid-template-columns: 1fr 1fr;
   .form-career .form-group {
     width: 100%;
   }
+
+  #manufacturer .list_manu{
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .list_manu .brand_logged{
+    width: 50%;
+  }
+
 }
 
 @media (max-width: 540px){
@@ -4357,6 +4389,12 @@ grid-template-columns: 1fr 1fr;
   display: flex;
   justify-content: center;
   margin: 2rem 0;
+  }
+}
+
+@media (max-width: 400px){
+  .list_manu .brand_logged{
+    width: 100% !important;
   }
 }
 

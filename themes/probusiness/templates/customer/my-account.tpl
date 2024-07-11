@@ -162,12 +162,12 @@
       <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">  
         <div class="col-sm-12 text-center">
             <div class="row statistics_container" style="max-width: 1350px; margin: 0 auto;display:flex;">
-              <div class="col-lg-8 col-md-8">
+                <div class="col-lg-8 col-md-7 col-sm-12">
                     <div>{l s='Total purchases per month'}</div>
                     <canvas id="myChart" width="664" height="332"></canvas>
                 </div>
-                <div class="col-lg-2"></div>
-              <div class="col-lg-4">
+
+                <div class="col-lg-4 col-md-5">
                   <div>{l s='Total purchases by brand (€)'}</div>
                     <canvas id="chart-area" height="332" class="chartjs-render-monitor"></canvas>
                 </div>
@@ -501,7 +501,7 @@
 {/block}
 
 
-{block name='page_footer'}
+{* {block name='page_footer'}
   {block name='my_account_links'}
     <div class="text-xs-center">
       <a href="{$logout_url|escape:'html':'UTF-8'}">
@@ -509,4 +509,4 @@
       </a>
     </div>
   {/block}
-{/block}
+{/block} *}
