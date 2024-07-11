@@ -18,7 +18,7 @@
 *  @license    Valid for 1 website (or project) for each purchase of license
 *  International Registered Trademark & Property of ETS-Soft
 *}
-{block name='my_account_links'}
+{* {block name='my_account_links'}
   <a href="{$urls.pages.my_account|escape:'html':'UTF-8'}" class="account-link">
     <i class="material-icons">&#xE5CB;</i>
     <span>{l s='Back to your account' d='Shop.Theme.Actions'}</span>
@@ -27,4 +27,4 @@
     <i class="material-icons">&#xE88A;</i>
     <span>{l s='Home' d='Shop.Theme.Actions'}</span>
   </a>
-{/block}
+{/block} *}
