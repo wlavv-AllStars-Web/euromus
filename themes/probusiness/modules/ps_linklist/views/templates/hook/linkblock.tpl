@@ -168,12 +168,33 @@
     }
   }
   @media screen and (max-width: 544px){
+    .footer_linklist{
+      padding: 1rem 0 !important;
+    }
+
     .alignment {
       flex-direction: column;
     }
     .alignment li a {
       font-size: 16px !important;
+      color: #333 !important;
     }
+
+    .alignment .title{
+      text-align: center !important;
+    }
+
+    .alignment ul {
+      background: #fff;
+      border-top: 2px solid #0273eb;
+      padding: 1rem;
+    }
+
+    .alignment img {
+      background: #333;
+      border-radius: 0.25rem;
+    }
+
     #footer_sub_menu_4.collapse{
       display: none;
     }
@@ -186,6 +207,7 @@
     #footer_sub_menu_4 li div{
       font-size: 16px;
       text-wrap:wrap;
+      color: #333 !important;
     }
   }
 </style>
