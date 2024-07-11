@@ -155,7 +155,10 @@
               </div>
             {/foreach}
           </div>
-      
+        {else}
+          <div class="alert alert-warning" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
+            {l s='No orders yet.' d='Shop.Theme.Actions'}
+          </div>
         {/if}
       </div>
 
