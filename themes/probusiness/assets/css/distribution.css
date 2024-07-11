@@ -1982,14 +1982,23 @@ textarea {
     margin: auto;
   }
 }
+@media screen and (min-width: 1401px){
+
+  .alignment .alignment .wrapper:nth-child(1){
+    padding-left: 0 ;
+  }
+  .alignment .alignment .wrapper:nth-child(4){
+    padding-right: 0 ;
+  }
+}
 
 @media (min-width: 1200px) and (max-width:1400px){
   #footer .footer-container .row{
     margin: 0;
   }
-  #footer .footer-container .row .footer_linklist {
+  /* #footer .footer-container .row .footer_linklist {
     padding: 2rem !important;
-  }
+  } */
   #footer .footer-container .row .footer_linklist .alignment {
     display: flex;
     justify-content: center;
