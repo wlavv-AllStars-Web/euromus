@@ -126,6 +126,9 @@
     display: flex;
     align-items: start;
   }
+  #footer_sub_menu_4 li{
+    height: 27px;
+  }
   #footer_sub_menu_4 li div{
     font-size: 16px;
     line-height: 18px;
