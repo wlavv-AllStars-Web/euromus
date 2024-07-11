@@ -340,7 +340,8 @@ body::-ms-scrollbar-thumb:hover {
    }
    .footer-container .footer_linklist .wrapper:nth-child(4) #footer_sub_menu_4 li{
         display: flex;
-        justify-content: end;
+        align-items: center;
+        height: 27px;
    }
 
    .not_logged_homepage{
@@ -2320,6 +2321,12 @@ textarea {
 
 }
 
+@media (min-width: 992px){
+  #canvas4{
+    min-height: 140px;
+  }
+}
+
 @media (min-width: 900px){
   .language-selector .dropdown-menu{
     min-width: unset;
@@ -2762,6 +2769,22 @@ grid-template-columns: 1fr 1fr;
   padding: 0 2rem;
 }
 
+#index #wrapper .container-fluid {
+  padding: 0 !important;
+}
+
+#index #why_us_anchor{
+  padding: 0.5rem;
+}
+
+.cms-id-8 .aboutImageBadge{
+  padding: 0 .5rem;
+}
+
+.form-become-dealer h1{
+  padding: 0 0.5rem;
+}
+
 }
 
 @media screen and (min-width:541px) and (max-width:767px) {
@@ -3105,6 +3128,18 @@ grid-template-columns: 1fr 1fr;
   padding: 0 2rem;
 }
 
+#index #wrapper .container-fluid {
+  padding: 0 !important;
+}
+
+#index #why_us_anchor{
+  padding: 0.5rem;
+}
+
+.form-become-dealer h1{
+  padding: 0 0.5rem;
+}
+
 }
 
 @media screen and (min-width:541px) {
@@ -3357,6 +3392,10 @@ grid-template-columns: 1fr 1fr;
 
 #_desktop_logo {
   max-width: unset !important;
+}
+
+.list_manu .brand {
+  display: flex;
 }
 
 }

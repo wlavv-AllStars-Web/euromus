@@ -49,8 +49,14 @@
 </style>
 <div style="padding: 20px 5.5rem 0 5.5rem;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
   <div class="row alignment ">
-    {foreach $linkBlocks as $linkBlock}
-      <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
+    {foreach $linkBlocks as $linkBlock key=key}
+      {if $key == 0}
+        <div class="col-lg-2 col-md-6 col-sm-10 wrapper">
+      {elseif $key == 1}
+        <div class="col-lg-2 col-md-6 col-sm-10 wrapper">
+      {elseif $key == 2}
+        <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
+      {/if}
 
         {assign var=_expand_id value=10|mt_rand:100000}
         <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}"
@@ -83,21 +89,94 @@
 
       </div>
     {/foreach}
-    <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
+    <div class="col-lg-4 col-md-6 col-sm-10 wrapper">
       <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_4"
         data-toggle="collapse">
-        <span class="text h3">{l s="Event"}</span>
+        <span class="text h3">{l s="Contacts"}</span>
       </div>
       <ul id="footer_sub_menu_4" class="collapse">
         <li>
-          <a target="_blank" href="{$homepage_footer['link_footer']}">
+          {* <a target="_blank" href="{$homepage_footer['link_footer']}">
             <img src="/img/asd/Events/main_250x100.webp?{rand()}" width="250" height="100"
               title="{$homepage_footer['alt_footer']}" id="footer_event_image"
               style="max-width: 200px;max-height: 80px;" class="img-responsive">
-          </a>
+          </a> *}
+          <div><img class="left_icon_footer" src="/img/asd/location.png" width="24" height="24" alt="location"></i>Z.I Gandra, 4930-311 Valença,Portugal</div>
+        </li>
+        <li>
+          <div><img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone"></i>+351 251 096 251</div>
+        </li>
+        <li>
+          <div><img class="left_icon_footer" src="/img/asd/email.png" width="24" height="24" alt="email"></i>sales@all-stars-distribution.com</div>
         </li>
       </ul>
     </div>
    
   </div>
 </div>
+<style>
+  .alignment{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  #footer_sub_menu_4{
+    display: flex;
+    align-items: start;
+  }
+  #footer_sub_menu_4 li div{
+    font-size: 16px;
+    line-height: 18px;
+    font-weight: 600;
+    text-transform: uppercase;
+    display: flex;
+    gap: 0.25rem;
+    align-items: center;
+    text-wrap: nowrap;
+  }
+
+  #footer_sub_menu_4 img {
+    padding: 1px;
+  }
+
+  @media screen and (max-width: 1057px){
+    .alignment li a {
+      font-size: 14px !important;
+    }
+    #footer_sub_menu_4 li div{
+      font-size: 14px;
+    }
+  }
+
+  @media screen and (max-width: 767px){
+    .alignment li a {
+      font-size: 16px !important;
+    }
+    #footer_sub_menu_4 li div{
+      font-size: 16px;
+    }
+  }
+  @media screen and (max-width: 544px){
+    .alignment {
+      flex-direction: column;
+    }
+    .alignment li a {
+      font-size: 16px !important;
+    }
+    #footer_sub_menu_4.collapse{
+      display: none;
+    }
+    #footer_sub_menu_4.collapse.in{
+      display: block;
+    }
+    #footer_sub_menu_4 li{
+      padding: 1rem 0;
+    }
+    #footer_sub_menu_4 li div{
+      font-size: 16px;
+      text-wrap:wrap;
+    }
+  }
+</style>
