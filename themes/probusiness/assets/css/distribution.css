@@ -2342,6 +2342,17 @@ textarea {
     width: fit-content !important;
   }
 
+  .cms-id-8 .footer_linklist.alignment .alignment{
+    max-width: 1698px;
+    margin: auto !important;
+  }
+
+
+  #index .footer_linklist.alignment .alignment{
+    max-width: 1700px;
+    margin: auto !important;
+  }
+
   .footer_linklist.alignment .alignment{
     max-width: 1350px;
     margin: auto !important;
@@ -2587,8 +2598,16 @@ textarea {
   font-size: 14px !important;
 }
 
+}
 
-
+@media screen and (min-width:768px) {
+  #footer_sub_menu_4 a{
+    color: #fff;
+  }
+  #footer_sub_menu_4 a:hover{
+    color: #fff;
+    text-decoration: underline;
+  }
 }
 
 @media screen and (min-width:768px) and (max-width:900px) {
@@ -2596,6 +2615,7 @@ textarea {
   .form-become-dealer .form-group{
     width: 50%;
   }
+
 
 
 /* person form myaccount */

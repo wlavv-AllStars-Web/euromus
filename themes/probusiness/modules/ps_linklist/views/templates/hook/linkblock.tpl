@@ -110,12 +110,12 @@
           <img class="left_icon_footer" src="/img/asd/globo.png" width="24" height="24" alt="phone">
           Portugal
           <img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone">
-          +351 251 096 251</div>
+          <a href="tel:+351251096251">+351 251 096 251</a></div>
         </li>
         <li>
           <div>
           <img class="left_icon_footer" src="/img/asd/email.png" width="24" height="24" alt="email">
-          sales@all-stars-distribution.com</div>
+          <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com<a></div>
         </li>
       </ul>
     </div>
