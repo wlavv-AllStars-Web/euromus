@@ -47,11 +47,11 @@
     display: unset;
   }
 </style>
-<div style="padding: 20px 5.5rem 0 5.5rem;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
+<div style="padding: 20px 0 0 0;" class="col-xs-12 col-sm-10 col-md-12 links footer_linklist alignment bigalign">
   <div class="row alignment ">
     {foreach $linkBlocks as $linkBlock key=key}
       {if $key == 0}
-        <div class="col-lg-2 col-md-6 col-sm-10 wrapper">
+        <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
       {elseif $key == 1}
         <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
       {elseif $key == 2}
@@ -89,7 +89,7 @@
 
       </div>
     {/foreach}
-    <div class="col-lg-4 col-md-6 col-sm-10 wrapper">
+    <div class="col-lg-3 col-md-6 col-sm-10 wrapper">
       <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_4"
         data-toggle="collapse">
         <span class="text h3">{l s="Contacts"}</span>
@@ -102,17 +102,19 @@
               style="max-width: 200px;max-height: 80px;" class="img-responsive">
           </a> *}
           <div>
-            {* <img class="left_icon_footer" src="/img/asd/location.png" width="24" height="24" alt="location"> *}
-            Z.I Gandra, 4930-311 Valença, Portugal</div>
+            <img class="left_icon_footer" src="/img/asd/location.png" width="24" height="24" alt="location">
+            Z.I Gandra, 4930-311 Valença</div>
         </li>
         <li>
           <div>
-          {* <img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone"> *}
+          <img class="left_icon_footer" src="/img/asd/globo.png" width="24" height="24" alt="phone">
+          Portugal
+          <img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone">
           +351 251 096 251</div>
         </li>
         <li>
           <div>
-          {* <img class="left_icon_footer" src="/img/asd/email.png" width="24" height="24" alt="email"> *}
+          <img class="left_icon_footer" src="/img/asd/email.png" width="24" height="24" alt="email">
           sales@all-stars-distribution.com</div>
         </li>
       </ul>
@@ -231,19 +233,20 @@
       <li>
 
         <div>
-          {* <img class="left_icon_footer" src="/img/asd/location.png" width="24" height="24" alt="location"> *}
+          <img class="left_icon_footer" src="/img/asd/location.png" width="24" height="24" alt="location">
           Z.I Gandra, 4930-311 Valença, Portugal
         </div>
       </li>
       <li>
         <div>
-        {* <img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone"> *}
-          <a href="tel:+351251096251">+351 251 096 251</a>
-        </div>
+        <img class="left_icon_footer" src="/img/asd/globo.png" width="24" height="24" alt="phone">
+        Portugal
+        <img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone">
+        +351 251 096 251</div>
       </li>
       <li>
         <div>
-        {* <img class="left_icon_footer" src="/img/asd/email.png" width="24" height="24" alt="email"> *}
+        <img class="left_icon_footer" src="/img/asd/email.png" width="24" height="24" alt="email">
           <a href="mailto:sales@all-stars-distribution.com">sales@all-stars-distribution.com</a>
         </div>
       </li>
@@ -252,10 +255,10 @@
   </div>
 </div>
 <style>
-  .alignment{
+  .alignment .alignment{
     display: flex;
     justify-content: space-between;
-    flex-wrap: wrap;
+    /* flex-wrap: wrap; */
     width: 100%;
   }
 

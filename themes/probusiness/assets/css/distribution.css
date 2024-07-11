@@ -2342,6 +2342,15 @@ textarea {
     width: fit-content !important;
   }
 
+  .footer_linklist.alignment .alignment{
+    max-width: 1350px;
+    margin: auto !important;
+  }
+
+  #footer_sub_menu_4{
+    align-items: end !important;
+  }
+
 }
 
 @media (min-width: 900px){
@@ -2420,6 +2429,10 @@ textarea {
   }
   .header-top .centrar .formula{
     width: 100%;
+  }
+
+  .footer_linklist.alignment .alignment{
+    flex-wrap: wrap;
   }
 }
 
