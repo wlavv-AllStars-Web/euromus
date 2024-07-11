@@ -101,13 +101,19 @@
               title="{$homepage_footer['alt_footer']}" id="footer_event_image"
               style="max-width: 200px;max-height: 80px;" class="img-responsive">
           </a> *}
-          <div><img class="left_icon_footer" src="/img/asd/location.png" width="24" height="24" alt="location"></i>Z.I Gandra, 4930-311 Valença,Portugal</div>
+          <div>
+            {* <img class="left_icon_footer" src="/img/asd/location.png" width="24" height="24" alt="location"> *}
+            Z.I Gandra, 4930-311 Valença, Portugal</div>
         </li>
         <li>
-          <div><img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone"></i>+351 251 096 251</div>
+          <div>
+          {* <img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone"> *}
+          +351 251 096 251</div>
         </li>
         <li>
-          <div><img class="left_icon_footer" src="/img/asd/email.png" width="24" height="24" alt="email"></i>sales@all-stars-distribution.com</div>
+          <div>
+          {* <img class="left_icon_footer" src="/img/asd/email.png" width="24" height="24" alt="email"> *}
+          sales@all-stars-distribution.com</div>
         </li>
       </ul>
     </div>
