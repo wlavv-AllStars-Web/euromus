@@ -238,11 +238,16 @@
         </div>
       </li>
       <li>
-        <div>
-        <img class="left_icon_footer" src="/img/asd/globo.png" width="24" height="24" alt="phone">
-        Portugal
-        <img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone">
-        +351 251 096 251</div>
+        <div class="number-phone">
+          <div>
+            <img class="left_icon_footer" src="/img/asd/globo.png" width="24" height="24" alt="phone">
+            Portugal
+          </div>
+          <div>
+            <img class="left_icon_footer" src="/img/asd/phone.png" width="24" height="24" alt="phone">
+            +351 251 096 251
+          </div>
+        </div>
       </li>
       <li>
         <div>
