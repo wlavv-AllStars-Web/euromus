@@ -3555,11 +3555,13 @@ grid-template-columns: 1fr 1fr;
   width: auto;
 }
 .btnCar img {
-  width: 189px !important;
+  width: 100%;
+  max-width: 189px !important;
   height: auto;
 }
 .btnBike img {
-  width: 189px !important;
+  width: 100%;
+  max-width: 189px !important;
   height: auto;
 }
 
