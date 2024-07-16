@@ -1104,16 +1104,33 @@ body::-ms-scrollbar-thumb:hover {
   justify-content: center;
 }
 
+#menu-client{
+  height: unset !important;
+}
+
+#menu-client .nav-item a i{
+  font-size: 24px;
+  color: #0273EB;
+}
+
 #menu-client .nav-item {
   border-right: 1px solid #d8d8d8 !important;
 }
 #menu-client .nav-link{
   border-color: transparent !important;
+  display: flex;
 }
 #menu-client .nav-link.active{
   border-color: transparent !important;
-  background-color: #f7f7f7 !important;
-  color: #0273EB;
+  background-color: #0273EB !important;
+}
+#menu-client .nav-link.active i{
+  color: #fff;
+}
+
+#menu-client .nav-item{
+  margin-bottom: 0;
+  margin-left: 0;
 }
 
 #myTabContent {
@@ -1865,8 +1882,8 @@ textarea {
   display: none;
 }
 
-#logout-tab {
-  color: #f13340;
+#logout-tab i{
+  color: #f13340 !important;
 }
 
 .product-quantity #quantity_wanted {
