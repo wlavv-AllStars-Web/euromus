@@ -28,7 +28,7 @@
       {if $product.has_discount}
         <div class="product-discount">
           {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          <span>RRP / PVP</span>
+          <span>{l s="RRP / PVP" d="Shop.Theme.ProductList"}</span>
           <span class="regular-price">{$product.regular_price}</span>
         </div>
       {/if}

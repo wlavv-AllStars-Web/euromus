@@ -250,7 +250,7 @@
 
         <div class="right_column_product column-right-stock">
           
-          <div class="right_text"> {if $product->quantity < 1} {l s='Out of stock'} {elseif $product->quantity==1} <a href="/{$lang_iso}/contact-us" style="color: #666;text-transform: uppercase;">{l s='Limited stock, please contact us'}</a> {else} {*{$product->quantity+0}*} {l s='STOCK'} {/if} 
+          <div class="right_text"> {if $product->quantity < 1} {l s='Out of stock' d="Shop.Theme.ProductList"} {elseif $product->quantity==1} <a href="/{$lang_iso}/contact-us" style="color: #666;text-transform: uppercase;">{l s='Limited stock, please contact us'}</a> {else} {*{$product->quantity+0}*} {l s='STOCK' d="Shop.Theme.ProductList"} {/if} 
           </div>
           
           {if $product->quantity > 1 }
@@ -264,7 +264,7 @@
 
         <div class="right_column_product">
             <a target="_blank" onclick="openShippingtab('{$urls.pages.my_account}')">
-                <div class="right_text" >{l s='SHIPPING'}</div>
+                <div class="right_text" >{l s='SHIPPING' d="Shop.Theme.ProductList"}</div>
                 <div class="right_logos"><i class="fa fa-truck"></i></div>
             </a>
         </div>
@@ -275,14 +275,14 @@
           {else}
           <a href="/img/asd/Content_pages/catalog/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.xlsx" download="{$product->manufacturer_name|replace:' ':''}.xlsx">
           {/if}
-                  <div class="right_text" >{l s='CATALOG'}</div>
+                  <div class="right_text" >{l s='CATALOG' d="Shop.Theme.ProductList"}</div>
                   <div class="right_logos"><img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/xlsx_updated.png" style=" height: 50px; width: 55px; max-width: 55px;"></div>
           </a>
         </div>
 
         <div class="right_column_product">
             <a target="_blank" href="https://www.youtube.com/results?search_query=+{$product->manufacturer_name|replace:' ':'+'}+{$product->reference|replace:' ':'+'}">
-                <div class="right_text" >{l s='VIDEOS'}</div>
+                <div class="right_text" >{l s='VIDEOS' d="Shop.Theme.ProductList"}</div>
                 <div class="right_logos"><i class="fa-brands fa-youtube"></i></div>
             </a>
         </div>

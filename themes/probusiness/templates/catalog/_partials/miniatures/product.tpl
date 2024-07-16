@@ -90,11 +90,11 @@
             {/if}
           {/block}
           {if ($product.quantity == 1) }
-            <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: orange;color: white;width:1rem;height:1rem;"></div><div style="float: left;"> {l s='Limited stock, please contact us'} </div></div>
+            <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: orange;color: white;width:1rem;height:1rem;"></div><div style="float: left;">{l s='Limited stock, please contact us' d="Shop.Theme.ProductList"} </div></div>
           {elseif ($product.quantity > 1) }
-              <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: green;color: white;width:1rem;height:1rem;"></div><div style="float: left;"> {l s='In stock'} </div></div>
+              <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: green;color: white;width:1rem;height:1rem;"></div><div style="float: left;"> {l s='In stock' d="Shop.Theme.ProductList"} </div></div>
           {elseif $product.quantity < 1 }
-              <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: red;color: white;width:1rem;height:1rem;"></div><div> {l s='Without stock'} </div></div>
+              <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:1rem;line-height:18px;font-weight:400;color:#000;" class="list-name"><div style="border-radius: 50%; background-color: red;color: white;width:1rem;height:1rem;"></div><div>{l s='Without stock' d="Shop.Theme.ProductList"} </div></div>
           {/if}
 
       </div>
@@ -108,7 +108,7 @@
               {if $product.has_discount}
                 {hook h='displayProductPriceBlock' product=$product type="old_price"}
                 <div class="old_price" style="display: flex;align-items:center;gap:0.5rem;font-size:12px;line-height:21px;font-weight:700;justify-content:center;">
-                RRP / PVP
+                {l s="RRP / PVP" d="Shop.Theme.ProductList"}
                 <span class="regular-price" aria-label="{l s='Regular price' d='Shop.Theme.Catalog'}" style="font-size: 14px;line-height:21px;font-weight:400;color:#000;margin-bottom:0;text-decoration:unset;">{$product.regular_price}</span>
                 </div>
                 {if $product.discount_type === 'percentage'}
@@ -118,7 +118,7 @@
                 {/if}
               {/if}
 
-              <div class="discount" style="font-size: 12px;font-weight:700;line-height:21px;">Discount: <span style="font-size: 14px;font-weight:400;line-height:24px;margin:0;">{$product.discount_percentage}</span></div>
+              <div class="discount" style="font-size: 12px;font-weight:700;line-height:21px;">{l s="Discount:" d="Shop.Theme.ProductList"}<span style="font-size: 14px;font-weight:400;line-height:24px;margin:0;">{$product.discount_percentage}</span></div>
               {hook h='displayProductPriceBlock' product=$product type="before_price"}
 
               <span class="price" aria-label="{l s='Price' d='Shop.Theme.Catalog'}" style="font-size: 21px;font-weight:700;line-height:26px;margin:0;">

@@ -2359,6 +2359,10 @@ textarea {
   height: auto;
 }
 
+#myTabContent {
+  padding: 0;
+}
+
 }
   
 
@@ -2497,6 +2501,10 @@ textarea {
 
 .signature canvas {
   width: 100%;
+}
+
+#myTabContent {
+  padding: 0;
 }
 
 #myTabContent #shipping img {
