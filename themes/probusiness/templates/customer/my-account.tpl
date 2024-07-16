@@ -157,7 +157,7 @@
           </div>
         {else}
           <div class="alert alert-warning" role="alert" style="max-width: 1350px;margin: 0 auto;text-align: center;">
-            {l s='No orders yet.' d='Shop.Theme.Actions'}
+            {l s='No orders yet.' d='Shop.Theme.Customeraccount'}
           </div>
         {/if}
       </div>
@@ -166,12 +166,12 @@
         <div class="col-sm-12 text-center">
             <div class="row statistics_container" style="max-width: 1350px; margin: 0 auto;display:flex;">
                 <div class="col-lg-8 col-md-7 col-sm-12">
-                    <div>{l s='Total purchases per month'}</div>
+                    <div>{l s='Total purchases per month' d='Shop.Theme.Customeraccount'}</div>
                     <canvas id="myChart" width="664" height="332"></canvas>
                 </div>
 
                 <div class="col-lg-4 col-md-5">
-                  <div>{l s='Total purchases by brand (€)'}</div>
+                  <div>{l s='Total purchases by brand (€)' d='Shop.Theme.Customeraccount'}</div>
                     <canvas id="chart-area" height="332" class="chartjs-render-monitor"></canvas>
                 </div>
             </div>
@@ -197,7 +197,7 @@
           <div class="clearfix"></div>
           <div class="addresses-footer">
             <a class="btn btn-primary" href="{$urls.pages.address|escape:'html':'UTF-8'}" data-link-action="add-address">
-              <span>{l s='Create new address' d='Shop.Theme.Actions'}</span>
+              <span>{l s='Create new address' d='Shop.Theme.Customeraccount'}</span>
             </a>
           </div>
       </div>
@@ -215,8 +215,8 @@
           <form action="{$urls.pages.my_account}" method="post" class="std">
               <div class="left-form-personal col-lg-6 col-sm-12">
                 <div class="form-group col-lg-9">
-                  <h1 style="text-align: center;">Your Personal Information</h1>
-                  <p style="text-align: center;">Please be sure to update your personal information if changed.</p>
+                  <h1 style="text-align: center;">{l s="Your Personal Information" d='Shop.Theme.Customeraccount'}</h1>
+                  <p style="text-align: center;">{l s="Please be sure to update your personal information if changed." d='Shop.Theme.Customeraccount'}</p>
                 </div>
                 <div class="radio-btns-form-personal  col-lg-12 col-md-6">
                 {foreach from=$genders key=k item=gender}
@@ -231,24 +231,24 @@
 
               
                 <div class="form-group col-lg-9 col-md-7 col-sm-12">
-                  <label for="firstname">First Name</label>
+                  <label for="firstname">{l s="First Name" d='Shop.Theme.Customeraccount'}</label>
                   <input type="text" class="form-control" id="firstname" name="firstname" value="{$smarty.post.firstname}">
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-sm-12">
-                  <label for="lastname">Last Name</label>
+                  <label for="lastname">{l s="Last Name" d='Shop.Theme.Customeraccount'}</label>
                   <input type="text" class="form-control" id="lastname" name="lastname" value="{$smarty.post.lastname}">
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-sm-12">
-                  <label for="email">Email</label>
+                  <label for="email">{l s="Email" d='Shop.Theme.Customeraccount'}</label>
                   <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
                 </div>
                 <div class="form-row col-lg-9 col-md-7 ">
                   <div class="form-group col-lg-12 col-md-12 col-sm-12 px-0 m-0">
-                    <label>Date of Birth</label>
+                    <label>{l s="Date of Birth" d='Shop.Theme.Customeraccount'}</label>
                   </div>
                   <div class="form-group col-lg-4 col-md-4 col-sm-4 pl-0 days">
                     <select id="days" name="days" class="form-control">
-                      <option selected>Day</option>
+                      <option selected>{l s="Day" d='Shop.Theme.Customeraccount'}</option>
                       <option>...</option>
                       {foreach from=$days item=v}
                         <option value="{$v}" {if ($sl_day == $v)}selected="selected"{/if}>{$v}&nbsp;&nbsp;</option>
@@ -257,7 +257,7 @@
                   </div>
                   <div class="form-group col-lg-4 col-md-4 col-sm-4 p-0 months">
                     <select id="months" name="months" class="form-control">
-                      <option selected>Month</option>
+                      <option selected>{l s="Month" d='Shop.Theme.Customeraccount'}</option>
                       <option>...</option>
                       {foreach from=$months key=k item=v}
                           <option value="{$k}" {if ($sl_month == $k)}selected="selected"{/if}>{l s=$v}&nbsp;</option>
@@ -266,7 +266,7 @@
                   </div>
                   <div class="form-group col-lg-4 col-md-4 col-sm-4 pr-0 years">
                     <select id="years" name="years" class="form-control">
-                      <option selected>Year</option>
+                      <option selected>{l s="Year" d='Shop.Theme.Customeraccount'}</option>
                       <option>...</option>
                       {foreach from=$years item=v}
                           <option value="{$v}" {if ($sl_year == $v)}selected="selected"{/if}>{$v}&nbsp;&nbsp;</option>
@@ -276,15 +276,15 @@
                 </div>
                 {* <pre>{$smarty.post|print_r}</pre> *}
                 <div class="form-group col-lg-9 col-md-7 col-sm-12">
-                  <label for="old_passwd">Current Password</label>
+                  <label for="old_passwd">{l s="Current Password" d='Shop.Theme.Customeraccount'}</label>
                   <input type="password" class="form-control " name="old_passwd" id="old_passwd" required data-validate="isPasswd" >
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-sm-12">
-                  <label for="passwd">New Password</label>
+                  <label for="passwd">{l s="New Password" d='Shop.Theme.Customeraccount'}</label>
                   <input type="password" class="form-control " name="passwd" id="passwd" data-validate="isPasswd">
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-sm-12">
-                  <label for="confirmation">New Password Confirmation</label>
+                  <label for="confirmation">{l s="New Password Confirmation" d='Shop.Theme.Customeraccount'}</label>
                   <input type="password" class="form-control " name="confirmation" id="confirmation" data-validate="isPasswd">
                 </div>
                 {* {if $newsletter} *}
@@ -292,7 +292,7 @@
                   <div class="form-check col-md-12">
                       <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" value="1" {if isset($smarty.post.newsletter) && $smarty.post.newsletter == 1} checked="checked"{/if}>
                       <label class="form-check-label" for="newsletter">
-                        <a href="https://www.all-stars-distribution.com/en/content/20-terms-and-conditions">Sign up for our newsletter!</a>
+                        <a href="https://www.all-stars-distribution.com/en/content/20-terms-and-conditions">{l s="Sign up for our newsletter!" d='Shop.Theme.Customeraccount'}</a>
                       </label>
                     
                   </div>
@@ -305,17 +305,17 @@
             <div class="form-row company-info-personal" style="padding-top: 2rem;"> *}
             <div class="right-form-personal  col-lg-6 col-sm-12">
               <div class="form-group col-lg-12 col-md-7 col-sm-12" style="padding-top: 2rem;">
-              <h1 style="text-align: center;">Your Company Information</h1>
+              <h1 style="text-align: center;">{l s="Your Company Information" d='Shop.Theme.Customeraccount'}</h1>
               </div>
               {* </div>
 
               <div class="form-row "> *}
                 <div class="form-group col-lg-9 col-md-7 col-sm-12">
-                  <label for="company">Company Name</label>
+                  <label for="company">{l s="Company Name" d='Shop.Theme.Customeraccount'}</label>
                   <input type="text" class="form-control" id="company" name="company" value="{if isset($smarty.post.company)}{$smarty.post.company}{/if}" >
                 </div>
                 <div class="form-group col-lg-9 col-md-7 col-sm-12">
-                  <label for="siret">Vat Number</label>
+                  <label for="siret">{l s="Vat Number" d='Shop.Theme.Customeraccount'}</label>
                   <input type="text" class="form-control" id="siret" name="siret" value="{if isset($smarty.post.siret)}{$smarty.post.siret}{/if}">
                 </div>
                 
@@ -323,7 +323,7 @@
 
               <div class="form-row"> *}
                 <div class="form-group col-lg-12 col-md-4 col-sm-12" style="text-align: center;padding-bottom:2rem;">
-                  <button class="btn btn-primary" type="submit" name="submitIdentity" data-link-action="save-customer" style="background:#0273eb;">Submit form</button>
+                  <button class="btn btn-primary" type="submit" name="submitIdentity" data-link-action="save-customer" style="background:#0273eb;">{l s="Submit form" d='Shop.Theme.Customeraccount'}</button>
                 </div>
               {* </div>
 
@@ -331,23 +331,23 @@
               
               <div class="form-row"> *}
                 <div class="form-group col-lg-12" style="padding-top: 2rem;">
-                  <h1 class="page-subheading" style="text-align: center;">{l s='General Data Protection Regulation'}</h1>
+                  <h1 class="page-subheading" style="text-align: center;">{l s='General Data Protection Regulation' d='Shop.Theme.Customeraccount'}</h1>
                       
                   <div style="margin-top: 40px;text-align:center;">
-                    <h4> {l s='Remove account'}  </h4>
-                    <p>{l s='After the account has been removed you can not go back!.'}</p>
+                    <h4> {l s='Remove account' d='Shop.Theme.Customeraccount'}  </h4>
+                    <p>{l s='After the account has been removed you can not go back!.' d='Shop.Theme.Customeraccount'}</p>
                     <button type="submit" name="removeIdentity" class="btn btn-default button button-medium">
-                      <span>{l s='Remove Account'}<i class="icon-chevron-right right"></i></span>
+                      <span>{l s='Remove Account' d='Shop.Theme.Customeraccount'}<i class="icon-chevron-right right"></i></span>
                     </button>
                   </div>
                 </div>
                   
                 <div class="form-group col-lg-12" style="padding-top: 2rem;">
                   <div style="margin-top: 40px;text-align:center;">
-                    <h4> {l s='Portability of personal data'}  </h4>
-                    <p>{l s='Allows you to extract your personal data in a CSV document!.'}</p>	
+                    <h4> {l s='Portability of personal data' d='Shop.Theme.Customeraccount'}  </h4>
+                    <p>{l s='Allows you to extract your personal data in a CSV document!.' d='Shop.Theme.Customeraccount'}</p>	
                     <button type="submit" name="exportIdentity" class="btn btn-default button button-medium">
-                      <span>{l s='Export personal data'}<i class="icon-chevron-right right"></i></span>
+                      <span>{l s='Export personal data' d='Shop.Theme.Customeraccount'}<i class="icon-chevron-right right"></i></span>
                     </button>
                   </div>
                 </div>
