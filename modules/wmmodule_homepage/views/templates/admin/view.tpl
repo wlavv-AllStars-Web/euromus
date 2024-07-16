@@ -19,7 +19,7 @@
             </div>
         </div>
         
-        <div class="panel panel-default" style="margin-top: 30px;">
+        {* <div class="panel panel-default" style="margin-top: 30px;">
             <div class="panel-heading" style="margin: 0;">Footer</div>
             <div class="panel-body" style="padding: 15px 0;">
                 <div>
@@ -36,7 +36,7 @@
                     </div>
                 </div>
             </div>
-        </div>
+        </div> *}
         
         <div style="text-align: center;">
             <button class="btn btn-primary;" style="margin: 0 auto;width: 150px;background: dodgerblue;color: #fff;">SAVE</button>
