@@ -1905,6 +1905,10 @@ textarea {
   height: auto;
 }
 
+.btnCar.desktop{
+  justify-content: end;
+}
+
 .btnCar img {
   width: 100%;
   max-width: 601px;
