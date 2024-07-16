@@ -2228,6 +2228,10 @@ textarea {
   width: 100%;
 } */
 
+.product-quantity .input-group-btn-vertical{
+  display: none;
+}
+
 
 /* cms payments */
 
