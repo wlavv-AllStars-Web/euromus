@@ -68,7 +68,7 @@
           {include file='customer/_partials/order-messages.tpl'}
       </div> *}
       <div class="tab-pane  show active" id="order_history" role="tabpanel" aria-labelledby="order_history-tab">
-        <h1>Order history</h1>
+        <h1>{l s='Order history' d='Shop.Theme.Customeraccount'}</h1>
 
         {* {include file="customer/statistics_counters.tpl"} *}
 
@@ -76,12 +76,12 @@
           <table class="table table-striped table-bordered table-labeled hidden-sm-down">
             <thead class="thead-default">
               <tr>
-                <th>{l s='Order reference' d='Shop.Theme.Checkout'}</th>
-                <th>{l s='Date' d='Shop.Theme.Checkout'}</th>
-                <th>{l s='Total price' d='Shop.Theme.Checkout'}</th>
-                <th class="hidden-md-down">{l s='Payment' d='Shop.Theme.Checkout'}</th>
-                <th class="hidden-md-down">{l s='Status' d='Shop.Theme.Checkout'}</th>
-                <th>{l s='Invoice' d='Shop.Theme.Checkout'}</th>
+                <th>{l s='Order reference' d='Shop.Theme.Customeraccount'}</th>
+                <th>{l s='Date' d='Shop.Theme.Customeraccount'}</th>
+                <th>{l s='Total price' d='Shop.Theme.Customeraccount'}</th>
+                <th class="hidden-md-down">{l s='Payment' d='Shop.Theme.Customeraccount'}</th>
+                <th class="hidden-md-down">{l s='Status' d='Shop.Theme.Customeraccount'}</th>
+                <th>{l s='Invoice' d='Shop.Theme.Customeraccount'}</th>
                 <th>&nbsp;</th>
               </tr>
             </thead>
@@ -183,7 +183,7 @@
       {* <div class="tab-pane fade" id="stats" role="tabpanel" aria-labelledby="stats-tab">...</div> *}
       <div class="tab-pane fade" id="addresses" role="tabpanel" aria-labelledby="addresses-tab">
         {block name='page_title'}
-          <h1>{l s='Your addresses' d='Shop.Theme.Actions'}</h1>
+          <h1>{l s='Your addresses' d='Shop.Theme.Customeraccount'}</h1>
         {/block}
           <div class="row">
           {foreach $customer.addresses as $address}
