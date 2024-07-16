@@ -27,7 +27,7 @@
 {block name='page_content'}
   <div class="row myaccount-container">
     <div class="col-lg-12 banner-myaccount">
-      <img src="/img/asd/Content_pages/account/myaccount.jpg" alt="account_banner" />
+      <img src="/img/asd/Content_pages/account/account_{$language.iso_code}.webp" alt="account_banner" />
     </div>
 
 

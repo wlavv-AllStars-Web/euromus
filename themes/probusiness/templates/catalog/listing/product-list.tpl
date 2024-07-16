@@ -34,9 +34,9 @@
 {* {$listing.label} *}
     {block name='product_list_header'}
       {* <h1 id="js-product-list-header" class="h2">{$listing.label}</h1> *}
-      {if $listing.label === 'New products'}
+      {if $page.page_name === 'new-products'}
       <div style="max-width:1350px;margin:auto;">
-        <img src="/img/asd/Content_pages/news/news.jpg" style="width: 100%;" alt="news_banner"/>
+        <img src="/img/asd/Content_pages/news/news_{$language.iso_code}.webp" style="width: 100%;" alt="news_banner"/>
       </div>
       {/if}
     {/block}
