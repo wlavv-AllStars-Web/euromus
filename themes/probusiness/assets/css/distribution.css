@@ -1988,6 +1988,14 @@ textarea {
   margin: 0;
 }
 
+#manufacturer .brand_content_item_logged .brand-infos h3{
+  text-transform: uppercase;
+  margin-bottom: 0 !important;
+}
+#manufacturer .brand_content_item_logged .brand-img a{
+  padding: 10px 0;
+}
+
 
 .cart-empty .cart-grid a:hover {
   color: #0273EB !important;
@@ -3912,9 +3920,6 @@ grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
 
-    .brand_content_item_logged .brand-infos h3{
-      text-transform: uppercase;
-    }
 
     #manufacturer .brand_content_item .brand-infos{
     text-align: center;
