@@ -56,9 +56,15 @@ body::-ms-scrollbar-thumb:hover {
 }
 
 
+
+
 /*  */
 /*  */
 
+#products .page-not-found{
+  display: flex;
+  flex-direction: column;
+}
 
   html,body{
     scroll-behavior: smooth;
@@ -122,7 +128,7 @@ body::-ms-scrollbar-thumb:hover {
   }
 
   #blockcart-modal .modal-header{
-    background-color: #0273EB;
+    background-color: #0273EB !important;
   }
   #blockcart-modal .modal-body .product-name{
     color: #0273EB;
@@ -893,11 +899,11 @@ body::-ms-scrollbar-thumb:hover {
   }
 
   .desktop {
-    display: block;
+    display: flex !important;
    }
 
    .mobile {
-    display: none ;
+    display: none !important;
    }
 
    .n-float{

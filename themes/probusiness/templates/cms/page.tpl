@@ -1472,7 +1472,7 @@
                     <div class="form-check col-md-12">
                       <input class="form-check-input" type="checkbox" id="gridCheck" required>
                       <label class="form-check-label" for="gridCheck">
-                        <a href="https://www.all-stars-distribution.com/en/content/20-terms-and-conditions">{l s='You agree with our conditions terms' d='Shop.Theme.Career'}</a> <span style="color:#ee302e;">*</span>
+                        <a href="{$link->getCMSLink(13)}">{l s='You agree with our conditions terms' d='Shop.Theme.Career'}</a> <span style="color:#ee302e;">*</span>
                       </label>
                     </div>
                   </div>

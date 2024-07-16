@@ -25,9 +25,9 @@
  <!-- checkout/_partials/cart-detailed-product-line.tpl -->
 {* <div class="product-line-grid"> *}
   <!--  product line left content: image-->
-  <div class="product-line-grid-left col-md-2 col-xs-4">
+  <div class="product-line-grid-left col-md-2 col-sm-4">
       <div class="desktop lixo">
-        <div class="col-md-5 col-xs-2 text-xs-right " >
+        <div class="col-md-5 col-sm-2 text-xs-right " >
           <div class="cart-line-product-actions ">
             <a
                 class                       = "remove-from-cart"
@@ -71,7 +71,7 @@
   {* <pre>{print_r($product,1)}</pre> *}
   {* stock_quantity *}
   <!--  product line body: label, discounts, price, attributes, customizations -->
-  <div class="product-line-grid-body col-md-6 col-xs-8 checkout-product-info">
+  <div class="product-line-grid-body col-md-6 col-sm-8 checkout-product-info">
 
     <div class="product-line-info">
       <a class="label" href="{$product.url}" data-id_customization="{$product.id_customization|intval}">{$product.name}</a>
@@ -128,10 +128,10 @@
                 <div class="modal-body">
                   {foreach from=$customization.fields item="field"}
                     <div class="product-customization-line row">
-                      <div class="col-sm-3 col-xs-4 label">
+                      <div class="col-sm-3 col-sm-4 label">
                         {$field.label}
                       </div>
-                      <div class="col-sm-9 col-xs-8 value">
+                      <div class="col-sm-9 col-sm-8 value">
                         {if $field.type == 'text'}
                           {if (int)$field.id_module}
                             {$field.text nofilter}
@@ -156,13 +156,13 @@
 {* <pre>{print_r($product,1)}</pre> *}
 {* {$cart.product.quantity} *}
   <!--  product line right content: actions (quantity, delete), price -->
-  <div class="product-line-grid-right product-line-actions col-md-4 col-xs-12 pt-2">
+  <div class="product-line-grid-right product-line-actions col-md-4 col-sm-12 pt-2">
     <div class="row" style="display:flex;">
       
       {* <div class="col-xs-4 hidden-md-up"></div> *}
-      <div class="col-md-12 col-xs-12 qty-price">
-        <div class="row shopping-cart-row col-xs-12" >
-          <div class="col-md-6 col-xs-3 qty">
+      <div class="col-md-12 col-sm-12 qty-price">
+        <div class="row shopping-cart-row col-sm-12" >
+          <div class="col-md-6 col-sm-3 qty">
             {if !empty($product.is_gift)}
               <span class="gift-quantity">{$product.quantity}</span>
             {else}
@@ -181,7 +181,7 @@
               />
             {/if}
           </div>
-          <div class="col-md-6 col-xs-4 price desktop">
+          <div class="col-md-6 col-sm-4 price desktop">
             <span class="product-price">
               <strong>
                 {if !empty($product.is_gift)}
