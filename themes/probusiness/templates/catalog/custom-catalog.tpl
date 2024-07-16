@@ -11,14 +11,14 @@
 <table id="cms_catalog_main_table" style="max-width: 1350px;">
 	<tbody>
 		<tr class="cms_catalog_table_header">
-			<td class="header_label"><p>{l s='Brand'}</p></td>
-			<td class="header_label"><p>{l s='Import File'}</p></td>
-			<td class="header_label"><p>{l s='Catalogue'} </p></td>
-			<td class="header_label"><p>{l s='Pictures'}</p></td>
-			<td class="header_label"><p>{l s='Logos'}  </p></td>
-			<td class="header_label"><p>{l s='Facebook'}</p></td>
-			<td class="header_label"><p>{l s='Website'}</p></td>
-			<td class="header_label"><p>{l s='Updates'}</p></td>
+			<td class="header_label"><p>{l s='Brand'  d="Shop.Theme.catalog" }</p></td>
+			<td class="header_label"><p>{l s='Import File' d="Shop.Theme.catalog" }</p></td>
+			<td class="header_label"><p>{l s='Catalogue' d="Shop.Theme.catalog" } </p></td>
+			<td class="header_label"><p>{l s='Pictures' d="Shop.Theme.catalog" }</p></td>
+			<td class="header_label"><p>{l s='Logos' d="Shop.Theme.catalog" }  </p></td>
+			<td class="header_label"><p>{l s='Facebook' d="Shop.Theme.catalog" }</p></td>
+			<td class="header_label"><p>{l s='Website' d="Shop.Theme.catalog" }</p></td>
+			<td class="header_label"><p>{l s='Updates' d="Shop.Theme.catalog" }</p></td>
 		</tr>
 		
     	{foreach from=$manufacturers item=manufacturer name=manufacturers}

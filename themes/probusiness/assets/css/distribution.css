@@ -3895,6 +3895,10 @@ grid-template-columns: 1fr 1fr;
       gap: 1rem;
     }
 
+    .brand_content_item_logged .brand-infos h3{
+      text-transform: uppercase;
+    }
+
     #manufacturer .brand_content_item .brand-infos{
     text-align: center;
     }
