@@ -72,31 +72,31 @@
     </ul>
 
     <script>
-      const menu = document.querySelectorAll("#menu-client li a");
-      menu.forEach(item => {
-        if (item.classList.contains("active")) {
-            const name = item.getAttribute("title");
-            document.querySelector(".setNameTitle").innerText = name;
-          }
-        item.addEventListener('click', () => {
-          menu.forEach(link => link.classList.remove('active'));
-          item.classList.add('active');
-          
-          if (item.classList.contains("active")) {
-            const name = item.getAttribute("title");
-            document.querySelector(".setNameTitle").innerText = name;
-          }
-        });
-      });
+  document.addEventListener('DOMContentLoaded', function() {
+    const tabs = document.querySelectorAll('.nav-link');
+    const titleElement = document.querySelector('.setNameTitle');
 
-    </script>
+    tabs.forEach(tab => {
+      tab.addEventListener('click', function() {
+        const tabTitle = this.getAttribute('title');
+        titleElement.innerText = tabTitle;
+      });
+    });
+
+    // Set initial title based on the active tab
+    const activeTab = document.querySelector('.nav-link.active');
+    if (activeTab) {
+      titleElement.innerText = activeTab.getAttribute('title');
+    }
+  });
+</script>
 
 
     <div class="tab-content" id="myTabContent">
       {* <div class="tab-pane fade " id="messages" role="tabpanel" aria-labelledby="messages-tab">
           {include file='customer/_partials/order-messages.tpl'}
       </div> *}
-      <div class="tab-pane  show active" id="order_history" role="tabpanel" aria-labelledby="order_history-tab">
+      <div class="tab-pane  show active" id="order_history" role="tabpanel" title="Order History" aria-labelledby="order_history-tab">
         <h1>{l s='Order history' d='Shop.Theme.Customeraccount'}</h1>
 
         {* {include file="customer/statistics_counters.tpl"} *}
