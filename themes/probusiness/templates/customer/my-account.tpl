@@ -213,7 +213,7 @@
             <div class="title-clientstatistics"  style="font-size: 14px;position: relative; top: 20px;text-align:center;">{l s='Best seller products' d="Shop.Theme.Statistics"}</div>
             <canvas id="myChart-statistics"></canvas>
           </div>
-          <div style="border-top: 1px solid #c8c8c8;padding: 10px 0;text-align: center;color: #666;cursor: pointer;margin-top: 20px; font-weight: bolder;" onclick="$('#top_100').toggle()">{l s='Check Top 100'}</div>
+          <div style="border-top: 1px solid #c8c8c8;padding: 10px 0;text-align: center;color: #666;cursor: pointer;margin-top: 20px; font-weight: bolder;" onclick="$('#top_100').toggle()">{l s='Check Top 100' d="Shop.Theme.Statistics"}</div>
           <div id="top_100" style="display: none;border-top: 1px solid #c8c8c8;padding: 10px 0;text-align: left;color: #666;cursor: pointer;margin-top: 0px; font-weight: bolder;">
         	        <div style="width: 33%; float: left;">
         	        {foreach $top['top1'] AS $k => $product}
@@ -248,42 +248,42 @@
           <div id="general_information_container">
             <div class="spacer-20 visible-xs visible-sm"></div>
             <div class="statistics_container margin-left-10">
-                <div class="stats_container_label">{l s='Company name'}</div>
+                <div class="stats_container_label">{l s='Company name' d="Shop.Theme.Statistics"}</div>
                 <div class="stats_container_value">{$company_name}</div>
             </div>
             <div class="spacer-20"></div>
             <div class="statistics_container margin-left-10">
-                <div class="stats_container_label">{l s='Client since'}</div>
+                <div class="stats_container_label">{l s='Client since' d="Shop.Theme.Statistics"}</div>
                 <div class="stats_container_value">{$clientSince}</div>
             </div>
             <div class="spacer-20"></div>
             <div class="statistics_container margin-left-10">
-                <div class="stats_container_label">{l s='Default language'}</div>
+                <div class="stats_container_label">{l s='Default language' d="Shop.Theme.Statistics"}</div>
                 <div class="stats_container_value">{$defaultLanguage}</div>
             </div>
             <div class="spacer-20"></div>
             <div class="statistics_container margin-left-10">
-                <div class="stats_container_label">{l s='Last purchase'}</div>
+                <div class="stats_container_label">{l s='Last purchase' d="Shop.Theme.Statistics"}</div>
                 <div class="stats_container_value">{$lastOrder}</div>
             </div>
             <div class="spacer-20"></div>
             <div class="statistics_container margin-left-10">
-                <div class="stats_container_label">{l s='My addresses'}</div>
+                <div class="stats_container_label">{l s='My addresses' d="Shop.Theme.Statistics"}</div>
                 <div class="stats_container_value">{$numberAddresses}</div>
             </div>
             <div class="spacer-20"></div>
             <div class="statistics_container margin-left-10">
-                <div class="stats_container_label"><a style="color: dodgerblue;" href="#order_history">{l s='Number of orders'}</a></div>
+                <div class="stats_container_label"><a style="color: dodgerblue;" href="#order_history">{l s='Number of orders' d="Shop.Theme.Statistics"}</a></div>
                 <div class="stats_container_value">{$numberOfOrders}</div>
             </div>
             <div class="spacer-20"></div>
             <div class="statistics_container margin-left-10">
-                <div class="stats_container_label">{l s='Total orders amount'}</div>
+                <div class="stats_container_label">{l s='Total orders amount' d="Shop.Theme.Statistics"}</div>
                 <div class="stats_container_value">{$totalOfOrders} €</div>
             </div>
             <div class="spacer-16"></div>
             <div class="statistics_container margin-left-10">
-                <div class="stats_container_label">{l s='Average value per order'}</div>
+                <div class="stats_container_label">{l s='Average value per order' d="Shop.Theme.Statistics"}</div>
                 <div class="stats_container_value">{$average} €</div>
             </div>
           </div>
@@ -292,7 +292,7 @@
 
         <div class="col-sm-12 last-viewed-products-container">
           <div class="statistics_container">
-            {l s='Last viewed products'}
+            {l s='Last viewed products' d="Shop.Theme.Statistics"}
           </div>
           <div class="last-viewed-products" style="display: flex;gap:0.5rem;flex-wrap:wrap;">
             {if count($lastViewedProducts) > 0}
@@ -314,7 +314,7 @@
                 {/foreach}
             {else}
                 <div style="padding: 10px;">
-                    <p class="alert alert-warning" style="margin: 0">{l s='You haven\'t viewed any products yet!'}</p>
+                    <p class="alert alert-warning" style="margin: 0">{l s='You haven\'t viewed any products yet!' d="Shop.Theme.Statistics"}</p>
                 </div>
             {/if}
           </div>
@@ -322,7 +322,7 @@
 
         <div class="col-sm-12 most-purchased-container">
           <div class="statistics_container">
-            {l s='Last viewed products'}
+            {l s='Last viewed products' d="Shop.Theme.Statistics"}
           </div>
           <div class="most-purchased" style="display: flex;gap:0.5rem;flex-wrap:wrap;">
           {if count($mostBoughtProducts) > 0}
@@ -344,7 +344,7 @@
             {/foreach}
         {else}
             <div style="padding: 10px;">
-                <p class="alert alert-warning">{l s='You haven\'t made any purchases yet!'}</p>
+                <p class="alert alert-warning">{l s='You haven\'t made any purchases yet!' d="Shop.Theme.Statistics"}</p>
             </div>
         {/if}
           </div>
