@@ -131,8 +131,9 @@ class MyAccountController extends MyAccountControllerCore
 
         $numberOfOrders = self::getNumberOfOrders($idCustomer);
         $totalOfOrders = self::getTotalOfOrders($idCustomer);
-        
-        $average = $totalOfOrders / $numberOfOrders;
+        if($numberOfOrders && $totalOfOrders) {
+            $average = $totalOfOrders / $numberOfOrders;
+        }
 
         if ($this->context->customer->birthday) {
             $birthday = explode('-', $this->context->customer->birthday);
