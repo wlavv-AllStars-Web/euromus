@@ -1128,10 +1128,10 @@ body::-ms-scrollbar-thumb:hover {
 }
 #menu-client .nav-link.active{
   border-color: transparent !important;
-  background-color: #0273EB !important;
+  background-color: #fff !important;
 }
 #menu-client .nav-link.active i{
-  color: #fff;
+  color: #0273EB;
 }
 
 #menu-client .nav-item{

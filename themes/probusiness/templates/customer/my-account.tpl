@@ -39,14 +39,14 @@
         </a>
       </li> *}
       <li class="nav-item">
-        <a class="nav-link active" id="order_history-tab" data-toggle="tab" href="#order_history" role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-list-ol website_blue font-size-40"></i></a>
+        <a class="nav-link active" title="Orders history" id="order_history-tab" data-toggle="tab" href="#order_history" role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-list-ol website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
+        <a class="nav-link" title="Dashboard"  id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
       </li>
       
       <li class="nav-item">
-        <a class="nav-link" id="statistics-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa-solid fa-chart-column"></i></a>
+        <a class="nav-link" id="statistics-tab" title="Statistics"  data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa-solid fa-chart-column"></i></a>
       </li>
       
       {* <li class="nav-item">
@@ -56,15 +56,40 @@
         <a class="nav-link" id="addresses-tab" data-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-building website_blue font-size-40"></i></a>
       </li> *}
       <li class="nav-item">
-        <a class="nav-link" id="shipping-tab" data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-truck website_blue font-size-40"></i></a>
+        <a class="nav-link" id="shipping-tab" title="Shipping Rates"  data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-truck website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-user website_blue font-size-40"></i></a>
+        <a class="nav-link" id="profile-tab" title="Profile" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-user website_blue font-size-40"></i></a>
       </li>
-      <li class="nav-item" style="width: 100%;display:flex;justify-content: end;">
+      <li class="setNameTitle" style="width: 100%;display:flex;justify-content: center;font-size:30px;color:#666;font-weight:700;">
+        titulo
+      </li>
+      <li class="nav-item" style="display:flex;justify-content: end;">
         <a class="nav-link" id="logout-tab"  href="/?mylogout="><i class="fa-solid fa-lock-open"></i></a>
       </li>
+
+      
     </ul>
+
+    <script>
+      const menu = document.querySelectorAll("#menu-client li a");
+      menu.forEach(item => {
+        if (item.classList.contains("active")) {
+            const name = item.getAttribute("title");
+            document.querySelector(".setNameTitle").innerText = name;
+          }
+        item.addEventListener('click', () => {
+          menu.forEach(link => link.classList.remove('active'));
+          item.classList.add('active');
+          
+          if (item.classList.contains("active")) {
+            const name = item.getAttribute("title");
+            document.querySelector(".setNameTitle").innerText = name;
+          }
+        });
+      });
+
+    </script>
 
 
     <div class="tab-content" id="myTabContent">
@@ -603,17 +628,7 @@
 					display: true,
 					text: ''
 				},
-                scales: {
-                    yAxes: [{
-                        ticks: {
-                            beginAtZero: true,
-                            display: false
-                        },
-                        gridLines: { 
-                            tickMarkLength: 0 
-                        }
-                    }]
-                }
+        
 			}
 		});
 
