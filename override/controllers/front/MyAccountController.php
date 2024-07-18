@@ -132,7 +132,7 @@ class MyAccountController extends MyAccountControllerCore
         $numberOfOrders = self::getNumberOfOrders($idCustomer);
         $totalOfOrders = self::getTotalOfOrders($idCustomer);
 
-        if($numberOfOrders && $totalOfOrders) {
+        if($numberOfOrders > 0) {
             $average = $totalOfOrders / $numberOfOrders;
         }
 
@@ -492,7 +492,7 @@ class MyAccountController extends MyAccountControllerCore
 
         $products = array();
         foreach($last_viewed_ids AS $id){
-            
+            if($id != ''){
             $sql = "SELECT eu_manufacturer.name AS brand, eu_product_lang.name AS name, eu_product.reference, eu_product.id_product AS id_product, eu_product_lang.description_short AS description_short, eu_manufacturer.id_manufacturer AS id_manufacturer
                     FROM eu_product
                     LEFT JOIN eu_product_lang
@@ -525,7 +525,7 @@ class MyAccountController extends MyAccountControllerCore
                 $productDetails['image_path'] = $cleanedPath;
                 $products[] = $productDetails;
             }
-
+            }
             
             // echo '<pre>'.print_r($products,1).'</pre>';
             // exit;
