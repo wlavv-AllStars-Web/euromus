@@ -131,6 +131,7 @@ class MyAccountController extends MyAccountControllerCore
 
         $numberOfOrders = self::getNumberOfOrders($idCustomer);
         $totalOfOrders = self::getTotalOfOrders($idCustomer);
+
         if($numberOfOrders && $totalOfOrders) {
             $average = $totalOfOrders / $numberOfOrders;
         }
@@ -545,7 +546,7 @@ class MyAccountController extends MyAccountControllerCore
             ON eu_product_lang.id_product = eu_product.id_product 
             LEFT JOIN eu_manufacturer
             ON eu_manufacturer.id_manufacturer = eu_product.id_manufacturer 
-            WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_product_lang.id_lang = ". $this->context->language->id . " AND eu_product_lang.id_shop=". $this->context->shop->id . " GROUP BY eu_order_detail.product_id ORDER BY number DESC 
+            WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_product_lang.id_lang = ". $this->context->language->id . " AND  eu_product_lang.id_shop=". $this->context->shop->id . " GROUP BY eu_order_detail.product_id ORDER BY number DESC 
             LIMIT 6 ";
 
             // echo $sql;
