@@ -42,11 +42,11 @@
         <a class="nav-link active" title="{l s="Orders history" d="Shop.Theme.Statistics"}" id="order_history-tab" data-toggle="tab" href="#order_history" role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-list-ol website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" title="Dashboard"  id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
+        <a class="nav-link" title="{l s="Dashboard" d="Shop.Theme.Statistics"}"  id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
       </li>
       
       <li class="nav-item">
-        <a class="nav-link" id="statistics-tab" title="Statistics"  data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa-solid fa-chart-column"></i></a>
+        <a class="nav-link" id="statistics-tab" title="{l s="Statistics" d="Shop.Theme.Statistics"}"  data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa-solid fa-chart-column"></i></a>
       </li>
       
       {* <li class="nav-item">
@@ -56,10 +56,10 @@
         <a class="nav-link" id="addresses-tab" data-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-building website_blue font-size-40"></i></a>
       </li> *}
       <li class="nav-item">
-        <a class="nav-link" id="shipping-tab" title="Shipping Rates"  data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-truck website_blue font-size-40"></i></a>
+        <a class="nav-link" id="shipping-tab" title="{l s="Shipping Rates" d="Shop.Theme.Statistics"}"  data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-truck website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" title="Profile" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-user website_blue font-size-40"></i></a>
+        <a class="nav-link" id="profile-tab" title="{l s="Profile" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-user website_blue font-size-40"></i></a>
       </li>
       <li class="setNameTitle" style="width: 100%;display:flex;justify-content: center;font-size:30px;color:#666;font-weight:700;">
         titulo
