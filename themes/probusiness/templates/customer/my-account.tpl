@@ -45,6 +45,10 @@
         <a class="nav-link" id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
       </li>
       
+      <li class="nav-item">
+        <a class="nav-link" id="statistics-tab" data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa-solid fa-chart-column"></i></a>
+      </li>
+      
       {* <li class="nav-item">
         <a class="nav-link" id="stats-tab" data-toggle="tab" href="#stats" role="tab" aria-controls="stats" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-bar-chart-o website_blue font-size-40"></i></a>
       </li> *}
@@ -176,6 +180,151 @@
                 </div>
             </div>
         </div>
+      </div>
+
+      <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">  
+        <div class="col-sm-8">
+          <div class="col-lg-12">
+            <div class="title-clientstatistics"  style="font-size: 14px;position: relative; top: 20px;">{l s='Best seller products' d="Shop.Theme.Statistics"}</div>
+            <canvas id="myChart-statistics"></canvas>
+          </div>
+          <div style="border-top: 1px solid #c8c8c8;padding: 10px 0;text-align: center;color: #666;cursor: pointer;margin-top: 20px; font-weight: bolder;" onclick="$('#top_100').toggle()">{l s='Check Top 100'}</div>
+          <div id="top_100" style="display: none;border-top: 1px solid #c8c8c8;padding: 10px 0;text-align: left;color: #666;cursor: pointer;margin-top: 0px; font-weight: bolder;">
+        	        <div style="width: 33%; float: left;">
+        	        {foreach $top['top1'] AS $k => $product}
+        	            <div style="padding: 5px; height: 27px;">
+        	                <div style="width: 40px; float: left;">{$k+1}.</div>
+        	                <div style="width: calc(100% - 40px); float: left;"><a style="color: #777;" href="/{$product['id_product']}-top100.html" target="_blank">{$product['reference']}</a></div>
+        	            </div>
+        	        {/foreach}
+        	        </div>
+        	        
+        	        <div style="width: 33%; float: left;">
+        	        {foreach $top['top2'] AS $k => $product}
+        	            <div style="padding: 5px; height: 27px;">
+        	                <div style="width: 40px; float: left;">{$k+1}.</div>
+        	                <div style="width: calc(100% - 40px); float: left;"><a style="color: #777;" href="/{$product['id_product']}-top100.html" target="_blank">{$product['reference']}</a></div>
+        	            </div>
+        	        {/foreach}
+        	        </div>
+        	        
+        	        <div style="width: 33%; float: left;">
+        	        {foreach $top['top3'] AS $k => $product}
+        	            <div style="padding: 5px; height: 27px;">
+        	                <div style="width: 40px; float: left;">{$k+1}.</div>
+        	                <div style="width: calc(100% - 40px); float: left;"><a style="color: #777;" href="/{$product['id_product']}-top100.html" target="_blank">{$product['reference']}</a></div>
+        	            </div>
+        	        {/foreach}
+        	        </div>
+        	    </div>
+        </div>
+        {* {debug} *}
+        <div class="col-sm-4">
+          <div id="general_information_container">
+            <div class="spacer-20 visible-xs visible-sm"></div>
+            <div class="statistics_container margin-left-10">
+                <div class="stats_container_label">{l s='Company name'}</div>
+                <div class="stats_container_value">{$company_name}</div>
+            </div>
+            <div class="spacer-20"></div>
+            <div class="statistics_container margin-left-10">
+                <div class="stats_container_label">{l s='Client since'}</div>
+                <div class="stats_container_value">{$clientSince}</div>
+            </div>
+            <div class="spacer-20"></div>
+            <div class="statistics_container margin-left-10">
+                <div class="stats_container_label">{l s='Default language'}</div>
+                <div class="stats_container_value">{$defaultLanguage}</div>
+            </div>
+            <div class="spacer-20"></div>
+            <div class="statistics_container margin-left-10">
+                <div class="stats_container_label">{l s='Last purchase'}</div>
+                <div class="stats_container_value">{$lastOrder}</div>
+            </div>
+            <div class="spacer-20"></div>
+            <div class="statistics_container margin-left-10">
+                <div class="stats_container_label">{l s='My addresses'}</div>
+                <div class="stats_container_value">{$numberAddresses}</div>
+            </div>
+            <div class="spacer-20"></div>
+            <div class="statistics_container margin-left-10">
+                <div class="stats_container_label"><a style="color: dodgerblue;" href="#order_history">{l s='Number of orders'}</a></div>
+                <div class="stats_container_value">{$numberOfOrders}</div>
+            </div>
+            <div class="spacer-20"></div>
+            <div class="statistics_container margin-left-10">
+                <div class="stats_container_label">{l s='Total orders amount'}</div>
+                <div class="stats_container_value">{$totalOfOrders} €</div>
+            </div>
+            <div class="spacer-16"></div>
+            <div class="statistics_container margin-left-10">
+                <div class="stats_container_label">{l s='Average value per order'}</div>
+                <div class="stats_container_value">{$average} €</div>
+            </div>
+          </div>
+        </div>
+
+
+        <div class="col-sm-12 last-viewed-products-container">
+          <div class="statistics_container">
+            {l s='Last viewed products'}
+          </div>
+          <div class="last-viewed-products" style="display: flex;gap:0.5rem;flex-wrap:wrap;">
+            {if count($lastViewedProducts) > 0}
+                {foreach $lastViewedProducts As $product}
+              <div class="col-lg-2 col-md-2 col-sm-4 px-0" style="border: 1px solid #d8d8d8;">
+                  <div class="statistics_container" style="padding: 0; margin: 0;overflow: hidden;">
+                      <a class="product_img_link"	href="https://www.all-stars-distribution.com/{$product['id_product']}-product.html" title="{$product['name']}" itemprop="url" style="width: 100%; text-align: center;">
+                            <div style="background-color: white;display: flex;">
+                            {* {$product|print_r} *}
+
+
+                                <img style="max-height:125px;margin: 0 auto" class="replace-2x img-responsive" src="{$product.image_path}" alt="{$product['name']}" title="{$product.name}" itemprop="image"/>
+                            </div>
+                            <div style="border-top: 1px solid #C8C8C8; font-size: 14px; color: #666;padding: 5px;">{$product.name|truncate:25}</div>
+                            <div style="font-size: 14px; color: #666;">{$product.reference|truncate:25}</div>
+                        </a>
+                    </div>
+                </div>
+                {/foreach}
+            {else}
+                <div style="padding: 10px;">
+                    <p class="alert alert-warning" style="margin: 0">{l s='You haven\'t viewed any products yet!'}</p>
+                </div>
+            {/if}
+          </div>
+        </div>
+
+        <div class="col-sm-12 most-purchased-container">
+          <div class="statistics_container">
+            {l s='Last viewed products'}
+          </div>
+          <div class="most-purchased" style="display: flex;gap:0.5rem;flex-wrap:wrap;">
+          {if count($mostBoughtProducts) > 0}
+            {foreach $mostBoughtProducts As $product}
+          <div class="col-lg-2 col-md-2 col-sm-4 px-0" style="border: 1px solid #d8d8d8;">
+              <div class="statistics_container" style="padding: 0; margin: 0px;">
+                  <a class="product_img_link"	href="https://www.all-stars-distribution.com/{$product['id_product']}-product.html" title="{$product['name']}" itemprop="url" style="width: 100%; text-align: center;">
+                        <div style="background-color: white;display: flex;">
+
+                            <img style="max-height:125px;margin: 0 auto" class="replace-2x img-responsive" src="{$product.image_path}" alt="{$product['name']}" title="{$product['name']}" itemprop="image"/>
+                        </div>
+                        <div style="border-top: 1px solid #C8C8C8; height: 45px; font-size: 14px; color: #666;overflow: hidden;display:flex;align-items:center;">
+                            <div style=" width: 50px;height: 100%;line-height: 30px;font-size: 20px;background-color: #fff;padding: 10px;border-right: 1px solid #c8c8c8; text-align: center;">{$product['number']}</div> 
+                            <div style="padding: 5px;">{$product['name']|truncate:25}</div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            {/foreach}
+        {else}
+            <div style="padding: 10px;">
+                <p class="alert alert-warning">{l s='You haven\'t made any purchases yet!'}</p>
+            </div>
+        {/if}
+          </div>
+        </div>
+
       </div>
 
 
@@ -356,7 +505,7 @@
             
 
             
-
+            {$bestSellers['references']|print_r}
 
             {* {hook h='displayCustomerAccount'} *}
 
@@ -417,6 +566,56 @@
     		}
     	}
 	);
+  
+  const references = "{$bestSellers['references']}";
+  const values = "{$bestSellers['values']}";
+  const referencesArray = references.split(",")
+  const valuesArray = values.split(",")
+
+  /** Statistics Chart**/
+  var barChartData = {
+    	labels: referencesArray,
+    	datasets: [{
+    		backgroundColor: '{$bestSellers['colors']}',
+    		borderColor: '{$bestSellers['colors']}',
+    		borderWidth: 1,
+    		data: valuesArray,
+        label: ''
+    	}]
+    
+    };
+
+  var ctx = document.getElementById('myChart-statistics').getContext('2d');
+		window.myBar = new Chart(ctx, {
+			type: 'bar',
+			data: barChartData,
+			options: {
+				responsive: true,
+				tooltips: {
+                    enabled: false,
+                    mode: 'index',
+                    intersect: false, 
+                },
+				legend: {
+					display: false,
+				},
+				title: {
+					display: true,
+					text: ''
+				},
+                scales: {
+                    yAxes: [{
+                        ticks: {
+                            beginAtZero: true,
+                            display: false
+                        },
+                        gridLines: { 
+                            tickMarkLength: 0 
+                        }
+                    }]
+                }
+			}
+		});
 
 
 

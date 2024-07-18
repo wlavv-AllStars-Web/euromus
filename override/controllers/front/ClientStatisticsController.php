@@ -9,6 +9,7 @@ class ClientStatisticsControllerCore extends FrontController{
     public function initContent(){
         
         parent::initContent();
+
         
         $idCustomer = $this->context->customer->id;
 
@@ -21,6 +22,8 @@ class ClientStatisticsControllerCore extends FrontController{
         
         $average = $totalOfOrders / $numberOfOrders;
 
+        echo '<pre>'.print_r(self::bestSellers()['colors'],1).'</pre>';
+        exit;
         
         $this->context->smarty->assign(array(
             'customer' => $this->context->customer,
@@ -40,7 +43,7 @@ class ClientStatisticsControllerCore extends FrontController{
             'top' => self::getTop100()
         ));
         
-        $this->setTemplate('customer/statistics_counters.tpl');
+        $this->setTemplate('customer/my-account');
     }
 
 
