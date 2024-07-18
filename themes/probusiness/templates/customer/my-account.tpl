@@ -39,7 +39,7 @@
         </a>
       </li> *}
       <li class="nav-item">
-        <a class="nav-link active" title="Orders history" id="order_history-tab" data-toggle="tab" href="#order_history" role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-list-ol website_blue font-size-40"></i></a>
+        <a class="nav-link active" title="{l s="Orders history" d="Shop.Theme.Statistics"}" id="order_history-tab" data-toggle="tab" href="#order_history" role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-list-ol website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" title="Dashboard"  id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
