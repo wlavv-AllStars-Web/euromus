@@ -210,7 +210,7 @@
       <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">  
         <div class="col-sm-8">
           <div class="col-lg-12">
-            <div class="title-clientstatistics"  style="font-size: 14px;position: relative; top: 20px;">{l s='Best seller products' d="Shop.Theme.Statistics"}</div>
+            <div class="title-clientstatistics"  style="font-size: 14px;position: relative; top: 20px;text-align:center;">{l s='Best seller products' d="Shop.Theme.Statistics"}</div>
             <canvas id="myChart-statistics"></canvas>
           </div>
           <div style="border-top: 1px solid #c8c8c8;padding: 10px 0;text-align: center;color: #666;cursor: pointer;margin-top: 20px; font-weight: bolder;" onclick="$('#top_100').toggle()">{l s='Check Top 100'}</div>
@@ -530,7 +530,6 @@
             
 
             
-            {$bestSellers['references']|print_r}
 
             {* {hook h='displayCustomerAccount'} *}
 
