@@ -645,16 +645,27 @@
     /** PIE CHART **/
 
 
+// Simulating the embedded string data from the server
+const brandsString = "{$ordersByBrand['brands']}".replace(/&quot;/g, '"');
+const brandsArray = brandsString.split(",").map(brand => brand.trim());
+const totalString = "{$ordersByBrand['totals']}".replace(/&quot;/g, '"');
+const totalArray = totalString.split(",").map(total => total.trim());
+
+console.log(totalArray)
+
+
+
+
 	window.myPie = new Chart(document.getElementById('chart-area').getContext('2d'), 
 	    {
     		type: 'pie',
     		data: {
     			datasets: [{
-    				data: [{foreach from=$ordersByBrand['totals'] item=totalbrand key=key name=name}{$totalbrand},{/foreach}],
+    				data: totalArray,
     				backgroundColor: '{$ordersByBrandColors}',
-    				label: 'Dataset 1'
+    				label: 'Value'
     			}],
-    			labels: [{foreach from=$ordersByBrand['brands'] item=brand key=key name=name}'{$brand}',{/foreach}]
+    			labels: brandsArray
     		},
     		options: {
     			responsive: true

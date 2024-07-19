@@ -303,13 +303,14 @@ class MyAccountController extends MyAccountControllerCore
                     $colors.= ', ';  
                     $totals.= ', ';  
                 } 
-                $brands .= '' . $manufacturer['name'] . '';
+                $brands .= "" . $manufacturer['name'] . "";
                 $colors .= '' . self::random_hexcolor() . '';
                 $totals .= '' . number_format($manufacturer['total'], 0, '', '') . '';
             }
         }
         
-        return ['brands' => explode(',',$brands), 'totals' => explode(',',$totals), 'colors' => explode(',',$colors)];
+        // return ['brands' => explode(',',$brands), 'totals' => explode(',',$totals), 'colors' => explode(',',$colors)];
+        return ['brands' => $brands, 'totals' => $totals, 'colors' => explode(',',$colors)];
 
     }
     
