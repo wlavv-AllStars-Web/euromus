@@ -2062,6 +2062,10 @@ textarea {
   text-align: center;
 }
 
+.card-status-myaccount a:hover{
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
 .card-status-myaccount a{
   width: 100%;
 }
