@@ -197,9 +197,9 @@
                     <a href="{$order.details.details_url|escape:'html':'UTF-8'}" data-link-action="view-order-details">
                       {l s='Details' d='Shop.Theme.Actions'}
                     </a>
-                    {if $order.details.reorder_url}
+                    {* {if $order.details.reorder_url}
                       <a href="{$order.details.reorder_url|escape:'html':'UTF-8'}">{l s='Reorder' d='Shop.Theme.Actions'}</a>
-                    {/if}
+                    {/if} *}
                   </td>
                 </tr>
               {/foreach}
