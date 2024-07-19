@@ -251,9 +251,9 @@
             const rows = document.querySelectorAll("#order_history tbody tr");
             rows.forEach(row => {
               if (row.getAttribute('data-state') == state_num) {
-                row.style.display = ''; // Show the row
+                row.style.display = ''; 
               } else {
-                row.style.display = 'none'; // Hide the row
+                row.style.display = 'none'; 
               }
             });
           }
@@ -393,7 +393,7 @@
 
         <div class="col-sm-12 most-purchased-container">
           <div class="statistics_container">
-            {l s='Last viewed products' d="Shop.Theme.Statistics"}
+            {l s='Most purchased products' d="Shop.Theme.Statistics"}
           </div>
           <div class="most-purchased" style="display: flex;gap:0.5rem;flex-wrap:wrap;">
           {if count($mostBoughtProducts) > 0}
