@@ -651,7 +651,7 @@ const brandsArray = brandsString.split(",").map(brand => brand.trim());
 const totalString = "{$ordersByBrand['totals']}".replace(/&quot;/g, '"');
 const totalArray = totalString.split(",").map(total => total.trim());
 
-console.log(totalArray)
+console.log(brandsArray)
 
 
 
