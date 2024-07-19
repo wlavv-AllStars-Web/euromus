@@ -97,8 +97,8 @@
           {include file='customer/_partials/order-messages.tpl'}
       </div> *}
       <div class="tab-pane  show active" id="order_history" role="tabpanel" title="Order History" aria-labelledby="order_history-tab">
-        <div style="display: flex;margin:1rem 0;">
-          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount card-status-myaccount" >
+        <div style="display: flex;margin:1rem 0;flex-wrap:wrap;">
+          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount card-status-myaccount" >
               <a onclick="findRowTable(24)">
                   <div class="counters_panel margin-lados-10 waiting_validation">
                       <div class="counters_label">{l s='Waiting validation' d='Shop.Theme.Customeraccount'}</div>
@@ -107,7 +107,7 @@
                   <div class="spacer-20"></div>
               </a>
           </div>
-          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(10)">
                   <div class="counters_panel margin-lados-10 waiting_payment">
                       <div class="counters_label">{l s='Waiting payment' d='Shop.Theme.Customeraccount'}</div>
@@ -116,7 +116,7 @@
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(3)">
                   <div class="counters_panel margin-lados-10 preparation">
                       <div class="counters_label">{l s='In preparation' d='Shop.Theme.Customeraccount'}</div>
@@ -125,7 +125,7 @@
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(9)">
                   <div class="counters_panel margin-lados-10 backorder">
                       <div class="counters_label">{l s='Backorder' d='Shop.Theme.Customeraccount'}</div>
@@ -134,7 +134,7 @@
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(4)">
                   <div class="counters_panel margin-lados-10 shipped">
                       <div class="counters_label">{l s='Shipped' d='Shop.Theme.Customeraccount'}</div>
@@ -142,7 +142,7 @@
                   </div>
               </a>
           </div>    
-          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(6)">
                   <div class="counters_panel margin-lados-10 canceled">
                       <div class="counters_label">{l s='Canceled' d='Shop.Theme.Customeraccount'}</div>
@@ -211,9 +211,9 @@
       
           <div class="orders hidden-md-up">
             {foreach from=$orders item=order}
-              <div class="order">
+              <div class="order" data-state="{$order.history.current.id_order_state}">
                 <div class="row">
-                  <div class="col-xs-10">
+                  <div class="col-xs-10" >
                     <a href="{$order.details.details_url|escape:'html':'UTF-8'}"><h3>{$order.details.reference|escape:'html':'UTF-8'}</h3></a>
                     <div class="date">{$order.details.order_date|escape:'html':'UTF-8'}</div>
                     <div class="total">{$order.totals.total.value|escape:'html':'UTF-8'}</div>
@@ -252,20 +252,42 @@
         <script>
           function findRowTable(state_num) {
             const rows = document.querySelectorAll("#order_history tbody tr");
-            rows.forEach(row => {
-              if (row.getAttribute('data-state') == state_num) {
-                row.style.display = ''; 
-              } else {
-                row.style.display = 'none'; 
-              }
-            });
+            const rowsM = document.querySelectorAll("#order_history .orders .order");
+
+            if(window.screen.width > 767){
+              rows.forEach(row => {
+                if (row.getAttribute('data-state') == state_num) {
+                  row.style.display = ''; 
+                } else {
+                  row.style.display = 'none'; 
+                }
+              });
+            }else{
+              rowsM.forEach(row => {
+                if (row.getAttribute('data-state') == state_num) {
+                  row.style.display = ''; 
+                } else {
+                  row.style.display = 'none'; 
+                }
+              });
+            }
+
           }
 
           function cleanFilter() {
             const rows = document.querySelectorAll("#order_history tbody tr");
-            rows.forEach(row => {
-              row.style.display = ''; 
-            });
+            const rowsM = document.querySelectorAll("#order_history .orders .order");
+
+            if(window.screen.width > 767){
+              rows.forEach(row => {
+                row.style.display = ''; 
+              });
+            }else{
+              rowsM.forEach(row => {
+                row.style.display = ''; 
+              });
+            }
+
           }
 
         </script>

@@ -2060,6 +2060,7 @@ textarea {
   flex-direction: column;
   align-items: center;
   text-align: center;
+  margin-top: 1rem;
 }
 
 .card-status-myaccount a:hover{
@@ -2077,7 +2078,7 @@ textarea {
   font-weight: bolder; 
   height: 80px;
   color: #000;
-  text-wrap: nowrap;
+  /* text-wrap: nowrap; */
   font-size: .85rem;
 }
 .card-status-myaccount .counters_value{ font-size: 80px; line-height: 30px; height: 80px;color: #000 !important; }
@@ -3642,9 +3643,23 @@ grid-template-columns: 1fr 1fr;
     width: 50%;
   }
 
+  .card-status-myaccount{
+    width: 50%;
+  }
+
+  .setNameTitle{
+    display: none !important;
+  }
+
+  #menu-client li:nth-child(7){
+    width: 100%;
+  }
+
 }
 
 @media (max-width: 540px){
+
+
 
   #top-menu li{
     border-top: 1px solid #666;
@@ -4600,6 +4615,10 @@ grid-template-columns: 1fr 1fr;
 @media (max-width: 400px){
   .list_manu .brand_logged{
     width: 100% !important;
+  }
+
+  .card-status-myaccount{
+    width: 100%;
   }
 }
 
