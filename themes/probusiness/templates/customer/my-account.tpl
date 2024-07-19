@@ -101,7 +101,7 @@
           <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount card-status-myaccount" >
               <a onclick="findRowTable(24)">
                   <div class="counters_panel margin-lados-10 waiting_validation">
-                      <div class="counters_label">{l s='Waiting validation'}</div>
+                      <div class="counters_label">{l s='Waiting validation' d='Shop.Theme.Customeraccount'}</div>
                       <div class="counters_value">{$counters['waiting_validation']}</div>
                   </div>
                   <div class="spacer-20"></div>
@@ -110,7 +110,7 @@
           <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(10)">
                   <div class="counters_panel margin-lados-10 waiting_payment">
-                      <div class="counters_label">{l s='Waiting payment'}</div>
+                      <div class="counters_label">{l s='Waiting payment' d='Shop.Theme.Customeraccount'}</div>
                       <div class="counters_value">{$counters['waiting_payment']}</div>
                   </div>
                   <div class="spacer-20"></div>
@@ -119,7 +119,7 @@
           <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(3)">
                   <div class="counters_panel margin-lados-10 preparation">
-                      <div class="counters_label">{l s='In preparation'}</div>
+                      <div class="counters_label">{l s='In preparation' d='Shop.Theme.Customeraccount'}</div>
                       <div class="counters_value">{$counters['processing']}</div>
                   </div>
                   <div class="spacer-20"></div>
@@ -128,7 +128,7 @@
           <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(9)">
                   <div class="counters_panel margin-lados-10 backorder">
-                      <div class="counters_label">{l s='Backorder'}</div>
+                      <div class="counters_label">{l s='Backorder' d='Shop.Theme.Customeraccount'}</div>
                       <div class="counters_value">{$counters['backorders']}</div>
                   </div>
                   <div class="spacer-20"></div>
@@ -137,7 +137,7 @@
           <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(4)">
                   <div class="counters_panel margin-lados-10 shipped">
-                      <div class="counters_label">{l s='Shipped'}</div>
+                      <div class="counters_label">{l s='Shipped' d='Shop.Theme.Customeraccount'}</div>
                       <div class="counters_value">{$counters['shipped']}</div>
                   </div>
               </a>
@@ -145,7 +145,7 @@
           <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
               <a onclick="findRowTable(6)">
                   <div class="counters_panel margin-lados-10 canceled">
-                      <div class="counters_label">{l s='Canceled'}</div>
+                      <div class="counters_label">{l s='Canceled' d='Shop.Theme.Customeraccount'}</div>
                       <div class="counters_value">{$counters['canceled']}</div>
                   </div>
               </a>
@@ -225,13 +225,13 @@
                   </div>
                   <div class="col-xs-2 text-xs-right">
                       <div>
-                        <a href="{$order.details.details_url|escape:'html':'UTF-8'}" data-link-action="view-order-details" title="{l s='Details' d='Shop.Theme.Actions'}">
+                        <a href="{$order.details.details_url|escape:'html':'UTF-8'}" data-link-action="view-order-details" title="{l s='Details'  d='Shop.Theme.Customeraccount'}">
                           <i class="material-icons">&#xE8B6;</i>
                         </a>
                       </div>
                       {if $order.details.reorder_url}
                         <div>
-                          <a href="{$order.details.reorder_url|escape:'html':'UTF-8'}" title="{l s='Reorder' d='Shop.Theme.Actions'}">
+                          <a href="{$order.details.reorder_url|escape:'html':'UTF-8'}" title="{l s='Reorder'  d='Shop.Theme.Customeraccount'}">
                             <i class="material-icons">&#xE863;</i>
                           </a>
                         </div>
