@@ -151,8 +151,11 @@
               </a>
           </div> 
         </div>
-        <div>
-        <h1>{l s='Order history' d='Shop.Theme.Customeraccount'}</h1>
+        <div style="margin-top: 2rem;">
+          <div style="display: flex;justify-content:space-between;width:100%;">
+            <h1>{l s='Order history' d='Shop.Theme.Customeraccount'}</h1>
+            <a class="btn_clearfilter" onclick="cleanFilter()">{l s="Clean Filter" d="Shop.Theme.Customeraccount"}<i class="fa-solid fa-filter-circle-xmark" ></i></a>
+          </div>
 
         {* {include file="customer/statistics_counters.tpl"} *}
 
@@ -176,7 +179,7 @@
                 <tr data-state="{$order.history.current.id_order_state}">
                   <th scope="row">{$order.details.reference|escape:'html':'UTF-8'}</th>
                   <td>{$order.details.order_date|escape:'html':'UTF-8'}</td>
-                  <td class="text-xs-right">{$order.totals.total.value|escape:'html':'UTF-8'}</td>
+                  <td class="text-xs-center">{$order.totals.total.value|escape:'html':'UTF-8'}</td>
                   <td class="hidden-md-down">{$order.details.payment|escape:'html':'UTF-8'}</td>
                   <td>
                     <span
@@ -255,6 +258,13 @@
               } else {
                 row.style.display = 'none'; 
               }
+            });
+          }
+
+          function cleanFilter() {
+            const rows = document.querySelectorAll("#order_history tbody tr");
+            rows.forEach(row => {
+              row.style.display = ''; 
             });
           }
 
