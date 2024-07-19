@@ -2071,7 +2071,7 @@ textarea {
 .card-status-myaccount .counters_label {
   padding: 10px 5px; font-weight: bolder; height: 80px;color: #000;
 }
-.card-status-myaccount .counters_value{ font-size: 80px; line-height: 30px; height: 80px; }
+.card-status-myaccount .counters_value{ font-size: 80px; line-height: 30px; height: 80px;color: #000 !important; }
 .card-status-myaccount .waiting_validation{ background-color: #feffa0; }
 .card-status-myaccount .waiting_payment{  background-color: #4258a7; }
 .card-status-myaccount .preparation{  background-color: #048dcd; }
