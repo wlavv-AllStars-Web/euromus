@@ -326,11 +326,12 @@ class MyAccountController extends MyAccountControllerCore
         $defaultLanguageId = $this->context->customer->id_lang;
         
         switch($defaultLanguageId){
-            case 1 : return 'English';
-            case 2 : return 'Español';
-            case 3 : return 'Français';
-            case 4 : return 'Português';
-            case 5 : return 'Română';
+            case 2 : return 'English';
+            case 4 : return 'Español';
+            case 5 : return 'Français';
+            case 1 : return 'Português';
+            case 6 : return 'Română';
+            case 7 : return 'Română';
             default : return 'English';
         }
 
