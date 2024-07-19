@@ -39,16 +39,16 @@
         class="product-price h5 {if $product.has_discount}has-discount{/if}">
         <div class="client-margin">
           <div class="discount-margin">
-            <span>Discount</span>
+            <span>{l s="Discount" d="Shop.Theme.ProductList"}</span>
             <span>{$product.discount_percentage}</span>
           </div>
           <div class="discount-margin-price">
-            <span>Your Margin</span>
+            <span>{l s="Your Margin" d="Shop.Theme.ProductList"}</span>
             <span>{$product.discount_to_display}</span>
           </div>
         </div>
         <div class="current-price">
-          <span>Your Price</span>
+          <span>{l s="Your Price" d="Shop.Theme.ProductList"}</span>
           <span class='current-price-value' content="{$product.rounded_display_price}">
             {capture name='custom_price'}{hook h='displayProductPriceBlock' product=$product type='custom_price' hook_origin='product_sheet'}{/capture}
             {if '' !== $smarty.capture.custom_price}
