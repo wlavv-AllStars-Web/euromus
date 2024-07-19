@@ -337,8 +337,8 @@ class MyAccountController extends MyAccountControllerCore
 
     public function getCounters($idCustomer){
         
-        $waiting_validation =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_validation FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 13");
-        $waiting_payment =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_payment FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 14");
+        $waiting_validation =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_validation FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 24");
+        $waiting_payment =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_payment FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 10");
         $processing =  Db::getInstance()->getRow("SELECT count(current_state) AS processing FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 3");
         $backorders =  Db::getInstance()->getRow("SELECT count(current_state) AS backorders FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 9");
         $shipped =  Db::getInstance()->getRow("SELECT count(current_state) AS shipped FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 4");

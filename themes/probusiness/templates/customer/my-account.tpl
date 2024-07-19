@@ -97,6 +97,61 @@
           {include file='customer/_partials/order-messages.tpl'}
       </div> *}
       <div class="tab-pane  show active" id="order_history" role="tabpanel" title="Order History" aria-labelledby="order_history-tab">
+        <div style="display: flex;margin:1rem 0;">
+          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount card-status-myaccount" >
+              <a onclick="findRowTable(24)">
+                  <div class="counters_panel margin-lados-10 waiting_validation">
+                      <div class="counters_label">{l s='Waiting validation'}</div>
+                      <div class="counters_value">{$counters['waiting_validation']}</div>
+                  </div>
+                  <div class="spacer-20"></div>
+              </a>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+              <a onclick="findRowTable(10)">
+                  <div class="counters_panel margin-lados-10 waiting_payment">
+                      <div class="counters_label">{l s='Waiting payment'}</div>
+                      <div class="counters_value">{$counters['waiting_payment']}</div>
+                  </div>
+                  <div class="spacer-20"></div>
+              </a>
+          </div> 
+          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+              <a onclick="findRowTable(3)">
+                  <div class="counters_panel margin-lados-10 preparation">
+                      <div class="counters_label">{l s='In preparation'}</div>
+                      <div class="counters_value">{$counters['processing']}</div>
+                  </div>
+                  <div class="spacer-20"></div>
+              </a>
+          </div> 
+          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+              <a onclick="findRowTable(9)">
+                  <div class="counters_panel margin-lados-10 backorder">
+                      <div class="counters_label">{l s='Backorder'}</div>
+                      <div class="counters_value">{$counters['backorders']}</div>
+                  </div>
+                  <div class="spacer-20"></div>
+              </a>
+          </div> 
+          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+              <a onclick="findRowTable(4)">
+                  <div class="counters_panel margin-lados-10 shipped">
+                      <div class="counters_label">{l s='Shipped'}</div>
+                      <div class="counters_value">{$counters['shipped']}</div>
+                  </div>
+              </a>
+          </div>    
+          <div class="col-lg-2 col-md-2 col-sm-4  card-status-myaccount">
+              <a onclick="findRowTable(6)">
+                  <div class="counters_panel margin-lados-10 canceled">
+                      <div class="counters_label">{l s='Canceled'}</div>
+                      <div class="counters_value">{$counters['canceled']}</div>
+                  </div>
+              </a>
+          </div> 
+        </div>
+        <div>
         <h1>{l s='Order history' d='Shop.Theme.Customeraccount'}</h1>
 
         {* {include file="customer/statistics_counters.tpl"} *}
@@ -115,8 +170,10 @@
               </tr>
             </thead>
             <tbody>
-              {foreach from=$orders item=order}
-                <tr>
+           
+            {foreach from=$orders item=order}
+              {* <pre>{print_r($order.history.current,1)}</pre> *}
+                <tr data-state="{$order.history.current.id_order_state}">
                   <th scope="row">{$order.details.reference|escape:'html':'UTF-8'}</th>
                   <td>{$order.details.order_date|escape:'html':'UTF-8'}</td>
                   <td class="text-xs-right">{$order.totals.total.value|escape:'html':'UTF-8'}</td>
@@ -189,6 +246,20 @@
             {l s='No orders yet.' d='Shop.Theme.Customeraccount'}
           </div>
         {/if}
+        <script>
+          function findRowTable(state_num) {
+            const rows = document.querySelectorAll("#order_history tbody tr");
+            rows.forEach(row => {
+              if (row.getAttribute('data-state') == state_num) {
+                row.style.display = ''; // Show the row
+              } else {
+                row.style.display = 'none'; // Hide the row
+              }
+            });
+          }
+
+        </script>
+        </div>
       </div>
 
       <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">  
