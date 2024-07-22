@@ -98,7 +98,7 @@
       </div> *}
       <div class="tab-pane  show active" id="order_history" role="tabpanel" title="Order History" aria-labelledby="order_history-tab">
         <div style="display: flex;margin:1rem 0;flex-wrap:wrap;">
-          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount card-status-myaccount" >
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount card-status-myaccount" >
               <a onclick="findRowTable(24)">
                   <div class="counters_panel margin-lados-10 waiting_validation">
                       <div class="counters_label">{l s='Waiting validation' d='Shop.Theme.Customeraccount'}</div>
@@ -107,7 +107,7 @@
                   <div class="spacer-20"></div>
               </a>
           </div>
-          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(10)">
                   <div class="counters_panel margin-lados-10 waiting_payment">
                       <div class="counters_label">{l s='Waiting payment' d='Shop.Theme.Customeraccount'}</div>
@@ -116,7 +116,7 @@
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(3)">
                   <div class="counters_panel margin-lados-10 preparation">
                       <div class="counters_label">{l s='In preparation' d='Shop.Theme.Customeraccount'}</div>
@@ -125,7 +125,7 @@
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(9)">
                   <div class="counters_panel margin-lados-10 backorder">
                       <div class="counters_label">{l s='Backorder' d='Shop.Theme.Customeraccount'}</div>
@@ -134,7 +134,7 @@
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(4)">
                   <div class="counters_panel margin-lados-10 shipped">
                       <div class="counters_label">{l s='Shipped' d='Shop.Theme.Customeraccount'}</div>
@@ -142,7 +142,7 @@
                   </div>
               </a>
           </div>    
-          <div class="col-lg-2 col-md-3 col-sm-4  card-status-myaccount">
+          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(6)">
                   <div class="counters_panel margin-lados-10 canceled">
                       <div class="counters_label">{l s='Canceled' d='Shop.Theme.Customeraccount'}</div>
@@ -311,7 +311,7 @@
       </div>
 
       <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">  
-        <div class="col-sm-8">
+        <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
           <div class="col-lg-12">
             <div class="title-clientstatistics"  style="font-size: 14px;position: relative; top: 20px;text-align:center;">{l s='Best seller products' d="Shop.Theme.Statistics"}</div>
             <canvas id="myChart-statistics"></canvas>
@@ -347,7 +347,7 @@
         	    </div>
         </div>
         {* {debug} *}
-        <div class="col-sm-4">
+        <div class="col-lg-5 col-md-12 col-sm-12 col-xs-12">
           <div id="general_information_container">
             <div class="spacer-20 visible-xs visible-sm"></div>
             <div class="statistics_container margin-left-10">
@@ -400,7 +400,7 @@
           <div class="last-viewed-products" style="display: flex;gap:0.5rem;flex-wrap:wrap;">
             {if count($lastViewedProducts) > 0}
                 {foreach $lastViewedProducts As $product}
-              <div class="col-lg-2 col-md-2 col-sm-4 px-0" style="border: 1px solid #d8d8d8;">
+              <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 1rem;">
                   <div class="statistics_container" style="padding: 0; margin: 0;overflow: hidden;">
                       <a class="product_img_link"	href="https://www.all-stars-distribution.com/{$product['id_product']}-product.html" title="{$product['name']}" itemprop="url" style="width: 100%; text-align: center;">
                             <div style="background-color: white;display: flex;">
@@ -427,10 +427,10 @@
           <div class="statistics_container">
             {l s='Most purchased products' d="Shop.Theme.Statistics"}
           </div>
-          <div class="most-purchased" style="display: flex;gap:0.5rem;flex-wrap:wrap;">
+          <div class="most-purchased" style="">
           {if count($mostBoughtProducts) > 0}
             {foreach $mostBoughtProducts As $product}
-          <div class="col-lg-2 col-md-2 col-sm-4 px-0" style="border: 1px solid #d8d8d8;">
+          <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 1rem;">
               <div class="statistics_container" style="padding: 0; margin: 0px;">
                   <a class="product_img_link"	href="https://www.all-stars-distribution.com/{$product['id_product']}-product.html" title="{$product['name']}" itemprop="url" style="width: 100%; text-align: center;">
                         <div style="background-color: white;display: flex;">
