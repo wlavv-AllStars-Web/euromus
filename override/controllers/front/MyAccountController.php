@@ -330,8 +330,7 @@ class MyAccountController extends MyAccountControllerCore
             case 4 : return 'Español';
             case 5 : return 'Français';
             case 1 : return 'Português';
-            case 6 : return 'Română';
-            case 7 : return 'Română';
+            case 7 : return 'Italian';
             default : return 'English';
         }
 
