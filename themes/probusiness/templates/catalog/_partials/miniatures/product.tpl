@@ -29,7 +29,7 @@
 
     <div class="thumbnail-container" style="display: flex;align-items:center;">
 
-      <div class="thumbnail-top col-lg-3 col-md-3" style="display: flex !important;" >
+      <div class="thumbnail-top col-lg-3 col-md-3 col-sm-6 col-xs-6" style="display: flex !important;" >
         {block name='product_thumbnail'}
           {if $product.cover}
             <a href="{$product.url}" class="thumbnail product-thumbnail">
@@ -79,7 +79,7 @@
         </div>
       </div>
 
-      <div class="information-product col-lg-6 col-md-5" onclick="window.location.href='{$product.url}'">
+      <div class="information-product col-lg-6 col-md-5 col-sm-12 col-xs-12" onclick="window.location.href='{$product.url}'">
           <div class="referencia" style="font-weight: 700;font-size:16px;line-height:18px;color:#000;">{$product.reference}</div>
           <div class="brand-product" style="font-weight: 400;font-size:16px;line-height:18px;color:#000;" >{$product.manufacturer_name}</div>
           {block name='product_name'}
@@ -99,7 +99,7 @@
 
       </div>
 
-      <div class="product-description col-lg-3 col-md-4" >
+      <div class="product-description col-lg-3 col-md-4 col-sm-12 col-xs-12" >
         
 
         {block name='product_price_and_shipping'}
