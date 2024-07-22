@@ -25,7 +25,7 @@
         	<tr class="cms_catalog_tr_separator">
 
     			<td class="cms_catalog_table_brand_td">
-    				<img src="{$base_dir}/img/m/{$manufacturer.id_manufacturer}.jpg" class="cms_catalog_table_brand_td_image" alt="brand_logo"/>
+    				<img src="{$base_dir}/img/m/{$manufacturer.id_manufacturer}-medium_default.webp" class="cms_catalog_table_brand_td_image" alt="brand_logo"/>
     			</td>
 
     			<td class="cms_catalog_right_line">
