@@ -64,12 +64,12 @@ class ClientStatisticsControllerCore extends FrontController{
 
     public function getCounters($idCustomer){
         
-        $waiting_validation =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_validation FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 13");
-        $waiting_payment =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_payment FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 14");
-        $processing =  Db::getInstance()->getRow("SELECT count(current_state) AS processing FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 3");
-        $backorders =  Db::getInstance()->getRow("SELECT count(current_state) AS backorders FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 9");
-        $shipped =  Db::getInstance()->getRow("SELECT count(current_state) AS shipped FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 4");
-        $canceled =  Db::getInstance()->getRow("SELECT count(current_state) AS canceled FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 6");
+        $waiting_validation =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_validation FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 13");
+        $waiting_payment =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_payment FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 14");
+        $processing =  Db::getInstance()->getRow("SELECT count(current_state) AS processing FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 3");
+        $backorders =  Db::getInstance()->getRow("SELECT count(current_state) AS backorders FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 9");
+        $shipped =  Db::getInstance()->getRow("SELECT count(current_state) AS shipped FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 4");
+        $canceled =  Db::getInstance()->getRow("SELECT count(current_state) AS canceled FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 6");
         
         $orders['waiting_validation'] = $waiting_validation['waiting_validation'];
         $orders['waiting_payment']    = $waiting_payment['waiting_payment'];
@@ -130,15 +130,15 @@ class ClientStatisticsControllerCore extends FrontController{
             $lower = date('Y-m-d', $unixdateLower);
             $upper = date('Y-m-d', $unixdateUpper);
 
-            $waiting_validation =  Db::getInstance()->getRow("SELECT count(id_order_state) AS waiting_validation FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 15" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
-            $waiting_payment =  Db::getInstance()->getRow("SELECT count(id_order_state) AS waiting_payment FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 10" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
-            $processing =  Db::getInstance()->getRow("SELECT count(id_order_state) AS processing FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 3" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
-            $backorders =  Db::getInstance()->getRow("SELECT count(id_order_state) AS backorders FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 9" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
-            $shipped =  Db::getInstance()->getRow("SELECT count(id_order_state) AS shipped FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 4" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
-            $canceled =  Db::getInstance()->getRow("SELECT count(id_order_state) AS canceled FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 6" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
-            $accepted =  Db::getInstance()->getRow("SELECT count(id_order_state) AS accepted FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 2" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
-            $refunded =  Db::getInstance()->getRow("SELECT count(id_order_state) AS refunded FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 7" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
-            $delivered =  Db::getInstance()->getRow("SELECT count(id_order_state) AS delivered FROM eu_order_history LEFT JOIN eu_orders ON eu_order_history.id_order = eu_orders.id_order WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_order_history.id_order_state = 5" . " AND eu_order_history.date_add > '" . $lower . "' AND eu_order_history.date_add < '" . $upper . "'");
+            $waiting_validation =  Db::getInstance()->getRow("SELECT count(id_order_state) AS waiting_validation FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 15" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
+            $waiting_payment =  Db::getInstance()->getRow("SELECT count(id_order_state) AS waiting_payment FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 10" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
+            $processing =  Db::getInstance()->getRow("SELECT count(id_order_state) AS processing FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 3" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
+            $backorders =  Db::getInstance()->getRow("SELECT count(id_order_state) AS backorders FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 9" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
+            $shipped =  Db::getInstance()->getRow("SELECT count(id_order_state) AS shipped FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 4" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
+            $canceled =  Db::getInstance()->getRow("SELECT count(id_order_state) AS canceled FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 6" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
+            $accepted =  Db::getInstance()->getRow("SELECT count(id_order_state) AS accepted FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 2" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
+            $refunded =  Db::getInstance()->getRow("SELECT count(id_order_state) AS refunded FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 7" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
+            $delivered =  Db::getInstance()->getRow("SELECT count(id_order_state) AS delivered FROM "._DB_PREFIX_."order_history LEFT JOIN "._DB_PREFIX_."orders ON "._DB_PREFIX_."order_history.id_order = "._DB_PREFIX_."orders.id_order WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."order_history.id_order_state = 5" . " AND "._DB_PREFIX_."order_history.date_add > '" . $lower . "' AND "._DB_PREFIX_."order_history.date_add < '" . $upper . "'");
 
             $waiting_validation_string .= $waiting_validation['waiting_validation'];
             $waiting_payment_string .= $waiting_payment['waiting_payment'];
@@ -183,7 +183,7 @@ class ClientStatisticsControllerCore extends FrontController{
 
     public function lastOrder($idCustomer){
         
-        $order =  Db::getInstance()->getRow("SELECT date_add FROM eu_orders WHERE id_customer =" . $idCustomer . " ORDER BY id_order DESC");
+        $order =  Db::getInstance()->getRow("SELECT date_add FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " ORDER BY id_order DESC");
         
         $date = date_create($order['date_add']);
         return date_format($date, "Y-m-d");
@@ -191,18 +191,18 @@ class ClientStatisticsControllerCore extends FrontController{
 
     public function getNumberOfOrders($idCustomer){
         
-        $orders =  Db::getInstance()->getRow("SELECT count(*) AS total FROM eu_orders WHERE id_customer =" . $idCustomer);
+        $orders =  Db::getInstance()->getRow("SELECT count(*) AS total FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer);
         return $orders['total'];
     }
 
     public function getTotalOfOrders($idCustomer){
         
-        $orders =  Db::getInstance()->getRow("SELECT sum(total_paid) AS total FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state IN (2, 3, 4, 5, 9, 10, 15)");
+        $orders =  Db::getInstance()->getRow("SELECT sum(total_paid) AS total FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state IN (2, 3, 4, 5, 9, 10, 15)");
         return number_format($orders['total'], 2, ',', '');
     }
 
     public function getNumberAddresses($idCustomer){
-        $addresses =  Db::getInstance()->getRow("SELECT count(*) total FROM eu_address WHERE id_customer =" . $idCustomer . " AND deleted=0");
+        $addresses =  Db::getInstance()->getRow("SELECT count(*) total FROM "._DB_PREFIX_."address WHERE id_customer =" . $idCustomer . " AND deleted=0");
         return $addresses['total'];
     }
 
@@ -217,13 +217,13 @@ class ClientStatisticsControllerCore extends FrontController{
         $products = array();
         foreach($last_viewed_ids AS $id){
             
-            $sql = "SELECT eu_manufacturer.name AS brand, eu_product_lang.name AS name, eu_product.reference, eu_product.id_product AS id_product, eu_product_lang.description_short AS description_short, eu_manufacturer.id_manufacturer AS id_manufacturer
-                    FROM eu_product
-                    LEFT JOIN eu_product_lang
-                    ON eu_product_lang.id_product = eu_product.id_product 
-                    LEFT JOIN eu_manufacturer
-                    ON eu_manufacturer.id_manufacturer = eu_product.id_manufacturer 
-                    WHERE eu_product.id_product =" . $id . " AND eu_product_lang.id_lang = ". $this->context->language->id;
+            $sql = "SELECT "._DB_PREFIX_."manufacturer.name AS brand, "._DB_PREFIX_."product_lang.name AS name, "._DB_PREFIX_."product.reference, "._DB_PREFIX_."product.id_product AS id_product, "._DB_PREFIX_."product_lang.description_short AS description_short, "._DB_PREFIX_."manufacturer.id_manufacturer AS id_manufacturer
+                    FROM "._DB_PREFIX_."product
+                    LEFT JOIN "._DB_PREFIX_."product_lang
+                    ON "._DB_PREFIX_."product_lang.id_product = "._DB_PREFIX_."product.id_product 
+                    LEFT JOIN "._DB_PREFIX_."manufacturer
+                    ON "._DB_PREFIX_."manufacturer.id_manufacturer = "._DB_PREFIX_."product.id_manufacturer 
+                    WHERE "._DB_PREFIX_."product.id_product =" . $id . " AND "._DB_PREFIX_."product_lang.id_lang = ". $this->context->language->id;
             
             $products[] = Db::getInstance()->getRow($sql);
 
@@ -233,17 +233,17 @@ class ClientStatisticsControllerCore extends FrontController{
 
     public function getMostBoughtProducts($idCustomer){
         
-        $sql = "SELECT sum(product_quantity) AS number,eu_manufacturer.name AS brand, eu_manufacturer.id_manufacturer AS id_manufacturer, eu_product_lang.name AS name, eu_product.reference, eu_order_detail.product_id AS id_product, eu_product_lang.description_short AS description_short
-            FROM eu_orders
-            LEFT JOIN eu_order_detail
-            ON eu_orders.id_order = eu_order_detail.id_order
-            LEFT JOIN eu_product
-            ON eu_order_detail.product_id = eu_product.id_product
-            LEFT JOIN eu_product_lang
-            ON eu_product_lang.id_product = eu_product.id_product 
-            LEFT JOIN eu_manufacturer
-            ON eu_manufacturer.id_manufacturer = eu_product.id_manufacturer 
-            WHERE eu_orders.id_customer =" . $idCustomer . " AND eu_product_lang.id_lang = ". $this->context->language->id . " GROUP BY eu_order_detail.product_id ORDER BY number DESC 
+        $sql = "SELECT sum(product_quantity) AS number,"._DB_PREFIX_."manufacturer.name AS brand, "._DB_PREFIX_."manufacturer.id_manufacturer AS id_manufacturer, "._DB_PREFIX_."product_lang.name AS name, "._DB_PREFIX_."product.reference, "._DB_PREFIX_."order_detail.product_id AS id_product, "._DB_PREFIX_."product_lang.description_short AS description_short
+            FROM "._DB_PREFIX_."orders
+            LEFT JOIN "._DB_PREFIX_."order_detail
+            ON "._DB_PREFIX_."orders.id_order = "._DB_PREFIX_."order_detail.id_order
+            LEFT JOIN "._DB_PREFIX_."product
+            ON "._DB_PREFIX_."order_detail.product_id = "._DB_PREFIX_."product.id_product
+            LEFT JOIN "._DB_PREFIX_."product_lang
+            ON "._DB_PREFIX_."product_lang.id_product = "._DB_PREFIX_."product.id_product 
+            LEFT JOIN "._DB_PREFIX_."manufacturer
+            ON "._DB_PREFIX_."manufacturer.id_manufacturer = "._DB_PREFIX_."product.id_manufacturer 
+            WHERE "._DB_PREFIX_."orders.id_customer =" . $idCustomer . " AND "._DB_PREFIX_."product_lang.id_lang = ". $this->context->language->id . " GROUP BY "._DB_PREFIX_."order_detail.product_id ORDER BY number DESC 
             LIMIT 6";
 
         return Db::getInstance()->executeS($sql);
@@ -261,7 +261,7 @@ class ClientStatisticsControllerCore extends FrontController{
         $bestsellerReference= '';
 
         $sql = "SELECT sum(product_quantity) AS product_quantity, product_reference
-            FROM eu_order_detail
+            FROM "._DB_PREFIX_."order_detail
             WHERE id_order > 0
             AND product_reference NOT LIKE 'SHIPPING-%'
             GROUP BY product_id
@@ -289,7 +289,7 @@ class ClientStatisticsControllerCore extends FrontController{
         $top = [];
 
         $sql = "SELECT sum(product_quantity) AS product_quantity, product_reference, product_id
-            FROM eu_order_detail
+            FROM "._DB_PREFIX_."order_detail
             WHERE id_order > 0
             GROUP BY product_id
             ORDER BY product_quantity DESC

@@ -195,7 +195,7 @@ class AdminUkooCompatCriterionController extends ModuleAdminController
         if($ukoofilter){
             $value = $_POST['value_2'];
             $sqlVerifyName = "SELECT VALUE 
-            FROM eu_ukoocompat_criterion_lang 
+            FROM "._DB_PREFIX_."ukoocompat_criterion_lang 
             WHERE VALUE LIKE '%$value%' AND id_filter = $ukoofilter";
 
             $sqlVerifyNameSql = Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS($sqlVerifyName);

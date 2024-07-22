@@ -19,8 +19,7 @@ class ClientStatisticsControllerCore extends FrontController{
         $totalOfOrders = self::getTotalOfOrders($idCustomer);
         
         $average = $totalOfOrders / $numberOfOrders;
-        echo 'aqui';
-        exit;
+
         $this->context->smarty->assign(array(
             'customer' => $this->context->customer,
             'company_name' => $this->context->customer->company,
@@ -39,7 +38,7 @@ class ClientStatisticsControllerCore extends FrontController{
             'top' => self::getTop100()
         ));
         
-        $this->setTemplate('customer/my-account.tpl');
+        $this->setTemplate('customer/my-account');
     }
 
 
@@ -60,12 +59,12 @@ class ClientStatisticsControllerCore extends FrontController{
 
     public function getCounters($idCustomer){
         
-        $waiting_validation =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_validation FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 13");
-        $waiting_payment =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_payment FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 14");
-        $processing =  Db::getInstance()->getRow("SELECT count(current_state) AS processing FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 3");
-        $backorders =  Db::getInstance()->getRow("SELECT count(current_state) AS backorders FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 9");
-        $shipped =  Db::getInstance()->getRow("SELECT count(current_state) AS shipped FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 4");
-        $canceled =  Db::getInstance()->getRow("SELECT count(current_state) AS canceled FROM eu_orders WHERE id_customer =" . $idCustomer . " AND current_state = 6");
+        $waiting_validation =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_validation FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 13");
+        $waiting_payment =  Db::getInstance()->getRow("SELECT count(current_state) AS waiting_payment FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 14");
+        $processing =  Db::getInstance()->getRow("SELECT count(current_state) AS processing FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 3");
+        $backorders =  Db::getInstance()->getRow("SELECT count(current_state) AS backorders FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 9");
+        $shipped =  Db::getInstance()->getRow("SELECT count(current_state) AS shipped FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 4");
+        $canceled =  Db::getInstance()->getRow("SELECT count(current_state) AS canceled FROM "._DB_PREFIX_."orders WHERE id_customer =" . $idCustomer . " AND current_state = 6");
         
         $orders['waiting_validation'] = $waiting_validation['waiting_validation'];
         $orders['waiting_payment']    = $waiting_payment['waiting_payment'];

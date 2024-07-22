@@ -390,13 +390,7 @@ class UkooCompatListingModuleFrontController extends ModuleFrontController
         $id_row=0;
 
         
-        // if(isset($this->context->customer->id)) {
-        //     $id_customer = $this->context->customer->id;
-        //     $id_row = Db::getInstance()->getValue("Select id FROM eu_ASM_ukoo_customer WHERE id_brand = " . $getData['filters1'] . " AND id_model = " . $getData['filters2'] . " AND id_type = " . $getData['filters3'] . " AND id_version = " . $getData['filters4'] . " AND id_customer = " . $this->context->customer->id);
-        // }
 
-        // echo '<pre>'.print_r($getData,1).'</pre>';
-        // exit;
         
         if((int)Context::getContext()->shop->id === 2){
 

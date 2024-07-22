@@ -24,7 +24,7 @@ class AdminWmModuleHomepageController extends AdminController{
         $this->addJS(_PS_MODULE_DIR_ . '/wmmodule_homepage/views/templates/admin/js/picking.js');
 		$this->context->smarty->assign("wm_page_name", 'Homepage');
 		$this->context->smarty->assign("wm_page_name", 'Homepage');
-		$this->context->smarty->assign("data", Db::getInstance()->getRow('SELECT * FROM eu_asd_homepage WHERE id=1'));
+		$this->context->smarty->assign("data", Db::getInstance()->getRow('SELECT * FROM '._DB_PREFIX_.'asd_homepage WHERE id=1'));
         $this->context->smarty->assign(array( 'content' =>  $this->context->smarty->fetch($template_file) ));
     }
 
@@ -74,7 +74,7 @@ class AdminWmModuleHomepageController extends AdminController{
                 }
             }
             
-    		Db::getInstance()->getRow("UPDATE `eu_asd_homepage` SET `link_banner`='" . $data['link_banner'] . "',`alt_banner`='" . $data['alt_banner'] . "',`link_footer`='" . $data['link_footer'] . "',`alt_footer`='" . $data['alt_footer'] . "' WHERE id=1");
+    		Db::getInstance()->getRow("UPDATE "._DB_PREFIX_."asd_homepage SET `link_banner`='" . $data['link_banner'] . "',`alt_banner`='" . $data['alt_banner'] . "',`link_footer`='" . $data['link_footer'] . "',`alt_footer`='" . $data['alt_footer'] . "' WHERE id=1");
         }
 
         

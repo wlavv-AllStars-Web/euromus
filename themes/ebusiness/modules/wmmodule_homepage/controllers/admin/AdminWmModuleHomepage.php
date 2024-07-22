@@ -474,7 +474,7 @@ class AdminWmModuleHomepageController extends AdminController{
     {
         $desktop_rows = Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asm_homepage_temp WHERE destination="desktop"');
         foreach($desktop_rows AS $row){
-            $sql = "UPDATE eu_asm_homepage 
+            $sql = "UPDATE "._DB_PREFIX_."asm_homepage 
                     SET active="        . $row['active'] . ", 
                         icon_type='"    . $row['icon_type'] . "', 
                         destination='"  . $row['destination'] . "', 

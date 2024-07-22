@@ -28,7 +28,7 @@ if($id_customer == 0){
     $id_customer = $row['id_customer']+0;
 }
 
-$sql = "INSERT INTO eu_ASM_ukoo_customer(`id_customer`, `id_brand`, `id_model`, `id_type`, `id_version`, `email`, `brand`, `model`, `type`, `version`, `iso_code`) VALUES (".$id_customer.",".$id_brand.",".$id_model.",".$id_type.",".$id_version.",'".$email."','".$brand."','".$model."','".$type."','".$version."','".$iso_code."')";
+$sql = "INSERT INTO "._DB_PREFIX_."ASM_ukoo_customer(`id_customer`, `id_brand`, `id_model`, `id_type`, `id_version`, `email`, `brand`, `model`, `type`, `version`, `iso_code`) VALUES (".$id_customer.",".$id_brand.",".$id_model.",".$id_type.",".$id_version.",'".$email."','".$brand."','".$model."','".$type."','".$version."','".$iso_code."')";
 
 $result = $conn->query( $sql );
 
