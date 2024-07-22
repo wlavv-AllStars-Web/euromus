@@ -64,7 +64,7 @@ class CatalogControllerCore extends FrontController {
             if ($manufacturer['site'] < 2) $site_status = ($site < $today) ? 0 : 1;
 
             $info_status = ($mostRecentTesteDate < $today) ? 0 : 1;
-            $sql = 'UPDATE eu_manufacturer SET 
+            $sql = 'UPDATE '._DB_PREFIX_.'manufacturer SET 
                 csv=' . $csv_status . ', 
                 xlsx=' . $xlsx_status . ', 
                 pictures=' . $pictures_status . ', 
