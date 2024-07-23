@@ -106,7 +106,7 @@
     #cms_catalog_main_table{ max-width: 1350px; margin: 20px auto 2rem auto; margin-bottom: 40px;border: 1px solid #ddd; width: 100%; }
     .cms_catalog_table_brand_td{ border-right: 1px solid #ddd; width: 150px !important; padding: 0; text-align: center; }
     .cms_catalog_table_downloads_td{ width: 1070px; padding: 0 }
-    .cms_catalog_table_brand_td_image{ width: 100%; max-width: 125px !important;height: auto; margin: 10px; }
+    .cms_catalog_table_brand_td_image{ width: 125px; max-width: 125px !important;height: auto; margin: 10px; }
     .cms_catalog_table_updated_td{ width: 140px; padding: 0; text-align: center;}
     .no_padding_text_center{ padding: 0; text-align: center; }
     #cms #center_column img.cms_catalog_image{ height:80px; }
