@@ -165,13 +165,13 @@
               <li style="list-style-type: none !important;display:flex;align-items:center;gap: 0.25rem;">
                 <img class="left_icon_footer" src="/img/asd/ASD_footer_ima.png" alt="Star" width="25" height="25">
                 <a id="link-cms-page-7" class="text cms-page-link" href="{$link->getCMSLink(7)}" title="">
-                  Privacy Policy
+                  {l s="Privacy Policy" d="Shop.Theme.Linklist"}
                 </a>
               </li>
               <li style="list-style-type: none !important;display:flex;align-items:center;gap: 0.25rem;">
                 <img class="left_icon_footer" src="/img/asd/ASD_footer_ima.png" alt="Star" width="25" height="25">
                 <a id="link-cms-page-7" class="text cms-page-link" href="{$link->getCMSLink(11)}" title="">
-                  Payments
+                  {l s="Payments" d="Shop.Theme.Linklist"}
                 </a>
               </li>
           </ul>
