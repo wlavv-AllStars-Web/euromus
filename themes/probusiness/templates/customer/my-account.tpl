@@ -490,20 +490,20 @@
           
         {* <pre>{$customerData|print_r}</pre> *}
           <form action="{$urls.pages.my_account}" method="post" class="std">
-              <div class="left-form-personal col-lg-6 col-sm-12">
+              <div class="left-form-personal col-lg-6 col-sm-12" style="display: flex;flex-direction:column;align-items:center;">
                 <div class="form-group col-lg-9">
                   <h1 style="text-align: center;">{l s="Your Personal Information" d='Shop.Theme.Customeraccount'}</h1>
                   <p style="text-align: center;">{l s="Please be sure to update your personal information if changed." d='Shop.Theme.Customeraccount'}</p>
                 </div>
-                <div class="radio-btns-form-personal  col-lg-12 col-md-6">
-                {foreach from=$genders key=k item=gender}
-                  <div class="form-check col-md-3 col-sm-6" style="text-align: center;">
-                    <input class="form-check-input" type="radio" name="id_gender" id="id_gender{$gender->id}" value="{$gender->id|intval}" {if isset($smarty.post.id_gender) && $smarty.post.id_gender == $gender->id} checked="checked"{/if}>
-                    <label class="form-check-label" for="id_gender{$gender->id}">
-                      {$gender->name}
-                    </label>
-                  </div>
-                {/foreach}
+                <div class="radio-btns-form-personal  col-lg-9 col-md-6">
+                  {foreach from=$genders key=k item=gender}
+                    <div class="form-check col-md-3 col-sm-6" style="text-align: center;">
+                      <input class="form-check-input" type="radio" name="id_gender" id="id_gender{$gender->id}" value="{$gender->id|intval}" {if isset($smarty.post.id_gender) && $smarty.post.id_gender == $gender->id} checked="checked"{/if}>
+                      <label class="form-check-label" for="id_gender{$gender->id}">
+                        {$gender->name}
+                      </label>
+                    </div>
+                  {/foreach}
                 </div>
 
               
@@ -565,7 +565,7 @@
                   <input type="password" class="form-control " name="confirmation" id="confirmation" data-validate="isPasswd">
                 </div>
                 {* {if $newsletter} *}
-                <div class="form-group col-lg-12 col-md-7 col-sm-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12">
                   <div class="form-check col-md-12">
                       <input class="form-check-input" type="checkbox" id="newsletter" name="newsletter" value="1" {if isset($smarty.post.newsletter) && $smarty.post.newsletter == 1} checked="checked"{/if}>
                       <label class="form-check-label" for="newsletter">
