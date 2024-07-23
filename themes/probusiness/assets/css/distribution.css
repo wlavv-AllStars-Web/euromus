@@ -2007,6 +2007,9 @@ textarea {
   padding: 0;
 }
 
+.form-check+.form-check {
+  margin-top: 0 !important;
+}
 
 .cart-empty .cart-grid a:hover {
   color: #0273EB !important;
