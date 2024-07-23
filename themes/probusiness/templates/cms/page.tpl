@@ -571,8 +571,8 @@
             <input type="hidden" id="type" name="type" value="becomesupplier">
               <div class="form-row">
 
-                <div class="col-lg-6 col-md-12">
-                    <div class="form-group col-md-6">
+                <div class="col-lg-6 col-md-12  col-sm-12 col-xs-12">
+                    <div class="form-group col-md-6 col-sm-12 col-xs-12">
                       <div class="form-group">
                         <label for="company">{l s='Company' d='Shop.Theme.FormBecomesupplier'}</label>
                         <input type="text" class="form-control" id="company" required name="company">
@@ -590,7 +590,7 @@
                         <input type="text" class="form-control" id="social" name="social" >
                       </div>
                     </div>
-                    <div class="form-group col-md-6">
+                    <div class="form-group col-md-6  col-sm-12 col-xs-12">
                       <div class="form-group">
                         <label for="email">{l s='Email' d='Shop.Theme.FormBecomesupplier'}</label>
                         <input type="email" class="form-control" id="email" name="email" required>
@@ -602,26 +602,26 @@
                     </div>
                 </div>
 
-                <div class="col-lg-6 col-md-12">
-                  <div class="form-group col-md-12">
+                <div class="col-lg-6 col-md-12  col-sm-12 col-xs-12">
+                  <div class="form-group col-md-12  col-sm-12 col-xs-12">
                     <label for="adresse_line_1">{l s='Address' d='Shop.Theme.FormBecomesupplier'}</label>
                     <input type="text" class="form-control" id="adresse_line_1" name="adresse_line_1" required>
                   </div>
-                  <div class="form-group col-md-12">
+                  <div class="form-group col-md-12  col-sm-12 col-xs-12">
                     <label for="adresse_line_2">{l s='Address line 2' d='Shop.Theme.FormBecomesupplier'}</label>
                     <input type="text" class="form-control" id="adresse_line_2" name="adresse_line_2">
                   </div>
-                  <div class="form-group col-md-12 rm-b">
-                    <div class="form-group col-md-8 city">
+                  <div class="form-group col-md-12  col-sm-12 col-xs-12 rm-b">
+                    <div class="form-group col-md-8  col-sm-12 col-xs-12 city">
                       <label for="city">{l s='City' d='Shop.Theme.FormBecomesupplier'}</label>
                       <input type="text" class="form-control" id="city" name="city" required>
                     </div>
-                    <div class="form-group col-md-4 zip_code">
+                    <div class="form-group col-md-4  col-sm-12 col-xs-12 zip_code">
                       <label for="postal_code">{l s='Zip Code' d='Shop.Theme.FormBecomesupplier'}</label>
                       <input type="text" class="form-control" id="postal_code" required name="postal_code">
                     </div>
                   </div>
-                  <div class="form-group col-md-12">
+                  <div class="form-group col-md-12  col-sm-12 col-xs-12">
                     <label for="inputState">{l s='Country' d='Shop.Theme.FormBecomesupplier'}</label>
                     <select id="country" class="form-control" required name="country">
                       <option selected>{l s='Please Select...' d='Shop.Theme.FormBecomesupplier'}</option>
@@ -637,7 +637,7 @@
 
 
               <div class="form-row">
-                <div class="form-group col-md-12" style="display: flex;justify-content:center;">
+                <div class="form-group col-md-12  col-sm-12 col-xs-12" style="display: flex;justify-content:center;">
                   <button type="submit" class="btn send-form">{l s='Submit' d='Shop.Theme.FormBecomesupplier'}</button>
                 </div>
               </div>
