@@ -227,7 +227,7 @@
   <div class="col-lg-4 col-md-6 col-sm-12 wrapper">
     <div class="title clearfix hidden-md-up" data-target="#footer_sub_menu_5" onclick="$('#footer_sub_menu_5').toggle('slow')"
       data-toggle="collapse">
-      <span class="text h3">{l s="Contacts"}</span>
+      <span class="text h3">{l s="Contacts" d="Shop.Theme.Linklist"}</span>
     </div>
     <ul id="footer_sub_menu_5" class="collapse">
       <li>
