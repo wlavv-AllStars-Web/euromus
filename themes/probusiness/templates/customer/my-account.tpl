@@ -507,19 +507,19 @@
                 </div>
 
               
-                <div class="form-group col-lg-9 col-md-7 col-sm-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12 col-xs-12">
                   <label for="firstname">{l s="First Name" d='Shop.Theme.Customeraccount'}</label>
                   <input type="text" class="form-control" id="firstname" name="firstname" value="{$smarty.post.firstname}">
                 </div>
-                <div class="form-group col-lg-9 col-md-7 col-sm-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12 col-xs-12">
                   <label for="lastname">{l s="Last Name" d='Shop.Theme.Customeraccount'}</label>
                   <input type="text" class="form-control" id="lastname" name="lastname" value="{$smarty.post.lastname}">
                 </div>
-                <div class="form-group col-lg-9 col-md-7 col-sm-12">
+                <div class="form-group col-lg-9 col-md-7 col-sm-12 col-xs-12">
                   <label for="email">{l s="Email" d='Shop.Theme.Customeraccount'}</label>
                   <input type="email" class="form-control" id="email" name="email" value="{$smarty.post.email}">
                 </div>
-                <div class="form-row col-lg-9 col-md-7 ">
+                <div class="form-row col-lg-9 col-md-7 col-sm-12 col-xs-12">
                   <div class="form-group col-lg-12 col-md-12 col-sm-12 px-0 m-0">
                     <label>{l s="Date of Birth" d='Shop.Theme.Customeraccount'}</label>
                   </div>
