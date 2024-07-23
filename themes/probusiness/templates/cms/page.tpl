@@ -1479,7 +1479,7 @@
                 </div>
     
                   <div class="form-row ">
-                    <div class="form-group col-md-2" style="display: flex;justify-content:start;">
+                    <div class="form-group col-md-2 col-sm-12 col-xs-12" style="display: flex;justify-content:start;">
                       <button type="submit" class="btn send-form col-md-2">{l s='Send' d='Shop.Theme.Career'}</button>
                     </div>
                   </div>
