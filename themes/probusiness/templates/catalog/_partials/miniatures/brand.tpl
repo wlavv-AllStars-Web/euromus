@@ -31,7 +31,8 @@
             <h3 style="text-align: center;background:#0273eb;color:#fff;padding: 5px;font-size:13px;line-height:18px;font-weight:700;">{$brand.name|escape:'html':'UTF-8'}</h3>
           </div>
           <div class="brand-img" >
-            <a href="{$brand.url|escape:'html':'UTF-8'}" style="display:flex;justify-content:center;align-items:center;"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}" style="width: 100%;max-width:125px;" width="125" height="125"></a>
+            {* <a href="{$brand.url|escape:'html':'UTF-8'}" style="display:flex;justify-content:center;align-items:center;"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}" style="width: 100%;max-width:125px;" width="125" height="125"></a> *}
+            <a href="{$brand.url|escape:'html':'UTF-8'}" style="display:flex;justify-content:center;align-items:center;"><img src="/img/asd/150px/{$brand.id}" alt="{$brand.name|escape:'html':'UTF-8'}" style="width: 100%;max-width:125px;" width="125" height="125"></a>
           </div>
           
       </div>
