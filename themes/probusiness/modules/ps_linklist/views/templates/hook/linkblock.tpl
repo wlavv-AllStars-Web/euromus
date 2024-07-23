@@ -192,7 +192,7 @@
           </div>
           <ul id="footer_sub_menu_{$_expand_id|escape:'html':'UTF-8'}" class="collapse">
             {foreach $linkBlock.links as $link key=item}
-              {if $item == 2}
+              {if $item == 1}
               
               {else}
                 <li style="list-style-type: none !important;display:flex;align-items:center;gap: 0.25rem;">
