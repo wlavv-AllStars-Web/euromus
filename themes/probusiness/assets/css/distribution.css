@@ -2015,6 +2015,11 @@ textarea {
   color: #0273EB !important;
 }
 
+.page-not-found #search_widget .search_block_top_fixed{
+  position: unset;
+  margin: auto; 
+}
+
 /* client statistics */
 
 .title-clientstatistics{
