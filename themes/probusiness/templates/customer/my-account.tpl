@@ -523,7 +523,7 @@
                   <div class="form-group col-lg-12 col-md-12 col-sm-12 px-0 m-0">
                     <label>{l s="Date of Birth" d='Shop.Theme.Customeraccount'}</label>
                   </div>
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4 pl-0 days">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12  days">
                     <select id="days" name="days" class="form-control">
                       <option selected>{l s="Day" d='Shop.Theme.Customeraccount'}</option>
                       <option>...</option>
@@ -532,7 +532,7 @@
                       {/foreach}
                     </select>
                   </div>
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4 p-0 months">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12  months">
                     <select id="months" name="months" class="form-control">
                       <option selected>{l s="Month" d='Shop.Theme.Customeraccount'}</option>
                       <option>...</option>
@@ -541,7 +541,7 @@
                       {/foreach}
                     </select>
                   </div>
-                  <div class="form-group col-lg-4 col-md-4 col-sm-4 pr-0 years">
+                  <div class="form-group col-lg-4 col-md-4 col-sm-12 col-xs-12  years">
                     <select id="years" name="years" class="form-control">
                       <option selected>{l s="Year" d='Shop.Theme.Customeraccount'}</option>
                       <option>...</option>
