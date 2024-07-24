@@ -1752,6 +1752,10 @@ input[type="number"] {
   padding: 10px 0;
 }
 
+#checkout .ets_opc_select {
+  margin-bottom: 0;
+}
+
 #checkout #content {
   max-width: 1350px;
   margin: auto;
