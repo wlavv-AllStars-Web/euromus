@@ -1647,6 +1647,10 @@ input[type="number"] {
   cursor: pointer;
 }
 
+#checkout .checkout .btn{
+  display: none;
+}
+
 /* #checkout .ets_payment_method{
   cursor: pointer;
 } */
@@ -1767,6 +1771,9 @@ input[type="number"] {
 
 #checkout .invoice-address-container div:nth-child(1){
   margin-bottom: 14px !important;
+}
+#checkout .invoice-address-container #invoice-addresses .ets_opc_select{
+  margin-bottom: 0 !important;
 }
 #checkout .invoice-address-container div:nth-child(1) .ets_checkinput{
   font-size: 18px;
