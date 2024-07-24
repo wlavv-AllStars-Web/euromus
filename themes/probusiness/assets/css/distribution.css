@@ -1110,6 +1110,10 @@ form label {
   height: auto;
 }
 
+#my-account #order_history .order-actions a[data-link-action="view-order-details"]:hover{
+  color: #0273eb !important;
+}
+
 #my-account #addresses.active.in {
   display: flex;
   flex-direction: column;
@@ -1892,6 +1896,36 @@ body#checkout #cart-summary-product-list img {
 }
 
 /* order confirm */
+#order-confirmation{
+  background: #333;
+}
+#order-confirmation p{
+  font-size: 14px;
+  line-height: 23px;
+  color: #000;
+  font-weight: 400;
+}
+#order-confirmation p strong{
+  font-size: 14px;
+  line-height: 23px;
+  color: #000;
+  font-weight: 700;
+}
+#order-confirmation .btn-view-history{
+  font-size: 14px;
+  line-height: 18px;
+  color: #0273eb;
+  font-weight: 600;
+  border: 1px solid #dedede;
+}
+#order-confirmation .btn-view-history:hover{
+  font-size: 14px;
+  line-height: 18px;
+  color: #fff;
+  background: #0273eb;
+  font-weight: 600;
+  border: 1px solid #dedede;
+}
 
 #order-confirmation #content-wrapper{
   width: 1350px;
@@ -1900,6 +1934,13 @@ body#checkout #cart-summary-product-list img {
 
 #order-confirmation .breadcrumb{
   display: none;
+}
+
+#order-confirmation #wrapper{
+  display: flex;
+  align-items: center;
+  background: #f8f8f8;
+  min-height: unset !important;
 }
 /* order detail */
 
