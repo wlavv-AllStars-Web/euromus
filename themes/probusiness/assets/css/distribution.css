@@ -1757,6 +1757,10 @@ input[type="number"] {
   opacity: 1;
 }
 
+#checkout .block-onepagecheckout .form-group{
+  padding: 0;
+}
+
 #checkout .btn-contact-us {
   text-align: center;
   background: #ffffff;
@@ -1771,6 +1775,11 @@ input[type="number"] {
   align-items: center;
   justify-content: center;
   text-transform: uppercase;
+  margin-top: 1rem;
+}
+
+#checkout .btn-contact-us:hover{
+  color: #0273eb !important;
 }
 
 #checkout .invoice-address-container div:nth-child(1){
