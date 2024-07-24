@@ -27,12 +27,12 @@
                     {foreach from=$payment_method item='module'}
                         <div class="ets_payment_method col-lg-6" style="display: flex;flex-direction:column;justify-content:center;align-items:center;" >
                             <div class="img-module" idform="{$module.id|escape:'html':'UTF-8'}" onclick="setPaymentMethod(this)">
-                            {if $module.module_name|escape:'html':'UTF-8' == 'bankwire'}
+                            {if $module.module_name|escape:'html':'UTF-8' == 'ps_wirepayment'}
                                 <img src="https://www.all-stars-distribution.com/img/payment-bankwire-color.png?t=112">
-                                <div>{$module_name|escape:'html':'UTF-8'}</div>
+                                <div>Bank transfer (0% fees)</div>
                             {else}
                                 <img src="https://www.all-stars-distribution.com//modules/ogone/views/img/default_user_logo.png?t=113">
-                                <div>{$module_name|escape:'html':'UTF-8'}</div>
+                                <div>Credit card (+1% fees)</div>
                             {/if}
                             </div>
                             <div id="{$module.id|escape:'html':'UTF-8'}-container" class="payment-option col-lg-6 clearfix" style="display: none;">
