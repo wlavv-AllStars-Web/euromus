@@ -25,20 +25,23 @@
             {if $payment_methods}
                 {foreach from=$payment_methods key='module_name' item='payment_method'}
                     {foreach from=$payment_method item='module'}
-                        <div class="ets_payment_method col-lg-6" style="display: flex;flex-direction:column;justify-content:center;align-items:center;">
-                            <div class="img-module">
+                        <div class="ets_payment_method col-lg-6" style="display: flex;flex-direction:column;justify-content:center;align-items:center;" >
+                            <div class="img-module" idform="{$module.id|escape:'html':'UTF-8'}" onclick="setPaymentMethod(this)">
                             {if $module.module_name|escape:'html':'UTF-8' == 'bankwire'}
                                 <img src="https://www.all-stars-distribution.com/img/payment-bankwire-color.png?t=112">
+                                <div>{$module_name|escape:'html':'UTF-8'}</div>
                             {else}
                                 <img src="https://www.all-stars-distribution.com//modules/ogone/views/img/default_user_logo.png?t=113">
+                                <div>{$module_name|escape:'html':'UTF-8'}</div>
                             {/if}
                             </div>
-                            <div id="{$module.id|escape:'html':'UTF-8'}-container" class="payment-option col-lg-6 clearfix">
-                                <span class="custom-radio float-xs-left">
+                            <div id="{$module.id|escape:'html':'UTF-8'}-container" class="payment-option col-lg-6 clearfix" style="display: none;">
+                                <span class="custom-radio float-xs-left" >
                                      <input id="{$module.id|escape:'html':'UTF-8'}"
                                             class="ps-shown-by-js {if $module.module_name}{if $payment_selected==$module.module_name}checked{/if}{else}{if $payment_selected==$module_name}checked{/if}{/if}"
                                             data-module-name="{if $module.module_name}{$module.module_name|escape:'html':'UTF-8'}{else}{$module_name|escape:'html':'UTF-8'}{/if}" name="payment-option" type="radio"
                                             value="{$module_name|escape:'html':'UTF-8'}"
+                                            
                                      />
                                     <span></span>
                                 </span>
@@ -54,9 +57,9 @@
                                     </span>
                                 </label>
                             </div>
-                            <div id="{$module.id|escape:'html':'UTF-8'}-additional-information" class="js-additional-information definition-list additional-information ps-hidden " {if $payment_selected==$module.module_name} style="display:block"{else}style="display: none;"{/if}>
+                            {* <div id="{$module.id|escape:'html':'UTF-8'}-additional-information" class="js-additional-information definition-list additional-information ps-hidden " {if $payment_selected==$module.module_name} style="display:block"{else}style="display: none;"{/if}>
                                 {$module.additionalInformation nofilter}
-                            </div>
+                            </div> *}
                             <div id="pay-with-{$module.id|escape:'html':'UTF-8'}-form" class="js-payment-option-form ps-hidden " {if $payment_selected==$module.module_name}  style="color:red; display:block"{else}style="display: none;"{/if}>
                                 {if $module.form}
                                     {$module.form nofilter}
@@ -81,3 +84,13 @@
         {hook h='displayPaymentByBinaries'}
     </div>
 </section>
+
+
+<script>
+function setPaymentMethod(form) {
+    
+    const idform = form.getAttribute("idform")
+    const formPayment = document.querySelector(`#pay-with-`+idform+`-form form`)
+    formPayment.submit()
+}
+</script>
