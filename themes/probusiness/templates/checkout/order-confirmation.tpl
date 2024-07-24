@@ -7,15 +7,31 @@
           <div class="col-md-12">
 
             {block name='order_confirmation_header'}
-              <h3 class="h1 card-title">
-                <i class="material-icons rtl-no-flip done">&#xE876;</i>{l s='Your order is confirmed' d='Shop.Theme.Checkout'}
+              <h3 class="h1 card-title" style="text-align: center;">
+                {* <i class="material-icons rtl-no-flip done">&#xE876;</i> *}
+                {l s='Order confirmation' d='Shop.Theme.Checkout'}
               </h3>
+              <br>
             {/block}
 
-            <p>
+            <div style="text-align: center;">
+              <p>Thank you for your purchase at <strong>All Stars Distribution</strong></p>
+              <br>
+              <p>Your order has been received.</p>
+              <br>
+              <p>Once confirmed, an email will be sent within 48 hours with the total to be paid and a summary of the order. Please do not make the payment until you receive the email confirming the order.</p>
+              <br>
+              <p>Order reference: <strong>{$order.details.reference}</strong></p>
+              <br>
+              <div>
+                <a class="btn btn-default btn-view-history" href="{$link->getPageLink('my-account')}" title="Go to your order history page">  View your order history </a>
+              </div>
+            </div>
+
+            {* <p>
               {l s='An email has been sent to your mail address %email%.' d='Shop.Theme.Checkout' sprintf=['%email%' => $order_customer.email]}
               {if $order.details.invoice_url}
-                {* [1][/1] is for a HTML tag. *}
+                
                 {l
                   s='You can also [1]download your invoice[/1]'
                   d='Shop.Theme.Checkout'
@@ -25,7 +41,7 @@
                   ]
                 }
               {/if}
-            </p>
+            </p> *}
 
             {block name='hook_order_confirmation'}
               {$HOOK_ORDER_CONFIRMATION nofilter}
@@ -38,6 +54,7 @@
 {/block}
 
 {block name='page_content_container'}
+  {*
   <section id="content" class="page-content page-order-confirmation card">
     <div class="card-block">
       <div class="row">
@@ -105,10 +122,8 @@
   {block name='hook_order_confirmation_1'}
     {hook h='displayOrderConfirmation1'}
   {/block}
+  *}
 
-  {* {block name='hook_order_confirmation_2'}
-    <section id="content-hook-order-confirmation-footer">
-      {hook h='displayOrderConfirmation2'}
-    </section>
-  {/block} *}
+
+
 {/block}
