@@ -1630,6 +1630,27 @@ input[type="number"] {
   display: none;
 }
 
+#checkout .ets_payment_method:hover {
+  background: #fff;
+}
+#checkout .ets_payment_method .img-module {
+  display: flex;
+  flex-direction: column;
+}
+
+#checkout .ets_payment_method .img-module img{
+  max-width: 120px;
+  margin: auto;
+}
+
+#checkout .ets_payment_method .img-module:hover {
+  cursor: pointer;
+}
+
+/* #checkout .ets_payment_method{
+  cursor: pointer;
+} */
+
 .cart-container table thead tr th {
   font-size: 12px;
   line-height: 17px;
