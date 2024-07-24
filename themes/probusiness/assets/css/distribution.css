@@ -1955,6 +1955,9 @@ body#checkout #cart-summary-product-list img {
 #order-detail #order-infos a{
   display: none;
 }
+#order-detail .order-message-form.box{
+  display: none;
+}
 
 /* address */
 #addresses #main {
