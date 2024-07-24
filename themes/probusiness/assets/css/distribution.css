@@ -1863,6 +1863,30 @@ body#checkout #cart-summary-product-list img {
   border: 0 !important;
 }
 
+/* order confirm */
+
+#order-confirmation #content-wrapper{
+  width: 1350px;
+  margin: auto;
+}
+
+#order-confirmation .breadcrumb{
+  display: none;
+}
+/* order detail */
+
+#order-detail #content-wrapper{
+  width: 1350px;
+  margin: auto;
+}
+
+#order-detail .breadcrumb{
+  display: none;
+}
+#order-detail #order-infos a{
+  display: none;
+}
+
 /* address */
 #addresses #main {
   display: flex;
