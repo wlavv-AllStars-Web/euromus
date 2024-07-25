@@ -973,17 +973,19 @@ form label {
 
 #cms-partners .p-3 {
   padding: 0rem !important;
-  width: 305px;
-  margin: 1rem;
+  width: 337px !important;
+  /* margin: 1rem; */
+  height: fit-content;
 }
 
 #cms-partners .cards {
-  /* max-width:1350px; */
+  max-width:1350px;
   margin: 1rem auto;
 
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  row-gap: 1rem;
 }
 
 .button_partners {
@@ -1022,6 +1024,7 @@ form label {
   justify-content: space-between;
   height: 100%;
   /* justify-content: space-between; */
+  margin: 0.5rem;
 }
 
 .image_container_partners {
@@ -1795,6 +1798,27 @@ input[type="number"] {
 
 #checkout .ets_opc_select {
   margin-bottom: 0;
+}
+
+#checkout #conditions-to-approve label{
+  color: #000;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+#checkout .block-onepagecheckout.block-payment h1 {
+  text-transform: uppercase;
+  font-size: 18px;
+  font-weight: 600;
+  color: #555454;
+}
+#checkout .block-onepagecheckout.block-payment .payment-options .img-module div {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 15px;
+  font-weight: 700;
+  color: #000;
 }
 
 #checkout #content {
