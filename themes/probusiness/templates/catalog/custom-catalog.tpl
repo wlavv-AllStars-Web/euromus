@@ -8,7 +8,7 @@
 </div>
 
 <div class="spacer-20"></div>
-<table id="cms_catalog_main_table" style="max-width: 1350px;">
+<table id="cms_catalog_main_table" style="max-width: 1350px;margin:auto;">
 	<tbody>
 		<tr class="cms_catalog_table_header">
 			<td class="header_label"><p>{l s='Brand'  d="Shop.Theme.catalog" }</p></td>
