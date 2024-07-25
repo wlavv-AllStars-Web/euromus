@@ -23,9 +23,9 @@
 
 {block name='page_title'}
   <div class="col-lg-12 banner-myaccount" style="margin-bottom: 1rem;padding:0;">
-    <img src="/img/asd/Content_pages/account/account_{$language.iso_code}.webp" alt="account_banner" />
+    <img src="/img/asd/Content_pages/order-details/order_{$language.iso_code}.webp" alt="account_banner" />
   </div>
-  {l s='Order details' d='Shop.Theme.Actions'}
+  {* {l s='Order details' d='Shop.Theme.Actions'} *}
 {/block}
 
 {block name='page_content'}
