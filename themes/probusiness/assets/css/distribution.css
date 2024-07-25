@@ -2414,6 +2414,12 @@ textarea {
   cursor: pointer;
 }
 
+@media screen and (min-width: 1350px) {
+  .banner_home {
+    min-height: 443px;
+  }
+}
+
 @media screen and (min-width: 1920px) {
   #js-product-list {
     max-width: 1873px;
