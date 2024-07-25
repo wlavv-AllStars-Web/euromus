@@ -30,7 +30,7 @@
             {$HOOK_HOME nofilter}
             {else} *}
               <div class="not_logged_homepage">
-                <div class="banner_home hidden-sm-down" style="min-height: 443px;">
+                <div class="banner_home hidden-sm-down" >
                 <a href="{$homepage_footer['link_banner']}">
                   <img src="/img/asd/homepage/main.webp?{rand()}" alt="{$homepage_footer['alt_banner']}" style="width: 100%;height:auto;" width="1690" height="443" loading="eager" />
                 </a>
