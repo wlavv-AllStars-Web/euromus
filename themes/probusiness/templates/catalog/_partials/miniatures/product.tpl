@@ -23,13 +23,13 @@
  * @license   https://opensource.org/licenses/AFL-3.0 Academic Free License 3.0 (AFL-3.0)
  *}
 {block name='product_miniature_item'}
-<div class="js-product product{if !empty($productClasses)} {$productClasses}{/if}">
+<div class="js-product product{if !empty($productClasses)} {$productClasses}{/if}" style="padding:0;">
 
   <article class="product-miniature js-product-miniature" data-id-product="{$product.id_product}" data-id-product-attribute="{$product.id_product_attribute}" style="display: flex;width:100%;height:139px;" >
 
     <div class="thumbnail-container" style="display: flex;align-items:center;">
 
-      <div class="thumbnail-top col-lg-3 col-md-3 col-sm-6 col-xs-6" style="display: flex !important;" >
+      <div class="thumbnail-top col-lg-3 col-md-3 col-sm-6 col-xs-6" style="display: flex !important;justify-content:center;" >
         {block name='product_thumbnail'}
           {if $product.cover}
             <a href="{$product.url}" class="thumbnail product-thumbnail">
@@ -64,20 +64,21 @@
           {/if}
         {/block}
 
-        <div class="highlighted-informations{if !$product.main_variants} no-variants{/if}">
+        {* <div class="highlighted-informations{if !$product.main_variants} no-variants{/if}"> *}
           {* {block name='quick_view'}
             <a class="quick-view js-quick-view" href="#" data-link-action="quickview">
               <i class="material-icons search">&#xE8B6;</i> {l s='Quick view' d='Shop.Theme.Actions'}
             </a>
           {/block} *}
 
-          {block name='product_variants'}
+          {* {block name='product_variants'}
             {if $product.main_variants}
               {include file='catalog/_partials/variant-links.tpl' variants=$product.main_variants}
             {/if}
-          {/block}
-        </div>
+          {/block} *}
+        {* </div> *}
       </div>
+
 
       <div class="information-product col-lg-6 col-md-5 col-sm-12 col-xs-12" onclick="window.location.href='{$product.url}'">
           <div class="referencia" style="font-weight: 700;font-size:16px;line-height:18px;color:#000;">{$product.reference}</div>

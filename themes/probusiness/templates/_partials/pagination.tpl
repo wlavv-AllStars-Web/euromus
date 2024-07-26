@@ -33,11 +33,12 @@
                 rel="{if $page.type === 'previous'}prev{elseif $page.type === 'next'}next{else}nofollow{/if}"
                 href="{$page.url|escape:'html':'UTF-8'}"
                 class="{if $page.type === 'previous'}previous {elseif $page.type === 'next'}next {/if}{['disabled' => !$page.clickable, 'js-search-link' => true]|classnames}"
+                style="position: relative;"
               >
                 {if $page.type === 'previous'}
-                  <i>&larr;</i>{l s='Previous' d='Shop.Theme.Actions'}
+                  <i style="font-size: 32px;font-style:normal;position:absolute;top:50%;left:50%;transform:translate(-66%,-54%)">🢐</i>{l s='Previous' d='Shop.Theme.Actions'}
                 {elseif $page.type === 'next'}
-                  {l s='Next' d='Shop.Theme.Actions'}<i>&rarr;</i>
+                  {l s='Next' d='Shop.Theme.Actions'}<i style="font-size: 32px;font-style:normal;position:absolute;top:50%;left:50%;transform:translate(-31%,-54%)">🢒</i>
                 {else}
                   {$page.page|escape:'html':'UTF-8'}
                 {/if}

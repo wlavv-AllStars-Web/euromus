@@ -860,6 +860,13 @@ form label {
   display: none;
 }
 
+#manufacturer #content-wrapper{
+  margin-top: 20px !important;
+}
+#manufacturer #content-wrapper #products{
+  margin-top: 20px;
+}
+
 #brands-page {
   max-width: 1350px;
   width: 100%;
@@ -1221,7 +1228,7 @@ form label {
 }
 .product-price-and-shipping .add-to-cart {
   background: #fff;
-  border-radius: 0.25rem;
+  border-radius: 0 !important;
   border: 1px solid #dedede !important;
 }
 .product-price-and-shipping .add-to-cart i {
@@ -1240,6 +1247,7 @@ form label {
 
 article.product-miniature .thumbnail-container {
   border: 0;
+  border-radius: 0;
 }
 
 article.product-miniature .thumbnail-container:hover {
@@ -1259,16 +1267,15 @@ nav.pagination {
   border: 0;
 }
 nav.pagination .page-list li.current a {
-  background-color: #0273eb;
-  border-color: #0273eb;
-  color: #fff !important;
-  text-decoration: none;
-  border-radius: 0.25rem;
-}
-nav.pagination .page-list li a {
   background-color: #fff;
   border-color: #0273eb;
   color: #0273eb !important;
+  text-decoration: none;
+}
+nav.pagination .page-list li a {
+  background-color: #ccc;
+  border-color: #999;
+  color: #000 !important;
   text-decoration: none;
 }
 
@@ -2805,7 +2812,23 @@ textarea {
     min-height: 140px;
   }
   .product-miniature .product-description {
-    width: fit-content !important;
+    /* width: fit-content !important; */
+    padding-right: 5px;
+  }
+
+  .product-miniature .product-quantity .qty{
+    margin-right: 2px;
+  }
+  .product-miniature .product-title-list{
+    margin-bottom: 0;
+  }
+
+  article.product-miniature .information-product{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 0.5rem;
+    height: 100%;
   }
 
   .cms-id-8 .footer_linklist.alignment .alignment {
