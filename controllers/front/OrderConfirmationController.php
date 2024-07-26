@@ -110,6 +110,9 @@ class OrderConfirmationControllerCore extends FrontController
             }
         }
 
+        $this->order->payment_id = $_POST['payment_id'];
+        
+
         // If checks passed, initialize customer, we will need him anyway
         $this->customer = new Customer((int) ($this->order->id_customer));
     }

@@ -219,7 +219,7 @@
                         {l s='Payment method' mod='ets_onepagecheckout'}
                     </div> *}
                     <div style="display: flex;flex-direction:column;width:100%;">
-                        <h1 style="text-align: center;">Choose Your Payment Method</h1>
+                        <h1 style="text-align: center;font-weight:600;margin-bottom: 1rem;">Select your payment method</h1>
                     
                         <div class="block-content" style="width: 100%;">
                             {$payment_methods nofilter}

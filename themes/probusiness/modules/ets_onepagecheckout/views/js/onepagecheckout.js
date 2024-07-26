@@ -256,6 +256,8 @@ $(document).on('change','input[name="payment-option"]',function() {
     $('#'+$(this).attr('id')+'-additional-information').show();
     $('#pay-with-'+$(this).attr('id')+'-form').show();
     var payment = $(this).data('module-name');
+    // console.log(document.querySelector("input[nameinput="+payment+"]").value)
+    var payment_id = document.querySelector("input[nameinput="+payment+"]").value
     if (payment == 'klarnapayment' && typeof loadKlarnaWidget !== "undefined") {
         loadKlarnaWidget_ets_opc();
     }
@@ -265,6 +267,7 @@ $(document).on('change','input[name="payment-option"]',function() {
             ajax:1,
             ets_opc_change_payment :1,
             payment:payment,
+            payment_id: payment_id,
         },
         type: 'post',
         dataType: 'json',                

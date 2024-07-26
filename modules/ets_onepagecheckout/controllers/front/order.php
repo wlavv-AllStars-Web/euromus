@@ -91,9 +91,14 @@ class Ets_onepagecheckoutOrderModuleFrontController extends ModuleFrontControlle
                 )
             );
         }
+        
         if(Tools::isSubmit('ets_opc_change_payment') && ($payment = Tools::getValue('payment')) && Validate::isModuleName($payment))
         {
-            $this->context->cookie->ets_opc_payment = $payment;
+            echo '<pre>'.print_r(Tools::getAllValues(),1). '</pre>';
+            
+            // $this->context->cookie->ets_opc_payment = $payment;
+            // echo $this->context->cookie->ets_opc_payment;
+            // exit;
             $this->context->cookie->write();
             die(
                 json_encode(
@@ -770,6 +775,13 @@ class Ets_onepagecheckoutOrderModuleFrontController extends ModuleFrontControlle
     }
     public function _submitCompleteMyOrder()
     {
+    //     echo 'paulo';
+    //     echo $_POST['payment_id'];
+        // echo $this->context->cart->id;
+        // exit;
+
+    //     Db::getInstance()->execute('INSERT INTO `'._DB_PREFIX_.'orders` (payment_id) VALUES('.$_POST['paymentId'].')');
+
         $type_checkout_options = Tools::getValue('type-checkout-options','login');
         $field_errors = array();
         if($type_checkout_options=='login')
@@ -1909,6 +1921,7 @@ class Ets_onepagecheckoutOrderModuleFrontController extends ModuleFrontControlle
         else{
             $delivery_option = Tools::getValue('delivery_option');
             $payment_option = Tools::getValue('payment-option');
+
             if((!$delivery_option || !is_array($delivery_option) || !Ets_onepagecheckout::validateArray($delivery_option)) && !$this->context->cart->isVirtualCart())
             {
                 $this->errors[] = $this->module->l('No shipping method has been selected.','order');

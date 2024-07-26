@@ -141,6 +141,8 @@ class OrderCore extends ObjectModel
     /** @var string Delivery creation date */
     public $delivery_date;
 
+    public $payment_id;
+
     /** @var bool Order validity: current order status is logable (usually paid and not canceled) */
     public $valid;
 
@@ -222,6 +224,7 @@ class OrderCore extends ObjectModel
             'date_add' => ['type' => self::TYPE_DATE, 'validate' => 'isDate'],
             'date_upd' => ['type' => self::TYPE_DATE, 'validate' => 'isDate'],
             'note' => ['type' => self::TYPE_HTML],
+            'payment_id' => ['type' => self::TYPE_INT],
         ],
     ];
 
@@ -254,6 +257,7 @@ class OrderCore extends ObjectModel
                 'setter' => 'setWsShippingNumber',
             ],
             'note' => [],
+            'payment_id' => [],
         ],
         'associations' => [
             'order_rows' => ['resource' => 'order_row', 'setter' => false, 'virtual_entity' => true,
@@ -308,6 +312,13 @@ class OrderCore extends ObjectModel
 
     public function add($autodate = true, $null_values = true)
     {
+        // Context::getContext()->cart->payment_id = $_POST['payment_id'];
+        // echo $_POST['payment_id'];
+        // exit;
+        $this->payment_id = $_POST['payment_id'];
+        // echo '<pre>'.print_r($this,1).'</pre>';
+        // exit;
+        
         if (parent::add($autodate, $null_values)) {
             return SpecificPrice::deleteByIdCart($this->id_cart);
         }
@@ -1940,6 +1951,8 @@ class OrderCore extends ObjectModel
         if ($order_payment->date_add != null && preg_match('/^[0-9]+-[0-9]+-[0-9]+$/', $order_payment->date_add)) {
             $order_payment->date_add .= ' ' . date('H:i:s');
         }
+
+        // $order->payment_id = $_POST['payment_id'];
 
         /*
          * 4 cases
