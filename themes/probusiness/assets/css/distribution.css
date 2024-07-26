@@ -1556,7 +1556,7 @@ input[type="number"] {
 #product .right-column-container {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
+  gap: 3rem;
   text-transform: uppercase;
 }
 
