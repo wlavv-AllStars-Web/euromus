@@ -26,22 +26,24 @@
   <div class="product-prices js-product-prices">
     {block name='product_discount'}
       {if $product.has_discount}
-        <div class="product-discount">
-          {hook h='displayProductPriceBlock' product=$product type="old_price"}
-          <span>{l s="RRP / PVP" d="Shop.Theme.ProductList"}</span>
-          <span class="regular-price">{$product.regular_price}</span>
+        <div class="product-discount-margin">
+          <div class="product-discount">
+            {hook h='displayProductPriceBlock' product=$product type="old_price"}
+            <span>{l s="RRP / PVP" d="Shop.Theme.ProductList"}</span>
+            <span class="regular-price">{$product.regular_price}</span>
+          </div>
+          <div class="discount-margin">
+              <span>{l s="Discount" d="Shop.Theme.ProductList"}</span>
+              <span>{$product.discount_percentage}</span>
+          </div>
         </div>
       {/if}
     {/block}
 
     {block name='product_price'}
-      <div
-        class="product-price h5 {if $product.has_discount}has-discount{/if}">
+      <div class="product-price h5 {if $product.has_discount}has-discount{/if}">
         <div class="client-margin">
-          <div class="discount-margin">
-            <span>{l s="Discount" d="Shop.Theme.ProductList"}</span>
-            <span>{$product.discount_percentage}</span>
-          </div>
+          
           <div class="discount-margin-price">
             <span>{l s="Your Margin" d="Shop.Theme.ProductList"}</span>
             <span>{$product.discount_to_display}</span>
