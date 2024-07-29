@@ -53,7 +53,7 @@
 
     <div class="row product-container js-product-container">
     {* <pre>{$product|print_r}</pre> *}
-        <div class="col-md-4">
+        <div class="col-lg-3 col-md-12">
           {block name='page_content_container'}
             <section class="page-content" id="content">
               {block name='page_content'}
@@ -73,20 +73,26 @@
         </div>
 
         {* <pre>{$product|print_r}</pre> *}
-        <div class="col-md-6 product-info-container">
+        <div class="col-lg-6 col-md-12 product-info-container">
           {block name='page_header_container'}
             {block name='page_header'}
               <div class="header_product">
                 <h1 class="h1" style="text-align: center;font-size:30px;color: #666;font-weight:bold;line-height:1.15;text-transform:uppercase;">{block name='page_title'}{$product.name}{/block}</h1>
-                <div style="display: flex;gap:0.5rem;justify-content:center;">
-                  <span style="font-size: 18px;font-weight:600;">SKU: {$product.reference}</span>
+                <div class="product-details" >
+                  <div class="product-reference">
+                    <span style="font-size: 18px;font-weight:600;">SKU: {$product.reference}</span>
+                  </div>
                   {if $product.height|round:2 > 0 && $product.depth|round:2 > 0 && $product.width|round:2 > 0}
-                  <span style="color: #0273EB;font-size: 18px;">-</span>
-                  <span style="font-size: 18px;">SIZE: {$product.width|round:2}x{$product.height|round:2}x{$product.depth|round:2}</span>
+                    <div class="product-size">
+                      <span class="separator">-</span>
+                      <span style="font-size: 18px;">SIZE: {$product.width|round:2}x{$product.height|round:2}x{$product.depth|round:2}</span>
+                    </div>
                   {/if}
                   {if $product.weight|round:2 > 0}
-                  <span style="color: #0273EB;font-size: 18px;">|</span>
-                  <span style="font-size: 18px;">WEIGHT: {$product.weight|round:2}kg</span>
+                    <div class="product-weight">
+                      <span class="separator">|</span>
+                      <span style="font-size: 18px;">WEIGHT: {$product.weight|round:2}kg</span>
+                    </div>
                   {/if}
                 </div>
               </div>
@@ -245,8 +251,8 @@
         {* {debug} *}
         {* <pre>{$product|print_r}</pre> *}
       </div>
-      <div class="col-md-2 right-column-container">
-        <div class="right_column_product" style="height: 24%;">
+      <div class="col-lg-2 col-md-12 right-column-container">
+        <div class="right_column_product right-column-logo" style="height: 24%;">
             <a target="_blank" href="{$product_brand_url}" id_manufactrurer="{$product.id_manufacturer}">
                 <img src="/img/m/{$product.id_manufacturer}.jpg" class="brand_logo" width="125" height="auto">
             </a>
