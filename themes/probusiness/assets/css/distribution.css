@@ -4504,6 +4504,10 @@ textarea {
   #checkout-payment-step .payment-options {
     align-items: flex-start;
   }
+
+  .onepagecheckout-left div#conditions-to-approve{
+    margin-bottom: 50px !important;
+  }
 }
 
 @media (max-width: 540px) {
