@@ -4469,6 +4469,9 @@ textarea {
   #conditions-to-approve {
     padding: 1rem;
     width: 28px;
+    display: flex;
+    width: 100%;
+    margin-bottom: 50px;
   }
   #conditions-to-approve li{
     gap: 0.5rem !important;
