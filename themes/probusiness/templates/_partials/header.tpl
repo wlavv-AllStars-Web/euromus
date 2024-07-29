@@ -66,10 +66,10 @@
               {/if} *}
             </div>
           {/if}
-          <div  class=" formula" style="display: flex; justify-content:center; margin-left: 50px; width:70%">
+          <div  class="formula" style="display: flex !important; justify-content:center; margin-left: 50px; width:70%">
            {if Context::getContext()->customer->logged}  
             {* shooping cart bar*}
-            <div style="width: 50%;">
+            <div class="cart" style="width: 50%;">
               {hook h="displayNav2" mod="ps_shoppingcart"}
             </div>
 
