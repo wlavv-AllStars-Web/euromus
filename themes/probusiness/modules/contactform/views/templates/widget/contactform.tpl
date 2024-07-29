@@ -58,7 +58,7 @@
           </div> *}
 
           {if $contact.orders}
-            <div class="form-group col-12 col-lg-4">
+            <div class="form-group col-12 col-lg-4 col-xs-12">
               <label class="col-md-12 form-control-label"
                 for="id-order">{l s='Order reference' d='Shop.Forms.Labels'}</label>
               <div class="col-md-12">
@@ -78,7 +78,7 @@
               </span> *}
             </div>
           {else}
-            <div class="form-group col-12 col-lg-4">
+            <div class="form-group col-12 col-lg-4 col-xs-12">
                 <label class="col-md-12 form-control-label" for="reference">{l s='Order Reference' d='Shop.Forms.Labels'}<sup>*</sup></label>
                 <div class="col-md-12">
                   <input id="reference" class="form-control" name="from" type="text" value="{!!$contact.orders}"
@@ -93,7 +93,7 @@
           
           
 
-          <div class="form-group  col-12 col-lg-4">
+          <div class="form-group  col-12 col-lg-4 col-xs-12">
             <label class="col-md-12 form-control-label" for="name">{l s='Name' d='Shop.Forms.Labels'}<sup>*</sup></label>
             <div class="col-md-12">
               <input id="name" class="form-control" name="from" type="text" value=""
@@ -102,7 +102,7 @@
           </div>
 
           {if $contact.email}
-          <div class="form-group   col-12 col-lg-4">
+          <div class="form-group   col-12 col-lg-4 col-xs-12">
             <label class="col-md-12 form-control-label" for="email">{l s='Email address' d='Shop.Forms.Labels'}<sup>*</sup></label>
             <div class="col-md-12">
               <input id="email" class="form-control" name="from" type="email" value="{$contact.email}"
@@ -110,7 +110,7 @@
             </div>
           </div>
           {else}
-          <div class="form-group   col-12 col-lg-4">
+          <div class="form-group   col-12 col-lg-4 col-xs-12">
             <label class="col-md-12 form-control-label" for="email">{l s='Email address' d='Shop.Forms.Labels'}<sup>*</sup></label>
             <div class="col-md-12">
               <input id="email" class="form-control" name="from" type="email" 
@@ -135,7 +135,7 @@
             
           
 
-          <div class="form-group col-lg-12">
+          <div class="form-group col-lg-12 col-xs-12">
             <label class="col-md-12 form-control-label"
               for="contactform-message" >{l s='Message' d='Shop.Forms.Labels'}</label>
             <div class="col-md-12">

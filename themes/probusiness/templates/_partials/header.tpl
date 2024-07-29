@@ -38,7 +38,7 @@
   {* {debug} *}
   {block name='header_top'}
     <div class="header-top">
-      <div class="container" style="padding-bottom: 10px;max-width: 1337px !important; width: 90vw !important;padding-top:9px" >
+      <div class="container" >
         <div  class="row centrar" style="margin:0;  display: flex; align-items: center;">
           <div  id="_desktop_logo" class="col-md-4 col-sm-12" style="margin: 0; padding: 0; width:30%">
             <a  href="/" style="display: flex; justify-content:start">

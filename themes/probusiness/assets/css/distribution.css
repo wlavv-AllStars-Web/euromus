@@ -3194,6 +3194,13 @@ textarea {
   .product-information{
     margin-top: 106px;
   }
+
+  .header-top .container{
+    padding-bottom: 10px !important;
+    max-width: 1337px !important;
+    width: 90vw !important;
+    padding-top: 9px !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -3363,6 +3370,24 @@ textarea {
     margin-bottom: 0 !important;
   }
 
+  /* contanct page */
+
+  #contact #wrapper .container-fluid{
+    padding: 0;
+  }
+
+  #contact input[name="submitMessage"] {
+    color: #0273EB !important;
+    border: 1px solid #0273EB;
+  }
+
+  /* .form-footer div {
+    width: 100%;
+  } */
+
+  .header-top .container{
+    width: 100vw !important;
+  }
 }
 
 @media screen and (min-width: 1101px){
