@@ -3356,6 +3356,7 @@ textarea {
   }
   #product .container-fluid .product-container {
     padding-inline: 15px;
+    margin: 0;
   }
 
   #product .page-footer{
