@@ -111,44 +111,6 @@
           {/block}
         </div>
 
-        <div class="right-column-mobile" style="margin-bottom: 1rem;">
-        <div class="col-md-4">
-          <a target="_blank" href="{$product_brand_url}" id_manufactrurer="{$product.id_manufacturer}">
-              <img src="/img/m/{$product.id_manufacturer}.jpg" class="brand_logo" width="125" height="auto">
-          </a>
-        </div>
-        <div class="col-md-2">
-          {if $product->quantity > 1 }
-            <div class="right_logos"><i class="fa fa-check"></i></div>
-          {elseif $product->quantity == 1 }
-              <div class="right_logos"><i class="fa fa-warning"></i></div>
-          {else}
-              <div class="right_logos"><i class="fa fa-times"></i></div>
-          {/if}
-        </div>
-        <div class="col-md-2">
-          <a target="_blank" onclick="openShippingtab('{$urls.pages.my_account}')">
-              {* <div class="right_text" >{l s='SHIPPING' d="Shop.Theme.ProductList"}</div> *}
-              <div class="right_logos"><i class="fa fa-truck"></i></div>
-          </a>
-        </div>
-        <div class="col-md-2">
-          {if ($product->id_manufacturer == 11) || ($product->id_manufacturer == 20) }
-          <a href="/img/asd/Content_pages/catalog/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.pdf" download="{$product->manufacturer_name|replace:' ':''}.pdf">
-          {else}
-          <a href="/img/asd/Content_pages/catalog/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.xlsx" download="{$product->manufacturer_name|replace:' ':''}.xlsx">
-          {/if}
-                  {* <div class="right_text" >{l s='CATALOG' d="Shop.Theme.ProductList"}</div> *}
-                  <div class="right_logos"><img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/xlsx_updated.png" style=" height: 50px; width: 55px; max-width: 55px;"></div>
-          </a>
-        </div>
-        <div class="col-md-2">
-          <a target="_blank" href="https://www.youtube.com/results?search_query=+{$product->manufacturer_name|replace:' ':'+'}+{$product->reference|replace:' ':'+'}">
-              {* <div class="right_text" >{l s='VIDEOS' d="Shop.Theme.ProductList"}</div> *}
-              <div class="right_logos"><i class="fa-brands fa-youtube"></i></div>
-          </a>
-        </div>
-    </div>
 
         {* <pre>{$product|print_r}</pre> *}
         <div class="col-lg-6 col-md-12 product-info-container">
@@ -406,44 +368,7 @@
       {include file='catalog/_partials/product-images-modal.tpl'}
     {/block}
 
-    <div class="right-column-mobile">
-        <div class="col-md-4">
-          <a target="_blank" href="{$product_brand_url}" id_manufactrurer="{$product.id_manufacturer}">
-              <img src="/img/m/{$product.id_manufacturer}.jpg" class="brand_logo" width="125" height="auto">
-          </a>
-        </div>
-        <div class="col-md-2">
-          {if $product->quantity > 1 }
-            <div class="right_logos"><i class="fa fa-check"></i></div>
-          {elseif $product->quantity == 1 }
-              <div class="right_logos"><i class="fa fa-warning"></i></div>
-          {else}
-              <div class="right_logos"><i class="fa fa-times"></i></div>
-          {/if}
-        </div>
-        <div class="col-md-2">
-          <a target="_blank" onclick="openShippingtab('{$urls.pages.my_account}')">
-              {* <div class="right_text" >{l s='SHIPPING' d="Shop.Theme.ProductList"}</div> *}
-              <div class="right_logos"><i class="fa fa-truck"></i></div>
-          </a>
-        </div>
-        <div class="col-md-2">
-          {if ($product->id_manufacturer == 11) || ($product->id_manufacturer == 20) }
-          <a href="/img/asd/Content_pages/catalog/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.pdf" download="{$product->manufacturer_name|replace:' ':''}.pdf">
-          {else}
-          <a href="/img/asd/Content_pages/catalog/brands/{$product->manufacturer_name|replace:' ':''}/{$product->manufacturer_name|replace:' ':''}.xlsx" download="{$product->manufacturer_name|replace:' ':''}.xlsx">
-          {/if}
-                  {* <div class="right_text" >{l s='CATALOG' d="Shop.Theme.ProductList"}</div> *}
-                  <div class="right_logos"><img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/xlsx_updated.png" style=" height: 50px; width: 55px; max-width: 55px;"></div>
-          </a>
-        </div>
-        <div class="col-md-2">
-          <a target="_blank" href="https://www.youtube.com/results?search_query=+{$product->manufacturer_name|replace:' ':'+'}+{$product->reference|replace:' ':'+'}">
-              {* <div class="right_text" >{l s='VIDEOS' d="Shop.Theme.ProductList"}</div> *}
-              <div class="right_logos"><i class="fa-brands fa-youtube"></i></div>
-          </a>
-        </div>
-    </div>
+    
     {block name='page_footer_container'}
       <footer class="page-footer">
         {block name='page_footer'}
