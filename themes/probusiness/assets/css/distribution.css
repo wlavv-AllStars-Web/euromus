@@ -3186,6 +3186,10 @@ textarea {
     color: #fff;
     text-decoration: underline;
   }
+
+  .right-column-mobile {
+    display: none;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -3286,10 +3290,47 @@ textarea {
 
   #product .right-column-container{
     padding: 1rem;
+    display: none;
   }
 
   #product .product-actions .add-to-cart {
     font-size: 1.25rem;
+  }
+
+  .right-column-mobile {
+    display: flex;
+    height: 90px;
+  }
+  .right-column-mobile .brand_logo{
+    object-fit: cover;
+    height: 90px;
+    width: 100%;
+  }
+  .right-column-mobile .right_logos{
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .right-column-mobile .right_logos .fa-warning{
+    font-size: 2rem;
+    color: #ffa500;
+  }
+  .right-column-mobile .right_logos .fa-check{
+    font-size: 2rem;
+    color: green;
+  }
+  .right-column-mobile .right_logos .fa-times{
+    font-size: 2rem;
+    color: #ff0000;
+  }
+  .right-column-mobile .right_logos .fa-truck{
+    font-size: 2rem;
+    color: #0273EB;
+  }
+  .right-column-mobile .right_logos .fa-youtube{
+    font-size: 2rem;
+    color: #0273EB;
   }
 
 }
