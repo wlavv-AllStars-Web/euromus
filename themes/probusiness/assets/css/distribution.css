@@ -3201,6 +3201,18 @@ textarea {
     width: 90vw !important;
     padding-top: 9px !important;
   }
+
+  #checkout .btn-contact-us{
+    margin-top: 24px !important;
+  }
+
+  #invoice_address_other {
+    background: #fff;
+  }
+
+  #checkout #delivery-addresses .form-control{
+    background-color: #eeeeee !important;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -3392,6 +3404,8 @@ textarea {
   .contact-form form {
     margin-top: 1rem;
   }
+
+
 }
 
 @media screen and (min-width: 1101px){
