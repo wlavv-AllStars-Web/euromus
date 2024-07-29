@@ -76,14 +76,18 @@
         <div class="col-md-6 product-info-container">
           {block name='page_header_container'}
             {block name='page_header'}
-              <div class="header_product" style="margin-bottom: 80px;">
+              <div class="header_product">
                 <h1 class="h1" style="text-align: center;font-size:30px;color: #666;font-weight:bold;line-height:1.15;text-transform:uppercase;">{block name='page_title'}{$product.name}{/block}</h1>
                 <div style="display: flex;gap:0.5rem;justify-content:center;">
-                  <span style="font-size: 18px;">SKU: {$product.reference}</span>
+                  <span style="font-size: 18px;font-weight:600;">SKU: {$product.reference}</span>
+                  {if $product.height|round:2 > 0 && $product.depth|round:2 > 0 && $product.width|round:2 > 0}
                   <span style="color: #0273EB;font-size: 18px;">-</span>
-                  <span style="font-size: 18px;">SIZE: {$product.height|round:2}x{$product.depth|round:2}x{$product.width|round:2}</span>
+                  <span style="font-size: 18px;">SIZE: {$product.width|round:2}x{$product.height|round:2}x{$product.depth|round:2}</span>
+                  {/if}
+                  {if $product.weight|round:2 > 0}
                   <span style="color: #0273EB;font-size: 18px;">|</span>
                   <span style="font-size: 18px;">WEIGHT: {$product.weight|round:2}kg</span>
+                  {/if}
                 </div>
               </div>
             {/block}
@@ -94,7 +98,7 @@
           {/block}
 
 
-          <div class="product-information" style="margin-top: 80px;">
+          <div class="product-information" style="margin-top: 106px;">
             {block name='product_description_short'}
               <div id="product-description-short-{$product.id}" class="product-description">{$product.description_short nofilter}</div>
             {/block}

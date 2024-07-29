@@ -62,7 +62,7 @@
       {include file='_partials/notifications.tpl'}
     {/block}
 
-    <div style="min-height: 70vh;" id="wrapper">
+    <div id="wrapper">
       <div class="container-fluid">
 
         {block name='breadcrumb'}
