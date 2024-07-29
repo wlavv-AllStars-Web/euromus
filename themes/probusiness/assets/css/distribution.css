@@ -3190,6 +3190,10 @@ textarea {
   .right-column-mobile {
     display: none;
   }
+
+  .product-information{
+    margin-top: 106px;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -3299,11 +3303,14 @@ textarea {
 
   .right-column-mobile {
     display: flex;
-    height: 90px;
+    height: 70px;
+    margin-bottom: 2rem;
+    border: 1px solid #dedede;
+    overflow: hidden;
   }
   .right-column-mobile .brand_logo{
     object-fit: cover;
-    height: 90px;
+    height: 70px;
     width: 100%;
   }
   .right-column-mobile .right_logos{
@@ -3331,6 +3338,17 @@ textarea {
   .right-column-mobile .right_logos .fa-youtube{
     font-size: 2rem;
     color: #0273EB;
+  }
+
+  .product-information{
+    margin-top: 56px;
+  }
+  .right-column-mobile .col-md-4{
+    border-right: 1px solid #dedede !important;
+  }
+
+  .right-column-mobile .col-md-2{
+    border-right: 1px solid #dedede !important;
   }
 
 }
