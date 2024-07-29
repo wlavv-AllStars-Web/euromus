@@ -3365,7 +3365,87 @@ textarea {
 
 }
 
+@media screen and (min-width: 1101px){
+  #product .product-container .page-content {
+    height: 100%;
+  }
+
+  #product .product-container .images-container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+  }
+
+  #product .product-prices .product-discount{
+    line-height: 24px;
+    width: max-content;
+  }
+
+  #product .product-prices .product-price .current-price{
+    line-height: 24px;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1100px) {
+  #product .container-fluid .product-container {
+    max-height: unset;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #product .right-column-container{
+    width: 100% !important;
+    justify-content: center;
+    align-items: center;
+  }
+  #product .right-column-container .right-column-logo a{
+    padding-left: 0;
+  }
+
+  #product .product-information {
+    width: 100%;
+    margin-top: 106px;
+  }
+  #product .product-quantity {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+  #product .product-quantity .qty {
+    width: fit-content;
+    display: flex;
+  }
+  #product .product-quantity .qty .input-group{
+    width: 166px;
+    display: flex;
+  }
+
+  #product .product-quantity .add {
+    width: fit-content;
+  }
+  #product .product-quantity .add button{
+    width: 360px;
+  }
+
+  #product .product-info-container .product-prices {
+    text-wrap: nowrap;
+  }
+
+  #product .product-container .images-container {
+    display: flex;
+    justify-content: center;
+  }
+
+
+}
+
 @media screen and (min-width: 768px) and (max-width: 900px) {
+
+
+
   .form-become-dealer .form-group {
     width: 50%;
   }
