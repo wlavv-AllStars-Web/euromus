@@ -1579,6 +1579,7 @@ input[type="number"] {
   flex-direction: column;
   gap: 3rem;
   text-transform: uppercase;
+  padding-left: 4rem;
 }
 
 #product .right_column_product {
@@ -1596,6 +1597,13 @@ input[type="number"] {
 }
 #contact .breadcrumb {
   display: none;
+}
+
+#product .right_column_product .brand_logo {
+  filter: grayscale(1);
+}
+#product .right_column_product a .brand_logo:hover {
+  filter: grayscale(0);
 }
 
 #product .right_column_product.column-right-stock {
@@ -1668,7 +1676,7 @@ input[type="number"] {
   color: #0273eb;
 }
 #product .right_column_product .right_logos .fa-times {
-  font-size: 35px !important;
+  font-size: 43px !important;
   color: #ff0000;
 }
 
