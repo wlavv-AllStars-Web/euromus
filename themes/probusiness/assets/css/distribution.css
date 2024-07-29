@@ -4279,6 +4279,15 @@ textarea {
 }
 
 @media (max-width: 543px) {
+
+  .header-top .centrar .formula{
+    margin-left: 0 !important;
+    margin-top: 1rem;
+  }
+  .header-top .formula .wdth{
+    display: none;
+  }
+
   .form-career .form-group {
     width: 100%;
   }
