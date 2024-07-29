@@ -982,7 +982,7 @@ form label {
   padding: 0rem !important;
   width: 337px !important;
   /* margin: 1rem; */
-  height: fit-content;
+  /* height: fit-content; */
 }
 
 #cms-partners .cards {
@@ -1339,7 +1339,7 @@ nav.pagination .page-list li a {
   transform: translate(-50%, -50%) !important;
   position: absolute;
   /* height: 22px !important; */
-  font-size: 4rem !important;
+  font-size: 5rem !important;
   font-weight: 800;
 }
 
@@ -1349,8 +1349,10 @@ nav.pagination .page-list li a {
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
-  height: 97px;
-  font-size: 4rem;
+  height: 50px;
+  font-size: 5rem;
+  line-height: 0;
+  padding-top: 10px;
 }
 #product .product-add-to-cart .input-group-btn-vertical #quantity_wanted {
   background: transparent !important;
@@ -1400,12 +1402,31 @@ input[type="number"] {
 
 #product .product-actions .add-to-cart {
   height: 50px;
-  background: #0273eb;
+  color: #0273eb !important;
+  background: #fff;
+  border: 1px solid #0273eb;
   font-size: 1.5rem;
+  border-radius: 0;
+  font-weight: 600;
 }
+
 #product .product-actions .add-to-cart:hover {
-  background: #1d85f2;
+  background: #0273eb;
+  color: #fff !important;
 }
+#product .product-actions .add-to-cart:hover i{
+  color: #fff;
+}
+
+#product .product-actions .add-to-cart i {
+  color: #0273eb;
+}
+
+/* .fa-plus:before {
+  content: "\f067"; }
+
+.fa-minus:before {
+  content: "\f068"; } */
 
 /* fim button qty */
 
