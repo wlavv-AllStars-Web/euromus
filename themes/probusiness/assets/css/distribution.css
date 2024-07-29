@@ -1679,6 +1679,10 @@ input[type="number"] {
   font-size: 43px !important;
   color: #ff0000;
 }
+#product .right_column_product .right_logos .fa-warning {
+  font-size: 36px !important;
+  color: #ffa500;
+}
 
 /* checkout */
 
