@@ -1357,12 +1357,14 @@ nav.pagination .page-list li a {
   height: 50px;
   font-size: 5rem;
   line-height: 0;
-  padding-top: 10px;
+  padding-top: 4px;
 }
 #product .product-add-to-cart .input-group-btn-vertical #quantity_wanted {
   background: transparent !important;
   border: 1px solid #0273eb;
-  color: #0273eb;
+  color: #666;
+  font-size: 24px;
+  font-weight: 700;
   text-align: center;
   width: 50px;
   height: 50px;
@@ -1458,6 +1460,7 @@ input[type="number"] {
   line-height: 1.1;
   height: 100%;
   justify-content: center;
+  gap: 10px;
 }
 #product .product-prices .product-discount::after {
   content: "";
@@ -1502,6 +1505,7 @@ input[type="number"] {
   padding-right: 1rem;
   text-transform: uppercase;
   margin-bottom: 0 !important;
+  gap: 10px;
 }
 #product .product-prices .discount-margin-price {
   display: flex;
@@ -1511,6 +1515,7 @@ input[type="number"] {
   font-weight: 600;
   text-transform: uppercase;
   margin-bottom: 0;
+  gap: 10px;
 }
 
 #product .product-prices .product-discount .regular-price {
@@ -1529,14 +1534,17 @@ input[type="number"] {
   display: flex;
   flex-direction: column;
   padding-left: 1rem;
-  font-size: 25px;
+  font-size: 28px;
+  line-height: 18px;
   text-transform: uppercase;
   margin-bottom: 0;
 }
 #product .product-prices .product-price .current-price .current-price-value {
   color: #666;
   font-weight: 700;
-  font-size: 28px;
+  font-size: 32px;
+  line-height: 32px;
+  padding-top: 10px;
 }
 
 #product .product-actions .product-add-to-cart {
