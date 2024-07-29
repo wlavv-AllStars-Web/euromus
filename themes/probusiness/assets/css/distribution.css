@@ -4361,6 +4361,135 @@ textarea {
     float: left;
     width: 100%;
   }
+
+  /* checkout page */
+
+  .onepagecheckout-left{
+    padding: 0 !important;
+  }
+
+  .block-onepagecheckout{
+    padding: 0 !important;
+  }
+
+  .block-onepagecheckout .cart-container thead{
+    display: none;
+  }
+
+  .block-onepagecheckout .cart-container tbody{
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .block-onepagecheckout .cart-container tbody tr{
+    width: 100dvw;
+    display: flex;
+    flex-wrap: wrap;
+    height: max-content;
+  }
+
+  .block-onepagecheckout .cart-container tbody tr:nth-child(even){
+    background: #f6f6f6;
+  }
+
+  .cart_delete {
+    display: none;
+  }
+
+  .cart_product {
+    width: 25%;
+  }
+
+  .cart_description{
+    width: 75%;
+  }
+  .cart_description .product-line-info .label{
+    text-align: start;
+  }
+
+  .cart_unit{
+    width: 25%;
+  }
+  .cart_unit .product-price{
+    display: flex !important;
+  }
+
+  .cart_quantity {
+    width: 50% !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .cart_total{
+    width: 25%;
+    display: flex;
+    justify-content: center;
+  }
+  .cart_total .price{
+    display: flex !important;
+    align-items: center;
+  }
+
+  #checkout .cart-overview td{
+    border-right: 0 !important;
+  }
+
+  .block-onepagecheckout .cart-container tfoot tr{
+    width: 100vw;
+    display: flex;
+    align-items: center;
+  }
+  .block-onepagecheckout .cart-container tfoot tr .text-right{
+    width: 70%;
+  }
+  .block-onepagecheckout .cart-container tfoot tr #total_product{
+    width: 30%;
+  }
+  .block-onepagecheckout .cart-container tfoot tr #total_tax{
+    width: 30%;
+  }
+  .block-onepagecheckout .cart-container tfoot tr #total_price_container{
+    width: 30%;
+  }
+
+
+  .block-onepagecheckout.block-address {
+    flex-wrap: wrap;
+    margin-bottom: 0;
+  }
+  .block-onepagecheckout.block-address .invoice-address-container .form-group .ets_checkinput{
+    padding: 1rem !important;
+  }
+
+  #delivery-addresses .shipping_address{
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #conditions-to-approve {
+    padding: 1rem;
+    width: 28px;
+  }
+  #conditions-to-approve li{
+    gap: 0.5rem !important;
+  }
+
+  .ets_checkinput{
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .invoice_address{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .btn-contact-us {
+    margin-top: 0 !important;
+  }
+
 }
 
 @media (max-width: 540px) {
