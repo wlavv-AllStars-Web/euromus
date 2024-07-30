@@ -61,17 +61,17 @@
       <li class="nav-item">
         <a class="nav-link" id="profile-tab" title="{l s="Profile" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-user website_blue font-size-40"></i></a>
       </li>
-      <li class="setNameTitle" style="width: 100%;display:flex;justify-content: center;font-size:30px;color:#666;font-weight:700;">
+      {* <li class="setNameTitle" style="width: 100%;display:flex;justify-content: center;font-size:30px;color:#666;font-weight:700;">
         titulo
-      </li>
-      <li class="nav-item" style="display:flex;justify-content: end;">
+      </li> *}
+      <li class="nav-item" style="display:flex;justify-content: end;flex:1;">
         <a class="nav-link" id="logout-tab"  href="/?mylogout="><i class="fa-solid fa-lock-open"></i></a>
       </li>
 
       
     </ul>
 
-    <script>
+    {* <script>
   document.addEventListener('DOMContentLoaded', function() {
     const tabs = document.querySelectorAll('.nav-link');
     const titleElement = document.querySelector('.setNameTitle');
@@ -89,7 +89,7 @@
       titleElement.innerText = activeTab.getAttribute('title');
     }
   });
-</script>
+</script> *}
 
 
     <div class="tab-content" id="myTabContent">
