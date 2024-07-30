@@ -1075,26 +1075,26 @@
               const screenWidth = window.screen.width;
 
               if (screenWidth > 1140) {
-                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_banner_lg.webp');
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legnotice_{$language.iso_code}.webp');
                 legalImage.setAttribute("width", "1350");
                 legalImage.setAttribute("height", "300");
-                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_lg.webp');
-                legalDevicesImage.setAttribute("width", "1350");
-                legalDevicesImage.setAttribute("height", "301");
+                // legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_lg.webp');
+                // legalDevicesImage.setAttribute("width", "1350");
+                // legalDevicesImage.setAttribute("height", "301");
               } else if (screenWidth > 575) {
-                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_banner_md.webp');
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legnotice_{$language.iso_code}.webp');
                 legalImage.setAttribute("width", "1140");
                 legalImage.setAttribute("height", "253");
-                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_md.webp');
-                legalDevicesImage.setAttribute("width", "1350");
-                legalDevicesImage.setAttribute("height", "254");
+                // legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_md.webp');
+                // legalDevicesImage.setAttribute("width", "1350");
+                // legalDevicesImage.setAttribute("height", "254");
               } else {
-                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legal_banner_xs.webp');
+                legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legnotice_{$language.iso_code}.webp');
                 legalImage.setAttribute("width", "575");
                 legalImage.setAttribute("height", "128");
-                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_xs.webp');
-                legalDevicesImage.setAttribute("width", "1350");
-                legalDevicesImage.setAttribute("height", "226");
+                // legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_xs.webp');
+                // legalDevicesImage.setAttribute("width", "1350");
+                // legalDevicesImage.setAttribute("height", "226");
               }
             }
             updateLegalImage();
@@ -1105,7 +1105,7 @@
         
         <div class="banner_cms_partners" style="margin-bottom: 3rem;">
           <div class="partners-banner">
-            <img src="/img/asd/Content_pages/partners/partners.jpg" alt="banner partners" width="1350" height="300" />
+            <img src="/img/asd/Content_pages/partners/partners_{$language.iso_code}.jpg" alt="banner partners" width="1350" height="300" />
           </div>
           <div class="rte">
             <div id="cms-partners">
@@ -1289,7 +1289,7 @@
       {elseif $cms.id === 11}
         <div class="rte">
           <div class="text-center">
-            <img src="/img/asd/Content_pages/payment/payment.webp" alt="All Stars Distribution Payment" class="img-fluid cms_header_image" width="1350" height="300">
+            <img src="/img/asd/Content_pages/payment/payment_{$language.iso_code}.webp" alt="All Stars Distribution Payment" class="img-fluid cms_header_image" width="1350" height="300">
           </div>
           
           <p class="cms_title_center" style="color: black; font-weight: bolder; font-size: 23px;">{l s='ALL STARS DISTRIBUTION offers two methods of payment :' d='Shop.Theme.Payment'}</p>
@@ -1325,7 +1325,7 @@
       {elseif $cms.id === 12}
         <div class="cms-career">
           <div class="career-banner">
-            <img src="/img/asd/Content_pages/career/career.webp" alt="career banner"/>
+            <img src="/img/asd/Content_pages/career/career_{$language.iso_code}.webp" alt="career banner"/>
           </div>
           <div class="career-content">
             <h1>{l s='> OPEN POSITIONS <' d='Shop.Theme.Career'}</h1>
@@ -1492,7 +1492,7 @@
       {elseif $cms.id === 13}
         <div class="cms-terms">
           <div class="banner-terms">
-            <img src="/img/asd/Content_pages/terms/generalSalesConditions.webp" alt="terms banner" width="1350" height="300" />
+            <img src="/img/asd/Content_pages/terms/terms_{$language.iso_code}.webp" alt="terms banner" width="1350" height="300" />
           </div>
           <div class="terms-content">
             <h1>{l s='GENERAL CONDITIONS OF SALE' d='Shop.Theme.Terms'}</h1>
