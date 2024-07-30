@@ -1078,23 +1078,23 @@
                 legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legnotice_{$language.iso_code}.webp');
                 legalImage.setAttribute("width", "1350");
                 legalImage.setAttribute("height", "300");
-                // legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_lg.webp');
-                // legalDevicesImage.setAttribute("width", "1350");
-                // legalDevicesImage.setAttribute("height", "301");
+                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_lg.webp');
+                legalDevicesImage.setAttribute("width", "1350");
+                legalDevicesImage.setAttribute("height", "301");
               } else if (screenWidth > 575) {
                 legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legnotice_{$language.iso_code}.webp');
                 legalImage.setAttribute("width", "1140");
                 legalImage.setAttribute("height", "253");
-                // legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_md.webp');
-                // legalDevicesImage.setAttribute("width", "1350");
-                // legalDevicesImage.setAttribute("height", "254");
+                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_md.webp');
+                legalDevicesImage.setAttribute("width", "1350");
+                legalDevicesImage.setAttribute("height", "254");
               } else {
                 legalImage.setAttribute("src", '/img/asd/Content_pages/legal/legnotice_{$language.iso_code}.webp');
                 legalImage.setAttribute("width", "575");
                 legalImage.setAttribute("height", "128");
-                // legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_xs.webp');
-                // legalDevicesImage.setAttribute("width", "1350");
-                // legalDevicesImage.setAttribute("height", "226");
+                legalDevicesImage.setAttribute("src", '/img/asd/Content_pages/legal/dispositivos_xs.webp');
+                legalDevicesImage.setAttribute("width", "1350");
+                legalDevicesImage.setAttribute("height", "226");
               }
             }
             updateLegalImage();
