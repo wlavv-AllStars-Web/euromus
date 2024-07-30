@@ -4873,7 +4873,7 @@ textarea {
   }
 
   .mobile {
-    display: block;
+    display: block !important;
   }
 
   #login-form .form-group:nth-child(2) {
