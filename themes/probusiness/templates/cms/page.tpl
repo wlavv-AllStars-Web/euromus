@@ -1105,7 +1105,7 @@
         
         <div class="banner_cms_partners" style="margin-bottom: 3rem;">
           <div class="partners-banner">
-            <img src="/img/asd/Content_pages/partners/partners_{$language.iso_code}.jpg" alt="banner partners" width="1350" height="300" />
+            <img src="/img/asd/Content_pages/partners/partners_{$language.iso_code}.webp" alt="banner partners" width="1350" height="300" />
           </div>
           <div class="rte">
             <div id="cms-partners">
