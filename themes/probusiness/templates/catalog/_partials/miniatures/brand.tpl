@@ -24,7 +24,7 @@
  *}
  {block name='brand_miniature_item'}
   {* <pre>{$brand|print_r}</pre> *}
-  {* {if Context::getContext()->customer->logged} *}
+  {if Context::getContext()->customer->logged}
     <li class="brand_logged col-lg-3 col-md-4 col-sm-6" style="margin-top: 2rem;">
       <div class="brand_content_item_logged" style="border: 1px solid #0273eb;">
           <div class="brand-infos">
@@ -38,8 +38,8 @@
           
       </div>
     </li>
-  {* {else}
-    <li class="brand col-md-12">
+  {else}
+    {* <li class="brand col-md-12">
       <div class="brand_content_item">
           <div class="brand-img" style="max-width: 250px;overflow:hidden;">
             <a href="{$brand.url|escape:'html':'UTF-8'}"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}" width="125" height="125"></a>
@@ -49,6 +49,20 @@
             <p style="font-size: 14px;line-height:18px;">{$brand.description nofilter}</p>
           </div>
       </div>
+    </li> *}
+
+    <li class="brand_logged col-lg-3 col-md-4 col-sm-6" style="margin-top: 2rem;">
+      <div class="brand_content_item_logged" style="border: 1px solid #0273eb;">
+          <div class="brand-infos">
+            <h3 style="text-align: center;background:#0273eb;color:#fff;padding: 5px;font-size:13px;line-height:18px;font-weight:700;">{$brand.name|escape:'html':'UTF-8'}</h3>
+          </div>
+          <div class="brand-img" >
+            {* <a href="{$brand.url|escape:'html':'UTF-8'}" style="display:flex;justify-content:center;align-items:center;"><img src="{$brand.image_m|escape:'html':'UTF-8'}" alt="{$brand.name|escape:'html':'UTF-8'}" style="width: 100%;max-width:125px;" width="125" height="125"></a> *}
+            <a href="{$brand.url|escape:'html':'UTF-8'}" style="display:flex;justify-content:center;align-items:center;"><img src="/img/asd/150px/{$brand.id_manufacturer}.webp" alt="{$brand.name|escape:'html':'UTF-8'}" style="width: 100%;max-width:300px;height:auto;" width="300" height="150"></a>
+            
+          </div>
+          
+      </div>
     </li>
-  {/if} *}
+  {/if}
 {/block}
