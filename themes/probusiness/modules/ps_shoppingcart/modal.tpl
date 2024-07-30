@@ -29,7 +29,7 @@
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-5 divide-right">
+          <div class="col-md-5 col-sm-12 col-xs-12 divide-right">
             <div class="row">
               <div class="col-md-6">
                 <img class="product-image" src="{$product.cover.medium.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image">
@@ -45,7 +45,7 @@
               </div>
             </div>
           </div>
-          <div class="col-md-7">
+          <div class="col-md-7 col-sm-12 col-xs-12">
             <div class="cart-content">
               {if $cart.products_count > 1}
                 <p class="cart-products-count">{l s='There are %products_count% items in your cart.' sprintf=['%products_count%' => $cart.products_count] d='Shop.Theme.Checkout'}</p>
