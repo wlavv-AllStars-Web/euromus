@@ -849,13 +849,13 @@
           <div class="legal-content col-lg-12" style="max-width: 1350px;">
             <div class="legal-company col-lg-6 col-md-12">
               <div class="line-info">
-                <strong>{l s='VAT Number:' d="Shop.Theme.LegalNotice"}</strong>
-                <span>{l s='PT 513881387' d="Shop.Theme.LegalNotice"}</span>
+                <strong>{l s='VAT Number / License:' d="Shop.Theme.LegalNotice"}</strong>
+                <span>{l s='PT / 513881387' d="Shop.Theme.LegalNotice"}</span>
               </div>
-              <div class="line-info">
+              {* <div class="line-info">
                 <strong>{l s='License Number:' d="Shop.Theme.LegalNotice"}</strong>
                 <span>94 166 410</span>
-              </div>
+              </div> *}
               <div class="line-info">
                 <strong>{l s='Company:' d="Shop.Theme.LegalNotice"}</strong>
                 <span>{l s='All Stars Distribution, Lda' d="Shop.Theme.LegalNotice"}</span>
