@@ -24,7 +24,7 @@
  *}
  {block name='brand_miniature_item'}
   {* <pre>{$brand|print_r}</pre> *}
-  {if Context::getContext()->customer->logged}
+  {* {if Context::getContext()->customer->logged} *}
     <li class="brand_logged col-lg-3 col-md-4 col-sm-6" style="margin-top: 2rem;">
       <div class="brand_content_item_logged" style="border: 1px solid #0273eb;">
           <div class="brand-infos">
@@ -38,7 +38,7 @@
           
       </div>
     </li>
-  {else}
+  {* {else}
     <li class="brand col-md-12">
       <div class="brand_content_item">
           <div class="brand-img" style="max-width: 250px;overflow:hidden;">
@@ -50,5 +50,5 @@
           </div>
       </div>
     </li>
-  {/if}
+  {/if} *}
 {/block}
