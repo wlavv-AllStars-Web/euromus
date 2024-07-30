@@ -98,55 +98,95 @@
       </div> *}
       <div class="tab-pane  show active" id="order_history" role="tabpanel" title="Order History" aria-labelledby="order_history-tab">
         <div style="display: flex;margin:1rem 0;flex-wrap:wrap;">
-          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount card-status-myaccount" >
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount card-status-myaccount" >
               <a onclick="findRowTable(24)">
-                  <div class="counters_panel margin-lados-10 waiting_validation">
+                  <div class="counters_panel margin-lados-10">
+                    <div class="color-label">
+                      <div class="waiting_validation"></div>
                       <div class="counters_label">{l s='Waiting validation' d='Shop.Theme.Customeraccount'}</div>
+                    </div>
                       <div class="counters_value">{$counters['waiting_validation']}</div>
                   </div>
                   <div class="spacer-20"></div>
               </a>
           </div>
-          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(10)">
-                  <div class="counters_panel margin-lados-10 waiting_payment">
+                  <div class="counters_panel margin-lados-10 ">
+                    <div class="color-label">
+                      <div class="waiting_payment"></div>
                       <div class="counters_label">{l s='Waiting payment' d='Shop.Theme.Customeraccount'}</div>
+                    </div>
                       <div class="counters_value">{$counters['waiting_payment']}</div>
                   </div>
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(3)">
-                  <div class="counters_panel margin-lados-10 preparation">
+                  <div class="counters_panel margin-lados-10 ">
+                    <div class="color-label">
+                      <div class="preparation"></div>
                       <div class="counters_label">{l s='In preparation' d='Shop.Theme.Customeraccount'}</div>
+                    </div>
                       <div class="counters_value">{$counters['processing']}</div>
                   </div>
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(9)">
-                  <div class="counters_panel margin-lados-10 backorder">
+                  <div class="counters_panel margin-lados-10 ">
+                    <div class="color-label">
+                      <div class="backorder"></div>
                       <div class="counters_label">{l s='Backorder' d='Shop.Theme.Customeraccount'}</div>
+                    </div>
                       <div class="counters_value">{$counters['backorders']}</div>
                   </div>
                   <div class="spacer-20"></div>
               </a>
           </div> 
-          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(4)">
-                  <div class="counters_panel margin-lados-10 shipped">
+                  <div class="counters_panel margin-lados-10 ">
+                    <div class="color-label">
+                      <div class="shipped"></div>
                       <div class="counters_label">{l s='Shipped' d='Shop.Theme.Customeraccount'}</div>
+                    </div>
                       <div class="counters_value">{$counters['shipped']}</div>
                   </div>
               </a>
           </div>    
-          <div class="col-lg-2 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
               <a onclick="findRowTable(6)">
-                  <div class="counters_panel margin-lados-10 canceled">
+                  <div class="counters_panel margin-lados-10 ">
+                    <div class="color-label">
+                      <div class="canceled"></div>
                       <div class="counters_label">{l s='Canceled' d='Shop.Theme.Customeraccount'}</div>
+                    </div>
                       <div class="counters_value">{$counters['canceled']}</div>
+                  </div>
+              </a>
+          </div> 
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+              <a onclick="findRowTable(6)">
+                  <div class="counters_panel margin-lados-10 ">
+                    <div class="color-label">
+                      <div class="partial_shipping"></div>
+                      <div class="counters_label">{l s='Partial Shipping' d='Shop.Theme.Customeraccount'}</div>
+                    </div>
+                      <div class="counters_value">{$counters['partial_shipping']}</div>
+                  </div>
+              </a>
+          </div> 
+          <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+              <a onclick="findRowTable(6)">
+                  <div class="counters_panel margin-lados-10 ">
+                    <div class="color-label">
+                      <div class="not_invoiced"></div>
+                      <div class="counters_label">{l s='Not Invoiced' d='Shop.Theme.Customeraccount'}</div>
+                    </div>
+                      <div class="counters_value">{$counters['not_invoiced']}</div>
                   </div>
               </a>
           </div> 

@@ -348,6 +348,8 @@ class MyAccountController extends MyAccountControllerCore
         $backorders =  Db::getInstance()->getRow("SELECT count(current_state) AS backorders FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 9");
         $shipped =  Db::getInstance()->getRow("SELECT count(current_state) AS shipped FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 4");
         $canceled =  Db::getInstance()->getRow("SELECT count(current_state) AS canceled FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 6");
+        $partial_shipping =  Db::getInstance()->getRow("SELECT count(current_state) AS partial_shipping FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 22");
+        $not_invoiced =  Db::getInstance()->getRow("SELECT count(current_state) AS not_invoiced FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 25");
         
         $orders['waiting_validation'] = $waiting_validation['waiting_validation'];
         $orders['waiting_payment']    = $waiting_payment['waiting_payment'];
@@ -355,6 +357,8 @@ class MyAccountController extends MyAccountControllerCore
         $orders['backorders']         = $backorders['backorders'];
         $orders['shipped']            = $shipped['shipped'];
         $orders['canceled']           = $canceled['canceled'];
+        $orders['partial_shipping']   = $partial_shipping['partial_shipping'];
+        $orders['not_invoiced']       = $not_invoiced['not_invoiced'];
         
         return $orders;
     }

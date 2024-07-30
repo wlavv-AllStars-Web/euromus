@@ -2472,39 +2472,111 @@ textarea {
   border: 1px solid #888;
   cursor: pointer;
   border-radius: 3px;
+  display: flex;
+  flex-direction: column;
+  height: 150px;
 }
+
+.card-status-myaccount .counters_panel .color-label{
+  display: flex;
+  border-bottom: 1px solid;
+}
+
 
 .card-status-myaccount .counters_label {
   padding: 10px 5px;
   font-weight: bolder;
-  height: 80px;
-  color: #000;
+  /* height: 80px; */
+  color: #fff;
   /* text-wrap: nowrap; */
   font-size: 0.85rem;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 .card-status-myaccount .counters_value {
   font-size: 80px;
   line-height: 30px;
-  height: 80px;
   color: #000 !important;
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
+
+.card-status-myaccount:nth-child(1) .counters_panel .color-label .counters_label{
+  background: #8a2be2;
+}
+.card-status-myaccount:nth-child(2) .counters_panel .color-label .counters_label{
+  background: #4258a7;
+}
+.card-status-myaccount:nth-child(3) .counters_panel .color-label .counters_label{
+  background: #048dcd;
+}
+.card-status-myaccount:nth-child(4) .counters_panel .color-label .counters_label{
+  background: #f78e1f;
+}
+.card-status-myaccount:nth-child(5) .counters_panel .color-label .counters_label{
+  background: #00644a;
+}
+.card-status-myaccount:nth-child(6) .counters_panel .color-label .counters_label{
+  background: #e82025;
+}
+.card-status-myaccount:nth-child(7) .counters_panel .color-label .counters_label{
+  background: #956f55;
+}
+.card-status-myaccount:nth-child(8) .counters_panel .color-label .counters_label{
+  background: #280d00;
+}
+
 .card-status-myaccount .waiting_validation {
-  background-color: #feffa0;
+  background-color: #8a2be2;
+  /* width: 50px;
+  height: 50px; */
+  /* border-right: 1px solid #000; */
 }
 .card-status-myaccount .waiting_payment {
   background-color: #4258a7;
+    /* width: 50px;
+  height: 50px;
+  border-right: 1px solid #000; */
 }
 .card-status-myaccount .preparation {
   background-color: #048dcd;
+    /* width: 50px;
+  height: 50px;
+  border-right: 1px solid #000; */
 }
 .card-status-myaccount .backorder {
   background-color: #f78e1f;
+    /* width: 50px;
+  height: 50px;
+  border-right: 1px solid #000; */
 }
 .card-status-myaccount .canceled {
   background-color: #e82025;
+    /* width: 50px;
+  height: 50px;
+  border-right: 1px solid #000; */
 }
 .card-status-myaccount .shipped {
-  background-color: #8a2be2;
+  background-color: #00644a;
+    /* width: 50px;
+  height: 50px;
+  border-right: 1px solid #000; */
+}
+.card-status-myaccount .partial_shipping {
+  background-color: #956f55;
+    /* width: 50px;
+  height: 50px;
+  border-right: 1px solid #000; */
+}
+.card-status-myaccount .not_invoiced {
+  background-color: #280d00;
+    /* width: 50px;
+  height: 50px;
+  border-right: 1px solid #000; */
 }
 
 .btn_clearfilter {
