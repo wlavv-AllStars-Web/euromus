@@ -649,7 +649,7 @@
       {elseif $cms.id === 7}
         <div class="cms-privacy">
           <div class="privacy-banner">
-            <img src="/img/asd/Content_pages/privacy/privacypolicy.jpg" alt="privacy_banner" width="1350" height="300"/>
+            <img src="/img/asd/Content_pages/privacy/ppolicy_{$language.iso_code}.webp" alt="privacy_banner" width="1350" height="300"/>
           </div>
           <div class="privacy-content">
             {* <h1>{l s='Privacy policy' d='Shop.Theme.Privacy'}</h1> *}
