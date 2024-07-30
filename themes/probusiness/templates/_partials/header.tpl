@@ -66,7 +66,7 @@
               {/if} *}
             </div>
           {/if}
-          <div  class="formula" style="display: flex !important; justify-content:center; margin-left: 50px; width:70%">
+          <div  class="formula" style="display: flex; justify-content:center; margin-left: 50px; width:70%">
            {if Context::getContext()->customer->logged}  
             {* shooping cart bar*}
             <div class="cart" style="width: 50%;">
