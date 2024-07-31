@@ -1794,9 +1794,10 @@ input[type="number"] {
   display: flex;
   gap: 1rem;
   align-items: center;
-  padding: 2rem;
+  padding: 2rem 1rem;
   background: #fff;
   transition: all 0.3s ease-in-out;
+  width: 400px;
 }
 
 #checkout .ets_payment_method .img-module:hover {
@@ -1814,8 +1815,9 @@ input[type="number"] {
 }
 
 #checkout .ets_payment_method .img-module img{
-  max-width: 120px;
+  max-width: 144px;
   margin: auto;
+  width: 100%;
 }
 
 #checkout .ets_payment_method .img-module:hover {
