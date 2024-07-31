@@ -61,6 +61,13 @@
       <li class="nav-item">
         <a class="nav-link" id="profile-tab" title="{l s="Profile" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"  onclick="changeImgBanner(this)"><i class="fa fa-user website_blue font-size-40"></i></a>
       </li>
+      
+      <li class="nav-item">
+        <a class="nav-link" id="warranty-tab" title="{l s="Warranty" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#warranty" role="tab" aria-controls="warranty" aria-selected="false" style="padding:0.5rem 12px;" onclick="changeImgBanner(this)"><img src="/img/asd/warranty_icon.svg" width="37" /></a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" id="contact-tab" title="{l s="Contact" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" style="padding:0.5rem 9px;" onclick="changeImgBanner(this)"><img src="/img/asd/email_icon.svg" width="43" /></a>
+      </li>
       <li class="nav-item">
         <a class="nav-link" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-bell"></i></a>
       </li>
@@ -689,6 +696,14 @@
 
           
 
+        </div>
+
+        <div class="tab-pane fade" id="warranty" role="tabpanel" aria-labelledby="warranty-tab">
+            <h1>Warranty</h1>
+        </div>
+
+        <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+          <h1>Contact</h1>
         </div>
 
 
