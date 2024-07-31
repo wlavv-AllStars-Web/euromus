@@ -39,14 +39,14 @@
         </a>
       </li> *}
       <li class="nav-item">
-        <a class="nav-link active" title="{l s="Orders history" d="Shop.Theme.Statistics"}" id="order_history-tab" data-toggle="tab" href="#order_history" role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-list-ol website_blue font-size-40"></i></a>
+        <a class="nav-link active" title="{l s="Orders history" d="Shop.Theme.Statistics"}" id="order_history-tab" data-toggle="tab" href="#order_history" role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa fa-list-ol website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" title="{l s="Dashboard" d="Shop.Theme.Statistics"}"  id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
+        <a class="nav-link" title="{l s="Dashboard" d="Shop.Theme.Statistics"}"  id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
       </li>
       
       <li class="nav-item">
-        <a class="nav-link" id="statistics-tab" title="{l s="Statistics" d="Shop.Theme.Statistics"}"  data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa-solid fa-chart-column"></i></a>
+        <a class="nav-link" id="statistics-tab" title="{l s="Statistics" d="Shop.Theme.Statistics"}"  data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-chart-column"></i></a>
       </li>
       
       {* <li class="nav-item">
@@ -56,13 +56,13 @@
         <a class="nav-link" id="addresses-tab" data-toggle="tab" href="#addresses" role="tab" aria-controls="addresses" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-building website_blue font-size-40"></i></a>
       </li> *}
       <li class="nav-item">
-        <a class="nav-link" id="shipping-tab" title="{l s="Shipping Rates" d="Shop.Theme.Statistics"}"  data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-truck website_blue font-size-40"></i></a>
+        <a class="nav-link" id="shipping-tab" title="{l s="Shipping Rates" d="Shop.Theme.Statistics"}"  data-toggle="tab" href="#shipping" role="tab" aria-controls="shipping" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa fa-truck website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="profile-tab" title="{l s="Profile" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa fa-user website_blue font-size-40"></i></a>
+        <a class="nav-link" id="profile-tab" title="{l s="Profile" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"  onclick="changeImgBanner(this)"><i class="fa fa-user website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;"><i class="fa-solid fa-bell"></i></a>
+        <a class="nav-link" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-bell"></i></a>
       </li>
       {* <li class="setNameTitle" style="width: 100%;display:flex;justify-content: center;font-size:30px;color:#666;font-weight:700;">
         titulo
@@ -693,7 +693,11 @@
 
 
         <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
-                      notification
+          <div class="content_notification">
+            {* <div class="banner_noti" style="width: 100%;display:flex;justify-content:center;"> *}
+              {* <img src="/img/asd/Content_pages/notifications/noti_{$language.iso_code}.webp" style="max-width: 600px;margin:auto;" /> *}
+            {* </div> *}
+          </div>
         </div>
 
 
@@ -709,6 +713,18 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     {* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> *}
     <script>
+
+      function changeImgBanner(tab){
+          const tabid = tab.getAttribute("aria-controls");
+          const banner = document.querySelector(".banner-myaccount img");
+          console.log(tab);
+          if (tabid === 'notification') { // Corrected 'notication' to 'notification'
+              banner.setAttribute("src", "/img/asd/Content_pages/notifications/noti_{$language.iso_code}.webp");
+            }else{ 
+              banner.setAttribute("src", "/img/asd/Content_pages/account/account_{$language.iso_code}.webp");
+          }
+      }
+
     
       var myLineChart = new Chart(document.getElementById('myChart').getContext('2d'),
         {
