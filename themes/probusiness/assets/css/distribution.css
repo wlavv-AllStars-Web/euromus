@@ -1794,10 +1794,22 @@ input[type="number"] {
   display: flex;
   gap: 1rem;
   align-items: center;
+  padding: 2rem;
+  background: #fff;
+  transition: all 0.3s ease-in-out;
 }
+
+#checkout .ets_payment_method .img-module:hover {
+  box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+  background: #f6f6f6;
+  transition: all 0.3s ease-in-out;
+}
+
+
 #checkout .ets_payment_method .img-module .payment-description{
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  gap: 0.5rem;
   align-items: center;
 }
 
