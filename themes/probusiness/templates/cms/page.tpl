@@ -1025,7 +1025,7 @@
         }
 
         .line-info{
-          max-width: 52%;
+          max-width: 55%;
           width: 100%;
         }
 
