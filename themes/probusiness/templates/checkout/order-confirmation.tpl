@@ -20,16 +20,16 @@
             {/block}
 
             <div style="text-align: center;">
-              <p>Thank you for your purchase at <strong>All Stars Distribution</strong></p>
+              <p>{l s="Thank you for your purchase at" d="Shop.Theme.OrderConfirmation"} <strong>All Stars Distribution</strong></p>
               <br>
-              <p>Your order has been received.</p>
+              <p>{l s="Your order has been received." d="Shop.Theme.OrderConfirmation"}</p>
               <br>
-              <p>Once confirmed, an email will be sent within 48 hours with the total to be paid and a summary of the order. Please do not make the payment until you receive the email confirming the order.</p>
+              <p>{l s="Once confirmed, an email will be sent within 48 hours with the total to be paid and a summary of the order. Please do not make the payment until you receive the email confirming the order." d="Shop.Theme.OrderConfirmation"}</p>
               <br>
-              <p>Order reference: <strong>{$order.details.reference}</strong></p>
+              <p>{l s="Order reference:" d="Shop.Theme.OrderConfirmation"}<strong>{$order.details.reference}</strong></p>
               <br>
               <div>
-                <a class="btn btn-default btn-view-history" href="{$link->getPageLink('my-account')}" title="Go to your order history page">  View your order history </a>
+                <a class="btn btn-default btn-view-history" href="{$link->getPageLink('my-account')}" title="Go to your order history page">{l s="View your order history" d="Shop.Theme.OrderConfirmation"}</a>
               </div>
             </div>
 
