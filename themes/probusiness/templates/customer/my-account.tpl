@@ -62,7 +62,7 @@
         <a class="nav-link" id="profile-tab" title="{l s="Profile" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"  onclick="changeImgBanner(this)"><i class="fa fa-user website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-bell"></i></a>
+        <a class="nav-link ball_notification" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-bell"></i></a>
       </li>
       {* <li class="setNameTitle" style="width: 100%;display:flex;justify-content: center;font-size:30px;color:#666;font-weight:700;">
         titulo

@@ -2460,6 +2460,32 @@ textarea {
   font-size: 16px;
   border-left: 1px solid #d8d8d8;
 }
+.ball_notification{
+  position: relative;
+}
+#notification-tab.ball_notification::after{
+  content: '';
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #f13340;
+  right: 2px;
+  top: 2px;
+}
+
+#top-menu li.ball_notification::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f13340;
+  right: 83px;
+  top: 4px;
+  z-index: 999999;
+}
+
 
 .card-status-myaccount {
   display: flex;
