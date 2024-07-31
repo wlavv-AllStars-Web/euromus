@@ -5,6 +5,11 @@
       <div class="card-block">
         <div class="row">
           <div class="col-md-12">
+            <div class="banner_order_confirmation" style="max-width: 1350px;display:flex;justify-content:center;margin-bottom:2rem;">
+              <img src="/img/asd/Content_pages/order-confirmation/orderconf_{$language.iso_code}.webp" style="width: 100%;height:auto;" />
+            </div>
+          </div>
+          <div class="col-md-12" style="padding: 2rem 0;">
 
             {block name='order_confirmation_header'}
               <h3 class="h1 card-title" style="text-align: center;">
