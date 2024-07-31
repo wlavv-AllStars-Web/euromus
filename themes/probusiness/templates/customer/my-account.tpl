@@ -62,7 +62,7 @@
         <a class="nav-link" id="profile-tab" title="{l s="Profile" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"  onclick="changeImgBanner(this)"><i class="fa fa-user website_blue font-size-40"></i></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link ball_notification" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-bell"></i></a>
+        <a class="nav-link" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-bell"></i></a>
       </li>
       {* <li class="setNameTitle" style="width: 100%;display:flex;justify-content: center;font-size:30px;color:#666;font-weight:700;">
         titulo
@@ -694,9 +694,108 @@
 
         <div class="tab-pane fade" id="notification" role="tabpanel" aria-labelledby="notification-tab">
           <div class="content_notification">
-            {* <div class="banner_noti" style="width: 100%;display:flex;justify-content:center;"> *}
-              {* <img src="/img/asd/Content_pages/notifications/noti_{$language.iso_code}.webp" style="max-width: 600px;margin:auto;" /> *}
-            {* </div> *}
+            
+          {if count($messages) > 0}
+              <div class="col-sm-12 text-center px-0">
+                  <div class="spacer-20"></div>
+                  <div class="row" style="max-width: 1350px; margin: 0 auto;">
+                    {* <div class="col-lg-12">
+                        <div class="row">
+                            <div class="col-lg-3"></div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+                                <div style="border: 1px solid #fff; background-color: #2196F3;padding: 10px; text-align: center; margin: 0 20px;box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.05)">
+                                    <i class="fa fa-gbp hidden-xs" style="color: #fff; font-size: 50px;"></i> <div class="spacer-20 hidden-xs"></div>
+                                    <div style="color: #fff; font-size: 20px;">1 <i class="fa fa-eur"></i> = {$pound|string_format:"%.4f"} <i class="fa fa-gbp"></i></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+                                <div style="border: 1px solid #fff; background-color: #009688;padding: 10px; text-align: center; margin: 0 20px;box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.05)">
+                                    <i class="fa fa-usd hidden-xs" style="color: #fff; font-size: 50px;"></i> <div class="spacer-20 hidden-xs"></div>
+                                    <div style="color: #fff; font-size: 20px;">1 <i class="fa fa-eur"></i> = {$dollar|string_format:"%.4f"} <i class="fa fa-usd"></i></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-2 col-md-4 col-sm-4 col-xs-12">
+                                <div style="border: 1px solid #fff; background-color: #ef4f4c;padding: 10px; text-align: center; margin: 0 20px;box-shadow: 1px 0px 20px rgba(0, 0, 0, 0.05)">
+                                    <i class="fa fa-cny hidden-xs" style="color: #fff; font-size: 50px;"></i> <div class="spacer-20 hidden-xs"></div>
+                                    <div style="color: #fff; font-size: 20px;">1 <i class="fa fa-eur"></i> = {$yen|string_format:"%.4f"} <i class="fa fa-cny"></i></div>
+                                </div>
+                            </div>
+                            <div class="col-lg-3"></div>
+                        </div>
+                        <div class="spacer-20"></div>
+                    </div> *}
+                    <div class="col-lg-12 px-0">
+                        <div class="panel" style="box-shadow: none;">
+                          {* <div class="panel-heading" style="background-color: #eee;border: 1px solid #999;">
+                              <h3 style="padding-left: 17px;margin: 0px;color: #777;font-weight: bold;">{l s='Important information!'}</h3>
+                          </div> *}
+                          <div class="panel-body">
+                              <ul id="clients-messages">
+                                  {foreach $messages AS $message}            
+                                    {* <pre>{print_r($message,1)}</pre> *}
+                                      <li class="notification-item" >
+                                              {*<div style="min-height: 25px;" class="{if $message['message_type'] == 1} alert alert-danger {else if $message['message_type'] == 2} alert alert-warning {else if $message['message_type'] == 3} alert alert-success {else if $message['message_type'] == 4} alert alert-info{/if}" role="alert">*}
+                                              <div class="notification-container" role="alert">
+                                                <div class="notification-header">
+                                                  <div class="title-notification"><i class="fa-solid fa-circle-info"></i>{$message["title"]}</div>
+                                                  <div class="date-notification"><i class="fa-regular fa-calendar"></i>{$message["creation_date"]|date_format:"%d-%m-%Y"}</div>
+                                                </div>
+                                                <div class="notification-body">
+                                                  <div class="message-notification">{$message["message_"|cat:$language.iso_code]}</div>
+                                                </div>
+                                              </div>
+                                              <div class="spacer-10"></div>
+                                          </li>
+                                      {/foreach}
+                                  </ul>
+                            </div>
+                        </div>
+                      </div>
+                  </div>
+                  <div class="spacer-20"></div>
+              </div>
+              
+              <style>
+                  .alert.alert-danger::before {  content: none; }
+                  .alert.alert-warning::before { content: none; }
+                  .alert.alert-info::before {    content: none; }
+                  .alert.alert-success::before { content: none; }
+                  
+                  .fa:hover::before{ color: white; }
+                  
+                  #clients-messages > li{ font-size: 18px; border-bottom: 1px solid #ddd; margin-bottom: 10px; min-height: 25px; color: #555; }
+              </style>
+              <script>
+                document.addEventListener("DOMContentLoaded", function() {
+                  // add notification ball
+                  if({$messages|count} > 0){
+                    document.querySelector("#notification-tab").classList.add("ball_notification");
+                  }
+
+                  const colors = [
+                      '#a2b3ac', 
+                      '#cfe2ff',
+                      '#e2e3e5', 
+                      '#fff3cd'
+                  ];
+
+                    
+                    function getRandomColor() {
+                      return colors[Math.floor(Math.random() * colors.length)];
+                    }
+
+                    
+                    const headers = document.querySelectorAll('.notification-header');
+
+                    
+                    headers.forEach(function(header) {
+                        header.style.backgroundColor = getRandomColor();
+                    });
+                });
+              </script>
+          {/if}
+
+
           </div>
         </div>
 
@@ -717,7 +816,6 @@
       function changeImgBanner(tab){
           const tabid = tab.getAttribute("aria-controls");
           const banner = document.querySelector(".banner-myaccount img");
-          console.log(tab);
           if (tabid === 'notification') { // Corrected 'notication' to 'notification'
               banner.setAttribute("src", "/img/asd/Content_pages/notifications/noti_{$language.iso_code}.webp");
             }else{ 

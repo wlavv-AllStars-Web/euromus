@@ -204,7 +204,8 @@ class MyAccountController extends MyAccountControllerCore
             'mostBoughtProducts' => self::getMostBoughtProducts($idCustomer),
             'orderByDateAndStatus' => self::getOrderByDateAndStatus($idCustomer),
             'bestSellers' => self::bestSellers(),
-            'top' => self::getTop100()
+            'top' => self::getTop100(),
+            'messages' => self::getNotifications()
         ));
 
         // echo '<pre>'. print_r(self::ordersByBrand($idCustomer)['brands'],1) .'</pre>';
@@ -339,6 +340,13 @@ class MyAccountController extends MyAccountControllerCore
         }
 
     }
+
+    public function getNotifications() {
+        $messages = Db::getInstance()->executeS('SELECT * FROM '._DB_PREFIX_.'asd_alert_messages WHERE deleted = 0 AND message_status = 1 ORDER BY id DESC');
+
+        return $messages;
+    }
+
 
     public function getCounters($idCustomer){
         
