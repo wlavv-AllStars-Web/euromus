@@ -1950,6 +1950,10 @@ input[type="number"] {
   margin-top: 1rem;
 }
 
+#blockcart-modal .subtitle-modal-cart {
+  font-size: 16px;
+}
+
 .checkout-product-info {
   display: flex;
   gap: 2rem;
