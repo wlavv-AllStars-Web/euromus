@@ -141,6 +141,27 @@ body #wrapper {
 #blockcart-modal .cart-content .btn.btn-secondary:hover {
   background-color: #7e7e7e;
 }
+
+#blockcart-modal .modal-header .divide-right{
+  border-right: 1px solid #333;
+}
+
+#blockcart-modal .modal-header-right {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#blockcart-modal .modal-header-right p{
+  color: #fff;
+  margin: 0;
+  line-height: 27px;
+}
+#blockcart-modal .modal-header-right .close{
+  color: #333;
+  text-shadow: none;
+  opacity: 1;
+
+}
 /*  */
 .cart-grid-right {
   display: flex;
