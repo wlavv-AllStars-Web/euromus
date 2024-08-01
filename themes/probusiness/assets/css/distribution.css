@@ -1975,6 +1975,18 @@ input[type="number"] {
   padding: 0;
 }
 
+#checkout .ets_opc_error{
+  position: absolute;
+}
+
+#checkout .btn-contact-us-link{
+  color: #0273EB !important;
+}
+#checkout .btn-contact-us-link{
+  color: #0273EB !important;
+  text-decoration: underline;
+}
+
 #checkout .btn-contact-us {
   text-align: center;
   background: #ffffff;
@@ -2269,6 +2281,7 @@ body#checkout section.checkout-step .address-item.selected {
 #conditions-to-approve li .float-xs-left {
   display: flex;
   align-items: center;
+  justify-content: center;
 }
 
 #payment-confirmation .btn:hover {
