@@ -22,45 +22,74 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
-        <h4 class="modal-title h6 text-xs-center" id="myModalLabel"><i class="material-icons">&#xE876;</i>{l s='Product successfully added to your shopping cart' d='Shop.Theme.Checkout'}</h4>
+        <div class="col-lg-6 divide-right">
+          <h4 class="modal-title h6 text-xs-center" id="myModalLabel"><i class="material-icons">&#xE876;</i>{l s='Product successfully added to your shopping cart' d='Shop.Theme.Checkout'}</h4>
+        </div>
+        <div class="col-lg-6 modal-header-right">
+          {if $cart.products_count > 1}
+            <p class="cart-products-count">{l s='There are %products_count% items in your cart.' sprintf=['%products_count%' => $cart.products_count] d='Shop.Theme.Checkout'}</p>
+          {else}
+            <p class="cart-products-count">{l s='There is %product_count% item in your cart.' sprintf=['%product_count%' =>$cart.products_count] d='Shop.Theme.Checkout'}</p>
+          {/if}
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
       </div>
       <div class="modal-body">
         <div class="row">
-          <div class="col-md-5 col-sm-12 col-xs-12 divide-right">
-            <div class="row">
-              <div class="col-md-6">
-                <img class="product-image" src="{$product.cover.large.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image">
+          <div class="col-md-6 col-sm-12 col-xs-12 divide-right">
+            <div class="row" style="display: flex;align-items:center;">
+              <div class="col-md-4">
+                {* <img class="product-image" src="{$product.cover.large.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image"> *}
+                <img
+                  class="product-image"
+                  src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, '600')}"
+                  loading="lazy"
+                  width="125"
+                  height="125"
+                  style="width:100%;height:auto;"
+                />
               </div>
-              <div class="col-md-6">
+              <div class="col-md-8">
+              {* <pre>{print_r($product,1)}</pre> *}
                 <h6 class="h6 product-name">{$product.name|escape:'html':'UTF-8'}</h6>
                 <p class="subtitle-modal-cart">{$product.price|escape:'html':'UTF-8'}</p>
                 {hook h='displayProductPriceBlock' product=$product type="unit_price"}
+                <span><strong>{l s="Reference" d="Shop.Theme.Checkout"}</strong>: {$product.reference|escape:'html':'UTF-8'}</span><br>
                 {foreach from=$product.attributes item="property_value" key="property"}
                   <span><strong>{$property|escape:'html':'UTF-8'}</strong>: {$property_value|escape:'html':'UTF-8'}</span><br>
                 {/foreach}
-                <p class="subtitle-modal-cart"><strong>{l s='Quantity:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$product.cart_quantity|escape:'html':'UTF-8'}</p>
+                <p><strong>{l s='Quantity:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$product.cart_quantity|escape:'html':'UTF-8'}</p>
               </div>
             </div>
           </div>
-          <div class="col-md-7 col-sm-12 col-xs-12">
+          <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="cart-content">
-              {if $cart.products_count > 1}
-                <p class="cart-products-count">{l s='There are %products_count% items in your cart.' sprintf=['%products_count%' => $cart.products_count] d='Shop.Theme.Checkout'}</p>
-              {else}
-                <p class="cart-products-count">{l s='There is %product_count% item in your cart.' sprintf=['%product_count%' =>$cart.products_count] d='Shop.Theme.Checkout'}</p>
-              {/if}
-              <p class="subtitle-modal-cart"><strong>{l s='Total products:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.subtotals.products.value|escape:'html':'UTF-8'}</p>
-              {* <p><strong>{l s='Total shipping:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.subtotals.shipping.value|escape:'html':'UTF-8'} {hook h='displayCheckoutSubtotalDetails' subtotal=$cart.subtotals.shipping}</p> *}
+                {* {debug} *}
+              <p><strong>{l s='Value' d='Shop.Theme.Checkout'} :</strong>&nbsp;{$cart.totals.total_excluding_tax.value} ({l s="ExVAT" d='Shop.Theme.Checkout'})</p>
+              <p><strong>{l s='VAT' d='Shop.Theme.Checkout'} :</strong>&nbsp;€ {($cart.totals.total.amount - $cart.totals.total_excluding_tax.amount)|number_format:2}</p>
+              <p>
+                <strong>{l s='Shipping' d='Shop.Theme.Checkout'}  :</strong>&nbsp;
+                {if $cart.subtotals.shipping.amount|escape:'html':'UTF-8' > 0} 
+                  {* {$cart.subtotals.shipping.amount|escape:'html':'UTF-8'} *}
+                  ({l s="To be defined" d="Shop.Theme.Checkout"})
+                {else} 
+                  ({l s="To be defined" d="Shop.Theme.Checkout"})
+                {/if}{hook h='displayCheckoutSubtotalDetails' subtotal=$cart.subtotals.shipping}</p>
+              <p><strong>{l s='Total' d='Shop.Theme.Checkout'} :</strong>&nbsp;{$cart.subtotals.products.value|escape:'html':'UTF-8'}</p>
+
+              {* ---------------------------------------- *}
+              {* <p class="subtitle-modal-cart"><strong>{l s='Total products:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.subtotals.products.value|escape:'html':'UTF-8'}</p> *}
+              
               {* <pre>{print_r($cart.totals.total_excluding_tax,1)}</pre> *}
-              {if $cart.subtotals.tax}
+              {* <p><strong>{$cart.subtotals.shipping.label|escape:'html':'UTF-8'} :</strong>&nbsp;{$cart.subtotals.shipping.value|escape:'html':'UTF-8'} {hook h='displayCheckoutSubtotalDetails' subtotal=$cart.subtotals.shipping}</p> *}
+              {* {if $cart.subtotals.tax}
               	<p><strong>{$cart.subtotals.tax.label|escape:'html':'UTF-8'}</strong>&nbsp;{$cart.subtotals.tax.value|escape:'html':'UTF-8'}</p>
-              {/if}
+              {/if} *}
               {* <p><strong>{l s='Total:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.totals.total.value|escape:'html':'UTF-8'} {$cart.labels.tax_short|escape:'html':'UTF-8'}</p> *}
-              <p class="subtitle-modal-cart"><strong>{l s='Total:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.totals.total_excluding_tax.value} {$cart.totals.total_excluding_tax.label|escape:'html':'UTF-8'}</p>
-              {hook h='displayCartModalContent' product=$product}
+              {* <p class="subtitle-modal-cart"><strong>{l s='Total' d='Shop.Theme.Checkout'} :</strong>&nbsp;{$cart.totals.total_excluding_tax.value} {$cart.totals.total_excluding_tax.label|escape:'html':'UTF-8'}</p>
+              {hook h='displayCartModalContent' product=$product} *}
               <div class="cart-content-btn">
                 <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
                 {* <a href="{$cart_url|escape:'html':'UTF-8'}" class="btn btn-primary"><i class="material-icons">&#xE876;</i>{l s='proceed to checkout' d='Shop.Theme.Actions'}</a> *}
