@@ -1130,7 +1130,7 @@ form label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #a2b3ac;
+  background: #cfe2ff;
   color: #222;
   padding: 0.5rem;
 }
@@ -1179,6 +1179,14 @@ form label {
   color: #0273eb !important;
 }
 
+#order_history .link-ref a{
+  color:#0273EB !important;
+}
+#order_history .link-ref a:hover{
+  color:#0273EB !important;
+  text-decoration: underline;
+}
+
 #my-account #addresses.active.in {
   display: flex;
   flex-direction: column;
@@ -1196,6 +1204,10 @@ form label {
 #menu-client .nav-item a i {
   font-size: 32px;
   color: #0273eb;
+}
+#menu-client .nav-item a i:hover::before {
+  font-size: 32px;
+  color: #0273eb !important;
 }
 
 #menu-client .nav-item {

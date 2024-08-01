@@ -66,7 +66,7 @@
         <a class="nav-link" id="warranty-tab" title="{l s="Warranty" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#warranty" role="tab" aria-controls="warranty" aria-selected="false" style="padding:0.5rem 12px;" onclick="changeImgBanner(this)"><img src="/img/asd/warranty_icon.svg" width="37" /></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="contact-tab" title="{l s="Contact" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false" style="padding:0.5rem 9px;" onclick="changeImgBanner(this)"><img src="/img/asd/email_icon.svg" width="43" /></a>
+        <a class="nav-link" id="contact-tab" title="{l s="Contact" d="Shop.Theme.Statistics"}" data-toggle="tab" href="{$link->getPageLink('contact')}" role="" aria-controls="contact" aria-selected="false" style="padding:0.5rem 9px;" ><img src="/img/asd/email_icon.svg" width="43" /></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-bell"></i></a>
@@ -213,24 +213,32 @@
             <table class="table table-striped table-bordered table-labeled hidden-sm-down">
               <thead class="thead-default">
                 <tr>
-                  <th>{l s='Order reference' d='Shop.Theme.Customeraccount'}</th>
                   <th>{l s='Date' d='Shop.Theme.Customeraccount'}</th>
+                  <th>{l s='Order reference' d='Shop.Theme.Customeraccount'}</th>
+                  <th>{l s='Order Id' d='Shop.Theme.Customeraccount'}</th>
                   <th>{l s='Total price' d='Shop.Theme.Customeraccount'}</th>
-                  <th class="hidden-md-down">{l s='Payment' d='Shop.Theme.Customeraccount'}</th>
                   <th class="hidden-md-down">{l s='Status' d='Shop.Theme.Customeraccount'}</th>
+                  <th>{l s='Carrier' d='Shop.Theme.Customeraccount'}</th>
+                  <th>{l s='Tracking' d='Shop.Theme.Customeraccount'}</th>
+                  {* <th class="hidden-md-down">{l s='Payment' d='Shop.Theme.Customeraccount'}</th> *}
                   <th>{l s='Invoice' d='Shop.Theme.Customeraccount'}</th>
-                  <th>&nbsp;</th>
+                  {* <th>&nbsp;</th> *}
                 </tr>
               </thead>
               <tbody>
             
               {foreach from=$orders item=order}
-                {* <pre>{print_r($order.history.current,1)}</pre> *}
+                {* <pre>{print_r($order.shipping,1)}</pre> *}
                   <tr data-state="{$order.history.current.id_order_state}">
-                    <th scope="row">{$order.details.reference|escape:'html':'UTF-8'}</th>
                     <td>{$order.details.order_date|escape:'html':'UTF-8'}</td>
+                    <th scope="row" class="link-ref">
+                      <a href="{$order.details.details_url|escape:'html':'UTF-8'}" data-link-action="view-order-details">
+                        {$order.details.reference|escape:'html':'UTF-8'}
+                      </a>
+                    </th>
+                    <td class="text-xs-center">{$order.history.current.id_order|escape:'html':'UTF-8'}</td>
                     <td class="text-xs-center">{$order.totals.total.value|escape:'html':'UTF-8'}</td>
-                    <td class="hidden-md-down">{$order.details.payment|escape:'html':'UTF-8'}</td>
+                    {* <td class="hidden-md-down">{$order.details.payment|escape:'html':'UTF-8'}</td> *}
                     <td>
                       <span
                         class="label label-pill {$order.history.current.contrast|escape:'html':'UTF-8'}"
@@ -239,6 +247,16 @@
                         {$order.history.current.ostate_name|escape:'html':'UTF-8'}
                       </span>
                     </td>
+                    <td>
+                      {foreach from=$order.shipping item=line}
+                        {$line.carrier_name}
+                      {/foreach}
+                    </td>
+                    <td class="text-xs-center">
+                      {foreach from=$order.shipping item=line}
+                        {$line.tracking}
+                      {/foreach}
+                    </td>
                     <td class="text-xs-center hidden-md-down">
                       {if $order.details.invoice_url}
                         <a href="{$order.details.invoice_url|escape:'html':'UTF-8'}"><i class="material-icons">&#xE415;</i></a>
@@ -246,14 +264,14 @@
                         -
                       {/if}
                     </td>
-                    <td class="text-xs-center order-actions">
+                    {* <td class="text-xs-center order-actions">
                       <a href="{$order.details.details_url|escape:'html':'UTF-8'}" data-link-action="view-order-details">
                         {l s='Details' d='Shop.Theme.Actions'}
-                      </a>
+                      </a> *}
                       {* {if $order.details.reorder_url}
                         <a href="{$order.details.reorder_url|escape:'html':'UTF-8'}">{l s='Reorder' d='Shop.Theme.Actions'}</a>
                       {/if} *}
-                    </td>
+                    {* </td> *}
                   </tr>
                 {/foreach}
               </tbody>
@@ -780,32 +798,33 @@
                   
                   #clients-messages > li{ font-size: 18px; border-bottom: 1px solid #ddd; margin-bottom: 10px; min-height: 25px; color: #555; }
               </style>
+
               <script>
                 document.addEventListener("DOMContentLoaded", function() {
-                  // add notification ball
+                  
                   if({$messages|count} > 0){
                     document.querySelector("#notification-tab").classList.add("ball_notification");
                   }
 
-                  const colors = [
-                      '#a2b3ac', 
-                      '#cfe2ff',
-                      '#e2e3e5', 
-                      '#fff3cd'
-                  ];
+                  // const colors = [
+                  //     '#a2b3ac', 
+                  //     '#cfe2ff',
+                  //     '#e2e3e5', 
+                  //     '#fff3cd'
+                  // ];
 
                     
-                    function getRandomColor() {
-                      return colors[Math.floor(Math.random() * colors.length)];
-                    }
+                  //   function getRandomColor() {
+                  //     return colors[Math.floor(Math.random() * colors.length)];
+                  //   }
 
                     
-                    const headers = document.querySelectorAll('.notification-header');
+                  //   const headers = document.querySelectorAll('.notification-header');
 
                     
-                    headers.forEach(function(header) {
-                        header.style.backgroundColor = getRandomColor();
-                    });
+                  //   headers.forEach(function(header) {
+                  //       header.style.backgroundColor = getRandomColor();
+                  //   });
                 });
               </script>
           {/if}
