@@ -32,7 +32,7 @@
           <div class="col-md-5 col-sm-12 col-xs-12 divide-right">
             <div class="row">
               <div class="col-md-6">
-                <img class="product-image" src="{$product.cover.medium.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image">
+                <img class="product-image" src="{$product.cover.large.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image">
               </div>
               <div class="col-md-6">
                 <h6 class="h6 product-name">{$product.name|escape:'html':'UTF-8'}</h6>
