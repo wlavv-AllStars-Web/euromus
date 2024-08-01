@@ -41,9 +41,9 @@
       <li class="nav-item">
         <a class="nav-link active" title="{l s="Orders history" d="Shop.Theme.Statistics"}" id="order_history-tab" data-toggle="tab" href="#order_history" role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa fa-list-ol website_blue font-size-40"></i></a>
       </li>
-      <li class="nav-item">
+      {* <li class="nav-item">
         <a class="nav-link" title="{l s="Dashboard" d="Shop.Theme.Statistics"}"  id="dashboard-tab" data-toggle="tab" href="#dashboard" role="tab" aria-controls="dashboard" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa fa-dashboard website_blue font-size-40"></i></a>
-      </li>
+      </li> *}
       
       <li class="nav-item">
         <a class="nav-link" id="statistics-tab" title="{l s="Statistics" d="Shop.Theme.Statistics"}"  data-toggle="tab" href="#statistics" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-chart-column"></i></a>
@@ -362,8 +362,12 @@
           </div>
         </div>
 
-        <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">  
-          <div class="col-sm-12 text-center">
+        {* <div class="tab-pane fade" id="dashboard" role="tabpanel" aria-labelledby="dashboard-tab">  
+          
+        </div> *}
+
+        <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">  
+          <div class="col-sm-12 text-center" style="margin-bottom: 2rem;">
               <div class="row statistics_container" style="max-width: 1350px; margin: 0 auto;display:flex;">
                   <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
                       <div>{l s='Total purchases per month' d='Shop.Theme.Customeraccount'}</div>
@@ -376,9 +380,6 @@
                   </div>
               </div>
           </div>
-        </div>
-
-        <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">  
           <div class="col-lg-7 col-md-12 col-sm-12 col-xs-12">
             <div class="col-lg-12">
               <div class="title-clientstatistics"  style="font-size: 14px;position: relative; top: 20px;text-align:center;">{l s='Best seller products' d="Shop.Theme.Statistics"}</div>
@@ -474,8 +475,16 @@
                               <div style="background-color: white;display: flex;">
                               {* {$product|print_r} *}
 
-
-                                  <img style="max-height:125px;margin: 0 auto" class="replace-2x img-responsive" src="{$product.image_path}" alt="{$product['name']}" title="{$product.name}" itemprop="image"/>
+                                <img
+                                src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, 'thumb')}"
+                                alt="{$product.name|truncate:30:'...'}"
+                                loading="lazy"
+                                data-full-size-image-url="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer)}"
+                                width="125"
+                                height="125"
+                                style="width:125px;height:auto;"
+                                />
+                                  {* <img style="max-height:125px;margin: 0 auto" class="replace-2x img-responsive" src="{$product.image_path}" alt="{$product['name']}" title="{$product.name}" itemprop="image"/> *}
                               </div>
                               <div style="border-top: 1px solid #C8C8C8; font-size: 14px; color: #666;padding: 5px;">{$product.name|truncate:25}</div>
                               <div style="font-size: 14px; color: #666;">{$product.reference|truncate:25}</div>
@@ -501,9 +510,17 @@
             <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 1rem;">
                 <div class="statistics_container" style="padding: 0; margin: 0px;">
                     <a class="product_img_link"	href="https://www.all-stars-distribution.com/{$product['id_product']}-product.html" title="{$product['name']}" itemprop="url" style="width: 100%; text-align: center;">
-                          <div style="background-color: white;display: flex;">
+                          <div style="background-color: white;display: flex;justify-content:center;">
 
-                              <img style="max-height:125px;margin: 0 auto" class="replace-2x img-responsive" src="{$product.image_path}" alt="{$product['name']}" title="{$product['name']}" itemprop="image"/>
+                            <img
+                            src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, 'thumb')}"
+                            alt="{$product.name|truncate:30:'...'}"
+                            loading="lazy"
+                            data-full-size-image-url="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer)}"
+                            width="125"
+                            height="125"
+                            style="width:125px;height:auto;"
+                            />
                           </div>
                           <div style="border-top: 1px solid #C8C8C8; height: 45px; font-size: 14px; color: #666;overflow: hidden;display:flex;align-items:center;">
                               <div style=" width: 50px;height: 100%;line-height: 30px;font-size: 20px;background-color: #fff;padding: 10px;border-right: 1px solid #c8c8c8; text-align: center;">{$product['number']}</div> 
