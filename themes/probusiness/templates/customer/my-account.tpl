@@ -213,15 +213,15 @@
             <table class="table table-striped table-bordered table-labeled hidden-sm-down">
               <thead class="thead-default">
                 <tr>
-                  <th>{l s='Date' d='Shop.Theme.Customeraccount'}</th>
-                  <th>{l s='Order reference' d='Shop.Theme.Customeraccount'}</th>
-                  <th>{l s='Order Id' d='Shop.Theme.Customeraccount'}</th>
-                  <th>{l s='Total price' d='Shop.Theme.Customeraccount'}</th>
-                  <th class="hidden-md-down">{l s='Status' d='Shop.Theme.Customeraccount'}</th>
-                  <th>{l s='Carrier' d='Shop.Theme.Customeraccount'}</th>
-                  <th>{l s='Tracking' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="text-xs-center">{l s='Date' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="text-xs-center">{l s='Order reference' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="text-xs-center">{l s='Order Id' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="text-xs-center">{l s='Total price' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="hidden-md-down text-xs-center">{l s='Status' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="text-xs-center">{l s='Carrier' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="text-xs-center">{l s='Tracking' d='Shop.Theme.Customeraccount'}</th>
                   {* <th class="hidden-md-down">{l s='Payment' d='Shop.Theme.Customeraccount'}</th> *}
-                  <th>{l s='Invoice' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="text-xs-center">{l s='Invoice' d='Shop.Theme.Customeraccount'}</th>
                   {* <th>&nbsp;</th> *}
                 </tr>
               </thead>
@@ -230,8 +230,8 @@
               {foreach from=$orders item=order}
                 {* <pre>{print_r($order.shipping,1)}</pre> *}
                   <tr data-state="{$order.history.current.id_order_state}">
-                    <td>{$order.details.order_date|escape:'html':'UTF-8'}</td>
-                    <th scope="row" class="link-ref">
+                    <td class="text-xs-center">{$order.details.order_date|escape:'html':'UTF-8'}</td>
+                    <th scope="row" class="link-ref text-xs-center">
                       <a href="{$order.details.details_url|escape:'html':'UTF-8'}" data-link-action="view-order-details">
                         {$order.details.reference|escape:'html':'UTF-8'}
                       </a>
@@ -239,7 +239,7 @@
                     <td class="text-xs-center">{$order.history.current.id_order|escape:'html':'UTF-8'}</td>
                     <td class="text-xs-center">{$order.totals.total.value|escape:'html':'UTF-8'}</td>
                     {* <td class="hidden-md-down">{$order.details.payment|escape:'html':'UTF-8'}</td> *}
-                    <td>
+                    <td class="text-xs-center">
                       <span
                         class="label label-pill {$order.history.current.contrast|escape:'html':'UTF-8'}"
                         style="background-color:{$order.history.current.color|escape:'html':'UTF-8'}"
@@ -247,7 +247,7 @@
                         {$order.history.current.ostate_name|escape:'html':'UTF-8'}
                       </span>
                     </td>
-                    <td>
+                    <td  class="text-xs-center">
                       {foreach from=$order.shipping item=line}
                         {$line.carrier_name}
                       {/foreach}
