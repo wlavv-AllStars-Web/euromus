@@ -852,10 +852,23 @@
           const banner = document.querySelector(".banner-myaccount img");
           if (tabid === 'notification') { // Corrected 'notication' to 'notification'
               banner.setAttribute("src", "/img/asd/Content_pages/notifications/noti_{$language.iso_code}.webp");
-            }else{ 
+          }else if(tabid === 'order_history'){
+            banner.setAttribute("src", "/img/asd/Content_pages/history/order_history_{$language.iso_code}.webp");
+          }else if(tabid === 'statistics'){
+            banner.setAttribute("src", "/img/asd/Content_pages/statistics/statistics_{$language.iso_code}.webp");
+          }else if(tabid === 'shipping'){
+            banner.setAttribute("src", "/img/asd/Content_pages/shipping/shipping_costs_{$language.iso_code}.webp");
+          }else if(tabid === 'warranty'){
+            banner.setAttribute("src", "/img/asd/Content_pages/warranty/warranty_{$language.iso_code}.webp");
+          }else{ 
               banner.setAttribute("src", "/img/asd/Content_pages/account/account_{$language.iso_code}.webp");
           }
       }
+
+      document.addEventListener("DOMContentLoaded", (event) => {
+        const activetab = document.querySelector("#menu-client li .active")
+        changeImgBanner(activetab)
+      })
 
     
       var myLineChart = new Chart(document.getElementById('myChart').getContext('2d'),
