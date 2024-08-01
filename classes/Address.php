@@ -93,6 +93,11 @@ class AddressCore extends ObjectModel
     /** @var string DNI number */
     public $dni;
 
+    public $door_number;
+    public $building;
+    public $floor;
+    public $stairs;
+
     /** @var string Object creation date */
     public $date_add;
 
@@ -135,6 +140,10 @@ class AddressCore extends ObjectModel
             'address1' => ['type' => self::TYPE_STRING, 'validate' => 'isAddress', 'required' => true, 'size' => 128],
             'address2' => ['type' => self::TYPE_STRING, 'validate' => 'isAddress', 'size' => 128],
             'postcode' => ['type' => self::TYPE_STRING, 'validate' => 'isPostCode', 'size' => 12],
+            'door_number' => ['type' => self::TYPE_STRING, 'validate' => 'isAddress', 'size' => 128],
+            'building' => ['type' => self::TYPE_STRING, 'validate' => 'isAddress', 'size' => 128],
+            'floor' => ['type' => self::TYPE_STRING, 'validate' => 'isAddress', 'size' => 128],
+            'stairs' => ['type' => self::TYPE_STRING, 'validate' => 'isAddress', 'size' => 128],
             'city' => ['type' => self::TYPE_STRING, 'validate' => 'isCityName', 'required' => true, 'size' => 64],
             'other' => ['type' => self::TYPE_STRING, 'validate' => 'isMessage', 'size' => 300],
             'phone' => ['type' => self::TYPE_STRING, 'validate' => 'isPhoneNumber', 'size' => 32],
