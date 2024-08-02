@@ -148,6 +148,7 @@ class ContactControllerCore extends FrontController
                                     '{message}' => Tools::nl2br(stripslashes($message)),
                                     '{email}' =>  $from,
                                     '{product_name}' => '',
+                                    '{firsname}' => Tools::getValue('name')
                                 );
 
                     if (isset($file_attachment['name'])) {
@@ -169,6 +170,9 @@ class ContactControllerCore extends FrontController
                         }
                     }
 
+                    // echo Tools::getValue('name');
+                    // exit;
+
                     if (!empty($contact->email)) {
                         if (!Mail::Send($this->context->language->id, 'contact', Mail::l('Message from contact form').' [no_sync]',
                             $var_list, 'pauloallstarsweb@gmail.com', $contact->name, null, null,
@@ -177,7 +181,7 @@ class ContactControllerCore extends FrontController
                         }
                         
                         Mail::Send($this->context->language->id, 'contact_form', Mail::l('Message from contact form').' [no_sync]',
-                            $var_list, 'pauloallstarsweb@gmail.com', $customer->firstname . ' ' . $customer->lastname, null, null,
+                            $var_list, 'pauloallstarsweb@outlook.com', $customer->firstname . ' ' . $customer->lastname, null, null,
                                     $file_attachment, null,    _PS_MAIL_DIR_, false, null, null, $from);
                     }
                 }
@@ -194,7 +198,7 @@ class ContactControllerCore extends FrontController
     public function setMedia()
     {
         parent::setMedia();
-        $this->addCSS(_THEME_CSS_DIR_.'contact-form.css');
+        $this->addCSS(_THEME_CSS_DIR_.'distribution.css');
         $this->addJS(_THEME_JS_DIR_.'contact-form.js');
         $this->addJS(_PS_JS_DIR_.'validate.js');
     }

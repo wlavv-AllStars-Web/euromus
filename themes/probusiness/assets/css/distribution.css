@@ -3621,7 +3621,15 @@ textarea {
     max-width: 1350px;
     margin: auto;
     text-align: center;
-}
+  }
+
+  .contact-form form {
+    margin-top: 2rem;
+  }
+
+  .contact-form #contact-form-group .form-control{ 
+    padding: 0.5rem 1rem !important;
+  }
 
   /* .form-footer div {
     width: 100%;
