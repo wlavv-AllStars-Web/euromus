@@ -42,19 +42,12 @@
             <div class="row" style="display: flex;align-items:center;">
               <div class="col-md-4">
                 {* <img class="product-image" src="{$product.cover.large.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image"> *}
-                <img
-                  class="product-image"
-                  src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, '600')}"
-                  loading="lazy"
-                  width="125"
-                  height="125"
-                  style="width:100%;height:auto;"
-                />
+                <img class="product-image" src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, 'thumb')}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image" style="width: 100%;">
               </div>
               <div class="col-md-8">
               {* <pre>{print_r($product,1)}</pre> *}
                 <h6 class="h6 product-name">{$product.name|escape:'html':'UTF-8'}</h6>
-                <p class="subtitle-modal-cart">{$product.price|escape:'html':'UTF-8'}</p>
+                <span><strong>{l s="Price" d="Shop.Theme.Checkout"}</strong>: {$product.price|escape:'html':'UTF-8'}</span>
                 {hook h='displayProductPriceBlock' product=$product type="unit_price"}
                 <span><strong>{l s="Reference" d="Shop.Theme.Checkout"}</strong>: {$product.reference|escape:'html':'UTF-8'}</span><br>
                 {foreach from=$product.attributes item="property_value" key="property"}
