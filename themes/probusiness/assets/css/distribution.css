@@ -1274,6 +1274,16 @@ form label {
 
 #menu-client {
   height: unset !important;
+  max-height: 50px;
+  overflow: hidden;
+}
+#menu-client .nav-item:hover{
+  cursor: pointer;
+  background: #fff;
+}
+#menu-client .nav-item:nth-child(8){
+  cursor:unset;
+  background: #f7f7f7;
 }
 
 #menu-client .nav-item a i {
