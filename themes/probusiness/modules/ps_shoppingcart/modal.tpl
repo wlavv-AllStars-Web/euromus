@@ -60,7 +60,7 @@
           <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="cart-content">
                 {* {debug} *}
-              <p><strong>{l s='Value' d='Shop.Theme.Checkout'} :</strong>&nbsp;{$cart.totals.total_excluding_tax.value} ({l s="ExVAT" d='Shop.Theme.Checkout'})</p>
+              <p><strong>{l s='Price' d='Shop.Theme.Checkout'} :</strong>&nbsp;{$cart.totals.total_excluding_tax.value} ({l s="ExVAT" d='Shop.Theme.Checkout'})</p>
               <p><strong>{l s='VAT' d='Shop.Theme.Checkout'} :</strong>&nbsp;€ {($cart.totals.total.amount - $cart.totals.total_excluding_tax.amount)|number_format:2}</p>
               <p>
                 <strong>{l s='Shipping' d='Shop.Theme.Checkout'}  :</strong>&nbsp;
