@@ -42,7 +42,7 @@
             <div class="row" style="display: flex;align-items:center;">
               <div class="col-md-4">
                 {* <img class="product-image" src="{$product.cover.large.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image"> *}
-                <img class="product-image" src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, 'thumb')}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image" style="width: 100%;">
+                <img class="product-image" src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, 'thumb')}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image" style="width: 100%;max-width:125px;">
               </div>
               <div class="col-md-8 details-product-modal">
               {* <pre>{print_r($product,1)}</pre> *}
