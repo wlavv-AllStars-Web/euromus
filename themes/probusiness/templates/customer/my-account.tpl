@@ -989,8 +989,9 @@ const totalArray = totalString.split(",").map(total => total.trim());
 
       const urlParams = new URLSearchParams(window.location.search);
       const tab = urlParams.get('tab');
+      // console.log(tab)
       if (tab) {
-          document.querySelector("#shipping-tab").click();
+          document.querySelector("#"+tab+"-tab").click();
       }
     });
 

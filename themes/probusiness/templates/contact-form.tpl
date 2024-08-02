@@ -27,18 +27,51 @@
 <pre>{$language_id|print_r}</pre> *}
 {block name='page_content'}
 
-<section class="contact-form" style="width:100%;max-width:1440px;">
-    {if isset($confirmation)}
-        <div class="confirmation-msg">
-            <p class="alert alert-success">{l s='Your message has been successfully sent to our team.'}</p>
-        </div>
 
-    {elseif isset($alreadySent)}
-        
-        <div class="confirmation-msg">
-            <p class="alert alert-warning">{l s='Your message has already been sent.'}</p>
-        </div>
-    {/if}
+<section class="contact-form" style="width:100%;max-width:1440px;">
+
+{if isset($confirmation)}
+    <div class="confirmation-msg">
+        <p class="alert alert-success">{l s='Your message has been successfully sent to our team.'}</p>
+    </div>
+
+{elseif isset($alreadySent)}
+    
+    <div class="confirmation-msg">
+        <p class="alert alert-warning">{l s='Your message has already been sent.'}</p>
+    </div>
+{/if}
+
+    <div>
+        <ul class="nav nav-tabs" id="menu-client" role="tablist" style="display: flex;align-items:center;background-color: #f7f7f7; border: 1px solid #d8d8d8; height: 55px;margin-top: 20px;">
+            <li class="nav-item">
+                <a class="nav-link" title="{l s="Orders history" d="Shop.Theme.Statistics"}" id="order_history-tab"  onclick="openShippingtab('{$urls.pages.my_account}','shipping')"role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;" ><i class="fa fa-list-ol website_blue font-size-40"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="statistics-tab" title="{l s="Statistics" d="Shop.Theme.Statistics"}"   onclick="openShippingtab('{$urls.pages.my_account}','statistics')" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;" ><i class="fa-solid fa-chart-column"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="shipping-tab" title="{l s="Shipping Rates" d="Shop.Theme.Statistics"}"   onclick="openShippingtab('{$urls.pages.my_account}','shipping')" role="tab" aria-controls="shipping" aria-selected="false" style="padding:0.5rem 1rem;" ><i class="fa fa-truck website_blue font-size-40"></i></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" title="{l s="Profile" d="Shop.Theme.Statistics"}"  onclick="openShippingtab('{$urls.pages.my_account}','profile')" role="tab" aria-controls="profile" aria-selected="false" style="padding:0.5rem 1rem;"  ><i class="fa fa-user website_blue font-size-40"></i></a>
+            </li>
+            
+            <li class="nav-item">
+                <a class="nav-link" id="warranty-tab" title="{l s="Warranty" d="Shop.Theme.Statistics"}"  onclick="openShippingtab('{$urls.pages.my_account}','warranty')"  role="tab" aria-controls="warranty" aria-selected="false" style="padding:0.5rem 12px;" ><img src="/img/asd/warranty_icon.svg" width="37" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" id="contact-tab" title="{l s="Contact" d="Shop.Theme.Statistics"}"  href="" role="" aria-controls="contact" aria-selected="false" style="padding:0.5rem 9px;" ><img src="/img/asd/email_icon.svg" width="43" /></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}"  onclick="openShippingtab('{$urls.pages.my_account}','notification')" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" ><i class="fa-solid fa-bell"></i></a>
+            </li>
+            <li class="nav-item" style="display:flex;justify-content: end;flex:1;">
+                <a class="nav-link" id="logout-tab"  href="/?mylogout="><i class="fa-solid fa-lock-open"></i></a>
+            </li>
+        </ul>
+    </div>
+
 
   <div style="background-color: #fff;">
     <img alt="contact" src="/img/asd/Content_pages/contact/contact_{$language.iso_code}.webp" class="img-responsive" style="margin:0 auto;width:100%">
