@@ -148,7 +148,7 @@ class ContactControllerCore extends FrontController
                                     '{message}' => Tools::nl2br(stripslashes($message)),
                                     '{email}' =>  $from,
                                     '{product_name}' => '',
-                                    '{firsname}' => Tools::getValue('name'),
+                                    '{firsname}' => Tools::getValue('firstname'),
                                     '{lastname}' => Tools::getValue('lastname')
                                 );
 

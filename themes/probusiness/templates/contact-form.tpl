@@ -53,22 +53,22 @@
 			<div id="contact-form-group" class="col-lg-12 px-0">
 				<div class="name_field col-lg-3">
 					<div class="form-group">
-                        <label for="extrafield">{l s='Name'}<sup>*</sup></label>
-                        {if isset($customerThread.extrafield)}
+                        <label for="name">{l s='Name' d="Shop.Theme.Contactform"}<sup>*</sup></label>
+                        {* {if isset($customerThread.extrafield)}
                         <input class="form-control grey" type="text" id="extrafield" name="extrafield" value="{$customerThread.extrafield|escape:'htmlall':'UTF-8'}" readonly="readonly" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
-                        {else}
-                        <input class="is_required form-control grey validate" type="text" id="name" name="name" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
-                        {/if}
+                        {else} *}
+                        <input class="is_required form-control grey validate" type="text" id="name" name="firstname" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
+                        {* {/if} *}
 					</div>
 				</div>
 				<div class="lastname_field col-lg-3">
 					<div class="form-group">
-                        <label for="extrafield">{l s='Last Name'}<sup>*</sup></label>
-                        {if isset($customerThread.extrafield)}
+                        <label for="lastname">{l s='Last Name' d="Shop.Theme.Contactform"}<sup>*</sup></label>
+                        {* {if isset($customerThread.extrafield)}
                         <input class="form-control grey" type="text" id="extrafield" name="extrafield" value="{$customerThread.extrafield|escape:'htmlall':'UTF-8'}" readonly="readonly" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
-                        {else}
+                        {else} *}
                         <input class="is_required form-control grey validate" type="text" id="lastname" name="lastname" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
-                        {/if}
+                        {* {/if} *}
 					</div>
 				</div>
 				<div class="order_field" style="display: none;">
@@ -79,7 +79,7 @@
 				</div>
 				<div class="email_field col-lg-6">
 					<p class="form-group"  style="max-width: 100%;">
-						<label for="email">{l s='Email address'}<sup>*</sup></label>
+						<label for="email">{l s='Email address' d="Shop.Theme.Contactform"}<sup>*</sup></label>
 						{if isset($customerThread.email)}
 							<input class="form-control grey" type="text" id="email" name="from" value="{$customerThread.email|escape:'html':'UTF-8'}" readonly="readonly" style="max-width: 100%;padding:0.5rem 1rem;"/>
 						{else}
@@ -90,14 +90,14 @@
 				
 				<div style="height: 2px; width: 100%; display: inline-block"></div>
 				<div class="form-group col-lg-12" >
-					<label for="message">{l s='Message'}<sup>*</sup></label>
+					<label for="message">{l s='Message' d="Shop.Theme.Contactform"}<sup>*</sup></label>
 					<textarea class="form-control" id="message" name="message" maxlength="500" style="padding:0.5rem 1rem;">{if isset($message)}{$message|escape:'html':'UTF-8'|stripslashes}{/if}</textarea>
-					<span>{l s='(max 500 chars)'}</span>
+					<span>{l s='(max 500 chars)' d="Shop.Theme.Contactform"}</span>
 				</div>
 			</div>
 			<div class="submit col-lg-12">
 				<button type="submit" name="submitMessage" id="submitMessage" class="btn btn-default btn-md">
-					<span> {l s='Send'} <i class="fa fa-chevron-right right"></i> </span>
+					<span> {l s='Send' d="Shop.Theme.Contactform"} <i class="fa fa-chevron-right right"></i> </span>
 				</button>
 			</div>
 		</div>
