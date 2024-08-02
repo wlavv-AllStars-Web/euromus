@@ -429,6 +429,7 @@ $(document).on('click','.button_trigger_submit',function(){
     $('#js-stripe-payment-form').find('button[type="submit"]')[0].click();
 });
 $(document).on('click','button[name="submitCompleteMyOrder"]',function(e){ 
+    
     e.preventDefault();
     if($('.loading').length)
         return false;
@@ -810,7 +811,7 @@ function ets_refresh_shipping_cart(del_product)
                 $('.loading').removeClass('loading');
                 if(json.cart_detailed=='empty')
                 {
-                    $('.cart-container').html('<div class="alert alert-warning">'+json.text_info+'</div>');
+                    // $('.cart-container').html('<div class="alert alert-warning">'+json.text_info+'</div>');
                     window.location.href = json.url_cart;
                 }
                 else
