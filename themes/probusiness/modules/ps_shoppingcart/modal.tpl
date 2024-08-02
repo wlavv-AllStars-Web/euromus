@@ -44,7 +44,7 @@
                 {* <img class="product-image" src="{$product.cover.large.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image"> *}
                 <img class="product-image" src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, 'thumb')}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image" style="width: 100%;">
               </div>
-              <div class="col-md-8">
+              <div class="col-md-8 details-product-modal">
               {* <pre>{print_r($product,1)}</pre> *}
                 <h6 class="h6 product-name">{$product.name|escape:'html':'UTF-8'}</h6>
                 <span><strong>{l s="Price" d="Shop.Theme.Checkout"}</strong>: {$product.price|escape:'html':'UTF-8'}</span>
@@ -83,13 +83,19 @@
               {* <p><strong>{l s='Total:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.totals.total.value|escape:'html':'UTF-8'} {$cart.labels.tax_short|escape:'html':'UTF-8'}</p> *}
               {* <p class="subtitle-modal-cart"><strong>{l s='Total' d='Shop.Theme.Checkout'} :</strong>&nbsp;{$cart.totals.total_excluding_tax.value} {$cart.totals.total_excluding_tax.label|escape:'html':'UTF-8'}</p>
               {hook h='displayCartModalContent' product=$product} *}
-              <div class="cart-content-btn">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
-                {* <a href="{$cart_url|escape:'html':'UTF-8'}" class="btn btn-primary"><i class="material-icons">&#xE876;</i>{l s='proceed to checkout' d='Shop.Theme.Actions'}</a> *}
-                <a href="{$order_url}" class="btn btn-primary"><i class="material-icons rtl-no-flip">&#xE876;</i>{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
-              </div>
+              
             </div>
           </div>
+
+          <div class="col-lg-12 container-modal-btns-shopping">
+            <div class="cart-content-btn col-lg-6">
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
+            </div>
+            <div class="cart-content-btn col-lg-6">
+              <a href="{$order_url}" class="btn btn-primary"><i class="material-icons rtl-no-flip">&#xE876;</i>{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
+            </div>
+          </div>
+
         </div>
       </div>
       {* {hook h='displayCartModalFooter' product=$product} *}
