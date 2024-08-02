@@ -53,11 +53,11 @@
 			<div id="contact-form-group" class="col-lg-12 px-0">
 				<div class="name_field col-lg-3">
 					<div class="form-group">
-                        <label for="name">{l s='Name' d="Shop.Theme.Contactform"}<sup>*</sup></label>
+                        <label for="firstname">{l s='Name' d="Shop.Theme.Contactform"}<sup>*</sup></label>
                         {* {if isset($customerThread.extrafield)}
                         <input class="form-control grey" type="text" id="extrafield" name="extrafield" value="{$customerThread.extrafield|escape:'htmlall':'UTF-8'}" readonly="readonly" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
                         {else} *}
-                        <input class="is_required form-control grey validate" type="text" id="name" name="firstname" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
+                        <input class="is_required form-control grey validate" type="text" id="firstname" name="firstname" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
                         {* {/if} *}
 					</div>
 				</div>
