@@ -66,7 +66,7 @@
         <a class="nav-link" id="warranty-tab" title="{l s="Warranty" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#warranty" role="tab" aria-controls="warranty" aria-selected="false" style="padding:0.5rem 12px;" onclick="changeImgBanner(this)"><img src="/img/asd/warranty_icon.svg" width="37" /></a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" id="contact-tab" title="{l s="Contact" d="Shop.Theme.Statistics"}" data-toggle="tab" href="{$link->getPageLink('contact')}" role="" aria-controls="contact" aria-selected="false" style="padding:0.5rem 9px;" ><img src="/img/asd/email_icon.svg" width="43" /></a>
+        <a class="nav-link" id="contact-tab" title="{l s="Contact" d="Shop.Theme.Statistics"}"  href="{$link->getPageLink('contact')}" role="" aria-controls="contact" aria-selected="false" style="padding:0.5rem 9px;" ><img src="/img/asd/email_icon.svg" width="43" /></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" id="notification-tab" title="{l s="Notifications" d="Shop.Theme.Statistics"}" data-toggle="tab" href="#notification" role="tab" aria-controls="notification" aria-selected="false" style="padding:0.5rem 1rem;" onclick="changeImgBanner(this)"><i class="fa-solid fa-bell"></i></a>
