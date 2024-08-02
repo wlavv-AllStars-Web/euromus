@@ -67,7 +67,7 @@
       {/if}
     </div>
     <div class="col-md-2">
-      <a target="_blank" onclick="openShippingtab('{$urls.pages.my_account}')">
+      <a target="_blank" onclick="openShippingtab('{$urls.pages.my_account}','shipping')">
           {* <div class="right_text" >{l s='SHIPPING' d="Shop.Theme.ProductList"}</div> *}
           <div class="right_logos"><i class="fa fa-truck"></i></div>
       </a>
@@ -313,7 +313,7 @@
         </div>
 
         <div class="right_column_product">
-            <a target="_blank" onclick="openShippingtab('{$urls.pages.my_account}')">
+            <a target="_blank" onclick="openShippingtab('{$urls.pages.my_account}','shipping')">
                 <div class="right_text" >{l s='SHIPPING' d="Shop.Theme.ProductList"}</div>
                 <div class="right_logos"><i class="fa fa-truck"></i></div>
             </a>
