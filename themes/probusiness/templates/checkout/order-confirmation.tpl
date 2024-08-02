@@ -12,21 +12,31 @@
           <div class="col-md-12" style="padding: 2rem 0;">
 
             {block name='order_confirmation_header'}
-              <h3 class="h1 card-title" style="text-align: center;">
-                {* <i class="material-icons rtl-no-flip done">&#xE876;</i> *}
-                {l s='Order confirmation' d='Shop.Theme.Checkout'}
+              <div style="display: flex; gap:1rem;justify-content:center;">
+              <h3 class="h1 card-title" style="text-align: center;font-weight:400;">
+                {* <i class="material-icons rtl-no-flip done" style="font-size: 2rem;">&#xE876;</i> *}
+                {l s='Commande' d='Shop.Theme.Checkout'}
               </h3>
+              <h3 class="h1 card-title" style="text-align: center;">
+                <strong>{$order.details.reference}</strong>
+              </h3>
+
+              <h3 class="h1 card-title" style="text-align: center;font-weight:400;">
+                {l s='Transmise' d='Shop.Theme.Checkout'}
+              </h3>
+              
+              </div>
               <br>
             {/block}
 
             <div style="text-align: center;">
-              <p>{l s="Thank you for your purchase at" d="Shop.Theme.OrderConfirmation"} <strong>All Stars Distribution</strong></p>
+              <p style="font-size: 18px;color: #333;">{l s="Dans les prochaines minutes, vouz recevrez par email une confirmation de commande incluant les frais de livraison afin de vous permettre d´effectuer votre paiement via les modalités sélectionnées." d="Shop.Theme.OrderConfirmation"}</p>
               <br>
-              <p>{l s="Your order has been received." d="Shop.Theme.OrderConfirmation"}</p>
+              <p style="font-size: 18px;color: #333;">{l s="Prêtez attention au commentaires éventuellement présents sur la confirmation de commande (délais, disponibilité,changement,etc...)" d="Shop.Theme.OrderConfirmation"}</p>
               <br>
-              <p>{l s="Once confirmed, an email will be sent within 48 hours with the total to be paid and a summary of the order. Please do not make the payment until you receive the email confirming the order." d="Shop.Theme.OrderConfirmation"}</p>
+              <p style="font-size: 18px;color: #333;">{l s="Attention, ne procedez à aucun paiement avant reception et controle de la validation de commande envoyée par notre service commercial." d="Shop.Theme.OrderConfirmation"}</p>
               <br>
-              <p>{l s="Order reference:" d="Shop.Theme.OrderConfirmation"}<strong>{$order.details.reference}</strong></p>
+              <p style="font-size: 18px;color: #333;">{l s="Merci" d="Shop.Theme.OrderConfirmation"}</p>
               <br>
               <div>
                 <a class="btn btn-default btn-view-history" href="{$link->getPageLink('my-account')}" title="Go to your order history page">{l s="View your order history" d="Shop.Theme.OrderConfirmation"}</a>
