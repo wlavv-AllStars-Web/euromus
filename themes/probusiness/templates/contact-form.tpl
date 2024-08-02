@@ -51,13 +51,23 @@
         <input type="hidden" value="2" name="id_contact">
 		<div>
 			<div id="contact-form-group" class="col-lg-12 px-0">
-				<div class="name_field col-lg-6">
+				<div class="name_field col-lg-3">
 					<div class="form-group">
                         <label for="extrafield">{l s='Name'}<sup>*</sup></label>
                         {if isset($customerThread.extrafield)}
                         <input class="form-control grey" type="text" id="extrafield" name="extrafield" value="{$customerThread.extrafield|escape:'htmlall':'UTF-8'}" readonly="readonly" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
                         {else}
-                        <input class="is_required form-control grey validate" type="text" id="extrafield" name="extrafield" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
+                        <input class="is_required form-control grey validate" type="text" id="name" name="name" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
+                        {/if}
+					</div>
+				</div>
+				<div class="lastname_field col-lg-3">
+					<div class="form-group">
+                        <label for="extrafield">{l s='Last Name'}<sup>*</sup></label>
+                        {if isset($customerThread.extrafield)}
+                        <input class="form-control grey" type="text" id="extrafield" name="extrafield" value="{$customerThread.extrafield|escape:'htmlall':'UTF-8'}" readonly="readonly" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
+                        {else}
+                        <input class="is_required form-control grey validate" type="text" id="lastname" name="lastname" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
                         {/if}
 					</div>
 				</div>
