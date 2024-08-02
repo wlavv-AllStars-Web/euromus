@@ -51,7 +51,7 @@
         <input type="hidden" value="2" name="id_contact">
 		<div>
 			<div id="contact-form-group" class="col-lg-12 px-0">
-				<div class="name_field col-lg-3">
+				<div class="name_field col-lg-3 pl-0">
 					<div class="form-group">
                         <label for="firstname">{l s='Name' d="Shop.Theme.Contactform"}<sup>*</sup></label>
                         {* {if isset($customerThread.extrafield)}
@@ -77,7 +77,7 @@
 						<input  style="max-width: 100%;padding:0.5rem 1rem;" class="form-control grey" type="text" placeholder="(ex: WNDGVVZLX)" name="id_order" id="id_order" value="{if isset($customerThread.id_order) && $customerThread.id_order|intval > 0}{$customerThread.id_order|intval}{else}{if isset($smarty.post.id_order) && !empty($smarty.post.id_order)}{$smarty.post.id_order|escape:'html':'UTF-8'}{/if}{/if}" />
 					</div>
 				</div>
-				<div class="email_field col-lg-6">
+				<div class="email_field col-lg-6 pr-0">
 					<p class="form-group"  style="max-width: 100%;">
 						<label for="email">{l s='Email address' d="Shop.Theme.Contactform"}<sup>*</sup></label>
 						{if isset($customerThread.email)}
@@ -89,13 +89,13 @@
 				</div>
 				
 				<div style="height: 2px; width: 100%; display: inline-block"></div>
-				<div class="form-group col-lg-12" >
+				<div class="form-group col-lg-12 px-0" >
 					<label for="message">{l s='Message' d="Shop.Theme.Contactform"}<sup>*</sup></label>
 					<textarea class="form-control" id="message" name="message" maxlength="500" style="padding:0.5rem 1rem;">{if isset($message)}{$message|escape:'html':'UTF-8'|stripslashes}{/if}</textarea>
 					<span>{l s='(max 500 chars)' d="Shop.Theme.Contactform"}</span>
 				</div>
 			</div>
-			<div class="submit col-lg-12">
+			<div class="submit col-lg-12 px-0">
 				<button type="submit" name="submitMessage" id="submitMessage" class="btn btn-default btn-md">
 					<span> {l s='Send' d="Shop.Theme.Contactform"} <i class="fa fa-chevron-right right"></i> </span>
 				</button>
