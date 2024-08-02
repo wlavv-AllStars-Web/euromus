@@ -46,51 +46,51 @@
       {l s='In order to provide optimal customer service in 4 languages that ensures fast and efficient follow-up of our contacts, our communications are exclusively carried out by email. We do not use telephone lines or social networks.' d='Shop.Theme.Global'}
     </div> *}
 
-    <form action="{$request_uri}" method="post" class="contact-form-box" enctype="multipart/form-data" style="max-width:1350px; margin:0 auto; background-color:#fff; box-shadow: none;">
+    <form action="{$request_uri}" method="post" class="contact-form-box" enctype="multipart/form-data" style="max-width:1350px; margin:2rem auto; background-color:#fff; box-shadow: none;">
         <div class="spacer-20"></div>
         <input type="hidden" value="2" name="id_contact">
-		<fieldset style="background: none;padding:0">
-			<div id="step4" class="col-xs-12 col-md-12">
-				<div class="name_field col-lg-4">
+		<div>
+			<div id="contact-form-group" class="col-lg-12 px-0">
+				<div class="name_field col-lg-6">
 					<div class="form-group">
                         <label for="extrafield">{l s='Name'}<sup>*</sup></label>
                         {if isset($customerThread.extrafield)}
-                        <input class="form-control grey" type="text" id="extrafield" name="extrafield" value="{$customerThread.extrafield|escape:'htmlall':'UTF-8'}" readonly="readonly" maxlength="40" style="max-width: 100%;"/>
+                        <input class="form-control grey" type="text" id="extrafield" name="extrafield" value="{$customerThread.extrafield|escape:'htmlall':'UTF-8'}" readonly="readonly" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
                         {else}
-                        <input class="is_required form-control grey validate" type="text" id="extrafield" name="extrafield" data-validate="isName" value="" maxlength="40" style="max-width: 100%;"/>
+                        <input class="is_required form-control grey validate" type="text" id="extrafield" name="extrafield" data-validate="isName" value="" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
                         {/if}
 					</div>
 				</div>
 				<div class="order_field" style="display: none;">
 					<div class="form-group" style="max-width: 100%" >
 						<label for="email">{l s='Order reference'}</label>
-						<input  style="max-width: 100%;" class="form-control grey" type="text" placeholder="(ex: WNDGVVZLX)" name="id_order" id="id_order" value="{if isset($customerThread.id_order) && $customerThread.id_order|intval > 0}{$customerThread.id_order|intval}{else}{if isset($smarty.post.id_order) && !empty($smarty.post.id_order)}{$smarty.post.id_order|escape:'html':'UTF-8'}{/if}{/if}" />
+						<input  style="max-width: 100%;padding:0.5rem 1rem;" class="form-control grey" type="text" placeholder="(ex: WNDGVVZLX)" name="id_order" id="id_order" value="{if isset($customerThread.id_order) && $customerThread.id_order|intval > 0}{$customerThread.id_order|intval}{else}{if isset($smarty.post.id_order) && !empty($smarty.post.id_order)}{$smarty.post.id_order|escape:'html':'UTF-8'}{/if}{/if}" />
 					</div>
 				</div>
-				<div class="email_field col-lg-4">
+				<div class="email_field col-lg-6">
 					<p class="form-group"  style="max-width: 100%;">
 						<label for="email">{l s='Email address'}<sup>*</sup></label>
 						{if isset($customerThread.email)}
-							<input class="form-control grey" type="text" id="email" name="from" value="{$customerThread.email|escape:'html':'UTF-8'}" readonly="readonly" style="max-width: 100%;"/>
+							<input class="form-control grey" type="text" id="email" name="from" value="{$customerThread.email|escape:'html':'UTF-8'}" readonly="readonly" style="max-width: 100%;padding:0.5rem 1rem;"/>
 						{else}
-							<input class="form-control grey validate" type="text" id="email" name="from" data-validate="isEmail" value="{$email|escape:'html':'UTF-8'}" maxlength="40" style="max-width: 100%;"/>
+							<input class="form-control grey validate" type="text" id="email" name="from" data-validate="isEmail" value="{$email|escape:'html':'UTF-8'}" maxlength="40" style="max-width: 100%;padding:0.5rem 1rem;"/>
 						{/if}
 					</p>
 				</div>
 				
 				<div style="height: 2px; width: 100%; display: inline-block"></div>
-				<div class="form-group" >
+				<div class="form-group col-lg-12" >
 					<label for="message">{l s='Message'}<sup>*</sup></label>
-					<textarea class="form-control" id="message" name="message" maxlength="500">{if isset($message)}{$message|escape:'html':'UTF-8'|stripslashes}{/if}</textarea>
+					<textarea class="form-control" id="message" name="message" maxlength="500" style="padding:0.5rem 1rem;">{if isset($message)}{$message|escape:'html':'UTF-8'|stripslashes}{/if}</textarea>
 					<span>{l s='(max 500 chars)'}</span>
 				</div>
 			</div>
-			<div class="submit">
+			<div class="submit col-lg-12">
 				<button type="submit" name="submitMessage" id="submitMessage" class="btn btn-default btn-md">
 					<span> {l s='Send'} <i class="fa fa-chevron-right right"></i> </span>
 				</button>
 			</div>
-		</fieldset>
+		</div>
 	</form>
   </div>
 </section>
@@ -100,67 +100,29 @@
     background: #FFFFFF;
   }
 
-  #contact #content {
-    margin: 1rem 0;
-    background: #FFFFFF;
-  }
-  #contact .breadcrumb_wrapper{
-    padding: 0;
-  }
-  #contact .breadcrumb_wrapper .breadcrumb{
-    margin: 0;
-  }
-  .contact-form {
-    background: none repeat scroll 0 0 #FFFFFF;
-    color: #d9d9d9;
-    float: left;
-    width: 100%;
-  }
-
-  .contact-form .form-fields {
-    display: flex;
-    flex-wrap: wrap;
-  }
-
-
-  .contact-form .form-group > * {
-    padding-inline: 0;
-  }
-
-  .card {
-    border: 0px;
-  }
-
   .contact-form .form-control {
     color: #333333;
-    border-radius: 4px;
   }
 
-  .form-control-label{
-    font-weight: bold;
-    font-size: small;
-    color: #333333 !important;
-    text-align: start;
+  .contact-form .form-group{
+    margin-bottom: 0;
+  }
 
-  }
-  .form-control-label[for="contactform-message"]{
-    position: relative;
-    
-  }
-  .form-control-label[for="contactform-message"]::after{
-    content: '*';
-    color: var(--color-red);
-    position: absolute;
+  .contact-form .btn[type="submit"]{
+    background: #0273eb;
+    border: 1px solid #0273eb;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1rem;
   }
 
   .contact-form .btn[type="submit"]:hover{
-    background: var(--color-red) !important;
-    color: white !important;
+    color: #0273eb !important;
+    background: #FFFFFF !important;
   }
 
-  .contact-form .btn[type="submit"]:hover ~ i{
-    color: white !important;
-  }
 
 @media screen and (min-width:769px) {
   .contact-form .btn[type="submit"]{
