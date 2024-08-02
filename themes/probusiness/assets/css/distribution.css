@@ -1783,6 +1783,15 @@ input[type="number"] {
   display: none;
 }
 
+#contact #menu-client{
+  max-height: 50px;
+  overflow: hidden;
+}
+#contact #menu-client .nav-item:hover{
+  cursor: pointer;
+  background: #fff;
+}
+
 #product .right_column_product .brand_logo {
   filter: grayscale(1);
 }

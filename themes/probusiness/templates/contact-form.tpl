@@ -42,10 +42,13 @@
     </div>
 {/if}
 
+  <div style="background-color: #fff;">
+    <img alt="contact" src="/img/asd/Content_pages/contact/contact_{$language.iso_code}.webp" class="img-responsive" style="margin:0 auto;width:100%">
+
     <div>
         <ul class="nav nav-tabs" id="menu-client" role="tablist" style="display: flex;align-items:center;background-color: #f7f7f7; border: 1px solid #d8d8d8; height: 55px;margin-top: 20px;">
             <li class="nav-item">
-                <a class="nav-link" title="{l s="Orders history" d="Shop.Theme.Statistics"}" id="order_history-tab"  onclick="openShippingtab('{$urls.pages.my_account}','shipping')"role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;" ><i class="fa fa-list-ol website_blue font-size-40"></i></a>
+                <a class="nav-link" title="{l s="Orders history" d="Shop.Theme.Statistics"}" id="order_history-tab"  onclick="openShippingtab('{$urls.pages.my_account}','order_history')"role="tab" aria-controls="order_history" aria-selected="false" style="padding:0.5rem 1rem;" ><i class="fa fa-list-ol website_blue font-size-40"></i></a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" id="statistics-tab" title="{l s="Statistics" d="Shop.Theme.Statistics"}"   onclick="openShippingtab('{$urls.pages.my_account}','statistics')" role="tab" aria-controls="statistics" aria-selected="false" style="padding:0.5rem 1rem;" ><i class="fa-solid fa-chart-column"></i></a>
@@ -71,13 +74,6 @@
             </li>
         </ul>
     </div>
-
-
-  <div style="background-color: #fff;">
-    <img alt="contact" src="/img/asd/Content_pages/contact/contact_{$language.iso_code}.webp" class="img-responsive" style="margin:0 auto;width:100%">
-    {* <div style="max-width: 1200px;padding-top: 23px;font-height: 600; color:#000; font-size:16px;margin: 20px auto 40px auto;padding-inline:1rem">
-      {l s='In order to provide optimal customer service in 4 languages that ensures fast and efficient follow-up of our contacts, our communications are exclusively carried out by email. We do not use telephone lines or social networks.' d='Shop.Theme.Global'}
-    </div> *}
 
     <form action="{$request_uri}" method="post" class="contact-form-box" enctype="multipart/form-data" style="max-width:1350px; margin:2rem auto; background-color:#fff; box-shadow: none;">
         <div class="spacer-20"></div>
