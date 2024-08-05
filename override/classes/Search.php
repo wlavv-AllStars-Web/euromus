@@ -158,77 +158,68 @@ class SearchCore
         return array_unique($words);
     }
 
-    public static function sanitize($string, $id_lang, $indexation = false, $iso_code = false, $keepHyphens = false)
+    public static function sanitize($string, $id_lang, $indexation = false, $iso_code = false)
     {
-        if (null === $string || empty($string = trim($string))) {
+        
+        $string = trim($string);
+        if (empty($string)) {
             return '';
         }
 
         $string = Tools::strtolower(strip_tags($string));
         $string = html_entity_decode($string, ENT_NOQUOTES, 'utf-8');
 
-        $string = preg_replace('/([' . PREG_CLASS_NUMBERS . ']+)[' . PREG_CLASS_PUNCTUATION . ']+(?=[' . PREG_CLASS_NUMBERS . '])/u', '\1', $string);
-        $string = preg_replace('/[' . PREG_CLASS_SEARCH_EXCLUDE . ']+/u', ' ', $string);
+        $string = preg_replace('/(['.PREG_CLASS_NUMBERS.']+)['.PREG_CLASS_PUNCTUATION.']+(?=['.PREG_CLASS_NUMBERS.'])/u', '\1', $string);
+        
+        $string = preg_replace('/['.PREG_CLASS_SEARCH_EXCLUDE.']+/u', ' ', $string);
+
 
         if ($indexation) {
-            if (!$keepHyphens) {
-                $string = str_replace(['.', '_', '-'], ' ', $string);
-            } else {
-                $string = str_replace(['.', '_'], ' ', $string);
-            }
+            $string = preg_replace('/[._]+/', ' ', $string);
         } else {
             $words = explode(' ', $string);
-            $processed_words = [];
+            $processed_words = array();
             // search for aliases for each word of the query
-            $query = '
-				SELECT a.alias, a.search
-				FROM `' . _DB_PREFIX_ . 'alias` a
-				WHERE \'' . pSQL($string) . '\' %s AND `active` = 1
-            ';
-
-            // check if we can we use '\b' (faster)
-            $useICU = (bool) Db::getInstance((bool) _PS_USE_SQL_SLAVE_)->getValue(
-                'SELECT 1 FROM DUAL WHERE \'icu regex\' REGEXP \'\\\\bregex\''
-            );
-            $aliases = Db::getInstance((bool) _PS_USE_SQL_SLAVE_)->executeS(
-                sprintf(
-                    $query,
-                    $useICU
-                        ? 'REGEXP CONCAT(\'\\\\b\', alias, \'\\\\b\')'
-                        : 'REGEXP CONCAT(\'(^|[[:space:]]|[[:<:]])\', alias, \'([[:space:]]|[[:>:]]|$)\')'
-                )
-            );
-
-            foreach ($aliases  as $alias) {
-                $processed_words = array_merge($processed_words, explode(' ', $alias['search']));
-                // delete words that are being replaced with aliases
-                $words = array_diff($words, explode(' ', $alias['alias']));
+            foreach ($words as $word) {
+                $alias = new Alias(null, $word);
+                if (Validate::isLoadedObject($alias)) {
+                    $processed_words[] = $alias->search;
+                } else {
+                    $processed_words[] = $word;
+                }
             }
-            $string = implode(' ', array_unique(array_merge($processed_words, $words)));
-            $string = str_replace(['.', '_'], '', $string);
-            if (!$keepHyphens) {
-                $string = ltrim(preg_replace('/([^ ])-/', '$1 ', ' ' . $string));
-            }
+
+            $string = implode(' ', $processed_words);
+            $string = preg_replace('/[._]+/', '', $string);
+            
+            //$string = ltrim(preg_replace('/([^ ])-/', '$1 ', ' '.$string));
+            //$string = ltrim(preg_replace('/([^ ])-/', '$1 ', ' '.$string));
+
+
+            $string = preg_replace('/[._]+/', '', $string);
+            $string = preg_replace('/[\s]-+/', '', $string);
+
         }
 
         $blacklist = Tools::strtolower(Configuration::get('PS_SEARCH_BLACKLIST', $id_lang));
+
         if (!empty($blacklist)) {
-            $string = preg_replace('/(?<=\s)(' . $blacklist . ')(?=\s)/Su', '', $string);
-            $string = preg_replace('/^(' . $blacklist . ')(?=\s)/Su', '', $string);
-            $string = preg_replace('/(?<=\s)(' . $blacklist . ')$/Su', '', $string);
-            $string = preg_replace('/^(' . $blacklist . ')$/Su', '', $string);
+            $string = preg_replace('/(?<=\s)('.$blacklist.')(?=\s)/Su', '', $string);
+            $string = preg_replace('/^('.$blacklist.')(?=\s)/Su', '', $string);
+            $string = preg_replace('/(?<=\s)('.$blacklist.')$/Su', '', $string);
+            $string = preg_replace('/^('.$blacklist.')$/Su', '', $string);
         }
 
         // If the language is constituted with symbol and there is no "words", then split every chars
-        if (in_array($iso_code, ['zh', 'tw', 'ja'])) {
+        if (in_array($iso_code, array('zh', 'tw', 'ja')) && function_exists('mb_strlen')) {
             // Cut symbols from letters
             $symbols = '';
             $letters = '';
             foreach (explode(' ', $string) as $mb_word) {
                 if (strlen(Tools::replaceAccentedChars($mb_word)) == mb_strlen(Tools::replaceAccentedChars($mb_word))) {
-                    $letters .= $mb_word . ' ';
+                    $letters .= $mb_word.' ';
                 } else {
-                    $symbols .= $mb_word . ' ';
+                    $symbols .= $mb_word.' ';
                 }
             }
 
@@ -236,15 +227,16 @@ class SearchCore
                 $symbols = implode(' ', $matches[0]);
             }
 
-            $string = $letters . $symbols;
+            $string = $letters.$symbols;
+
         } elseif ($indexation) {
-            $minWordLen = (int) Configuration::get('PS_SEARCH_MINWORDLEN');
+            $minWordLen = (int)Configuration::get('PS_SEARCH_MINWORDLEN');
             if ($minWordLen > 1) {
-                --$minWordLen;
-                $string = preg_replace('/(?<=\s)[^\s]{1,' . $minWordLen . '}(?=\s)/Su', ' ', $string);
-                $string = preg_replace('/^[^\s]{1,' . $minWordLen . '}(?=\s)/Su', '', $string);
-                $string = preg_replace('/(?<=\s)[^\s]{1,' . $minWordLen . '}$/Su', '', $string);
-                $string = preg_replace('/^[^\s]{1,' . $minWordLen . '}$/Su', '', $string);
+                $minWordLen -= 1;
+                $string = preg_replace('/(?<=\s)[^\s]{1,'.$minWordLen.'}(?=\s)/Su', ' ', $string);
+                $string = preg_replace('/^[^\s]{1,'.$minWordLen.'}(?=\s)/Su', '', $string);
+                $string = preg_replace('/(?<=\s)[^\s]{1,'.$minWordLen.'}$/Su', '', $string);
+                $string = preg_replace('/^[^\s]{1,'.$minWordLen.'}$/Su', '', $string);
             }
         }
 
@@ -253,232 +245,196 @@ class SearchCore
         return $string;
     }
 
-    public static function find(
-        $id_lang,
-        $expr,
-        $page_number = 1,
-        $page_size = 1,
-        $order_by = 'position',
-        $order_way = 'desc',
-        $ajax = false,
-        $use_cookie = true,
-        Context $context = null
-    ) {
-        if (!$context) {
-            $context = Context::getContext();
-        }
-
-        $db = Db::getInstance(_PS_USE_SQL_SLAVE_);
-
-        // TODO : smart page management
-        if ($page_number < 1) {
-            $page_number = 1;
-        }
-        if ($page_size < 1) {
-            $page_size = 1;
-        }
-
-        if (!Validate::isOrderBy($order_by) || !Validate::isOrderWay($order_way)) {
-            return false;
-        }
-
-        $scoreArray = [];
-        $fuzzyLoop = 0;
-        $wordCnt = 0;
-        $eligibleProducts2Full = [];
-        $expressions = explode(';', $expr);
-        $fuzzyMaxLoop = (int) Configuration::get('PS_SEARCH_FUZZY_MAX_LOOP');
-        $psFuzzySearch = (int) Configuration::get('PS_SEARCH_FUZZY');
-        $psSearchMinWordLength = (int) Configuration::get('PS_SEARCH_MINWORDLEN');
-        foreach ($expressions as $expression) {
-            $eligibleProducts2 = null;
-            $words = Search::extractKeyWords($expression, $id_lang, false, $context->language->iso_code);
-            foreach ($words as $key => $word) {
-                if (empty($word) || strlen($word) < $psSearchMinWordLength) {
-                    unset($words[$key]);
-                    continue;
-                }
-
-                $sql_param_search = self::getSearchParamFromWord($word);
-                $sql = 'SELECT DISTINCT si.id_product ' .
-                    'FROM ' . _DB_PREFIX_ . 'search_word sw ' .
-                    'LEFT JOIN ' . _DB_PREFIX_ . 'search_index si ON sw.id_word = si.id_word ' .
-                    'LEFT JOIN ' . _DB_PREFIX_ . 'product_shop product_shop ON (product_shop.`id_product` = si.`id_product`) ' .
-                    'WHERE sw.id_lang = ' . (int) $id_lang . ' ' .
-                    'AND sw.id_shop = ' . $context->shop->id . ' ' .
-                    'AND product_shop.`active` = 1 ' .
-                    'AND product_shop.`visibility` IN ("both", "search") ' .
-                    'AND product_shop.indexed = 1 ' .
-                    'AND sw.word LIKE ';
-
-                while (!($result = $db->executeS($sql . "'" . $sql_param_search . "';", true, false))) {
-                    if (!$psFuzzySearch
-                        || $fuzzyLoop++ > $fuzzyMaxLoop
-                        || !($sql_param_search = static::findClosestWeightestWord($context, $word))
-                    ) {
-                        break;
-                    }
-                }
-
-                if (!$result) {
-                    unset($words[$key]);
-                    continue;
-                }
-
-                $productIds = array_column($result, 'id_product');
-                if ($eligibleProducts2 === null) {
-                    $eligibleProducts2 = $productIds;
-                } else {
-                    $eligibleProducts2 = array_intersect($eligibleProducts2, $productIds);
-                }
-
-                $scoreArray[] = 'sw.word LIKE \'' . $sql_param_search . '\'';
-            }
-            $wordCnt += count($words);
-            if ($eligibleProducts2) {
-                $eligibleProducts2Full = array_merge($eligibleProducts2Full, $eligibleProducts2);
-            }
-        }
-
-        $eligibleProducts2Full = array_unique($eligibleProducts2Full);
-
-        if (!$wordCnt || !count($eligibleProducts2Full)) {
-            return $ajax ? [] : ['total' => 0, 'result' => []];
-        }
-
-        $sqlScore = '';
-        if (!empty($scoreArray) && is_array($scoreArray)) {
-            $sqlScore = ',( ' .
-                'SELECT SUM(weight) ' .
-                'FROM ' . _DB_PREFIX_ . 'search_word sw ' .
-                'LEFT JOIN ' . _DB_PREFIX_ . 'search_index si ON sw.id_word = si.id_word ' .
-                'WHERE sw.id_lang = ' . (int) $id_lang . ' ' .
-                'AND sw.id_shop = ' . $context->shop->id . ' ' .
-                'AND si.id_product = p.id_product ' .
-                'AND (' . implode(' OR ', $scoreArray) . ') ' .
-                ') position';
-        }
-
-        $sqlGroups = '';
-        if (Group::isFeatureActive()) {
-            $groups = FrontController::getCurrentCustomerGroups();
-            $sqlGroups = 'AND cg.`id_group` ' . (count($groups) ? 'IN (' . implode(',', $groups) . ')' : '=' . (int) Group::getCurrent()->id);
-        }
-
-        $results = $db->executeS(
-            'SELECT DISTINCT cp.`id_product` ' .
-            'FROM `' . _DB_PREFIX_ . 'category_product` cp ' .
-            (Group::isFeatureActive() ? 'INNER JOIN `' . _DB_PREFIX_ . 'category_group` cg ON cp.`id_category` = cg.`id_category`' : '') . ' ' .
-            'INNER JOIN `' . _DB_PREFIX_ . 'category` c ON cp.`id_category` = c.`id_category` ' .
-            'INNER JOIN `' . _DB_PREFIX_ . 'product` p ON cp.`id_product` = p.`id_product` ' .
-            Shop::addSqlAssociation('product', 'p', false) . ' ' .
-            'WHERE c.`active` = 1 ' .
-            'AND product_shop.`active` = 1 ' .
-            'AND product_shop.`visibility` IN ("both", "search") ' .
-            'AND product_shop.indexed = 1 ' .
-            'AND cp.id_product IN (' . implode(',', $eligibleProducts2Full) . ')' . $sqlGroups,
-            true,
-            false
-        );
-
-        $eligibleProducts = [];
-        foreach ($results as $row) {
-            $eligibleProducts[] = $row['id_product'];
-        }
-
-        if (!count($eligibleProducts)) {
-            return $ajax ? [] : ['total' => 0, 'result' => []];
-        }
-
-        $product_pool = ' IN (' . implode(',', $eligibleProducts) . ') ';
-
-        if ($ajax) {
-            $sql = 'SELECT DISTINCT p.id_product, pl.name pname, cl.name cname,
-						cl.link_rewrite crewrite, pl.link_rewrite prewrite ' . $sqlScore . '
-					FROM ' . _DB_PREFIX_ . 'product p
-					INNER JOIN `' . _DB_PREFIX_ . 'product_lang` pl ON (
-						p.`id_product` = pl.`id_product`
-						AND pl.`id_lang` = ' . (int) $id_lang . Shop::addSqlRestrictionOnLang('pl') . '
-					)
-					' . Shop::addSqlAssociation('product', 'p') . '
-					INNER JOIN `' . _DB_PREFIX_ . 'category_lang` cl ON (
-						product_shop.`id_category_default` = cl.`id_category`
-						AND cl.`id_lang` = ' . (int) $id_lang . Shop::addSqlRestrictionOnLang('cl') . '
-					)
-					WHERE p.`id_product` ' . $product_pool . '
-					ORDER BY position DESC LIMIT 10';
-
-            return $db->executeS($sql, true, false);
-        }
-
-        if (strpos($order_by, '.') > 0) {
-            $order_by = explode('.', $order_by);
-            $order_by = pSQL($order_by[0]) . '.`' . pSQL($order_by[1]) . '`';
-        }
-        $alias = '';
-        if ($order_by == 'price') {
-            $alias = 'product_shop.';
-        } elseif (in_array($order_by, ['date_upd', 'date_add'])) {
-            $alias = 'p.';
-        }
-        $sql = 'SELECT p.*, product_shop.*, stock.out_of_stock, IFNULL(stock.quantity, 0) as quantity,
-				pl.`description_short`, pl.`available_now`, pl.`available_later`, pl.`link_rewrite`, pl.`name`,
-			 image_shop.`id_image` id_image, il.`legend`, m.`name` manufacturer_name ' . $sqlScore . ',
-				DATEDIFF(
-					p.`date_add`,
-					DATE_SUB(
-						"' . date('Y-m-d') . ' 00:00:00",
-						INTERVAL ' . (Validate::isUnsignedInt(Configuration::get('PS_NB_DAYS_NEW_PRODUCT')) ? Configuration::get('PS_NB_DAYS_NEW_PRODUCT') : 20) . ' DAY
-					)
-				) > 0 new' . (Combination::isFeatureActive() ? ', product_attribute_shop.minimal_quantity AS product_attribute_minimal_quantity, IFNULL(product_attribute_shop.`id_product_attribute`,0) id_product_attribute' : '') . '
-				FROM ' . _DB_PREFIX_ . 'product p
-				' . Shop::addSqlAssociation('product', 'p') . '
-				INNER JOIN `' . _DB_PREFIX_ . 'product_lang` pl ON (
-					p.`id_product` = pl.`id_product`
-					AND pl.`id_lang` = ' . (int) $id_lang . Shop::addSqlRestrictionOnLang('pl') . '
-				)
-				' . (Combination::isFeatureActive() ? 'LEFT JOIN `' . _DB_PREFIX_ . 'product_attribute_shop` product_attribute_shop FORCE INDEX (id_product)
-				    ON (p.`id_product` = product_attribute_shop.`id_product` AND product_attribute_shop.`default_on` = 1 AND product_attribute_shop.id_shop=' . (int) $context->shop->id . ')' : '') . '
-				' . Product::sqlStock('p', 0) . '
-				LEFT JOIN `' . _DB_PREFIX_ . 'manufacturer` m FORCE INDEX (PRIMARY)
-				    ON m.`id_manufacturer` = p.`id_manufacturer`
-				LEFT JOIN `' . _DB_PREFIX_ . 'image_shop` image_shop FORCE INDEX (id_product)
-					ON (image_shop.`id_product` = p.`id_product` AND image_shop.cover=1 AND image_shop.id_shop=' . (int) $context->shop->id . ')
-				LEFT JOIN `' . _DB_PREFIX_ . 'image_lang` il ON (image_shop.`id_image` = il.`id_image` AND il.`id_lang` = ' . (int) $id_lang . ')
-				WHERE p.`id_product` ' . $product_pool . '
-				GROUP BY product_shop.id_product';
-
-        if ($order_by !== 'price') {
-            $sql .= ($order_by ? ' ORDER BY  ' . $alias . $order_by : '') . ($order_way ? ' ' . $order_way : '') . '
-				LIMIT ' . (int) (($page_number - 1) * $page_size) . ',' . (int) $page_size;
-        }
-
-        $result = $db->executeS($sql, true, false);
-
-        if ($order_by === 'price') {
-            Tools::orderbyPrice($result, $order_way);
-            $result = array_slice($result, (int) (($page_number - 1) * $page_size), (int) $page_size);
-        }
-
-        $sql = 'SELECT COUNT(*)
-				FROM ' . _DB_PREFIX_ . 'product p
-				' . Shop::addSqlAssociation('product', 'p') . '
-				INNER JOIN `' . _DB_PREFIX_ . 'product_lang` pl ON (
-					p.`id_product` = pl.`id_product`
-					AND pl.`id_lang` = ' . (int) $id_lang . Shop::addSqlRestrictionOnLang('pl') . '
-				)
-				LEFT JOIN `' . _DB_PREFIX_ . 'manufacturer` m ON m.`id_manufacturer` = p.`id_manufacturer`
-				WHERE p.`id_product` ' . $product_pool;
-        $total = $db->getValue($sql, false);
-
-        if (!$result) {
-            $result_properties = false;
-        } else {
-            $result_properties = Product::getProductsProperties((int) $id_lang, $result);
-        }
-
-        return ['total' => $total, 'result' => $result_properties];
+    public static function find($id_lang, $expr, $page_number = 1, $page_size = 1, $order_by = 'position',
+    $order_way = 'desc', $ajax = false, $use_cookie = true, Context $context = null)
+{
+    if (!$context) {
+        $context = Context::getContext();
     }
+    $db = Db::getInstance(_PS_USE_SQL_SLAVE_);
+
+    // TODO : smart page management
+    if ($page_number < 1) {
+        $page_number = 1;
+    }
+    if ($page_size < 1) {
+        $page_size = 1;
+    }
+
+    if (!Validate::isOrderBy($order_by) || !Validate::isOrderWay($order_way)) {
+        return false;
+    }
+
+    $intersect_array = array();
+    $score_array = array();
+    $words = explode(' ', Search::sanitize($expr, $id_lang, false, $context->language->iso_code));
+
+    foreach ($words as $key => $word) {
+        if (!empty($word) && strlen($word) >= (int)Configuration::get('PS_SEARCH_MINWORDLEN')) {
+            $word = str_replace(array('%', '_'), array('\\%', '\\_'), $word);
+            $start_search = Configuration::get('PS_SEARCH_START') ? '%': '';
+            $end_search = Configuration::get('PS_SEARCH_END') ? '': '%';
+
+            $intersect_array[] = 'SELECT si.id_product
+                FROM '._DB_PREFIX_.'search_word sw
+                LEFT JOIN '._DB_PREFIX_.'search_index si ON sw.id_word = si.id_word
+                WHERE sw.id_lang = '.(int)$id_lang.'
+                    AND sw.id_shop = '.$context->shop->id.'
+                    AND sw.word LIKE
+                '.($word[0] == '-'
+                    ? ' \''.$start_search.pSQL(Tools::substr($word, 1, PS_SEARCH_MAX_WORD_LENGTH)).$end_search.'\''
+                    : ' \''.$start_search.pSQL(Tools::substr($word, 0, PS_SEARCH_MAX_WORD_LENGTH)).$end_search.'\''
+                );
+
+            if ($word[0] != '-') {
+                $score_array[] = 'sw.word LIKE \''.$start_search.pSQL(Tools::substr($word, 0, PS_SEARCH_MAX_WORD_LENGTH)).$end_search.'\'';
+            }
+        } else {
+            unset($words[$key]);
+        }
+    }
+
+    if (!count($words)) {
+        return ($ajax ? array() : array('total' => 0, 'result' => array()));
+    }
+
+    $score = '';
+    if (is_array($score_array) && !empty($score_array)) {
+        $score = ',(
+            SELECT SUM(weight)
+            FROM '._DB_PREFIX_.'search_word sw
+            LEFT JOIN '._DB_PREFIX_.'search_index si ON sw.id_word = si.id_word
+            WHERE sw.id_lang = '.(int)$id_lang.'
+                AND sw.id_shop = '.$context->shop->id.'
+                AND si.id_product = p.id_product
+                AND ('.implode(' OR ', $score_array).')
+        ) position';
+    }
+
+    $sql_groups = '';
+    if (Group::isFeatureActive()) {
+        $groups = FrontController::getCurrentCustomerGroups();
+        $sql_groups = 'AND cg.`id_group` '.(count($groups) ? 'IN ('.implode(',', $groups).')' : '= 1');
+    }
+
+    $results = $db->executeS('
+    SELECT cp.`id_product`
+    FROM `'._DB_PREFIX_.'category_product` cp
+    '.(Group::isFeatureActive() ? 'INNER JOIN `'._DB_PREFIX_.'category_group` cg ON cp.`id_category` = cg.`id_category`' : '').'
+    INNER JOIN `'._DB_PREFIX_.'category` c ON cp.`id_category` = c.`id_category`
+    INNER JOIN `'._DB_PREFIX_.'product` p ON cp.`id_product` = p.`id_product`
+    '.Shop::addSqlAssociation('product', 'p', false).'
+    WHERE c.`active` = 1
+    AND product_shop.`active` = 1
+    AND product_shop.`visibility` IN ("both", "search")
+    AND product_shop.indexed = 1
+    '.$sql_groups, true, false);
+
+    $eligible_products = array();
+    foreach ($results as $row) {
+        $eligible_products[] = $row['id_product'];
+    }
+    foreach ($intersect_array as $query) {
+        $eligible_products2 = array();
+        foreach ($db->executeS($query, true, false) as $row) {
+            $eligible_products2[] = $row['id_product'];
+        }
+
+        $eligible_products = array_intersect($eligible_products, $eligible_products2);
+        if (!count($eligible_products)) {
+            return ($ajax ? array() : array('total' => 0, 'result' => array()));
+        }
+    }
+
+    $eligible_products = array_unique($eligible_products);
+
+    $product_pool = '';
+    foreach ($eligible_products as $id_product) {
+        if ($id_product) {
+            $product_pool .= (int)$id_product.',';
+        }
+    }
+    if (empty($product_pool)) {
+        return ($ajax ? array() : array('total' => 0, 'result' => array()));
+    }
+    $product_pool = ((strpos($product_pool, ',') === false) ? (' = '.(int)$product_pool.' ') : (' IN ('.rtrim($product_pool, ',').') '));
+
+    if ($ajax) {
+        $sql = 'SELECT DISTINCT p.id_product, pl.name pname, cl.name cname,
+                    cl.link_rewrite crewrite, pl.link_rewrite prewrite '.$score.'
+                FROM '._DB_PREFIX_.'product p
+                INNER JOIN `'._DB_PREFIX_.'product_lang` pl ON (
+                    p.`id_product` = pl.`id_product`
+                    AND pl.`id_lang` = '.(int)$id_lang.Shop::addSqlRestrictionOnLang('pl').'
+                )
+                '.Shop::addSqlAssociation('product', 'p').'
+                INNER JOIN `'._DB_PREFIX_.'category_lang` cl ON (
+                    product_shop.`id_category_default` = cl.`id_category`
+                    AND cl.`id_lang` = '.(int)$id_lang.Shop::addSqlRestrictionOnLang('cl').'
+                )
+                WHERE p.`id_product` '.$product_pool.'
+                ORDER BY position DESC LIMIT 10';
+        return $db->executeS($sql, true, false);
+    }
+
+    if (strpos($order_by, '.') > 0) {
+        $order_by = explode('.', $order_by);
+        $order_by = pSQL($order_by[0]).'.`'.pSQL($order_by[1]).'`';
+    }
+    $alias = '';
+    if ($order_by == 'price') {
+        $alias = 'product_shop.';
+    } elseif (in_array($order_by, array('date_upd', 'date_add'))) {
+        $alias = 'p.';
+    }
+    $sql = 'SELECT p.*, product_shop.*, stock.out_of_stock, IFNULL(stock.quantity, 0) as quantity,
+            pl.`description_short`, pl.`available_now`, pl.`available_later`, pl.`link_rewrite`, pl.`name`,
+         image_shop.`id_image` id_image, il.`legend`, m.`name` manufacturer_name '.$score.',
+            DATEDIFF(
+                p.`date_add`,
+                DATE_SUB(
+                    "'.date('Y-m-d').' 00:00:00",
+                    INTERVAL '.(Validate::isUnsignedInt(Configuration::get('PS_NB_DAYS_NEW_PRODUCT')) ? Configuration::get('PS_NB_DAYS_NEW_PRODUCT') : 20).' DAY
+                )
+            ) > 0 new'.(Combination::isFeatureActive() ? ', product_attribute_shop.minimal_quantity AS product_attribute_minimal_quantity, IFNULL(product_attribute_shop.`id_product_attribute`,0) id_product_attribute' : '').'
+            FROM '._DB_PREFIX_.'product p
+            '.Shop::addSqlAssociation('product', 'p').'
+            INNER JOIN `'._DB_PREFIX_.'product_lang` pl ON (
+                p.`id_product` = pl.`id_product`
+                AND pl.`id_lang` = '.(int)$id_lang.Shop::addSqlRestrictionOnLang('pl').'
+            )
+            '.(Combination::isFeatureActive() ? 'LEFT JOIN `'._DB_PREFIX_.'product_attribute_shop` product_attribute_shop
+            ON (p.`id_product` = product_attribute_shop.`id_product` AND product_attribute_shop.`default_on` = 1 AND product_attribute_shop.id_shop='.(int)$context->shop->id.')':'').'
+            '.Product::sqlStock('p', 0).'
+            LEFT JOIN `'._DB_PREFIX_.'manufacturer` m ON m.`id_manufacturer` = p.`id_manufacturer`
+            LEFT JOIN `'._DB_PREFIX_.'image_shop` image_shop
+                ON (image_shop.`id_product` = p.`id_product` AND image_shop.cover=1 AND image_shop.id_shop='.(int)$context->shop->id.')
+            LEFT JOIN `'._DB_PREFIX_.'image_lang` il ON (image_shop.`id_image` = il.`id_image` AND il.`id_lang` = '.(int)$id_lang.')
+            WHERE p.`id_product` '.$product_pool.'
+            GROUP BY product_shop.id_product
+            '.($order_by ? 'ORDER BY  '.$alias.$order_by : '').($order_way ? ' '.$order_way : '').'
+            LIMIT '.(int)(($page_number - 1) * $page_size).','.(int)$page_size;
+    $result = $db->executeS($sql, true, false);
+
+    $sql = 'SELECT COUNT(*)
+            FROM '._DB_PREFIX_.'product p
+            '.Shop::addSqlAssociation('product', 'p').'
+            INNER JOIN `'._DB_PREFIX_.'product_lang` pl ON (
+                p.`id_product` = pl.`id_product`
+                AND pl.`id_lang` = '.(int)$id_lang.Shop::addSqlRestrictionOnLang('pl').'
+            )
+            LEFT JOIN `'._DB_PREFIX_.'manufacturer` m ON m.`id_manufacturer` = p.`id_manufacturer`
+            WHERE p.`id_product` '.$product_pool;
+    $total = $db->getValue($sql, false);
+
+    if (!$result) {
+        $result_properties = false;
+    } else {
+        $result_properties = Product::getProductsProperties((int)$id_lang, $result);
+    }
+
+    return array('total' => $total,'result' => $result_properties);
+}    
 
     /**
      * @param Db $db
