@@ -23,13 +23,13 @@
     <div class="modal-content">
       <div class="modal-header">
         <div class="col-lg-6 divide-right">
-          <h4 class="modal-title h6 text-xs-center" id="myModalLabel"><i class="material-icons">&#xE876;</i>{l s='Product successfully added to your shopping cart' d='Shop.Theme.Checkout'}</h4>
+          <h4 class="modal-title h6 text-xs-center" id="myModalLabel"><i class="material-icons">&#xE876;</i>{l s='Product successfully added to your shopping cart' d='Shop.Theme.modal'}</h4>
         </div>
         <div class="col-lg-6 modal-header-right">
           {if $cart.products_count > 1}
-            <p class="cart-products-count">{l s='There are %products_count% items in your cart.' sprintf=['%products_count%' => $cart.products_count] d='Shop.Theme.Checkout'}</p>
+            <p class="cart-products-count">{l s='There are %products_count% items in your cart.' sprintf=['%products_count%' => $cart.products_count] d='Shop.Theme.modal'}</p>
           {else}
-            <p class="cart-products-count">{l s='There is %product_count% item in your cart.' sprintf=['%product_count%' =>$cart.products_count] d='Shop.Theme.Checkout'}</p>
+            <p class="cart-products-count">{l s='There is %product_count% item in your cart.' sprintf=['%product_count%' =>$cart.products_count] d='Shop.Theme.modal'}</p>
           {/if}
           <button type="button" class="close" data-dismiss="modal" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -47,30 +47,30 @@
               <div class="col-md-8 details-product-modal">
               {* <pre>{print_r($product,1)}</pre> *}
                 <h6 class="h6 product-name">{$product.name|escape:'html':'UTF-8'}</h6>
-                <span><strong>{l s="Price" d="Shop.Theme.Checkout"}</strong>: {$product.price|escape:'html':'UTF-8'}</span>
+                <span><strong>{l s="Price" d="Shop.Theme.modal"}</strong>: {$product.price|escape:'html':'UTF-8'}</span>
                 {hook h='displayProductPriceBlock' product=$product type="unit_price"}
-                <span><strong>{l s="Reference" d="Shop.Theme.Checkout"}</strong>: {$product.reference|escape:'html':'UTF-8'}</span><br>
+                <span><strong>{l s="Reference" d="Shop.Theme.modal"}</strong>: {$product.reference|escape:'html':'UTF-8'}</span><br>
                 {foreach from=$product.attributes item="property_value" key="property"}
                   <span><strong>{$property|escape:'html':'UTF-8'}</strong>: {$property_value|escape:'html':'UTF-8'}</span><br>
                 {/foreach}
-                <p><strong>{l s='Quantity:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$product.cart_quantity|escape:'html':'UTF-8'}</p>
+                <p><strong>{l s='Quantity:' d='Shop.Theme.modal'}</strong>&nbsp;{$product.cart_quantity|escape:'html':'UTF-8'}</p>
               </div>
             </div>
           </div>
           <div class="col-md-6 col-sm-12 col-xs-12">
             <div class="cart-content">
                 {* {debug} *}
-              <p><strong>{l s='Price' d='Shop.Theme.Checkout'} :</strong>&nbsp;{$cart.totals.total_excluding_tax.value} ({l s="ExVAT" d='Shop.Theme.Checkout'})</p>
-              <p><strong>{l s='VAT' d='Shop.Theme.Checkout'} :</strong>&nbsp;€ {($cart.totals.total.amount - $cart.totals.total_excluding_tax.amount)|number_format:2}</p>
+              <p><strong>{l s='Price' d='Shop.Theme.modal'} :</strong>&nbsp;{$cart.totals.total_excluding_tax.value} ({l s="ExVAT" d='Shop.Theme.modal'})</p>
+              <p><strong>{l s='VAT' d='Shop.Theme.modal'} :</strong>&nbsp;€ {($cart.totals.total.amount - $cart.totals.total_excluding_tax.amount)|number_format:2}</p>
               <p>
-                <strong>{l s='Shipping' d='Shop.Theme.Checkout'}  :</strong>&nbsp;
+                <strong>{l s='Shipping' d='Shop.Theme.modal'}  :</strong>&nbsp;
                 {if $cart.subtotals.shipping.amount|escape:'html':'UTF-8' > 0} 
                   {* {$cart.subtotals.shipping.amount|escape:'html':'UTF-8'} *}
-                  ({l s="To be defined" d="Shop.Theme.Checkout"})
+                  ({l s="To be defined" d="Shop.Theme.modal"})
                 {else} 
-                  ({l s="To be defined" d="Shop.Theme.Checkout"})
+                  ({l s="To be defined" d="Shop.Theme.modal"})
                 {/if}{hook h='displayCheckoutSubtotalDetails' subtotal=$cart.subtotals.shipping}</p>
-              <p><strong>{l s='Total' d='Shop.Theme.Checkout'} :</strong>&nbsp;{$cart.subtotals.products.value|escape:'html':'UTF-8'}</p>
+              <p><strong>{l s='Total' d='Shop.Theme.modal'} :</strong>&nbsp;{$cart.subtotals.products.value|escape:'html':'UTF-8'}</p>
 
               {* ---------------------------------------- *}
               {* <p class="subtitle-modal-cart"><strong>{l s='Total products:' d='Shop.Theme.Checkout'}</strong>&nbsp;{$cart.subtotals.products.value|escape:'html':'UTF-8'}</p> *}
@@ -89,10 +89,10 @@
 
           <div class="col-lg-12 container-modal-btns-shopping">
             <div class="cart-content-btn col-lg-6">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.Actions'}</button>
+              <button type="button" class="btn btn-secondary" data-dismiss="modal">{l s='Continue shopping' d='Shop.Theme.modal'}</button>
             </div>
             <div class="cart-content-btn col-lg-6">
-              <a href="{$order_url}" class="btn btn-primary"><i class="material-icons rtl-no-flip">&#xE876;</i>{l s='Proceed to checkout' d='Shop.Theme.Actions'}</a>
+              <a href="{$order_url}" class="btn btn-primary"><i class="material-icons rtl-no-flip">&#xE876;</i>{l s='Proceed to checkout' d='Shop.Theme.modal'}</a>
             </div>
           </div>
 
