@@ -259,7 +259,10 @@
                     </td>
                     <td class="text-xs-center hidden-md-down">
                       {if $order.details.invoice_url}
-                        <a href="{$order.details.invoice_url|escape:'html':'UTF-8'}"><i class="material-icons">&#xE415;</i></a>
+                        <a href="{$order.details.invoice_url|escape:'html':'UTF-8'}">
+                          <i class="material-icons">&#xE415;</i>
+                          {* <img src="/img/asd/icon_invoice2.webp" width="20" height="20" style="width: 28px;height:auto;" /> *}
+                        </a>
                       {else}
                         -
                       {/if}
@@ -466,13 +469,14 @@
             <div class="statistics_container">
               {l s='Last viewed products' d="Shop.Theme.Statistics"}
             </div>
-            <div class="last-viewed-products" style="display: flex;gap:0.5rem;flex-wrap:wrap;">
+            <div class="last-viewed-products">
+            {* {hook h='displayReassurance' mod='ps_viewedproduct'} *}
               {if count($lastViewedProducts) > 0}
                   {foreach $lastViewedProducts As $product}
                 <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12" style="margin-top: 1rem;">
                     <div class="statistics_container" style="padding: 0; margin: 0;overflow: hidden;">
                         <a class="product_img_link"	href="https://www.all-stars-distribution.com/{$product['id_product']}-product.html" title="{$product['name']}" itemprop="url" style="width: 100%; text-align: center;">
-                              <div style="background-color: white;display: flex;">
+                              <div style="background-color: white;display: flex;justify-content:center;">
                               {* {$product|print_r} *}
 
                                 <img
