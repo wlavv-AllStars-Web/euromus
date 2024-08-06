@@ -1272,6 +1272,10 @@ form label {
   justify-content: center;
 }
 
+/* #my-account table tbody tr:nth-child(2n){
+  background: #f6f6f6;
+} */
+
 #menu-client {
   height: unset !important;
   max-height: 50px;
@@ -1408,7 +1412,28 @@ article.product-miniature .thumbnail-container:hover {
 
 article.product-miniature .information-product {
   cursor: pointer;
+  position: relative;
 }
+
+article.product-miniature .information-product .btn-catalog-brand{
+  position: absolute;
+  content: '';
+  width: 40px;
+  height: 40px;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background: #fff;
+  border-radius: 0.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5rem;
+  color: #fff;
+  /* border: 1px solid #0273EB; */
+}
+
+
 
 #js-product-list .h3 a:hover {
   color: #0273eb;
@@ -1947,7 +1972,7 @@ input[type="number"] {
 } */
 
 .cart-container table thead tr th {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 17px;
   color: #333;
   font-weight: 700;
@@ -1957,41 +1982,41 @@ input[type="number"] {
 #checkout .cart_description a {
   font-size: 15px !important;
   line-height: 22px;
-  color: #131313 !important;
+  color: #333 !important;
   font-weight: 600;
 }
 #checkout .cart_description span {
   font-size: 14px;
   line-height: 19px;
-  color: #000;
+  color: #333;
   font-weight: 400;
 }
 #checkout .cart_total .product-price {
   font-size: 14px;
   line-height: 17px;
-  color: #131313 !important;
+  color: #333 !important;
   font-weight: 700;
 }
 #checkout .cart-overview .cart_total_price .text-right {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 17px;
   color: #333 !important;
   font-weight: 700;
 }
 #checkout .cart-overview .cart_total_price .total_product {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 17px;
   color: #333 !important;
   font-weight: 400;
 }
 #checkout .cart-overview .cart_total_tax .text-right {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 17px;
   color: #333 !important;
   font-weight: 700;
 }
 #checkout .cart-overview .cart_total_tax .total_product {
-  font-size: 13px;
+  font-size: 14px;
   line-height: 17px;
   color: #333 !important;
   font-weight: 400;
@@ -1999,7 +2024,7 @@ input[type="number"] {
 #checkout .cart-overview .cart_total_price .total_price_container.text-right {
   font-size: 18px;
   line-height: 22px;
-  color: #555454 !important;
+  color: #333 !important;
   font-weight: 600;
 }
 #checkout .cart-overview .cart_total_price #total_price_container {
@@ -2010,14 +2035,22 @@ input[type="number"] {
   padding: 8px;
 }
 
-#checkout #delivery-addresses .title {
+#checkout #invoice-addresses .title {
   border: 0;
   font-size: 18px;
   font-weight: 600;
   color: #555454;
 }
-#checkout #delivery-addresses .form-control {
+#checkout #invoice-addresses .form-control {
   background-color: #eeeeee;
+
+  border: 1px solid #333;
+  border-radius: 0px;
+  line-height: 45px;
+  height: 45px;
+  font-size: 20px;
+}
+#checkout #delivery-addresses .form-control {
 
   border: 1px solid #333;
   border-radius: 0px;
@@ -2029,6 +2062,10 @@ input[type="number"] {
   color: #777777 !important;
   opacity: 1;
 }
+#checkout #invoice-addresses .form-control::placeholder {
+  color: #777777 !important;
+  opacity: 1;
+}
 #checkout .invoice_address .form-control {
   border: 1px solid #333 !important;
   border-radius: 0px;
@@ -2036,12 +2073,18 @@ input[type="number"] {
   height: 45px;
   font-size: 20px !important;
 }
-#checkout .invoice_address textarea.form-control {
+#checkout .shipping_address textarea.form-control {
   height: unset !important;
 }
-#checkout .invoice_address .form-control::placeholder {
+#checkout .delivery_address .form-control::placeholder {
   color: #777777 !important;
   opacity: 1;
+}
+
+#checkout #delivery-addresses .shipping_address{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 #checkout .block-onepagecheckout .form-group{
@@ -3506,7 +3549,7 @@ textarea {
     background: #fff;
   }
 
-  #checkout #delivery-addresses .form-control{
+  #checkout #invoice-addresses .form-control{
     background-color: #eeeeee !important;
   }
 }
