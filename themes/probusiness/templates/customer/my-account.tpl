@@ -260,8 +260,8 @@
                     <td class="text-xs-center hidden-md-down">
                       {if $order.details.invoice_url}
                         <a href="{$order.details.invoice_url|escape:'html':'UTF-8'}">
-                          <i class="material-icons">&#xE415;</i>
-                          {* <img src="/img/asd/icon_invoice2.webp" width="20" height="20" style="width: 28px;height:auto;" /> *}
+                          {* <i class="material-icons">&#xE415;</i> *}
+                          <img src="/img/asd/icon_invoice.svg" width="20" height="20" style="width: 28px;height:auto;" />
                         </a>
                       {else}
                         -
