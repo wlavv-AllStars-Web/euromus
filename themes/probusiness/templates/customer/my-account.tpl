@@ -113,7 +113,7 @@
                     <div class="counters_panel margin-lados-10">
                       <div class="color-label">
                         <div class="waiting_validation"></div>
-                        <div class="counters_label">{l s='Waiting validation' d='Shop.Theme.Customeraccount'}</div>
+                        <div class="counters_label">{l s='Awaiting confirmation' d='Shop.Theme.Customeraccount'}</div>
                       </div>
                         <div class="counters_value">{$counters['waiting_validation']}</div>
                     </div>
@@ -125,7 +125,7 @@
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
                         <div class="waiting_payment"></div>
-                        <div class="counters_label">{l s='Waiting payment' d='Shop.Theme.Customeraccount'}</div>
+                        <div class="counters_label">{l s='Awaiting payment' d='Shop.Theme.Customeraccount'}</div>
                       </div>
                         <div class="counters_value">{$counters['waiting_payment']}</div>
                     </div>
@@ -137,7 +137,7 @@
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
                         <div class="preparation"></div>
-                        <div class="counters_label">{l s='In preparation' d='Shop.Theme.Customeraccount'}</div>
+                        <div class="counters_label">{l s='Packing in progress' d='Shop.Theme.Customeraccount'}</div>
                       </div>
                         <div class="counters_value">{$counters['processing']}</div>
                     </div>
@@ -149,7 +149,7 @@
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
                         <div class="backorder"></div>
-                        <div class="counters_label">{l s='Backorder' d='Shop.Theme.Customeraccount'}</div>
+                        <div class="counters_label">{l s='On Backorder' d='Shop.Theme.Customeraccount'}</div>
                       </div>
                         <div class="counters_value">{$counters['backorders']}</div>
                     </div>
