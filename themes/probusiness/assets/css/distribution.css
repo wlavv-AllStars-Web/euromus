@@ -1927,14 +1927,14 @@ input[type="number"] {
   align-items: center;
   padding: 2rem 1rem;
   background: #fff;
-  transition: all 0.3s ease-in-out;
+  transition: box-shadow 200ms ease-in-out;
   width: 400px;
 }
 
 #checkout .ets_payment_method .img-module:hover {
+  outline: 2px solid #0273EB !important;
+  transition: box-shadow 200ms ease-in-out;
   box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
-  background: #f6f6f6;
-  transition: all 0.3s ease-in-out;
 }
 
 
@@ -2075,6 +2075,7 @@ input[type="number"] {
 }
 #checkout .shipping_address textarea.form-control {
   height: unset !important;
+  background: unset;
 }
 #checkout .delivery_address .form-control::placeholder {
   color: #777777 !important;
@@ -2098,7 +2099,14 @@ input[type="number"] {
 #checkout .btn-contact-us-link{
   color: #0273EB !important;
 }
-#checkout .btn-contact-us-link{
+#checkout .btn-contact-us-link:hover{
+  color: #0273EB !important;
+  text-decoration: underline;
+}
+#checkout #conditions-to-approve a{
+  color: #0273EB !important;
+}
+#checkout #conditions-to-approve a:hover{
   color: #0273EB !important;
   text-decoration: underline;
 }
@@ -3551,6 +3559,9 @@ textarea {
 
   #checkout #invoice-addresses .form-control{
     background-color: #eeeeee !important;
+  }
+  #checkout #delivery-addresses .form-control{
+    background-color: #ffffff !important;
   }
 }
 
