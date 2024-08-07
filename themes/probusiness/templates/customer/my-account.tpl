@@ -215,7 +215,7 @@
                 <tr>
                   <th class="text-xs-center">{l s='Date' d='Shop.Theme.Customeraccount'}</th>
                   <th class="text-xs-center">{l s='Order reference' d='Shop.Theme.Customeraccount'}</th>
-                  <th class="text-xs-center">{l s='Order Id' d='Shop.Theme.Customeraccount'}</th>
+                  {* <th class="text-xs-center">{l s='Order Id' d='Shop.Theme.Customeraccount'}</th> *}
                   <th class="text-xs-center">{l s='Total price' d='Shop.Theme.Customeraccount'}</th>
                   <th class="hidden-md-down text-xs-center">{l s='Status' d='Shop.Theme.Customeraccount'}</th>
                   <th class="text-xs-center">{l s='Carrier' d='Shop.Theme.Customeraccount'}</th>
@@ -236,7 +236,7 @@
                         {$order.details.reference|escape:'html':'UTF-8'}
                       </a>
                     </th>
-                    <td class="text-xs-center">{$order.history.current.id_order|escape:'html':'UTF-8'}</td>
+                    {* <td class="text-xs-center">{$order.history.current.id_order|escape:'html':'UTF-8'}</td> *}
                     <td class="text-xs-center">{$order.totals.total.value|escape:'html':'UTF-8'}</td>
                     {* <td class="hidden-md-down">{$order.details.payment|escape:'html':'UTF-8'}</td> *}
                     <td class="text-xs-center">
