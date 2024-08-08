@@ -107,6 +107,105 @@ body #wrapper {
   margin-left: 0 !important;
 }
 
+/* form reset passowrd */
+
+#password .container-fluid{
+  max-width: 1200px;
+}
+#password .breadcrumb a:hover{
+  color: #0273EB !important;
+}
+
+#password .forgotten-password{
+  display: flex;
+  justify-content: center;
+  padding: 3rem;
+}
+
+  .container-reset-password{
+    width: 600px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 3rem;
+    gap: 2rem;
+    /* outline: 2px solid #0273EB; */
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+  }
+
+  .container-reset-password .form-group{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+  .container-reset-password .form-group label{
+    text-align: start;
+    margin-bottom: 0;
+  }
+  .container-reset-password .form-group button{
+    margin-top: 1rem;
+    background: #0273EB;
+    border: 0;
+    border-radius: 0;
+  }
+  .container-reset-password .form-group button:hover{
+    background: #666;
+  }
+
+  .container-reset-password .account-link{
+    margin-left: auto;
+  }
+  .container-reset-password .account-link:hover{
+    color: #0273EB !important;
+  }
+
+/* login customer */
+
+#authentication .breadcrumb a:hover{
+  color: #0273EB !important;
+}
+
+#authentication .login-form-page .form-group .col-md-6{
+  width: 100%;
+}
+
+#authentication .login-form-page .form-group .form-control-label {
+  text-align: start;
+}
+
+#authentication .login-form-page .btn-primary {
+  background: #0273EB !important; 
+  border: 0;
+  border-radius: 0;
+}
+
+#authentication .login-form-page .btn-primary:hover {
+  background: #666 !important; 
+  border: 0;
+  border-radius: 0;
+}
+
+#authentication .login-form-page{
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 3rem;
+  gap: 2rem;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+#authentication .login-form{
+  border: 0 !important;
+  padding: 0 !important;
+}
+
+#authentication .help-block li{
+  margin: 0 15px;
+}
+
 /* shopping cart modal */
 #_desktop_cart {
   display: flex !important;
@@ -2655,6 +2754,13 @@ textarea {
 .page-not-found #search_widget .search_block_top_fixed {
   position: unset;
   margin: auto;
+}
+
+.page-not-found{
+  width: 100% !important;
+}
+.page-not-found #search_widget{
+  width: 100% !important;
 }
 
 /* client statistics */

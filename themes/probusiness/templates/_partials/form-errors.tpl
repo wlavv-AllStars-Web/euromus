@@ -19,7 +19,7 @@
 *  International Registered Trademark & Property of ETS-Soft
 *}
 {if $errors|count}
-  <div class="help-block">
+  <div class="help-block col-md-12">
     {block name='form_errors'}
       <ul>
         {foreach $errors as $error}

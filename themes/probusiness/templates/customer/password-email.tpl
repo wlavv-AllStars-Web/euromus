@@ -20,9 +20,9 @@
 *}
 {extends file='page.tpl'}
 
-{block name='page_title'}
+{* {block name='page_title'}
   {l s='Forgot your password?' d='Shop.Theme.Actions'}
-{/block}
+{/block} *}
 
 {block name='page_content'}
   <form action="{$urls.pages.password|escape:'html':'UTF-8'}" class="forgotten-password" method="post">
@@ -40,7 +40,31 @@
       {/foreach}
     </ul>
 
-    <header>
+    <div class="container-reset-password">
+      <div class="reset-header">
+        <h1>{l s="Password Reset" d="Shop.Theme.Reset"}</h1>
+        <p>{l s="Please enter the email address you used to register. You will receive a temporary link to reset your password." d="Shop.Theme.Reset"}</p>
+      </div>
+
+      <div class="reset-content">
+        <div class="form-group">
+          <label class="col-md-12 px-0">{l s='Email address' d='Shop.Forms.Labels'}</label>
+          <div class="col-md-12 px-0">
+            <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|escape:'html':'UTF-8'}{/if}" class="form-control" required>
+          </div>
+          <button class="form-control-submit btn btn-primary col-md-12" name="submit" type="submit">
+            {l s='Send reset link' d='Shop.Theme.Actions'}
+          </button>
+        </div>
+      </div>
+      <a href="{$urls.pages.my_account|escape:'html':'UTF-8'}" class="account-link">
+        <i class="material-icons">&#xE5CB;</i>
+        <span>{l s='Back to login' d='Shop.Theme.Actions'}</span>
+      </a>
+
+    </div>
+
+    {* <header>
       <p class="send-renew-password-link">{l s='Please enter the email address you used to register. You will receive a temporary link to reset your password.' d='Shop.Theme.Actions'}</p>
     </header>
 
@@ -54,14 +78,14 @@
           {l s='Send reset link' d='Shop.Theme.Actions'}
         </button>
       </div>
-    </section>
+    </section> *}
 
   </form>
 {/block}
 
-{block name='page_footer'}
+{* {block name='page_footer'}
   <a href="{$urls.pages.my_account|escape:'html':'UTF-8'}" class="account-link">
     <i class="material-icons">&#xE5CB;</i>
     <span>{l s='Back to login' d='Shop.Theme.Actions'}</span>
   </a>
-{/block}
+{/block} *}

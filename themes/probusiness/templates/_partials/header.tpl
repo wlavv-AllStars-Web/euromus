@@ -86,7 +86,7 @@
             
              {else} 
               {* <pre>{$urls|print_r}</pre> *}
-              
+            
             <form id="login-form" action="{$urls.pages.authentication}" method="post">   
                 <div style="display:flex; width:30%; height: min-content;" class="form-group col">
                   <div class="email_icon header-icon">
@@ -103,7 +103,7 @@
                     <input class="form-control js-child-focus js-visible-password whtbl" name="password" type="password" value="" required placeholder="{l s="Password" d='Shop.Theme.Actions'}">                 
                   </div>
                   <div>
-                    <a href="/forgotpassword" rel="nofollow" style="color: #0273EB;font-size:12px;line-height:18px;">
+                    <a href="{$urls.pages.password}" rel="nofollow" style="color: #0273EB;font-size:12px;line-height:18px;">
                       {l s='Forgot your password?' d='Shop.Theme.Actions'}
                     </a>
                   </div>
