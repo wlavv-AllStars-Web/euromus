@@ -261,7 +261,7 @@
                       {if $order.details.invoice_url}
                         <a href="{$order.details.invoice_url|escape:'html':'UTF-8'}">
                           {* <i class="material-icons">&#xE415;</i> *}
-                          <img src="/img/asd/icon_invoice.svg" width="20" height="20" style="width: 28px;height:auto;" />
+                          <img src="/img/asd/icon_invoice.svg" width="23" height="23" style="width: 23px;height:auto;" />
                         </a>
                       {else}
                         -
