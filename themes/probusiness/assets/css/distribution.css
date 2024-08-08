@@ -1388,7 +1388,11 @@ form label {
 }
 #menu-client .nav-item:nth-child(8){
   cursor:unset;
-  background: #f7f7f7;
+  background: #f7f7f7 !important;
+}
+#menu-client .nav-item:nth-child(8):hover{
+  cursor:unset;
+  background: #f7f7f7 !important;
 }
 
 #menu-client .nav-item a i {
