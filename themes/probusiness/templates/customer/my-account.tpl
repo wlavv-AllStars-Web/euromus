@@ -214,7 +214,7 @@
               <thead class="thead-default">
                 <tr>
                   <th class="text-xs-center">{l s='Date' d='Shop.Theme.Customeraccount'}</th>
-                  <th class="text-xs-center">{l s='Order reference' d='Shop.Theme.Customeraccount'}</th>
+                  <th class="text-xs-center">{l s='Order ID' d='Shop.Theme.Customeraccount'}</th>
                   {* <th class="text-xs-center">{l s='Order Id' d='Shop.Theme.Customeraccount'}</th> *}
                   <th class="text-xs-center">{l s='Total price' d='Shop.Theme.Customeraccount'}</th>
                   <th class="hidden-md-down text-xs-center">{l s='Status' d='Shop.Theme.Customeraccount'}</th>
