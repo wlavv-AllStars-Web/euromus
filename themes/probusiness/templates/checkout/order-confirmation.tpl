@@ -12,28 +12,31 @@
           <div class="col-md-12" style="padding: 2rem 0;">
 
             {block name='order_confirmation_header'}
-              <div style="display: flex; gap:1rem;justify-content:center;">
-              <h3 class="h1 card-title" style="text-align: center;font-weight:400;">
-                {* <i class="material-icons rtl-no-flip done" style="font-size: 2rem;">&#xE876;</i> *}
-                {l s='Order' d='Shop.Theme.OrderConfirmation'}
-              </h3>
-              <h3 class="h1 card-title" style="text-align: center;">
-                <strong>{$order.details.reference}</strong>
-              </h3>
+              <div style="display: flex; gap:1rem;justify-content:center;align-items:center;">
+                <img src="/img/asd/icon_correct.svg" width="40" height="40" style="width: 40px;height:auto;"/>
+                <h3 class="h1 card-title" style="text-align: center;font-weight:400;margin-bottom: 0;">
+                  {* <i class="material-icons rtl-no-flip done" style="font-size: 2rem;">&#xE876;</i> *}
+                  {l s='Order' d='Shop.Theme.OrderConfirmation'}
+                </h3>
+                <h3 class="h1 card-title" style="text-align: center;margin-bottom: 0;">
+                  <strong>{$order.details.reference}</strong>
+                </h3>
 
-              <h3 class="h1 card-title" style="text-align: center;font-weight:400;">
-                {l s='Registered' d='Shop.Theme.OrderConfirmation'}
-              </h3>
-              
+                <h3 class="h1 card-title" style="text-align: center;font-weight:400;margin-bottom: 0;">
+                  {l s='Registered' d='Shop.Theme.OrderConfirmation'}
+                </h3>
               </div>
               <br>
             {/block}
 
-            <div style="text-align: center;">
+            <div style="text-align: center;margin-top:2rem;">
               <p style="font-size: 18px;color: #333;">{l s="In the next few minutes, you will receive an order confirmation by email including the delivery costs to allow you to make your payment via the selected method." d="Shop.Theme.OrderConfirmation"}</p>
               <br>
               <p style="font-size: 18px;color: #333;">{l s="Please pay attention to any comments that may be present on the order confirmation (ETA, availability, modification, etc.)." d="Shop.Theme.OrderConfirmation"}</p>
               <br>
+              <div class="warnig-order-confirmation" style="width: 100%;display:flex;justify-content:center;margin-block: 2rem 1rem;">
+                <img src="/img/asd/icon_danger.svg" width="45" height="45" style="width: 45px;height:auto;" />
+              </div>
               <p style="font-size: 18px;color: #333;">{l s="Please do not make any payment before receiving and checking the order confirmation sent by our sales department." d="Shop.Theme.OrderConfirmation"}</p>
               <br>
               <p style="font-size: 18px;color: #333;">{l s="Thank you" d="Shop.Theme.OrderConfirmation"}</p>
