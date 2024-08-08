@@ -346,7 +346,7 @@ $_MODULE['<{ets_onepagecheckout}prestashop>cart-voucher_ec211f7c20af43e742bf2570
 $_MODULE['<{ets_onepagecheckout}prestashop>cart-voucher_12a7a93d72ded50311b52c7d0a853e3c'] = 'Aproveite nossas ofertas exclusivas:';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_af0f5bdc5be121b9307687aeeae38c17'] = 'Endereço de entrega';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_aaffa320d37ecd3bcf2f59d8363c4de1'] = 'Usar endereço';
-$_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_4e53c57c828378d67ffdb2338772cf10'] = 'por favor escolha';
+$_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_4e53c57c828378d67ffdb2338772cf10'] = 'Por favor selecione um país';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_3184879661af0760035677650aa8ff10'] = 'Insira o novo endereço';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_56d0ed7cd789dd772be59aa6b1e437de'] = 'O endereço selecionado será usado tanto como seu endereço pessoal (para fatura) quanto como endereço de entrega.';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_a28a0b27995dc44fe4dc857d2cbb2c6c'] = 'Usar outro endereço para fatura';
