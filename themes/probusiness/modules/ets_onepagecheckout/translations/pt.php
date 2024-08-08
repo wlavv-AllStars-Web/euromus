@@ -436,7 +436,7 @@ $_MODULE['<{ets_onepagecheckout}prestashop>form_custom_field_34e2d1989a1dbf75cd6
 $_MODULE['<{ets_onepagecheckout}prestashop>form_custom_field_be53a0541a6d36f6ecb879fa2c584b08'] = 'Imagem';
 $_MODULE['<{ets_onepagecheckout}prestashop>invoice_address_601d8c4b9f72fc1862013c19b677a499'] = 'Endereço da fatura';
 $_MODULE['<{ets_onepagecheckout}prestashop>invoice_address_aaffa320d37ecd3bcf2f59d8363c4de1'] = 'Usar endereço';
-$_MODULE['<{ets_onepagecheckout}prestashop>invoice_address_4e53c57c828378d67ffdb2338772cf10'] = 'por favor escolha';
+$_MODULE['<{ets_onepagecheckout}prestashop>invoice_address_4e53c57c828378d67ffdb2338772cf10'] = 'Por favor selecione um país';
 $_MODULE['<{ets_onepagecheckout}prestashop>invoice_address_3184879661af0760035677650aa8ff10'] = 'Insira o novo endereço';
 $_MODULE['<{ets_onepagecheckout}prestashop>layout_1_f2fc7490cbdb0db5cd6f1a4e7edb0da1'] = 'Sua conta';
 $_MODULE['<{ets_onepagecheckout}prestashop>layout_1_dd7bf230fde8d4836917806aff6a6b27'] = 'Endereço';
