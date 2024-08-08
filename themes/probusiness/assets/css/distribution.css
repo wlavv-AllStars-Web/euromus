@@ -1207,8 +1207,8 @@ form label {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: #cfe2ff;
-  color: #222;
+  background: #0273eb;
+  color: #fff;
   padding: 0.5rem;
 }
 
