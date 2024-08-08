@@ -23,18 +23,45 @@ class AdminWmModuleAlertMessagesController extends AdminController{
     
     public function saveMessage(){
 
-        if(Tools::getValue('id') == 0){
-            Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('INSERT INTO '._DB_PREFIX_.'asd_alert_messages(title, message_type, message_status, message_en, message_es, message_fr, message_ro, message_pt, message_it) VALUES ("' . Tools::getValue('title') . '", ' . Tools::getValue('message_type') . ', ' . Tools::getValue('message_status') . ', "' . Tools::getValue('message_en') . '", "' . Tools::getValue('message_es') . '", "' . Tools::getValue('message_fr') . '", "' . Tools::getValue('message_ro') . '", "' . Tools::getValue('message_pt') . '", "' . Tools::getValue('message_it') . '")');
-            header('Location: '.$_SERVER['REQUEST_URI']);
+        $id = (int)Tools::getValue('id');
+    
+        // Retrieve values from request
+        $title = pSQL(Tools::getValue('title'));
+        $message_type = pSQL(Tools::getValue('message_type'));
+        if(Tools::getValue('message_status') === true){
+            $message_status = 1;
         }else{
-            Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS('UPDATE '._DB_PREFIX_.'asd_alert_messages SET title="' . Tools::getValue('title') . '",message_type="' . Tools::getValue('message_type') . '", message_status=' . Tools::getValue('message_status') . ', message_en="' . Tools::getValue('message_en') . '", message_es="' . Tools::getValue('message_es') . '", message_fr="' . Tools::getValue('message_fr') . '", message_ro="' . Tools::getValue('message_ro') . '", message_pt="' . Tools::getValue('message_pt') . '", message_it="' . Tools::getValue('message_it') . '" WHERE id=' . Tools::getValue('id'));
+            $message_status = 0;
         }
         
-        return 1;
+        $message_en = pSQL(Tools::getValue('message_en'));
+        $message_es = pSQL(Tools::getValue('message_es'));
+        $message_fr = pSQL(Tools::getValue('message_fr'));
+        $message_ro = pSQL(Tools::getValue('message_ro'));
+        $message_pt = pSQL(Tools::getValue('message_pt'));
+        $message_it = pSQL(Tools::getValue('message_it'));
+
+        if (Tools::getValue('id') == 0) {
+            $sql = 'INSERT INTO ' . _DB_PREFIX_ . 'asd_alert_messages (title, message_type, message_status, message_en, message_es, message_fr, message_ro, message_pt, message_it) 
+                VALUES (\'' . $title . '\', \'' . $message_type . '\', ' . $message_status . ', \'' . $message_en . '\', \'' . $message_es . '\', \'' . $message_fr . '\', \'' . $message_ro . '\', \'' . $message_pt . '\', \'' . $message_it . '\')';
+        
+            Db::getInstance()->execute($sql);
+        }else {
+            
+            $sql = 'UPDATE ' . _DB_PREFIX_ . 'asd_alert_messages 
+                    SET title = \'' . $title . '\', message_type = ' . $message_type . ', message_status = ' . $message_status . ', 
+                        message_en = \'' . $message_en . '\', message_es = \'' . $message_es . '\', message_fr = \'' . $message_fr . '\', 
+                        message_ro = \'' . $message_ro . '\', message_pt = \'' . $message_pt . '\', message_it = \'' . $message_it . '\' 
+                    WHERE id = ' . $id;
+            
+            Db::getInstance()->execute($sql);
+        }
+        
+        Tools::redirect($_SERVER['REQUEST_URI']); 
     }
     
     public function deleteMessage(){
-        return Db::getInstance(_PS_USE_SQL_SLAVE_)->executeS("UPDATE "._DB_PREFIX_."asd_alert_messages SET `deleted`=1, deleted_date=NOW()  WHERE id=" . Tools::getValue('id'));
+        return Db::getInstance(_PS_USE_SQL_SLAVE_)->execute("UPDATE "._DB_PREFIX_."asd_alert_messages SET `deleted`=1, deleted_date=NOW()  WHERE id=" . Tools::getValue('id'));
     }
     
     public function hookDisplayBackOfficeHeader()
