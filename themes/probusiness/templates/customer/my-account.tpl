@@ -786,8 +786,8 @@
                           <div class="panel-body">
                               <ul id="clients-messages">
                                   {foreach $messages AS $message}            
-                                    {* <pre>{print_r($message,1)}</pre> *}
-                                      <li class="notification-item" >
+                                    
+                                      <li class="notification-item" id="{$message['id']}" >
                                               {*<div style="min-height: 25px;" class="{if $message['message_type'] == 1} alert alert-danger {else if $message['message_type'] == 2} alert alert-warning {else if $message['message_type'] == 3} alert alert-success {else if $message['message_type'] == 4} alert alert-info{/if}" role="alert">*}
                                               <div class="notification-container" role="alert">
                                                 <div class="notification-header">
@@ -820,34 +820,6 @@
                   #clients-messages > li{ font-size: 18px; border-bottom: 1px solid #ddd; margin-bottom: 10px; min-height: 25px; color: #555; }
               </style>
 
-              <script>
-                document.addEventListener("DOMContentLoaded", function() {
-                  
-                  if({$messages|count} > 0){
-                    document.querySelector("#notification-tab").classList.add("ball_notification");
-                  }
-
-                  // const colors = [
-                  //     '#a2b3ac', 
-                  //     '#cfe2ff',
-                  //     '#e2e3e5', 
-                  //     '#fff3cd'
-                  // ];
-
-                    
-                  //   function getRandomColor() {
-                  //     return colors[Math.floor(Math.random() * colors.length)];
-                  //   }
-
-                    
-                  //   const headers = document.querySelectorAll('.notification-header');
-
-                    
-                  //   headers.forEach(function(header) {
-                  //       header.style.backgroundColor = getRandomColor();
-                  //   });
-                });
-              </script>
           {/if}
 
 
@@ -868,11 +840,38 @@
     {* <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> *}
     <script>
 
+      
+
       function changeImgBanner(tab){
           const tabid = tab.getAttribute("aria-controls");
           const banner = document.querySelector(".banner-myaccount img");
           if (tabid === 'notification') { // Corrected 'notication' to 'notification'
               banner.setAttribute("src", "/img/asd/Content_pages/notifications/noti_{$language.iso_code}.webp");
+              
+              // iniico ajax client notification
+
+              const data = {
+                  updatenotification: 1, // This triggers Tools::isSubmit('updatenotification')
+                  id_notification: document.querySelector(".notification-item:nth-child(1)").getAttribute("id"),
+                  id_customer: {$id_customer},
+              };
+
+              $.ajax({
+                  url: '{$link->getPageLink('my-account')}',
+                  type: 'POST',
+                  data: data,
+                  success: function(data) {
+                      document.querySelector("#notification-tab").classList.remove("ball_notification")
+                  },
+                  error: function(xhr, status, error) {
+                      console.error('Error:', error);
+                  }
+              });
+
+
+          
+              // fim ajax client notification
+
           }else if(tabid === 'order_history'){
             banner.setAttribute("src", "/img/asd/Content_pages/history/order_history_{$language.iso_code}.webp");
           }else if(tabid === 'statistics'){
@@ -889,6 +888,10 @@
       document.addEventListener("DOMContentLoaded", (event) => {
         const activetab = document.querySelector("#menu-client li .active")
         changeImgBanner(activetab)
+
+        if({$showNotificationBall} === 1){
+          document.querySelector("#notification-tab").classList.add("ball_notification");
+        }
       })
 
     

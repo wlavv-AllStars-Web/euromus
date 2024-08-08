@@ -43,6 +43,10 @@ class MyAccountController extends MyAccountControllerCore
             exit;
         }
 
+        if (Tools::isSubmit('updatenotification')) {
+            $this->_updatenotification();
+        }
+
         if (Tools::isSubmit('submitIdentity')) {
             
             $email = trim(Tools::getValue('email'));
@@ -173,11 +177,6 @@ class MyAccountController extends MyAccountControllerCore
             $this->order_presenter = new OrderPresenter();
         }
 
-        // exit;
-
-        // echo '<pre>'.print_r(self::bestSellers(),1).'</pre>';
-        // exit;
-
         $has_address = $this->context->customer->getAddresses($this->context->language->id);
         $this->context->smarty->assign(array(
             'has_customer_an_address' => empty($has_address),
@@ -189,7 +188,7 @@ class MyAccountController extends MyAccountControllerCore
             'ordersByBrand' => self::ordersByBrand($idCustomer),
             'ordersByBrandColors' => self::lastYearOrders($idCustomer)['colors'],
             'ordersByBrandBrands' => self::lastYearOrders($idCustomer)['brands'],
-
+            'showNotificationBall' => self::verifyLastNotification(),
 
             'company_name' => $this->context->customer->company,
             'defaultLanguage' => self::getDefaultLanguage(),
@@ -278,6 +277,35 @@ class MyAccountController extends MyAccountControllerCore
         return ['month' => explode(',',$month), 'total' => explode(',',$byMonth)];
     }
 
+    public function _updatenotification(){
+        $id_notification = Tools::getValue('id_notification');
+        $id_customer = Tools::getValue('id_customer');
+
+
+        $sql = "UPDATE "._DB_PREFIX_."customer
+                SET id_notification=".$id_notification.
+                " WHERE id_customer=".$id_customer;
+
+        Db::getInstance()->execute($sql);
+
+    }
+
+    public function verifyLastNotification() {
+
+        $sqlLastid = "SELECT MAX(id) AS lastIdNotification FROM "._DB_PREFIX_."asd_alert_messages WHERE message_status=1";
+        $valueTableAlert = Db::getInstance()->getRow($sqlLastid);
+    
+        $sqlCustomeridnotification = "SELECT id_notification AS currentIdNotification FROM "._DB_PREFIX_."customer WHERE id_customer=".$this->context->customer->id;
+        $valueCustomerNotification = Db::getInstance()->getRow($sqlCustomeridnotification);
+
+        if($valueTableAlert['lastIdNotification'] === $valueCustomerNotification['currentIdNotification'] || $valueTableAlert['lastIdNotification'] <= $valueCustomerNotification['currentIdNotification']){
+            return 0;
+        }else{
+            return 1;
+        }
+    }
+    
+    
 
     public function ordersByBrand($idCustomer)
     {
@@ -498,14 +526,16 @@ class MyAccountController extends MyAccountControllerCore
 
     public function getLastViewedProducts(){
 
-
+    
         $ids_viewed_products = explode(',', $this->context->cookie->viewed);
         $unique = array_unique($ids_viewed_products);
         $reversed = array_reverse($unique);
         $last_viewed_ids = array_slice($reversed, 0, 6);
 
-        // echo '<pre>'.print_r($this->context->shop->id,1).'</pre>';
-        // exit;
+        
+        // echo '<pre>'.print_r($this->context->cookie,1).'</pre>';
+        //  exit;
+
 
         $products = array();
         foreach($last_viewed_ids AS $id){
