@@ -40,18 +40,18 @@
         <div class="row">
           <div class="col-md-6 col-sm-12 col-xs-12 divide-right">
             <div class="row" style="display: flex;align-items:center;">
-              <div class="col-md-4">
+              <div class="col-md-4 col-sm-12 col-xs-12">
                 {* <img class="product-image" src="{$product.cover.large.url|escape:'html':'UTF-8'}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image"> *}
                 <img class="product-image" src="{$link->getImageLink($product.reference, $product.id_image, null, 'jpg', $product.id_product, $product.id_manufacturer, 'thumb')}" alt="{$product.cover.legend|escape:'html':'UTF-8'}" title="{$product.cover.legend|escape:'html':'UTF-8'}" itemprop="image" style="width: 100%;max-width:125px;">
               </div>
-              <div class="col-md-8 details-product-modal">
+              <div class="col-md-8  col-sm-12 col-xs-12 details-product-modal">
               {* <pre>{print_r($product,1)}</pre> *}
                 <h6 class="h6 product-name">{$product.name|escape:'html':'UTF-8'}</h6>
                 <span><strong>{l s="Price" d="Shop.Theme.Modal"}</strong>: {$product.price|escape:'html':'UTF-8'}</span>
                 {hook h='displayProductPriceBlock' product=$product type="unit_price"}
-                <span><strong>{l s="Reference" d="Shop.Theme.Modal"}</strong>: {$product.reference|escape:'html':'UTF-8'}</span><br>
+                <span><strong>{l s="Reference" d="Shop.Theme.Modal"}</strong>: {$product.reference|escape:'html':'UTF-8'}</span>
                 {foreach from=$product.attributes item="property_value" key="property"}
-                  <span><strong>{$property|escape:'html':'UTF-8'}</strong>: {$property_value|escape:'html':'UTF-8'}</span><br>
+                  <span><strong>{$property|escape:'html':'UTF-8'}</strong>: {$property_value|escape:'html':'UTF-8'}</span>
                 {/foreach}
                 <p><strong>{l s='Quantity:' d='Shop.Theme.Modal'}</strong>&nbsp;{$product.cart_quantity|escape:'html':'UTF-8'}</p>
               </div>

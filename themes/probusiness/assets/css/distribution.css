@@ -5589,6 +5589,13 @@ textarea {
     font-size: 1.1rem;
   }
 
+  #products .product-miniature .thumbnail-container{
+    padding: 1rem 0.5rem;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    border-radius: 0.25rem;
+    outline: 2px solid #0273eb;
+  }
+
   /* cms career */
 
   .cms-id-12 .breadcrumb {
@@ -5791,16 +5798,16 @@ textarea {
   #products .product {
     background-color: #fff;
     /* border: #0273EB 2px solid; */
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
   }
   #products .product-miniature .thumbnail-container {
     flex-direction: column;
     overflow: unset;
   }
 
-  #products .product-miniature .thumbnail-container:hover {
+  /* #products .product-miniature .thumbnail-container:hover {
     outline: none;
-  }
+  } */
 
   #products
     .product-miniature
@@ -5827,6 +5834,76 @@ textarea {
   }
   #category #wrapper .container-fluid #content-wrapper {
     margin-top: 0;
+  }
+
+  /* shopcart modal */
+
+  #blockcart-modal .divide-right{
+    padding:  0 1rem 1rem 1rem  !important;
+    border-right: 0 !important;
+  }
+  #blockcart-modal .divide-right #myModalLabel{
+    text-align: start !important;
+    border-bottom: 1px solid;
+    padding-bottom: 0.5rem;
+  }
+  #blockcart-modal .divide-right .material-icons{
+    display: none !important;
+    /* width: 20px !important;
+    height: 20px !important;
+    position: absolute;
+    left: -11px; */
+  }
+  #blockcart-modal .modal-header-right{
+    padding: 0 1rem !important;
+  }
+
+  #blockcart-modal .modal-body .divide-right div:nth-child(1){
+    flex-direction: column;
+  }
+  
+  .modal.in .modal-dialog {
+    transform: translatey(-50%) !important;
+    -webkit-transform: translatey(-50%) !important;
+    top: 55%;
+  }
+
+  #blockcart-modal .container-modal-btns-shopping{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #blockcart-modal .container-modal-btns-shopping button{
+    width: 100%;
+  }
+  #blockcart-modal .container-modal-btns-shopping a{
+    width: 100%;
+  }
+
+  #blockcart-modal .container-modal-btns-shopping .cart-content-btn:nth-child(1){
+    justify-content: center;
+    width: 80vw;
+  }
+
+  #blockcart-modal .container-modal-btns-shopping .cart-content-btn:nth-child(2){
+    justify-content: center;
+    width: 80vw;
+  }
+
+  #blockcart-modal .container-modal-btns-shopping .cart-content-btn:nth-child(1){
+    margin-bottom: 1rem;
+  }
+  /* page not found */
+
+  .page-not-found{
+    width: 95% !important;
+  }
+
+  .page-not-found #search_widget .search_block_top_fixed{
+    width: 100%;
+    outline: 1px solid #d3d3d3;
+    display: flex;
   }
 
   /* brands products */
