@@ -108,7 +108,7 @@
         </div> *}
         <div class="tab-pane  show active" id="order_history" role="tabpanel" title="Order History" aria-labelledby="order_history-tab">
           <div style="display: flex;margin:1rem 0;flex-wrap:wrap;">
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount card-status-myaccount" >
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount card-status-myaccount" >
                 <a onclick="findRowTable(24)">
                     <div class="counters_panel margin-lados-10">
                       <div class="color-label">
@@ -120,7 +120,7 @@
                     <div class="spacer-20"></div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
                 <a onclick="findRowTable(10)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -132,7 +132,7 @@
                     <div class="spacer-20"></div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
                 <a onclick="findRowTable(3)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -144,7 +144,7 @@
                     <div class="spacer-20"></div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
                 <a onclick="findRowTable(9)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -156,7 +156,7 @@
                     <div class="spacer-20"></div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
                 <a onclick="findRowTable(4)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -167,7 +167,7 @@
                     </div>
                 </a>
             </div>    
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
                 <a onclick="findRowTable(6)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -178,7 +178,7 @@
                     </div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
                 <a onclick="findRowTable(6)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -189,7 +189,7 @@
                     </div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-4 col-xs-6  card-status-myaccount">
+            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
                 <a onclick="findRowTable(6)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -371,7 +371,7 @@
 
         <div class="tab-pane fade" id="statistics" role="tabpanel" aria-labelledby="statistics-tab">  
           <div class="col-sm-12 text-center" style="margin-bottom: 2rem;">
-              <div class="row statistics_container" style="max-width: 1350px; margin: 0 auto;display:flex;">
+              <div class="row statistics_container charts" style="max-width: 1350px; margin: 0 auto;">
                   <div class="col-lg-8 col-md-7 col-sm-12 col-xs-12">
                       <div>{l s='Total purchases per month' d='Shop.Theme.Statistics'}</div>
                       <canvas id="myChart" width="664" height="332"></canvas>
