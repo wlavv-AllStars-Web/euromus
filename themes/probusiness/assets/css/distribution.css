@@ -5945,7 +5945,7 @@ textarea {
   gap: 2rem;
   }
 
-  #statistics.tab-pane div:nth-child(1){
+  #statistics.tab-pane .charts{
     background: #fff;
   }
   /* #statistics div:nth-child(even){
