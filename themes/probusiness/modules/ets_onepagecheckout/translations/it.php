@@ -164,7 +164,7 @@ $_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_46a2a41cc6e552044
 $_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_642d3ba5db8b57e006584b544e490ec7'] = 'Codice postale';
 $_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_57d056ed0984166336b7879c2af3657f'] = 'Città';
 $_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_dd7bf230fde8d4836917806aff6a6b27'] = 'Indirizzo';
-$_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_1fb20e9ce771f1a3226b9915a14f7d58'] = 'Complemento indirizzo';
+$_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_1fb20e9ce771f1a3226b9915a14f7d58'] = 'Indirizzo aggiuntivo';
 $_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_bcc254b55c4a1babdf1dcb82c207506b'] = 'Telefono';
 $_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_41c2fff4867cc204120f001e7af20f7a'] = 'Cellulare';
 $_MODULE['<{ets_onepagecheckout}prestashop>ets_onepagecheckout_1c76cbfe21c6f44c1d1e59d54f3e4420'] = 'Azienda';
@@ -196,7 +196,7 @@ $_MODULE['<{ets_onepagecheckout}prestashop>order_20aedd1e6de4dcf8d115b5a7424c58d
 $_MODULE['<{ets_onepagecheckout}prestashop>order_8663905f87d9a0b3c75d8d11fe7badd9'] = 'Password non è valido';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_2f767da1d52b0d06bce20214216f65d1'] = 'Il tuo account non è al momento disponibile, ti preghiamo di contattarci';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_802b207b05fe5cea22e11b9db804b33d'] = 'Autenticazione fallita.';
-$_MODULE['<{ets_onepagecheckout}prestashop>order_02b5c4adb3c915b6a3589ae3f974d384'] = 'Si prega di compilare tutti i campi richiesti con informazioni valide';
+$_MODULE['<{ets_onepagecheckout}prestashop>order_02b5c4adb3c915b6a3589ae3f974d384'] = 'Si prega di completare tutti i campi obbligatori con informazioni valide';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_113e4966250202d6836b74c8cac44ac2'] = 'Devi accedere prima di effettuare il checkout';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_0ded8795200faf5c39138f7e4829d26e'] = 'I dati degli ospiti non sono validi';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_c6631869fbb1e424e58bf74cdbc387cc'] = 'Il nome è obbligatorio';
@@ -217,14 +217,14 @@ $_MODULE['<{ets_onepagecheckout}prestashop>order_8ed9fb764536846a1fcd1a3b3be8690
 $_MODULE['<{ets_onepagecheckout}prestashop>order_76af6badf481b35b3124a8058ed2d0cf'] = 'L\'indirizzo PEC è obbligatorio';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_266550a535da415e3ffed661553c93a3'] = 'È richiesto il numero di partita IVA';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_5ef185d9005280f6c3241b8782871890'] = 'Alias è obbligatorio';
-$_MODULE['<{ets_onepagecheckout}prestashop>order_cf702e46f2494e6aafa5fea0e261f4ec'] = 'Il telefono è richiesto';
+$_MODULE['<{ets_onepagecheckout}prestashop>order_cf702e46f2494e6aafa5fea0e261f4ec'] = 'Il telefono è obbligatorio';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_b2ce8014820b1472658c0a28fe65e036'] = 'È richiesto il telefono cellulare';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_cd2ed2988515d1eff3066c78a0b75076'] = 'Il numero di identificazione è richiesto';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_2f9e88c3efd852df110a55168cc8b7f6'] = 'Altro è richiesto';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_3933a0133eaf8a34df35f82fe79c0652'] = 'Il nome non è valido';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_d8923d0296c66f74340be4e6b2ca6859'] = 'Il cognome non è valido';
-$_MODULE['<{ets_onepagecheckout}prestashop>order_52bd0196473896c04c13822352ac616d'] = 'È richiesto l\'indirizzo';
-$_MODULE['<{ets_onepagecheckout}prestashop>order_91f34547a292d34aec17da5fa345608a'] = 'La città è richiesta';
+$_MODULE['<{ets_onepagecheckout}prestashop>order_52bd0196473896c04c13822352ac616d'] = 'L\'indirizzo è obbligatorio';
+$_MODULE['<{ets_onepagecheckout}prestashop>order_91f34547a292d34aec17da5fa345608a'] = 'La città è obbligatoria';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_0a9eb6735fb1e9488064502530a4f768'] = 'Il codice postale è obbligatorio';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_25aa74e4c7710b9774a7be4cb83666bb'] = 'Il paese è obbligatorio';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_13351aba84d86c8790179af5c7338824'] = 'Provincia è richiesto';
@@ -252,7 +252,7 @@ $_MODULE['<{ets_onepagecheckout}prestashop>order_a6318aaf05a4737f17aa7f0824ffc32
 $_MODULE['<{ets_onepagecheckout}prestashop>order_ee95f7024c665384562df168286ae185'] = 'Il telefono cellulare non è valido';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_059cc3ae913130032cb1d141ace22d57'] = 'Il numero di identificazione non è valido';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_ad8fbce47a8061bad567f11acc7b0e7e'] = 'Altro non è valido';
-$_MODULE['<{ets_onepagecheckout}prestashop>order_246995ccd8a686c0af80f9590db2fbf9'] = 'Il numero di partita IVA non è valido';
+$_MODULE['<{ets_onepagecheckout}prestashop>order_246995ccd8a686c0af80f9590db2fbf9'] = 'La partita IVA non è valida';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_cdb0d93074162e65aad663f6f7bc055e'] = 'Il codice postale che hai inserito non è valido. Deve seguire questo formato:';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_e6c1e151f2554afad6c0d551046650e8'] = 'Il codice postale non è valido.';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_ba7f4503b1fae545d6f49dcee981c50b'] = 'Il codice postale che hai inserito non è valido. Deve seguire questo formato:';
@@ -366,9 +366,9 @@ $_MODULE['<{ets_onepagecheckout}prestashop>form_address_21b48d8aa7b8076a90f85740
 $_MODULE['<{ets_onepagecheckout}prestashop>form_address_dd7bf230fde8d4836917806aff6a6b27'] = 'Indirizzo';
 $_MODULE['<{ets_onepagecheckout}prestashop>form_address_024d391fbc28c4feae076f242b5e9663'] = 'Indirizzo non è valido';
 $_MODULE['<{ets_onepagecheckout}prestashop>form_address_52bd0196473896c04c13822352ac616d'] = 'Indirizzo è obbligatorio';
-$_MODULE['<{ets_onepagecheckout}prestashop>form_address_86376e3b5c80d090dbc625b4d241431b'] = 'Complemento indirizzo';
-$_MODULE['<{ets_onepagecheckout}prestashop>form_address_94cedcb867c956181839f1c16fa6630b'] = 'Complemento indirizzo non è valido';
-$_MODULE['<{ets_onepagecheckout}prestashop>form_address_7fbb7d2e73782d3b5ac3ef5168413567'] = 'Complemento indirizzo è obbligatorio';
+$_MODULE['<{ets_onepagecheckout}prestashop>form_address_86376e3b5c80d090dbc625b4d241431b'] = 'Indirizzo aggiuntivo';
+$_MODULE['<{ets_onepagecheckout}prestashop>form_address_94cedcb867c956181839f1c16fa6630b'] = 'Indirizzo aggiuntivo non valido';
+$_MODULE['<{ets_onepagecheckout}prestashop>form_address_7fbb7d2e73782d3b5ac3ef5168413567'] = 'Indirizzo aggiuntivo è obbligatorio';
 $_MODULE['<{ets_onepagecheckout}prestashop>form_address_6311ae17c1ee52b36e68aaf4ad066387'] = 'Altro';
 $_MODULE['<{ets_onepagecheckout}prestashop>form_address_2dba17b0fda9957580790218a8b860fc'] = 'Altro non è valido';
 $_MODULE['<{ets_onepagecheckout}prestashop>form_address_2f9e88c3efd852df110a55168cc8b7f6'] = 'Altro è obbligatorio';
