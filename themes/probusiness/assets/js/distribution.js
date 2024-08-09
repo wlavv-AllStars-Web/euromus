@@ -289,6 +289,21 @@ function ValidateEmail() {
 // }
 
 
+// Select all input elements within the #checkout div
+var inputs = document.querySelectorAll('#checkout input');
+
+// Loop through each input element and add the keydown event listener
+inputs.forEach(function(input) {
+    input.addEventListener('keydown', function(event) {
+        if (event.key === 'Enter') {
+            event.preventDefault();
+            return false; // Explicitly return false to stop any other handlers
+        }
+    });
+});
+
+
+
 
 
 function openShippingtab(url,shipping){
