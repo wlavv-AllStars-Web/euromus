@@ -4939,8 +4939,9 @@ textarea {
     margin-bottom: 1rem;
   }
 
-  #invoice-addresses .flex {
-    display: flex;
+  #invoice-addresses .flex .btn-contact-us-link{
+    padding-left: 0;
+    margin-bottom: 0.5rem;
   }
 
   .cart_unit{
@@ -6009,6 +6010,15 @@ textarea {
   #notification .date-notification{
     gap: 0.5rem;
     font-size: 1rem;
+  }
+
+  #notification .message-notification {
+    font-size: 1rem;
+  }
+
+  #notification .notification-container {
+    border: 1px solid #666;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   }
 
   /* contact page */
