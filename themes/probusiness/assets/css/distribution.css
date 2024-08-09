@@ -5939,7 +5939,7 @@ textarea {
     display: flex;
   }
 
-  #statistics.tab-pane{
+  #statistics.tab-pane.active{
     display: flex !important;
   flex-direction: column;
   gap: 2rem;
@@ -5995,6 +5995,20 @@ textarea {
   #menu-client{
     max-height: 42px;
     margin-bottom: 1rem;
+  }
+
+  #notification .notification-header{
+    flex-direction: column;
+    align-items: start;
+  }
+
+  #notification .title-notification{
+    text-align: start;
+    font-size: 1rem;
+  }
+  #notification .date-notification{
+    gap: 0.5rem;
+    font-size: 1rem;
   }
 
   /* contact page */
