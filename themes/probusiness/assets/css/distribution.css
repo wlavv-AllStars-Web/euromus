@@ -4944,6 +4944,14 @@ textarea {
     margin-bottom: 0.5rem;
   }
 
+  #delivery-addresses .shipping_address .form-group label,#delivery-addresses .shipping_address .form-group .opc_field_right{
+    padding: 0 !important;
+  }
+
+  #checkout #conditions-to-approve label{
+    text-align: start;
+  }
+
   .cart_unit{
     display: flex;
     align-items: center;
@@ -5058,6 +5066,28 @@ textarea {
 
   #checkout-payment-step .payment-options {
     align-items: flex-start;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+
+  }
+
+  .ets_checkinput{
+    color: #000;
+    font-size: 16px !important;
+    align-items: center;
+    justify-content: start;
+  }
+
+  #checkout-payment-step .payment-options .ets_payment_method {
+    padding: 0;
+    border: 1px solid #0273EB;
+  }
+
+  #checkout .ets_payment_method .img-module{
+    flex-direction: column;
+    width: 100%;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   }
 
   .onepagecheckout-left div#conditions-to-approve{
