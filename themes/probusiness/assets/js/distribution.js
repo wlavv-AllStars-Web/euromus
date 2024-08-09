@@ -322,3 +322,42 @@ function togglePayment(e) {
     const checkbox = e.checked;
     document.getElementById("payment_checkout").style.display = checkbox === true ? "block" : "none";
 }
+
+
+function expandText(e) {
+    
+    e.previousElementSibling.classList.toggle("expandText")
+
+    const lang = document.querySelector("html").getAttribute("lang");
+    const button = e; 
+
+    let translateMore = '';
+    let translateLess = '';
+
+    if(lang === "en"){
+        translateMore = "VIEW MORE";
+        translateLess = "VIEW LESS";
+    }else if(lang === "pt"){
+        translateMore = "VER MAIS";
+        translateLess = "VER MENOS";
+    }else if(lang === "fr"){
+        translateMore = "VOIR PLUS";
+        translateLess = "VOIR MOINS";
+    }else if(lang === "es"){
+        translateMore = "VER MÁS";
+        translateLess = "VER MENOS";
+    }else if(lang === "it"){
+        translateMore = "VEDI ALTRO";
+        translateLess = "VISUALIZZA MENO";
+    }
+
+    if (button.innerText === "VIEW LESS" ||button.innerText === "VER MENOS" ||button.innerText === "VOIR MOINS" ||button.innerText === "VISUALIZZA MENO" ) {
+        
+        button.innerText = translateMore;
+        
+        
+    } else {
+        button.innerText = translateLess;
+        
+    }
+}

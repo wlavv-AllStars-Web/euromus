@@ -4801,6 +4801,10 @@ textarea {
   .list_manu .brand {
     display: flex;
   }
+
+  #statistics .statistics_container.charts {
+    display: flex !important;
+  }
 }
 
 @media (max-width: 543px) {
@@ -4834,9 +4838,6 @@ textarea {
     display: none !important;
   }
 
-  #menu-client li:nth-child(7) {
-    width: 100%;
-  }
 
   .col-xs-1 {
     float: left;
@@ -5048,8 +5049,12 @@ textarea {
   }
 
   #index .profile_container_homepage .profile_container_text {
-    height: auto !important;
+    height: 80px;
   }
+  #index .profile_container_homepage .profile_container_text.expandText {
+    height: auto;
+  }
+
   #index .profile_container_homepage .card_view_more {
     display: none;
   }
@@ -5904,6 +5909,49 @@ textarea {
     width: 100%;
     outline: 1px solid #d3d3d3;
     display: flex;
+  }
+
+  #general_information_container .statistics_container .stats_container_label{
+    flex: 1;
+  }
+
+  #general_information_container .statistics_container .stats_container_value{
+    flex: 1;
+  }
+
+  #warranty-tab img {
+    width: 27px;
+  }
+  #contact-tab img {
+    width: 30px;
+  }
+
+  #menu-client{
+    max-height: 42px;
+    margin-bottom: 1rem;
+  }
+
+  /* contact page */
+
+  section.contact-form {
+    padding: 1rem;
+  }
+
+  .contact-form-box{
+    margin: 0rem 0 2rem 0 !important;
+  }
+
+  #contact-form-group div.pl-0{
+    padding: 1rem 0 !important;
+  }
+  #contact-form-group div.px-0{
+    padding: 1rem 0 !important;
+  }
+  #contact-form-group div.pr-0{
+    padding: 1rem 0 !important;
+  }
+  #contact-form-group .lastname_field{
+    padding: 1rem 0 !important;
   }
 
   /* brands products */
