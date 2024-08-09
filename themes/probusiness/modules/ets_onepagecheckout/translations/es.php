@@ -195,7 +195,7 @@ $_MODULE['<{ets_onepagecheckout}prestashop>order_20aedd1e6de4dcf8d115b5a7424c58d
 $_MODULE['<{ets_onepagecheckout}prestashop>order_8663905f87d9a0b3c75d8d11fe7badd9'] = 'La contraseña no es válida';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_2f767da1d52b0d06bce20214216f65d1'] = 'Su cuenta no está disponible en este momento, contáctenos';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_802b207b05fe5cea22e11b9db804b33d'] = 'Autenticación fallida';
-$_MODULE['<{ets_onepagecheckout}prestashop>order_02b5c4adb3c915b6a3589ae3f974d384'] = 'Complete todos los campos obligatorios con información válida';
+$_MODULE['<{ets_onepagecheckout}prestashop>order_02b5c4adb3c915b6a3589ae3f974d384'] = 'Rellene por favor todos los campos obligatorios con información válida';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_113e4966250202d6836b74c8cac44ac2'] = 'Debe iniciar sesión antes de finalizar su pedido';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_0ded8795200faf5c39138f7e4829d26e'] = 'Los datos de los huéspedes no son válidos';
 $_MODULE['<{ets_onepagecheckout}prestashop>order_c6631869fbb1e424e58bf74cdbc387cc'] = 'Se requiere el nombre';
@@ -345,7 +345,7 @@ $_MODULE['<{ets_onepagecheckout}prestashop>cart-voucher_ec211f7c20af43e742bf2570
 $_MODULE['<{ets_onepagecheckout}prestashop>cart-voucher_12a7a93d72ded50311b52c7d0a853e3c'] = 'Aproveche nuestras ofertas exclusivas:';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_af0f5bdc5be121b9307687aeeae38c17'] = 'Dirección de entrega';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_aaffa320d37ecd3bcf2f59d8363c4de1'] = 'Usar dirección';
-$_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_4e53c57c828378d67ffdb2338772cf10'] = 'por favor elige';
+$_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_4e53c57c828378d67ffdb2338772cf10'] = 'Por favor seleccione un país';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_3184879661af0760035677650aa8ff10'] = 'Ingrese nueva dirección';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_56d0ed7cd789dd772be59aa6b1e437de'] = 'La dirección seleccionada se utilizará como su dirección personal (para factura) y como su dirección de entrega.';
 $_MODULE['<{ets_onepagecheckout}prestashop>delivery_address_a28a0b27995dc44fe4dc857d2cbb2c6c'] = 'Utilice otra dirección para la factura';
