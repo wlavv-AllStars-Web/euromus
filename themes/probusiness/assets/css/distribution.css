@@ -2156,13 +2156,18 @@ input[type="number"] {
   font-size: 20px;
 }
 #checkout #delivery-addresses .form-control {
-
   border: 1px solid #333;
   border-radius: 0px;
   line-height: 45px;
   height: 45px;
-  font-size: 20px;
+  font-size: 16px;
+  text-align: center;
 }
+
+.form-control:focus{
+  color: #333;
+}
+
 #checkout #delivery-addresses .form-control::placeholder {
   color: #777777 !important;
   opacity: 1;
