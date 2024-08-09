@@ -4917,19 +4917,47 @@ textarea {
     background: #f6f6f6;
   }
 
+  .cart-overview tbody tr{
+    padding: 1rem 0;
+  }
+
   .cart_delete {
     display: none;
   }
 
   .cart_product {
-    width: 25%;
+    width: 40% !important;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1rem;
   }
 
   .cart_description{
-    width: 75%;
+    width: 60% !important;
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
   }
+
+  #invoice-addresses .flex {
+    display: flex;
+  }
+
+  .cart_unit{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .cart_unit .product-line-info{
+    margin: 0;
+  }
+
   .cart_description .product-line-info .label{
     text-align: start;
+  }
+
+  .card.cart-total-action.ass{
+    width: 100%;
   }
 
   .cart_unit{
@@ -4965,16 +4993,16 @@ textarea {
     align-items: center;
   }
   .block-onepagecheckout .cart-container tfoot tr .text-right{
-    width: 70%;
+    width: 68%;
   }
   .block-onepagecheckout .cart-container tfoot tr #total_product{
-    width: 30%;
+    width: 32%;
   }
   .block-onepagecheckout .cart-container tfoot tr #total_tax{
-    width: 30%;
+    width: 32%;
   }
   .block-onepagecheckout .cart-container tfoot tr #total_price_container{
-    width: 30%;
+    width: 32%;
   }
 
 
@@ -5911,12 +5939,50 @@ textarea {
     display: flex;
   }
 
+  #statistics.tab-pane{
+    display: flex !important;
+  flex-direction: column;
+  gap: 2rem;
+  }
+
+  #statistics.tab-pane div:nth-child(1){
+    background: #fff;
+  }
+  /* #statistics div:nth-child(even){
+    background: #f7f7f7;
+  } */
+
   #general_information_container .statistics_container .stats_container_label{
     flex: 1;
   }
 
   #general_information_container .statistics_container .stats_container_value{
     flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+
+  #top_100{
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+
+  #top_100 > div {
+    width: 100% !important;
+  }
+  #top_100 > div > div {
+    width: 100% !important;
+  }
+
+  .last-viewed-products > div {
+    padding: 0;
+  }
+
+  .most-purchased > div {
+    padding: 0;
   }
 
   #warranty-tab img {
