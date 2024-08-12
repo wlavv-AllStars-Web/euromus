@@ -1666,6 +1666,10 @@ nav.pagination .page-list li a {
   -webkit-appearance: none !important;
 }
 
+#search .input-group-btn-vertical{
+  display: none;
+}
+
 /* input qty */
 
 input::-webkit-outer-spin-button,
