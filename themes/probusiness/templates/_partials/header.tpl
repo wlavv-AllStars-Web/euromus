@@ -72,10 +72,10 @@
             <div class="cart" style="width: 50%;">
               {hook h="displayNav2" mod="ps_shoppingcart"}
             </div>
-
+            {* {debug} *}
             {* search bar *}
             <div class="wdth" style="width: 50%">
-              <form style="display:flex; justify-content:center" method="get" action="{$search_controller_url|escape:'html':'UTF-8'}" id="searchbox">
+              <form style="display:flex; justify-content:center" method="get" action="{$urls.pages.search}" id="searchbox">
     		        <input type="hidden" name="controller" value="search">
     		        <input style="border: 1px solid #777; width:50%; border-radius: 20px 0px 0px 20px;" class="search_query form-control" type="text" id="search_query_top" name="s" value="{$search_string|escape:'html':'UTF-8'}" placeholder="{l s='Search' d='Shop.Theme.Catalog'}">
     		        <button type="submit" name="submit_search" class="btn btn-default button-search">
