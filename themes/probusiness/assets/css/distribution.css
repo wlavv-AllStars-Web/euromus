@@ -2994,6 +2994,12 @@ textarea {
   cursor: pointer;
 }
 
+#onepagecheckout-information-errros .module_error {
+  max-width: 1320px;
+  margin: 1rem auto;
+  text-align: center;
+}
+
 #order-confirmation #footer p {
   color: #fff !important;
 }
