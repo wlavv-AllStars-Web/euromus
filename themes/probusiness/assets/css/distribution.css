@@ -448,6 +448,23 @@ form .form-control {
   justify-content: center;
   align-items: center;
 }
+#_desktop_top_menu_desktop .dropdown-item span {
+  margin-bottom: 0;
+  position: relative;
+}
+
+#_desktop_top_menu_desktop .dropdown-item.ball_notification span::after{
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #f13340;
+  left: -16px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 999999;
+}
 
 .header-top #sender {
   /* max-width: 232px; */

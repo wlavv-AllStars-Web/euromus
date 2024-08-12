@@ -618,18 +618,35 @@ class FrontControllerCore extends Controller
         $this->getCategories();
         $this->getAllCMS();
         $this->process();
+        
 
         if (!isset($this->context->cart)) {
             $this->context->cart = new Cart();
         }
 
         $this->context->smarty->assign([
+            'showNotificationBall' => self::verifyLastNotification(),
             'HOOK_HEADER' => Hook::exec('displayHeader'),
         ]);
     }
 
     public function initFooter()
     {
+    }
+
+    public function verifyLastNotification() {
+
+        $sqlLastid = "SELECT MAX(id) AS lastIdNotification FROM "._DB_PREFIX_."asd_alert_messages WHERE message_status=1";
+        $valueTableAlert = Db::getInstance()->getRow($sqlLastid);
+    
+        $sqlCustomeridnotification = "SELECT id_notification AS currentIdNotification FROM "._DB_PREFIX_."customer WHERE id_customer=".$this->context->customer->id;
+        $valueCustomerNotification = Db::getInstance()->getRow($sqlCustomeridnotification);
+
+        if($valueTableAlert['lastIdNotification'] === $valueCustomerNotification['currentIdNotification'] || $valueTableAlert['lastIdNotification'] <= $valueCustomerNotification['currentIdNotification']){
+            return 0;
+        }else{
+            return 1;
+        }
     }
 
     /**
