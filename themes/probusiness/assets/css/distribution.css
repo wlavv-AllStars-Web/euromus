@@ -3406,6 +3406,16 @@ textarea {
   #footer_sub_menu_4 {
     align-items: end !important;
   }
+
+  .form-personal-info .days{
+    padding-left: 0;
+  }
+  .form-personal-info .months{
+    padding-inline: 0;
+  }
+  .form-personal-info .years{
+    padding-right: 0;
+  }
 }
 
 @media (min-width: 900px) {
