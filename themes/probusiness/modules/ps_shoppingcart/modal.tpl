@@ -26,7 +26,7 @@
           <h4 class="modal-title h6 text-xs-center" id="myModalLabel" style="display: flex;align-items:center;"><i class="material-icons" style="background: #19b719;width:2rem;height:2rem;border-radius:50%;display:flex;justify-content:center;align-items:center;">&#xE876;</i>{l s='Product successfully added to your shopping cart' d='Shop.Theme.Modal'}</h4>
         </div>
         <div class="col-lg-6 modal-header-right" style="padding-left: calc(2.5rem + 15px);font-weight:600;">
-          {if $cart.products_count > 0}
+          {if $cart.products_count > 1}
             <p class="cart-products-count">{l s='There are %products_count% items in your cart.' sprintf=['%products_count%' => $cart.products_count] d='Shop.Theme.Modal'}</p>
           {else}
             <p class="cart-products-count">{l s='There is %product_count% item in your cart.' sprintf=['%product_count%' =>$cart.products_count] d='Shop.Theme.Modal'}</p>
