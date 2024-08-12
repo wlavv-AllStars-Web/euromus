@@ -460,9 +460,9 @@ form .form-control {
   height: 12px;
   border-radius: 50%;
   background: #f13340;
-  left: -16px;
+  right: -20px;
   top: 50%;
-  transform: translateY(-50%);
+  transform: translateY(-100%);
   z-index: 999999;
 }
 
