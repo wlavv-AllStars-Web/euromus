@@ -32,11 +32,11 @@
                 <meta itemprop="position" content="{$smarty.foreach.breadcrumb.iteration|escape:'html':'UTF-8'}" />
               </li>
             {/foreach}
-            <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
+            {* <li itemtype="http://schema.org/ListItem" itemscope="" itemprop="itemListElement">
                 <a>
                   <span itemprop="name">{l s='Log in to your account' d='Shop.Theme.Actions'}</span>
                 </a>
-              </li>
+              </li> *}
           </ol>
         </nav>
     </div>
