@@ -3000,8 +3000,8 @@ textarea {
   text-align: center;
 }
 
-#authentication #login-form .form-control-label {
-  width: 100%;
+#authentication .login-form-page .form-control-label {
+  width: 100% !important;
 }
 
 #order-confirmation #footer p {
