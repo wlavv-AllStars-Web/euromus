@@ -862,6 +862,7 @@
                   data: data,
                   success: function(data) {
                       document.querySelector("#notification-tab").classList.remove("ball_notification")
+                      document.querySelector("#_desktop_top_menu_desktop .ball_notification").classList.remove("ball_notification")
                   },
                   error: function(xhr, status, error) {
                       console.error('Error:', error);
