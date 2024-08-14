@@ -3103,7 +3103,7 @@ textarea {
   .order-states-container {
     display: grid;
     margin: 1rem 0;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr !important;
     grid-column-gap: 1rem;
   }
 
@@ -3474,6 +3474,7 @@ textarea {
 }
 
 @media (min-width: 992px) {
+
   #canvas4 {
     min-height: 140px;
   }
@@ -3611,7 +3612,31 @@ textarea {
   }
 }
 
+@media (min-width: 1201px) and (max-width: 1729px) {
+  .order-states-container {
+    display: grid;
+    margin: 1rem 0;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  .order-states-container .card-status-myaccount{
+    width: 100%;
+  }
+}
+
 @media (min-width: 992px) and (max-width: 1200px) {
+
+  .order-states-container {
+    display: grid;
+    margin: 1rem 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  .order-states-container .card-status-myaccount{
+    width: 100%;
+  }
   /* become dealer */
 
   .signature canvas {
@@ -3812,7 +3837,31 @@ textarea {
   }
 }
 
+@media screen and (min-width: 769px) and (max-width: 991px) {
+  .order-states-container {
+    display: grid;
+    margin: 1rem 0;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  .order-states-container .card-status-myaccount{
+    width: 100%;
+  }
+}
 @media screen and (max-width: 768px) {
+
+  .order-states-container {
+    display: grid;
+    margin: 1rem 0;
+    grid-template-columns: 1fr 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  .order-states-container .card-status-myaccount{
+    width: 100%;
+  }
+
   .number-phone {
     display: flex;
     flex-direction: column;
@@ -4938,6 +4987,17 @@ textarea {
 }
 
 @media (max-width: 543px) {
+
+  .order-states-container {
+    display: grid;
+    margin: 1rem 0;
+    grid-template-columns: 1fr;
+    grid-column-gap: 1rem;
+  }
+
+  .order-states-container .card-status-myaccount{
+    width: 100%;
+  }
 
   .header-top .centrar .formula{
     margin-left: 0 !important;
