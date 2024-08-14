@@ -20,9 +20,9 @@
 *}
 {extends file='page.tpl'}
 
-{block name='page_title'}
+{* {block name='page_title'}
   {$page.title|escape:'html':'UTF-8'}
-{/block}
+{/block} *}
 
 {block name='page_content_container'}
   {include file='errors/not-found.tpl'}
