@@ -224,7 +224,7 @@
           </div>
         </div>
 
-        <div class="product-prices-bottom col-lg-12 px-0" style="display: flex;justify-content:space-between;padding-top: 0.25rem;">
+        <div class="product-prices-bottom col-lg-12 px-0" style="display: flex;justify-content:space-between;padding-top: 0.25rem;cursor:pointer;"  onclick="window.location.href='{$product.url}'">
           {* {if $product.has_discount} *}
             {hook h='displayProductPriceBlock' product=$product type="old_price"}
             <div class="old_price" style="display: flex;align-items:center;gap:0.5rem;font-size:16px;font-weight:400;justify-content:center;color:#444;">
