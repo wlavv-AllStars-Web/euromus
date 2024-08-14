@@ -110,7 +110,7 @@
                   <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:0.25rem;line-height:18px;font-weight:400;color:#444;" class="list-name">
                     <div style="text-transform: uppercase;">{l s='Stock' d="Shop.Theme.ProductList"}:</div>
                     {if ($product.quantity == 1) }
-                          <div style="color: yellow;font-weight:600;font-size:16px;">{$product.quantity}</div>
+                          <div style="color: orange;font-weight:600;font-size:16px;">{$product.quantity}</div>
                     {elseif ($product.quantity > 1) }
                         <div style="color: green;font-weight:600;font-size:16px;">{$product.quantity}</div>
                     {elseif $product.quantity < 1 }
