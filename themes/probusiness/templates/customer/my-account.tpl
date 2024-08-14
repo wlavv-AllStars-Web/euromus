@@ -107,8 +107,8 @@
             {include file='customer/_partials/order-messages.tpl'}
         </div> *}
         <div class="tab-pane  show active" id="order_history" role="tabpanel" title="Order History" aria-labelledby="order_history-tab">
-          <div style="display: flex;margin:1rem 0;flex-wrap:wrap;">
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount card-status-myaccount" >
+          <div class="order-states-container">
+            <div class="card-status-myaccount" >
                 <a onclick="findRowTable(24)">
                     <div class="counters_panel margin-lados-10">
                       <div class="color-label">
@@ -120,7 +120,7 @@
                     <div class="spacer-20"></div>
                 </a>
             </div>
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
+            <div class="card-status-myaccount">
                 <a onclick="findRowTable(10)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -132,7 +132,7 @@
                     <div class="spacer-20"></div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
+            <div class="card-status-myaccount">
                 <a onclick="findRowTable(3)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -144,7 +144,7 @@
                     <div class="spacer-20"></div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
+            <div class="card-status-myaccount">
                 <a onclick="findRowTable(9)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -156,7 +156,7 @@
                     <div class="spacer-20"></div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
+            <div class="card-status-myaccount">
                 <a onclick="findRowTable(4)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -167,7 +167,7 @@
                     </div>
                 </a>
             </div>    
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
+            <div class="card-status-myaccount">
                 <a onclick="findRowTable(6)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -178,7 +178,7 @@
                     </div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
+            <div class="card-status-myaccount">
                 <a onclick="findRowTable(6)">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
@@ -189,14 +189,14 @@
                     </div>
                 </a>
             </div> 
-            <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12  card-status-myaccount">
-                <a onclick="findRowTable(6)">
+            <div class="card-status-myaccount">
+                <a onclick="cleanFilter()">
                     <div class="counters_panel margin-lados-10 ">
                       <div class="color-label">
                         <div class="not_invoiced"></div>
-                        <div class="counters_label">{l s='Not Invoiced' d='Shop.Theme.Customeraccount'}</div>
+                        <div class="counters_label">{l s='Total Orders' d='Shop.Theme.Customeraccount'}</div>
                       </div>
-                        <div class="counters_value">{$counters['not_invoiced']}</div>
+                        <div class="counters_value">{$counters['total_orders']}</div>
                     </div>
                 </a>
             </div> 
@@ -204,7 +204,7 @@
           <div style="margin-top: 2rem;">
             <div style="display: flex;justify-content:space-between;width:100%;">
               <h1>{l s='Order history' d='Shop.Theme.Customeraccount'}</h1>
-              <a class="btn_clearfilter" onclick="cleanFilter()">{l s="Clean Filter" d="Shop.Theme.Customeraccount"}<i class="fa-solid fa-filter-circle-xmark" ></i></a>
+              {* <a class="btn_clearfilter" onclick="cleanFilter()">{l s="Clean Filter" d="Shop.Theme.Customeraccount"}<i class="fa-solid fa-filter-circle-xmark" ></i></a> *}
             </div>
 
           {* {include file="customer/statistics_counters.tpl"} *}

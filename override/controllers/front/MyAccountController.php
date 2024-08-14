@@ -188,7 +188,7 @@ class MyAccountController extends MyAccountControllerCore
             'ordersByBrand' => self::ordersByBrand($idCustomer),
             'ordersByBrandColors' => self::lastYearOrders($idCustomer)['colors'],
             'ordersByBrandBrands' => self::lastYearOrders($idCustomer)['brands'],
-            'showNotificationBall' => self::verifyLastNotification(),
+            // 'showNotificationBall' => self::verifyLastNotification(),
 
             'company_name' => $this->context->customer->company,
             'defaultLanguage' => self::getDefaultLanguage(),
@@ -385,7 +385,7 @@ class MyAccountController extends MyAccountControllerCore
         $shipped =  Db::getInstance()->getRow("SELECT count(current_state) AS shipped FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 4");
         $canceled =  Db::getInstance()->getRow("SELECT count(current_state) AS canceled FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 6");
         $partial_shipping =  Db::getInstance()->getRow("SELECT count(current_state) AS partial_shipping FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 22");
-        $not_invoiced =  Db::getInstance()->getRow("SELECT count(current_state) AS not_invoiced FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer . " AND current_state = 25");
+        $total_orders =  Db::getInstance()->getRow("SELECT count(id_order) AS total_orders FROM ". _DB_PREFIX_ ."orders WHERE id_customer =" . $idCustomer);
         
         $orders['waiting_validation'] = $waiting_validation['waiting_validation'];
         $orders['waiting_payment']    = $waiting_payment['waiting_payment'];
@@ -394,7 +394,7 @@ class MyAccountController extends MyAccountControllerCore
         $orders['shipped']            = $shipped['shipped'];
         $orders['canceled']           = $canceled['canceled'];
         $orders['partial_shipping']   = $partial_shipping['partial_shipping'];
-        $orders['not_invoiced']       = $not_invoiced['not_invoiced'];
+        $orders['total_orders']       = $total_orders['total_orders'];
         
         return $orders;
     }
