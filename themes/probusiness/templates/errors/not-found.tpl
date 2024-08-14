@@ -79,4 +79,47 @@
     color: #1d3558;
   }
 
+  #search #wrapper {
+    display: flex;
+    align-items: center;
+  }
+
+  #search .page-content.page-not-found{
+    background: url('/img/asd/Content_pages/error/error_{$language.iso_code}.webp') !important;
+    width: 600px !important;
+    height: 400px;
+    position: relative;
+    display: flex;
+    align-items: end;
+    padding: 0 !important;
+    margin-bottom: 0 !important;
+    max-width: unset !important;
+    justify-content: end;
+  }
+
+  #search .page-content #search_widget{
+    position: absolute;
+    margin: 0;
+    padding: 1rem;
+  }
+
+  #search .page-content #search_widget form input{
+    background: #fff;
+    color: #1d3558;
+    box-shadow: 2px 2px 11px 0 rgba(0,0,0,.4);
+  }
+
+  #search .page-content #search_widget form input::placeholder{
+    color: #1d3558;
+    opacity: 0.8;
+  }
+
+  #search .page-content #search_widget form input:focus-visible{
+    outline: none;
+  }
+
+  #search .page-content #search_widget form button{
+    color: #1d3558;
+  }
+
 </style>
