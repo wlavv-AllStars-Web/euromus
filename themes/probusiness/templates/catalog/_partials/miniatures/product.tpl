@@ -62,17 +62,17 @@
          {/block}
        </div>
  
-       <div class="col-lg-10">
-         <div class="col-lg-12 px-0" style="display: flex;align-items:center;">
+       <div class="col-lg-10" style="display: flex;flex-direction:column;height:100%;">
+         <div class="col-lg-12 px-0" style="display: flex;align-items:center;flex:1;">
           <div class="information-product col-lg-8 col-md-5 col-sm-12 col-xs-12 px-0" onclick="window.location.href='{$product.url}'">
                 {* <div class="btn-catalog-brand"><img class="cms_catalog_image" src="/img/asd/Content_pages/catalog/icons/xlsx_updated.png" style=" height: auto; width: 100%;"></div> *}
               <div class="brand-product" style="font-weight: 700;font-size:16px;line-height:18px;color:#111;text-transform:uppercase;" >{$product.manufacturer_name}</div>
-              <div class="referencia" style="font-weight: 400;font-size:16px;line-height:18px;color:#444;">{$product.reference}</div>
+              <div class="referencia" style="font-weight: 400;font-size:16px;line-height:18px;color: #0273EB;">{$product.reference}</div>
               {block name='product_name'}
                 {if $page.page_name == 'index'}
-                  <h3 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 600;font-size:16px;line-height:18px;color:#0273EB;" title="{$product.name}">{$product.name}</a></h3>
+                  <h3 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 400;font-size:16px;line-height:18px;color:#444;" title="{$product.name}">{$product.name}</a></h3>
                 {else}
-                  <h2 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 600;font-size:16px;line-height:18px;color:#0273EB;" title="{$product.name}">{$product.name}</a></h2>
+                  <h2 class="h3 product-title-list"><a href="{$product.url}" content="{$product.url}" style="font-weight: 400;font-size:16px;line-height:18px;color:#444;" title="{$product.name}">{$product.name}</a></h2>
                 {/if}
               {/block}
     
@@ -107,7 +107,7 @@
                       {$product.price}
                     {/if}
                   </span> *}
-                  <div style="font-size: 14px;padding: 3px 0;display:flex;align-items:center;gap:0.25rem;line-height:18px;font-weight:600;color:#444;" class="list-name">
+                  <div style="font-size: 16px;padding: 3px 0;display:flex;align-items:center;gap:0.25rem;line-height:18px;font-weight:400;color:#444;" class="list-name">
                     <div style="text-transform: uppercase;">{l s='Stock' d="Shop.Theme.ProductList"}:</div>
                     {if ($product.quantity == 1) }
                           <div style="color: yellow;font-weight:600;font-size:16px;">{$product.quantity}</div>
@@ -118,9 +118,9 @@
                     {/if}
                   </div>
 
-                  <div class="btn-product-details">
+                  {* <div class="btn-product-details">
                     <a href="{$product.url}">{l s='Details' d="Shop.Theme.ProductList"}</a>
-                  </div>
+                  </div> *}
     
                   {hook h='displayProductPriceBlock' product=$product type='unit_price'}
     
