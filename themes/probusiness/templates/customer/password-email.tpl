@@ -41,9 +41,16 @@
     </ul>
 
     <div class="container-reset-password">
+      
       <div class="reset-header">
-        <h1>{l s="Password Reset" d="Shop.Theme.Reset"}</h1>
-        <p>{l s="Please enter the email address you used to register. You will receive a temporary link to reset your password." d="Shop.Theme.Reset"}</p>
+        <h1>{l s="Forgot Password?" d="Shop.Theme.Reset"}</h1>
+        <h1>{l s="Reset your Password" d="Shop.Theme.Reset"}</h1>
+      </div>
+
+      <div class="reset-sub">
+        <p>{l s='Please enter the email associated with your customer account and click on "Reset" to receive a temporary link allowing you to reset your password.' d="Shop.Theme.Reset"}</p>
+        <p>{l s='Click on "Cancel" to return to the main page.' d="Shop.Theme.Reset"}</p>
+        <p>{l s='If necessary, you can contact our technical teams by clicking' d="Shop.Theme.Reset"}<a href="{$urls.pages.contact}"> {l s='here' d="Shop.Theme.Reset"}</a>.</p>
       </div>
 
       <div class="reset-content">
@@ -52,33 +59,25 @@
           <div class="col-md-12 px-0">
             <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|escape:'html':'UTF-8'}{/if}" class="form-control" required>
           </div>
-          <button class="form-control-submit btn btn-primary col-md-12" name="submit" type="submit">
-            {l s='Send reset link' d='Shop.Theme.Actions'}
-          </button>
+        </div>
+        <div class="col-md-6 pl-0">
+        <button class="form-control-submit btn btn-primary col-md-12" name="submit" type="submit">
+          {l s='Cancel' d='Shop.Theme.Reset'}
+        </button>
+        </div>
+        <div class="col-md-6 pr-0">
+        <button class="form-control-submit btn btn-primary col-md-12" name="submit" type="submit">
+          {l s='Reset' d='Shop.Theme.Reset'}
+        </button>
         </div>
       </div>
-      <a href="{$urls.pages.my_account|escape:'html':'UTF-8'}" class="account-link">
+      {* <a href="{$urls.pages.my_account|escape:'html':'UTF-8'}" class="account-link">
         <i class="material-icons">&#xE5CB;</i>
         <span>{l s='Back to login' d='Shop.Theme.Actions'}</span>
-      </a>
+      </a> *}
 
     </div>
 
-    {* <header>
-      <p class="send-renew-password-link">{l s='Please enter the email address you used to register. You will receive a temporary link to reset your password.' d='Shop.Theme.Actions'}</p>
-    </header>
-
-    <section class="form-fields">
-      <div class="form-group center-email-fields">
-        <label class="col-md-3 form-control-label required">{l s='Email address' d='Shop.Forms.Labels'}</label>
-        <div class="col-md-5 email">
-          <input type="email" name="email" id="email" value="{if isset($smarty.post.email)}{$smarty.post.email|escape:'html':'UTF-8'}{/if}" class="form-control" required>
-        </div>
-        <button class="form-control-submit btn btn-primary" name="submit" type="submit">
-          {l s='Send reset link' d='Shop.Theme.Actions'}
-        </button>
-      </div>
-    </section> *}
 
   </form>
 {/block}
