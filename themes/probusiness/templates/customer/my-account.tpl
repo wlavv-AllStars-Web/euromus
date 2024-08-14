@@ -791,7 +791,7 @@
                                               {*<div style="min-height: 25px;" class="{if $message['message_type'] == 1} alert alert-danger {else if $message['message_type'] == 2} alert alert-warning {else if $message['message_type'] == 3} alert alert-success {else if $message['message_type'] == 4} alert alert-info{/if}" role="alert">*}
                                               <div class="notification-container" role="alert">
                                                 <div class="notification-header">
-                                                  <div class="title-notification"><i class="fa-solid fa-circle-info"></i>{$message["title"]}</div>
+                                                  <div class="title-notification"><i class="fa-solid fa-circle-info"></i>{$message["title_{$language.iso_code}"]}</div>
                                                   <div class="date-notification"><i class="fa-regular fa-calendar"></i>{$message["creation_date"]|date_format:"%d-%m-%Y"}</div>
                                                 </div>
                                                 <div class="notification-body">
