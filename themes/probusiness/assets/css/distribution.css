@@ -143,11 +143,13 @@ body #wrapper {
 
   .container-reset-password .btn-primary{
     background: #0273EB !important;
+    color: #fff !important;
     border: 0 !important;
   }
   .container-reset-password .btn-primary:hover{
     background: #0d81fd !important;
     border: 0 !important;
+    color: #fff !important;
   }
 
   .container-reset-password .form-group{

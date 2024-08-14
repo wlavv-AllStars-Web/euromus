@@ -61,9 +61,9 @@
           </div>
         </div>
         <div class="col-md-6 pl-0">
-        <button class="form-control-submit btn btn-primary col-md-12" name="submit" type="submit">
+        <a class="form-control-submit btn btn-primary col-md-12" href="/">
           {l s='Cancel' d='Shop.Theme.Reset'}
-        </button>
+        </a>
         </div>
         <div class="col-md-6 pr-0">
         <button class="form-control-submit btn btn-primary col-md-12" name="submit" type="submit">
